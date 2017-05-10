@@ -1,0 +1,39 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+images/communication.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/communication.gif
+images/CommunicationStep.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/CommunicationStep.gif
+images/computingResource.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/computingResource.gif
+images/computingResource.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/computingResource.png
+images/ComResource.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/ComResource.gif
+images/ConstraintContainer.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/ConstraintContainer.gif
+images/ConstraintContainer.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/ConstraintContainer.png
+images/date.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/date.gif
+images/delay.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/delay.gif
+images/duration.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/duration.png
+images/Event2Step.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Event2Step.gif
+images/fragment.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/fragment.gif
+images/HwResource.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/HwResource.png
+images/link.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/link.gif
+images/MemoryResource.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/MemoryResource.png
+images/Mutex.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Mutex.gif
+images/Mutex2Step.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Mutex2Step.gif
+images/MutualExclusion.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/MutualExclusion.gif
+images/Parameter.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Parameter.gif
+images/ParameterValue.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/ParameterValue.gif
+images/periodic.svg - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/periodic.svg
+images/PrecedenceLink.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/PrecedenceLink.gif
+images/ProtectionProtoco.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/ProtectionProtocol.gif
+images/redflag16.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/redflag16.png
+images/scheduler.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/scheduler.png
+images/schedulersmall.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/schedulersmall.png
+images/smallperiodic.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/smallperiodic.gif
+images/smallperiodic.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/smallperiodic.png
+images/Software-icon_32.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Software-icon_32.png
+images/StateTransition.gif- org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/StateTransition.gif
+images/Step.gif- org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/Step.gif
+images/SwResource.png - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/SwResource.png
+images/task.gif - org.polarsys.time4sys.odesign - org.polarsys.time4sys.odesign/images/task.gif

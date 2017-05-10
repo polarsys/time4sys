@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gqam -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.gqam.presentation.GqamModelWizardID"
+            name="%_UI_GqamModelWizard_label"
+            class="org.polarsys.time4sys.marte.gqam.presentation.GqamModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GqamModelFile.gif">
+         <description>%_UI_GqamModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gqam -->
+      <editor
+            id="org.polarsys.time4sys.marte.gqam.presentation.GqamEditorID"
+            name="%_UI_GqamEditor_label"
+            icon="icons/full/obj16/GqamModelFile.gif"
+            extensions="gqam"
+            class="org.polarsys.time4sys.marte.gqam.presentation.GqamEditor"
+            contributorClass="org.polarsys.time4sys.marte.gqam.presentation.GqamActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

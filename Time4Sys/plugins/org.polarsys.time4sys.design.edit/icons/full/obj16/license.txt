@@ -1,0 +1,17 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/DesignModel.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/obj16/DesignModel.gif
+icons/full/ctool16/CreateDesignModel_endToEndFlows_EndToEndFlow.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_endToEndFlows_EndToEndFlow.gif
+icons/full/ctool16/CreateDesignModel_resourcePackage_HardwareInterfacePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_resourcePackage_HardwareInterfacePackage.gif
+icons/full/ctool16/CreateDesignModel_resourcePackage_HardwareResourcePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_resourcePackage_HardwareResourcePackage.gif
+icons/full/ctool16/CreateDesignModel_resourcePackage_ResourcePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_resourcePackage_ResourcePackage.gif
+icons/full/ctool16/CreateDesignModel_resourcePackage_SoftwareInterfacePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_resourcePackage_SoftwareInterfacePackage.gif
+icons/full/ctool16/CreateDesignModel_resourcePackage_SoftwareResourcePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_resourcePackage_SoftwareResourcePackage.gif
+icons/full/ctool16/CreateDesignModel_workloadBehavior_WorkloadBehavior.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateDesignModel_workloadBehavior_WorkloadBehavior.gif
+icons/full/ctool16/CreateMarteModel_endToEndFlows_EndToEndFlow.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateMarteModel_endToEndFlows_EndToEndFlow.gif
+icons/full/ctool16/CreateMarteModel_resourcePackage_ResourcePackage.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateMarteModel_resourcePackage_ResourcePackage.gif
+icons/full/ctool16/CreateMarteModel_workloadBehavior_WorkloadBehavior.gif - org.polarsys.time4sys.design.edit - org.polarsys.time4sys.design.edit/icons/full/ctool16/CreateMarteModel_workloadBehavior_WorkloadBehavior.gif

@@ -1,0 +1,284 @@
+/*******************************************************************************
+ * Copyright (c) 2017 RealTime-at-Work and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Loïc Fejoz - initial API and implementation
+ *******************************************************************************/
+/**
+ */
+package org.polarsys.time4sys.marte.srm.provider;
+
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.polarsys.time4sys.marte.srm.MessageComResource;
+import org.polarsys.time4sys.marte.srm.SrmPackage;
+
+/**
+ * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.srm.MessageComResource} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class MessageComResourceItemProvider extends SoftwareCommunicationResourceItemProvider {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageComResourceItemProvider(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
+
+			addSendServicesPropertyDescriptor(object);
+			addReceiveServicesPropertyDescriptor(object);
+			addIsFixedMessageSizePropertyDescriptor(object);
+			addMessageSizeElementsPropertyDescriptor(object);
+			addMechanismPropertyDescriptor(object);
+			addMessageQueuePolicyPropertyDescriptor(object);
+			addMessageQueueCapacityElementsPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Send Services feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSendServicesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_sendServices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_sendServices_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__SEND_SERVICES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receive Services feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiveServicesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_receiveServices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_receiveServices_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__RECEIVE_SERVICES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Fixed Message Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsFixedMessageSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_isFixedMessageSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_isFixedMessageSize_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__IS_FIXED_MESSAGE_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Size Elements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageSizeElementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_messageSizeElements_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_messageSizeElements_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__MESSAGE_SIZE_ELEMENTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Mechanism feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMechanismPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_mechanism_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_mechanism_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__MECHANISM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Queue Policy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageQueuePolicyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_messageQueuePolicy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_messageQueuePolicy_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_POLICY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Queue Capacity Elements feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageQueueCapacityElementsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageComResource_messageQueueCapacityElements_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageComResource_messageQueueCapacityElements_feature", "_UI_MessageComResource_type"),
+				 SrmPackage.Literals.MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_CAPACITY_ELEMENTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns MessageComResource.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MessageComResource"));
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((MessageComResource)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_MessageComResource_type") :
+			getString("_UI_MessageComResource_type") + " " + label;
+	}
+	
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(MessageComResource.class)) {
+			case SrmPackage.MESSAGE_COM_RESOURCE__IS_FIXED_MESSAGE_SIZE:
+			case SrmPackage.MESSAGE_COM_RESOURCE__MESSAGE_SIZE_ELEMENTS:
+			case SrmPackage.MESSAGE_COM_RESOURCE__MECHANISM:
+			case SrmPackage.MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_POLICY:
+			case SrmPackage.MESSAGE_COM_RESOURCE__MESSAGE_QUEUE_CAPACITY_ELEMENTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+}

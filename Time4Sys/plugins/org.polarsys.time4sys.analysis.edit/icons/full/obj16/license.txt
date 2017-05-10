@@ -1,0 +1,62 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/AnalyzedSystem.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/AnalyzedSystem.gif
+icons/full/obj16/Communication.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Communication.gif
+icons/full/obj16/CommunicationResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/CommunicationResource.gif
+icons/full/obj16/ComputingResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ComputingResource.gif
+icons/full/obj16/ConstraintContainer.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ConstraintContainer.gif
+icons/full/obj16/Delay.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Delay.gif
+icons/full/obj16/EventModel.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/EventModel.gif
+icons/full/obj16/Fragment.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Fragment.gif
+icons/full/obj16/InputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/InputPort.gif
+icons/full/obj16/InputStimulus.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/InputStimulus.gif
+icons/full/obj16/MemoryResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/MemoryResource.gif
+icons/full/obj16/MutualExclusionResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/MutualExclusionResource.gif
+icons/full/obj16/Offset.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Offset.gif
+icons/full/obj16/OutputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/OutputPort.gif
+icons/full/obj16/OutputStimulus.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/OutputStimulus.gif
+icons/full/obj16/ProtectionParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ProtectionParameterValue.gif
+icons/full/obj16/ProtectionProtocol.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ProtectionProtocol.gif
+icons/full/obj16/RequiredProtectionParameter.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/RequiredProtectionParameter.gif
+icons/full/obj16/RequiredSchedulingParameter.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/RequiredSchedulingParameter.gif
+icons/full/obj16/ResourceProtectionParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ResourceProtectionParameterValue.gif
+icons/full/obj16/ProtectionParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ProtectionParameterValue.gif
+icons/full/obj16/ResourceSchedulingParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ResourceSchedulingParameterValue.gif
+icons/full/obj16/ResultContainer.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/ResultContainer.gif
+icons/full/obj16/Scheduler.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Scheduler.gif
+icons/full/obj16/SchedulerParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/SchedulerParameterValue.gif
+icons/full/obj16/Task.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/Task.gif
+icons/full/obj16/TwcaEventModel.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/obj16/TwcaEventModel.gif
+
+icons/full/ctool16/CreateAnalyzedSystem_constraintContainer_ConstraintContainer.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_constraintContainer_ConstraintContainer.gif
+icons/full/ctool16/CreateAnalyzedSystem_delays_Delay.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_delays_Delay.gif
+icons/full/ctool16/CreateAnalyzedSystem_mutexes_MutualExclusionResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_mutexes_MutualExclusionResource.gif
+icons/full/ctool16/CreateAnalyzedSystem_protectionProtocols_ProtectionProtocol.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_protectionProtocols_ProtectionProtocol.gif
+icons/full/ctool16/CreateAnalyzedSystem_resources_CommunicationResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_resources_CommunicationResource.gif
+icons/full/ctool16/CreateAnalyzedSystem_resources_ComputingResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_resources_ComputingResource.gif
+icons/full/ctool16/CreateAnalyzedSystem_resources_MemoryResource.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_resources_MemoryResource.gif
+icons/full/ctool16/CreateAnalyzedSystem_resultContainers_ResultContainer.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_resultContainers_ResultContainer.gif
+icons/full/ctool16/CreateAnalyzedSystem_schedulableElements_Communication.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_schedulableElements_Communication.gif
+icons/full/ctool16/CreateAnalyzedSystem_schedulableElements_Task.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_schedulableElements_Task.gif
+icons/full/ctool16/CreateAnalyzedSystem_schedulers_Scheduler.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_schedulers_Scheduler.gif
+icons/full/ctool16/CreateAnalyzedSystem_stimuli_InputStimulus.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_stimuli_InputStimulus.gif
+icons/full/ctool16/CreateAnalyzedSystem_stimuli_OutputStimulus.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateAnalyzedSystem_stimuli_OutputStimulus.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_EObject.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateConstraintContainer_constraints_EObject.gif
+icons/full/ctool16/CreateEventModel_offsets_Offset.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateEventModel_offsets_Offset.gif
+icons/full/ctool16/CreateEventModelContainer_eventModel_EventModel.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateEventModelContainer_eventModel_EventModel.gif
+icons/full/ctool16/CreateEventModelContainer_eventModel_TwcaEventModel.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateEventModelContainer_eventModel_TwcaEventModel.gif
+icons/full/ctool16/CreateInputStimulus_outputPorts_OutputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateInputStimulus_outputPorts_OutputPort.gif
+icons/full/ctool16/CreateMutualExclusionResource_protectionParameters_ProtectionParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateMutualExclusionResource_protectionParameters_ProtectionParameterValue.gif
+icons/full/ctool16/CreateOutputStimulus_inputPorts_InputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateOutputStimulus_inputPorts_InputPort.gif
+icons/full/ctool16/CreatePortContainer_ports_InputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreatePortContainer_ports_InputPort.gif
+icons/full/ctool16/CreatePortContainer_ports_OutputPort.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreatePortContainer_ports_OutputPort.gif
+icons/full/ctool16/CreateProtectionProtocol_requiredParameters_RequiredProtectionParameter.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateProtectionProtocol_requiredParameters_RequiredProtectionParameter.gif
+icons/full/ctool16/CreateProtectionProtocol_resourceParameterValue_ResourceProtectionParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateProtectionProtocol_resourceParameterValue_ResourceProtectionParameterValue.gif
+icons/full/ctool16/CreateSchedulableElement_schedulingParameters_SchedulerParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateSchedulableElement_schedulingParameters_SchedulerParameterValue.gif
+icons/full/ctool16/CreateScheduler_requiredParameters_RequiredSchedulingParameter.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateScheduler_requiredParameters_RequiredSchedulingParameter.gif
+icons/full/ctool16/CreateScheduler_resourceParameterValue_ResourceSchedulingParameterValue.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateScheduler_resourceParameterValue_ResourceSchedulingParameterValue.gif
+icons/full/ctool16/CreateTask_fragments_Fragment.gif - org.polarsys.time4sys.analysis.edit - org.polarsys.time4sys.analysis.edit/icons/full/ctool16/CreateTask_fragments_Fragment.gif

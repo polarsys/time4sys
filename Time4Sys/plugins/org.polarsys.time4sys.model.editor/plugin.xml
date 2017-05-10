@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated time4sys -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.model.time4sys.presentation.Time4sysModelWizardID"
+            name="%_UI_Time4sysModelWizard_label"
+            class="org.polarsys.time4sys.model.time4sys.presentation.Time4sysModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Time4sysModelFile.gif">
+         <description>%_UI_Time4sysModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated time4sys -->
+      <editor
+            id="org.polarsys.time4sys.model.time4sys.presentation.Time4sysEditorID"
+            name="%_UI_Time4sysEditor_label"
+            icon="icons/full/obj16/Time4sysModelFile.gif"
+            extensions="time4sys"
+            class="org.polarsys.time4sys.model.time4sys.presentation.Time4sysEditor"
+            contributorClass="org.polarsys.time4sys.model.time4sys.presentation.Time4sysActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

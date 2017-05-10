@@ -1,0 +1,4978 @@
+//Start of user code title
+Marte by Time4Sys
+=================
+//End of user code
+:data-uti:
+:doctype: book
+//Start of user code header
+:toc:
+:toclevels: 2
+//End of user code
+
+//Start of user code preface
+
+== Introduction
+
+This document presents the main result of the Waruna project, ie an Ecore implementation of the OMG's Marte specification.
+This implementation follow quite closely its original specification excepts in a few areas as explained in following chapter.
+
+== Deviation from OMG Marte specication
+
+=== Pattern of Activation
+
+.activation-pattern
+[caption="Pattern of activations"]
+image::activation-pattern.png[]
+
+Contraryly to the Marte specification, we have flatten the hierarchy and also haven't (yet?) implemented all pattern.
+
+.Comparions of arrival pattern table
+[options="header",cols="3,^1,^1,10"]
+|==============================================
+|Pattern          |Marte |Time4Sys |Description 
+|PeriodicPattern  |X |X |
+It describes periodic interarrival patterns, with an optional maximal deviation (jitter)
+
+|AperiodicPattern |X | |
+It describes an unbounded pattern that is defined by a distribution function.
+
+|SporadicPattern  |X |X |
+It describes a bounded pattern that is defined by a corner case interarrival times and a maximum deviation (jitter).
+
+|BurstPattern     |X |X |
+It describes a bursty interarrival pattern with a number of events that can occur in a bounded period.
+
+|IrregularPattern |X | |
+It describes an aperiodic pattern that is described by a table of successive interarrivals durations measured from a starting phase.
+
+|ClosedPattern    |X | |
+It describes a workload characterized by a fixed number of active or potential users or jobs that cycle between executing the scenario.
+
+|OpenPattern      |X | |
+It describes a workload that is modeled as a stream of requests that arrive at a given rate in some predetermined pattern (such as Poisson arrivals).
+
+|SlidingWindowPattern | |X |
+It describes a bounded pattern that is defined by the maximum number  of events that can occur on a sliding window.
+
+|==============================================
+
+=== Links of Precedence between tasks  
+
+.precedence-diagram
+[caption="Precedence Class diagram"]
+image::precedence-diagram.png[]
+
+The model from Marte is not precise enough to express other than simple relationship.
+Thus we reuse the concepts of Pin from the UML 2.5 Activity Diagram.
+
+NB: Shall we also reuse ActivityEdge instead of the successor-predecessor link? 
+
+=== EndToEnd Flow
+
+.endtoendflow-diagram
+[caption="End-to-End Flow Class diagram"]
+image::endtoendflow-diagram.png[]
+
+
+This class is modeled in the Gqam Package while originally it is from the Sam MARTE subpackage.
+This is subject to futur modification, especially when the constraint (aka timing requirements) will be further developped.
+
+
+//End of user code
+
+[[marte_package]]
+== Marte package
+
+=== Overview
+
+
+.Marte-class-diagram-overview
+[caption="Marte class diagram overview -- http://www.polarsys.org/time4sys/marte/1.0"]
+image::Marte-class-diagram-overview.png[]
+
+
+//Start of user code Marteoverview
+//End of user code
+
+
+
+
+[[gqam_package]]
+== Gqam package
+
+=== Overview
+
+
+.gqam-class-diagram-overview
+[caption="gqam class diagram overview -- http://www.polarsys.org/time4sys/marte/gqam/1.0"]
+image::gqam-class-diagram-overview.png[]
+
+
+//Start of user code gqamoverview
+//End of user code
+
+Same as the UML 2.5 Pin with isControl=true.
+
+[[acquirestep_classifier]]
+=== AcquireStep classifier
+
+
+
+//Start of user code AcquireStep-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* resUnits: EInt [0:1]
+
+==== Semantics
+
+//Start of user code AcquireStep-semantics
+TODO: write a semantic
+//End of user code
+
+[[arrivalpattern_classifier]]
+=== ArrivalPattern classifier
+
+
+
+//Start of user code ArrivalPattern-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<burstpattern_classifier,BurstPattern>> from <<gqam_package,gqam>>
+* <<closedpattern_classifier,ClosedPattern>> from <<gqam_package,gqam>>
+* <<once_classifier,Once>> from <<gqam_package,gqam>>
+* <<periodicpattern_classifier,PeriodicPattern>> from <<gqam_package,gqam>>
+* <<slidingwindowpattern_classifier,SlidingWindowPattern>> from <<gqam_package,gqam>>
+* <<sporadicpattern_classifier,SporadicPattern>> from <<gqam_package,gqam>>
+
+
+
+==== Attributes
+
+* jitter: NFP_Duration [0:1]
+* phase: NFP_Duration [0:1]
+
+==== Semantics
+
+//Start of user code ArrivalPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[behaviorscenario_classifier]]
+=== BehaviorScenario classifier
+
+
+
+//Start of user code BehaviorScenario-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<acquirestep_classifier,AcquireStep>> from <<gqam_package,gqam>>
+* <<communicationstep_classifier,CommunicationStep>> from <<gqam_package,gqam>>
+* <<delay_classifier,Delay>> from <<gqam_package,gqam>>
+* <<executionstep_classifier,ExecutionStep>> from <<gqam_package,gqam>>
+* <<releasestep_classifier,ReleaseStep>> from <<gqam_package,gqam>>
+* <<requestedservice_classifier,RequestedService>> from <<gqam_package,gqam>>
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+==== Attributes
+
+* respTime: NFP_Duration [0:1]
+* bestCET: NFP_Duration [0:1]
+* worstCET: NFP_Duration [0:1]
+
+==== Semantics
+
+//Start of user code BehaviorScenario-semantics
+TODO: write a semantic
+//End of user code
+
+[[burstpattern_classifier]]
+=== BurstPattern classifier
+
+It describes a bursty interarrival pattern with a number of events that can occur in a bounded period.
+
+//Start of user code BurstPattern-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* minInterarrival: NFP_Duration [1:1]The minimum interarrival duration between two successive occurrences of a burst.
+* maxInterarrival: NFP_Duration [0:1]The maximum interarrival duration between two successive occurrences of a burst.
+* minEventInterval: NFP_Duration [1:1]The minimum interval between two event occurrences within a burst.
+* maxEventInterval: NFP_Duration [0:1]The maximum interval between two event occurrences within a burst.
+* burstSize: ELong [1:1]The number of event occurrences within a burst.
+
+==== Semantics
+
+//Start of user code BurstPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[closedpattern_classifier]]
+=== ClosedPattern classifier
+
+This is a TupleType that contains the parameters that are necessary to specify a closed pattern. It is characterized by a
+fixed number of active or potential users or jobs that cycle between executing the scenario, and spending an external
+delay period (sometimes called “think time”) outside the system, between the end of one response and the next request.
+
+//Start of user code ClosedPattern-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* population: ELong [1:1]The size of the workload (number of system users).
+* extDelay: NFP_Duration [1:1]The delay between the end of one response and the start of the next for each member of the population of system
+users.
+
+==== Semantics
+
+//Start of user code ClosedPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[communicationchannel_classifier]]
+=== CommunicationChannel classifier
+
+
+
+//Start of user code CommunicationChannel-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code CommunicationChannel-semantics
+TODO: write a semantic
+//End of user code
+
+[[communicationstep_classifier]]
+=== CommunicationStep classifier
+
+
+
+//Start of user code CommunicationStep-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* msgSize: EInt [0:1]
+
+==== Semantics
+
+//Start of user code CommunicationStep-semantics
+TODO: write a semantic
+//End of user code
+
+[[connectorkind_classifier]]
+=== ConnectorKind classifier
+
+
+
+//Start of user code ConnectorKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* Sequence 
+* Branch 
+* Merge 
+* Fork 
+* Join 
+
+==== Semantics
+
+//Start of user code ConnectorKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[controlpin_classifier]]
+=== ControlPin classifier
+
+The concept is from UML 2.5 Pin, where isControlPin=true.
+
+//Start of user code ControlPin-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<multiplicityelement_classifier,MultiplicityElement>> from <<gqam_package,gqam>>
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<inputpin_classifier,InputPin>> from <<gqam_package,gqam>>
+* <<outputpin_classifier,OutputPin>> from <<gqam_package,gqam>>
+
+
+
+
+==== Semantics
+
+//Start of user code ControlPin-semantics
+The semantic is the same as per UML 2.5. It can be seen as tokens passing. The cardinality of the pin indicates how much tokens it needs for the task to be activable, and how much at maximum it will consume.
+
+All in all, it enables to express advance activation patterns.
+For instance, all pattern that can be expressed with logical expressions can easily be encoded.
+
+
+[caption="Another way of describing activation pattern based on CNF"]
+
+[cols="h,2*",align="center",options="header"]
+|=======
+| | AND | OR
+| Output 
+|
+image:precedence-activation-out-and-pattern.png[]
+
+|
+image:precedence-activation-out-or-pattern.png[]
+
+| Input
+|
+image:precedence-activation-in-and-pattern.png[]
+
+|
+image:precedence-activation-in-or-pattern.png[]
+
+|=======
+
+
+
+[[precedence-activation-pattern0]]
+.e = (b and c) or d
+image::precedence-activation-pattern0.png[]
+
+[[precedence-activation-pattern1]]
+.Another way of describing activation pattern based on CNF
+image::precedence-activation-pattern1.png[]
+
+
+[[precedence-activation-pattern2]]
+.Complex pattern of activations of the task T_E
+image::precedence-activation-pattern2.png[]
+
+<<precedence-activation-pattern2>> illustrates a pattern activation that could be expressed with a logical expression. For ease of encoding, it needs to be rewritten in conjunctive normal form (CNF).
+ 
+//End of user code
+
+[[delay_classifier]]
+=== Delay classifier
+
+A special kind of Step that just introduce a delay without any resource consumption.
+
+//Start of user code Delay-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* duration: NFP_Duration [1:1]
+
+==== Semantics
+
+//Start of user code Delay-semantics
+TODO: write a semantic
+//End of user code
+
+[[endtoendflow_classifier]]
+=== EndToEndFlow classifier
+
+Deprecated.
+
+This shall be moved to the SAM Marte Package.
+
+//Start of user code EndToEndFlow-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* isSchedulable: EBoolean [0:1]
+* schedulabilitySlack: EDouble [0:1]
+* endToEndTime: NFP_Duration [0:1]
+* endToEndDeadline: NFP_Duration [0:1]
+
+==== Semantics
+
+//Start of user code EndToEndFlow-semantics
+TODO: write a semantic
+//End of user code
+
+[[executionstep_classifier]]
+=== ExecutionStep classifier
+
+
+
+//Start of user code ExecutionStep-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code ExecutionStep-semantics
+TODO: write a semantic
+//End of user code
+
+[[inputpin_classifier]]
+=== InputPin classifier
+
+from UML 2.5
+
+//Start of user code InputPin-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<controlpin_classifier,ControlPin>> from <<gqam_package,gqam>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code InputPin-semantics
+TODO: write a semantic
+//End of user code
+
+[[nfp_duration_classifier]]
+=== NFP_Duration classifier
+
+
+
+//Start of user code NFP_Duration-overview
+TODO: write an overview
+//End of user code
+
+
+See org.polarsys.time4sys.marte.nfp.Duration.
+
+//Start of user code NFP_Duration-semantics
+TODO: write a semantic
+//End of user code
+
+[[multiplicityelement_classifier]]
+=== MultiplicityElement classifier
+
+from UML 2.5
+
+//Start of user code MultiplicityElement-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<controlpin_classifier,ControlPin>> from <<gqam_package,gqam>>
+* <<inputpin_classifier,InputPin>> from <<gqam_package,gqam>>
+* <<outputpin_classifier,OutputPin>> from <<gqam_package,gqam>>
+
+
+
+==== Attributes
+
+* lowerBound: EInt [1:1]
+* upperBound: EInt [1:1]
+
+==== Semantics
+
+//Start of user code MultiplicityElement-semantics
+TODO: write a semantic
+//End of user code
+
+[[once_classifier]]
+=== Once classifier
+
+
+
+//Start of user code Once-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code Once-semantics
+TODO: write a semantic
+//End of user code
+
+[[outputpin_classifier]]
+=== OutputPin classifier
+
+from UML 2.5
+
+//Start of user code OutputPin-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<controlpin_classifier,ControlPin>> from <<gqam_package,gqam>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code OutputPin-semantics
+TODO: write a semantic
+//End of user code
+
+[[periodicpattern_classifier]]
+=== PeriodicPattern classifier
+
+It describes periodic interarrival patterns, with an optional maximal deviation (jitter).
+
+//Start of user code PeriodicPattern-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* period: NFP_Duration [0:1]
+* occurences: EInt [0:1]
+
+==== Semantics
+
+//Start of user code PeriodicPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[precedencerelation_classifier]]
+=== PrecedenceRelation classifier
+
+This is to be deprecated by ports usage.
+
+//Start of user code PrecedenceRelation-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* connectorKind: ConnectorKind [0:1]
+
+==== Semantics
+
+//Start of user code PrecedenceRelation-semantics
+TODO: write a semantic
+//End of user code
+
+[[reference_classifier]]
+=== Reference classifier
+
+
+
+//Start of user code Reference-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* referenceName: EString [0:1]
+
+==== Semantics
+
+//Start of user code Reference-semantics
+TODO: write a semantic
+//End of user code
+
+[[releasestep_classifier]]
+=== ReleaseStep classifier
+
+
+
+//Start of user code ReleaseStep-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* resUnits: EInt [0:1]
+
+==== Semantics
+
+//Start of user code ReleaseStep-semantics
+TODO: write a semantic
+//End of user code
+
+[[requestedservice_classifier]]
+=== RequestedService classifier
+
+
+
+//Start of user code RequestedService-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code RequestedService-semantics
+TODO: write a semantic
+//End of user code
+
+[[slidingwindowpattern_classifier]]
+=== SlidingWindowPattern classifier
+
+
+
+//Start of user code SlidingWindowPattern-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* windowSize: NFP_Duration [1:1]
+* nbEvents: ELong [0:1]
+
+==== Semantics
+
+//Start of user code SlidingWindowPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[sporadicpattern_classifier]]
+=== SporadicPattern classifier
+
+It describes a bounded pattern that is defined by a corner case interarrival times and a maximum deviation (jitter).
+
+//Start of user code SporadicPattern-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<arrivalpattern_classifier,ArrivalPattern>> from <<gqam_package,gqam>>
+
+
+
+
+==== Attributes
+
+* minInterarrival: NFP_Duration [0:1]
+* maxInterarrival: NFP_Duration [0:1]
+
+==== Semantics
+
+//Start of user code SporadicPattern-semantics
+TODO: write a semantic
+//End of user code
+
+[[step_classifier]]
+=== Step classifier
+
+
+
+//Start of user code Step-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<behaviorscenario_classifier,BehaviorScenario>> from <<gqam_package,gqam>>
+
+==== Specializations
+
+* <<acquirestep_classifier,AcquireStep>> from <<gqam_package,gqam>>
+* <<communicationstep_classifier,CommunicationStep>> from <<gqam_package,gqam>>
+* <<delay_classifier,Delay>> from <<gqam_package,gqam>>
+* <<executionstep_classifier,ExecutionStep>> from <<gqam_package,gqam>>
+* <<releasestep_classifier,ReleaseStep>> from <<gqam_package,gqam>>
+* <<requestedservice_classifier,RequestedService>> from <<gqam_package,gqam>>
+
+
+
+==== Attributes
+
+* isAtomic: EBoolean [0:1]
+* blockingTime: NFP_Duration [0:1]
+* repetitions: EDouble [0:1]
+* probability: EDouble [0:1]
+* priority: EInt [0:1]
+* serviceCount: EInt [0:1]
+
+==== Semantics
+
+//Start of user code Step-semantics
+TODO: write a semantic
+//End of user code
+
+[[workloadevent_classifier]]
+=== WorkloadEvent classifier
+
+
+
+//Start of user code WorkloadEvent-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code WorkloadEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[workloadbehavior_classifier]]
+=== WorkloadBehavior classifier
+
+
+
+//Start of user code WorkloadBehavior-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code WorkloadBehavior-semantics
+TODO: write a semantic
+//End of user code
+
+
+
+
+[[grm_package]]
+== Grm package
+
+=== Overview
+
+
+.grm-class-diagram-overview
+[caption="grm class diagram overview -- http://www.polarsys.org/time4sys/marte/grm/1.0"]
+image::grm-class-diagram-overview.png[]
+
+
+//Start of user code grmoverview
+//End of user code
+
+
+
+[[accesscontrolpolicy_classifier]]
+=== AccessControlPolicy classifier
+
+
+
+//Start of user code AccessControlPolicy-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<mutualexclusionprotocol_classifier,MutualExclusionProtocol>> from <<grm_package,grm>>
+* <<schedulingpolicy_classifier,SchedulingPolicy>> from <<grm_package,grm>>
+
+
+
+
+==== Semantics
+
+//Start of user code AccessControlPolicy-semantics
+TODO: write a semantic
+//End of user code
+
+[[clockresource_classifier]]
+=== ClockResource classifier
+
+
+
+//Start of user code ClockResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code ClockResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[communicationendpoint_classifier]]
+=== CommunicationEndPoint classifier
+
+
+
+//Start of user code CommunicationEndPoint-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<resourceport_classifier,ResourcePort>> from <<grm_package,grm>>
+* <<hardwareport_classifier,HardwarePort>> from <<hrm_package,hrm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareport_classifier,SoftwarePort>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* packetSize: EInt [0:1]
+
+==== Semantics
+
+//Start of user code CommunicationEndPoint-semantics
+TODO: write a semantic
+//End of user code
+
+[[communicationmedia_classifier]]
+=== CommunicationMedia classifier
+
+
+
+//Start of user code CommunicationMedia-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<communicationresource_classifier,CommunicationResource>> from <<grm_package,grm>>
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* elementSize: EInt [0:1]
+* capacity: EFloat [0:1]
+* packetTime: EFloat [0:1]
+* blockingTime: EFloat [0:1]
+* transmMode: TransmModeKind [0:1]
+
+==== Semantics
+
+//Start of user code CommunicationMedia-semantics
+TODO: write a semantic
+//End of user code
+
+[[computingresource_classifier]]
+=== ComputingResource classifier
+
+
+
+//Start of user code ComputingResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ComputingResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[concurrencyresource_classifier]]
+=== ConcurrencyResource classifier
+
+
+
+//Start of user code ConcurrencyResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationchannel_classifier,CommunicationChannel>> from <<gqam_package,gqam>>
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ConcurrencyResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[communicationresource_classifier]]
+=== CommunicationResource classifier
+
+
+
+//Start of user code CommunicationResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code CommunicationResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[deviceresource_classifier]]
+=== DeviceResource classifier
+
+
+
+//Start of user code DeviceResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code DeviceResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[dynamicusage_classifier]]
+=== DynamicUsage classifier
+
+
+
+//Start of user code DynamicUsage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceusage_classifier,ResourceUsage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code DynamicUsage-semantics
+TODO: write a semantic
+//End of user code
+
+[[mutualexclusionprotocol_classifier]]
+=== MutualExclusionProtocol classifier
+
+
+
+//Start of user code MutualExclusionProtocol-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<accesscontrolpolicy_classifier,AccessControlPolicy>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* protocol: ProtectProtocolKind [0:1]
+* otherProtocol: EString [0:1]
+
+==== Semantics
+
+//Start of user code MutualExclusionProtocol-semantics
+TODO: write a semantic
+//End of user code
+
+[[mutualexclusionresource_classifier]]
+=== MutualExclusionResource classifier
+
+
+
+//Start of user code MutualExclusionResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<synchresource_classifier,SynchResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code MutualExclusionResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[namedelement_classifier]]
+=== NamedElement classifier
+
+
+
+//Start of user code NamedElement-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<acquirestep_classifier,AcquireStep>> from <<gqam_package,gqam>>
+* <<behaviorscenario_classifier,BehaviorScenario>> from <<gqam_package,gqam>>
+* <<communicationchannel_classifier,CommunicationChannel>> from <<gqam_package,gqam>>
+* <<communicationstep_classifier,CommunicationStep>> from <<gqam_package,gqam>>
+* <<controlpin_classifier,ControlPin>> from <<gqam_package,gqam>>
+* <<delay_classifier,Delay>> from <<gqam_package,gqam>>
+* <<executionstep_classifier,ExecutionStep>> from <<gqam_package,gqam>>
+* <<inputpin_classifier,InputPin>> from <<gqam_package,gqam>>
+* <<outputpin_classifier,OutputPin>> from <<gqam_package,gqam>>
+* <<releasestep_classifier,ReleaseStep>> from <<gqam_package,gqam>>
+* <<requestedservice_classifier,RequestedService>> from <<gqam_package,gqam>>
+* <<step_classifier,Step>> from <<gqam_package,gqam>>
+* <<workloadevent_classifier,WorkloadEvent>> from <<gqam_package,gqam>>
+* <<workloadbehavior_classifier,WorkloadBehavior>> from <<gqam_package,gqam>>
+* <<accesscontrolpolicy_classifier,AccessControlPolicy>> from <<grm_package,grm>>
+* <<clockresource_classifier,ClockResource>> from <<grm_package,grm>>
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+* <<computingresource_classifier,ComputingResource>> from <<grm_package,grm>>
+* <<concurrencyresource_classifier,ConcurrencyResource>> from <<grm_package,grm>>
+* <<communicationresource_classifier,CommunicationResource>> from <<grm_package,grm>>
+* <<deviceresource_classifier,DeviceResource>> from <<grm_package,grm>>
+* <<mutualexclusionprotocol_classifier,MutualExclusionProtocol>> from <<grm_package,grm>>
+* <<mutualexclusionresource_classifier,MutualExclusionResource>> from <<grm_package,grm>>
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+* <<protectionparameter_classifier,ProtectionParameter>> from <<grm_package,grm>>
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<resourcecontrolpolicy_classifier,ResourceControlPolicy>> from <<grm_package,grm>>
+* <<resourceinstance_classifier,ResourceInstance>> from <<grm_package,grm>>
+* <<resourceinterface_classifier,ResourceInterface>> from <<grm_package,grm>>
+* <<resourcemanager_classifier,ResourceManager>> from <<grm_package,grm>>
+* <<resourcepackage_classifier,ResourcePackage>> from <<grm_package,grm>>
+* <<resourcepackageableelement_classifier,ResourcePackageableElement>> from <<grm_package,grm>>
+* <<resourceport_classifier,ResourcePort>> from <<grm_package,grm>>
+* <<resourceservice_classifier,ResourceService>> from <<grm_package,grm>>
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+* <<schedulingparameter_classifier,SchedulingParameter>> from <<grm_package,grm>>
+* <<schedulingpolicy_classifier,SchedulingPolicy>> from <<grm_package,grm>>
+* <<secondaryscheduler_classifier,SecondaryScheduler>> from <<grm_package,grm>>
+* <<storageresource_classifier,StorageResource>> from <<grm_package,grm>>
+* <<synchresource_classifier,SynchResource>> from <<grm_package,grm>>
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+* <<timerresource_classifier,TimerResource>> from <<grm_package,grm>>
+* <<usagetypedamount_classifier,UsageTypedAmount>> from <<grm_package,grm>>
+* <<firmwarearchitecture_classifier,FirmwareArchitecture>> from <<hrm_package,hrm>>
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarebranchpredictor_classifier,HardwareBranchPredictor>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareinterface_classifier,HardwareInterface>> from <<hrm_package,hrm>>
+* <<hardwareinterfacepackage_classifier,HardwareInterfacePackage>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwareipblock_classifier,HardwareIpBlock>> from <<hrm_package,hrm>>
+* <<hardwareisa_classifier,HardwareIsa>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwarepin_classifier,HardwarePin>> from <<hrm_package,hrm>>
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareport_classifier,HardwarePort>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwareresourcepackage_classifier,HardwareResourcePackage>> from <<hrm_package,hrm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwareservice_classifier,HardwareService>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<memorypartition_classifier,MemoryPartition>> from <<srm_package,srm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwareaccessservice_classifier,SoftwareAccessService>> from <<srm_package,srm>>
+* <<softwarearchitecture_classifier,SoftwareArchitecture>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwareinterface_classifier,SoftwareInterface>> from <<srm_package,srm>>
+* <<softwareinterfacepackage_classifier,SoftwareInterfacePackage>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareport_classifier,SoftwarePort>> from <<srm_package,srm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+* <<softwareresourcepackage_classifier,SoftwareResourcePackage>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+* <<softwarescheduler_classifier,SoftwareScheduler>> from <<srm_package,srm>>
+* <<softwareservice_classifier,SoftwareService>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+* <<softwaretimerresource_classifier,SoftwareTimerResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* name: EString [0:1]
+
+==== Semantics
+
+//Start of user code NamedElement-semantics
+TODO: write a semantic
+//End of user code
+
+[[processingresource_classifier]]
+=== ProcessingResource classifier
+
+
+
+//Start of user code ProcessingResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+* <<computingresource_classifier,ComputingResource>> from <<grm_package,grm>>
+* <<deviceresource_classifier,DeviceResource>> from <<grm_package,grm>>
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* speedFactor: EFloat [0:1]
+
+==== Semantics
+
+//Start of user code ProcessingResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[protectionparameter_classifier]]
+=== ProtectionParameter classifier
+
+
+
+//Start of user code ProtectionParameter-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* priorityCeiling: EInt [0:1]
+* preemptionLevel: EInt [0:1]
+
+==== Semantics
+
+//Start of user code ProtectionParameter-semantics
+TODO: write a semantic
+//End of user code
+
+[[protectprotocolkind_classifier]]
+=== ProtectProtocolKind classifier
+
+
+
+//Start of user code ProtectProtocolKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* FIFO 
+* NoPreemption 
+* PriorityCeiling 
+* PriorityInheritance 
+* StackBased 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code ProtectProtocolKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[resource_classifier]]
+=== Resource classifier
+
+
+
+//Start of user code Resource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackageableelement_classifier,ResourcePackageableElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationchannel_classifier,CommunicationChannel>> from <<gqam_package,gqam>>
+* <<clockresource_classifier,ClockResource>> from <<grm_package,grm>>
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+* <<computingresource_classifier,ComputingResource>> from <<grm_package,grm>>
+* <<concurrencyresource_classifier,ConcurrencyResource>> from <<grm_package,grm>>
+* <<communicationresource_classifier,CommunicationResource>> from <<grm_package,grm>>
+* <<deviceresource_classifier,DeviceResource>> from <<grm_package,grm>>
+* <<mutualexclusionresource_classifier,MutualExclusionResource>> from <<grm_package,grm>>
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<resourcemanager_classifier,ResourceManager>> from <<grm_package,grm>>
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+* <<secondaryscheduler_classifier,SecondaryScheduler>> from <<grm_package,grm>>
+* <<storageresource_classifier,StorageResource>> from <<grm_package,grm>>
+* <<synchresource_classifier,SynchResource>> from <<grm_package,grm>>
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+* <<timerresource_classifier,TimerResource>> from <<grm_package,grm>>
+* <<usagetypedamount_classifier,UsageTypedAmount>> from <<grm_package,grm>>
+* <<firmwarearchitecture_classifier,FirmwareArchitecture>> from <<hrm_package,hrm>>
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarebranchpredictor_classifier,HardwareBranchPredictor>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwareipblock_classifier,HardwareIpBlock>> from <<hrm_package,hrm>>
+* <<hardwareisa_classifier,HardwareIsa>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<memorypartition_classifier,MemoryPartition>> from <<srm_package,srm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarearchitecture_classifier,SoftwareArchitecture>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+* <<softwarescheduler_classifier,SoftwareScheduler>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+* <<softwaretimerresource_classifier,SoftwareTimerResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* resMult: EInt [0:1]
+* isProtected: EBoolean [0:1]
+* isActive: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code Resource-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourcebroker_classifier]]
+=== ResourceBroker classifier
+
+
+
+//Start of user code ResourceBroker-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+* <<secondaryscheduler_classifier,SecondaryScheduler>> from <<grm_package,grm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<softwarescheduler_classifier,SoftwareScheduler>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceBroker-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceconnector_classifier]]
+=== ResourceConnector classifier
+
+
+
+//Start of user code ResourceConnector-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<hardwareconnector_classifier,HardwareConnector>> from <<hrm_package,hrm>>
+* <<softwareconnector_classifier,SoftwareConnector>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceConnector-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourcecontrolpolicy_classifier]]
+=== ResourceControlPolicy classifier
+
+
+
+//Start of user code ResourceControlPolicy-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceControlPolicy-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceinstance_classifier]]
+=== ResourceInstance classifier
+
+
+
+//Start of user code ResourceInstance-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackageableelement_classifier,ResourcePackageableElement>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceInstance-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceinterface_classifier]]
+=== ResourceInterface classifier
+
+
+
+//Start of user code ResourceInterface-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackageableelement_classifier,ResourcePackageableElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareinterface_classifier,HardwareInterface>> from <<hrm_package,hrm>>
+* <<softwareinterface_classifier,SoftwareInterface>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceInterface-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourcemanager_classifier]]
+=== ResourceManager classifier
+
+
+
+//Start of user code ResourceManager-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<memorypartition_classifier,MemoryPartition>> from <<srm_package,srm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarearchitecture_classifier,SoftwareArchitecture>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceManager-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourcepackage_classifier]]
+=== ResourcePackage classifier
+
+
+
+//Start of user code ResourcePackage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareinterfacepackage_classifier,HardwareInterfacePackage>> from <<hrm_package,hrm>>
+* <<hardwareresourcepackage_classifier,HardwareResourcePackage>> from <<hrm_package,hrm>>
+* <<softwareinterfacepackage_classifier,SoftwareInterfacePackage>> from <<srm_package,srm>>
+* <<softwareresourcepackage_classifier,SoftwareResourcePackage>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourcePackage-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourcepackageableelement_classifier]]
+=== ResourcePackageableElement classifier
+
+
+
+//Start of user code ResourcePackageableElement-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationchannel_classifier,CommunicationChannel>> from <<gqam_package,gqam>>
+* <<clockresource_classifier,ClockResource>> from <<grm_package,grm>>
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+* <<computingresource_classifier,ComputingResource>> from <<grm_package,grm>>
+* <<concurrencyresource_classifier,ConcurrencyResource>> from <<grm_package,grm>>
+* <<communicationresource_classifier,CommunicationResource>> from <<grm_package,grm>>
+* <<deviceresource_classifier,DeviceResource>> from <<grm_package,grm>>
+* <<mutualexclusionresource_classifier,MutualExclusionResource>> from <<grm_package,grm>>
+* <<processingresource_classifier,ProcessingResource>> from <<grm_package,grm>>
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<resourceinstance_classifier,ResourceInstance>> from <<grm_package,grm>>
+* <<resourceinterface_classifier,ResourceInterface>> from <<grm_package,grm>>
+* <<resourcemanager_classifier,ResourceManager>> from <<grm_package,grm>>
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+* <<secondaryscheduler_classifier,SecondaryScheduler>> from <<grm_package,grm>>
+* <<storageresource_classifier,StorageResource>> from <<grm_package,grm>>
+* <<synchresource_classifier,SynchResource>> from <<grm_package,grm>>
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+* <<timerresource_classifier,TimerResource>> from <<grm_package,grm>>
+* <<usagetypedamount_classifier,UsageTypedAmount>> from <<grm_package,grm>>
+* <<firmwarearchitecture_classifier,FirmwareArchitecture>> from <<hrm_package,hrm>>
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarebranchpredictor_classifier,HardwareBranchPredictor>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareinterface_classifier,HardwareInterface>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwareipblock_classifier,HardwareIpBlock>> from <<hrm_package,hrm>>
+* <<hardwareisa_classifier,HardwareIsa>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<memorypartition_classifier,MemoryPartition>> from <<srm_package,srm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarearchitecture_classifier,SoftwareArchitecture>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwareinterface_classifier,SoftwareInterface>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+* <<softwarescheduler_classifier,SoftwareScheduler>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+* <<softwaretimerresource_classifier,SoftwareTimerResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourcePackageableElement-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceport_classifier]]
+=== ResourcePort classifier
+
+
+
+//Start of user code ResourcePort-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<communicationendpoint_classifier,CommunicationEndPoint>> from <<grm_package,grm>>
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareport_classifier,HardwarePort>> from <<hrm_package,hrm>>
+* <<softwareport_classifier,SoftwarePort>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourcePort-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceservice_classifier]]
+=== ResourceService classifier
+
+
+
+//Start of user code ResourceService-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwareservice_classifier,HardwareService>> from <<hrm_package,hrm>>
+* <<softwareaccessservice_classifier,SoftwareAccessService>> from <<srm_package,srm>>
+* <<softwareservice_classifier,SoftwareService>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceService-semantics
+TODO: write a semantic
+//End of user code
+
+[[resourceusage_classifier]]
+=== ResourceUsage classifier
+
+
+
+//Start of user code ResourceUsage-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<dynamicusage_classifier,DynamicUsage>> from <<grm_package,grm>>
+* <<staticusage_classifier,StaticUsage>> from <<grm_package,grm>>
+
+
+
+
+==== Semantics
+
+//Start of user code ResourceUsage-semantics
+TODO: write a semantic
+//End of user code
+
+[[schedpolicykind_classifier]]
+=== SchedPolicyKind classifier
+
+
+
+//Start of user code SchedPolicyKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* Undef 
+* EarliestDeadlineFirst 
+* FIFO 
+* FixedPriority 
+* LeastLaxityFirst 
+* RoundRobin 
+* TimeTableDriven 
+* Other 
+
+==== Semantics
+
+//Start of user code SchedPolicyKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[scheduler_classifier]]
+=== Scheduler classifier
+
+
+
+//Start of user code Scheduler-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<secondaryscheduler_classifier,SecondaryScheduler>> from <<grm_package,grm>>
+* <<softwarescheduler_classifier,SoftwareScheduler>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code Scheduler-semantics
+TODO: write a semantic
+//End of user code
+
+[[schedulableresource_classifier]]
+=== SchedulableResource classifier
+
+
+
+//Start of user code SchedulableResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<concurrencyresource_classifier,ConcurrencyResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<communicationchannel_classifier,CommunicationChannel>> from <<gqam_package,gqam>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code SchedulableResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[schedulingparameter_classifier]]
+=== SchedulingParameter classifier
+
+
+
+//Start of user code SchedulingParameter-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* value: EString [0:1]
+
+==== Semantics
+
+//Start of user code SchedulingParameter-semantics
+TODO: write a semantic
+//End of user code
+
+[[schedulingpolicy_classifier]]
+=== SchedulingPolicy classifier
+
+
+
+//Start of user code SchedulingPolicy-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<accesscontrolpolicy_classifier,AccessControlPolicy>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* policy: SchedPolicyKind [0:1]
+* otherSchedPolicy: EString [0:1]
+
+==== Semantics
+
+//Start of user code SchedulingPolicy-semantics
+TODO: write a semantic
+//End of user code
+
+[[secondaryscheduler_classifier]]
+=== SecondaryScheduler classifier
+
+
+
+//Start of user code SecondaryScheduler-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SecondaryScheduler-semantics
+TODO: write a semantic
+//End of user code
+
+[[staticusage_classifier]]
+=== StaticUsage classifier
+
+
+
+//Start of user code StaticUsage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceusage_classifier,ResourceUsage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code StaticUsage-semantics
+TODO: write a semantic
+//End of user code
+
+[[storageresource_classifier]]
+=== StorageResource classifier
+
+
+
+//Start of user code StorageResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code StorageResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[synchresource_classifier]]
+=== SynchResource classifier
+
+
+
+//Start of user code SynchResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<mutualexclusionresource_classifier,MutualExclusionResource>> from <<grm_package,grm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code SynchResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[timingresource_classifier]]
+=== TimingResource classifier
+
+
+
+//Start of user code TimingResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<clockresource_classifier,ClockResource>> from <<grm_package,grm>>
+* <<timerresource_classifier,TimerResource>> from <<grm_package,grm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+* <<softwaretimerresource_classifier,SoftwareTimerResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code TimingResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[timerresource_classifier]]
+=== TimerResource classifier
+
+
+
+//Start of user code TimerResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<softwaretimerresource_classifier,SoftwareTimerResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* duration: EFloat [0:1]
+* isPeriodic: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code TimerResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[transmmodekind_classifier]]
+=== TransmModeKind classifier
+
+
+
+//Start of user code TransmModeKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* simplex 
+* half_duplex 
+* full_duplex 
+
+==== Semantics
+
+//Start of user code TransmModeKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[usagedemand_classifier]]
+=== UsageDemand classifier
+
+
+
+//Start of user code UsageDemand-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* event: EString [0:1]
+
+==== Semantics
+
+//Start of user code UsageDemand-semantics
+TODO: write a semantic
+//End of user code
+
+[[usagetypedamount_classifier]]
+=== UsageTypedAmount classifier
+
+
+
+//Start of user code UsageTypedAmount-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* execTime: EInt [0:1]
+* msgSize: EInt [0:1]
+* allocatedmemory: EInt [0:1]
+* usedMemory: EInt [0:1]
+* powerPeak: EInt [0:1]
+* energy: EInt [0:1]
+
+==== Semantics
+
+//Start of user code UsageTypedAmount-semantics
+TODO: write a semantic
+//End of user code
+
+
+
+
+[[hrm_package]]
+== Hrm package
+
+=== Overview
+
+
+.hrm-class-diagram-overview
+[caption="hrm class diagram overview -- http://www.polarsys.org/time4sys/marte/hrm/1.0"]
+image::hrm-class-diagram-overview.png[]
+
+
+//Start of user code hrmoverview
+//End of user code
+
+
+
+[[cachetype_classifier]]
+=== CacheType classifier
+
+
+
+//Start of user code CacheType-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* data 
+* instruction 
+* unified 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code CacheType-semantics
+TODO: write a semantic
+//End of user code
+
+[[componentstate_classifier]]
+=== ComponentState classifier
+
+
+
+//Start of user code ComponentState-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* operating 
+* storage 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code ComponentState-semantics
+TODO: write a semantic
+//End of user code
+
+[[conditiontype_classifier]]
+=== ConditionType classifier
+
+
+
+//Start of user code ConditionType-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* temperature 
+* humidity 
+* altitude 
+* vibration 
+* shock 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code ConditionType-semantics
+TODO: write a semantic
+//End of user code
+
+[[direction_classifier]]
+=== Direction classifier
+
+
+
+//Start of user code Direction-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* in 
+* out 
+* inout 
+
+==== Semantics
+
+//Start of user code Direction-semantics
+TODO: write a semantic
+//End of user code
+
+[[envcondition_classifier]]
+=== EnvCondition classifier
+
+
+
+//Start of user code EnvCondition-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* type: ConditionType [0:1]
+* status: ComponentState [0:1]
+* description: EString [0:1]
+* range: EInt [0:1]
+
+==== Semantics
+
+//Start of user code EnvCondition-semantics
+TODO: write a semantic
+//End of user code
+
+[[firmwarearchitecture_classifier]]
+=== FirmwareArchitecture classifier
+
+
+
+//Start of user code FirmwareArchitecture-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code FirmwareArchitecture-semantics
+TODO: write a semantic
+//End of user code
+
+[[isatype_classifier]]
+=== IsaType classifier
+
+
+
+//Start of user code IsaType-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* risc 
+* cisc 
+* vliw 
+* simd 
+* mimd 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code IsaType-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareactuator_classifier]]
+=== HardwareActuator classifier
+
+
+
+//Start of user code HardwareActuator-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareActuator-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarearbiter_classifier]]
+=== HardwareArbiter classifier
+
+
+
+//Start of user code HardwareArbiter-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareArbiter-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareasic_classifier]]
+=== HardwareAsic classifier
+
+
+
+//Start of user code HardwareAsic-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareAsic-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarebranchpredictor_classifier]]
+=== HardwareBranchPredictor classifier
+
+
+
+//Start of user code HardwareBranchPredictor-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareBranchPredictor-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarebridge_classifier]]
+=== HardwareBridge classifier
+
+
+
+//Start of user code HardwareBridge-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareBridge-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarebus_classifier]]
+=== HardwareBus classifier
+
+
+
+//Start of user code HardwareBus-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* addressWidth: EInt [0:1]
+* wordWidth: EInt [0:1]
+* isSynchronous: EBoolean [0:1]
+* isSerial: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code HardwareBus-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarecache_classifier]]
+=== HardwareCache classifier
+
+
+
+//Start of user code HardwareCache-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* level: EInt [0:1]
+* type: CacheType [0:1]
+* nbSets: EInt [0:1]
+* blockSize: EInt [0:1]
+* associativity: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareCache-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarecard_classifier]]
+=== HardwareCard classifier
+
+
+
+//Start of user code HardwareCard-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomponent_classifier,HardwareComponent>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareCard-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarechannel_classifier]]
+=== HardwareChannel classifier
+
+
+
+//Start of user code HardwareChannel-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomponent_classifier,HardwareComponent>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* nbWires: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareChannel-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarechip_classifier]]
+=== HardwareChip classifier
+
+
+
+//Start of user code HardwareChip-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomponent_classifier,HardwareComponent>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* technology: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareChip-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareclock_classifier]]
+=== HardwareClock classifier
+
+
+
+//Start of user code HardwareClock-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* frequency: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareClock-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarecommunicationresource_classifier]]
+=== HardwareCommunicationResource classifier
+
+
+
+//Start of user code HardwareCommunicationResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<communicationresource_classifier,CommunicationResource>> from <<grm_package,grm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarechannel_classifier,HardwareChannel>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareCommunicationResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarecomponent_classifier]]
+=== HardwareComponent classifier
+
+
+
+//Start of user code HardwareComponent-overview
+TODO: write an overview
+//End of user code
+
+
+==== Specializations
+
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwarecard_classifier,HardwareCard>> from <<hrm_package,hrm>>
+* <<hardwarechannel_classifier,HardwareChannel>> from <<hrm_package,hrm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareport_classifier,HardwarePort>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* dimension: EInt [0:1]
+* area: EInt [0:1]
+* posX: EInt [0:1]
+* posY: EInt [0:1]
+* grid: EInt [0:1]
+* nbPins: EInt [0:1]
+* weight: EInt [0:1]
+* price: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareComponent-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarecomputingresource_classifier]]
+=== HardwareComputingResource classifier
+
+
+
+//Start of user code HardwareComputingResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<computingresource_classifier,ComputingResource>> from <<grm_package,grm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* opFrequencies: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareComputingResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareconnector_classifier]]
+=== HardwareConnector classifier
+
+
+
+//Start of user code HardwareConnector-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceconnector_classifier,ResourceConnector>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareConnector-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaredevice_classifier]]
+=== HardwareDevice classifier
+
+
+
+//Start of user code HardwareDevice-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<deviceresource_classifier,DeviceResource>> from <<grm_package,grm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareDevice-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaredma_classifier]]
+=== HardwareDma classifier
+
+
+
+//Start of user code HardwareDma-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* nbChannels: EInt [0:1]
+* transferWidth: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareDma-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaredrive_classifier]]
+=== HardwareDrive classifier
+
+
+
+//Start of user code HardwareDrive-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* sectorSize: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareDrive-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareinterface_classifier]]
+=== HardwareInterface classifier
+
+
+
+//Start of user code HardwareInterface-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceinterface_classifier,ResourceInterface>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareInterface-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareinterfacepackage_classifier]]
+=== HardwareInterfacePackage classifier
+
+
+
+//Start of user code HardwareInterfacePackage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackage_classifier,ResourcePackage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareInterfacePackage-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareio_classifier]]
+=== HardwareIo classifier
+
+
+
+//Start of user code HardwareIo-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareIo-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareipblock_classifier]]
+=== HardwareIpBlock classifier
+
+
+
+//Start of user code HardwareIpBlock-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareIpBlock-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareisa_classifier]]
+=== HardwareIsa classifier
+
+
+
+//Start of user code HardwareIsa-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* family: EString [0:1]
+* instWidth: EInt [0:1]
+* type: IsaType [0:1]
+
+==== Semantics
+
+//Start of user code HardwareIsa-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaremedia_classifier]]
+=== HardwareMedia classifier
+
+
+
+//Start of user code HardwareMedia-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareMedia-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarememory_classifier]]
+=== HardwareMemory classifier
+
+
+
+//Start of user code HardwareMemory-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<storageresource_classifier,StorageResource>> from <<grm_package,grm>>
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* memorySize: EInt [0:1]
+* addressSize: EInt [0:1]
+* timings: EInt [0:-1]
+* throughput: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareMemory-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaremmu_classifier]]
+=== HardwareMmu classifier
+
+
+
+//Start of user code HardwareMmu-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarestoragemanager_classifier,HardwareStorageManager>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* virtualAddrSpace: EInt [0:1]
+* physicalAddrSpace: EInt [0:1]
+* memoryProtection: EBoolean [0:1]
+* nbEntriesTlb: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareMmu-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarepin_classifier]]
+=== HardwarePin classifier
+
+
+
+//Start of user code HardwarePin-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<namedelement_classifier,NamedElement>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* width: EInt [0:1]
+* direction: Direction [0:1]
+
+==== Semantics
+
+//Start of user code HardwarePin-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareplatform_classifier]]
+=== HardwarePlatform classifier
+
+
+
+//Start of user code HardwarePlatform-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<hardwarecard_classifier,HardwareCard>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwarePlatform-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarepld_classifier]]
+=== HardwarePld classifier
+
+
+
+//Start of user code HardwarePld-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* pldTechnology: PldTechnology [0:1]
+* nbRows: EInt [0:1]
+* nbColumns: EInt [0:1]
+* kind: PldClass [0:1]
+* nbLuts: EInt [0:1]
+* nbLutInputs: EInt [0:1]
+* nbFlipFlops: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwarePld-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareport_classifier]]
+=== HardwarePort classifier
+
+
+
+//Start of user code HardwarePort-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceport_classifier,ResourcePort>> from <<grm_package,grm>>
+* <<hardwarecomponent_classifier,HardwareComponent>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* type: PortType [0:1]
+
+==== Semantics
+
+//Start of user code HardwarePort-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareprocessingmemory_classifier]]
+=== HardwareProcessingMemory classifier
+
+
+
+//Start of user code HardwareProcessingMemory-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+
+
+
+==== Attributes
+
+* replPolicy: ReplPolicy [0:1]
+* writePolicy: WritePolicy [0:1]
+
+==== Semantics
+
+//Start of user code HardwareProcessingMemory-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareprocessor_classifier]]
+=== HardwareProcessor classifier
+
+
+
+//Start of user code HardwareProcessor-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* architecture: EInt [0:1]
+* mips: EInt [0:1]
+* ipc: EFloat [0:1]
+* nbCores: EInt [0:1]
+* nbPipelines: EInt [0:1]
+* nbStages: EInt [0:1]
+* nbAlus: EInt [0:1]
+* nbFpus: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareProcessor-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareram_classifier]]
+=== HardwareRam classifier
+
+
+
+//Start of user code HardwareRam-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* nbRows: EInt [0:1]
+* nbColumns: EInt [0:1]
+* nbBanks: EInt [0:1]
+* wordSize: EInt [0:1]
+* isSynchronous: EBoolean [0:1]
+* isStatic: EBoolean [0:1]
+* isNonVolatile: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code HardwareRam-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareresourcepackage_classifier]]
+=== HardwareResourcePackage classifier
+
+
+
+//Start of user code HardwareResourcePackage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackage_classifier,ResourcePackage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareResourcePackage-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareresource_classifier]]
+=== HardwareResource classifier
+
+
+
+//Start of user code HardwareResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resource_classifier,Resource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<firmwarearchitecture_classifier,FirmwareArchitecture>> from <<hrm_package,hrm>>
+* <<hardwareactuator_classifier,HardwareActuator>> from <<hrm_package,hrm>>
+* <<hardwarearbiter_classifier,HardwareArbiter>> from <<hrm_package,hrm>>
+* <<hardwareasic_classifier,HardwareAsic>> from <<hrm_package,hrm>>
+* <<hardwarebranchpredictor_classifier,HardwareBranchPredictor>> from <<hrm_package,hrm>>
+* <<hardwarebridge_classifier,HardwareBridge>> from <<hrm_package,hrm>>
+* <<hardwarebus_classifier,HardwareBus>> from <<hrm_package,hrm>>
+* <<hardwarecache_classifier,HardwareCache>> from <<hrm_package,hrm>>
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwarecommunicationresource_classifier,HardwareCommunicationResource>> from <<hrm_package,hrm>>
+* <<hardwarecomputingresource_classifier,HardwareComputingResource>> from <<hrm_package,hrm>>
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+* <<hardwareipblock_classifier,HardwareIpBlock>> from <<hrm_package,hrm>>
+* <<hardwareisa_classifier,HardwareIsa>> from <<hrm_package,hrm>>
+* <<hardwaremedia_classifier,HardwareMedia>> from <<hrm_package,hrm>>
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+* <<hardwareplatform_classifier,HardwarePlatform>> from <<hrm_package,hrm>>
+* <<hardwarepld_classifier,HardwarePld>> from <<hrm_package,hrm>>
+* <<hardwareprocessingmemory_classifier,HardwareProcessingMemory>> from <<hrm_package,hrm>>
+* <<hardwareprocessor_classifier,HardwareProcessor>> from <<hrm_package,hrm>>
+* <<hardwareram_classifier,HardwareRam>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+* <<hardwaresensor_classifier,HardwareSensor>> from <<hrm_package,hrm>>
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+* <<hardwaresupport_classifier,HardwareSupport>> from <<hrm_package,hrm>>
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarerom_classifier]]
+=== HardwareRom classifier
+
+
+
+//Start of user code HardwareRom-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarestoragememory_classifier,HardwareStorageMemory>> from <<hrm_package,hrm>>
+
+
+
+
+==== Attributes
+
+* type: RomType [0:1]
+* nbRows: EInt [0:1]
+* nbColumns: EInt [0:1]
+* nbBanks: EInt [0:1]
+* wordSize: EInt [0:1]
+
+==== Semantics
+
+//Start of user code HardwareRom-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaresensor_classifier]]
+=== HardwareSensor classifier
+
+
+
+//Start of user code HardwareSensor-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareio_classifier,HardwareIo>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareSensor-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwareservice_classifier]]
+=== HardwareService classifier
+
+
+
+//Start of user code HardwareService-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceservice_classifier,ResourceService>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareService-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarestoragemanager_classifier]]
+=== HardwareStorageManager classifier
+
+
+
+//Start of user code HardwareStorageManager-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwaredma_classifier,HardwareDma>> from <<hrm_package,hrm>>
+* <<hardwaremmu_classifier,HardwareMmu>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareStorageManager-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarestoragememory_classifier]]
+=== HardwareStorageMemory classifier
+
+
+
+//Start of user code HardwareStorageMemory-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwarememory_classifier,HardwareMemory>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwaredrive_classifier,HardwareDrive>> from <<hrm_package,hrm>>
+* <<hardwarerom_classifier,HardwareRom>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareStorageMemory-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaresupport_classifier]]
+=== HardwareSupport classifier
+
+
+
+//Start of user code HardwareSupport-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaredevice_classifier,HardwareDevice>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareSupport-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaretimingresource_classifier]]
+=== HardwareTimingResource classifier
+
+
+
+//Start of user code HardwareTimingResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwareresource_classifier,HardwareResource>> from <<hrm_package,hrm>>
+* <<timingresource_classifier,TimingResource>> from <<grm_package,grm>>
+* <<hardwarechip_classifier,HardwareChip>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwareclock_classifier,HardwareClock>> from <<hrm_package,hrm>>
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareTimingResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwaretimer_classifier]]
+=== HardwareTimer classifier
+
+
+
+//Start of user code HardwareTimer-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaretimingresource_classifier,HardwareTimingResource>> from <<hrm_package,hrm>>
+
+==== Specializations
+
+* <<hardwarewatchdog_classifier,HardwareWatchdog>> from <<hrm_package,hrm>>
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareTimer-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarewatchdog_classifier]]
+=== HardwareWatchdog classifier
+
+
+
+//Start of user code HardwareWatchdog-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<hardwaretimer_classifier,HardwareTimer>> from <<hrm_package,hrm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareWatchdog-semantics
+TODO: write a semantic
+//End of user code
+
+[[hardwarewire_classifier]]
+=== HardwareWire classifier
+
+
+
+//Start of user code HardwareWire-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+
+==== Semantics
+
+//Start of user code HardwareWire-semantics
+TODO: write a semantic
+//End of user code
+
+[[pldtechnology_classifier]]
+=== PldTechnology classifier
+
+
+
+//Start of user code PldTechnology-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* sram 
+* antifuse 
+* flash 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code PldTechnology-semantics
+TODO: write a semantic
+//End of user code
+
+[[pldclass_classifier]]
+=== PldClass classifier
+
+
+
+//Start of user code PldClass-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* symetricalArray 
+* rowBased 
+* seaOfGates 
+* hierarchicalPld 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code PldClass-semantics
+TODO: write a semantic
+//End of user code
+
+[[porttype_classifier]]
+=== PortType classifier
+
+
+
+//Start of user code PortType-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* male 
+* female 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code PortType-semantics
+TODO: write a semantic
+//End of user code
+
+[[replpolicy_classifier]]
+=== ReplPolicy classifier
+
+
+
+//Start of user code ReplPolicy-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* lru 
+* nfu 
+* fifo 
+* random 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code ReplPolicy-semantics
+TODO: write a semantic
+//End of user code
+
+[[romtype_classifier]]
+=== RomType classifier
+
+
+
+//Start of user code RomType-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* maskedRom 
+* eprom 
+* otpEprom 
+* eeprom 
+* flash 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code RomType-semantics
+TODO: write a semantic
+//End of user code
+
+[[writepolicy_classifier]]
+=== WritePolicy classifier
+
+
+
+//Start of user code WritePolicy-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* writeBack 
+* writeThrough 
+* other 
+* undef 
+
+==== Semantics
+
+//Start of user code WritePolicy-semantics
+TODO: write a semantic
+//End of user code
+
+
+
+
+[[nfp_package]]
+== Nfp package
+
+=== Overview
+
+
+.nfp-class-diagram-overview
+[caption="nfp class diagram overview -- http://www.polarsys.org/time4sys/marte/nfp/1.0"]
+image::nfp-class-diagram-overview.png[]
+
+
+//Start of user code nfpoverview
+//End of user code
+
+
+
+[[duration_classifier]]
+=== Duration classifier
+
+
+
+//Start of user code Duration-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* value: EDouble [0:1]
+* unit: TimeUnitKind [0:1]
+* best: EDouble [0:1]
+* worst: EDouble [0:1]
+* clock: EString [0:1]
+* precision: EDouble [0:1]
+
+==== Semantics
+
+//Start of user code Duration-semantics
+TODO: write a semantic
+//End of user code
+
+[[timeunitkind_classifier]]
+=== TimeUnitKind classifier
+
+
+
+//Start of user code TimeUnitKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* ps 
+* ns 
+* us 
+* ms 
+* s 
+* mn 
+* h 
+* d 
+
+==== Semantics
+
+//Start of user code TimeUnitKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[timeinterval_classifier]]
+=== TimeInterval classifier
+
+
+
+//Start of user code TimeInterval-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* minOpen: EBoolean [1:1]
+* maxOpen: EBoolean [1:1]
+
+==== Semantics
+
+//Start of user code TimeInterval-semantics
+TODO: write a semantic
+//End of user code
+
+[[datasizeunitkind_classifier]]
+=== DataSizeUnitKind classifier
+
+
+
+//Start of user code DataSizeUnitKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* BYTE 
+* BIT 
+* KB 
+* MB 
+* GB 
+
+==== Semantics
+
+//Start of user code DataSizeUnitKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[datasize_classifier]]
+=== DataSize classifier
+
+
+
+//Start of user code DataSize-overview
+TODO: write an overview
+//End of user code
+
+
+
+
+
+==== Attributes
+
+* value: EDouble [0:1]
+* unit: DataSizeUnitKind [1:1]
+
+==== Semantics
+
+//Start of user code DataSize-semantics
+TODO: write a semantic
+//End of user code
+
+
+
+
+[[srm_package]]
+== Srm package
+
+=== Overview
+
+
+.srm-class-diagram-overview
+[caption="srm class diagram overview -- http://www.polarsys.org/time4sys/marte/srm/1.0"]
+image::srm-class-diagram-overview.png[]
+
+
+//Start of user code srmoverview
+//End of user code
+
+
+
+[[accesspolicykind_classifier]]
+=== AccessPolicyKind classifier
+
+
+
+//Start of user code AccessPolicyKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* Read 
+* Write 
+* ReadWrite 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code AccessPolicyKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[alarm_classifier]]
+=== Alarm classifier
+
+
+
+//Start of user code Alarm-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* isWatchdog: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code Alarm-semantics
+TODO: write a semantic
+//End of user code
+
+[[concurrentaccesprotocolkind_classifier]]
+=== ConcurrentAccesProtocolKind classifier
+
+
+
+//Start of user code ConcurrentAccesProtocolKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* PCP 
+* PIP 
+* NoPreemption 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code ConcurrentAccesProtocolKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[devicebroker_classifier]]
+=== DeviceBroker classifier
+
+
+
+//Start of user code DeviceBroker-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* accessPolicy: AccessPolicyKind [0:1]
+* isBuffered: EBoolean [0:1]
+
+==== Semantics
+
+//Start of user code DeviceBroker-semantics
+TODO: write a semantic
+//End of user code
+
+[[interruptkind_classifier]]
+=== InterruptKind classifier
+
+
+
+//Start of user code InterruptKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* HardwareInterruption 
+* ProcessorDetectedException 
+* ProgrammedException 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code InterruptKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[queuepolicykind_classifier]]
+=== QueuePolicyKind classifier
+
+
+
+//Start of user code QueuePolicyKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* FIFO 
+* LIFO 
+* Priority 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code QueuePolicyKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[interruptresource_classifier]]
+=== InterruptResource classifier
+
+
+
+//Start of user code InterruptResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+
+==== Specializations
+
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* kind: InterruptKind [1:1]
+* isMaskable: EBoolean [1:1]
+* maskElements: EString [0:-1]
+* vectorElements: EString [0:-1]
+* isrEntryPoints: EString [0:-1]
+
+==== Semantics
+
+//Start of user code InterruptResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[memorybroker_classifier]]
+=== MemoryBroker classifier
+
+
+
+//Start of user code MemoryBroker-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcebroker_classifier,ResourceBroker>> from <<grm_package,grm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* accessPolicy: AccessPolicyKind [0:1]
+* memoryBlockAddressElements: EString [0:-1]
+* memoryBlockSizeElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code MemoryBroker-semantics
+TODO: write a semantic
+//End of user code
+
+[[memorypartition_classifier]]
+=== MemoryPartition classifier
+
+
+
+//Start of user code MemoryPartition-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code MemoryPartition-semantics
+TODO: write a semantic
+//End of user code
+
+[[messagecomresource_classifier]]
+=== MessageComResource classifier
+
+
+
+//Start of user code MessageComResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* isFixedMessageSize: EBoolean [1:1]
+* messageSizeElements: EString [0:-1]
+* mechanism: MessageResourceKind [0:1]
+* messageQueuePolicy: QueuePolicyKind [0:1]
+* messageQueueCapacityElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code MessageComResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[messageresourcekind_classifier]]
+=== MessageResourceKind classifier
+
+
+
+//Start of user code MessageResourceKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* MessageQueue 
+* Pipe 
+* Blackboard 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code MessageResourceKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[mutualexclusionresourcekind_classifier]]
+=== MutualExclusionResourceKind classifier
+
+
+
+//Start of user code MutualExclusionResourceKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* BooleanSemaphore 
+* CountSemaphore 
+* Mutex 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code MutualExclusionResourceKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[notificationresource_classifier]]
+=== NotificationResource classifier
+
+
+
+//Start of user code NotificationResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* policy: OccurencePolicyKind [1:1]
+* mechanism: NotificationResourceKind [1:1]
+* occurenceCountElements: EString [0:-1]
+* maskElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code NotificationResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[notificationresourcekind_classifier]]
+=== NotificationResourceKind classifier
+
+
+
+//Start of user code NotificationResourceKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* Barrier 
+* Event 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code NotificationResourceKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[occurencepolicykind_classifier]]
+=== OccurencePolicyKind classifier
+
+
+
+//Start of user code OccurencePolicyKind-overview
+TODO: write an overview
+//End of user code
+
+==== Values
+
+* Memorized 
+* Bounded 
+* Memoryless 
+* Undef 
+* Other 
+
+==== Semantics
+
+//Start of user code OccurencePolicyKind-semantics
+TODO: write a semantic
+//End of user code
+
+[[shareddatacomresource_classifier]]
+=== SharedDataComResource classifier
+
+
+
+//Start of user code SharedDataComResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SharedDataComResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareaccessservice_classifier]]
+=== SoftwareAccessService classifier
+
+
+
+//Start of user code SoftwareAccessService-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceservice_classifier,ResourceService>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* isModifier: EBoolean [0:1]
+* accessedElement: EString [0:1]
+
+==== Semantics
+
+//Start of user code SoftwareAccessService-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwarearchitecture_classifier]]
+=== SoftwareArchitecture classifier
+
+
+
+//Start of user code SoftwareArchitecture-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareArchitecture-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwarecommunicationresource_classifier]]
+=== SoftwareCommunicationResource classifier
+
+
+
+//Start of user code SoftwareCommunicationResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<communicationmedia_classifier,CommunicationMedia>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareCommunicationResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareconcurrentresource_classifier]]
+=== SoftwareConcurrentResource classifier
+
+
+
+//Start of user code SoftwareConcurrentResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+* <<concurrencyresource_classifier,ConcurrencyResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* periodElements: EString [0:-1]
+* activationCapacity: EInt [0:1]
+* priorityElements: EString [0:-1]
+* stackSizeElements: EString [0:-1]
+* heapSizeElements: EString [0:-1]
+* entryPoints: EString [0:-1]
+* arrivalPattern: EString [0:1]
+
+==== Semantics
+
+//Start of user code SoftwareConcurrentResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareconnector_classifier]]
+=== SoftwareConnector classifier
+
+
+
+//Start of user code SoftwareConnector-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceconnector_classifier,ResourceConnector>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareConnector-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareinteractionresource_classifier]]
+=== SoftwareInteractionResource classifier
+
+
+
+//Start of user code SoftwareInteractionResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<communicationendpoint_classifier,CommunicationEndPoint>> from <<grm_package,grm>>
+* <<softwareresource_classifier,SoftwareResource>> from <<srm_package,srm>>
+
+==== Specializations
+
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* isIntraMemoryPartitionInteraction: EBoolean [1:1]
+* waitingQueuePolicy: QueuePolicyKind [0:1]
+* waitingQueueCapacity: EInt [0:1]
+* waitingPolicyElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code SoftwareInteractionResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareinterface_classifier]]
+=== SoftwareInterface classifier
+
+
+
+//Start of user code SoftwareInterface-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceinterface_classifier,ResourceInterface>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareInterface-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareinterfacepackage_classifier]]
+=== SoftwareInterfacePackage classifier
+
+
+
+//Start of user code SoftwareInterfacePackage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackage_classifier,ResourcePackage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareInterfacePackage-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwaremutualexclusionresource_classifier]]
+=== SoftwareMutualExclusionResource classifier
+
+
+
+//Start of user code SoftwareMutualExclusionResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+* <<mutualexclusionresource_classifier,MutualExclusionResource>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* concurrentAccessProtocol: ConcurrentAccesProtocolKind [0:1]
+* mechanism: MutualExclusionResourceKind [0:1]
+
+==== Semantics
+
+//Start of user code SoftwareMutualExclusionResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareport_classifier]]
+=== SoftwarePort classifier
+
+
+
+//Start of user code SoftwarePort-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceport_classifier,ResourcePort>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwarePort-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareresource_classifier]]
+=== SoftwareResource classifier
+
+
+
+//Start of user code SoftwareResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcemanager_classifier,ResourceManager>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<alarm_classifier,Alarm>> from <<srm_package,srm>>
+* <<devicebroker_classifier,DeviceBroker>> from <<srm_package,srm>>
+* <<interruptresource_classifier,InterruptResource>> from <<srm_package,srm>>
+* <<memorybroker_classifier,MemoryBroker>> from <<srm_package,srm>>
+* <<memorypartition_classifier,MemoryPartition>> from <<srm_package,srm>>
+* <<messagecomresource_classifier,MessageComResource>> from <<srm_package,srm>>
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<shareddatacomresource_classifier,SharedDataComResource>> from <<srm_package,srm>>
+* <<softwarearchitecture_classifier,SoftwareArchitecture>> from <<srm_package,srm>>
+* <<softwarecommunicationresource_classifier,SoftwareCommunicationResource>> from <<srm_package,srm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+* <<softwareschedulableresource_classifier,SoftwareSchedulableResource>> from <<srm_package,srm>>
+* <<softwaresynchronizationresource_classifier,SoftwareSynchronizationResource>> from <<srm_package,srm>>
+
+
+
+==== Attributes
+
+* memorySizeFootprint: EInt [0:1]
+* stateElements: EString [0:-1]
+* identifierElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code SoftwareResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareresourcepackage_classifier]]
+=== SoftwareResourcePackage classifier
+
+
+
+//Start of user code SoftwareResourcePackage-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourcepackage_classifier,ResourcePackage>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareResourcePackage-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareschedulableresource_classifier]]
+=== SoftwareSchedulableResource classifier
+
+
+
+//Start of user code SoftwareSchedulableResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<schedulableresource_classifier,SchedulableResource>> from <<grm_package,grm>>
+* <<softwareconcurrentresource_classifier,SoftwareConcurrentResource>> from <<srm_package,srm>>
+
+
+
+
+==== Attributes
+
+* isStaticSchedulingFeature: EBoolean [1:1]
+* isPreemptable: EBoolean [1:1]
+* deadlineElements: EString [0:-1]
+* deadlineTypeElements: EString [0:-1]
+* timeSliceElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code SoftwareSchedulableResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwarescheduler_classifier]]
+=== SoftwareScheduler classifier
+
+
+
+//Start of user code SoftwareScheduler-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<scheduler_classifier,Scheduler>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareScheduler-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwareservice_classifier]]
+=== SoftwareService classifier
+
+
+
+//Start of user code SoftwareService-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<resourceservice_classifier,ResourceService>> from <<grm_package,grm>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareService-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwaresynchronizationresource_classifier]]
+=== SoftwareSynchronizationResource classifier
+
+
+
+//Start of user code SoftwareSynchronizationResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<softwareinteractionresource_classifier,SoftwareInteractionResource>> from <<srm_package,srm>>
+* <<synchresource_classifier,SynchResource>> from <<grm_package,grm>>
+
+==== Specializations
+
+* <<notificationresource_classifier,NotificationResource>> from <<srm_package,srm>>
+* <<softwaremutualexclusionresource_classifier,SoftwareMutualExclusionResource>> from <<srm_package,srm>>
+
+
+
+
+==== Semantics
+
+//Start of user code SoftwareSynchronizationResource-semantics
+TODO: write a semantic
+//End of user code
+
+[[softwaretimerresource_classifier]]
+=== SoftwareTimerResource classifier
+
+
+
+//Start of user code SoftwareTimerResource-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<timerresource_classifier,TimerResource>> from <<grm_package,grm>>
+
+
+
+
+==== Attributes
+
+* durationElements: EString [0:-1]
+
+==== Semantics
+
+//Start of user code SoftwareTimerResource-semantics
+TODO: write a semantic
+//End of user code
+
+
+
+
+
+
+
+//Start of user code postface
+//End of user code
+

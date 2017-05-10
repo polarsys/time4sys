@@ -1,0 +1,20 @@
+<project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>Time4Sys</groupId>
+        <artifactId>org.polarsys.time4sys.releng</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <packaging>pom</packaging>
+
+ <parent>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ <relativePath>org.polarsys.time4sys.parent/pom.xml</relativePath>
+ </parent>
+
+        <modules>
+                <module>org.polarsys.time4sys.launcher</module>
+                <module>org.polarsys.time4sys.parent</module>
+                <module>org.polarsys.time4sys.product</module>
+        </modules>
+</project>

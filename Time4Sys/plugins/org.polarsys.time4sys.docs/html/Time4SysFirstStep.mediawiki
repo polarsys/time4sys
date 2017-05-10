@@ -1,0 +1,41 @@
+= Time4Sys First Steps =            
+
+== First Launch ==
+ 
+Select the workspace which is the path of the folder that will contain all the project you will work on (by default).
+ 
+[[Image:../Images/WorkspaceSelection.png]]
+
+== Access to Eclipse Help ==
+ 
+The online documentation is also embedded in Time4Sys and can be accessed on the Help Contents.
+
+[[Image:../Images/HelpContent.png]]
+
+== Sample Project Creation ==
+ 
+On the Model Explorer View, right click on New -> Other
+And select in the example the sample project that you want to import:
+ 
+[[Image:../Images/SampleModelSelection.png]]
+ 
+Open the project created on the Model Explorer view and double click on the representations.aird file. This shall open the design model diagram:
+ 
+[[Image:../Images/ImportedSampleModel.png]]
+ 
+== Project Creation ==
+
+To create a new project, you have to be on the Model Explorer View, right click -> New -> Time4Sys Project.
+ 
+[[Image:../Images/ProjectCreation.png]]
+   
+This will open a popup asking you to rename your project, once done, select finish.
+
+After that, your project is created and you can chose to edit the design or the analysis models.
+ 
+[[Image:../Images/ProjectCreation.png]]
+ 
+Open your first diagram or create a new one:
+ 
+[[Image:../Images/ActivityExplorerDesignPage.png]]
+ 

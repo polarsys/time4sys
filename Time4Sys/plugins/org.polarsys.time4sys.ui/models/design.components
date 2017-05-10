@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_GOi2wLhpEeaQLaG4Uu9sMw" documentation="Edition Context for design GenPackage">
+    <categories xmi:id="_GOi2wbhpEeaQLaG4Uu9sMw" name="design">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_GOi2wrhpEeaQLaG4Uu9sMw" name="DesignModel" views="_GOi2x7hpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_GOi2xLhpEeaQLaG4Uu9sMw" name="name" views="_GOi2yrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/design.ecore#//DesignModel/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_GOi2w7hpEeaQLaG4Uu9sMw" name="endToEndFlows" views="_GOi2ybhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/design.ecore#//DesignModel/endToEndFlows"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.polarsys.time4sys.marte/model/design.genmodel#//design"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_GOi2xbhpEeaQLaG4Uu9sMw" documentation="Views repository for design GenPackage" name="design">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_GOi2xrhpEeaQLaG4Uu9sMw" name="design">
+      <views xmi:id="_GOi2x7hpEeaQLaG4Uu9sMw" name="DesignModel">
+        <elements xsi:type="eef-views:Container" xmi:id="_GOi2yLhpEeaQLaG4Uu9sMw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_GOi2ybhpEeaQLaG4Uu9sMw" name="endToEndFlows">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_GOi2yrhpEeaQLaG4Uu9sMw" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

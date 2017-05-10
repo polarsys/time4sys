@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.Alarm.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Timers">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.Alarm">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.alarm.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.DeviceBroker.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.DeviceBroker">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.devicebroker.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.InterruptResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Routine Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.InterruptResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.interruptresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.MemoryBroker.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.MemoryBroker">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.memorybroker.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.MemoryPartition.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Concurrent Resources">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.MemoryPartition">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.memorypartition.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.MemoryPartition.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.MemoryPartition">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.memorypartition.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.MessageComResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Send/Receive Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.MessageComResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.messagecomresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.NotificationResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.NotificationResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.notificationresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+		<category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.SharedDataComResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Read/Write Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.SharedDataComResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.shareddatacomresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+      
+      	<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+    <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.SoftwareResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.SoftwareResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.softwareresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>
+      <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.SoftwareSchedulableResource.ReferencedMelodyAdvanceElements"
+            isTopLevel="true"
+            name="Referenced Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.softwareschedulableresource.ReferencedExternalElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>
+      	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.SoftwareScheduler.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Scheduled Resources">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.SoftwareScheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.softwarescheduler.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory"> <category
+            id="org.polarsys.time4sys.srm.contextual.explorer.queries.SoftwareTimerResource.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Alarms">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.srm.SoftwareTimerResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.srm.contextual.explorer.queries.softwaretimerresource.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.analysis/src" editDirectory="/org.polarsys.time4sys.analysis.edit/src"
+    editorDirectory="/org.polarsys.time4sys.analysis.editor/src" modelPluginID="org.polarsys.time4sys.analysis"
+    modelName="Analysis" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.polarsys.time4sys.analysis.edit" editorPluginID="org.polarsys.time4sys.analysis.editor"
+    usedGenPackages="nfp.genmodel#//nfp ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>analysis.ecore</foreignModel>
+  <genPackages prefix="Analysis" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="analysis.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="analysis.ecore#//InputJoinBehaviorKind">
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//InputJoinBehaviorKind/Merge"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//InputJoinBehaviorKind/Join"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="analysis.ecore#//SchedulerPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/NoContention"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/FixedPriority"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/EDF"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/TDMA"/>
+      <genEnumLiterals ecoreEnumLiteral="analysis.ecore#//SchedulerPolicyKind/RoundRobin"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="analysis.ecore#//NFP_Duration"/>
+    <genDataTypes ecoreDataType="analysis.ecore#//NFP_TimeInterval"/>
+    <genClasses ecoreClass="analysis.ecore#//AnalyzedSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/schedulableElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/schedulers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/resources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/constraintContainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/stimuli"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/delays"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/protectionProtocols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/mutexes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//AnalyzedSystem/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/resultContainers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//AnalyzedSystem/mappings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//AnalyzedSystem/timeUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Communication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Communication/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//CommunicationResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//CommunicationResource/links"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//CommunicationResource/communicationsAffectedOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//CommunicationResource/protocolName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//CommunicationResource/bandwidth"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ComputingResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//ComputingResource/tasksAffectedOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//ComputingResource/linkedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ConstraintContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//ConstraintContainer/constraints"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//ConstraintContainer/analyzedSystem"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Delay">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Delay/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Delay/referencedEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Delay/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//EventModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//EventModel/offsets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//EventModel/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//EventModel/jitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//EventModel/dmin"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//EventModel/parent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//EventModel/isSporadic"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//EventModelContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//EventModelContainer/eventModel"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Fragment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Fragment/next"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Fragment/previous"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Fragment/task"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Fragment/CET"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//InputPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//InputPort/receiveFrom"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//InputStimulus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//InputStimulus/outputPorts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//Mapping">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Mapping/system"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//MemoryResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//MemoryResource/size"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//MutualExclusionResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//MutualExclusionResource/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//MutualExclusionResource/protectionParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//MutualExclusionResource/protectedBy"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//MutualExclusionResource/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Offset">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Offset/eventModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Offset/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Offset/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//OutputPort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//OutputPort/sendTo"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//OutputStimulus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//OutputStimulus/inputPorts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//Port">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Port/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//PortContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//PortContainer/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//PortContainer/behaviorKind"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ProtectionParameterValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//ProtectionParameterValue/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//ProtectionParameterValue/type"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ProtectionProtocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//ProtectionProtocol/protocolName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//ProtectionProtocol/mutexes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//ProtectionProtocol/requiredParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//ProtectionProtocol/resourceParameterValue"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//ProtectionProtocol/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//RequiredProtectionParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//RequiredProtectionParameter/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//RequiredSchedulingParameter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//RequiredSchedulingParameter/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//Resource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Resource/scheduler"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Resource/parent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Resource/speedFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Resource/delay"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ResourceSchedulingParameterValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//ResourceSchedulingParameterValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ResultContainer">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//ResultContainer/analyzedSystem"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//SchedulableElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//SchedulableElement/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//SchedulableElement/scheduledBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//SchedulableElement/CET"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//SchedulableElement/schedulingParameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//SchedulableElement/originalName"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//SchedulerParameterValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//SchedulerParameterValue/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//SchedulerParameterValue/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//SchedulerParameterValue/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Scheduler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Scheduler/policyKind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Scheduler/scheduledElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Scheduler/usedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//Scheduler/requiredParameters"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Scheduler/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//Scheduler/resourceParameterValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Scheduler/preferredPolicy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//Stimulus">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference analysis.ecore#//Stimulus/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="analysis.ecore#//SynchronizableElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//SynchronizableElement/lockedMutexes"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Task">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Task/mappedTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference analysis.ecore#//Task/fragments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference analysis.ecore#//Task/first"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Task/blockingTime"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//ResourceProtectionParameterValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//ResourceProtectionParameterValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//TwcaEventModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//TwcaEventModel/deltamin_func"/>
+    </genClasses>
+    <genClasses ecoreClass="analysis.ecore#//Time4SysElement">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute analysis.ecore#//Time4SysElement/Id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

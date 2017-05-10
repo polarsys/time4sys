@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:common.new.menu">
+         <command
+               commandId="org.polarsys.time4sys.Time4SysProject"
+               icon="icons/NewTime4SysModel.png"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:common.new.menu">
+         <command
+               commandId="org.polarsys.time4sys.ui.createRepresentation"
+               label="Create Time4Sys representation"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <and>
+                  <iterate>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="time4sys">
+                        </test>
+                     </adapt></iterate>
+                  <count
+                        value="1">
+                  </count>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.polarsys.time4sys.ui.commands.NewTime4SysProject"
+            id="org.polarsys.time4sys.Time4SysProject"
+            name="Time4Sys Project">
+      </command>
+      <command
+            defaultHandler="org.polarsys.time4sys.ui.commands.CreateRepresentationHandler"
+            id="org.polarsys.time4sys.ui.createRepresentation"
+            name="Create Time4Sys Representation">
+      </command>
+   </extension>
+
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <wizard
+           category="org.polarsys.time4sys.design.category"
+           class="org.polarsys.time4sys.ui.wizards.model.NewModelWizard"
+           finalPerspective="org.polarsys.time4sys.ui.perspective"
+           icon="icons/NewTime4SysModel.png"
+           id="org.polarsys.time4sys.ui.wizard.newTime4SysModel"
+           name="Time4Sys Model"
+           preferredPerspectives="org.polarsys.time4sys.ui.perspective"
+           project="false">
+     </wizard>
+     <category
+           id="org.polarsys.time4sys.design.category"
+           name="Time4Sys Designer">
+     </category>
+     <wizard
+           category="org.polarsys.time4sys.design.category"
+           class="org.polarsys.time4sys.ui.wizards.project.Time4SysProjectWizard"
+           finalPerspective="org.polarsys.time4sys.ui.perspective"
+           icon="icons/NewTime4SysModel.png"
+           id="org.polarsys.time4sys.ui.wizard.newProject"
+           name="Time4Sys Project"
+           preferredPerspectives="org.polarsys.time4sys.ui.perspective"
+           project="true">
+     </wizard>
+  </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+         <handler
+               class="org.polarsys.time4sys.ui.commands.NewTime4SysProject"
+               commandId="org.polarsys.time4sys.ui.actions.newT4SProject">
+         </handler>
+         <handler
+               class="org.polarsys.time4sys.ui.commands.NewTime4SysModel"
+               commandId="org.polarsys.time4sys.ui.actions.newT4SModel">
+         </handler>
+   </extension>
+    <extension
+          point="org.eclipse.ui.perspectiveExtensions">
+       <perspectiveExtension
+             targetID="org.eclipse.sirius.ui.tools.perspective.modeling">
+          <newWizardShortcut
+                id="org.polarsys.time4sys.ui.wizard.newTime4SysProject">
+          </newWizardShortcut>
+          <newWizardShortcut
+                id="org.polarsys.time4sys.ui.wizard.newTime4SysModel">
+          </newWizardShortcut>
+       </perspectiveExtension>
+    </extension>
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/analysis/1.0"
+            class="org.polarsys.time4sys.ui.analysis.providers.AnalysisEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.analysis.providers.AnalysisPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/design/1.0"
+            class="org.polarsys.time4sys.ui.design.providers.DesignEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.design.providers.DesignPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/gqam/1.0"
+            class="org.polarsys.time4sys.ui.gqam.providers.GqamEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.gqam.providers.GqamPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/grm/1.0"
+            class="org.polarsys.time4sys.ui.grm.providers.GrmEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.grm.providers.GrmPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/hrm/1.0"
+            class="org.polarsys.time4sys.ui.hrm.providers.HrmEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.hrm.providers.HrmPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/library/1.0"
+            class="org.polarsys.time4sys.ui.library.providers.LibraryEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.library.providers.LibraryPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/nfp/1.0"
+            class="org.polarsys.time4sys.ui.nfp.providers.NfpEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.nfp.providers.NfpPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/srm/1.0"
+            class="org.polarsys.time4sys.ui.srm.providers.SrmEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.srm.providers.SrmPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.eclipse.sirius.diagram.ui"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+
+   
+</plugin>

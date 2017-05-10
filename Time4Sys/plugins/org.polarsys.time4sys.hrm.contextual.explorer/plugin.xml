@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.FirmwareArchitecture.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.FirmwareArchitecture">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.firmwarearchitecture.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareArbiter.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Controlled Media">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareArbiter">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarearbiter.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareBridge.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Sides">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareBridge">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarebridge.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareBridge.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareBridge">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarebridge.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareBus.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Element">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareBus">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarebus.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareDma.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Drived By">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareDma">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaredma.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareMedia.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Arbiters">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareMedia">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaremedia.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareMedia.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Elements">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareMedia">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaremedia.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareMmu.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Translation Lookaside Buffers">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareMmu">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaremmu.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwarePld.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced Hardware elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwarePld">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarepld.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwarePort.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Realized By">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwarePort">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwareport.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareProcessor.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced Hardware elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareProcessor">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwareprocessor.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+     <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareStorageManager.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Managed Memories">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareStorageManager">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarestoragemanager.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareTimer.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Input Clock">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareTimer">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaretimer.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.hrm.contextual.explorer.queries.HardwareWire.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Source/Target Pins">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.hrm.HardwareWire">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarewire.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+</plugin>

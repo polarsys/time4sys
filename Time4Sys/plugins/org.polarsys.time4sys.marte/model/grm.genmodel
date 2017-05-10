@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.grm/src" editDirectory="/org.polarsys.time4sys.marte.grm.edit/src"
+    editorDirectory="/org.polarsys.time4sys.marte.grm.editor/src" modelPluginID="org.polarsys.time4sys.marte.grm"
+    modelName="Grm" modelPluginClass="org.polarsys.time4sys.marte.grm.GrmPlugin" editPluginClass="org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin"
+    editorPluginClass="org.polarsys.time4sys.marte.grm.presentation.GrmEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.marte.grm.tests.GrmAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    providerRootExtendsClass="" editPluginID="org.polarsys.time4sys.marte.grm.edit"
+    classNamePattern="" operationReflection="true" importOrganizing="true">
+  <foreignModel>grm.ecore</foreignModel>
+  <genPackages prefix="Grm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="grm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="grm.ecore#//ProtectProtocolKind">
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/NoPreemption"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/PriorityCeiling"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/PriorityInheritance"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/StackBased"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//ProtectProtocolKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="grm.ecore#//SchedPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/EarliestDeadlineFirst"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/FixedPriority"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/LeastLaxityFirst"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/RoundRobin"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/TimeTableDriven"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//SchedPolicyKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="grm.ecore#//TransmModeKind">
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//TransmModeKind/simplex"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//TransmModeKind/half_duplex"/>
+      <genEnumLiterals ecoreEnumLiteral="grm.ecore#//TransmModeKind/full_duplex"/>
+    </genEnums>
+    <genClasses ecoreClass="grm.ecore#//AccessControlPolicy"/>
+    <genClasses ecoreClass="grm.ecore#//ClockResource"/>
+    <genClasses image="false" ecoreClass="grm.ecore#//CommunicationEndPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationEndPoint/packetSize"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//CommunicationMedia">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationMedia/elementSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationMedia/capacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationMedia/packetTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationMedia/blockingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//CommunicationMedia/transmMode"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ComputingResource"/>
+    <genClasses ecoreClass="grm.ecore#//ConcurrencyResource"/>
+    <genClasses image="false" ecoreClass="grm.ecore#//CommunicationResource"/>
+    <genClasses ecoreClass="grm.ecore#//DeviceResource"/>
+    <genClasses ecoreClass="grm.ecore#//DynamicUsage"/>
+    <genClasses ecoreClass="grm.ecore#//MutualExclusionProtocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//MutualExclusionProtocol/protocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//MutualExclusionProtocol/otherProtocol"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//MutualExclusionResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/scheduler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/protocol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/protectParams"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grm.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grm.ecore#//ProcessingResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//ProcessingResource/speedFactor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ProcessingResource/mainScheduler"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ProtectionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//ProtectionParameter/priorityCeiling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//ProtectionParameter/preemptionLevel"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grm.ecore#//Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/ownedResource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//Resource/resMult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//Resource/isProtected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//Resource/isActive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/pServices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/ownedPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/ownedConnector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/rServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//Resource/usedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceBroker">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceBroker/brokedResource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceBroker/accCtrlPolicy"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceConnector/sourcePort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceConnector/targetPort"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceControlPolicy"/>
+    <genClasses ecoreClass="grm.ecore#//ResourceInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceInstance/type"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference grm.ecore#//ResourceInstance/port"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceInterface">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceInterface/ownedService"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceManager">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceManager/managedResource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceManager/resCtrlPolicy"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourcePackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//ResourcePackage/ownedElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grm.ecore#//ResourcePackageableElement"/>
+    <genClasses ecoreClass="grm.ecore#//ResourcePort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourcePort/pInterface"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourcePort/rInterface"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//ResourceService"/>
+    <genClasses ecoreClass="grm.ecore#//ResourceUsage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceUsage/workload"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceUsage/requiredAmount"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//ResourceUsage/usedResource"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//Scheduler">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//Scheduler/host"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//Scheduler/processingUnits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//Scheduler/schedulableResource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//Scheduler/policy"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//SchedulableResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//SchedulableResource/dependentScheduler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//SchedulableResource/host"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//SchedulableResource/schedParams"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//SchedulingParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//SchedulingParameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//SchedulingPolicy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//SchedulingPolicy/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//SchedulingPolicy/otherSchedPolicy"/>
+      <genOperations ecoreOperation="grm.ecore#//SchedulingPolicy/hasValidPolicy">
+        <genParameters ecoreParameter="grm.ecore#//SchedulingPolicy/hasValidPolicy/diagnostics"/>
+        <genParameters ecoreParameter="grm.ecore#//SchedulingPolicy/hasValidPolicy/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//SecondaryScheduler">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//SecondaryScheduler/virtualProcessingUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//StaticUsage"/>
+    <genClasses ecoreClass="grm.ecore#//StorageResource"/>
+    <genClasses ecoreClass="grm.ecore#//SynchResource"/>
+    <genClasses image="false" ecoreClass="grm.ecore#//TimingResource"/>
+    <genClasses ecoreClass="grm.ecore#//TimerResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//TimerResource/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//TimerResource/isPeriodic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//TimerResource/start"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//TimerResource/set"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//TimerResource/get"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//TimerResource/reset"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//TimerResource/pause"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//UsageDemand">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//UsageDemand/usage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageDemand/event"/>
+    </genClasses>
+    <genClasses ecoreClass="grm.ecore#//UsageTypedAmount">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/execTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/msgSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/allocatedmemory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/usedMemory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/powerPeak"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/energy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="grm.ecore#//Time4SysElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//Time4SysElement/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

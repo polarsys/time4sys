@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.library/src" editDirectory="/org.polarsys.time4sys.library.edit/src"
+    editorDirectory="/org.polarsys.time4sys.library.editor/src" modelPluginID="org.polarsys.time4sys.library"
+    modelName="Library" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.polarsys.time4sys.library.edit" editorPluginID="org.polarsys.time4sys.library.editor"
+    usedGenPackages="gqam.genmodel#//gqam grm.genmodel#//grm hrm.genmodel#//hrm" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>library.ecore</foreignModel>
+  <genPackages prefix="Library" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="library.ecore#/">
+    <genClasses ecoreClass="library.ecore#//TDMA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute library.ecore#//TDMA/slot"/>
+    </genClasses>
+    <genClasses ecoreClass="library.ecore#//DeadlineMonotonicSchedulingPolicy"/>
+    <genClasses ecoreClass="library.ecore#//RateMonotonicSchedulingPolicy"/>
+    <genClasses ecoreClass="library.ecore#//HardwareCANBus"/>
+  </genPackages>
+</genmodel:GenModel>

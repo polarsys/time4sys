@@ -1,0 +1,11 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/DeadlineMonotonicSchedulingPolicy.gif - org.polarsys.time4sys.library.edit - org.polarsys.time4sys.library.edit/icons/full/obj16/DeadlineMonotonicSchedulingPolicy.gif
+icons/full/obj16/HardwareCANBus.gif - org.polarsys.time4sys.library.edit - org.polarsys.time4sys.library.edit/icons/full/obj16/HardwareCANBus.gif
+icons/full/obj16/RateMonotonicSchedulingPloicy.gif - org.polarsys.time4sys.library.edit - org.polarsys.time4sys.library.edit/icons/full/obj16/RateMonotonicSchedulingPloicy.gif
+icons/full/obj16/RateMonotonicSchedulingPolicy.gif - org.polarsys.time4sys.library.edit - org.polarsys.time4sys.library.edit/icons/full/obj16/RateMonotonicSchedulingPolicy.gif
+icons/full/obj16/TDMA.gif - org.polarsys.time4sys.library.edit - org.polarsys.time4sys.library.edit/icons/full/obj16/TDMA.gif

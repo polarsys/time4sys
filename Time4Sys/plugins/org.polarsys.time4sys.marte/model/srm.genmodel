@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.srm/src" editDirectory="/org.polarsys.time4sys.marte.srm.edit/src"
+    modelPluginID="org.polarsys.time4sys.marte.srm" modelName="Srm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.polarsys.time4sys.marte.srm.edit" editorPluginID="org.polarsys.time4sys.marte.srm.editor"
+    usedGenPackages="grm.genmodel#//grm" operationReflection="true" importOrganizing="true">
+  <foreignModel>srm.ecore</foreignModel>
+  <genPackages prefix="Srm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="srm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//AccessPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//AccessPolicyKind/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//AccessPolicyKind/Write"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//AccessPolicyKind/ReadWrite"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//AccessPolicyKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//AccessPolicyKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//ConcurrentAccesProtocolKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//ConcurrentAccesProtocolKind/PCP"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//ConcurrentAccesProtocolKind/PIP"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//ConcurrentAccesProtocolKind/NoPreemption"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//ConcurrentAccesProtocolKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//ConcurrentAccesProtocolKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//InterruptKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//InterruptKind/HardwareInterruption"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//InterruptKind/ProcessorDetectedException"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//InterruptKind/ProgrammedException"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//InterruptKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//InterruptKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//QueuePolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//QueuePolicyKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//QueuePolicyKind/LIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//QueuePolicyKind/Priority"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//QueuePolicyKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//QueuePolicyKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//MessageResourceKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MessageResourceKind/MessageQueue"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MessageResourceKind/Pipe"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MessageResourceKind/Blackboard"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MessageResourceKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MessageResourceKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//MutualExclusionResourceKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MutualExclusionResourceKind/BooleanSemaphore"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MutualExclusionResourceKind/CountSemaphore"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MutualExclusionResourceKind/Mutex"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MutualExclusionResourceKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//MutualExclusionResourceKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//NotificationResourceKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//NotificationResourceKind/Barrier"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//NotificationResourceKind/Event"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//NotificationResourceKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//NotificationResourceKind/Other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="srm.ecore#//OccurencePolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//OccurencePolicyKind/Memorized"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//OccurencePolicyKind/Bounded"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//OccurencePolicyKind/Memoryless"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//OccurencePolicyKind/Undef"/>
+      <genEnumLiterals ecoreEnumLiteral="srm.ecore#//OccurencePolicyKind/Other"/>
+    </genEnums>
+    <genClasses ecoreClass="srm.ecore#//Alarm">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//Alarm/timers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//Alarm/isWatchdog"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//DeviceBroker">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/devices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//DeviceBroker/accessPolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//DeviceBroker/isBuffered"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/closeServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/openServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/controlServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/readServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//DeviceBroker/writeServices"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//InterruptResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//InterruptResource/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//InterruptResource/isMaskable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//InterruptResource/routineConnectServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//InterruptResource/routineDisconnectServices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//InterruptResource/maskElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//InterruptResource/vectorElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//InterruptResource/isrEntryPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//MemoryBroker">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryBroker/lockServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryBroker/unlockServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryBroker/mapServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryBroker/unmapServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryBroker/memories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MemoryBroker/accessPolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MemoryBroker/memoryBlockAddressElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MemoryBroker/memoryBlockSizeElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//MemoryPartition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryPartition/concurrentResources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryPartition/forkServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryPartition/exitServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MemoryPartition/memorySpaces"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//MessageComResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MessageComResource/sendServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//MessageComResource/receiveServices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MessageComResource/isFixedMessageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MessageComResource/messageSizeElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MessageComResource/mechanism"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MessageComResource/messageQueuePolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//MessageComResource/messageQueueCapacityElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//NotificationResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//NotificationResource/flushServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//NotificationResource/signalServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//NotificationResource/waitServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//NotificationResource/clearServices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//NotificationResource/policy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//NotificationResource/mechanism"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//NotificationResource/occurenceCountElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//NotificationResource/maskElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SharedDataComResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SharedDataComResource/readServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SharedDataComResource/writeServices"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareAccessService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareAccessService/isModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareAccessService/accessedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareArchitecture"/>
+    <genClasses image="false" ecoreClass="srm.ecore#//SoftwareCommunicationResource"/>
+    <genClasses image="false" ecoreClass="srm.ecore#//SoftwareConcurrentResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/activateServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/resumeServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/suspendServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/enableConcurrencyServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/disableConcurrencyServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/terminateServices"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/adressSpace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/periodElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/activationCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/priorityElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/stackSizeElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/heapSizeElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/sharedDataResources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/messageResources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/mutualExclusionResources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareConcurrentResource/notificationResources"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/entryPoints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareConcurrentResource/arrivalPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareConnector"/>
+    <genClasses image="false" ecoreClass="srm.ecore#//SoftwareInteractionResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareInteractionResource/isIntraMemoryPartitionInteraction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareInteractionResource/waitingQueuePolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareInteractionResource/waitingQueueCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareInteractionResource/waitingPolicyElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareInterface"/>
+    <genClasses ecoreClass="srm.ecore#//SoftwareInterfacePackage"/>
+    <genClasses ecoreClass="srm.ecore#//SoftwareMutualExclusionResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareMutualExclusionResource/concurrentAccessProtocol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareMutualExclusionResource/mechanism"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareMutualExclusionResource/acquireServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareMutualExclusionResource/releaseServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareMutualExclusionResource/accessTokenElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwarePort"/>
+    <genClasses ecoreClass="srm.ecore#//SoftwareResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareResource/createServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareResource/deleteServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareResource/initializeServices"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareResource/memorySizeFootprint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareResource/stateElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareResource/identifierElements"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareResourcePackage"/>
+    <genClasses ecoreClass="srm.ecore#//SoftwareSchedulableResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareSchedulableResource/isStaticSchedulingFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareSchedulableResource/isPreemptable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareSchedulableResource/deadlineElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareSchedulableResource/deadlineTypeElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareSchedulableResource/timeSliceElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareSchedulableResource/joinServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareSchedulableResource/yieldServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareSchedulableResource/delayServices"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareSchedulableResource/scheduler"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareScheduler">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference srm.ecore#//SoftwareScheduler/scheduledResource"/>
+    </genClasses>
+    <genClasses ecoreClass="srm.ecore#//SoftwareService"/>
+    <genClasses image="false" ecoreClass="srm.ecore#//SoftwareSynchronizationResource"/>
+    <genClasses ecoreClass="srm.ecore#//SoftwareTimerResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute srm.ecore#//SoftwareTimerResource/durationElements"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

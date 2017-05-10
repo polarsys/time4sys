@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.plugins</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>  
+
+  <parent>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ <relativePath>../releng/org.polarsys.time4sys.parent/pom.xml</relativePath>
+ </parent>
+ 
+<modules>
+<module>org.polarsys.time4sys.activity.explorer</module>
+<module>org.polarsys.time4sys.analysis</module>
+<module>org.polarsys.time4sys.analysis.contextual.explorer</module>
+<module>org.polarsys.time4sys.analysis.edit</module>
+<module>org.polarsys.time4sys.analysis.editor</module>
+<module>org.polarsys.time4sys.common</module>
+<module>org.polarsys.time4sys.constraints.model</module>
+<module>org.polarsys.time4sys.constraints.model.edit</module>
+<module>org.polarsys.time4sys.constraints.model.editor</module>
+<module>org.polarsys.time4sys.design</module>
+<module>org.polarsys.time4sys.design.contextual.explorer</module>
+<module>org.polarsys.time4sys.design.edit</module>
+<module>org.polarsys.time4sys.design.editor</module>
+<module>org.polarsys.time4sys.docs</module>
+<module>org.polarsys.time4sys.example.ui</module>
+<module>org.polarsys.time4sys.gqam.contextual.explorer</module>
+<module>org.polarsys.time4sys.grm.contextual.explorer</module>
+<module>org.polarsys.time4sys.hrm.contextual.explorer</module>
+<module>org.polarsys.time4sys.library</module>
+<module>org.polarsys.time4sys.library.edit</module>
+<module>org.polarsys.time4sys.library.editor</module>
+<module>org.polarsys.time4sys.mapping</module>
+<module>org.polarsys.time4sys.mapping.edit</module>
+<module>org.polarsys.time4sys.mapping.editor</module>
+<module>org.polarsys.time4sys.marte</module>
+<module>org.polarsys.time4sys.marte.gqam</module>
+<module>org.polarsys.time4sys.marte.gqam.edit</module>
+<module>org.polarsys.time4sys.marte.gqam.editor</module>
+<module>org.polarsys.time4sys.marte.grm</module>
+<module>org.polarsys.time4sys.marte.grm.edit</module>
+<module>org.polarsys.time4sys.marte.grm.editor</module>
+<module>org.polarsys.time4sys.marte.hrm</module>
+<module>org.polarsys.time4sys.marte.hrm.edit</module>
+<module>org.polarsys.time4sys.marte.hrm.editor</module>
+<module>org.polarsys.time4sys.marte.nfp</module>
+<module>org.polarsys.time4sys.marte.nfp.edit</module>
+<module>org.polarsys.time4sys.marte.nfp.editor</module>
+<module>org.polarsys.time4sys.marte.srm</module>
+<module>org.polarsys.time4sys.marte.srm.edit</module>
+<module>org.polarsys.time4sys.marte.srm.editor</module>
+<module>org.polarsys.time4sys.model</module>
+<module>org.polarsys.time4sys.model.edit</module>
+<module>org.polarsys.time4sys.model.editor</module>
+<module>org.polarsys.time4sys.odesign</module>
+<module>org.polarsys.time4sys.srm.contextual.explorer</module>
+<module>org.polarsys.time4sys.trace</module>
+<module>org.polarsys.time4sys.trace.edit</module>
+<module>org.polarsys.time4sys.trace.editor</module>
+<module>org.polarsys.time4sys.ui</module>
+<module>org.polarsys.time4sys.ui.perspective</module>
+</modules>
+</project>

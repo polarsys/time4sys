@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<h1 id="Time4Sys_User_Interface">Time4Sys User Interface</h1>
+		<h2 id="Perspective">Perspective</h2>
+		<p>Time4Sys default perspective is composed of the 5 following views:</p>
+		<ul>
+			<li>Model Explorer </li>
+			<li>Outline</li>
+			<li>Editor: Activity Explorer or Diagrams</li>
+			<li>Properties</li>
+			<li>Contextual Explorer</li>
+		</ul>
+		<p>
+			<img border="0" src="../Images/Time4SysPerspective.png"/>
+		</p>
+		<h2 id="Activity_Explorer">Activity Explorer</h2>
+		<p>Activity Explorer is composed of three pages, the process map, the Design page and the Analysis page.</p>
+		<p>Process map reference the two other pages and describes what they shall be used to. It allows to navigate between opened project (every other project which uses the activity explorer, e.g  Capella project).</p>
+		<p>
+			<img border="0" src="../Images/ProcessMap.png"/>
+		</p>
+		<p>Design and Analysis pages are both divided into the section and activity list and the diagram viewer.
+			Section and Activity list (on the left in the picture below) provide tools to open new diagrams or perform action and transformation.
+			Diagram Viewers display all existing diagrams corresponding to the selected page (Design or Analysis) and allow to navigate on them.</p>
+		<p>
+			<img border="0" src="../Images/DesignPage.png"/>
+		</p>
+		<h2 id="Diagrams">Diagrams</h2>
+		<p>Time4Sys is composed of three kind of diagrams. Those diagrams does not represents the same information but they work the same way. </p>
+		<p>Time4Sys diagrams are based on Sirius so more information can be found on: 
+			<a href="https://www.eclipse.org/sirius/doc/user/diagrams/Diagrams.html">https://www.eclipse.org/sirius/doc/user/diagrams/Diagrams.html</a>
+		</p>
+		<h3 id="Palette">Palette</h3>
+		<p>The palette is used to select the tools to apply on the diagram. Palette tools are mostly creation tools. </p>
+		<p>
+			<img border="0" src="../Images/Palette.png"/>
+		</p>
+		<p>Once the tool is selected, it can be apply on the diagram.</p>
+		<table border="1">
+			<tr>
+				<td>
+					<p>
+						<img height="45" width="45" border="0" src="../Images/Warning.png"/>
+					</p>
+				</td>
+				<td>
+					<p>The tool action is linked to the selected element on the diagram. Hence, some tool might be disable on the diagram because they requires to be applied on an element of this diagram.  </p>
+				</td>
+			</tr>
+		</table>
+		<h3 id="Synchronized_.2F_Unsynchronized_mode">Synchronized / Unsynchronized mode</h3>
+		<p>Diagrams can be synchronize or unsynchronized.
+			In unsynchronized mode, elements created are not automatically added to the diagram. In this mode, new tools are available on the palette to Insert/Remove elements from the diagrams.</p>
+		<h2 id="Model_Explorer">Model Explorer</h2>
+		<p>
+			<img border="0" src="../Images/ModelExplorer.png"/>
+		</p>
+		<p>Model Explorer presents the model as a tree view. Model Explorer can be linked with the diagram using 
+			<img border="0" src="../Images/Link.png"/>.
+		</p>
+		<h2 id="Contextual_Explorer">Contextual Explorer</h2>
+		<p>Contextual Explorer allows to visualize elements referencing or referenced by the focused element. It allows to visualize which diagrams or tables reference this elements. It is possible to visualize the element in the open editor (right click on the element to visualize and select "open in editor").</p>
+		<p>
+			<img border="0" src="../Images/ContextualExplorer.png"/>
+		</p>
+		<p>Navigation within the contextual explorer is possible, using double click.</p>
+		<p>Contextual Explorer can be linked to the current selection using 
+			<img border="0" src="../Images/Link.png"/>.
+		</p>
+		<h2 id="Properties_View">Properties View</h2>
+		<p>Properties View allows to visualize and edit the properties of the focused element.</p>
+		<p>
+			<img border="0" src="../Images/PropertiesView.png"/>
+		</p>
+		<h2 id="Edition_Wizard">Edition Wizard</h2>
+		<p>Edition Wizard is the equivalent of the Properties View. Properties are divide in three section on this wizard, the "General", the "Timing" and the "Other". </p>
+		<p>
+			<img border="0" src="../Images/EditionWizard.png"/>
+		</p>
+	</body>
+</html>

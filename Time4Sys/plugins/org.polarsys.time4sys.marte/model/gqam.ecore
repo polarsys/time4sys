@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gqam" nsURI="http://www.polarsys.org/time4sys/marte/gqam/1.0"
+    nsPrefix="gqam">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Same as the UML 2.5 Pin with isControl=true."/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="AcquireStep" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acqRes" eType="ecore:EClass grm.ecore#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrivalPattern" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//WorkloadEvent"
+        eOpposite="#//WorkloadEvent/pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jitter" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Reference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="grm.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
+        eType="#//Step" containment="true" eOpposite="#//Step/scenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cause" upperBound="-1"
+        eType="#//WorkloadEvent" eOpposite="#//WorkloadEvent/effect"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//Step"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentStep" eType="#//Step"
+        eOpposite="#//Step/childScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+        eType="#//PrecedenceRelation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="respTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bestCET" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worstCET" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BurstPattern" eSuperTypes="#//ArrivalPattern">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It describes a bursty interarrival pattern with a number of events that can occur in a bounded period."/>
+    </eAnnotations>
+    <eOperations name="setOuterPeriod">
+      <eParameters name="value" lowerBound="1" eType="#//NFP_Duration"/>
+    </eOperations>
+    <eOperations name="setInnerPeriod">
+      <eParameters name="value" lowerBound="1" eType="#//NFP_Duration"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInterarrival" lowerBound="1"
+        eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The minimum interarrival duration between two successive occurrences of a burst."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInterarrival" eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum interarrival duration between two successive occurrences of a burst."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minEventInterval" lowerBound="1"
+        eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The minimum interval between two event occurrences within a burst."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxEventInterval" eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The maximum interval between two event occurrences within a burst."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="burstSize" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The number of event occurrences within a burst."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClosedPattern" eSuperTypes="#//ArrivalPattern">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is a TupleType that contains the parameters that are necessary to specify a closed pattern. It is characterized by a&#xA;fixed number of active or potential users or jobs that cycle between executing the scenario, and spending an external&#xA;delay period (sometimes called “think time”) outside the system, between the end of one response and the next request."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="population" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The size of the workload (number of system users)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extDelay" lowerBound="1"
+        eType="#//NFP_Duration" defaultValueLiteral="0">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The delay between the end of one response and the start of the next for each member of the population of system&#xA;users."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationStep" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comRes" eType="ecore:EClass grm.ecore#//CommunicationResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectorKind">
+    <eLiterals name="Sequence"/>
+    <eLiterals name="Branch" value="1"/>
+    <eLiterals name="Merge" value="2"/>
+    <eLiterals name="Fork" value="3"/>
+    <eLiterals name="Join" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EndToEndFlow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Deprecated.&#xA;&#xA;This shall be moved to the SAM Marte Package."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndStimuli" upperBound="-1"
+        eType="#//WorkloadEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndScenario" lowerBound="1"
+        eType="#//BehaviorScenario"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSchedulable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="schedulabilitySlack" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endToEndTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endToEndDeadline" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicPattern" eSuperTypes="#//ArrivalPattern">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It describes periodic interarrival patterns, with an optional maximal deviation (jitter)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="#//NFP_Duration"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurences" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrecedenceRelation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is to be deprecated by ports usage."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predec" upperBound="-1"
+        eType="#//Step" eOpposite="#//Step/outputRel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="succes" upperBound="-1"
+        eType="#//Step" eOpposite="#//Step/inputRel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorKind" eType="#//ConnectorKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReleaseStep" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relRes" eType="ecore:EClass grm.ecore#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequestedService" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SlidingWindowPattern" eSuperTypes="#//ArrivalPattern">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowSize" lowerBound="1"
+        eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEvents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SporadicPattern" eSuperTypes="#//ArrivalPattern">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="It describes a bounded pattern that is defined by a corner case interarrival times and a maximum deviation (jitter)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minInterarrival" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxInterarrival" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//BehaviorScenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAtomic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repetitions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//BehaviorScenario"
+        eOpposite="#//BehaviorScenario/steps"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childScenario" eType="#//BehaviorScenario"
+        eOpposite="#//BehaviorScenario/parentStep"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputRel" eType="#//PrecedenceRelation"
+        eOpposite="#//PrecedenceRelation/succes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputRel" eType="#//PrecedenceRelation"
+        eOpposite="#//PrecedenceRelation/predec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="concurRes" eType="ecore:EClass grm.ecore#//SchedulableResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputpin" upperBound="-1"
+        eType="#//InputPin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputpin" upperBound="-1"
+        eType="#//OutputPin" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkloadEvent" eSuperTypes="grm.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effect" eType="#//BehaviorScenario"
+        eOpposite="#//BehaviorScenario/cause"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
+        containment="true" eOpposite="#//ArrivalPattern/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkloadBehavior" eSuperTypes="grm.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
+        upperBound="-1" eType="#//BehaviorScenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="demand" lowerBound="1"
+        upperBound="-1" eType="#//WorkloadEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
+        eType="#//Reference" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="#//Step">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A special kind of Step that just introduce a delay without any resource consumption."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="notOnAnyTask"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="notOnAnyTask" value="self.concurRes.oclIsUndefined()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+        eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlPin" abstract="true" eSuperTypes="#//MultiplicityElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The concept is from UML 2.5 Pin, where isControlPin=true."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//ControlPin">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
+        eType="#//OutputPin" eOpposite="#//OutputPin/successors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//ControlPin">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successors" upperBound="-1"
+        eType="#//InputPin" eOpposite="#//InputPin/predecessors"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Once" eSuperTypes="#//ArrivalPattern"/>
+</ecore:EPackage>

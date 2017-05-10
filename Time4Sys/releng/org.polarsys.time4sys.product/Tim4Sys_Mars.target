@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Time4Sys-Mars" sequenceNumber="6">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.edit.feature.group" version="2.11.1.v20160208-0841"/>
+<unit id="org.eclipse.equinox.executable.feature.group" version="3.6.200.v20150602-1417"/>
+<unit id="org.eclipse.platform.sdk" version="4.5.2.M20160212-1500"/>
+<repository location="http://download.eclipse.org/releases/mars/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.ocl.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.properties.feature.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.doc.feature.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.aql.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="4.1.1.201610251428"/>
+<unit id="org.eclipse.sirius.samples.feature.group" version="4.1.1.201610251428"/>
+<repository location="http://download.eclipse.org/sirius/updates/releases/4.1.1/mars/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.junit" version="4.12.0.v201504281640"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/"/>
+</location>
+</locations>
+</target>

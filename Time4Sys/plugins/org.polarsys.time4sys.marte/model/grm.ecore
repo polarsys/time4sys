@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grm" nsURI="http://www.polarsys.org/time4sys/marte/grm/1.0"
+    nsPrefix="grm">
+  <eClassifiers xsi:type="ecore:EClass" name="AccessControlPolicy" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockResource" eSuperTypes="#//TimingResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationMedia" eSuperTypes="#//CommunicationResource #//ProcessingResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmMode" eType="#//TransmModeKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputingResource" eSuperTypes="#//ProcessingResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcurrencyResource" eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationResource" abstract="true"
+      eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceResource" eSuperTypes="#//ProcessingResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicUsage" eSuperTypes="#//ResourceUsage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MutualExclusionProtocol" eSuperTypes="#//AccessControlPolicy">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//ProtectProtocolKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherProtocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MutualExclusionResource" eSuperTypes="#//SynchResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduler" eType="#//ResourceBroker"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
+        eType="#//MutualExclusionProtocol" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protectParams" upperBound="-1"
+        eType="#//ProtectionParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessingResource" abstract="true"
+      eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speedFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mainScheduler" eType="#//Scheduler"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtectionParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priorityCeiling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preemptionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProtectProtocolKind">
+    <eLiterals name="FIFO"/>
+    <eLiterals name="NoPreemption" value="1"/>
+    <eLiterals name="PriorityCeiling" value="2"/>
+    <eLiterals name="PriorityInheritance" value="3"/>
+    <eLiterals name="StackBased" value="4"/>
+    <eLiterals name="Undef" value="5"/>
+    <eLiterals name="Other" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//ResourcePackageableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedResource" upperBound="-1"
+        eType="#//Resource" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isProtected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pServices" upperBound="-1"
+        eType="#//ResourceService" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPort" upperBound="-1"
+        eType="#//ResourcePort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConnector" upperBound="-1"
+        eType="#//ResourceConnector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rServices" upperBound="-1"
+        eType="#//ResourceService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" upperBound="-1"
+        eType="#//ResourceUsage" eOpposite="#//ResourceUsage/usedResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceBroker" eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brokedResource" lowerBound="1"
+        upperBound="-1" eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accCtrlPolicy" lowerBound="1"
+        upperBound="-1" eType="#//AccessControlPolicy" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceConnector">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1"
+        eType="#//ResourcePort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
+        eType="#//ResourcePort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceControlPolicy" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceInstance" eSuperTypes="#//ResourcePackageableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1" eType="#//ResourcePort"
+        changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceInterface" eSuperTypes="#//ResourcePackageableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedService" upperBound="-1"
+        eType="#//ResourceService" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceManager" eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managedResource" lowerBound="1"
+        upperBound="-1" eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resCtrlPolicy" lowerBound="1"
+        upperBound="-1" eType="#//ResourceControlPolicy" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourcePackage" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" upperBound="-1"
+        eType="#//ResourcePackageableElement" containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourcePackageableElement" abstract="true"
+      eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourcePort" eSuperTypes="#//CommunicationEndPoint #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pInterface" upperBound="-1"
+        eType="#//ResourceInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rInterface" upperBound="-1"
+        eType="#//ResourceInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceUsage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workload" upperBound="-1"
+        eType="#//UsageDemand" eOpposite="#//UsageDemand/usage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredAmount" upperBound="-1"
+        eType="#//UsageTypedAmount" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedResource" upperBound="-1"
+        eType="#//Resource" eOpposite="#//Resource/usedBy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SchedPolicyKind">
+    <eLiterals name="Undef"/>
+    <eLiterals name="EarliestDeadlineFirst" value="6"/>
+    <eLiterals name="FIFO" value="1"/>
+    <eLiterals name="FixedPriority" value="2"/>
+    <eLiterals name="LeastLaxityFirst" value="3"/>
+    <eLiterals name="RoundRobin" value="4"/>
+    <eLiterals name="TimeTableDriven" value="5"/>
+    <eLiterals name="Other" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scheduler" eSuperTypes="#//ResourceBroker">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1" eType="#//ComputingResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processingUnits" lowerBound="1"
+        upperBound="-1" eType="#//ProcessingResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableResource" upperBound="-1"
+        eType="#//SchedulableResource" eOpposite="#//SchedulableResource/host"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policy" lowerBound="1"
+        eType="#//SchedulingPolicy" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchedulableResource" eSuperTypes="#//ConcurrencyResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependentScheduler" eType="#//SecondaryScheduler"
+        eOpposite="#//SecondaryScheduler/virtualProcessingUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1" eType="#//Scheduler"
+        eOpposite="#//Scheduler/schedulableResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedParams" upperBound="-1"
+        eType="#//SchedulingParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchedulingParameter" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchedulingPolicy" eSuperTypes="#//AccessControlPolicy">
+    <eOperations name="hasValidPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="diagnostics" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments/>
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="#//SchedPolicyKind"
+        defaultValueLiteral="Undef"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherSchedPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecondaryScheduler" eSuperTypes="#//Scheduler">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="virtualProcessingUnit"
+        lowerBound="1" upperBound="-1" eType="#//SchedulableResource" eOpposite="#//SchedulableResource/dependentScheduler"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticUsage" eSuperTypes="#//ResourceUsage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageResource" eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchResource" eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimingResource" abstract="true" eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimerResource" eSuperTypes="#//TimingResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPeriodic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//ResourceService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1" eType="#//ResourceService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="get" lowerBound="1" eType="#//ResourceService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reset" lowerBound="1" eType="#//ResourceService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pause" lowerBound="1" eType="#//ResourceService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransmModeKind">
+    <eLiterals name="simplex"/>
+    <eLiterals name="half_duplex" value="1"/>
+    <eLiterals name="full_duplex" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageDemand">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usage" upperBound="-1"
+        eType="#//ResourceUsage" eOpposite="#//ResourceUsage/workload"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageTypedAmount" eSuperTypes="#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allocatedmemory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usedMemory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="powerPeak" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="energy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

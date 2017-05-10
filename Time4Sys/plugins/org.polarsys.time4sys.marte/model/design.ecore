@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="design" nsURI="http://www.polarsys.org/time4sys/design/1.0"
+    nsPrefix="design">
+  <eClassifiers xsi:type="ecore:EClass" name="DesignModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workloadBehavior" eType="ecore:EClass gqam.ecore#//WorkloadBehavior"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePackage" eType="ecore:EClass grm.ecore#//ResourcePackage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndFlows" upperBound="-1"
+        eType="ecore:EClass gqam.ecore#//EndToEndFlow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

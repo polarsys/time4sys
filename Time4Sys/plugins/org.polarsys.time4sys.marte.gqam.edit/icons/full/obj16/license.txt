@@ -1,0 +1,47 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/AcquireStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/AcquireStep.gif
+icons/full/obj16/BehaviorScenario.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/BehaviorScenario.gif
+icons/full/obj16/CommunicationStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/CommunicationStep.gif
+icons/full/obj16/EndToEndFlow.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/EndToEndFlow.gif
+icons/full/obj16/ExecutionStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/ExecutionStep.gif
+icons/full/obj16/InputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/InputPort.gif
+icons/full/obj16/OutputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/OutputPort.gif
+icons/full/obj16/PeriodicPattern.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/PeriodicPattern.gif
+icons/full/obj16/Port.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/Port.gif
+icons/full/obj16/PrecedenceRelation.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/PrecedenceRelation.gif
+icons/full/obj16/Reference.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/Reference.gif
+icons/full/obj16/ReleaseStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/ReleaseStep.gif
+icons/full/obj16/RequestedService.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/RequestedService.gif
+icons/full/obj16/SporadicPattern.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/SporadicPattern.gif
+icons/full/obj16/Step.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/Step.gif
+icons/full/obj16/WorkloadBehavior.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/WorkloadBehavior.gif
+icons/full/obj16/WorkloadEvent.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/WorkloadEvent.gif
+
+icons/full/ctool16/CreateBehaviorScenario_connectors_PrecedenceRelation.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_connectors_PrecedenceRelation.gif
+icons/full/ctool16/CreateBehaviorScenario_ownedPrecedenceRelations_PrecedenceRelation.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_ownedPrecedenceRelations_PrecedenceRelation.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_AcquireStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_AcquireStep.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_CommunicationStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_CommunicationStep.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_ExecutionStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_ExecutionStep.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_ReleaseStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_ReleaseStep.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_RequestedService.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_RequestedService.gif
+icons/full/ctool16/CreateBehaviorScenario_steps_Step.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_Step.gif
+icons/full/ctool16/CreateInputPort_ownedInputs_InputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateInputPort_ownedInputs_InputPort.gif
+icons/full/ctool16/CreateOutputPort_ownedOutputs_OutputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateOutputPort_ownedOutputs_OutputPort.gif
+icons/full/ctool16/CreateStep_inputPort_InputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateStep_inputPort_InputPort.gif
+icons/full/ctool16/CreateStep_outputPort_OutputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateStep_outputPort_OutputPort.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_AcquireStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_AcquireStep.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_BehaviorScenario.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_BehaviorScenario.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_CommunicationStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_CommunicationStep.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_ExecutionStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_ExecutionStep.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_ReleaseStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_ReleaseStep.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_RequestedService.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_RequestedService.gif
+icons/full/ctool16/CreateWorkloadBehavior_behavior_Step.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_Step.gif
+icons/full/ctool16/CreateWorkloadBehavior_demand_WorkloadEvent.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_demand_WorkloadEvent.gif
+icons/full/ctool16/CreateWorkloadBehavior_references_Reference.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_references_Reference.gif
+icons/full/ctool16/CreateWorkloadEvent_pattern_PeriodicPattern.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadEvent_pattern_PeriodicPattern.gif
+icons/full/ctool16/CreateWorkloadEvent_pattern_SporadicPattern.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadEvent_pattern_SporadicPattern.gif

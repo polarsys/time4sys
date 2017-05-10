@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+
+<plugin>
+   <extension point="org.eclipse.ui.newWizards">
+      <category id="org.polarsys.time4sys.examples.category"
+            name="Time4sys Examples"
+            parentCategory="org.eclipse.ui.Examples"/>
+      <wizard id="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
+            category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            project="true"
+            name="%SimplePeriodicMonoCoreNPFP_name"
+            icon="icons/NewTime4SysModel.gif">
+         <description>%SimplePeriodicMonoCoreNPFP_description</description>
+      </wizard>
+      <wizard
+            category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/NewTime4SysModel.gif"
+            id="org.polarsys.time4sys.examples.SampleModel"
+            name="%SampleModel_name"
+            project="true">
+         <description>
+            %SimplePeriodicMonoCoreNPFP_description
+         </description>
+      </wizard>
+      <wizard
+            category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/NewTime4SysModel.gif"
+            id="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
+            name="%EmmanuelCourseSampleSETR96_name"
+            project="true">
+         <description>
+            %EmmanuelCourseSampleSETR96_description
+         </description>
+      </wizard>      
+   </extension>
+	<extension point="org.eclipse.emf.common.ui.examples">
+    <example
+          id="org.polarsys.time4sys.examples.project.SampleModel"
+          pageImage="icons/NewTime4SysModel.gif"
+          wizardID="org.polarsys.time4sys.examples.SampleModel">
+       <projectDescriptor
+             contentURI="zips/SampleModel.zip"
+             description="%SampleModel_description"
+             name="org.polarsys.time4sys.examples.SampleModel">
+       </projectDescriptor>
+       <fileToOpen
+             editorID="org.polarsys.time4sys.design.presentation.DesignEditorID"
+             location="org.polarsys.time4sys.examples.SampleModel/SampleModel/representations.aird">
+       </fileToOpen>
+    </example>
+      <example id="org.polarsys.time4sys.examples.project.SimplePeriodicMonoCoreNPFP"
+            wizardID="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
+            pageImage="icons/NewTime4SysModel.gif">
+         <projectDescriptor name="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
+               contentURI="zips/SimplePeriodicMonoCoreNPFP.zip"
+               description="%SimplePeriodicMonoCoreNPFP_description"/>
+         <fileToOpen location="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP/models/models/case1_1-rt.design"
+                     editorID="org.polarsys.time4sys.design.presentation.DesignEditorID"/>
+      </example>
+      <example id="org.polarsys.time4sys.examples.project.EmmanuelCourseSampleSETR96"
+            wizardID="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
+            pageImage="icons/NewTime4SysModel.gif">
+         <projectDescriptor name="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
+               contentURI="zips/EmmanuelCourseSampleSETR96.zip"
+               description="%EmmanuelCourseSampleSETR96_description"/>
+         <fileToOpen location="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96/representations.aird"/>
+      </example>
+</extension>
+</plugin>

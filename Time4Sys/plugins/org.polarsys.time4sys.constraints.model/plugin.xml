@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated constraints -->
+      <package
+            uri="http://www.polarsys.org/time4sys/constraints/1.0"
+            class="org.polarsys.time4sys.constraints.model.constraints.ConstraintsPackage"
+            genModel="model/constraints.genmodel"/>
+   </extension>
+
+</plugin>
