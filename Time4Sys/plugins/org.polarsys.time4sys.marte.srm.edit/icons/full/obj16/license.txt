@@ -1,0 +1,32 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/Alarm.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/Alarm.gif
+icons/full/obj16/DeviceBroker.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/DeviceBroker.gif
+icons/full/obj16/InterruptResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/InterruptResource.gif
+icons/full/obj16/MemoryBroker.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/MemoryBroker.gif
+icons/full/obj16/MemoryPartition.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/MemoryPartition.gif
+icons/full/obj16/MessageComResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/MessageComResource.gif
+icons/full/obj16/NotificationResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/NotificationResource.gif
+icons/full/obj16/SharedDataComResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SharedDataComResource.gif
+icons/full/obj16/SoftwareAccessService.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareAccessService.gif
+icons/full/obj16/SoftwareArchitecture.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareArchitecture.gif
+icons/full/obj16/SoftwareConnector.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareConnector.gif
+icons/full/obj16/SoftwareInterface.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareInterface.gif
+icons/full/obj16/SoftwareInterfacePackage.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareInterfacePackage.gif
+icons/full/obj16/SoftwareMutualExclusionResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareMutualExclusionResource.gif
+icons/full/obj16/SoftwarePort.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwarePort.gif
+icons/full/obj16/SoftwareResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareResource.gif
+icons/full/obj16/SoftwareResourcePackage.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareResourcePackage.gif
+icons/full/obj16/SoftwareSchedulableResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareSchedulableResource.gif
+icons/full/obj16/SoftwareScheduler.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareScheduler.gif
+icons/full/obj16/SoftwareService.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareService.gif
+icons/full/obj16/SoftwareTimerResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/obj16/SoftwareTimerResource.gif
+
+icons/full/ctool16/CreateMemoryPartition_concurrentResources_Alarm.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/ctool16/CreateMemoryPartition_concurrentResources_Alarm.gif
+icons/full/ctool16/CreateMemoryPartition_concurrentResources_InterruptResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/ctool16/CreateMemoryPartition_concurrentResources_InterruptResource.gif
+icons/full/ctool16/CreateMemoryPartition_concurrentResources_SoftwareSchedulableResource.gif - org.polarsys.time4sys.marte.srm.edit - org.polarsys.time4sys.marte.srm.edit/icons/full/ctool16/CreateMemoryPartition_concurrentResources_SoftwareSchedulableResource.gif
+

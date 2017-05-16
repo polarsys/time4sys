@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/org.polarsys.time4sys.ui/src-gen" testsGenDirectory="/org.polarsys.time4sys.ui.tests/src-gen" useJMergeForUserCode="true">
+  <editionContexts basePackage="org.polarsys.time4sys.ui" descriptorsContributorID="org.eclipse.sirius.diagram.ui" descriptorsGenericPropertiesViews="true" generateJunitTestCases="true">
+    <PropertiesEditionContext href="analysis.components#_G3Q_sLfREeaqVe1dKOWNEQ"/>
+  </editionContexts>
+  <viewsRepositories basePackage="org.polarsys.time4sys.ui.views.analysis" swtViews="true" formViews="true">
+    <viewsRepository href="analysis.components#_G3RAULfREeaqVe1dKOWNEQ"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated grm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.grm.presentation.GrmModelWizardID"
+            name="%_UI_GrmModelWizard_label"
+            class="org.polarsys.time4sys.marte.grm.presentation.GrmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GrmModelFile.gif">
+         <description>%_UI_GrmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated grm -->
+      <editor
+            id="org.polarsys.time4sys.marte.grm.presentation.GrmEditorID"
+            name="%_UI_GrmEditor_label"
+            icon="icons/full/obj16/GrmModelFile.gif"
+            extensions="grm"
+            class="org.polarsys.time4sys.marte.grm.presentation.GrmEditor"
+            contributorClass="org.polarsys.time4sys.marte.grm.presentation.GrmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

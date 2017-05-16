@@ -1,0 +1,25 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/AnalysisParameter.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/AnalysisParameter.gif
+icons/full/obj16/ConstraintContainer.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/ConstraintContainer.gif
+icons/full/obj16/JitterConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/JitterConstraint.gif
+icons/full/obj16/LatencyConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/LatencyConstraint.gif
+icons/full/obj16/LoadConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/LoadConstraint.gif
+icons/full/obj16/TwcaConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/obj16/TwcaConstraint.gif
+
+icons/full/ctool16/CreateAnalyzedSystem_constraintContainer_ConstraintContainer.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateAnalyzedSystem_constraintContainer_ConstraintContainer.gif
+icons/full/ctool16/CreateConstraintContainer_analysisParameters_AnalysisParameter.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_analysisParameters_AnalysisParameter.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_AnalysisParameter.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_AnalysisParameter.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_ConstraintContainer.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_ConstraintContainer.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_JitterConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_JitterConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_LatencyConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_LatencyConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_LoadConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_LoadConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_constraints_TwcaConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_constraints_TwcaConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_jitterConstraints_JitterConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_jitterConstraints_JitterConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_latencyConstraints_LatencyConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_latencyConstraints_LatencyConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_loadConstraints_LoadConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_loadConstraints_LoadConstraint.gif
+icons/full/ctool16/CreateConstraintContainer_twcaConstraints_TwcaConstraint.gif - org.polarsys.time4sys.constraint.model.edit - org.polarsys.time4sys.constraint.model.edit/icons/full/ctool16/CreateConstraintContainer_twcaConstraints_TwcaConstraint.gif

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_K2iVkLhpEeaQLaG4Uu9sMw" documentation="Edition Context for library GenPackage">
+    <categories xmi:id="_K2iVkbhpEeaQLaG4Uu9sMw" name="library">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_K2iVkrhpEeaQLaG4Uu9sMw" name="TDMA" views="_K2iVvrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVk7hpEeaQLaG4Uu9sMw" name="name" views="_K2iVwLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVlLhpEeaQLaG4Uu9sMw" name="policy" views="_K2iVwbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/policy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVlbhpEeaQLaG4Uu9sMw" name="otherSchedPolicy" views="_K2iVwrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/otherSchedPolicy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVlrhpEeaQLaG4Uu9sMw" name="slot" views="_K2iVw7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/library.ecore#//TDMA/slot"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/library.ecore#//TDMA"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_K2iVl7hpEeaQLaG4Uu9sMw" name="DeadlineMonotonicSchedulingPolicy" views="_K2iVvrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVmLhpEeaQLaG4Uu9sMw" name="name" views="_K2iVwLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVmbhpEeaQLaG4Uu9sMw" name="policy" views="_K2iVwbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/policy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVmrhpEeaQLaG4Uu9sMw" name="otherSchedPolicy" views="_K2iVwrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/otherSchedPolicy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/library.ecore#//DeadlineMonotonicSchedulingPolicy"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_K2iVm7hpEeaQLaG4Uu9sMw" name="RateMonotonicSchedulingPolicy" views="_K2iVvrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVnLhpEeaQLaG4Uu9sMw" name="name" views="_K2iVwLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVnbhpEeaQLaG4Uu9sMw" name="policy" views="_K2iVwbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/policy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVnrhpEeaQLaG4Uu9sMw" name="otherSchedPolicy" views="_K2iVwrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/otherSchedPolicy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/library.ecore#//RateMonotonicSchedulingPolicy"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_K2iVn7hpEeaQLaG4Uu9sMw" name="HardwareCANBus" views="_K2iVvrhpEeaQLaG4Uu9sMw _K2iVzrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVoLhpEeaQLaG4Uu9sMw" name="name" views="_K2iVwLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVobhpEeaQLaG4Uu9sMw" name="ownedResource" views="_K2iV0bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVorhpEeaQLaG4Uu9sMw" name="resMult" views="_K2iV0rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVo7hpEeaQLaG4Uu9sMw" name="isProtected" views="_K2iV07hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVpLhpEeaQLaG4Uu9sMw" name="isActive" views="_K2iV1LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVpbhpEeaQLaG4Uu9sMw" name="pServices" views="_K2iV1bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVprhpEeaQLaG4Uu9sMw" name="ownedPort" views="_K2iV1rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVp7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_K2iV17hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVqLhpEeaQLaG4Uu9sMw" name="rServices" views="_K2iV2LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVqbhpEeaQLaG4Uu9sMw" name="usedBy" views="_K2iV2bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVqrhpEeaQLaG4Uu9sMw" name="clock" views="_K2iV2rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareResource/clock"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVq7hpEeaQLaG4Uu9sMw" name="dimension" views="_K2iV27hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/dimension"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVrLhpEeaQLaG4Uu9sMw" name="posX" views="_K2iV3LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/posX"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVrbhpEeaQLaG4Uu9sMw" name="posY" views="_K2iV3bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/posY"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVrrhpEeaQLaG4Uu9sMw" name="grid" views="_K2iV3rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/grid"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVr7hpEeaQLaG4Uu9sMw" name="nbPins" views="_K2iV37hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/nbPins"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVsLhpEeaQLaG4Uu9sMw" name="weight" views="_K2iV4LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/weight"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVsbhpEeaQLaG4Uu9sMw" name="price" views="_K2iV4bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/price"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVsrhpEeaQLaG4Uu9sMw" name="rConditions" views="_K2iV4rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/rConditions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVs7hpEeaQLaG4Uu9sMw" name="ownedPin" views="_K2iV47hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/ownedPin"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVtLhpEeaQLaG4Uu9sMw" name="ownedWire" views="_K2iV5LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareComponent/ownedWire"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVtbhpEeaQLaG4Uu9sMw" name="nbWires" views="_K2iV5bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareChannel/nbWires"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVtrhpEeaQLaG4Uu9sMw" name="realizedBy" views="_K2iV5rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareChannel/realizedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVt7hpEeaQLaG4Uu9sMw" name="arbiters" views="_K2iV57hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareMedia/arbiters"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVuLhpEeaQLaG4Uu9sMw" name="addressWidth" views="_K2iV6LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareBus/addressWidth"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVubhpEeaQLaG4Uu9sMw" name="wordWidth" views="_K2iV6bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareBus/wordWidth"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVurhpEeaQLaG4Uu9sMw" name="isSynchronous" views="_K2iV6rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareBus/isSynchronous"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_K2iVu7hpEeaQLaG4Uu9sMw" name="isSerial" views="_K2iV67hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareBus/isSerial"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/library.ecore#//HardwareCANBus"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.polarsys.time4sys.marte/model/library.genmodel#//library"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_K2iVvLhpEeaQLaG4Uu9sMw" documentation="Views repository for library GenPackage" name="library">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_K2iVvbhpEeaQLaG4Uu9sMw" name="library">
+      <views xmi:id="_K2iVvrhpEeaQLaG4Uu9sMw" name="General">
+        <elements xsi:type="eef-views:Container" xmi:id="_K2iVv7hpEeaQLaG4Uu9sMw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iVwLhpEeaQLaG4Uu9sMw" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV6rhpEeaQLaG4Uu9sMw" name="isSynchronous">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV07hpEeaQLaG4Uu9sMw" name="isProtected">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV1LhpEeaQLaG4Uu9sMw" name="isActive">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV0rhpEeaQLaG4Uu9sMw" name="resMult">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iVwbhpEeaQLaG4Uu9sMw" name="policy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iVwrhpEeaQLaG4Uu9sMw" name="otherSchedPolicy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iVw7hpEeaQLaG4Uu9sMw" name="slot">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.3"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV2rhpEeaQLaG4Uu9sMw" name="clock">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV2bhpEeaQLaG4Uu9sMw" name="usedBy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV5rhpEeaQLaG4Uu9sMw" name="realizedBy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV0bhpEeaQLaG4Uu9sMw" name="ownedResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV1rhpEeaQLaG4Uu9sMw" name="ownedPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV17hpEeaQLaG4Uu9sMw" name="ownedConnector">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_K2iVzrhpEeaQLaG4Uu9sMw" name="Other">
+        <elements xsi:type="eef-views:Container" xmi:id="_K2iVz7hpEeaQLaG4Uu9sMw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV67hpEeaQLaG4Uu9sMw" name="isSerial">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV5bhpEeaQLaG4Uu9sMw" name="nbWires">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV27hpEeaQLaG4Uu9sMw" name="dimension">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV3LhpEeaQLaG4Uu9sMw" name="posX">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV3bhpEeaQLaG4Uu9sMw" name="posY">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV3rhpEeaQLaG4Uu9sMw" name="grid">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV37hpEeaQLaG4Uu9sMw" name="nbPins">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV4LhpEeaQLaG4Uu9sMw" name="weight">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV4bhpEeaQLaG4Uu9sMw" name="price">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV6LhpEeaQLaG4Uu9sMw" name="addressWidth">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV6bhpEeaQLaG4Uu9sMw" name="wordWidth">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV57hpEeaQLaG4Uu9sMw" name="arbiters">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV47hpEeaQLaG4Uu9sMw" name="ownedPin">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV5LhpEeaQLaG4Uu9sMw" name="ownedWire">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV1bhpEeaQLaG4Uu9sMw" name="pServices">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV2LhpEeaQLaG4Uu9sMw" name="rServices">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_K2iV4rhpEeaQLaG4Uu9sMw" name="rConditions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

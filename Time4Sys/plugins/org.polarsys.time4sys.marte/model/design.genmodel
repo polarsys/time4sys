@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.design/src" editDirectory="/org.polarsys.time4sys.design.edit/src"
+    editorDirectory="/org.polarsys.time4sys.design.editor/src" modelPluginID="org.polarsys.time4sys.design"
+    modelName="Design" editPluginClass="org.polarsys.time4sys.design.provider.DesignEditPlugin"
+    editorPluginClass="org.polarsys.time4sys.design.presentation.DesignEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.design.tests.DesignAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.polarsys.time4sys.design.edit" editorPluginID="org.polarsys.time4sys.design.editor"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore gqam.genmodel#//gqam grm.genmodel#//grm srm.genmodel#//srm hrm.genmodel#//hrm"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>design.ecore</foreignModel>
+  <genPackages prefix="Design" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
+      extensibleProviderFactory="true" ecorePackage="design.ecore#/">
+    <genClasses ecoreClass="design.ecore#//DesignModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/workloadBehavior"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/resourcePackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/endToEndFlows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute design.ecore#//DesignModel/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

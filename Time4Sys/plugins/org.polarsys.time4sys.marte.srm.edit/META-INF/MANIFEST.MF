@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.time4sys.marte.srm.edit;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.polarsys.time4sys.marte.srm.provider.SrmEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.polarsys.time4sys.marte.srm.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.polarsys.time4sys.marte.srm;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.grm;visibility:=reexport,
+ org.polarsys.time4sys.marte.grm.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

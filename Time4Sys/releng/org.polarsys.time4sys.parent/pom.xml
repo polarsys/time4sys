@@ -1,0 +1,58 @@
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+ 
+  <properties>
+    <tycho-version>0.24.0</tycho-version>
+    <platform-version-name>mars</platform-version-name>
+  </properties>
+
+ <repositories>
+ <!-- configure p2 repository to resolve against -->
+ <repository>
+  <id>Mars</id>
+   <layout>p2</layout>
+   <url>http://download.eclipse.org/releases/mars/</url>
+ </repository>
+  <repository>
+  <id>SiriusMars</id>
+   <layout>p2</layout>
+   <url>http://download.eclipse.org/sirius/updates/releases/4.1.1/mars/</url>
+ </repository>
+  <repository>
+   <id>EEF</id>
+   <layout>p2</layout>
+   <url>http://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601041621/</url>
+ </repository>
+   <repository>
+   <id>amalgamMars</id>
+   <layout>p2</layout>
+   <url>http://download.eclipse.org/modeling/amalgam/updates/nightly/1.8.0-N20161128-035928/mars/</url>
+ </repository>
+ 
+ </repositories>
+ <build>
+ <plugins>
+ <plugin>
+  <!-- enable tycho build extension -->
+  <groupId>org.eclipse.tycho</groupId>
+  <artifactId>tycho-maven-plugin</artifactId>
+  <version>${tycho-version}</version>
+  <extensions>true</extensions>
+ </plugin>
+ </plugins>
+ </build>
+</project>

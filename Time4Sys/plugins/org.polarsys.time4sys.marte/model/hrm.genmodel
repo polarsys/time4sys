@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.hrm/src" editDirectory="/org.polarsys.time4sys.marte.hrm.edit/src"
+    editorDirectory="/org.polarsys.time4sys.marte.hrm.editor/src" modelPluginID="org.polarsys.time4sys.marte.hrm"
+    modelName="Hrm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="org.polarsys.time4sys.marte.hrm.edit" editorPluginID="org.polarsys.time4sys.marte.hrm.editor"
+    usedGenPackages="grm.genmodel#//grm srm.genmodel#//srm" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>hrm.ecore</foreignModel>
+  <genPackages prefix="Hrm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="hrm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//CacheType">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//CacheType/data"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//CacheType/instruction"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//CacheType/unified"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//CacheType/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//CacheType/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//ComponentState">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ComponentState/operating"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ComponentState/storage"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ComponentState/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ComponentState/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//ConditionType">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/temperature"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/humidity"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/altitude"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/vibration"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/shock"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ConditionType/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//Direction">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//Direction/in"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//Direction/out"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//Direction/inout"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//IsaType">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/risc"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/cisc"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/vliw"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/simd"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/mimd"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//IsaType/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//PldTechnology">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldTechnology/sram"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldTechnology/antifuse"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldTechnology/flash"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldTechnology/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldTechnology/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//PldClass">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/symetricalArray"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/rowBased"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/seaOfGates"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/hierarchicalPld"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PldClass/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//PortType">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PortType/male"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PortType/female"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PortType/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//PortType/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//ReplPolicy">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/lru"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/nfu"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/fifo"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/random"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//ReplPolicy/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//RomType">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/maskedRom"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/eprom"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/otpEprom"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/eeprom"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/flash"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//RomType/undef"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="hrm.ecore#//WritePolicy">
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//WritePolicy/writeBack"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//WritePolicy/writeThrough"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//WritePolicy/other"/>
+      <genEnumLiterals ecoreEnumLiteral="hrm.ecore#//WritePolicy/undef"/>
+    </genEnums>
+    <genClasses ecoreClass="hrm.ecore#//EnvCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//EnvCondition/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//EnvCondition/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//EnvCondition/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//EnvCondition/range"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//FirmwareArchitecture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hrm.ecore#//FirmwareArchitecture/ownedWire"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hrm.ecore#//FirmwareArchitecture/ownedPin"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareActuator"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareArbiter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareArbiter/controlledMedia"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareAsic"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareBranchPredictor"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareBridge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareBridge/sides"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareBus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareBus/addressWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareBus/wordWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareBus/isSynchronous"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareBus/isSerial"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareCache">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareCache/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareCache/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareCache/nbSets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareCache/blockSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareCache/associativity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareCard"/>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareChannel/nbWires"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareChannel/realizedBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareChip">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareChip/technology"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareClock/frequency"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareCommunicationResource"/>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/dimension"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/posX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/posY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/grid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/nbPins"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComponent/price"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareComponent/rConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareComponent/ownedPin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareComponent/ownedWire"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareComputingResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareComputingResource/opFrequencies"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareConnector"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareDevice"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareDma">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareDma/nbChannels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareDma/transferWidth"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareDma/drivenBy"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareDrive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareDrive/sectorSize"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareInterface"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareInterfacePackage"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareIo"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareIpBlock"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareIsa">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareIsa/family"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareIsa/instWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareIsa/type"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareMedia">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareMedia/arbiters"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareMemory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMemory/memorySize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMemory/addressSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMemory/timings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMemory/throughput"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareMmu">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMmu/virtualAddrSpace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMmu/physicalAddrSpace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMmu/memoryProtection"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareMmu/nbEntriesTlb"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareMmu/ownedTlbs"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwarePin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePin/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePin/direction"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwarePlatform"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwarePld">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/pldTechnology"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/nbRows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/nbColumns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/nbLuts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/nbLutInputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePld/nbFlipFlops"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwarePld/blocksRam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwarePld/architecture"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwarePld/ipBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwarePort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwarePort/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwarePort/realizedBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareProcessingMemory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessingMemory/replPolicy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessingMemory/writePolicy"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareProcessor">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/architecture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/mips"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/ipc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/nbCores"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/nbPipelines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/nbStages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/nbAlus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareProcessor/nbFpus"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareProcessor/ownedIsas"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareProcessor/predictors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareProcessor/caches"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareProcessor/ownedMmus"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareRam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/nbRows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/nbColumns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/nbBanks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/wordSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/isSynchronous"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/isStatic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRam/isNonVolatile"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareResourcePackage"/>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareResource/clock"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareRom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRom/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRom/nbRows"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRom/nbColumns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRom/nbBanks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hrm.ecore#//HardwareRom/wordSize"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareSensor"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareService"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareStorageManager">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareStorageManager/managedMemories"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hrm.ecore#//HardwareStorageMemory">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hrm.ecore#//HardwareStorageMemory/buffer"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareSupport"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareTimingResource"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareTimer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareTimer/inputClock"/>
+    </genClasses>
+    <genClasses ecoreClass="hrm.ecore#//HardwareWatchdog"/>
+    <genClasses ecoreClass="hrm.ecore#//HardwareWire">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareWire/sourcePin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hrm.ecore#//HardwareWire/targetPin"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

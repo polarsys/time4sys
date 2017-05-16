@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Time4Sys User Interface
+Bundle-SymbolicName: org.polarsys.time4sys.ui;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.sirius.ext.base,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.amalgam.explorer.activity.ui,
+ org.polarsys.time4sys.odesign,
+ org.polarsys.time4sys.model,
+ org.eclipse.emf.ecore,
+ org.eclipse.core.resources,
+ org.polarsys.time4sys.design,
+ org.eclipse.emf.transaction,
+ org.polarsys.time4sys.analysis,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide,
+ com.google.guava,
+ org.eclipse.emf.eef.runtime,
+ org.polarsys.time4sys.marte.hrm,
+ org.polarsys.time4sys.marte.srm,
+ org.polarsys.time4sys.constraints.model,
+ org.polarsys.time4sys.library,
+ org.eclipse.sirius.common.ui,
+ org.eclipse.sirius.common,
+ org.eclipse.core.commands
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Localization: plugin
+Export-Package: org.polarsys.time4sys.ui.commands,
+ org.polarsys.time4sys.ui.wizards.model,
+ org.polarsys.time4sys.ui.wizards.project
+Import-Package: org.eclipse.core.expressions
+Bundle-Vendor: http://www.time4sys-projet.fr/
+
+

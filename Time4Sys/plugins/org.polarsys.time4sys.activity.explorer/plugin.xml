@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies, RealTime-at-Work, and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+        Loïc Fejoz - initial simple report generation
+ -->
+
+<plugin>
+
+<extension point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+	<Page
+       class="org.polarsys.time4sys.activity.explorer.pages.DesignPage"
+       id="org.polarsys.time4sys.design.page"
+       imageOff="icons/DesignOff.png"
+       imageOn="icons/DesignOn.png"
+       index="1"
+       tabName="Design"
+       title="Design Description"
+       viewer="true">
+			<Description>
+				Define the Hardware resources and the Software resources allocated on them.  Represent the execution and communication steps which are executed by a software resource or in a communication resources, and represent the link between them in one or several scenarios.
+			</Description>
+
+		<Overview
+        imageOff="icons/DesignOff.png"
+        imageOn="icons/DesignOn.png">
+			<Description>
+				&lt;p&gt;&lt;b&gt;Design&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Define the Hardware resources and the Software resources allocated on them. &lt;br/&gt;Represent the execution and communication steps which are executed by a software resource or in a communication resources. &lt;br/&gt;Describes the precedence relation between steps and external triggers in one or several scenarios.&lt;/p&gt;
+			</Description>
+		</Overview>
+
+		<Section
+			   expanded="false"
+			   filtering="true"
+			   id="org.polarsys.time4sys.design.section"	   
+			   index="1"
+			   name="Design">
+			<Description>
+				&lt;p&gt;&lt;b&gt;Design&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Define the Hardware resources and the Software resources allocated on them. &lt;br/&gt;Represent the execution and communication steps which are executed by a software resource or in a communication resources. &lt;br/&gt;Describes the link between them in one or several scenarios.&lt;/p&gt;
+			</Description>
+			<Activity
+         class="org.polarsys.time4sys.activity.explorer.activity.DesignActivity"
+         id="org.polarsys.time4sys.design.activity.diagram"
+         image="icons/DesignModel.png"
+         index="1"
+         name="Design Model">
+			<Description>
+				Design Model
+Define the Hardware resources and the Software resources allocated on them.
+Represent the execution and communication steps which are executed by a software resource or in a communication resources.
+Describes the link between them in one or several scenarios.
+			</Description>
+			</Activity>
+   <Activity
+         class="org.polarsys.time4sys.activity.explorer.activity.BehaviorScenarioActivity"
+         id="org.polarsys.time4sys.design.activity.diagram"
+         image="icons/BehaviorScenario.png"
+         index="2"
+         name="Behavior Scenario">
+      <Description>
+         Behavior Scenario diagram
+Describe the sequence of steps of one the selected scenario and represents steps with a breakdown hierarchy.
+      </Description>
+   </Activity>
+   <Activity
+         class="org.polarsys.time4sys.activity.explorer.activity.DesignOverview"
+         id="org.polarsys.time4sys.activity.explorer.design.Overview"
+         image="icons/Matrix.png"
+         index="3"
+         name="Design Overview">
+      <Description>
+         
+      </Description>
+   </Activity>
+     <Activity
+           class="org.polarsys.time4sys.activity.explorer.activity.DesignResult"
+           id="org.polarsys.time4sys.activity.explorer.design.Result"
+           image="icons/Matrix.png"
+           index="4"
+           name="Design Result">
+        <Description>
+           Visualize result of the analysis mapped with the corresponding design elements.
+        </Description>
+     </Activity>
+            <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.DesignSimpleReport"
+             id="org.polarsys.time4sys.activity.explorer.design.SimpleReport"
+             image="icons/Transformation.jpg"
+             index="5"
+             name="Generate a simple report based on Liu and Layland model">
+          <Description>
+             Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.
+          </Description>
+       </Activity>
+		</Section>
+  <Predicate
+        class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
+  </Predicate>
+	</Page>
+ <Page
+       class="org.polarsys.time4sys.activity.explorer.pages.AnalysisPage"
+       id="org.polarsys.time4sys.analysis.page"
+       imageOff="icons/AnalysisOff.png"
+       imageOn="icons/AnalysisOn.png"
+       index="2"
+       tabName="Analysis"
+       title="Analysis Description"
+       viewer="true">
+    <Description>
+       Analysis
+Describe a system ready to be analysed by simulation tools.
+Initiliase it from your design model via design to analysis transformation or define it from scratch.
+Define deadlines and constraints and represents everything needed to test the schedulability of your system.
+    </Description>
+    <Overview
+          imageOff="icons/AnalysisOff.png"
+          imageOn="icons/AnalysisOn.png">
+       <Description>
+          &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Describe a system ready to be analysed by simulation tools.&lt;br/&gt;Initiliase it from your design model via design to analysis transformation or define it from scratch.&lt;br/&gt;Define deadlines and constraints and represents everything needed to test the schedulability of your system.&lt;/p&gt;
+       </Description>
+    </Overview>
+    <Section
+          expanded="false"
+          filtering="true"
+          id="org.polarsys.time4sys.analysis.section"
+          index="1"
+          name="Analysis">
+       <Description>
+          &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Describe a system ready to be analysed by simulation tools.&lt;br/&gt;Initiliase it from your design model via design to analysis transformation or define it from scratch.&lt;br/&gt;Define deadlines and constraints and represents everything needed to test the schedulability of your system.&lt;/p&gt;
+       </Description>
+       <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.AnalysisActivity"
+             id="org.polarsys.time4sys.analysis.activity"
+             image="icons/AnalysisModel.png"
+             index="1"
+             name="Analysis Model">
+          <Description>
+             Describe a system ready to be analysed by simulation tools.
+Initiliase it from your design model via design to analysis transformation or define it from scratch.
+Define deadlines and constraints and represents everything needed to test the schedulability of your system.
+          </Description>
+       </Activity>
+       <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.AnalysisOverview"
+             id="org.polarsys.time4sys.activity.explorer.analysis.Overview"
+             image="icons/Matrix.png"
+             index="2"
+             name="Analysis Overview">
+          <Description>
+             Visualise results of the analysis in a table.
+          </Description>
+       </Activity>
+       <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.AnalysisTransformation"
+             id="org.polarsys.time4sys.activity.explorer.analysis.Overview"
+             image="icons/Transformation.jpg"
+             index="3"
+             name="Analysis Transformation">
+          <Description>
+             Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.
+          </Description>
+       </Activity>
+    </Section>
+    <Predicate
+          class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
+    </Predicate>
+ </Page>
+</extension>
+<extension
+      point="org.eclipse.ui.navigator.navigatorContent">
+   <actionProvider
+         class="org.polarsys.time4sys.activity.explorer.ActivityExplorerActionProvider"
+         id="time4sys.project.explorer.actions.activity.explorer">
+      <enablement>
+         <and>
+            <instanceof
+                  value="org.eclipse.core.resources.IFile">
+            </instanceof>
+            <test
+                  forcePluginActivation="true"
+                  property="org.eclipse.core.resources.extension"
+                  value="aird">
+            </test>
+         </and>
+      </enablement>
+   </actionProvider>
+</extension>
+</plugin>

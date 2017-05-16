@@ -1,0 +1,8 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/GqamModelFile.gif - org.polarsys.time4sys.marte.gqam.editor - org.polarsys.time4sys.marte.gqam.editor/icons/full/obj16/GqamModelFile.gif
+icons/full/wizban/NewGqam.gif - org.polarsys.time4sys.marte.gqam.editor - org.polarsys.time4sys.marte.gqam.editor/icons/full/wizban/NewGqam.gif

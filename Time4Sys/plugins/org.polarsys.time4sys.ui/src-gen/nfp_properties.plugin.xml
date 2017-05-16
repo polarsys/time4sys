@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+ <plugin>
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.polarsys.org/time4sys/marte/nfp/1.0"
+            class="org.polarsys.time4sys.ui.nfp.providers.NfpEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.ui.views.nfp.providers.NfpPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.eclipse.sirius.diagram.ui"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.eclipse.sirius.diagram.ui">
+         <propertyTab
+               id="General"
+               label="General"
+               category="default">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.eclipse.sirius.diagram.ui">
+         <propertySection
+               class="org.polarsys.time4sys.ui.views.nfp.parts.forms.GeneralPropertiesEditionPartForm"
+               filter="org.polarsys.time4sys.ui.nfp.providers.DurationPropertiesEditionProvider$EditionFilter"
+               id="org.polarsys.time4sys.ui.nfp.section.Duration"
+               tab="General">
+         </propertySection>
+         <propertySection
+               class="org.polarsys.time4sys.ui.views.nfp.parts.forms.GeneralPropertiesEditionPartForm"
+               filter="org.polarsys.time4sys.ui.nfp.providers.TimeIntervalPropertiesEditionProvider$EditionFilter"
+               id="org.polarsys.time4sys.ui.nfp.section.TimeInterval"
+               tab="General">
+         </propertySection>
+      </propertySections>
+   </extension>
+ </plugin>

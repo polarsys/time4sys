@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_ImlsMLhpEeaQLaG4Uu9sMw" documentation="Edition Context for grm GenPackage">
+    <categories xmi:id="_ImlsMbhpEeaQLaG4Uu9sMw" name="grm">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsMrhpEeaQLaG4Uu9sMw" name="AccessControlPolicy" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsM7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//AccessControlPolicy"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsNLhpEeaQLaG4Uu9sMw" name="ClockResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsNbhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsNrhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsN7hpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsOLhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsObhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsOrhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsO7hpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsPLhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsPbhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsPrhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ClockResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsP7hpEeaQLaG4Uu9sMw" name="CommunicationMedia" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsQLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsQbhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsQrhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsQ7hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsRLhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsRbhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsRrhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsR7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsSLhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsSbhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsSrhpEeaQLaG4Uu9sMw" name="speedFactor" views="_ImltVbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/speedFactor"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsS7hpEeaQLaG4Uu9sMw" name="mainScheduler" views="_ImltVrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/mainScheduler"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsTLhpEeaQLaG4Uu9sMw" name="elementSize" views="_ImltV7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia/elementSize"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsTbhpEeaQLaG4Uu9sMw" name="capacity" views="_ImltWLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia/capacity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsTrhpEeaQLaG4Uu9sMw" name="packetTime" views="_ImltWbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia/packetTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsT7hpEeaQLaG4Uu9sMw" name="blockingTime" views="_ImltWrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsULhpEeaQLaG4Uu9sMw" name="transmMode" views="_ImltW7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia/transmMode"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationMedia"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsUbhpEeaQLaG4Uu9sMw" name="ComputingResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsUrhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsU7hpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsVLhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsVbhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsVrhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsV7hpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsWLhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsWbhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsWrhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsW7hpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsXLhpEeaQLaG4Uu9sMw" name="speedFactor" views="_ImltVbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/speedFactor"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsXbhpEeaQLaG4Uu9sMw" name="mainScheduler" views="_ImltVrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/mainScheduler"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ComputingResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsXrhpEeaQLaG4Uu9sMw" name="ConcurrencyResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsX7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsYLhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsYbhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsYrhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsY7hpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsZLhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsZbhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsZrhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsZ7hpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsaLhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ConcurrencyResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsabhpEeaQLaG4Uu9sMw" name="DeviceResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsarhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsa7hpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsbLhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsbbhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImluQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsbrhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsb7hpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlscLhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlscbhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlscrhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsc7hpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsdLhpEeaQLaG4Uu9sMw" name="speedFactor" views="_ImltVbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/speedFactor"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsdbhpEeaQLaG4Uu9sMw" name="mainScheduler" views="_ImltVrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProcessingResource/mainScheduler"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//DeviceResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsdrhpEeaQLaG4Uu9sMw" name="DynamicUsage" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsd7hpEeaQLaG4Uu9sMw" name="workload" views="_ImlthrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/workload"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlseLhpEeaQLaG4Uu9sMw" name="requiredAmount" views="_Imlth7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/requiredAmount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsebhpEeaQLaG4Uu9sMw" name="usedResource" views="_ImltiLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/usedResource"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//DynamicUsage"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlserhpEeaQLaG4Uu9sMw" name="MutualExclusionProtocol" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlse7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsfLhpEeaQLaG4Uu9sMw" name="protocol" views="_ImltjLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionProtocol/protocol"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsfbhpEeaQLaG4Uu9sMw" name="otherProtocol" views="_ImltjbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionProtocol/otherProtocol"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionProtocol"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsfrhpEeaQLaG4Uu9sMw" name="MutualExclusionResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsf7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsgLhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsgbhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsgrhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImluQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsg7hpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlshLhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlshbhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlshrhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsh7hpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsiLhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsibhpEeaQLaG4Uu9sMw" name="scheduler" views="_ImltmrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionResource/scheduler"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsirhpEeaQLaG4Uu9sMw" name="protectParams" views="_Imltm7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionResource/protectParams"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//MutualExclusionResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imlsi7hpEeaQLaG4Uu9sMw" name="ProtectionParameter" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsjLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsjbhpEeaQLaG4Uu9sMw" name="priorityCeiling" views="_Imltn7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProtectionParameter/priorityCeiling"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsjrhpEeaQLaG4Uu9sMw" name="preemptionLevel" views="_ImltoLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProtectionParameter/preemptionLevel"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ProtectionParameter"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imlsj7hpEeaQLaG4Uu9sMw" name="ResourceBroker" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlskLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlskbhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlskrhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsk7hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlslLhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlslbhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlslrhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsl7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsmLhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsmbhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsmrhpEeaQLaG4Uu9sMw" name="brokedResource" views="_ImltrbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/brokedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsm7hpEeaQLaG4Uu9sMw" name="accCtrlPolicy" views="_ImltrrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/accCtrlPolicy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsnLhpEeaQLaG4Uu9sMw" name="ResourceConnector" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsnbhpEeaQLaG4Uu9sMw" name="sourcePort" views="_ImltsbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceConnector/sourcePort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsnrhpEeaQLaG4Uu9sMw" name="targetPort" views="_ImltsrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceConnector/targetPort"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceConnector"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imlsn7hpEeaQLaG4Uu9sMw" name="ResourceControlPolicy" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsoLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceControlPolicy"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsobhpEeaQLaG4Uu9sMw" name="ResourceInstance" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsorhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlso7hpEeaQLaG4Uu9sMw" name="type" views="_ImltubhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceInstance/type"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceInstance"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlspLhpEeaQLaG4Uu9sMw" name="ResourceInterface" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlspbhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsprhpEeaQLaG4Uu9sMw" name="ownedService" views="_ImltvbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceInterface/ownedService"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceInterface"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imlsp7hpEeaQLaG4Uu9sMw" name="ResourceManager" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsqLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsqbhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsqrhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsq7hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsrLhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsrbhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsrrhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsr7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlssLhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlssbhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlssrhpEeaQLaG4Uu9sMw" name="managedResource" views="_ImltyrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceManager/managedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlss7hpEeaQLaG4Uu9sMw" name="resCtrlPolicy" views="_Imlty7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceManager/resCtrlPolicy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceManager"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlstLhpEeaQLaG4Uu9sMw" name="ResourcePackage" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlstbhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlstrhpEeaQLaG4Uu9sMw" name="ownedElement" views="_Imltz7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourcePackage/ownedElement"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourcePackage"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imlst7hpEeaQLaG4Uu9sMw" name="ResourcePort" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsubhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsuLhpEeaQLaG4Uu9sMw" name="packetSize" views="_Imlt0rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//CommunicationEndPoint/packetSize"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsurhpEeaQLaG4Uu9sMw" name="pInterface" views="_Imlt1LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourcePort/pInterface"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsu7hpEeaQLaG4Uu9sMw" name="rInterface" views="_Imlt1bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourcePort/rInterface"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourcePort"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsvLhpEeaQLaG4Uu9sMw" name="ResourceService" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsvbhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceService"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlsvrhpEeaQLaG4Uu9sMw" name="ResourceUsage" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsv7hpEeaQLaG4Uu9sMw" name="workload" views="_ImlthrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/workload"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlswLhpEeaQLaG4Uu9sMw" name="requiredAmount" views="_Imlth7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/requiredAmount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlswbhpEeaQLaG4Uu9sMw" name="usedResource" views="_ImltiLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/usedResource"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImlswrhpEeaQLaG4Uu9sMw" name="Scheduler" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsw7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsxLhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsxbhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsxrhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsx7hpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsyLhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsybhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlsyrhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsy7hpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlszLhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlszbhpEeaQLaG4Uu9sMw" name="brokedResource" views="_ImltrbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/brokedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImlszrhpEeaQLaG4Uu9sMw" name="accCtrlPolicy" views="_ImltrrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/accCtrlPolicy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imlsz7hpEeaQLaG4Uu9sMw" name="host" views="_Imlt7LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/host"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls0LhpEeaQLaG4Uu9sMw" name="processingUnits" views="_Imlt7bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/processingUnits"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls0bhpEeaQLaG4Uu9sMw" name="schedulableResource" views="_Imlt7rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/schedulableResource"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls0rhpEeaQLaG4Uu9sMw" name="SchedulableResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls07hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls1LhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls1bhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls1rhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls17hpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls2LhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls2bhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls2rhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls27hpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls3LhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls3bhpEeaQLaG4Uu9sMw" name="dependentScheduler" views="_Imlt-7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource/dependentScheduler"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls3rhpEeaQLaG4Uu9sMw" name="host" views="_Imlt7LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource/host"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls37hpEeaQLaG4Uu9sMw" name="schedParams" views="_Imlt_bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource/schedParams"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls4LhpEeaQLaG4Uu9sMw" name="SchedulingParameter" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls4bhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls4rhpEeaQLaG4Uu9sMw" name="value" views="_ImluAbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingParameter/value"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingParameter"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls47hpEeaQLaG4Uu9sMw" name="SchedulingPolicy" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls5LhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls5bhpEeaQLaG4Uu9sMw" name="policy" views="_ImluBbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/policy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls5rhpEeaQLaG4Uu9sMw" name="otherSchedPolicy" views="_ImluBrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy/otherSchedPolicy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SchedulingPolicy"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls57hpEeaQLaG4Uu9sMw" name="SecondaryScheduler" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls6LhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls6bhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls6rhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls67hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls7LhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls7bhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls7rhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls77hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls8LhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls8bhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls8rhpEeaQLaG4Uu9sMw" name="brokedResource" views="_ImltrbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/brokedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls87hpEeaQLaG4Uu9sMw" name="accCtrlPolicy" views="_ImltrbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceBroker/accCtrlPolicy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls9LhpEeaQLaG4Uu9sMw" name="host" views="_Imlt7LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/host"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls9bhpEeaQLaG4Uu9sMw" name="processingUnits" views="_Imlt7bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/processingUnits"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls9rhpEeaQLaG4Uu9sMw" name="schedulableResource" views="_Imlt7rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Scheduler/schedulableResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls97hpEeaQLaG4Uu9sMw" name="virtualProcessingUnit" views="_ImluGLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SecondaryScheduler/virtualProcessingUnit"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SecondaryScheduler"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls-LhpEeaQLaG4Uu9sMw" name="StaticUsage" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls-bhpEeaQLaG4Uu9sMw" name="workload" views="_ImlthrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/workload"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls-rhpEeaQLaG4Uu9sMw" name="requiredAmount" views="_Imlth7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/requiredAmount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls-7hpEeaQLaG4Uu9sMw" name="usedResource" views="_ImltiLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//ResourceUsage/usedResource"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//StaticUsage"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_Imls_LhpEeaQLaG4Uu9sMw" name="StorageResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls_bhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls_rhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Imls_7hpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltALhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltAbhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltArhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltA7hpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltBLhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltBbhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltBrhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//StorageResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImltB7hpEeaQLaG4Uu9sMw" name="SynchResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltCLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltCbhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltCrhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltC7hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltDLhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltDbhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltDrhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltD7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltELhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltEbhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//SynchResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImltErhpEeaQLaG4Uu9sMw" name="TimerResource" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltE7hpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltFLhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltFbhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltFrhpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltF7hpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltGLhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltGbhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltGrhpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltG7hpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltHLhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltHbhpEeaQLaG4Uu9sMw" name="duration" views="_ImluQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/duration"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltHrhpEeaQLaG4Uu9sMw" name="isPeriodic" views="_ImluQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/isPeriodic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltH7hpEeaQLaG4Uu9sMw" name="start" views="_ImluRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/start"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltILhpEeaQLaG4Uu9sMw" name="set" views="_ImluRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/set"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltIbhpEeaQLaG4Uu9sMw" name="get" views="_ImluRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/get"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltIrhpEeaQLaG4Uu9sMw" name="reset" views="_ImluR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/reset"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltI7hpEeaQLaG4Uu9sMw" name="pause" views="_ImluSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource/pause"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//TimerResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImltJLhpEeaQLaG4Uu9sMw" name="UsageDemand" views="_ImltOrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltJbhpEeaQLaG4Uu9sMw" name="usage" views="_ImluS7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageDemand/usage"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltJrhpEeaQLaG4Uu9sMw" name="event" views="_ImluTLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageDemand/event"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageDemand"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_ImltJ7hpEeaQLaG4Uu9sMw" name="UsageTypedAmount" views="_ImltOrhpEeaQLaG4Uu9sMw _ImltPbhpEeaQLaG4Uu9sMw _ImltSbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltKLhpEeaQLaG4Uu9sMw" name="name" views="_ImltPLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltKbhpEeaQLaG4Uu9sMw" name="ownedResource" views="_ImltQLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedResource"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltKrhpEeaQLaG4Uu9sMw" name="resMult" views="_ImltQbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/resMult"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltK7hpEeaQLaG4Uu9sMw" name="isProtected" views="_ImltQrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isProtected"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltLLhpEeaQLaG4Uu9sMw" name="isActive" views="_ImltQ7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/isActive"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltLbhpEeaQLaG4Uu9sMw" name="pServices" views="_ImltRLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/pServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltLrhpEeaQLaG4Uu9sMw" name="ownedPort" views="_ImltRbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedPort"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltL7hpEeaQLaG4Uu9sMw" name="ownedConnector" views="_ImltRrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/ownedConnector"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltMLhpEeaQLaG4Uu9sMw" name="rServices" views="_ImltR7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/rServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltMbhpEeaQLaG4Uu9sMw" name="usedBy" views="_ImltSLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//Resource/usedBy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltMrhpEeaQLaG4Uu9sMw" name="execTime" views="_ImluWbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/execTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltM7hpEeaQLaG4Uu9sMw" name="msgSize" views="_ImluWrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/msgSize"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltNLhpEeaQLaG4Uu9sMw" name="allocatedmemory" views="_ImluW7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/allocatedmemory"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltNbhpEeaQLaG4Uu9sMw" name="usedMemory" views="_ImluXLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/usedMemory"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltNrhpEeaQLaG4Uu9sMw" name="powerPeak" views="_ImluXbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/powerPeak"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_ImltN7hpEeaQLaG4Uu9sMw" name="energy" views="_ImluXrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount/energy"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//UsageTypedAmount"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.polarsys.time4sys.marte/model/grm.genmodel#//grm"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_ImltOLhpEeaQLaG4Uu9sMw" documentation="Views repository for grm GenPackage" name="grm">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_ImltObhpEeaQLaG4Uu9sMw" name="grm">
+      <views xmi:id="_ImltOrhpEeaQLaG4Uu9sMw" name="General">
+        <elements xsi:type="eef-views:Container" xmi:id="_ImltO7hpEeaQLaG4Uu9sMw" name="Properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltPLhpEeaQLaG4Uu9sMw" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluQ7hpEeaQLaG4Uu9sMw" name="isPeriodic">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluAbhpEeaQLaG4Uu9sMw" name="value">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltV7hpEeaQLaG4Uu9sMw" name="elementSize">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltQbhpEeaQLaG4Uu9sMw" name="resMult">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluWrhpEeaQLaG4Uu9sMw" name="msgSize">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt0rhpEeaQLaG4Uu9sMw" name="packetSize">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluTLhpEeaQLaG4Uu9sMw" name="event">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltVbhpEeaQLaG4Uu9sMw" name="speedFactor">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltQrhpEeaQLaG4Uu9sMw" name="isProtected">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltQ7hpEeaQLaG4Uu9sMw" name="isActive">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltjbhpEeaQLaG4Uu9sMw" name="otherProtocol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltjLhpEeaQLaG4Uu9sMw" name="protocol">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltW7hpEeaQLaG4Uu9sMw" name="transmMode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluRLhpEeaQLaG4Uu9sMw" name="start">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluRbhpEeaQLaG4Uu9sMw" name="set">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluRrhpEeaQLaG4Uu9sMw" name="get">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluR7hpEeaQLaG4Uu9sMw" name="reset">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluSLhpEeaQLaG4Uu9sMw" name="pause">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltmrhpEeaQLaG4Uu9sMw" name="scheduler">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltubhpEeaQLaG4Uu9sMw" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt7LhpEeaQLaG4Uu9sMw" name="host">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt-7hpEeaQLaG4Uu9sMw" name="dependentScheduler">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltVrhpEeaQLaG4Uu9sMw" name="mainScheduler">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltsbhpEeaQLaG4Uu9sMw" name="sourcePort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltsrhpEeaQLaG4Uu9sMw" name="targetPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltSLhpEeaQLaG4Uu9sMw" name="usedBy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltiLhpEeaQLaG4Uu9sMw" name="usedResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt7bhpEeaQLaG4Uu9sMw" name="processingUnits">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImlthrhpEeaQLaG4Uu9sMw" name="workload">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltrbhpEeaQLaG4Uu9sMw" name="brokedResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltyrhpEeaQLaG4Uu9sMw" name="managedResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt7rhpEeaQLaG4Uu9sMw" name="schedulableResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluGLhpEeaQLaG4Uu9sMw" name="virtualProcessingUnit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imltm7hpEeaQLaG4Uu9sMw" name="protectParams">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt_bhpEeaQLaG4Uu9sMw" name="schedParams">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlth7hpEeaQLaG4Uu9sMw" name="requiredAmount">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imltz7hpEeaQLaG4Uu9sMw" name="ownedElement">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltRbhpEeaQLaG4Uu9sMw" name="ownedPort">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltRrhpEeaQLaG4Uu9sMw" name="ownedConnector">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltQLhpEeaQLaG4Uu9sMw" name="ownedResource">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltvbhpEeaQLaG4Uu9sMw" name="ownedService">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluS7hpEeaQLaG4Uu9sMw" name="usage">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltrrhpEeaQLaG4Uu9sMw" name="accCtrlPolicy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlty7hpEeaQLaG4Uu9sMw" name="resCtrlPolicy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ImltPbhpEeaQLaG4Uu9sMw" name="Timing">
+        <elements xsi:type="eef-views:Container" xmi:id="_ImltPrhpEeaQLaG4Uu9sMw" name="Timing properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluQrhpEeaQLaG4Uu9sMw" name="duration">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluBbhpEeaQLaG4Uu9sMw" name="policy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluBrhpEeaQLaG4Uu9sMw" name="otherSchedPolicy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltWLhpEeaQLaG4Uu9sMw" name="capacity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltWbhpEeaQLaG4Uu9sMw" name="packetTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltWrhpEeaQLaG4Uu9sMw" name="blockingTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imltn7hpEeaQLaG4Uu9sMw" name="priorityCeiling">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltoLhpEeaQLaG4Uu9sMw" name="preemptionLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluWbhpEeaQLaG4Uu9sMw" name="execTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_ImltSbhpEeaQLaG4Uu9sMw" name="Other">
+        <elements xsi:type="eef-views:Container" xmi:id="_ImltSrhpEeaQLaG4Uu9sMw" name="Other properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluW7hpEeaQLaG4Uu9sMw" name="allocatedmemory">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluXLhpEeaQLaG4Uu9sMw" name="usedMemory">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluXbhpEeaQLaG4Uu9sMw" name="powerPeak">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImluXrhpEeaQLaG4Uu9sMw" name="energy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltRLhpEeaQLaG4Uu9sMw" name="pServices">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_ImltR7hpEeaQLaG4Uu9sMw" name="rServices">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt1LhpEeaQLaG4Uu9sMw" name="pInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_Imlt1bhpEeaQLaG4Uu9sMw" name="rInterface">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

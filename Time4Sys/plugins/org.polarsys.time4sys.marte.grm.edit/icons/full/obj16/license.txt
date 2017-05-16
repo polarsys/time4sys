@@ -1,0 +1,83 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+icons/full/obj16/AccessControlPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/AccessControlPolicy.gif
+icons/full/obj16/ClockResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ClockResource.gif
+icons/full/obj16/CommunicationMedia.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/CommunicationMedia.gif
+icons/full/obj16/ComputingResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ComputingResource.gif
+icons/full/obj16/ConcurrencyResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ConcurrencyResource.gif
+icons/full/obj16/DeviceResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/DeviceResource.gif
+icons/full/obj16/DynamicUsage.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/DynamicUsage.gif
+icons/full/obj16/MutualExclusionProtocol.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/MutualExclusionProtocol.gif
+icons/full/obj16/MutualExclusionResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/MutualExclusionResource.gif
+icons/full/obj16/ProtectionParameter.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ProtectionParameter.gif
+icons/full/obj16/ResourceBroker.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceBroker.gif
+icons/full/obj16/ResourceConnector.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceConnector.gif
+icons/full/obj16/ResourceControlPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceControlPolicy.gif
+icons/full/obj16/ResourceInstance.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceInstance.gif
+icons/full/obj16/ResourceInterface.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceInterface.gif
+icons/full/obj16/ResourceManager.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceManager.gif
+icons/full/obj16/ResourcePackage.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourcePackage.gif
+icons/full/obj16/ResourcePort.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourcePort.gif
+icons/full/obj16/ResourceService.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceService.gif
+icons/full/obj16/ResourceUsage.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/ResourceUsage.gif
+icons/full/obj16/SchedulableResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/SchedulableResource.gif
+icons/full/obj16/Scheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/Scheduler.gif
+icons/full/obj16/SchedulingParameter.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/SchedulingParameter.gif
+icons/full/obj16/SchedulingPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/SchedulingPolicy.gif
+icons/full/obj16/SecondaryScheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/SecondaryScheduler.gif
+icons/full/obj16/StaticUsage.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/StaticUsage.gif
+icons/full/obj16/StorageResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/StorageResource.gif
+icons/full/obj16/SynchResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/SynchResource.gif
+icons/full/obj16/TimerResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/TimerResource.gif
+icons/full/obj16/UsageDemand.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/UsageDemand.gif
+icons/full/obj16/UsageTypedAmount.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/obj16/UsageTypedAmount.gif
+
+icons/full/ctool16/CreateMutualExclusionResource_protectParams_ProtectionParameter.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateMutualExclusionResource_protectParams_ProtectionParameter.gif
+icons/full/ctool16/CreateMutualExclusionResource_protocol_MutualExclusionProtocol.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateMutualExclusionResource_protocol_MutualExclusionProtocol.gif
+icons/full/ctool16/CreateResource_ownedConnector_ResourceConnector.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedConnector_ResourceConnector.gif
+icons/full/ctool16/CreateResource_ownedPort_ResourcePort.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedPort_ResourcePort.gif
+icons/full/ctool16/CreateResource_ownedResource_ClockResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_ClockResource.gif
+icons/full/ctool16/CreateResource_ownedResource_CommunicationMedia.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_CommunicationMedia.gif
+icons/full/ctool16/CreateResource_ownedResource_ComputingResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_ComputingResource.gif
+icons/full/ctool16/CreateResource_ownedResource_ConcurrencyResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_ConcurrencyResource.gif
+icons/full/ctool16/CreateResource_ownedResource_DeviceResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_DeviceResource.gif
+icons/full/ctool16/CreateResource_ownedResource_MutualExclusionResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_MutualExclusionResource.gif
+icons/full/ctool16/CreateResource_ownedResource_ResourceBroker.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_ResourceBroker.gif
+icons/full/ctool16/CreateResource_ownedResource_ResourceManager.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_ResourceManager.gif
+icons/full/ctool16/CreateResource_ownedResource_SchedulableResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_SchedulableResource.gif
+icons/full/ctool16/CreateResource_ownedResource_Scheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_Scheduler.gif
+icons/full/ctool16/CreateResource_ownedResource_SecondaryScheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_SecondaryScheduler.gif
+icons/full/ctool16/CreateResource_ownedResource_StorageResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_StorageResource.gif
+icons/full/ctool16/CreateResource_ownedResource_SynchResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_SynchResource.gif
+icons/full/ctool16/CreateResource_ownedResource_TimerResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_TimerResource.gif
+icons/full/ctool16/CreateResource_ownedResource_UsageTypedAmount.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_ownedResource_UsageTypedAmount.gif
+icons/full/ctool16/CreateResource_pServices_ResourceService.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResource_pServices_ResourceService.gif
+icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_AccessControlPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_AccessControlPolicy.gif
+icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_MutualExclusionProtocol.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_MutualExclusionProtocol.gif
+icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_SchedulingPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceBroker_accCtrlPolicy_SchedulingPolicy.gif
+icons/full/ctool16/CreateResourceInterface_ownedService_ResourceService.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceInterface_ownedService_ResourceService.gif
+icons/full/ctool16/CreateResourceManager_resCtrlPolicy_ResourceControlPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceManager_resCtrlPolicy_ResourceControlPolicy.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ClockResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ClockResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_CommunicationMedia.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_CommunicationMedia.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ComputingResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ComputingResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ConcurrencyResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ConcurrencyResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_DeviceResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_DeviceResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_MutualExclusionResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_MutualExclusionResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceBroker.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceBroker.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceInstance.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceInstance.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceInterface.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceInterface.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceManager.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_ResourceManager.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_SchedulableResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_SchedulableResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_Scheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_Scheduler.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_SecondaryScheduler.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_SecondaryScheduler.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_StorageResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_StorageResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_SynchResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_SynchResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_TimerResource.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_TimerResource.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_UsageTypedAmount.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_UsageTypedAmount.gif
+icons/full/ctool16/CreateResourceUsage_requiredAmount_UsageTypedAmount.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateResourceUsage_requiredAmount_UsageTypedAmount.gif
+icons/full/ctool16/CreateSchedulableResource_schedParams_SchedulingParameter.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateSchedulableResource_schedParams_SchedulingParameter.gif
+icons/full/ctool16/CreateScheduler_policy_SchedulingPolicy.gif - org.polarsys.time4sys.marte.grm.edit - org.polarsys.time4sys.marte.grm.edit/icons/full/ctool16/CreateScheduler_policy_SchedulingPolicy.gif

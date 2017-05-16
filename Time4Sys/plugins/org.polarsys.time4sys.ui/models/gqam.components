@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_HfHGwLhpEeaQLaG4Uu9sMw" documentation="Edition Context for gqam GenPackage">
+    <categories xmi:id="_HfHGwbhpEeaQLaG4Uu9sMw" name="gqam">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHGwrhpEeaQLaG4Uu9sMw" name="AcquireStep" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGw7hpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGybhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGyrhpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGy7hpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGzLhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGzbhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGzrhpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGz7hpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG0LhpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG0bhpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG2LhpEeaQLaG4Uu9sMw" name="resUnits" views="_HfHHibhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//AcquireStep/resUnits"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG17hpEeaQLaG4Uu9sMw" name="acqRes" views="_HfHHiLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//AcquireStep/acqRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG1rhpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGxrhpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGx7hpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG0rhpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG07hpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG1LhpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG1bhpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGxbhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGxLhpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHGyLhpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//AcquireStep"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHG2bhpEeaQLaG4Uu9sMw" name="BehaviorScenario" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG2rhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG4LhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG4bhpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG4rhpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG3bhpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG3rhpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG27hpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG3LhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG37hpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHG47hpEeaQLaG4Uu9sMw" name="CommunicationStep" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG5LhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG6rhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG67hpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG7LhpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG7bhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG-LhpEeaQLaG4Uu9sMw" name="msgSize" views="_HfHHq7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//CommunicationStep/msgSize"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG7rhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG77hpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG8LhpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG8bhpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG8rhpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG97hpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG-bhpEeaQLaG4Uu9sMw" name="comRes" views="_HfHHrLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//CommunicationStep/comRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG57hpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG6LhpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG87hpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG9LhpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG9bhpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG9rhpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG5rhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG5bhpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG6bhpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//CommunicationStep"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHG-rhpEeaQLaG4Uu9sMw" name="EndToEndFlow" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHALhpEeaQLaG4Uu9sMw" name="endToEndDeadline" views="_HfHHtLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/endToEndDeadline"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG_7hpEeaQLaG4Uu9sMw" name="endToEndTime" views="_HfHHs7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/endToEndTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG_bhpEeaQLaG4Uu9sMw" name="isSchedulable" views="_HfHHsbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/isSchedulable"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG_rhpEeaQLaG4Uu9sMw" name="schedulabilitySlack" views="_HfHHsrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/schedulabilitySlack"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG_LhpEeaQLaG4Uu9sMw" name="endToEndScenario" views="_HfHHsLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/endToEndScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG-7hpEeaQLaG4Uu9sMw" name="endToEndStimuli" views="_HfHHr7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow/endToEndStimuli"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//EndToEndFlow"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHAbhpEeaQLaG4Uu9sMw" name="ExecutionStep" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHArhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHCLhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHCbhpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHCrhpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHC7hpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHDLhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHDbhpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHDrhpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHD7hpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHELhpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHBbhpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHBrhpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHEbhpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHErhpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHE7hpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHFLhpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHFbhpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHA7hpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHBLhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHB7hpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ExecutionStep"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHFrhpEeaQLaG4Uu9sMw" name="PeriodicPattern" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHGLhpEeaQLaG4Uu9sMw" name="period" views="_HfHHzrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/period"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHGbhpEeaQLaG4Uu9sMw" name="jitter" views="_HfHHz7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/jitter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHGrhpEeaQLaG4Uu9sMw" name="phase" views="_HfHH0LhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/phase"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHG7hpEeaQLaG4Uu9sMw" name="occurences" views="_HfHH0bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/occurences"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHF7hpEeaQLaG4Uu9sMw" name="parent" views="_HfHHzbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/parent"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHHLhpEeaQLaG4Uu9sMw" name="reference" views="_HfHH0rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/reference"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHHbhpEeaQLaG4Uu9sMw" name="PrecedenceRelation" views="_HfHHcrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHILhpEeaQLaG4Uu9sMw" name="connectorKind" views="_HfHH17hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PrecedenceRelation/connectorKind"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHHrhpEeaQLaG4Uu9sMw" name="predec" views="_HfHH1bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PrecedenceRelation/predec"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHH7hpEeaQLaG4Uu9sMw" name="succes" views="_HfHH1rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PrecedenceRelation/succes"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PrecedenceRelation"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHIbhpEeaQLaG4Uu9sMw" name="Reference" views="_HfHHcrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHIrhpEeaQLaG4Uu9sMw" name="referenceName" views="_HfHH2rhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Reference/referenceName"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Reference"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHI7hpEeaQLaG4Uu9sMw" name="ReleaseStep" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHJLhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHKrhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHK7hpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHLLhpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHLbhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHLrhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHL7hpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHMLhpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHMbhpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHMrhpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHObhpEeaQLaG4Uu9sMw" name="resUnits" views="_HfHHibhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ReleaseStep/resUnits"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHOLhpEeaQLaG4Uu9sMw" name="relRes" views="_HfHH8bhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ReleaseStep/relRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHJ7hpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHKLhpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHM7hpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHNLhpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHNbhpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHNrhpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHN7hpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHJbhpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHJrhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHKbhpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ReleaseStep"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHOrhpEeaQLaG4Uu9sMw" name="RequestedService" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHO7hpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHQbhpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHQrhpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHQ7hpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHRLhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHRbhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHRrhpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHR7hpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHSLhpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHSbhpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHTrhpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHPrhpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHP7hpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHSrhpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHS7hpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHTLhpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHTbhpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHPLhpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHPbhpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHQLhpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//RequestedService"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHT7hpEeaQLaG4Uu9sMw" name="SporadicPattern" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHU7hpEeaQLaG4Uu9sMw" name="jitter" views="_HfHHz7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//SporadicPattern/jitter"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHUbhpEeaQLaG4Uu9sMw" name="minInterarrival" views="_HfHIDLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//SporadicPattern/minInterarrival"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHUrhpEeaQLaG4Uu9sMw" name="maxInterarrival" views="_HfHIDbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//SporadicPattern/maxInterarrival"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHULhpEeaQLaG4Uu9sMw" name="parent" views="_HfHHzbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/parent"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//SporadicPattern"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHVLhpEeaQLaG4Uu9sMw" name="Step" views="_HfHHcrhpEeaQLaG4Uu9sMw _HfHHtbhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHVbhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHW7hpEeaQLaG4Uu9sMw" name="respTime" views="_HfHHerhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/respTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHXLhpEeaQLaG4Uu9sMw" name="bestCET" views="_HfHHe7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/bestCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHXbhpEeaQLaG4Uu9sMw" name="worstCET" views="_HfHHfLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/worstCET"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHXrhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHX7hpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/blockingTime"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHYLhpEeaQLaG4Uu9sMw" name="repetitions" views="_HfHHf7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/repetitions"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHYbhpEeaQLaG4Uu9sMw" name="probability" views="_HfHHgLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/probability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHYrhpEeaQLaG4Uu9sMw" name="priority" views="_HfHHgbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/priority"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHY7hpEeaQLaG4Uu9sMw" name="serviceCount" views="_HfHHgrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/serviceCount"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHaLhpEeaQLaG4Uu9sMw" name="concurRes" views="_HfHHh7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/concurRes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHWLhpEeaQLaG4Uu9sMw" name="root" views="_HfHHd7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/root"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHWbhpEeaQLaG4Uu9sMw" name="parentStep" views="_HfHHeLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/parentStep"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHZLhpEeaQLaG4Uu9sMw" name="scenario" views="_HfHHg7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/scenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHZbhpEeaQLaG4Uu9sMw" name="childScenario" views="_HfHHhLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/childScenario"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHZrhpEeaQLaG4Uu9sMw" name="inputRel" views="_HfHHhbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/inputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHZ7hpEeaQLaG4Uu9sMw" name="outputRel" views="_HfHHhrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/outputRel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHVrhpEeaQLaG4Uu9sMw" name="steps" views="_HfHHdbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/steps"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHV7hpEeaQLaG4Uu9sMw" name="cause" views="_HfHHdrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/cause"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHWrhpEeaQLaG4Uu9sMw" name="connectors" views="_HfHHebhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//BehaviorScenario/connectors"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHabhpEeaQLaG4Uu9sMw" name="WorkloadEvent" views="_HfHHcrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHarhpEeaQLaG4Uu9sMw" name="name" views="_HfHHdLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/grm.ecore#//NamedElement/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHa7hpEeaQLaG4Uu9sMw" name="effect" views="_HfHIKLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadEvent/effect"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadEvent"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_HfHHbLhpEeaQLaG4Uu9sMw" name="WorkloadBehavior" views="_HfHHcrhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHbbhpEeaQLaG4Uu9sMw" name="behavior" views="_HfHIK7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadBehavior/behavior"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHbrhpEeaQLaG4Uu9sMw" name="demand" views="_HfHILLhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadBehavior/demand"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHb7hpEeaQLaG4Uu9sMw" name="references" views="_HfHILbhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadBehavior/references"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//WorkloadBehavior"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_HfHHcLhpEeaQLaG4Uu9sMw" documentation="Views repository for gqam GenPackage" name="gqam">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_HfHHcbhpEeaQLaG4Uu9sMw" name="gqam">
+      <views xmi:id="_HfHHcrhpEeaQLaG4Uu9sMw" name="General">
+        <elements xsi:type="eef-views:Container" xmi:id="_HfHHc7hpEeaQLaG4Uu9sMw" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHdLhpEeaQLaG4Uu9sMw" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHq7hpEeaQLaG4Uu9sMw" name="msgSize">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH2rhpEeaQLaG4Uu9sMw" name="referenceName">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHsbhpEeaQLaG4Uu9sMw" name="isSchedulable">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHfbhpEeaQLaG4Uu9sMw" name="isAtomic">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH17hpEeaQLaG4Uu9sMw" name="connectorKind">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHf7hpEeaQLaG4Uu9sMw" name="repetitions">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHgLhpEeaQLaG4Uu9sMw" name="probability">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHgbhpEeaQLaG4Uu9sMw" name="priority">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH0bhpEeaQLaG4Uu9sMw" name="occurences">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHsrhpEeaQLaG4Uu9sMw" name="schedulabilitySlack">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHgrhpEeaQLaG4Uu9sMw" name="serviceCount">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHibhpEeaQLaG4Uu9sMw" name="resUnits">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHd7hpEeaQLaG4Uu9sMw" name="root">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHeLhpEeaQLaG4Uu9sMw" name="parentStep">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH0rhpEeaQLaG4Uu9sMw" name="reference">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH8bhpEeaQLaG4Uu9sMw" name="relRes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHg7hpEeaQLaG4Uu9sMw" name="scenario">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHhLhpEeaQLaG4Uu9sMw" name="childScenario">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHzbhpEeaQLaG4Uu9sMw" name="parent">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHhbhpEeaQLaG4Uu9sMw" name="inputRel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHhrhpEeaQLaG4Uu9sMw" name="outputRel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHsLhpEeaQLaG4Uu9sMw" name="endToEndScenario">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHiLhpEeaQLaG4Uu9sMw" name="acqRes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHh7hpEeaQLaG4Uu9sMw" name="concurRes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHIKLhpEeaQLaG4Uu9sMw" name="effect">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHrLhpEeaQLaG4Uu9sMw" name="comRes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH1bhpEeaQLaG4Uu9sMw" name="predec">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH1rhpEeaQLaG4Uu9sMw" name="succes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHdbhpEeaQLaG4Uu9sMw" name="steps">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHebhpEeaQLaG4Uu9sMw" name="connectors">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHdrhpEeaQLaG4Uu9sMw" name="cause">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHr7hpEeaQLaG4Uu9sMw" name="endToEndStimuli">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHIK7hpEeaQLaG4Uu9sMw" name="behavior">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHILLhpEeaQLaG4Uu9sMw" name="demand">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHILbhpEeaQLaG4Uu9sMw" name="references">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_HfHHtbhpEeaQLaG4Uu9sMw" name="Timing">
+        <elements xsi:type="eef-views:Container" xmi:id="_HfHHtrhpEeaQLaG4Uu9sMw" name="Timing properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHIDLhpEeaQLaG4Uu9sMw" name="minInterarrival">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHIDbhpEeaQLaG4Uu9sMw" name="maxInterarrival">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHzrhpEeaQLaG4Uu9sMw" name="period">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHz7hpEeaQLaG4Uu9sMw" name="jitter">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH0LhpEeaQLaG4Uu9sMw" name="phase">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHe7hpEeaQLaG4Uu9sMw" name="bestCET">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHfLhpEeaQLaG4Uu9sMw" name="worstCET">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHfrhpEeaQLaG4Uu9sMw" name="blockingTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHs7hpEeaQLaG4Uu9sMw" name="endToEndTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHtLhpEeaQLaG4Uu9sMw" name="endToEndDeadline">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHerhpEeaQLaG4Uu9sMw" name="respTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

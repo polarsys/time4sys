@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+
+<plugin>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.MutualExclusionResource.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Protected Parameters">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.MutualExclusionResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.mutualexclusionresource.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.MutualExclusionResource.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced viewpoint elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.MutualExclusionResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.mutualexclusionresource.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceBroker.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Access Control Policy">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceBroker">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcebroker.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceBroker.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Broked Resources">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceBroker">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcebroker.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceBroker.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Resources">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceBroker">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcebroker.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceConnector.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Resource connectors">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceConnector">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceconnector.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceInstance.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced type">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceInstance">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceinstance.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceInterface.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned Services">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceInterface">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceinterface.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceManager.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Resource Control Policy">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceManager">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcemanager.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceManager.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Managed Resources">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceManager">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcemanager.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourcePackage.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Owned elements">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourcePackage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcepackage.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>
+<category
+      id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourcePackage.OwnedViewpointElements"
+      isTopLevel="true"
+      name="Contained Resources">
+   <targetExplorerId
+         id="ReferencedElementExplorer">
+   </targetExplorerId>
+   <availableForType
+         class="org.polarsys.time4sys.marte.grm.Resource">
+   </availableForType>
+   <categoryQuery>
+      <basicQuery
+            class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourcepackage.ContainedResources">
+      </basicQuery>
+   </categoryQuery>
+</category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+<category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourcePort.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced interfaces">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourcePort">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceport.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceUsage.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Required Amount">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceUsage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceusage.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.ResourceUsage.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Used by">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.ResourceUsage">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.resourceusage.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.Scheduler.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Policy">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.Scheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.scheduler.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.Scheduler.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Scheduled Resource">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.Scheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.scheduler.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.Scheduler.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Elements">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.Scheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.scheduler.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.SchedulableResource.OwnedViewpointElements"
+            isTopLevel="true"
+            name="Scheduled Parameters">
+         <targetExplorerId
+               id="CurrentElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.SchedulableResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.schedulableresource.OwnedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.SchedulableResource.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Referenced elements">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.SchedulableResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.schedulableresource.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>
+                       <category
+                             id="org.polarsys.time4sys.grm.contextual.explorer.queries.SchedulableResource.ReferencingViewpointElements"
+                             isTopLevel="true"
+                             name="Allocated Steps">
+                          <targetExplorerId
+                                id="ReferencingElementExplorer">
+                          </targetExplorerId>
+                          <availableForType
+                                class="org.polarsys.time4sys.marte.grm.SchedulableResource">
+                          </availableForType>
+                          <categoryQuery>
+                             <basicQuery
+                                   class="org.polarsys.time4sys.grm.contextual.explorer.queries.schedulableresource.ReferencingViewpointElementQuery">
+                             </basicQuery>
+                          </categoryQuery>
+                       </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.SecondaryScheduler.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Processing Units">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.SecondaryScheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.secondaryscheduler.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.SecondaryScheduler.ReferencingViewpointElements"
+            isTopLevel="true"
+            name="Referencing Elements">
+         <targetExplorerId
+               id="ReferencingElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.SecondaryScheduler">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.secondaryscheduler.ReferencingViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.TimerResource.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Services">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.TimerResource">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.timerresource.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension 
+	point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+      <category
+            id="org.polarsys.time4sys.grm.contextual.explorer.queries.UsageDemand.ReferencedViewpointElements"
+            isTopLevel="true"
+            name="Usage">
+         <targetExplorerId
+               id="ReferencedElementExplorer">
+         </targetExplorerId>
+         <availableForType
+               class="org.polarsys.time4sys.marte.grm.UsageDemand">
+         </availableForType>
+         <categoryQuery>
+            <basicQuery
+                  class="org.polarsys.time4sys.grm.contextual.explorer.queries.usagedemand.ReferencedViewpointElementQuery">
+            </basicQuery>
+         </categoryQuery>
+      </category>	</extension>
+<extension
+      point="org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory">
+   <category
+         id="org.polarsys.time4sys.grm.contextual.explorer.queries.NamedElement.Parent"
+         isTopLevel="true"
+         name="Parent">
+      <targetExplorerId
+            id="CurrentElementExplorer">
+      </targetExplorerId>
+      <availableForType
+            class="org.polarsys.time4sys.marte.grm.NamedElement">
+      </availableForType>
+      <categoryQuery>
+         <basicQuery
+               class="org.polarsys.time4sys.grm.contextual.explorer.queries.namedelement.ParentQuery">
+         </basicQuery>
+      </categoryQuery>
+   </category>
+</extension>
+</plugin>

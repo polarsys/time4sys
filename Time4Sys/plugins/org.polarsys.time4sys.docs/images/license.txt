@@ -1,0 +1,27 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path>
+
+images/ActivityExplorer.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ActivityExplorer.png
+images/ActivityExplorerDesignPage.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ActivityExplorerDesignPage.png
+images/BehaviorScenarioCreation.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/BehaviorScenarioCreation.png
+images/ContextualExplorer.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ContextualExplorer.png
+images/DesignPage.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/DesignPage.png
+images/EditionWizard.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/EditionWizard.png
+images/HelpContent.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/HelpContent.png
+images/ImportedSampleModel.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ImportedSampleModel.png
+images/Insert-RemoveTools.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/Insert-RemoveTools.png
+images/ModelExplorer.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ModelExplorer.png
+images/NewAnalysisDiagram.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/NewAnalysisDiagram.png
+images/Palette.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/Palette.png
+images/ProcessMap.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ProcessMap.png
+images/ProjectCreation.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ProjectCreation.png
+images/PropertiesView.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/PropertiesView.png
+images/SampleModelSelection.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/SampleModelSelection.png
+images/ScenariosOnDesignDiagram.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/ScenariosOnDesignDiagram.png
+images/Time4SysPerspective.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/Time4SysPerspective.png
+images/TransformationResults.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/TransformationResults.png
+images/Warning.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/Warning.png
+images/WorkspaceSelection.png - org.polarsys.time4sys.docs - org.polarsys.time4sys.docs/images/WorkspaceSelection.png

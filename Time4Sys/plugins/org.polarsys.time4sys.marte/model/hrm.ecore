@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hrm" nsURI="http://www.polarsys.org/time4sys/marte/hrm/1.0"
+    nsPrefix="hrm">
+  <eClassifiers xsi:type="ecore:EEnum" name="CacheType">
+    <eLiterals name="data"/>
+    <eLiterals name="instruction" value="1"/>
+    <eLiterals name="unified" value="2"/>
+    <eLiterals name="other" value="3"/>
+    <eLiterals name="undef" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComponentState">
+    <eLiterals name="operating"/>
+    <eLiterals name="storage" value="1"/>
+    <eLiterals name="other" value="2"/>
+    <eLiterals name="undef" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConditionType">
+    <eLiterals name="temperature"/>
+    <eLiterals name="humidity" value="1"/>
+    <eLiterals name="altitude" value="2"/>
+    <eLiterals name="vibration" value="3"/>
+    <eLiterals name="shock" value="4"/>
+    <eLiterals name="other" value="5"/>
+    <eLiterals name="undef" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Direction">
+    <eLiterals name="in"/>
+    <eLiterals name="out" value="1"/>
+    <eLiterals name="inout" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ConditionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ComponentState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FirmwareArchitecture" eSuperTypes="#//HardwareResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedWire" upperBound="-1"
+        eType="#//HardwareWire" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPin" upperBound="-1"
+        eType="#//HardwarePin" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IsaType">
+    <eLiterals name="risc"/>
+    <eLiterals name="cisc" value="1"/>
+    <eLiterals name="vliw" value="2"/>
+    <eLiterals name="simd" value="3"/>
+    <eLiterals name="mimd" value="4"/>
+    <eLiterals name="other" value="5"/>
+    <eLiterals name="undef" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareActuator" eSuperTypes="#//HardwareIo"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareArbiter" eSuperTypes="#//HardwareCommunicationResource grm.ecore#//ResourceBroker">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledMedia" lowerBound="1"
+        upperBound="-1" eType="#//HardwareMedia" eOpposite="#//HardwareMedia/arbiters"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareAsic" eSuperTypes="#//HardwareComputingResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareBranchPredictor" eSuperTypes="#//HardwareResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareBridge" eSuperTypes="#//HardwareMedia">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sides" lowerBound="2" upperBound="-1"
+        eType="#//HardwareMedia"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareBus" eSuperTypes="#//HardwareMedia">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wordWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSynchronous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSerial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareCache" eSuperTypes="#//HardwareProcessingMemory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CacheType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbSets" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associativity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareCard" abstract="true" eSuperTypes="#//HardwareComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareChannel" abstract="true" eSuperTypes="#//HardwareComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbWires" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizedBy" upperBound="-1"
+        eType="#//HardwareWire"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareChip" abstract="true" eSuperTypes="#//HardwareComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="technology" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareClock" eSuperTypes="#//HardwareTimingResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareCommunicationResource" eSuperTypes="grm.ecore#//CommunicationResource #//HardwareResource #//HardwareChannel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareComponent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="posX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="posY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbPins" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rConditions" upperBound="-1"
+        eType="#//EnvCondition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPin" upperBound="-1"
+        eType="#//HardwarePin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedWire" upperBound="-1"
+        eType="#//HardwareWire" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareComputingResource" eSuperTypes="grm.ecore#//ComputingResource #//HardwareResource #//HardwareChip">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opFrequencies" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareConnector" eSuperTypes="grm.ecore#//ResourceConnector"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareDevice" eSuperTypes="grm.ecore#//DeviceResource #//HardwareResource #//HardwareChip"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareDma" eSuperTypes="#//HardwareStorageManager #//HardwareArbiter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbChannels" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transferWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drivenBy" upperBound="-1"
+        eType="#//HardwareProcessor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareDrive" eSuperTypes="#//HardwareStorageMemory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sectorSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareInterface" eSuperTypes="grm.ecore#//ResourceInterface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareInterfacePackage" eSuperTypes="grm.ecore#//ResourcePackage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareIo" eSuperTypes="#//HardwareDevice"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareIpBlock" eSuperTypes="#//HardwareResource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareIsa" eSuperTypes="#//HardwareResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="family" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//IsaType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareMedia" eSuperTypes="#//HardwareCommunicationResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arbiters" upperBound="-1"
+        eType="#//HardwareArbiter" eOpposite="#//HardwareArbiter/controlledMedia"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareMemory" eSuperTypes="grm.ecore#//StorageResource #//HardwareResource #//HardwareChip">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memorySize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timings" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="throughput" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareMmu" eSuperTypes="#//HardwareStorageManager">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtualAddrSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="physicalAddrSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memoryProtection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEntriesTlb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTlbs" upperBound="-1"
+        eType="#//HardwareCache" changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwarePin" eSuperTypes="grm.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Direction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwarePlatform" eSuperTypes="#//HardwareResource #//HardwareCard"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwarePld" eSuperTypes="#//HardwareComputingResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pldTechnology" eType="#//PldTechnology"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbRows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PldClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbLuts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbLutInputs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbFlipFlops" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blocksRam" upperBound="-1"
+        eType="#//HardwareRam" changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="architecture" eType="#//FirmwareArchitecture"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ipBlock" upperBound="-1"
+        eType="#//HardwareIpBlock" changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="grm.ecore#//ResourcePort #//HardwareComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PortType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizedBy" upperBound="-1"
+        eType="#//HardwarePin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareProcessingMemory" abstract="true"
+      eSuperTypes="#//HardwareMemory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replPolicy" eType="#//ReplPolicy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="writePolicy" eType="#//WritePolicy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareProcessor" eSuperTypes="#//HardwareComputingResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="architecture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mips" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbCores" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbPipelines" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbStages" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAlus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbFpus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedIsas" upperBound="-1"
+        eType="#//HardwareIsa" changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predictors" upperBound="-1"
+        eType="#//HardwareBranchPredictor" changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caches" upperBound="-1"
+        eType="#//HardwareCache" changeable="false" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMmus" upperBound="-1"
+        eType="#//HardwareMmu" changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareRam" eSuperTypes="#//HardwareProcessingMemory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbRows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbBanks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wordSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSynchronous" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNonVolatile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareResourcePackage" eSuperTypes="grm.ecore#//ResourcePackage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareResource" abstract="true" eSuperTypes="grm.ecore#//Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clock" eType="#//HardwareClock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareRom" eSuperTypes="#//HardwareStorageMemory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RomType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbRows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbColumns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbBanks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wordSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareSensor" eSuperTypes="#//HardwareIo"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareService" eSuperTypes="grm.ecore#//ResourceService"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareStorageManager" eSuperTypes="grm.ecore#//ResourceBroker #//HardwareChip">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managedMemories" lowerBound="1"
+        upperBound="-1" eType="#//HardwareMemory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareStorageMemory" abstract="true"
+      eSuperTypes="#//HardwareMemory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//HardwareProcessingMemory"
+        changeable="false" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareSupport" eSuperTypes="#//HardwareDevice"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareTimingResource" eSuperTypes="#//HardwareResource grm.ecore#//TimingResource #//HardwareChip"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareTimer" eSuperTypes="#//HardwareTimingResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputClock" lowerBound="1"
+        eType="#//HardwareClock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareWatchdog" eSuperTypes="#//HardwareTimer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareWire">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePin" lowerBound="1"
+        eType="#//HardwarePin"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPin" lowerBound="1"
+        eType="#//HardwarePin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PldTechnology">
+    <eLiterals name="sram"/>
+    <eLiterals name="antifuse" value="1"/>
+    <eLiterals name="flash" value="2"/>
+    <eLiterals name="other" value="3"/>
+    <eLiterals name="undef" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PldClass">
+    <eLiterals name="symetricalArray"/>
+    <eLiterals name="rowBased" value="1"/>
+    <eLiterals name="seaOfGates" value="2"/>
+    <eLiterals name="hierarchicalPld" value="3"/>
+    <eLiterals name="other" value="4"/>
+    <eLiterals name="undef" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PortType">
+    <eLiterals name="male"/>
+    <eLiterals name="female" value="1"/>
+    <eLiterals name="other" value="2"/>
+    <eLiterals name="undef" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReplPolicy">
+    <eLiterals name="lru"/>
+    <eLiterals name="nfu" value="1"/>
+    <eLiterals name="fifo" value="2"/>
+    <eLiterals name="random" value="3"/>
+    <eLiterals name="other" value="4"/>
+    <eLiterals name="undef" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RomType">
+    <eLiterals name="maskedRom"/>
+    <eLiterals name="eprom" value="1"/>
+    <eLiterals name="otpEprom" value="2"/>
+    <eLiterals name="eeprom" value="3"/>
+    <eLiterals name="flash" value="4"/>
+    <eLiterals name="other" value="5"/>
+    <eLiterals name="undef" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WritePolicy">
+    <eLiterals name="writeBack"/>
+    <eLiterals name="writeThrough" value="1"/>
+    <eLiterals name="other" value="2"/>
+    <eLiterals name="undef" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,146 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.eclipse.org/emf/2002/Ecore')]
+
+
+[query public usedSubPackages(anEPackage : EPackage) : Sequence(EPackage) = 
+	self.eAnnotations->select(a | a.source = 'http://www.polarsys.org/time4sys/asciidocgen').references->filter(EPackage) /]
+
+[query public eSubClasses(anEClass: EClass) : OrderedSet(EClass) = self.eInverse(EClass)->select(ref | ref.eAllSuperTypes->includes(self)) /]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param anEPackage
+ */]
+[template public generateAsciidoc(anEPackage : EPackage)]
+[comment @main/]
+[file (anEPackage.name.concat('.adoc'), false, 'UTF-8')]
+//[protected ('title')]
+[anEPackage.name.toUpperFirst()/]
+[anEPackage.name.replaceAll('.', '=')/]
+//[/protected]
+:data-uti:
+:doctype: book
+//[protected ('header')]
+//[/protected]
+
+//[protected ('preface')]
+//[/protected]
+
+[anEPackage.generatePackage()/]
+
+//[protected ('postface')]
+//[/protected]
+
+[/file]
+[/template]
+
+[template public generatePackage(anEPackage : EPackage)]
+['[['/][anEPackage.name.toLower()/]_package[']]'/]
+== [anEPackage.name.toUpperFirst()/] package
+
+=== Overview
+
+
+.[anEPackage.name/]-class-diagram-overview
+['['/]caption="[anEPackage.name/] class diagram overview -- [anEPackage.nsURI/]"[']'/]
+image::[anEPackage.name/]-class-diagram-overview.png['[]'/]
+
+
+//[protected (anEPackage.name.concat('overview'))]
+//[/protected]
+
+[anEPackage.generateGenModelDoc()/]
+
+[for (aClass : EClassifier | anEPackage.eClassifiers)]
+[aClass.generateClassifier()/]
+[/for]
+
+[for (pkg : EPackage | anEPackage.eSubpackages->addAll(self.usedSubPackages()))]
+[pkg.generatePackage()/]
+[/for]
+
+[/template]
+
+[template public generateGenModelDoc(aModelElt: EModelElement) post (trim())]
+[aModelElt.eAnnotations->select(a | a.source = 'http://www.eclipse.org/emf/2002/GenModel').details->select(d | d.key = 'documentation').value/]
+[/template]
+
+[template public generateClassifier(aClassifier : EClassifier)]
+['[['/][aClassifier.name.toLower()/]_classifier[']]'/]
+=== [aClassifier.name/] classifier
+
+[aClassifier.generateGenModelDoc()/]
+
+//[protected (aClassifier.name.concat('-overview'))]
+TODO: write an overview
+//[/protected]
+
+[aClassifier.generateModelDoc()/]
+
+[/template]
+
+[template public generateModelDoc(aClass : EClassifier)]
+// TODO: update Acceleo generator to handle [aClass.eClass().name/]!
+[/template]
+
+[template public generateModelDoc(aClass : EClass)]
+[if (aClass.eSuperTypes->notEmpty())]
+==== Generalizations
+
+[for (parent : EClass | aClass.eSuperTypes)]
+* <<[parent.name.toLower()/]_classifier,[parent.name/]>> from <<[parent.ePackage.name.toLower()/]_package,[parent.ePackage.name/]>>
+[/for]
+[/if]
+
+[let subClasses : OrderedSet(EClass) = aClass.eSubClasses()]
+[if (subClasses->notEmpty())]
+==== Specializations
+
+[for (child : EClass | subClasses)]
+* <<[child.name.toLower()/]_classifier,[child.name/]>> from <<[child.ePackage.name.toLower()/]_package,[child.ePackage.name/]>>
+[/for]
+[/if][/let]
+
+
+
+[if (aClass.eAttributes->notEmpty())]
+==== Attributes
+
+[for (attr : EAttribute | aClass.eAttributes)]
+* [attr.name/]: [attr.eType.name/] ['['/][attr.lowerBound/]:[attr.upperBound/][']'/][attr.generateGenModelDoc()/]
+[/for]
+[/if]
+
+==== Semantics
+
+//[protected (aClass.name.concat('-semantics'))]
+TODO: write a semantic
+//[/protected]
+[/template]
+
+[template public generateModelDoc(anEnum : EEnum)]
+==== Values
+
+[for (attr : EEnumLiteral | anEnum.eLiterals)]
+* [attr.name/] [attr.generateGenModelDoc()/]
+[/for]
+
+==== Semantics
+
+//[protected (anEnum.name.concat('-semantics'))]
+TODO: write a semantic
+//[/protected]
+[/template]
+
+[template public generateModelDoc(aDatatype : EDataType)]
+
+See [aDatatype.instanceTypeName/].
+
+//[protected (aDatatype.name.concat('-semantics'))]
+TODO: write a semantic
+//[/protected]
+[/template]

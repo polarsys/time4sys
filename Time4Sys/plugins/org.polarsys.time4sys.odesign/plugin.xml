@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier - initial API and implementation
+ -->
+
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="org.polarsys.time4sys.odesign.Activator"
+               id="org.polarsys.time4sys.odesign"
+	       name="analysis">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.wizard.ShowHideWizard"
+           id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor"
+           id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps"
+           id="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.refreshExtensionProvider">
+     <refreshExtensionProvider
+           priority="high"
+           providerClass="org.polarsys.time4sys.odesign.refresh.extension.DesignRefreshExtensionProvider">
+     </refreshExtensionProvider>
+  </extension>
+  <extension
+        point="org.eclipse.eef.properties.ui.eefTabDescriptorFilter">
+     <descriptor
+           class="org.polarsys.time4sys.odesign.EEFTabFilter"
+           description="description"
+           id="org.polarsys.time4sys.odesign.descriptor"
+           label="Capella">
+     </descriptor>
+  </extension>
+  <extension
+        point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+     <editpartProvider
+           class="org.polarsys.time4sys.odesign.editpart.RotativeImageEditPartProvider">
+        <Priority
+              name="Highest">
+        </Priority>
+     </editpartProvider>
+  </extension>
+</plugin>
