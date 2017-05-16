@@ -167,7 +167,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <feature id="org.eclipse.pde"/>
       <feature id="org.eclipse.emf.edit.ui"/>
       <feature id="org.polarsys.time4sys.feature"/>
-      <feature id="org.polarsys.time4sys.feature.tests"/>
    </features>
 
    <configurations>
