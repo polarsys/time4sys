@@ -28,6 +28,7 @@ import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.BurstPattern;
 import org.polarsys.time4sys.marte.gqam.ClosedPattern;
+import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
@@ -154,6 +155,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EClass onceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass communicationChannelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -577,7 +585,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStep_Inputpin() {
+	public EReference getStep_InputPin() {
 		return (EReference)stepEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -586,7 +594,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getStep_Outputpin() {
+	public EReference getStep_OutputPin() {
 		return (EReference)stepEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -831,6 +839,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 */
 	public EClass getOnce() {
 		return onceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCommunicationChannel() {
+		return communicationChannelEClass;
 	}
 
 	/**
@@ -1218,9 +1235,17 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEAttribute(closedPatternEClass, CLOSED_PATTERN__POPULATION);
 		createEAttribute(closedPatternEClass, CLOSED_PATTERN__EXT_DELAY);
 
+		communicationChannelEClass = createEClass(COMMUNICATION_CHANNEL);
+
 		communicationStepEClass = createEClass(COMMUNICATION_STEP);
 		createEAttribute(communicationStepEClass, COMMUNICATION_STEP__MSG_SIZE);
 		createEReference(communicationStepEClass, COMMUNICATION_STEP__COM_RES);
+
+		controlPinEClass = createEClass(CONTROL_PIN);
+		createEReference(controlPinEClass, CONTROL_PIN__PATTERN);
+
+		delayEClass = createEClass(DELAY);
+		createEAttribute(delayEClass, DELAY__DURATION);
 
 		endToEndFlowEClass = createEClass(END_TO_END_FLOW);
 		createEReference(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_STIMULI);
@@ -1231,6 +1256,18 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_DEADLINE);
 
 		executionStepEClass = createEClass(EXECUTION_STEP);
+
+		inputPinEClass = createEClass(INPUT_PIN);
+		createEReference(inputPinEClass, INPUT_PIN__PREDECESSORS);
+
+		multiplicityElementEClass = createEClass(MULTIPLICITY_ELEMENT);
+		createEAttribute(multiplicityElementEClass, MULTIPLICITY_ELEMENT__LOWER_BOUND);
+		createEAttribute(multiplicityElementEClass, MULTIPLICITY_ELEMENT__UPPER_BOUND);
+
+		onceEClass = createEClass(ONCE);
+
+		outputPinEClass = createEClass(OUTPUT_PIN);
+		createEReference(outputPinEClass, OUTPUT_PIN__SUCCESSORS);
 
 		periodicPatternEClass = createEClass(PERIODIC_PATTERN);
 		createEAttribute(periodicPatternEClass, PERIODIC_PATTERN__PERIOD);
@@ -1270,8 +1307,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(stepEClass, STEP__INPUT_REL);
 		createEReference(stepEClass, STEP__OUTPUT_REL);
 		createEReference(stepEClass, STEP__CONCUR_RES);
-		createEReference(stepEClass, STEP__INPUTPIN);
-		createEReference(stepEClass, STEP__OUTPUTPIN);
+		createEReference(stepEClass, STEP__INPUT_PIN);
+		createEReference(stepEClass, STEP__OUTPUT_PIN);
 
 		workloadEventEClass = createEClass(WORKLOAD_EVENT);
 		createEReference(workloadEventEClass, WORKLOAD_EVENT__EFFECT);
@@ -1281,24 +1318,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__BEHAVIOR);
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__DEMAND);
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__REFERENCES);
-
-		delayEClass = createEClass(DELAY);
-		createEAttribute(delayEClass, DELAY__DURATION);
-
-		multiplicityElementEClass = createEClass(MULTIPLICITY_ELEMENT);
-		createEAttribute(multiplicityElementEClass, MULTIPLICITY_ELEMENT__LOWER_BOUND);
-		createEAttribute(multiplicityElementEClass, MULTIPLICITY_ELEMENT__UPPER_BOUND);
-
-		controlPinEClass = createEClass(CONTROL_PIN);
-		createEReference(controlPinEClass, CONTROL_PIN__PATTERN);
-
-		inputPinEClass = createEClass(INPUT_PIN);
-		createEReference(inputPinEClass, INPUT_PIN__PREDECESSORS);
-
-		outputPinEClass = createEClass(OUTPUT_PIN);
-		createEReference(outputPinEClass, OUTPUT_PIN__SUCCESSORS);
-
-		onceEClass = createEClass(ONCE);
 
 		// Create enums
 		connectorKindEEnum = createEEnum(CONNECTOR_KIND);
@@ -1342,8 +1361,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		behaviorScenarioEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
 		burstPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		closedPatternEClass.getESuperTypes().add(this.getArrivalPattern());
+		communicationChannelEClass.getESuperTypes().add(theGrmPackage.getSchedulableResource());
 		communicationStepEClass.getESuperTypes().add(this.getStep());
+		controlPinEClass.getESuperTypes().add(this.getMultiplicityElement());
+		controlPinEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
+		delayEClass.getESuperTypes().add(this.getStep());
 		executionStepEClass.getESuperTypes().add(this.getStep());
+		inputPinEClass.getESuperTypes().add(this.getControlPin());
+		onceEClass.getESuperTypes().add(this.getArrivalPattern());
+		outputPinEClass.getESuperTypes().add(this.getControlPin());
 		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		releaseStepEClass.getESuperTypes().add(this.getStep());
 		requestedServiceEClass.getESuperTypes().add(this.getStep());
@@ -1352,11 +1378,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		stepEClass.getESuperTypes().add(this.getBehaviorScenario());
 		workloadEventEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
 		workloadBehaviorEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
-		delayEClass.getESuperTypes().add(this.getStep());
-		controlPinEClass.getESuperTypes().add(this.getMultiplicityElement());
-		inputPinEClass.getESuperTypes().add(this.getControlPin());
-		outputPinEClass.getESuperTypes().add(this.getControlPin());
-		onceEClass.getESuperTypes().add(this.getArrivalPattern());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(acquireStepEClass, AcquireStep.class, "AcquireStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1396,9 +1417,17 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getClosedPattern_Population(), ecorePackage.getELong(), "population", "0", 1, 1, ClosedPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClosedPattern_ExtDelay(), this.getNFP_Duration(), "extDelay", "0", 1, 1, ClosedPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(communicationChannelEClass, CommunicationChannel.class, "CommunicationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(communicationStepEClass, CommunicationStep.class, "CommunicationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommunicationStep_MsgSize(), ecorePackage.getEInt(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationStep_ComRes(), theGrmPackage.getCommunicationResource(), null, "comRes", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controlPinEClass, ControlPin.class, "ControlPin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlPin_Pattern(), this.getArrivalPattern(), null, "pattern", null, 0, 1, ControlPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDelay_Duration(), this.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(endToEndFlowEClass, EndToEndFlow.class, "EndToEndFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEndToEndFlow_EndToEndStimuli(), this.getWorkloadEvent(), null, "endToEndStimuli", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1409,6 +1438,18 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getEndToEndFlow_EndToEndDeadline(), this.getNFP_Duration(), "endToEndDeadline", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInputPin_Predecessors(), this.getOutputPin(), this.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiplicityElementEClass, MultiplicityElement.class, "MultiplicityElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMultiplicityElement_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMultiplicityElement_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(onceEClass, Once.class, "Once", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(outputPinEClass, OutputPin.class, "OutputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOutputPin_Successors(), this.getInputPin(), this.getInputPin_Predecessors(), "successors", null, 0, -1, OutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(periodicPatternEClass, PeriodicPattern.class, "PeriodicPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPeriodicPattern_Period(), this.getNFP_Duration(), "period", "", 0, 1, PeriodicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1448,8 +1489,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getStep_InputRel(), this.getPrecedenceRelation(), this.getPrecedenceRelation_Succes(), "inputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_OutputRel(), this.getPrecedenceRelation(), this.getPrecedenceRelation_Predec(), "outputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_ConcurRes(), theGrmPackage.getSchedulableResource(), null, "concurRes", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Inputpin(), this.getInputPin(), null, "inputpin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Outputpin(), this.getOutputPin(), null, "outputpin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_InputPin(), this.getInputPin(), null, "inputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_OutputPin(), this.getOutputPin(), null, "outputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1459,24 +1500,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getWorkloadBehavior_Behavior(), this.getBehaviorScenario(), null, "behavior", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadBehavior_Demand(), this.getWorkloadEvent(), null, "demand", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadBehavior_References(), this.getReference(), null, "references", null, 0, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDelay_Duration(), this.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(multiplicityElementEClass, MultiplicityElement.class, "MultiplicityElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMultiplicityElement_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMultiplicityElement_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(controlPinEClass, ControlPin.class, "ControlPin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlPin_Pattern(), this.getArrivalPattern(), null, "pattern", null, 0, 1, ControlPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInputPin_Predecessors(), this.getOutputPin(), this.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(outputPinEClass, OutputPin.class, "OutputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutputPin_Successors(), this.getInputPin(), this.getInputPin_Predecessors(), "successors", null, 0, -1, OutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(onceEClass, Once.class, "Once", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(connectorKindEEnum, ConnectorKind.class, "ConnectorKind");

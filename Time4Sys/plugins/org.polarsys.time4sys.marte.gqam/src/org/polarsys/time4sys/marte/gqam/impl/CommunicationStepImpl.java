@@ -18,11 +18,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,8 +113,9 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@Deprecated
 	public CommunicationResource getComRes() {
 		if (comRes != null && comRes.eIsProxy()) {
 			InternalEObject oldComRes = (InternalEObject)comRes;
@@ -138,8 +140,9 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
+	@Deprecated
 	public void setComRes(CommunicationResource newComRes) {
 		CommunicationResource oldComRes = comRes;
 		comRes = newComRes;
@@ -230,6 +233,14 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 		result.append(msgSize);
 		result.append(')');
 		return result.toString();
+	}
+	
+	@Override
+	public void setConcurRes(final SchedulableResource newConcurRes) {
+		if (newConcurRes != null && !(newConcurRes instanceof CommunicationChannel)) {
+			throw new IllegalArgumentException("The concurRes attribute shall be a CommunicationChannel. See fig 15.3 of MARTE.");
+		}
+		super.setConcurRes(newConcurRes);
 	}
 
 } //CommunicationStepImpl

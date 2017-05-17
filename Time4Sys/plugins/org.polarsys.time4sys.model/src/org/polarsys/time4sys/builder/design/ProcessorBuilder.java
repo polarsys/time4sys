@@ -87,4 +87,8 @@ public class ProcessorBuilder {
 		return this;
 	}
 
+	public HardwareProcessor build() {
+		return proc;
+	}
+
 }

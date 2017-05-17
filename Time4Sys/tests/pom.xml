@@ -1,0 +1,29 @@
+<project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>Time4Sys</groupId>
+        <artifactId>org.polarsys.time4sys.tests</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <packaging>pom</packaging>
+
+ <parent>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+ <relativePath>../releng/org.polarsys.time4sys.parent/pom.xml</relativePath>
+ </parent>
+ 
+        <modules>
+                <module>org.polarsys.time4sys.analysis.tests</module>
+                <module>org.polarsys.time4sys.design.tests</module>
+                <module>org.polarsys.time4sys.library.tests</module>
+                <module>org.polarsys.time4sys.marte.gqam.tests</module>
+                <module>org.polarsys.time4sys.marte.grm.tests</module>
+                <module>org.polarsys.time4sys.marte.hrm.tests</module>
+                <module>org.polarsys.time4sys.marte.nfp.tests</module>
+                <!-- <module>org.polarsys.time4sys.marte.srm.tests</module> -->
+                <module>org.polarsys.time4sys.model.tests</module>
+                <!-- <module>org.polarsys.time4sys.tests</module> -->
+				<module>org.polarsys.time4sys.rcptt.design.tests</module>
+                <module>org.polarsys.time4sys.rcptt.project.tests</module>
+ </modules>
+</project>

@@ -8,8 +8,6 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- */
 package org.polarsys.time4sys.marte.nfp;
 
 import org.eclipse.emf.ecore.EFactory;
@@ -48,6 +46,15 @@ public interface NfpFactory extends EFactory {
 	 * @generated
 	 */
 	TimeInterval createTimeInterval();
+
+	/**
+	 * Returns a new object of class '<em>Data Size</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Size</em>'.
+	 * @generated
+	 */
+	DataSize createDataSize();
 
 	/**
 	 * 

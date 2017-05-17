@@ -27,6 +27,7 @@
 <module>org.polarsys.time4sys.design.edit</module>
 <module>org.polarsys.time4sys.design.editor</module>
 <module>org.polarsys.time4sys.docs</module>
+<module>org.polarsys.time4sys.example.ui</module>
 <module>org.polarsys.time4sys.gqam.contextual.explorer</module>
 <module>org.polarsys.time4sys.grm.contextual.explorer</module>
 <module>org.polarsys.time4sys.hrm.contextual.explorer</module>

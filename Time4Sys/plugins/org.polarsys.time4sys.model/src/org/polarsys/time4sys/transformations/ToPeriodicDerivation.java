@@ -27,6 +27,7 @@ import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 
 /**
  * @author loic
@@ -38,19 +39,19 @@ public class ToPeriodicDerivation extends IdentityDerivation {
 	public static final String PATTERN_RULE_NAME = "Sliding to Periodic Pattern".intern();
 	public static final String TRANS_NAME = "Sliding to Periodic Transformation".intern();
 	
-	public static Mapping getOrApply(final Project project) {
+	public static Transformation getOrApply(final Project project) {
 		return getOrApply(project, project.getDesign());
 	}
 	
-	public static Mapping getOrApply(final Project project, final DesignModel source) {
+	public static Transformation getOrApply(final Project project, final DesignModel source) {
 		// Search for a previously applied transformation
-		for(Mapping mp: project.getMappings()) {
-			final Context transKind = mp.getRationale();
+		for(Transformation tr: project.getTransformations()) {
+			final Context transKind = tr.getMapping().getRationale();
 			if (transKind != null) {
 				if (TRANS_NAME.equals(transKind.getName())) {
-					final EObject srcModel = mp.getSubLinks().get(0).getUniqueSourceValue("original");
+					final EObject srcModel = tr.getMapping().getSubLinks().get(0).getUniqueSourceValue("original");
 					if (source.equals(srcModel)) {
-						return mp;
+						return tr;
 					}
 				}
 			}
@@ -59,7 +60,7 @@ public class ToPeriodicDerivation extends IdentityDerivation {
 		return ToPeriodicDerivation.duplicate(project, source);
 	}
 
-	public static Mapping duplicate(final Project project, final DesignModel source) {
+	public static Transformation duplicate(final Project project, final DesignModel source) {
 		return new ToPeriodicDerivation(project, source).transform();
 	}
 
@@ -71,9 +72,9 @@ public class ToPeriodicDerivation extends IdentityDerivation {
 		super(project, source);
 	}
 	
-	public Mapping transform() {
-		final Mapping result = super.transform();
-		result.setRationale(slide2periodicMapping);
+	public Transformation transform() {
+		final Transformation result = super.transform();
+		result.getMapping().setRationale(slide2periodicMapping);
 		return result;
 	}
 	
@@ -116,7 +117,7 @@ public class ToPeriodicDerivation extends IdentityDerivation {
 		copyLnk.getTargets().add(mappingFactory.createMappableArtefact("step", step));
 		assert(step instanceof Step);
 		// Update wcet of step
-		step.setWorstCET(step.getWorstCET().mul(previousPattern.getNbEvents()));
+		step.setWorstCET(step.getWorstCET().multiply(previousPattern.getNbEvents()));
 		// Update step link
 		final Link stepLnk = getUniqueLinkFor(step);
 		final MappableArtefact stepArtefact = stepLnk.getTargets().get(0);

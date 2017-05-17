@@ -191,7 +191,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadEvent()
 	 * @generated
 	 */
-	int WORKLOAD_EVENT = 16;
+	int WORKLOAD_EVENT = 23;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl <em>Step</em>}' class.
@@ -201,7 +201,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getStep()
 	 * @generated
 	 */
-	int STEP = 15;
+	int STEP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -384,22 +384,22 @@ public interface GqamPackage extends EPackage {
 	int STEP__CONCUR_RES = BEHAVIOR_SCENARIO_FEATURE_COUNT + 10;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__INPUTPIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
+	int STEP__INPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__OUTPUTPIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
+	int STEP__OUTPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Step</em>' class.
@@ -427,7 +427,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPrecedenceRelation()
 	 * @generated
 	 */
-	int PRECEDENCE_RELATION = 9;
+	int PRECEDENCE_RELATION = 16;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadBehaviorImpl <em>Workload Behavior</em>}' class.
@@ -437,7 +437,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadBehavior()
 	 * @generated
 	 */
-	int WORKLOAD_BEHAVIOR = 17;
+	int WORKLOAD_BEHAVIOR = 24;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationStepImpl <em>Communication Step</em>}' class.
@@ -447,7 +447,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getCommunicationStep()
 	 * @generated
 	 */
-	int COMMUNICATION_STEP = 5;
+	int COMMUNICATION_STEP = 6;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.AcquireStepImpl <em>Acquire Step</em>}' class.
@@ -640,22 +640,22 @@ public interface GqamPackage extends EPackage {
 	int ACQUIRE_STEP__CONCUR_RES = STEP__CONCUR_RES;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__INPUTPIN = STEP__INPUTPIN;
+	int ACQUIRE_STEP__INPUT_PIN = STEP__INPUT_PIN;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__OUTPUTPIN = STEP__OUTPUTPIN;
+	int ACQUIRE_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Acq Res</b></em>' reference.
@@ -701,7 +701,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReleaseStep()
 	 * @generated
 	 */
-	int RELEASE_STEP = 11;
+	int RELEASE_STEP = 18;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl <em>Requested Service</em>}' class.
@@ -711,7 +711,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getRequestedService()
 	 * @generated
 	 */
-	int REQUESTED_SERVICE = 12;
+	int REQUESTED_SERVICE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl <em>Execution Step</em>}' class.
@@ -721,7 +721,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getExecutionStep()
 	 * @generated
 	 */
-	int EXECUTION_STEP = 7;
+	int EXECUTION_STEP = 10;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
@@ -997,6 +997,261 @@ public interface GqamPackage extends EPackage {
 	int CLOSED_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPeriodicPattern()
+	 * @generated
+	 */
+	int PERIODIC_PATTERN = 15;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl <em>Sporadic Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
+	 * @generated
+	 */
+	int SPORADIC_PATTERN = 21;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl <em>End To End Flow</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getEndToEndFlow()
+	 * @generated
+	 */
+	int END_TO_END_FLOW = 9;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReference()
+	 * @generated
+	 */
+	int REFERENCE = 17;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
+	 * @generated
+	 */
+	int SLIDING_WINDOW_PATTERN = 20;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.DelayImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getDelay()
+	 * @generated
+	 */
+	int DELAY = 8;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl <em>Multiplicity Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getMultiplicityElement()
+	 * @generated
+	 */
+	int MULTIPLICITY_ELEMENT = 12;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl <em>Control Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getControlPin()
+	 * @generated
+	 */
+	int CONTROL_PIN = 7;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl <em>Input Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.InputPinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getInputPin()
+	 * @generated
+	 */
+	int INPUT_PIN = 11;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOutputPin()
+	 * @generated
+	 */
+	int OUTPUT_PIN = 14;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OnceImpl <em>Once</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.OnceImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOnce()
+	 * @generated
+	 */
+	int ONCE = 13;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl <em>Communication Channel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getCommunicationChannel()
+	 * @generated
+	 */
+	int COMMUNICATION_CHANNEL = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__NAME = GrmPackage.SCHEDULABLE_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__OWNED_RESOURCE = GrmPackage.SCHEDULABLE_RESOURCE__OWNED_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__RES_MULT = GrmPackage.SCHEDULABLE_RESOURCE__RES_MULT;
+
+	/**
+	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__IS_PROTECTED = GrmPackage.SCHEDULABLE_RESOURCE__IS_PROTECTED;
+
+	/**
+	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__IS_ACTIVE = GrmPackage.SCHEDULABLE_RESOURCE__IS_ACTIVE;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__PSERVICES = GrmPackage.SCHEDULABLE_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__OWNED_PORT = GrmPackage.SCHEDULABLE_RESOURCE__OWNED_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__OWNED_CONNECTOR = GrmPackage.SCHEDULABLE_RESOURCE__OWNED_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>RServices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__RSERVICES = GrmPackage.SCHEDULABLE_RESOURCE__RSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Used By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__USED_BY = GrmPackage.SCHEDULABLE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>Dependent Scheduler</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__DEPENDENT_SCHEDULER = GrmPackage.SCHEDULABLE_RESOURCE__DEPENDENT_SCHEDULER;
+
+	/**
+	 * The feature id for the '<em><b>Host</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__HOST = GrmPackage.SCHEDULABLE_RESOURCE__HOST;
+
+	/**
+	 * The feature id for the '<em><b>Sched Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__SCHED_PARAMS = GrmPackage.SCHEDULABLE_RESOURCE__SCHED_PARAMS;
+
+	/**
+	 * The number of structural features of the '<em>Communication Channel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL_FEATURE_COUNT = GrmPackage.SCHEDULABLE_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Communication Channel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL_OPERATION_COUNT = GrmPackage.SCHEDULABLE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1177,22 +1432,22 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP__CONCUR_RES = STEP__CONCUR_RES;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__INPUTPIN = STEP__INPUTPIN;
+	int COMMUNICATION_STEP__INPUT_PIN = STEP__INPUT_PIN;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__OUTPUTPIN = STEP__OUTPUTPIN;
+	int COMMUNICATION_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute.
@@ -1231,34 +1486,319 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPeriodicPattern()
 	 * @generated
+	 * @ordered
 	 */
-	int PERIODIC_PATTERN = 8;
+	int MULTIPLICITY_ELEMENT__LOWER_BOUND = 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl <em>Sporadic Pattern</em>}' class.
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
 	 * @generated
+	 * @ordered
 	 */
-	int SPORADIC_PATTERN = 14;
+	int MULTIPLICITY_ELEMENT__UPPER_BOUND = 1;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl <em>End To End Flow</em>}' class.
+	 * The number of structural features of the '<em>Multiplicity Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getEndToEndFlow()
 	 * @generated
+	 * @ordered
 	 */
-	int END_TO_END_FLOW = 6;
+	int MULTIPLICITY_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Multiplicity Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN__LOWER_BOUND = MULTIPLICITY_ELEMENT__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Control Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Control Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__NAME = STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__STEPS = STEP__STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Root</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__ROOT = STEP__ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__PARENT_STEP = STEP__PARENT_STEP;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__CONNECTORS = STEP__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__RESP_TIME = STEP__RESP_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__BEST_CET = STEP__BEST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__IS_ATOMIC = STEP__IS_ATOMIC;
+
+	/**
+	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__BLOCKING_TIME = STEP__BLOCKING_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__REPETITIONS = STEP__REPETITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__PROBABILITY = STEP__PROBABILITY;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__PRIORITY = STEP__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__SERVICE_COUNT = STEP__SERVICE_COUNT;
+
+	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__SCENARIO = STEP__SCENARIO;
+
+	/**
+	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+
+	/**
+	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__INPUT_REL = STEP__INPUT_REL;
+
+	/**
+	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__OUTPUT_REL = STEP__OUTPUT_REL;
+
+	/**
+	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__CONCUR_RES = STEP__CONCUR_RES;
+
+	/**
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__INPUT_PIN = STEP__INPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__OUTPUT_PIN = STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__DURATION = STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Delay</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Delay</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End To End Stimuli</b></em>' reference list.
@@ -1513,22 +2053,22 @@ public interface GqamPackage extends EPackage {
 	int EXECUTION_STEP__CONCUR_RES = STEP__CONCUR_RES;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__INPUTPIN = STEP__INPUTPIN;
+	int EXECUTION_STEP__INPUT_PIN = STEP__INPUT_PIN;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__OUTPUTPIN = STEP__OUTPUTPIN;
+	int EXECUTION_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
 
 	/**
 	 * The number of structural features of the '<em>Execution Step</em>' class.
@@ -1547,6 +2087,186 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__LOWER_BOUND = CONTROL_PIN__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__NAME = CONTROL_PIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__PATTERN = CONTROL_PIN__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Predecessors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__PREDECESSORS = CONTROL_PIN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Input Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Input Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN_OPERATION_COUNT = CONTROL_PIN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__PARENT = ARRIVAL_PATTERN__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__JITTER = ARRIVAL_PATTERN__JITTER;
+
+	/**
+	 * The feature id for the '<em><b>Phase</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__PHASE = ARRIVAL_PATTERN__PHASE;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+
+	/**
+	 * The number of structural features of the '<em>Once</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Once</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__LOWER_BOUND = CONTROL_PIN__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__NAME = CONTROL_PIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__PATTERN = CONTROL_PIN__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Successors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__SUCCESSORS = CONTROL_PIN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Output Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Output Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN_OPERATION_COUNT = CONTROL_PIN_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -1664,16 +2384,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRECEDENCE_RELATION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReference()
-	 * @generated
-	 */
-	int REFERENCE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Reference Name</b></em>' attribute.
@@ -1883,22 +2593,22 @@ public interface GqamPackage extends EPackage {
 	int RELEASE_STEP__CONCUR_RES = STEP__CONCUR_RES;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__INPUTPIN = STEP__INPUTPIN;
+	int RELEASE_STEP__INPUT_PIN = STEP__INPUT_PIN;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__OUTPUTPIN = STEP__OUTPUTPIN;
+	int RELEASE_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Rel Res</b></em>' reference.
@@ -2117,22 +2827,22 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE__CONCUR_RES = STEP__CONCUR_RES;
 
 	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__INPUTPIN = STEP__INPUTPIN;
+	int REQUESTED_SERVICE__INPUT_PIN = STEP__INPUT_PIN;
 
 	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__OUTPUTPIN = STEP__OUTPUTPIN;
+	int REQUESTED_SERVICE__OUTPUT_PIN = STEP__OUTPUT_PIN;
 
 	/**
 	 * The number of structural features of the '<em>Requested Service</em>' class.
@@ -2151,16 +2861,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUESTED_SERVICE_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
-	 * @generated
-	 */
-	int SLIDING_WINDOW_PATTERN = 13;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2406,534 +3106,6 @@ public interface GqamPackage extends EPackage {
 	int WORKLOAD_BEHAVIOR_OPERATION_COUNT = GrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.DelayImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getDelay()
-	 * @generated
-	 */
-	int DELAY = 18;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__NAME = STEP__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__STEPS = STEP__STEPS;
-
-	/**
-	 * The feature id for the '<em><b>Cause</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__CAUSE = STEP__CAUSE;
-
-	/**
-	 * The feature id for the '<em><b>Root</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__ROOT = STEP__ROOT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__PARENT_STEP = STEP__PARENT_STEP;
-
-	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__CONNECTORS = STEP__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__RESP_TIME = STEP__RESP_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__BEST_CET = STEP__BEST_CET;
-
-	/**
-	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__WORST_CET = STEP__WORST_CET;
-
-	/**
-	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__IS_ATOMIC = STEP__IS_ATOMIC;
-
-	/**
-	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__BLOCKING_TIME = STEP__BLOCKING_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__REPETITIONS = STEP__REPETITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Probability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__PROBABILITY = STEP__PROBABILITY;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__PRIORITY = STEP__PRIORITY;
-
-	/**
-	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__SERVICE_COUNT = STEP__SERVICE_COUNT;
-
-	/**
-	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__SCENARIO = STEP__SCENARIO;
-
-	/**
-	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
-
-	/**
-	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__INPUT_REL = STEP__INPUT_REL;
-
-	/**
-	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__OUTPUT_REL = STEP__OUTPUT_REL;
-
-	/**
-	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__CONCUR_RES = STEP__CONCUR_RES;
-
-	/**
-	 * The feature id for the '<em><b>Inputpin</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__INPUTPIN = STEP__INPUTPIN;
-
-	/**
-	 * The feature id for the '<em><b>Outputpin</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__OUTPUTPIN = STEP__OUTPUTPIN;
-
-	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__DURATION = STEP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Delay</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Delay</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl <em>Multiplicity Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getMultiplicityElement()
-	 * @generated
-	 */
-	int MULTIPLICITY_ELEMENT = 19;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT__LOWER_BOUND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT__UPPER_BOUND = 1;
-
-	/**
-	 * The number of structural features of the '<em>Multiplicity Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Multiplicity Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl <em>Control Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getControlPin()
-	 * @generated
-	 */
-	int CONTROL_PIN = 20;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_PIN__LOWER_BOUND = MULTIPLICITY_ELEMENT__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Control Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Control Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl <em>Input Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.InputPinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getInputPin()
-	 * @generated
-	 */
-	int INPUT_PIN = 21;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__LOWER_BOUND = CONTROL_PIN__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__PATTERN = CONTROL_PIN__PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>Predecessors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__PREDECESSORS = CONTROL_PIN_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Input Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Input Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN_OPERATION_COUNT = CONTROL_PIN_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOutputPin()
-	 * @generated
-	 */
-	int OUTPUT_PIN = 22;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN__LOWER_BOUND = CONTROL_PIN__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN__PATTERN = CONTROL_PIN__PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>Successors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN__SUCCESSORS = CONTROL_PIN_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Output Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Output Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT_PIN_OPERATION_COUNT = CONTROL_PIN_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OnceImpl <em>Once</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.OnceImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOnce()
-	 * @generated
-	 */
-	int ONCE = 23;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE__PARENT = ARRIVAL_PATTERN__PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE__JITTER = ARRIVAL_PATTERN__JITTER;
-
-	/**
-	 * The feature id for the '<em><b>Phase</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE__PHASE = ARRIVAL_PATTERN__PHASE;
-
-	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
-
-	/**
-	 * The number of structural features of the '<em>Once</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Once</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ONCE_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.ConnectorKind <em>Connector Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2941,7 +3113,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getConnectorKind()
 	 * @generated
 	 */
-	int CONNECTOR_KIND = 24;
+	int CONNECTOR_KIND = 25;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -2951,7 +3123,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 25;
+	int NFP_DURATION = 26;
 
 
 	/**
@@ -3256,26 +3428,26 @@ public interface GqamPackage extends EPackage {
 	EReference getStep_ConcurRes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.gqam.Step#getInputpin <em>Inputpin</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.gqam.Step#getInputPin <em>Input Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Inputpin</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.Step#getInputpin()
+	 * @return the meta object for the containment reference list '<em>Input Pin</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.Step#getInputPin()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EReference getStep_Inputpin();
+	EReference getStep_InputPin();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.gqam.Step#getOutputpin <em>Outputpin</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.gqam.Step#getOutputPin <em>Output Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Outputpin</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.Step#getOutputpin()
+	 * @return the meta object for the containment reference list '<em>Output Pin</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.Step#getOutputPin()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EReference getStep_Outputpin();
+	EReference getStep_OutputPin();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.Step#getInputRel <em>Input Rel</em>}'.
@@ -3565,6 +3737,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOnce();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.CommunicationChannel <em>Communication Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Communication Channel</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.CommunicationChannel
+	 * @generated
+	 */
+	EClass getCommunicationChannel();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.CommunicationStep <em>Communication Step</em>}'.
@@ -4208,20 +4390,20 @@ public interface GqamPackage extends EPackage {
 		EReference STEP__CONCUR_RES = eINSTANCE.getStep_ConcurRes();
 
 		/**
-		 * The meta object literal for the '<em><b>Inputpin</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Input Pin</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__INPUTPIN = eINSTANCE.getStep_Inputpin();
+		EReference STEP__INPUT_PIN = eINSTANCE.getStep_InputPin();
 
 		/**
-		 * The meta object literal for the '<em><b>Outputpin</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Output Pin</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__OUTPUTPIN = eINSTANCE.getStep_Outputpin();
+		EReference STEP__OUTPUT_PIN = eINSTANCE.getStep_OutputPin();
 
 		/**
 		 * The meta object literal for the '<em><b>Input Rel</b></em>' reference feature.
@@ -4454,6 +4636,16 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ONCE = eINSTANCE.getOnce();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl <em>Communication Channel</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getCommunicationChannel()
+		 * @generated
+		 */
+		EClass COMMUNICATION_CHANNEL = eINSTANCE.getCommunicationChannel();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationStepImpl <em>Communication Step</em>}' class.

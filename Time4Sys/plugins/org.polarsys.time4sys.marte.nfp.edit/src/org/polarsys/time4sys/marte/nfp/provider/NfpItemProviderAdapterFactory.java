@@ -142,6 +142,29 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.DataSize} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataSizeItemProvider dataSizeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.DataSize}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataSizeAdapter() {
+		if (dataSizeItemProvider == null) {
+			dataSizeItemProvider = new DataSizeItemProvider(this);
+		}
+
+		return dataSizeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +292,7 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	public void dispose() {
 		if (durationItemProvider != null) durationItemProvider.dispose();
 		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
+		if (dataSizeItemProvider != null) dataSizeItemProvider.dispose();
 	}
 
 }

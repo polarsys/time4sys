@@ -88,6 +88,12 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case NfpPackage.DATA_SIZE: {
+				DataSize dataSize = (DataSize)theEObject;
+				T result = caseDataSize(dataSize);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -119,6 +125,21 @@ public class NfpSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimeInterval(TimeInterval object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Size</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Size</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSize(DataSize object) {
 		return null;
 	}
 

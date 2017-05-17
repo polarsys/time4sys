@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="trace" nsURI="http://www.polarsys.org/time4sys/trace/1.0" nsPrefix="trace">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Return the Events of this slice ordered by timestamp."/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Trace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
         eType="#//Event" containment="true" eOpposite="#//Event/trace"/>
@@ -93,6 +96,7 @@
     <eLiterals name="STATE" value="9"/>
     <eLiterals name="AUTOMATON" value="10"/>
     <eLiterals name="TEMPORAL_CHAIN" value="11"/>
+    <eLiterals name="OS" value="12"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Properties">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="#//NFP_TimeInterval"/>

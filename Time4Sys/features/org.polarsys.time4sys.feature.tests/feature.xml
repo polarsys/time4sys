@@ -77,21 +77,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.marte.srm.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.time4sys.model.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.time4sys.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"

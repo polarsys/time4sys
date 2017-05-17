@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
+import org.polarsys.time4sys.marte.grm.NamedElement;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +35,7 @@ package org.polarsys.time4sys.marte.gqam;
  * @model abstract="true"
  * @generated
  */
-public interface ControlPin extends MultiplicityElement {
+public interface ControlPin extends MultiplicityElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

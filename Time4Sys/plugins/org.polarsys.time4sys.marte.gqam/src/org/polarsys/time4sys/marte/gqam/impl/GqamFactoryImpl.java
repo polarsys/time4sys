@@ -74,9 +74,14 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 			case GqamPackage.BEHAVIOR_SCENARIO: return createBehaviorScenario();
 			case GqamPackage.BURST_PATTERN: return createBurstPattern();
 			case GqamPackage.CLOSED_PATTERN: return createClosedPattern();
+			case GqamPackage.COMMUNICATION_CHANNEL: return createCommunicationChannel();
 			case GqamPackage.COMMUNICATION_STEP: return createCommunicationStep();
+			case GqamPackage.DELAY: return createDelay();
 			case GqamPackage.END_TO_END_FLOW: return createEndToEndFlow();
 			case GqamPackage.EXECUTION_STEP: return createExecutionStep();
+			case GqamPackage.INPUT_PIN: return createInputPin();
+			case GqamPackage.ONCE: return createOnce();
+			case GqamPackage.OUTPUT_PIN: return createOutputPin();
 			case GqamPackage.PERIODIC_PATTERN: return createPeriodicPattern();
 			case GqamPackage.PRECEDENCE_RELATION: return createPrecedenceRelation();
 			case GqamPackage.REFERENCE: return createReference();
@@ -87,10 +92,6 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 			case GqamPackage.STEP: return createStep();
 			case GqamPackage.WORKLOAD_EVENT: return createWorkloadEvent();
 			case GqamPackage.WORKLOAD_BEHAVIOR: return createWorkloadBehavior();
-			case GqamPackage.DELAY: return createDelay();
-			case GqamPackage.INPUT_PIN: return createInputPin();
-			case GqamPackage.OUTPUT_PIN: return createOutputPin();
-			case GqamPackage.ONCE: return createOnce();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -245,6 +246,16 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CommunicationChannel createCommunicationChannel() {
+		CommunicationChannelImpl communicationChannel = new CommunicationChannelImpl();
+		return communicationChannel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CommunicationStep createCommunicationStep() {
 		CommunicationStepImpl communicationStep = new CommunicationStepImpl();
 		return communicationStep;
@@ -375,7 +386,7 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * @generated NOT
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue instanceof Duration);
+		assert(instanceValue == null || instanceValue instanceof Duration);
 		return NfpFactory.eINSTANCE.convertDurationToString((Duration)instanceValue);
 	}
 

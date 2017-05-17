@@ -149,8 +149,8 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(GqamPackage.Literals.STEP__INPUTPIN);
-			childrenFeatures.add(GqamPackage.Literals.STEP__OUTPUTPIN);
+			childrenFeatures.add(GqamPackage.Literals.STEP__INPUT_PIN);
+			childrenFeatures.add(GqamPackage.Literals.STEP__OUTPUT_PIN);
 		}
 		return childrenFeatures;
 	}
@@ -368,8 +368,8 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 			case GqamPackage.STEP__SERVICE_COUNT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case GqamPackage.STEP__INPUTPIN:
-			case GqamPackage.STEP__OUTPUTPIN:
+			case GqamPackage.STEP__INPUT_PIN:
+			case GqamPackage.STEP__OUTPUT_PIN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -389,12 +389,12 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GqamPackage.Literals.STEP__INPUTPIN,
+				(GqamPackage.Literals.STEP__INPUT_PIN,
 				 GqamFactory.eINSTANCE.createInputPin()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GqamPackage.Literals.STEP__OUTPUTPIN,
+				(GqamPackage.Literals.STEP__OUTPUT_PIN,
 				 GqamFactory.eINSTANCE.createOutputPin()));
 	}
 

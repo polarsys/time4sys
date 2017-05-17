@@ -170,6 +170,11 @@ public class WorkloadBehaviorItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createDelay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
 				 GqamFactory.eINSTANCE.createExecutionStep()));
 
 		newChildDescriptors.add
@@ -181,11 +186,6 @@ public class WorkloadBehaviorItemProvider
 			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
 				 GqamFactory.eINSTANCE.createRequestedService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
-				 GqamFactory.eINSTANCE.createDelay()));
 
 		newChildDescriptors.add
 			(createChildParameter

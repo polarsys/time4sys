@@ -8,16 +8,12 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- * 
- */
 package org.polarsys.time4sys.builder.design;
 
 import org.polarsys.time4sys.design.DesignFactory;
-import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
-import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
-import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
+import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -39,19 +35,19 @@ public class StepBuilder {
 	protected static HrmFactory hrmFactory = HrmFactory.eINSTANCE;
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 	
-	private TaskBuilder task;
+	private SchedulableResourceBuilder<?,?> task;
 	private DesignBuilder design;
 	private Step step;
 	private String deadline;
 
-	public StepBuilder(final DesignBuilder designBuilder, final TaskBuilder taskBuilder) {
+	public StepBuilder(final DesignBuilder designBuilder, final SchedulableResourceBuilder<?,?> taskBuilder) {
 		assert(designBuilder != null);
 		task = taskBuilder;
 		design = designBuilder;
 		step = null;	
 	}
 
-	public StepBuilder(DesignBuilder designBuilder, TaskBuilder taskBuilder, final Step raw) {
+	public StepBuilder(DesignBuilder designBuilder, SchedulableResourceBuilder<?,?> taskBuilder, final Step raw) {
 		assert(designBuilder != null);
 		assert(raw != null);
 		task = taskBuilder;
@@ -61,14 +57,24 @@ public class StepBuilder {
 
 	public Step build() {
 		if (step != null) {
+			if (!design.getMainScenario().getSteps().contains(step)) {
+				design.getMainScenario().getSteps().add(step);
+			}
 			return step;
 		}
-		step = gqamFactory.createExecutionStep();
+		step = createRawStep();
 		design.getMainScenario().getSteps().add(step);
+		if (!design.getMainScenario().getSteps().contains(step)) {
+			design.getMainScenario().getSteps().add(step);
+		}
 		if (task != null) {
 			step.setConcurRes(task.build(design));
 		}
 		return step;
+	}
+
+	public Step createRawStep() {
+		return gqamFactory.createExecutionStep();
 	}
 
 	public StepBuilder ofWCET(final String wcet) {
@@ -97,15 +103,27 @@ public class StepBuilder {
 	}
 
 	public TaskBuilder getTask() {
-		return task;
+		return (TaskBuilder)task;
 	}
 	
-	public void setTask(final TaskBuilder task) {
+	public CommunicationChannelBuilder getChannel() {
+		return (CommunicationChannelBuilder)task;
+	}
+	
+	public void setConcurRes(final SchedulableResourceBuilder<?, ?> task) {
 		assert(task != null);
 		this.task = task;
 		if (step != null) {
 			step.setConcurRes(task.build(design));
 		}
+	}
+	
+	public void setChannel(final CommunicationChannelBuilder task) {
+		setConcurRes(task);
+	}
+	
+	public void setTask(final TaskBuilder task) {
+		setConcurRes(task);
 		if (deadline != null) {
 			task.ofDeadline(deadline);
 		}
@@ -170,24 +188,87 @@ public class StepBuilder {
 	
 	public StepBuilder ofDeadline(final String value) {
 		deadline = value;
-		if (task != null) {
-			task.ofDeadline(value);
+		if (task != null && (task instanceof TaskBuilder)) {
+			((TaskBuilder)task).ofDeadline(value);
 		}
 		return this;
 	}
 
 	public void activates(final StepBuilder... successors) {
-		for(StepBuilder successor: successors) {
-			assert(successor != null);
-			final Step nextStep = successor.build();
-			assert(nextStep != null);
-			// for each pairs, first look if one has already an inputRel or outputRel and reuse accordingly 
-			if (nextStep.getInputRel() != null) {
-				nextStep.getInputRel().getPredec().add(build());
-			} else {
-				getOutputRel().getSucces().add(nextStep);
+		final Step origin = build();
+		this.hasAtLeastOneOutputPin();
+		for(OutputPin outputPin: origin.getOutputPin()) {
+			for(StepBuilder successor: successors) {
+				final InputPinBuilder inputPin = successor.hasAtLeastOneInputPin();
+				outputPin.getSuccessors().add(inputPin.build());
+				inputPin.withExactBound(inputPin.getSizeOfPredecessors());
+			}
+			final int nbSuccessors = outputPin.getSuccessors().size();
+			outputPin.setLowerBound(nbSuccessors);
+			outputPin.setUpperBound(nbSuccessors);
+		}
+	}
+	
+	public InputPinBuilder hasOneInputPinNamed(final String pinName) {
+		build();
+		InputPinBuilder r = null;
+		for(InputPin ip: step.getInputPin()) {
+			if (pinName.equals(ip.getName())) {
+				r = new InputPinBuilder(ip);
+				break;
 			}
 		}
+		if (r == null) {
+			r = new InputPinBuilder(step);
+			r.called(pinName);
+		}
+		return r;
+	}
+	
+	public InputPinBuilder inputPinNamed(final String pinName) {
+		return hasOneInputPinNamed(pinName);
+	}
+	
+	public OutputPinBuilder hasOneOutputPinNamed(final String pinName) {
+		build();
+		OutputPinBuilder r = null;
+		for(OutputPin ip: step.getOutputPin()) {
+			if (pinName.equals(ip.getName())) {
+				r = new OutputPinBuilder(ip);
+				break;
+			}
+		}
+		if (r == null) {
+			r = new OutputPinBuilder(step);
+			r.called(pinName);
+		}
+		return r;
+	}
+	
+	public OutputPinBuilder outputPinNamed(final String pinName) {
+		return hasOneOutputPinNamed(pinName);
+	}
+
+	public InputPinBuilder hasAtLeastOneInputPin() {
+		build();
+		final InputPinBuilder r;
+		if (step.getInputPin().isEmpty()) {
+			r = new InputPinBuilder(step);
+		} else {
+			r = new InputPinBuilder(step.getInputPin().get(0));
+		}
+		return r;
+	}
+
+	public OutputPinBuilder hasAtLeastOneOutputPin() {
+		build();
+		final OutputPinBuilder r;
+		if (step.getOutputPin().isEmpty()) {
+			r = new OutputPinBuilder(step);
+		} else {
+			r = new OutputPinBuilder(step.getOutputPin().get(0));
+		}
+		return r;
 	}
 
 	public StepBuilder ofJitter(String value) {

@@ -36,8 +36,8 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getInputRel <em>Input Rel</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOutputRel <em>Output Rel</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getConcurRes <em>Concur Res</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getInputpin <em>Inputpin</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOutputpin <em>Outputpin</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getInputPin <em>Input Pin</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOutputPin <em>Output Pin</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep()
@@ -156,36 +156,36 @@ public interface Step extends BehaviorScenario {
 	void setConcurRes(SchedulableResource value);
 
 	/**
-	 * Returns the value of the '<em><b>Inputpin</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Input Pin</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.InputPin}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Inputpin</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Input Pin</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inputpin</em>' containment reference list.
-	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_Inputpin()
+	 * @return the value of the '<em>Input Pin</em>' containment reference list.
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_InputPin()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<InputPin> getInputpin();
+	EList<InputPin> getInputPin();
 
 	/**
-	 * Returns the value of the '<em><b>Outputpin</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Output Pin</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.OutputPin}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Outputpin</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Output Pin</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outputpin</em>' containment reference list.
-	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_Outputpin()
+	 * @return the value of the '<em>Output Pin</em>' containment reference list.
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_OutputPin()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<OutputPin> getOutputpin();
+	EList<OutputPin> getOutputPin();
 
 	/**
 	 * Returns the value of the '<em><b>Input Rel</b></em>' reference.

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
-
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.Slice;
 import org.polarsys.time4sys.trace.Trace;
@@ -50,16 +50,16 @@ import org.polarsys.time4sys.trace.TracePackage;
  *
  * @generated
  */
-public class EventImpl extends MinimalEObjectImpl.Container implements Event {
+public class EventImpl extends MinimalEObjectImpl.Container implements Event, Comparable<Event> {
 	/**
 	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTimestamp()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final Duration TIMESTAMP_EDEFAULT = null;
+	protected static final Duration TIMESTAMP_EDEFAULT = NfpFactory.eINSTANCE.createDurationFromString("0ps");
 
 	/**
 	 * The cached value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
@@ -317,6 +317,11 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event {
 		}
 		result.append(")");
 		return result.toString();
+	}
+
+	@Override
+	public int compareTo(final Event other) {
+		return this.getTimestamp().compareTo(other.getTimestamp());
 	}
 
 } //EventImpl

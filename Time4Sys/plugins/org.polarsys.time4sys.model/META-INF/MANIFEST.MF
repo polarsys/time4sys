@@ -25,7 +25,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.srm,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.polarsys.time4sys.model,
- org.polarsys.time4sys.common,
  org.polarsys.time4sys.mapping;visibility:=reexport,
  org.polarsys.time4sys.trace;visibility:=reexport
 Bundle-ActivationPolicy: lazy

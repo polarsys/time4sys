@@ -99,8 +99,10 @@ public class InputPinItemProvider extends ControlPinItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		InputPin inputPin = (InputPin)object;
-		return getString("_UI_InputPin_type") + " " + inputPin.getLowerBound();
+		String label = ((InputPin)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_InputPin_type") :
+			getString("_UI_InputPin_type") + " " + label;
 	}
 	
 

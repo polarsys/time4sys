@@ -131,6 +131,15 @@ public interface GqamFactory extends EFactory {
 	Once createOnce();
 
 	/**
+	 * Returns a new object of class '<em>Communication Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Communication Channel</em>'.
+	 * @generated
+	 */
+	CommunicationChannel createCommunicationChannel();
+
+	/**
 	 * Returns a new object of class '<em>Communication Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

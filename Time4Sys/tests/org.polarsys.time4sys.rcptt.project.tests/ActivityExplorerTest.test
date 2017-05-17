@@ -1,0 +1,80 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _GQfW8NyZEeazus087xTD1g,_lF0FUNyZEeazus087xTD1g
+Element-Name: ActivityExplorerTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _XyUrcNyYEeazus087xTD1g
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 1/17/17 4:55 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-editor "Project New Project"] {
+    get-link "" | click
+    get-section Design | click
+    get-section "Diagrams Viewer" | get-tree 
+        | select "Design/Design Architecture/\\[New Project\\] Design Architecture diagram" | double-click
+}
+with [get-editor "[New Project] Design Architecture diagram" | get-diagram -index 1 | get-edit-part 
+    -name "[New Project] Design Architecture diagram"] {
+    mouse-release 814 98 button1 524288 -height 356 -width 994
+    mouse-hover 814 98 -height 356 -width 994
+    mouse-move 27 2 -height 356 -width 994
+}
+with [get-editor "Project New Project"] {
+    click
+    get-section "Diagrams Viewer" | get-tree | select "Design/Design Overview/Design Overview Table" | double-click
+    click
+    get-section Design | get-link "Design Model" | click
+}
+get-window "New Design Architecture" | get-button OK | click
+get-editor "[New Project] Design Architecture diagram" -index 1 | get-diagram -index 1 | get-edit-part 
+    -name "[New Project] Design Architecture diagram" | mouse-move 98 1 -height 356 -width 994
+with [get-editor "Project New Project"] {
+    click
+    get-section Design | get-link "Behavior Scenario" | click
+}
+get-window "New Scenario Steps activity diagram" | get-button OK | click
+get-editor "[] Scenario steps diagram" | get-diagram -index 1 | get-edit-part -name "[] Scenario steps diagram" 
+    | mouse-move 85 2 -height 356 -width 994
+with [get-editor "Project New Project"] {
+    click
+    get-section Design | get-link "Design Overview" | click
+}
+get-window "New Design Overview" | get-button OK | click
+with [get-editor "Project New Project"] {
+    click
+    get-section Design | get-link "Design Result" | click
+}
+get-window "New Design Results" | get-button OK | click
+with [get-editor "Project New Project"] {
+    click
+    get-tab-folder | get-tab-item Analysis | click
+    with [get-section Analysis] {
+        click
+        get-link "Analysis Model" | click
+    }
+}
+get-window "New Analysis Architecture" | get-button OK | click
+get-editor "Analysis Architecture" | get-diagram -index 1 | get-edit-part -name "Analysis Architecture" 
+    | mouse-move 132 0 -height 356 -width 994
+with [get-editor "Project New Project"] {
+    click
+    get-section Analysis | get-link "Analysis Overview" | click
+}
+get-window "New Analysis Overview" | get-button OK | click
+with [get-editor "Project New Project"] {
+    click
+    get-section Analysis | get-link "Analysis Transformation" | click
+}
+get-editor "Project New Project" | get-section "Diagrams Viewer" | get-tree | select Analysis
+with [get-editor "Project New Project" | get-section "Diagrams Viewer" | get-tree] {
+    get-item "Analysis/Analysis Architecture" | get-property childCount | equals 2 | verify-true
+    get-item "Analysis/Analysis Overview" | get-property childCount | equals 1 | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

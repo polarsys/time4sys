@@ -225,7 +225,7 @@ public class EndToEndFlowItemProvider
 	@Override
 	public String getText(Object object) {
 		EndToEndFlow endToEndFlow = (EndToEndFlow)object;
-		return getString("_UI_EndToEndFlow_type") + " " + endToEndFlow.isIsSchedulable();
+		return getString("_UI_EndToEndFlow_type") + " " + endToEndFlow.getEndToEndDeadline();
 	}
 	
 

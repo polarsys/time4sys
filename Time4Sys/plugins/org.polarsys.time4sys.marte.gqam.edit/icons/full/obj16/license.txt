@@ -6,6 +6,7 @@ These followings icons are made available under the terms of the Eclipse Public 
 
 icons/full/obj16/AcquireStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/AcquireStep.gif
 icons/full/obj16/BehaviorScenario.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/BehaviorScenario.gif
+icons/full/obj16/CommunicationChannel.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/CommunicationChannel.gif
 icons/full/obj16/CommunicationStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/CommunicationStep.gif
 icons/full/obj16/EndToEndFlow.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/EndToEndFlow.gif
 icons/full/obj16/ExecutionStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/obj16/ExecutionStep.gif
@@ -32,6 +33,8 @@ icons/full/ctool16/CreateBehaviorScenario_steps_RequestedService.gif - org.polar
 icons/full/ctool16/CreateBehaviorScenario_steps_Step.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateBehaviorScenario_steps_Step.gif
 icons/full/ctool16/CreateInputPort_ownedInputs_InputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateInputPort_ownedInputs_InputPort.gif
 icons/full/ctool16/CreateOutputPort_ownedOutputs_OutputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateOutputPort_ownedOutputs_OutputPort.gif
+icons/full/ctool16/CreateResource_ownedResource_CommunicationChannel.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateResource_ownedResource_CommunicationChannel.gif
+icons/full/ctool16/CreateResourcePackage_ownedElement_CommunicationChannel.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateResourcePackage_ownedElement_CommunicationChannel.gif
 icons/full/ctool16/CreateStep_inputPort_InputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateStep_inputPort_InputPort.gif
 icons/full/ctool16/CreateStep_outputPort_OutputPort.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateStep_outputPort_OutputPort.gif
 icons/full/ctool16/CreateWorkloadBehavior_behavior_AcquireStep.gif - org.polarsys.time4sys.marte.gqam.edit - org.polarsys.time4sys.marte.gqam.edit/icons/full/ctool16/CreateWorkloadBehavior_behavior_AcquireStep.gif

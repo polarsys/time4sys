@@ -13,30 +13,31 @@
 package org.polarsys.time4sys.trace.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.Properties;
 import org.polarsys.time4sys.trace.Slice;
 import org.polarsys.time4sys.trace.SliceKind;
 import org.polarsys.time4sys.trace.TracePackage;
+import org.polarsys.time4sys.trace.util.EventTimestampComparator;
 
 /**
  * <!-- begin-user-doc -->
@@ -343,44 +344,74 @@ public class SliceImpl extends MinimalEObjectImpl.Container implements Slice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getKindLabel() {
-		return kindLabel;
+		if (SliceKind.OTHER.equals(kind)) {
+			return kindLabel;
+		}
+		return kind.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setKindLabel(String newKindLabel) {
 		String oldKindLabel = kindLabel;
+		SliceKind newKind = SliceKind.OTHER;
+		if (newKindLabel != null) {
+			final String newUpperKindLabel = newKindLabel.toUpperCase();
+			for(SliceKind k: SliceKind.values()) {
+				if (newUpperKindLabel.equals(k.toString())) {
+					newKind = k;
+					newKindLabel = null;
+				}
+			}
+		}
 		kindLabel = newKindLabel;
-		if (eNotificationRequired())
+		setKind(newKind);
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, TracePackage.SLICE__KIND_LABEL, oldKindLabel, kindLabel));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public String getHierarchicalName(String separator) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public String getHierarchicalName(final String separator) {
+		assert(separator != null);
+		if (eIsSet(TracePackage.eINSTANCE.getSlice_Parent())) {
+			return getParent().getHierarchicalName(separator) + separator + getName();
+		} else {
+			return getName();
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Event> getAggregatedEvents() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		final Set<Event> events = new LinkedHashSet<>();
+		events.addAll(getEvents());
+		if (subSlices != null) {
+			for(Slice sub: subSlices) {
+				events.addAll(sub.getAggregatedEvents());
+			}
+		}
+		if (ownedSubSlices != null) {
+			for(Slice sub: ownedSubSlices) {
+				events.addAll(sub.getAggregatedEvents());
+			}
+		}
+		final List<Event> evts = new LinkedList<>(events);
+		Collections.sort(evts, EventTimestampComparator.INSTANCE);
+		return new EcoreEList.UnmodifiableEList<Event>(this, TracePackage.Literals.SLICE__EVENTS, events.size(), evts.toArray());
 	}
 
 	/**

@@ -86,6 +86,10 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 				return createTimeIntervalAdapter();
 			}
 			@Override
+			public Adapter caseDataSize(DataSize object) {
+				return createDataSizeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -130,6 +134,20 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTimeIntervalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>Data Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @generated
+	 */
+	public Adapter createDataSizeAdapter() {
 		return null;
 	}
 

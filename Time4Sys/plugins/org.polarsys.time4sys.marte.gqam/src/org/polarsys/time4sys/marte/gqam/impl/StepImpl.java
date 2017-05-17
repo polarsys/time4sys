@@ -55,8 +55,8 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getInputRel <em>Input Rel</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOutputRel <em>Output Rel</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getConcurRes <em>Concur Res</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getInputpin <em>Inputpin</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOutputpin <em>Outputpin</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getInputPin <em>Input Pin</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOutputPin <em>Output Pin</em>}</li>
  * </ul>
  *
  * @generated
@@ -223,24 +223,24 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	protected SchedulableResource concurRes;
 
 	/**
-	 * The cached value of the '{@link #getInputpin() <em>Inputpin</em>}' containment reference list.
+	 * The cached value of the '{@link #getInputPin() <em>Input Pin</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInputpin()
+	 * @see #getInputPin()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<InputPin> inputpin;
+	protected EList<InputPin> inputPin;
 
 	/**
-	 * The cached value of the '{@link #getOutputpin() <em>Outputpin</em>}' containment reference list.
+	 * The cached value of the '{@link #getOutputPin() <em>Output Pin</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutputpin()
+	 * @see #getOutputPin()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<OutputPin> outputpin;
+	protected EList<OutputPin> outputPin;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -465,11 +465,11 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<InputPin> getInputpin() {
-		if (inputpin == null) {
-			inputpin = new EObjectContainmentEList<InputPin>(InputPin.class, this, GqamPackage.STEP__INPUTPIN);
+	public EList<InputPin> getInputPin() {
+		if (inputPin == null) {
+			inputPin = new EObjectContainmentEList<InputPin>(InputPin.class, this, GqamPackage.STEP__INPUT_PIN);
 		}
-		return inputpin;
+		return inputPin;
 	}
 
 	/**
@@ -477,11 +477,11 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<OutputPin> getOutputpin() {
-		if (outputpin == null) {
-			outputpin = new EObjectContainmentEList<OutputPin>(OutputPin.class, this, GqamPackage.STEP__OUTPUTPIN);
+	public EList<OutputPin> getOutputPin() {
+		if (outputPin == null) {
+			outputPin = new EObjectContainmentEList<OutputPin>(OutputPin.class, this, GqamPackage.STEP__OUTPUT_PIN);
 		}
-		return outputpin;
+		return outputPin;
 	}
 
 	/**
@@ -714,10 +714,10 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 				return basicSetInputRel(null, msgs);
 			case GqamPackage.STEP__OUTPUT_REL:
 				return basicSetOutputRel(null, msgs);
-			case GqamPackage.STEP__INPUTPIN:
-				return ((InternalEList<?>)getInputpin()).basicRemove(otherEnd, msgs);
-			case GqamPackage.STEP__OUTPUTPIN:
-				return ((InternalEList<?>)getOutputpin()).basicRemove(otherEnd, msgs);
+			case GqamPackage.STEP__INPUT_PIN:
+				return ((InternalEList<?>)getInputPin()).basicRemove(otherEnd, msgs);
+			case GqamPackage.STEP__OUTPUT_PIN:
+				return ((InternalEList<?>)getOutputPin()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -770,10 +770,10 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 			case GqamPackage.STEP__CONCUR_RES:
 				if (resolve) return getConcurRes();
 				return basicGetConcurRes();
-			case GqamPackage.STEP__INPUTPIN:
-				return getInputpin();
-			case GqamPackage.STEP__OUTPUTPIN:
-				return getOutputpin();
+			case GqamPackage.STEP__INPUT_PIN:
+				return getInputPin();
+			case GqamPackage.STEP__OUTPUT_PIN:
+				return getOutputPin();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -820,13 +820,13 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 			case GqamPackage.STEP__CONCUR_RES:
 				setConcurRes((SchedulableResource)newValue);
 				return;
-			case GqamPackage.STEP__INPUTPIN:
-				getInputpin().clear();
-				getInputpin().addAll((Collection<? extends InputPin>)newValue);
+			case GqamPackage.STEP__INPUT_PIN:
+				getInputPin().clear();
+				getInputPin().addAll((Collection<? extends InputPin>)newValue);
 				return;
-			case GqamPackage.STEP__OUTPUTPIN:
-				getOutputpin().clear();
-				getOutputpin().addAll((Collection<? extends OutputPin>)newValue);
+			case GqamPackage.STEP__OUTPUT_PIN:
+				getOutputPin().clear();
+				getOutputPin().addAll((Collection<? extends OutputPin>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -873,11 +873,11 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 			case GqamPackage.STEP__CONCUR_RES:
 				setConcurRes((SchedulableResource)null);
 				return;
-			case GqamPackage.STEP__INPUTPIN:
-				getInputpin().clear();
+			case GqamPackage.STEP__INPUT_PIN:
+				getInputPin().clear();
 				return;
-			case GqamPackage.STEP__OUTPUTPIN:
-				getOutputpin().clear();
+			case GqamPackage.STEP__OUTPUT_PIN:
+				getOutputPin().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -913,10 +913,10 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 				return outputRel != null;
 			case GqamPackage.STEP__CONCUR_RES:
 				return concurRes != null;
-			case GqamPackage.STEP__INPUTPIN:
-				return inputpin != null && !inputpin.isEmpty();
-			case GqamPackage.STEP__OUTPUTPIN:
-				return outputpin != null && !outputpin.isEmpty();
+			case GqamPackage.STEP__INPUT_PIN:
+				return inputPin != null && !inputPin.isEmpty();
+			case GqamPackage.STEP__OUTPUT_PIN:
+				return outputPin != null && !outputPin.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

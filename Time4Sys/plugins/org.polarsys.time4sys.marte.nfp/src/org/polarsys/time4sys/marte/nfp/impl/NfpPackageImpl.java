@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
@@ -53,7 +55,21 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dataSizeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum timeUnitKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataSizeUnitKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -194,15 +210,6 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__ConvertToUnit__TimeUnitKind() {
-		return durationEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDuration__Simplify() {
 		return durationEClass.getEOperations().get(2);
 	}
 
@@ -211,8 +218,17 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDuration__Simplify() {
+		return durationEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getDuration__Sub__Duration() {
-		return durationEClass.getEOperations().get(3);
+		return durationEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -221,7 +237,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__CompareTo__Duration() {
-		return durationEClass.getEOperations().get(4);
+		return durationEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -239,7 +255,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__NotZero() {
-		return durationEClass.getEOperations().get(6);
+		return durationEClass.getEOperations().get(10);
 	}
 
 	/**
@@ -265,7 +281,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDuration__Mul__long() {
+	public EOperation getDuration__Multiply__long() {
 		return durationEClass.getEOperations().get(9);
 	}
 
@@ -275,7 +291,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Lcm__Duration() {
-		return durationEClass.getEOperations().get(10);
+		return durationEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -284,7 +300,16 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Div__Duration() {
-		return durationEClass.getEOperations().get(11);
+		return durationEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDuration__Divide__Duration() {
+		return durationEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -346,8 +371,161 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDataSize() {
+		return dataSizeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataSize_Value() {
+		return (EAttribute)dataSizeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataSize_Unit() {
+		return (EAttribute)dataSizeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Add__DataSize() {
+		return dataSizeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__CompareTo__DataSize() {
+		return dataSizeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__ConvertToUnit__DataSizeUnitKind() {
+		return dataSizeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Div__DataSize() {
+		return dataSizeEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Divide__DataSize() {
+		return dataSizeEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__IsZero() {
+		return dataSizeEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Lcm__DataSize() {
+		return dataSizeEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Max__DataSize() {
+		return dataSizeEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Min__DataSize() {
+		return dataSizeEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Multiply__long() {
+		return dataSizeEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__NotZero() {
+		return dataSizeEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Simplify() {
+		return dataSizeEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__Sub__DataSize() {
+		return dataSizeEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTimeUnitKind() {
 		return timeUnitKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDataSizeUnitKind() {
+		return dataSizeUnitKindEEnum;
 	}
 
 	/**
@@ -386,17 +564,18 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEAttribute(durationEClass, DURATION__CLOCK);
 		createEAttribute(durationEClass, DURATION__PRECISION);
 		createEOperation(durationEClass, DURATION___ADD__DURATION);
-		createEOperation(durationEClass, DURATION___CONVERT_TO_UNIT__TIMEUNITKIND);
-		createEOperation(durationEClass, DURATION___SIMPLIFY);
-		createEOperation(durationEClass, DURATION___SUB__DURATION);
 		createEOperation(durationEClass, DURATION___COMPARE_TO__DURATION);
+		createEOperation(durationEClass, DURATION___CONVERT_TO_UNIT__TIMEUNITKIND);
+		createEOperation(durationEClass, DURATION___DIV__DURATION);
+		createEOperation(durationEClass, DURATION___DIVIDE__DURATION);
 		createEOperation(durationEClass, DURATION___IS_ZERO);
-		createEOperation(durationEClass, DURATION___NOT_ZERO);
+		createEOperation(durationEClass, DURATION___LCM__DURATION);
 		createEOperation(durationEClass, DURATION___MAX__DURATION);
 		createEOperation(durationEClass, DURATION___MIN__DURATION);
-		createEOperation(durationEClass, DURATION___MUL__LONG);
-		createEOperation(durationEClass, DURATION___LCM__DURATION);
-		createEOperation(durationEClass, DURATION___DIV__DURATION);
+		createEOperation(durationEClass, DURATION___MULTIPLY__LONG);
+		createEOperation(durationEClass, DURATION___NOT_ZERO);
+		createEOperation(durationEClass, DURATION___SIMPLIFY);
+		createEOperation(durationEClass, DURATION___SUB__DURATION);
 
 		timeIntervalEClass = createEClass(TIME_INTERVAL);
 		createEReference(timeIntervalEClass, TIME_INTERVAL__MIN);
@@ -405,8 +584,26 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEAttribute(timeIntervalEClass, TIME_INTERVAL__MAX_OPEN);
 		createEOperation(timeIntervalEClass, TIME_INTERVAL___COMPUTE_LENGTH);
 
+		dataSizeEClass = createEClass(DATA_SIZE);
+		createEAttribute(dataSizeEClass, DATA_SIZE__VALUE);
+		createEAttribute(dataSizeEClass, DATA_SIZE__UNIT);
+		createEOperation(dataSizeEClass, DATA_SIZE___ADD__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___COMPARE_TO__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___CONVERT_TO_UNIT__DATASIZEUNITKIND);
+		createEOperation(dataSizeEClass, DATA_SIZE___DIV__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___DIVIDE__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___IS_ZERO);
+		createEOperation(dataSizeEClass, DATA_SIZE___LCM__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___MAX__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___MIN__DATASIZE);
+		createEOperation(dataSizeEClass, DATA_SIZE___MULTIPLY__LONG);
+		createEOperation(dataSizeEClass, DATA_SIZE___NOT_ZERO);
+		createEOperation(dataSizeEClass, DATA_SIZE___SIMPLIFY);
+		createEOperation(dataSizeEClass, DATA_SIZE___SUB__DATASIZE);
+
 		// Create enums
 		timeUnitKindEEnum = createEEnum(TIME_UNIT_KIND);
+		dataSizeUnitKindEEnum = createEEnum(DATA_SIZE_UNIT_KIND);
 	}
 
 	/**
@@ -450,20 +647,22 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		EOperation op = initEOperation(getDuration__Add__Duration(), this.getDuration(), "add", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDuration__ConvertToUnit__TimeUnitKind(), this.getDuration(), "convertToUnit", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getTimeUnitKind(), "unit", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getDuration__Simplify(), this.getDuration(), "simplify", 1, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getDuration__Sub__Duration(), this.getDuration(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
-
 		op = initEOperation(getDuration__CompareTo__Duration(), ecorePackage.getEInt(), "compareTo", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "anotherDuration", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getDuration__ConvertToUnit__TimeUnitKind(), this.getDuration(), "convertToUnit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTimeUnitKind(), "unit", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDuration__Div__Duration(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDuration__Divide__Duration(), ecorePackage.getELong(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEOperation(getDuration__IsZero(), ecorePackage.getEBoolean(), "isZero", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getDuration__NotZero(), ecorePackage.getEBoolean(), "notZero", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDuration__Lcm__Duration(), this.getDuration(), "lcm", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getDuration__Max__Duration(), this.getDuration(), "max", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -471,13 +670,14 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		op = initEOperation(getDuration__Min__Duration(), this.getDuration(), "min", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDuration__Mul__long(), this.getDuration(), "mul", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDuration__Multiply__long(), this.getDuration(), "multiply", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getELong(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDuration__Lcm__Duration(), this.getDuration(), "lcm", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDuration__NotZero(), ecorePackage.getEBoolean(), "notZero", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDuration__Div__Duration(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDuration__Simplify(), this.getDuration(), "simplify", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDuration__Sub__Duration(), this.getDuration(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timeIntervalEClass, TimeInterval.class, "TimeInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -487,6 +687,46 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		initEAttribute(getTimeInterval_MaxOpen(), ecorePackage.getEBoolean(), "maxOpen", "false", 1, 1, TimeInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getTimeInterval__ComputeLength(), this.getDuration(), "computeLength", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(dataSizeEClass, DataSize.class, "DataSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataSize_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DataSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataSize_Unit(), this.getDataSizeUnitKind(), "unit", "BYTE", 1, 1, DataSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Add__DataSize(), this.getDataSize(), "add", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__CompareTo__DataSize(), ecorePackage.getEInt(), "compareTo", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "anotherDuration", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__ConvertToUnit__DataSizeUnitKind(), this.getDataSize(), "convertToUnit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSizeUnitKind(), "unit", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Div__DataSize(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Divide__DataSize(), ecorePackage.getELong(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataSize__IsZero(), ecorePackage.getEBoolean(), "isZero", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Lcm__DataSize(), this.getDataSize(), "lcm", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Max__DataSize(), this.getDataSize(), "max", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Min__DataSize(), this.getDataSize(), "min", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Multiply__long(), this.getDataSize(), "multiply", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataSize__NotZero(), ecorePackage.getEBoolean(), "notZero", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataSize__Simplify(), this.getDataSize(), "simplify", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataSize__Sub__DataSize(), this.getDataSize(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(timeUnitKindEEnum, TimeUnitKind.class, "TimeUnitKind");
@@ -498,6 +738,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		addEEnumLiteral(timeUnitKindEEnum, TimeUnitKind.MN);
 		addEEnumLiteral(timeUnitKindEEnum, TimeUnitKind.H);
 		addEEnumLiteral(timeUnitKindEEnum, TimeUnitKind.D);
+
+		initEEnum(dataSizeUnitKindEEnum, DataSizeUnitKind.class, "DataSizeUnitKind");
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.BYTE);
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.BIT);
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.KB);
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.MB);
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.GB);
 
 		// Create resource
 		createResource(eNS_URI);

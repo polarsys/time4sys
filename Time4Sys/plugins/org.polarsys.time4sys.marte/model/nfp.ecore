@@ -6,31 +6,34 @@
     <eOperations name="add" eType="#//Duration">
       <eParameters name="v" lowerBound="1" eType="#//Duration"/>
     </eOperations>
-    <eOperations name="convertToUnit" lowerBound="1" eType="#//Duration">
-      <eParameters name="unit" lowerBound="1" eType="#//TimeUnitKind"/>
-    </eOperations>
-    <eOperations name="simplify" lowerBound="1" eType="#//Duration"/>
-    <eOperations name="sub" lowerBound="1" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
     <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eParameters name="anotherDuration" eType="#//Duration"/>
     </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//Duration">
+      <eParameters name="unit" lowerBound="1" eType="#//TimeUnitKind"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
     <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="lcm" lowerBound="1" eType="#//Duration">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
     <eOperations name="max" lowerBound="1" eType="#//Duration">
       <eParameters name="other" eType="#//Duration"/>
     </eOperations>
     <eOperations name="min" lowerBound="1" eType="#//Duration">
       <eParameters name="other" eType="#//Duration"/>
     </eOperations>
-    <eOperations name="mul" lowerBound="1" eType="#//Duration">
+    <eOperations name="multiply" lowerBound="1" eType="#//Duration">
       <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     </eOperations>
-    <eOperations name="lcm" lowerBound="1" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="simplify" lowerBound="1" eType="#//Duration"/>
+    <eOperations name="sub" lowerBound="1" eType="#//Duration">
       <eParameters name="v" lowerBound="1" eType="#//Duration"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -59,5 +62,50 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOpen" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnitKind">
+    <eLiterals name="BYTE"/>
+    <eLiterals name="BIT" value="1"/>
+    <eLiterals name="KB" value="2" literal=""/>
+    <eLiterals name="MB" value="3"/>
+    <eLiterals name="GB" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSize">
+    <eOperations name="add" eType="#//DataSize">
+      <eParameters name="v" lowerBound="1" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="anotherDuration" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//DataSize">
+      <eParameters name="unit" lowerBound="1" eType="#//DataSizeUnitKind"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eParameters name="v" lowerBound="1" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="lcm" lowerBound="1" eType="#//DataSize">
+      <eParameters name="v" lowerBound="1" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="max" lowerBound="1" eType="#//DataSize">
+      <eParameters name="other" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="min" lowerBound="1" eType="#//DataSize">
+      <eParameters name="other" eType="#//DataSize"/>
+    </eOperations>
+    <eOperations name="multiply" lowerBound="1" eType="#//DataSize">
+      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="simplify" lowerBound="1" eType="#//DataSize"/>
+    <eOperations name="sub" lowerBound="1" eType="#//DataSize">
+      <eParameters name="v" lowerBound="1" eType="#//DataSize"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataSizeUnitKind"
+        defaultValueLiteral="BYTE"/>
   </eClassifiers>
 </ecore:EPackage>

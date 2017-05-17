@@ -8,8 +8,6 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- */
 package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,6 +19,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
@@ -43,7 +43,7 @@ import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
  *
  * @generated
  */
-public class DurationImpl extends MinimalEObjectImpl.Container implements Duration {
+public class DurationImpl extends AbstractRealWithUnitValueImpl<TimeUnitKind, Duration> implements Duration {
 	
 	/**
 	 * @generated NOT
@@ -183,7 +183,7 @@ public class DurationImpl extends MinimalEObjectImpl.Container implements Durati
 	 * @generated NOT
 	 */
 	protected DurationImpl(final double v, final TimeUnitKind unit) {
-		super();
+		super(TimeDimension.timeDimension);
 		this.value = v;
 		this.unit = unit;
 	}
@@ -327,106 +327,6 @@ public class DurationImpl extends MinimalEObjectImpl.Container implements Durati
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration add(final Duration v) {
-		final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
-		final Duration v1 = this.convertToUnit(targetUnit);
-		final Duration v2 = v.convertToUnit(targetUnit);
-		return new DurationImpl(v1.getValue() + v2.getValue(), targetUnit);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration convertToUnit(TimeUnitKind target) {
-		if (unit == target) {
-			return this;
-		}
-		return new DurationImpl(value * TimeUnitKind.getConversionFactor(unit, target), target);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration simplify() {
-		Duration result = this;
-		// Try to upgrade unit
-		for (TimeUnitKind u : TimeUnitKind.VALUES.subList(unit.getValue(), TimeUnitKind.VALUES.size())) {
-			Duration r = this.convertToUnit(u);
-			if (r.getValue() <= 1.0) {
-				break;
-			}
-			result = r;
-		}
-		if (result.getValue() >=1.0 || result.getUnit() == TimeUnitKind.PS) {
-			return result;
-		}
-		// Try to downgrade unit to make it integer round
-		final List<TimeUnitKind> du = new ArrayList<TimeUnitKind>(TimeUnitKind.VALUES.subList(0, unit.getValue()));
-		java.util.Collections.reverse(du);
-		for (TimeUnitKind u : du) {
-			Duration r = this.convertToUnit(u);
-			if (isInteger(r.getValue())) {
-				result = r;
-				break;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration sub(Duration v) {
-		final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
-		final Duration v1 = this.convertToUnit(targetUnit);
-		final Duration v2 = v.convertToUnit(targetUnit);
-		return new DurationImpl(v1.getValue() - v2.getValue(), targetUnit);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int compareTo(Duration anotherDuration) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean isZero() {
-		return Double.doubleToLongBits(value) == 0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean notZero() {
-		return !isZero();
-	}
-
-	private boolean isInteger(final double v) {
-		return (v == Math.floor(v)) && !Double.isInfinite(v);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -542,28 +442,30 @@ public class DurationImpl extends MinimalEObjectImpl.Container implements Durati
 		switch (operationID) {
 			case NfpPackage.DURATION___ADD__DURATION:
 				return add((Duration)arguments.get(0));
-			case NfpPackage.DURATION___CONVERT_TO_UNIT__TIMEUNITKIND:
-				return convertToUnit((TimeUnitKind)arguments.get(0));
-			case NfpPackage.DURATION___SIMPLIFY:
-				return simplify();
-			case NfpPackage.DURATION___SUB__DURATION:
-				return sub((Duration)arguments.get(0));
 			case NfpPackage.DURATION___COMPARE_TO__DURATION:
 				return compareTo((Duration)arguments.get(0));
+			case NfpPackage.DURATION___CONVERT_TO_UNIT__TIMEUNITKIND:
+				return convertToUnit((TimeUnitKind)arguments.get(0));
+			case NfpPackage.DURATION___DIV__DURATION:
+				return div((Duration)arguments.get(0));
+			case NfpPackage.DURATION___DIVIDE__DURATION:
+				return divide((Duration)arguments.get(0));
 			case NfpPackage.DURATION___IS_ZERO:
 				return isZero();
-			case NfpPackage.DURATION___NOT_ZERO:
-				return notZero();
+			case NfpPackage.DURATION___LCM__DURATION:
+				return lcm((Duration)arguments.get(0));
 			case NfpPackage.DURATION___MAX__DURATION:
 				return max((Duration)arguments.get(0));
 			case NfpPackage.DURATION___MIN__DURATION:
 				return min((Duration)arguments.get(0));
-			case NfpPackage.DURATION___MUL__LONG:
-				return mul((Long)arguments.get(0));
-			case NfpPackage.DURATION___LCM__DURATION:
-				return lcm((Duration)arguments.get(0));
-			case NfpPackage.DURATION___DIV__DURATION:
-				return div((Duration)arguments.get(0));
+			case NfpPackage.DURATION___MULTIPLY__LONG:
+				return multiply((Long)arguments.get(0));
+			case NfpPackage.DURATION___NOT_ZERO:
+				return notZero();
+			case NfpPackage.DURATION___SIMPLIFY:
+				return simplify();
+			case NfpPackage.DURATION___SUB__DURATION:
+				return sub((Duration)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -657,108 +559,14 @@ public class DurationImpl extends MinimalEObjectImpl.Container implements Durati
 			if (isZero() && other.isZero()) {
 				return true;
 			} else {
-				final TimeUnitKind target = TimeUnitKind.findClosestUnitTo(unit, other.getUnit());
+				final TimeUnitKind target = d.findClosestUnitTo(unit, other.getUnit());
 				return this.convertToUnit(target).equals(other.convertToUnit(target));
 			}
 		}
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration max(final Duration other) {
-		if (other == null) {
-			return this;
-		}
-		if (unit == other.getUnit()) {
-			if (value >= other.getValue()) {
-				return this;
-			} else {
-				return other;
-			}
-		} else {
-			final TimeUnitKind target = TimeUnitKind.findClosestUnitTo(unit, other.getUnit());
-			if (this.convertToUnit(target).getValue() >= other.convertToUnit(target).getValue()) {
-				return this;
-			} else {
-				return other;
-			}
-		}
-	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration min(final Duration other) {
-		if (other == null) {
-			return this;
-		}
-		if (unit == other.getUnit()) {
-			if (value <= other.getValue()) {
-				return this;
-			} else {
-				return other;
-			}
-		} else {
-			final TimeUnitKind target = TimeUnitKind.findClosestUnitTo(unit, other.getUnit());
-			if (this.convertToUnit(target).getValue() <= other.convertToUnit(target).getValue()) {
-				return this;
-			} else {
-				return other;
-			}
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration mul(long v) {
-		return new DurationImpl(getValue() * v, unit);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public Duration lcm(Duration v) {
-		final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
-		final Duration v1 = this.convertToUnit(targetUnit);
-		final Duration v2 = v.convertToUnit(targetUnit);
-		return new DurationImpl(lcm(v1.getValue(), v2.getValue(), 0.0000001), targetUnit);
-	}
-
-	private double lcm(final double m, final double n, final double epsilon) {
-		if (Math.abs(m) < epsilon || Math.abs(n) < epsilon) {
-			return 0.0;
-		}
-		return (m * n) / gcd(m, n, epsilon);
-	}
-
-	private double gcd(double m, double n, final double epsilon) {
-		while (Math.abs(n) > epsilon) {
-			double q = m;
-			m = n;
-			n = q % n;
-		}
-		return m;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public double div(final Duration v) {
-		final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
-		final Duration v1 = this.convertToUnit(targetUnit);
-		final Duration v2 = v.convertToUnit(targetUnit);
-		return v1.getValue() / v2.getValue();
+	@Override
+	protected Duration create(double e, TimeUnitKind targetUnit) {
+		return new DurationImpl(e, targetUnit);
 	}
 } //DurationImpl

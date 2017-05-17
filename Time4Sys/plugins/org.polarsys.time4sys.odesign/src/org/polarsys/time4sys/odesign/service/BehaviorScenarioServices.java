@@ -179,7 +179,7 @@ public class BehaviorScenarioServices {
 						}
 					}
 				}
-				for (OutputPin anExchange : step.getOutputpin()) {
+				for (OutputPin anExchange : step.getOutputPin()) {
 					if (displayedOP.containsKey(anExchange)) {
 						Set<DEdge> exchangeEdges = displayedOP.get(anExchange);
 						for (DEdge exchangeEdge : exchangeEdges) {
@@ -242,7 +242,7 @@ public class BehaviorScenarioServices {
 
 			// customize functional exchanges
 				for (Step step : me.getKey().getSteps()) {
-					for (OutputPin anExchange : step.getOutputpin()) {
+					for (OutputPin anExchange : step.getOutputPin()) {
 						if (displayedOP.containsKey(anExchange)) {
 							Set<DEdge> currentEdges = displayedOP.get(anExchange);
 							for (DEdge currentEdge : currentEdges) {

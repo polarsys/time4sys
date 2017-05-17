@@ -105,6 +105,52 @@ public class Time4sysItemProviderAdapterFactory extends Time4sysAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.model.time4sys.Transformation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TransformationItemProvider transformationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.model.time4sys.Transformation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTransformationAdapter() {
+		if (transformationItemProvider == null) {
+			transformationItemProvider = new TransformationItemProvider(this);
+		}
+
+		return transformationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.model.time4sys.Simulation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SimulationItemProvider simulationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.model.time4sys.Simulation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSimulationAdapter() {
+		if (simulationItemProvider == null) {
+			simulationItemProvider = new SimulationItemProvider(this);
+		}
+
+		return simulationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,6 +250,8 @@ public class Time4sysItemProviderAdapterFactory extends Time4sysAdapterFactory i
 	 */
 	public void dispose() {
 		if (projectItemProvider != null) projectItemProvider.dispose();
+		if (transformationItemProvider != null) transformationItemProvider.dispose();
+		if (simulationItemProvider != null) simulationItemProvider.dispose();
 	}
 
 }

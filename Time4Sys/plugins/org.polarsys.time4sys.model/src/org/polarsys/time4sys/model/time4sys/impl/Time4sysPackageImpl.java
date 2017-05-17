@@ -25,8 +25,10 @@ import org.polarsys.time4sys.analysis.AnalysisPackage;
 import org.polarsys.time4sys.design.DesignPackage;
 import org.polarsys.time4sys.mapping.MappingPackage;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.trace.TracePackage;
 
 /**
@@ -42,6 +44,19 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	private EClass projectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass transformationEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass simulationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -178,8 +193,98 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProject_Transformations() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProject_Simulations() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getProject__DeriveAnalyzedSystem__boolean() {
 		return projectEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTransformation() {
+		return transformationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransformation_Result() {
+		return (EReference)transformationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTransformation_Mapping() {
+		return (EReference)transformationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTransformation_Name() {
+		return (EAttribute)transformationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSimulation() {
+		return simulationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSimulation_Name() {
+		return (EAttribute)simulationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSimulation_Mapping() {
+		return (EReference)simulationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSimulation_Trace() {
+		return (EReference)simulationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -217,7 +322,19 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		createEReference(projectEClass, PROJECT__MAPPINGS);
 		createEReference(projectEClass, PROJECT__TRACES);
 		createEReference(projectEClass, PROJECT__DERIVATIONS);
+		createEReference(projectEClass, PROJECT__TRANSFORMATIONS);
+		createEReference(projectEClass, PROJECT__SIMULATIONS);
 		createEOperation(projectEClass, PROJECT___DERIVE_ANALYZED_SYSTEM__BOOLEAN);
+
+		transformationEClass = createEClass(TRANSFORMATION);
+		createEReference(transformationEClass, TRANSFORMATION__RESULT);
+		createEReference(transformationEClass, TRANSFORMATION__MAPPING);
+		createEAttribute(transformationEClass, TRANSFORMATION__NAME);
+
+		simulationEClass = createEClass(SIMULATION);
+		createEAttribute(simulationEClass, SIMULATION__NAME);
+		createEReference(simulationEClass, SIMULATION__MAPPING);
+		createEReference(simulationEClass, SIMULATION__TRACE);
 	}
 
 	/**
@@ -263,9 +380,21 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		initEReference(getProject_Mappings(), theMappingPackage.getMapping(), null, "mappings", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Traces(), theTracePackage.getTrace(), null, "traces", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Derivations(), theDesignPackage.getDesignModel(), null, "derivations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Transformations(), this.getTransformation(), null, "transformations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Simulations(), this.getSimulation(), null, "simulations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getProject__DeriveAnalyzedSystem__boolean(), theAnalysisPackage.getAnalyzedSystem(), "deriveAnalyzedSystem", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "override", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTransformation_Result(), theDesignPackage.getDesignModel(), null, "result", null, 1, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransformation_Mapping(), theMappingPackage.getMapping(), null, "mapping", null, 1, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransformation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(simulationEClass, Simulation.class, "Simulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSimulation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimulation_Mapping(), theMappingPackage.getMapping(), null, "mapping", null, 1, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimulation_Trace(), theTracePackage.getTrace(), null, "trace", null, 1, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

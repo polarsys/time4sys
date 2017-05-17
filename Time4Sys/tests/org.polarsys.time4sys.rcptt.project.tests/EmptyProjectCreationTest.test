@@ -1,0 +1,41 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _GQfW8NyZEeazus087xTD1g
+Element-Name: EmptyProjectCreationTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _RhMEkNyYEeazus087xTD1g
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 1/17/17 10:43 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Model Explorer" | get-tree | get-menu "New/Time4Sys Project" | click
+get-window -class WizardDialog | get-button Finish | click
+with [get-view "Model Explorer" | get-tree] {
+    select "New Project" | key-type Right
+}
+get-eclipse-window | key-type "TRAVERSE_ARROW_NEXT"
+get-eclipse-window | key-type Right
+with [get-view "Model Explorer" | get-tree] {
+    select "New Project" | key-type Right
+    select "New Project/new project.time4sys" | key-type Right
+    key-type Down
+    select "New Project/new project.time4sys/Project New Project" | key-type Right
+    key-type Down
+    select "New Project/new project.time4sys/Project New Project/Analyzed System" | key-type Right
+    key-type Down
+    select "New Project/new project.time4sys/Project New Project/Analyzed System/Analysis Architecture" | key-type Down
+    select "New Project/new project.time4sys/Project New Project/Design Model" | key-type Right
+    key-type Down
+    select "New Project/new project.time4sys/Project New Project/Design Model/[New Project] Design Architecture diagram" 
+        | key-type Down
+    select "New Project/new project.time4sys/Project New Project/Design Model/Design Overview Table" | key-type Down
+    select "New Project/new project.time4sys/Project New Project/Design Model/Workload Behavior" | key-type Down
+    select "New Project/new project.time4sys/Project New Project/Design Model/Resource Package"
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

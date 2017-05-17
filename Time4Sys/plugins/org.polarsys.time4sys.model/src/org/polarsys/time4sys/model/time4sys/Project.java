@@ -35,6 +35,8 @@ import org.polarsys.time4sys.trace.Trace;
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getMappings <em>Mappings</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getTraces <em>Traces</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getDerivations <em>Derivations</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getTransformations <em>Transformations</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getSimulations <em>Simulations</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject()
@@ -167,6 +169,38 @@ public interface Project extends EObject {
 	 * @generated
 	 */
 	EList<DesignModel> getDerivations();
+
+	/**
+	 * Returns the value of the '<em><b>Transformations</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.model.time4sys.Transformation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Transformations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Transformations</em>' containment reference list.
+	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject_Transformations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Transformation> getTransformations();
+
+	/**
+	 * Returns the value of the '<em><b>Simulations</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.model.time4sys.Simulation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Simulations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Simulations</em>' containment reference list.
+	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject_Simulations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Simulation> getSimulations();
 
 	/**
 	 * <!-- begin-user-doc -->

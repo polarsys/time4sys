@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Duration extends EObject {
+public interface Duration extends EObject, ValueWithUnit<TimeUnitKind> {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -274,7 +274,7 @@ public interface Duration extends EObject {
 	 * @model required="true" vRequired="true"
 	 * @generated
 	 */
-	Duration mul(long v);
+	Duration multiply(long v);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,5 +291,13 @@ public interface Duration extends EObject {
 	 * @generated
 	 */
 	double div(Duration v);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model vRequired="true"
+	 * @generated
+	 */
+	long divide(Duration v);
 
 } // Duration

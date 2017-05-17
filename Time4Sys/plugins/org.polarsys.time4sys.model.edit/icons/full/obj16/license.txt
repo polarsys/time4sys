@@ -5,6 +5,61 @@ These followings icons are made available under the terms of the Eclipse Public 
 <icon file path> - <original eclipse plug-in> - <original file path>
 
 icons/full/obj16/Project.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Project.gif
+icons/full/obj16/Simulation.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Simulation.gif
+
+icons/full/obj16/Context.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Context.gif
+icons/full/obj16/Event.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Event.gif
+icons/full/obj16/Link.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Link.gif
+icons/full/obj16/MappableArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/MappableArtefact.gif
+icons/full/obj16/Mapping.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Mapping.gif
+icons/full/obj16/MessageEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/MessageEvent.gif
+icons/full/obj16/Project.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Project.gif
+icons/full/obj16/Properties.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Properties.gif
+icons/full/obj16/ResourceArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/ResourceArtefact.gif
+icons/full/obj16/ResourceEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/ResourceEvent.gif
+icons/full/obj16/SchedulingEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/SchedulingEvent.gif
+icons/full/obj16/Simulation.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Simulation.gif
+icons/full/obj16/Slice.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Slice.gif
+icons/full/obj16/Trace.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Trace.gif
+icons/full/obj16/Transformation.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/Transformation.gif
+icons/full/obj16/ValueChangeEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/obj16/ValueChangeEvent.gif
 
 icons/full/ctool16/CreateProject_analysis_AnalyzedSystem.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_analysis_AnalyzedSystem.gif
-icons/full/ctool16/CreateProject_design_DesignModel.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_design_DesignModel.gif
+icons/full/ctool16/CreateContext_subRules_Context.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateContext_subRules_Context.gif
+icons/full/ctool16/CreateLink_sources_MappableArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_sources_MappableArtefact.gif
+icons/full/ctool16/CreateLink_sources_ResourceArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_sources_ResourceArtefact.gif
+icons/full/ctool16/CreateLink_subLinks_Link.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_subLinks_Link.gif
+icons/full/ctool16/CreateLink_subLinks_Mapping.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_subLinks_Mapping.gif
+icons/full/ctool16/CreateLink_targets_MappableArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_targets_MappableArtefact.gif
+icons/full/ctool16/CreateLink_targets_ResourceArtefact.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateLink_targets_ResourceArtefact.gif
+icons/full/ctool16/CreateMapping_rules_Context.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateMapping_rules_Context.gif
+icons/full/ctool16/CreateProject_analysis_AnalyzedSystem.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_analysis_AnalyzedSystem.gif
+icons/full/ctool16/CreateProject_derivations_DesignModel.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_derivations_DesignModel.gif
+icons/full/ctool16/CreateProject_mappings_Mapping.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_mappings_Mapping.gif
+icons/full/ctool16/CreateProject_simulations_Simulation.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_simulations_Simulation.gif
+icons/full/ctool16/CreateProject_traces_Trace.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_traces_Trace.gif
+icons/full/ctool16/CreateProject_transformations_Transformation.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateProject_transformations_Transformation.gif
+icons/full/ctool16/CreateSimulation_mapping_Mapping.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateSimulation_mapping_Mapping.gif
+icons/full/ctool16/CreateSimulation_trace_Trace.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateSimulation_trace_Trace.gif
+icons/full/ctool16/CreateSlice_ownedSubSlices_Slice.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateSlice_ownedSubSlices_Slice.gif
+icons/full/ctool16/CreateSlice_properties_Properties.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateSlice_properties_Properties.gif
+icons/full/ctool16/CreateTrace_events_Event.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_events_Event.gif
+icons/full/ctool16/CreateTrace_events_MessageEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_events_MessageEvent.gif
+icons/full/ctool16/CreateTrace_events_ResourceEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_events_ResourceEvent.gif
+icons/full/ctool16/CreateTrace_events_SchedulingEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_events_SchedulingEvent.gif
+icons/full/ctool16/CreateTrace_events_ValueChangeEvent.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_events_ValueChangeEvent.gif
+icons/full/ctool16/CreateTrace_slices_Slice.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTrace_slices_Slice.gif
+icons/full/ctool16/CreateTransformation_mapping_Mapping.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTransformation_mapping_Mapping.gif
+icons/full/ctool16/CreateTransformation_result_DesignModel.gif - org.polarsys.time4sys.marte.model.edit - org.polarsys.time4sys.marte.model.edit/icons/full/ctool16/CreateTransformation_result_DesignModel.gif
+
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif
+.gif

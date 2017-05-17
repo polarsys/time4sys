@@ -29,14 +29,20 @@ import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
+import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
+import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
+import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.hrm.HardwareComputingResource;
+import org.polarsys.time4sys.marte.hrm.HardwareResource;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
@@ -161,7 +167,7 @@ public class MarteServices {
 	public WorkloadEvent getWorkloadEvent(EObject context, EObject views) {
 		if (views instanceof DesignModel) {
 			DesignModel model = (DesignModel) views;
-			if (context instanceof SoftwareSchedulableResource) {
+			if (context instanceof Step) {
 				SoftwareSchedulableResource swSchedRes = (SoftwareSchedulableResource) context;
 				// WARNING: only first scenario is considered ( get(0) )
 				return getWorkloadEvent(swSchedRes, model);
@@ -295,15 +301,8 @@ public class MarteServices {
 	// return false;
 	// }
 
-	public void setPeriod(EObject context) {
-		if (context instanceof SoftwareSchedulableResource) {
-			SoftwareSchedulableResource swSchedRes = (SoftwareSchedulableResource) context;
-
-		}
-	}
-
-	public Duration getOffset(EObject context, EObject views) {
-		WorkloadEvent we = getWorkloadEvent(context, views);
+	public Duration getOffset(EObject context) {
+		WorkloadEvent we = (WorkloadEvent) context;
 		if (we != null) {
 			if (we.getPattern() instanceof PeriodicPattern) {
 				return ((PeriodicPattern) we.getPattern()).getPhase();
@@ -312,8 +311,8 @@ public class MarteServices {
 		return null;
 	}
 
-	public Duration getPeriod(EObject context, EObject views) {
-		WorkloadEvent we = getWorkloadEvent(context, views);
+	public Duration getPeriod(EObject context) {
+		WorkloadEvent we = (WorkloadEvent)context;
 		if (we != null) {
 			if (we.getPattern() instanceof PeriodicPattern) {
 				return ((PeriodicPattern) we.getPattern()).getPeriod();
@@ -322,8 +321,8 @@ public class MarteServices {
 		return null;
 	}
 
-	public Duration getJitter(EObject context, EObject views) {
-		WorkloadEvent we = getWorkloadEvent(context, views);
+	public Duration getJitter(EObject context) {
+		WorkloadEvent we = (WorkloadEvent)context;
 		if (we != null) {
 			if (we.getPattern() instanceof PeriodicPattern) {
 				return ((PeriodicPattern) we.getPattern()).getJitter();
@@ -342,16 +341,17 @@ public class MarteServices {
 					int insertionIndex = 0;
 					// WARNING First SchedulingParameter value considered as
 					// priority
-					int priority = Integer.parseInt(swSchedRes.getSchedParams().get(0).getValue());
-					for (SoftwareSchedulableResource sortedSwSched : sortedSwSchedRes) {
-						int sortedSwSchedPriority = Integer.parseInt(sortedSwSched.getSchedParams().get(0).getValue());
-						if (sortedSwSchedPriority < priority) {
-							insertionIndex++;
-						} else {
-							break;
+						Integer priority = Integer.valueOf(swSchedRes.getSchedParams().get(0).getValue());
+						for (SoftwareSchedulableResource sortedSwSched : sortedSwSchedRes) {
+							Integer sortedSwSchedPriority = Integer.parseInt(sortedSwSched.getSchedParams().get(0).getValue());
+							if (sortedSwSchedPriority < priority) {
+								insertionIndex++;
+							} else {
+								break;
+							}
 						}
-					}
-					sortedSwSchedRes.add(insertionIndex, swSchedRes);
+						sortedSwSchedRes.add(insertionIndex, swSchedRes);
+				
 				}
 			}
 		}
@@ -382,7 +382,6 @@ public class MarteServices {
 			/* case 2 predecessors */
 			if (pr.getPredec().size() == 2) {
 				Step stepToRemove = null;
-				PrecedenceRelation prToRemove = null;
 				for (Step predecStep : pr.getPredec()) {
 					if ("intermediate step".equals(predecStep.getName())) {
 						/* shortcut intermediate step and remove it */
@@ -446,21 +445,21 @@ public class MarteServices {
 		}
 	}
 
-	public List<ArrivalPattern> getAllPatternInDesign(EObject design, EObject diagram){
+	public List<ArrivalPattern> getAllPatternInDesign(EObject design, EObject diagram) {
 		List<ArrivalPattern> result = new ArrayList<ArrivalPattern>();
-		if (design instanceof DesignModel){
+		if (design instanceof DesignModel) {
 			DesignModel designModel = (DesignModel) design;
-			for (WorkloadEvent demand : designModel.getWorkloadBehavior().getDemand()){
+			for (WorkloadEvent demand : designModel.getWorkloadBehavior().getDemand()) {
 				result.add(demand.getPattern());
 			}
-			if (diagram instanceof DDiagram){
-			DDiagram dDiagram = (DDiagram) diagram;
-			for (EObject controlPin : dDiagram.getDiagramElements()){
-				EObject target = ((DDiagramElement)controlPin).getTarget();
-				if (target instanceof ControlPin){
-					result.add(((ControlPin) target).getPattern());
+			if (diagram instanceof DDiagram) {
+				DDiagram dDiagram = (DDiagram) diagram;
+				for (EObject controlPin : dDiagram.getDiagramElements()) {
+					EObject target = ((DDiagramElement) controlPin).getTarget();
+					if (target instanceof ControlPin) {
+						result.add(((ControlPin) target).getPattern());
+					}
 				}
-			}
 			}
 		}
 		return result;
@@ -509,5 +508,64 @@ public class MarteServices {
 			DesignModel dm = (DesignModel) diagram;
 			dm.getResourcePackage().getOwnedElement().add(res);
 		}
+	}
+
+	public static List<ArrivalPattern> getArrivalPattern(EObject obj) {
+		List<ArrivalPattern> results = new ArrayList<ArrivalPattern>();
+		if (obj instanceof DesignModel) {
+			DesignModel design = (DesignModel) obj;
+			for (WorkloadEvent we : design.getWorkloadBehavior().getDemand()) {
+				results.add(we.getPattern());
+			}
+			for (Step step : getAllSteps(design.getWorkloadBehavior())) {
+				for (OutputPin outputPin : step.getOutputPin()) {
+					if (outputPin.getPattern() != null) {
+						results.add(outputPin.getPattern());
+					}
+				}
+				for (InputPin inputPin : step.getInputPin()) {
+					if (inputPin.getPattern() != null) {
+						results.add(inputPin.getPattern());
+					}
+				}
+			}
+		}
+		return results;
+	}
+
+	private static List<Step> getAllSteps(WorkloadBehavior workloadBehavior) {
+		List<Step> result = new ArrayList<Step>();
+		for (BehaviorScenario bs : workloadBehavior.getBehavior()) {
+			for (Step step : bs.getSteps()) {
+				result.add(step);
+				result.addAll(getAllSubSteps(step));
+			}
+		}
+		return result;
+	}
+
+	private static List<Step> getAllSubSteps(Step step) {
+		List<Step> result = new ArrayList<>();
+		for (Step iStep : step.getSteps()) {
+			result.add(iStep);
+			result.addAll(getAllSubSteps(iStep));
+		}
+		return result;
+	}
+	
+	public static void removeOldStimuli(EndToEndFlow current, ArrivalPattern oldStimuli){
+		current.getEndToEndStimuli().remove(oldStimuli.eContainer());
+	}
+	
+	public static Scheduler getMainScheduler(EObject obj){
+		if (obj instanceof SoftwareSchedulableResource){
+			while (!(obj instanceof ProcessingResource || obj instanceof DesignModel)){
+				obj=obj.eContainer();
+			}
+		}
+		if (obj instanceof ProcessingResource){
+			return ((ProcessingResource)obj).getMainScheduler();
+		}
+		return null;
 	}
 }

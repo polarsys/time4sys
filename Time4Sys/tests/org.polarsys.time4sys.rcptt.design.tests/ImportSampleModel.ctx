@@ -1,0 +1,28 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.ecl
+Element-Name: ImportSampleModel
+Element-Type: context
+Element-Version: 2.0
+Id: _1Tgb8NyZEeazus087xTD1g
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 1/17/17 10:46 AM
+
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
+Content-Type: text/ecl
+Entry-Name: .ecl.context
+
+get-view "Model Explorer" | get-tree | get-menu "New/Other..." | click
+with [get-window New] {
+    with [get-tree] {
+        select Examples | key-type Right
+        select "Examples/Sample Model"
+    }
+    get-button "Next >" | click
+}
+get-window "New Example" | get-button Finish | click
+with [get-view "Model Explorer" | get-tree] {
+    select "org.polarsys.time4sys.examples.SampleModel/SampleModel" | key-type Right -times 2
+    select "org.polarsys.time4sys.examples.SampleModel/SampleModel/representations.aird" | double-click
+}
+------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998--

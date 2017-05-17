@@ -27,7 +27,7 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
  * @author loic
  *
  */
-public class TaskBuilder {
+public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulableResource, TaskBuilder> {
 
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
 	protected static GqamFactory gqamFactory = GqamFactory.eINSTANCE;
@@ -155,6 +155,10 @@ public class TaskBuilder {
 	public TaskBuilder ofPriority(final int value) {
 		getSchedParams("FixedPriority").setValue(Integer.toString(value));
 		return this;
+	}
+	
+	public int getPriority() {
+		return Integer.parseInt(getSchedParams("FixedPriority").getValue());
 	}
 
 	private SchedulingParameter getSchedParams(final String key) {

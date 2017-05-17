@@ -312,6 +312,11 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createDelay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
 				 GqamFactory.eINSTANCE.createExecutionStep()));
 
 		newChildDescriptors.add
@@ -323,11 +328,6 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
 				 GqamFactory.eINSTANCE.createRequestedService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
-				 GqamFactory.eINSTANCE.createDelay()));
 
 		newChildDescriptors.add
 			(createChildParameter

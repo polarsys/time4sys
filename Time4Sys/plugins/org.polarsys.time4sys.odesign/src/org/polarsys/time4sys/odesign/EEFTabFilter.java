@@ -14,6 +14,7 @@ import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorFilter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
@@ -37,8 +38,8 @@ public class EEFTabFilter implements IEEFTabDescriptorFilter {
 				StructuredSelection structuredSelection = (StructuredSelection) context;
 				Object selection = structuredSelection.getFirstElement();
 
-				if (selection instanceof GraphicalEditPart) {
-					Object model = ((GraphicalEditPart) selection).getModel();
+				if (selection instanceof AbstractGraphicalEditPart) {
+					Object model = ((AbstractGraphicalEditPart) selection).getModel();
 					if (model instanceof View) {
 						EObject obj = ((View) model).getElement();
 						if (obj instanceof DSemanticDecorator) {

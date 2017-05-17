@@ -22,5 +22,26 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="derivations" upperBound="-1"
         eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformations" upperBound="-1"
+        eType="#//Transformation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simulations" upperBound="-1"
+        eType="#//Simulation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transformation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.mapping/model/mapping.ecore#//Mapping"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simulation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.mapping/model/mapping.ecore#//Mapping"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="ecore:EClass ../../org.polarsys.time4sys.trace/model/trace.ecore#//Trace"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

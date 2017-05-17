@@ -107,8 +107,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/inputRel"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/outputRel"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/concurRes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/inputpin"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/outputpin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/inputPin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/outputPin"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//WorkloadEvent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/effect"/>

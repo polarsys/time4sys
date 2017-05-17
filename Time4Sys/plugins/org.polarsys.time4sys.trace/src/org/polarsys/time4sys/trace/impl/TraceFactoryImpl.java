@@ -309,7 +309,7 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 	 * @generated NOT
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue instanceof Duration);
+		assert(instanceValue == null || instanceValue instanceof Duration);
 		return NfpFactory.eINSTANCE.convertDurationToString((Duration)instanceValue);
 	}
 
@@ -328,7 +328,7 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 	 * @generated NOT
 	 */
 	public String convertNFP_TimeIntervalToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue instanceof TimeInterval);
+		assert(instanceValue == null || instanceValue instanceof TimeInterval);
 		return NfpFactory.eINSTANCE.convertTimeIntervalToString((TimeInterval)instanceValue);
 	}
 

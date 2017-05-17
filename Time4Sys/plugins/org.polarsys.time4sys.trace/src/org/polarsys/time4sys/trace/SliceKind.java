@@ -146,7 +146,15 @@ public enum SliceKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TEMPORAL_CHAIN(11, "TEMPORAL_CHAIN", "TEMPORAL_CHAIN");
+	TEMPORAL_CHAIN(11, "TEMPORAL_CHAIN", "TEMPORAL_CHAIN"), /**
+	 * The '<em><b>OS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #OS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	OS(12, "OS", "OS");
 
 	/**
 	 * The '<em><b>OTHER</b></em>' literal value.
@@ -329,6 +337,21 @@ public enum SliceKind implements Enumerator {
 	public static final int TEMPORAL_CHAIN_VALUE = 11;
 
 	/**
+	 * The '<em><b>OS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>OS</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #OS
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int OS_VALUE = 12;
+
+	/**
 	 * An array of all the '<em><b>Slice Kind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,6 +371,7 @@ public enum SliceKind implements Enumerator {
 			STATE,
 			AUTOMATON,
 			TEMPORAL_CHAIN,
+			OS,
 		};
 
 	/**
@@ -415,6 +439,7 @@ public enum SliceKind implements Enumerator {
 			case RESOURCE_VALUE: return RESOURCE;
 			case AUTOMATON_VALUE: return AUTOMATON;
 			case TEMPORAL_CHAIN_VALUE: return TEMPORAL_CHAIN;
+			case OS_VALUE: return OS;
 		}
 		return null;
 	}

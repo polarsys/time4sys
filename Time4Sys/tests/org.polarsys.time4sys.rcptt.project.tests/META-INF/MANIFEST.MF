@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: org.polarsys.time4sys.rcptt.project.tests
+Bundle-Version: 0.0.1.qualifier

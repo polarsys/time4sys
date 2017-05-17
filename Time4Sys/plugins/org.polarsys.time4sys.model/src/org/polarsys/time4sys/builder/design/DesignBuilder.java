@@ -8,28 +8,17 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- * 
- */
 package org.polarsys.time4sys.builder.design;
 
-import java.io.IOException;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
@@ -37,17 +26,18 @@ import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.grm.CommunicationMedia;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.hrm.HardwareBus;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
-import org.polarsys.time4sys.model.time4sys.Project;
 
 /**
  * @author loic
@@ -82,6 +72,19 @@ public class DesignBuilder {
 		HardwareProcessor proc = hrmFactory.createHardwareProcessor();
 		design.getResourcePackage().getOwnedElement().add(proc);
 		return new ProcessorBuilder(this, proc);
+	}
+	
+
+	public CommunicationMediaBuilder hasCommunicationMedia() {
+		final CommunicationMedia bus = grmFactory.createCommunicationMedia();
+		design.getResourcePackage().getOwnedElement().add(bus);
+		return new CommunicationMediaBuilder(this, bus);
+	}
+	
+	public BusBuilder hasANetwork() {
+		HardwareBus bus = hrmFactory.createHardwareBus();
+		design.getResourcePackage().getOwnedElement().add(bus);
+		return new BusBuilder(this, bus);
 	}
 
 	public WorkloadEventBuilder hasAPeriodicEvent(final String periodValue) {
@@ -140,6 +143,14 @@ public class DesignBuilder {
 		}
 		return new TaskBuilder(this, task);
 	}
+	
+	public CommunicationChannelBuilder message(final String name) {
+		final CommunicationChannel task = searchCommunicationChannel(design.getResourcePackage().getOwnedElement(), name);
+		if (task == null) {
+			return null;
+		}
+		return new CommunicationChannelBuilder(this, task);
+	}
 
 	private static  SoftwareSchedulableResource searchTask(final List<? extends ResourcePackageableElement> elts, final String name) {
 		for(ResourcePackageableElement elt: elts) {
@@ -150,6 +161,23 @@ public class DesignBuilder {
 			}
 			if (elt instanceof Resource) {
 				final SoftwareSchedulableResource sub = searchTask(((Resource)elt).getOwnedResource(), name);
+				if (sub != null) {
+					return sub;
+				}
+			}
+		}
+		return null;
+	}
+	
+	private static  CommunicationChannel searchCommunicationChannel(final List<? extends ResourcePackageableElement> elts, final String name) {
+		for(ResourcePackageableElement elt: elts) {
+			if (elt instanceof CommunicationChannel) {
+				if (name.equals(((CommunicationChannel)elt).getName())) {
+					return (CommunicationChannel)elt;
+				}
+			}
+			if (elt instanceof Resource) {
+				final CommunicationChannel sub = searchCommunicationChannel(((Resource)elt).getOwnedResource(), name);
 				if (sub != null) {
 					return sub;
 				}

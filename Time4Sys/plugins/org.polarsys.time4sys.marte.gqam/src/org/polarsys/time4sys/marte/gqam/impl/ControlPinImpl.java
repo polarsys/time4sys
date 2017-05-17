@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.grm.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,12 +34,31 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class ControlPinImpl extends MultiplicityElementImpl implements ControlPin {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -65,6 +86,27 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	protected EClass eStaticClass() {
 		return GqamPackage.Literals.CONTROL_PIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.CONTROL_PIN__NAME, oldName, name));
 	}
 
 	/**
@@ -132,6 +174,8 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__NAME:
+				return getName();
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				return getPattern();
 		}
@@ -146,6 +190,9 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__NAME:
+				setName((String)newValue);
+				return;
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				setPattern((ArrivalPattern)newValue);
 				return;
@@ -161,6 +208,9 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				setPattern((ArrivalPattern)null);
 				return;
@@ -176,10 +226,60 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				return pattern != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case GqamPackage.CONTROL_PIN__NAME: return GrmPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case GrmPackage.NAMED_ELEMENT__NAME: return GqamPackage.CONTROL_PIN__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ControlPinImpl

@@ -81,6 +81,14 @@ public class Time4sysAdapterFactory extends AdapterFactoryImpl {
 				return createProjectAdapter();
 			}
 			@Override
+			public Adapter caseTransformation(Transformation object) {
+				return createTransformationAdapter();
+			}
+			@Override
+			public Adapter caseSimulation(Simulation object) {
+				return createSimulationAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -111,6 +119,34 @@ public class Time4sysAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createProjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.model.time4sys.Transformation <em>Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.model.time4sys.Transformation
+	 * @generated
+	 */
+	public Adapter createTransformationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.model.time4sys.Simulation <em>Simulation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.model.time4sys.Simulation
+	 * @generated
+	 */
+	public Adapter createSimulationAdapter() {
 		return null;
 	}
 

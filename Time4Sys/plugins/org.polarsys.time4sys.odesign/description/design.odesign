@@ -6,11 +6,17 @@
       <metamodel href="../../org.polarsys.time4sys.marte/model/hrm.ecore#/"/>
       <metamodel href="../../org.polarsys.time4sys.marte/model/library.ecore#/"/>
       <metamodel href="../../org.polarsys.time4sys.marte/model/srm.ecore#/"/>
-      <filters xsi:type="filter:CompositeFilterDescription" name="HideSteps" label="Hide Steps">
-        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Arrival Pattern">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']"/>
       </filters>
       <filters xsi:type="filter:CompositeFilterDescription" name="HideBehaviorScenario" label="Hide Behavior Scenario">
         <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="HideSteps" label="Hide Steps">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide End-To-End Flow">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']"/>
       </filters>
       <layout xsi:type="description_1:CompositeLayout"/>
       <diagramInitialisation>
@@ -71,13 +77,13 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="SwMutualExclusionResource" label="Mutual Exclusion" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="srm.SoftwareMutualExclusionResource">
+        <nodeMappings name="SwMutualExclusionResource" label="Mutual Exclusion" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="srm.SoftwareMutualExclusionResource">
           <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:self.name" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomPurple']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.BehaviorScenario">
+        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.BehaviorScenario">
           <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -116,7 +122,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="MutualExclusionToResource" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='MutualExclusionToResource']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" targetFinderExpression="aql:self.accessTokenElements">
+        <edgeMappings name="MutualExclusionToResource" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='MutualExclusionToResource']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" targetFinderExpression="aql:self.accessTokenElements">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <centerLabelStyleDescription>
@@ -132,15 +138,15 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="Event2Step" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteEvent2Step']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" targetFinderExpression="aql:self.eInverse('pattern').effect" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectEvent']">
+        <edgeMappings name="Event2Step" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteEvent2Step']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" targetFinderExpression="aql:self.eInverse('pattern').effect" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectEvent']">
           <style>
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="MutualExclusionToStep" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='MutualExclusionToStep']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="feature:accessTokenElements">
+        <edgeMappings name="MutualExclusionToStep" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='MutualExclusionToStep']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="feature:accessTokenElements">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <centerLabelStyleDescription>
@@ -156,10 +162,18 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EventOnPort" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin']" targetFinderExpression="aql:self.eInverse('pattern')">
+        <edgeMappings name="EventOnPort" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin']" targetFinderExpression="aql:self.eInverse('pattern')">
           <style sizeComputationExpression="2" endsCentering="Target">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EndToEndFlow" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli.pattern" domainClass="gqam.EndToEndFlow" useDomainElement="true" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.2/@ownedTools[name='EndToEndFlow%20Source'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.2/@ownedTools[name='EndToEndFlow%20Target']">
+          <style lineStyle="dash" sourceArrow="InputClosedArrow" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <centerLabelStyleDescription labelExpression="aql:self.endToEndDeadline">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -172,16 +186,16 @@
             </style>
           </borderedNodeMappings>
           <subNodeMappings xsi:type="description_1:NodeMappingImport" name="SubBus" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.ownedResource" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="hrm.HardwareBus" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element']" inheritsAncestorFilters="false"/>
-          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubHw" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.ownedResource" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']"/>
-          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubSw" semanticCandidatesExpression="aql:self.ownedResource" semanticElements="aql:self+self.schedParams" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource']">
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubHw" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.ownedResource" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']"/>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubSw" semanticCandidatesExpression="aql:self.ownedResource" semanticElements="aql:self+self.schedParams" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="srm.SoftwareResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']">
             <subNodeMappings name="ExecutionStep" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Del%20ExecutionStep']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep%20Edit']" semanticCandidatesExpression="aql:self.eInverse('concurRes')" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step">
-              <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="feature:outputpin" synchronizationLock="true" domainClass="gqam.OutputPin">
+              <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="feature:outputPin" synchronizationLock="true" domainClass="gqam.OutputPin">
                 <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'['+self.lowerBound+':'+self.upperBound+']'" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Outputport.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
               </borderedNodeMappings>
-              <borderedNodeMappings name="InputPin" semanticCandidatesExpression="feature:inputpin" synchronizationLock="true" domainClass="gqam.InputPin">
+              <borderedNodeMappings name="InputPin" semanticCandidatesExpression="feature:inputPin" synchronizationLock="true" domainClass="gqam.InputPin">
                 <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'['+self.lowerBound+':'+self.upperBound+']'" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Inputport.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -212,19 +226,18 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Software Schedulable Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="aql:self+schedParams" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.SchedulableResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']">
-          <subContainerMappings name="Software Schedulable Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="aql:self+schedParams" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.SchedulableResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subContainerMappings>
+        <containerMappings name="Software Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="aql:self+schedParams" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="srm.SoftwareResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']">
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::SoftwareSchedulableResource)">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomDarkGreen']" foregroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomLightGreen']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </containerMappings>
         <containerMappings name="HwBus" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="hrm.HardwareBus" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource']">
           <subNodeMappings name="ComStep" semanticCandidatesExpression="aql:self.eInverse('comRes')" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.CommunicationStep" reusedBorderedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin']">
@@ -336,7 +349,20 @@
             </tools>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ToolGroup" name="Software Resource Group">
-            <tools xsi:type="tool_1:ContainerCreationDescription" name="Software Resource Creation" label="Software Resource" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="Software Resource" label="Software Resource" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareResource" referenceName="ownedResource" variableName="sw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SoftwareResource' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="Schedulable Resource Creation" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -344,27 +370,14 @@
                   <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
                       <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SoftwareResource' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
-                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduler" valueExpression="aql:self.eContainer().mainScheduler"/>
-                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
-                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
-                          <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="'0'"/>
-                        </subModelOperations>
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
-                          <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
-                        </subModelOperations>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="scheduler" valueExpression="service:getMainScheduler()"/>
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="'0'"/>
                       </subModelOperations>
-                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().scheduler"/>
-                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduler" valueExpression="aql:self.eContainer().scheduler"/>
-                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
-                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
-                          <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="'0'"/>
-                        </subModelOperations>
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().scheduler">
-                          <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
-                        </subModelOperations>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:getMainScheduler()">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -390,48 +403,89 @@
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="create HwBus" label="Bus" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" iconPath="/org.polarsys.time4sys.odesign/images/ComResource.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:resourcePackage">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Bus Group">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="create HwBus" label="Bus" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" iconPath="/org.polarsys.time4sys.odesign/images/ComResource.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                </subModelOperations>
-                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+                      </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+              <filters precondition="feature:synchronized" elementsToListen="aql:self">
+                <listeners domainClass="DDiagram" featureName="synchronized"/>
+              </filters>
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'"/>
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                    <parameters name="context" value="var:elementView"/>
+                    <parameters name="wizardMessage" value="aql:'Select Bus to show in '+ element.name"/>
+                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareBus)"/>
+                    <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(hrm::HardwareBus)"/>
+                    <parameters name="elementToCreateMapping" value="aql:'HwBus'"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SwMutualExclusionResource" label="Mutual Exclusion" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" iconPath="/org.polarsys.time4sys.odesign/images/Mutex.gif">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
-                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareMutualExclusionResource" referenceName="ownedElement" variableName="mutex">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Mutual Exclusion"/>
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.MutualExclusionProtocol" referenceName="protocol">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="protocol" valueExpression="PriorityCeiling"/>
-                      </subModelOperations>
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.ProtectionParameter" referenceName="protectParams" variableName="params">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Protection Parameter"/>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Mutual Exclusion Group">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="SwMutualExclusionResource" label="Mutual Exclusion" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource']" iconPath="/org.polarsys.time4sys.odesign/images/Mutex.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareMutualExclusionResource" referenceName="ownedElement" variableName="mutex">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Mutual Exclusion"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.MutualExclusionProtocol" referenceName="protocol">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="protocol" valueExpression="PriorityCeiling"/>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.ProtectionParameter" referenceName="protectParams" variableName="params">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Protection Parameter"/>
+                        </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Mutual Exclusion" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+              <filters precondition="feature:synchronized" elementsToListen="aql:self">
+                <listeners domainClass="DDiagram" featureName="synchronized"/>
+              </filters>
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                    <parameters name="context" value="var:elementView"/>
+                    <parameters name="wizardMessage" value="aql:'Select Mutual Exclusion Resources to show in '+ element.name"/>
+                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(srm::SoftwareMutualExclusionResource)"/>
+                    <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(srm::SoftwareMutualExclusionResource)"/>
+                    <parameters name="elementToCreateMapping" value="aql:'SwMutualExclusionResource'"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
           </ownedTools>
           <ownedTools xsi:type="tool_1:DirectEditLabel" name="Event Label Edit">
             <mask mask="{0}period:{0}jitter:{1}"/>
@@ -482,7 +536,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="SwResource2HwResource" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource']">
+          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="SwResource2HwResource" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>
@@ -545,8 +599,8 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
-        <toolSections name="Application">
-          <ownedTools xsi:type="tool_1:ToolGroup" name="WorkoadEvent">
+        <toolSections name="Events">
+          <ownedTools xsi:type="tool_1:ToolGroup" name="WorkloadEvent">
             <tools xsi:type="tool_1:NodeCreationDescription" name="PeriodicEvent" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" iconPath="/org.polarsys.time4sys.odesign/images/smallperiodic.png" extraMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
@@ -635,7 +689,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:NodeCreationDescription" name="SlidingWindowEvent" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" iconPath="/org.polarsys.time4sys.odesign/images/smallperiodic.png" extraMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="SlidingWindowEvent" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" iconPath="/org.polarsys.time4sys.odesign/images/smallperiodic.png" extraMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -653,6 +707,24 @@
                   </subModelOperations>
                   <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addSlidingWindowEventOnStep()"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Workload Event" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+              <filters precondition="feature:synchronized" elementsToListen="aql:self">
+                <listeners domainClass="DDiagram" featureName="synchronized"/>
+              </filters>
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                    <parameters name="context" value="var:elementView"/>
+                    <parameters name="wizardMessage" value="aql:'Select Patterns to show in '+ element.name"/>
+                    <parameters name="choiceSelection" value="service:getArrivalPattern()"/>
+                    <parameters name="initialSelection" value="aql:elementView.ownedDiagramElements.target->filter(gqam::ArrivalPattern)"/>
+                    <parameters name="elementToCreateMapping" value="aql:'ArrivalPattern'"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -762,19 +834,24 @@
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
                   <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.OutputPin" referenceName="outputpin" variableName="outputpin"/>
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.OutputPin" referenceName="outputPin" variableName="outputPin">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="lowerBound" valueExpression="1"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="upperBound" valueExpression="1"/>
+                      </subModelOperations>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputpin" variableName="inputpin">
-                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputpin">
-                            <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputpin"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputPin">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
                           </subModelOperations>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="lowerBound" valueExpression="1"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="upperBound" valueExpression="1"/>
                         </subModelOperations>
                       </subModelOperations>
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputpin">
-                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputpin"/>
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
@@ -782,14 +859,14 @@
                   <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::OutputPin))">
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputpin" variableName="inputpin">
-                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.inputpin">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.inputPin">
                             <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
                           </subModelOperations>
                         </subModelOperations>
                       </subModelOperations>
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputpin">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
                           <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
                         </subModelOperations>
                       </subModelOperations>
@@ -965,6 +1042,56 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Constraints">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="EndToEndFlow" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif" extraTargetMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.getDesign()">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsKindOf(gqam::BehaviorScenario)">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.EndToEndFlow" referenceName="endToEndFlows">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="endToEndStimuli" valueExpression="aql:source.eContainer()"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="endToEndScenario" valueExpression="aql:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:target.oclIsKindOf(gqam::EndToEndFlow)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="endToEndStimuli" valueExpression="aql:source.eContainer()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="EndToEndFlow Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.removeOldStimuli(source)"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="endToEndStimuli" valueExpression="aql:target.eContainer()"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ReconnectEdgeDescription" name="EndToEndFlow Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:SetValue" featureName="endToEndScenario" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="NORTH_EAST" decoratorPath="/org.polarsys.time4sys.odesign/images/schedulersmall.png" preconditionExpression="aql:self.mainScheduler != null" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']"/>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" decoratorPath="/org.polarsys.time4sys.odesign/images/redflag16.png" preconditionExpression="aql:self.hasDeadline2()" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']"/>
@@ -979,7 +1106,7 @@
             </firstModelOperations>
           </initialOperation>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:ContainerDropDescription" name="Drop Element" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']" dragSource="BOTH" moveEdges="true">
+        <ownedTools xsi:type="tool_1:ContainerDropDescription" name="Drop Element" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']" dragSource="BOTH" moveEdges="true">
           <oldContainer name="oldSemanticContainer"/>
           <newContainer name="newSemanticContainer"/>
           <element name="element"/>
@@ -997,7 +1124,7 @@
             </firstModelOperations>
           </initialOperation>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Open Design properties wizard" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='BusRelation2Sw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedEvent2Task'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@borderedNodeMappings[name='bordered_Scheduler'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedSw2BusRelation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='SwRelation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='Event2Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedMutex2Task'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Schedulable%20Resource']/@subContainerMappings[name='Software%20Schedulable%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='StepStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='OutputRel2Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='Step2InputRel'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputRel'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputRel'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']">
+        <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Open Design properties wizard" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='BusRelation2Sw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedEvent2Task'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@borderedNodeMappings[name='bordered_Scheduler'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subNodeMappings[name='SubBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='SwMutualExclusionResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedSw2BusRelation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='SwRelation'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='Event2Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ComputedMutex2Task'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']">
           <element name="element"/>
           <elementView name="elementView"/>
           <initialOperation>
@@ -1026,62 +1153,26 @@
       </validationSet>
       <layout xsi:type="description_1:CompositeLayout" direction="LeftToRight"/>
       <defaultLayer name="Default">
-        <edgeMappings name="StepStep" preconditionExpression="aql:(self.succes->size()==1) and (self.predec->size()==1)" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteLinkStepStep']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetFinderExpression="feature:succes" sourceFinderExpression="feature:predec" domainClass="gqam.PrecedenceRelation" useDomainElement="true" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectStep']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            <centerLabelStyleDescription labelSize="9">
+        <edgeMappings name="PrecedenceRelation" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetFinderExpression="aql:self.successors">
+          <style sizeComputationExpression="2" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="OutputRel2Step" preconditionExpression="aql:source.predec->size()==1" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteLinkOutputRel2Step']" semanticElements="aql:view.targetNode.target" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputRel']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetFinderExpression="feature:succes" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectStep']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            <centerLabelStyleDescription showIcon="false">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="Step2InputRel" preconditionExpression="aql:target.predec->size()>1" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteLinkStep2InputRel']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputRel']" targetFinderExpression="aql:self" sourceFinderExpression="feature:predec" domainClass="gqam.PrecedenceRelation" useDomainElement="true" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectStep']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            <centerLabelStyleDescription showIcon="false">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <containerMappings name="Step" preconditionExpression="aql:self.eContainer() = container" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']">
-          <borderedNodeMappings name="OutputRel" preconditionExpression="aql:self.succes->size()>1" semanticCandidatesExpression="feature:outputRel" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.PrecedenceRelation">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'.'" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+          <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="feature:outputPin" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.OutputPin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'['+self.lowerBound+':'+self.upperBound+']'" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Outputport.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelFormat>bold</labelFormat>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
-            <conditionnalStyles predicateExpression="service:isBranchPrecedenceRelation()">
-              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'+'" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelFormat>bold</labelFormat>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-              </style>
-            </conditionnalStyles>
           </borderedNodeMappings>
-          <borderedNodeMappings name="InputRel" preconditionExpression="aql:self.predec->size()>1" semanticCandidatesExpression="feature:inputRel" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.PrecedenceRelation">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'+'" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+          <borderedNodeMappings name="InputPin" semanticCandidatesExpression="feature:inputPin" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.InputPin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'['+self.lowerBound+':'+self.upperBound+']'" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Inputport.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelFormat>bold</labelFormat>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
-            <conditionnalStyles predicateExpression="service:isJoinPrecedenceRelation()">
-              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'.'" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelFormat>bold</labelFormat>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-              </style>
-            </conditionnalStyles>
           </borderedNodeMappings>
           <subContainerMappings name="SubStep" preconditionExpression="aql:self.eContainer() = container" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:eAllContents" createElements="false" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']">
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
@@ -1122,7 +1213,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Step precedence" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='OutputRel2Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='Step2InputRel'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='StepStep']" iconPath="/org.polarsys.time4sys.odesign/images/PrecedenceLink.gif">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Step precedence" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@edgeMappings[name='PrecedenceRelation']" iconPath="/org.polarsys.time4sys.odesign/images/PrecedenceLink.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -1130,7 +1221,39 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
                 <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:createLink(source, target)"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.OutputPin" referenceName="outputPin" variableName="outputPin"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputPin">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::OutputPin))">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.inputPin">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1228,83 +1351,80 @@
           <ownedSubLines name="ExecutionStep" domainClass="gqam.ExecutionStep" semanticCandidatesExpression="&lt;%~concurRes%>" headerLabelExpression="&lt;%name%>"/>
         </ownedSubLines>
       </ownedLineMappings>
-      <ownedColumnMappings name="Priority" headerLabelExpression="Priority" featureName="schedParams" labelExpression="&lt;%getPriority()%>">
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Step Overview" titleExpression="Step Overview Table" domainClass="design.DesignModel">
+      <ownedLineMappings name="HardwareComputingResource" domainClass="hrm.HardwareComputingResource" semanticCandidatesExpression="aql:root.resourcePackage.ownedElement" headerLabelExpression="feature:name">
+        <ownedSubLines name="SoftwareSchedulableResource" domainClass="srm.SoftwareSchedulableResource" semanticCandidatesExpression="aql:container.getSwSchedulableResourcesOrderedByPriority()" headerLabelExpression="feature:name">
+          <ownedSubLines name="ExecutionStep" domainClass="gqam.ExecutionStep" semanticCandidatesExpression="aql:self.eInverse('concurRes')" headerLabelExpression="feature:name">
+            <ownedSubLines name="Workload Event" domainClass="gqam.WorkloadEvent" semanticCandidatesExpression="aql:self.cause" headerLabelExpression="feature:name"/>
+          </ownedSubLines>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Priority" headerLabelExpression="Priority" featureName="schedParams" labelExpression="service:getPriority">
         <directEdit>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="&lt;%schedParams.nGet(0)%>">
-            <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="&lt;%$0%>"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="aql:schedParams->first()">
+            <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="var:0"/>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
       </ownedColumnMappings>
-      <ownedColumnMappings name="Period" headerLabelExpression="Period" featureName="deadlineElements" labelExpression="&lt;%getPeriod($root)%>">
+      <ownedColumnMappings name="Period" headerLabelExpression="Period" featureName="pattern" labelExpression="aql:container.getPeriod()">
         <directEdit>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="&lt;%$lineSemantic%>">
-            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.services.NameAndTimeEditor" id="org.polarsys.time4sys.odesign.services.NameAndTimeEditor">
-              <parameters name="periodDuration" value="&lt;%$0%>"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="aql:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+                <parameters name="periodDuration" value="var:0"/>
+              </subModelOperations>
+              <parameters name="periodDuration" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
       </ownedColumnMappings>
-      <ownedColumnMappings name="Offset" headerLabelExpression="Offset" featureName="deadlineTypeElements" labelExpression="&lt;%getOffset($root)%>">
+      <ownedColumnMappings name="Offset" headerLabelExpression="Offset" featureName="pattern" labelExpression="aql:container.getOffset()">
         <directEdit>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="&lt;%$lineSemantic%>">
-            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.services.NameAndTimeEditor" id="org.polarsys.time4sys.odesign.services.NameAndTimeEditor">
-              <parameters name="offsetDuration" value="&lt;%$0%>"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <parameters name="offsetDuration" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
       </ownedColumnMappings>
-      <ownedColumnMappings name="Jitter" headerLabelExpression="Jitter" featureName="timeSliceElements" labelExpression="&lt;%getJitter($root)%>">
+      <ownedColumnMappings name="Jitter" headerLabelExpression="Jitter" featureName="pattern" labelExpression="aql:container.getJitter()">
         <directEdit>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="&lt;%$lineSemantic%>">
-            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.services.NameAndTimeEditor" id="org.polarsys.time4sys.odesign.services.NameAndTimeEditor">
-              <parameters name="jitterDuration" value="&lt;%$0%>"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <parameters name="jitterDuration" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
       </ownedColumnMappings>
-      <ownedColumnMappings name="CET" headerLabelExpression="CET" featureName="name" labelExpression="&lt;%getTimeIntervalCET($root)%>">
+      <ownedColumnMappings name="CET" headerLabelExpression="CET" featureName="name" labelExpression="aql:container.getTimeIntervalCET(root)">
         <directEdit>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="&lt;%$lineSemantic%>">
-            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.services.NameAndTimeEditor" id="org.polarsys.time4sys.odesign.services.NameAndTimeEditor">
-              <parameters name="nameAndTime" value="&lt;%$0%>"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <parameters name="nameAndTime" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
-      </ownedColumnMappings>
-      <ownedColumnMappings name="Load" headerLabelExpression="Load" featureName="load" labelExpression="&lt;%load + &quot;%&quot;%>" featureParentExpression="&lt;%~refersTo%>"/>
-      <ownedColumnMappings name="ResponseTime" headerLabelExpression="Response Time" featureName="responseTime" labelExpression="&lt;%responseTime%>" featureParentExpression="&lt;%~refersTo%>">
-        <backgroundConditionalStyle predicateExpression="&lt;%wcrtGreaterThanDeadline()%>">
-          <style>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-          </style>
-        </backgroundConditionalStyle>
-      </ownedColumnMappings>
-      <ownedColumnMappings name="Deadline" headerLabelExpression="Deadline" featureName="endToEndDeadline" labelExpression="&lt;%endToEndDeadline%>" featureParentExpression="&lt;%~concurRes.~endToEndScenario%>">
-        <backgroundConditionalStyle predicateExpression="&lt;%deadlineLowerThanWcrt()%>">
-          <style>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
-          </style>
-        </backgroundConditionalStyle>
       </ownedColumnMappings>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
@@ -1318,6 +1438,7 @@
     <entries xsi:type="description:UserFixedColor" red="254" green="241" blue="168" name="CustomYellow"/>
     <entries xsi:type="description:UserFixedColor" red="208" green="226" blue="238" name="CustomGrayedBlue"/>
     <entries xsi:type="description:UserFixedColor" red="159" green="126" blue="226" name="CustomPurple"/>
+    <entries xsi:type="description:UserFixedColor" red="91" green="191" blue="91" name="CustomDarkGreen"/>
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" identifier="org.eclipse.sirius.ui.properties">
     <pages identifier="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@groups.0 //@extensions.0/@groups.1 //@extensions.0/@groups.2 //@extensions.0/@groups.3"/>

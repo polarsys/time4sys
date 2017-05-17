@@ -28,6 +28,9 @@ public class LongDurationImpl extends DurationImpl {
 	public static final DurationImpl ZERO = new LongDurationImpl(0L, TimeUnitKind.PS);
 	
 	public static long asLongPicoSecond(final TimeUnitKind unit) {
+		if (unit == null) {
+			throw new IllegalArgumentException("Time unit must not be null.");
+		}
 		switch (unit) {
 		case PS:
 			return 1L;
@@ -78,24 +81,28 @@ public class LongDurationImpl extends DurationImpl {
 		return r.longValue();
 	}
 	
+	@Override
 	public void setValue(double newValue) {
 		picoseconds = (long)(newValue * asLongPicoSecond(unit));
 		super.setValue(newValue);
 	}
 	
+	@Override
 	public Duration add(final Duration v) {
 		if (v instanceof LongDurationImpl) {
-			final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
+			final TimeUnitKind targetUnit = d.findClosestUnitTo(this.getUnit(), v.getUnit());
 			return new LongDurationImpl(picoseconds + ((LongDurationImpl)v).picoseconds, targetUnit);			
 		} else {
 			return super.add(v);
 		}
 	}
 	
-	public Duration mul(long v) {
+	@Override
+	public Duration multiply(long v) {
 		return new LongDurationImpl(picoseconds * v, unit);			
 	}
 
+	@Override
 	public double div(final Duration v) {
 		if (v instanceof LongDurationImpl) {
 			return new BigDecimal(picoseconds).divide(new BigDecimal(((LongDurationImpl)v).picoseconds)).doubleValue();
@@ -104,9 +111,19 @@ public class LongDurationImpl extends DurationImpl {
 		}
 	}
 	
+	@Override
+	public long divide(final Duration v) {
+		if (v instanceof LongDurationImpl) {
+			return picoseconds / ((LongDurationImpl)v).picoseconds;
+		} else {
+			return super.divide(v);
+		}
+	}
+	
+	@Override
 	public Duration lcm(final Duration v) {
 		if (v instanceof LongDurationImpl) {
-			final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
+			final TimeUnitKind targetUnit = d.findClosestUnitTo(this.getUnit(), v.getUnit());
 			return new LongDurationImpl(lcm(picoseconds, ((LongDurationImpl)v).picoseconds), targetUnit);			
 		} else {
 			return super.lcm(v);
@@ -132,7 +149,7 @@ public class LongDurationImpl extends DurationImpl {
 	 */
 	public Duration sub(Duration v) {
 		if (v instanceof LongDurationImpl) {
-			final TimeUnitKind targetUnit = TimeUnitKind.findClosestUnitTo(this.getUnit(), v.getUnit());
+			final TimeUnitKind targetUnit = d.findClosestUnitTo(this.getUnit(), v.getUnit());
 			return new LongDurationImpl(picoseconds - ((LongDurationImpl)v).picoseconds, targetUnit);			
 		} else {
 			return super.sub(v);

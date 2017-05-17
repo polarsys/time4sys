@@ -8,8 +8,6 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- */
 package org.polarsys.time4sys.marte.nfp;
 
 import java.util.Arrays;
@@ -17,6 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.polarsys.time4sys.marte.nfp.impl.TimeDimension;
 
 /**
  * <!-- begin-user-doc -->
@@ -299,37 +298,7 @@ public enum TimeUnitKind implements Enumerator {
 	}
 	
 	
-	/**
-	 * 
-	 * @param unit1
-	 * @param unit2
-	 * @return the smallest unit of both.
-	 */
-	public static TimeUnitKind findClosestUnitTo(final TimeUnitKind unit1, final TimeUnitKind unit2) {
-		return get(Math.min(unit1.getValue(), unit2.getValue()));
-	}
-	
-	/**
-	 * Returns the factor to apply on value to convert from source unit to target unit. 
-	 * @param from
-	 * @param to
-	 * @return factor for conversion
-	 */
-	public static double getConversionFactor(final TimeUnitKind source, final TimeUnitKind target) {
-		final double factors[] = {1.0, 1.0, 1000.0, 1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0};
-		double f = 1.0;
-		if (source == target) {
-			return f;
-		}
-		if (source.getValue() < target.getValue()) {
-			return 1.0 / getConversionFactor(target, source);
-		}
-		assert(source.getValue() > target.getValue());
-		for(int i = source.getValue(); i > target.getValue(); i--) {
-			f = f * factors[i];
-		}
-		return f;
-	}
+	public static final Dimension<TimeUnitKind> dimension = TimeDimension.timeDimension;
 
 	/**
 	 * <!-- begin-user-doc -->

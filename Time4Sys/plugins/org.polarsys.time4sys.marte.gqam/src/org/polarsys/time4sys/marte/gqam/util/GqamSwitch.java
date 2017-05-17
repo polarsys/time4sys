@@ -19,7 +19,11 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.polarsys.time4sys.marte.gqam.*;
 
+import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.NamedElement;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,12 +118,40 @@ public class GqamSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GqamPackage.COMMUNICATION_CHANNEL: {
+				CommunicationChannel communicationChannel = (CommunicationChannel)theEObject;
+				T result = caseCommunicationChannel(communicationChannel);
+				if (result == null) result = caseSchedulableResource(communicationChannel);
+				if (result == null) result = caseConcurrencyResource(communicationChannel);
+				if (result == null) result = caseResource(communicationChannel);
+				if (result == null) result = caseResourcePackageableElement(communicationChannel);
+				if (result == null) result = caseNamedElement(communicationChannel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GqamPackage.COMMUNICATION_STEP: {
 				CommunicationStep communicationStep = (CommunicationStep)theEObject;
 				T result = caseCommunicationStep(communicationStep);
 				if (result == null) result = caseStep(communicationStep);
 				if (result == null) result = caseBehaviorScenario(communicationStep);
 				if (result == null) result = caseNamedElement(communicationStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.CONTROL_PIN: {
+				ControlPin controlPin = (ControlPin)theEObject;
+				T result = caseControlPin(controlPin);
+				if (result == null) result = caseMultiplicityElement(controlPin);
+				if (result == null) result = caseNamedElement(controlPin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.DELAY: {
+				Delay delay = (Delay)theEObject;
+				T result = caseDelay(delay);
+				if (result == null) result = caseStep(delay);
+				if (result == null) result = caseBehaviorScenario(delay);
+				if (result == null) result = caseNamedElement(delay);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +167,37 @@ public class GqamSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStep(executionStep);
 				if (result == null) result = caseBehaviorScenario(executionStep);
 				if (result == null) result = caseNamedElement(executionStep);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.INPUT_PIN: {
+				InputPin inputPin = (InputPin)theEObject;
+				T result = caseInputPin(inputPin);
+				if (result == null) result = caseControlPin(inputPin);
+				if (result == null) result = caseMultiplicityElement(inputPin);
+				if (result == null) result = caseNamedElement(inputPin);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.MULTIPLICITY_ELEMENT: {
+				MultiplicityElement multiplicityElement = (MultiplicityElement)theEObject;
+				T result = caseMultiplicityElement(multiplicityElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.ONCE: {
+				Once once = (Once)theEObject;
+				T result = caseOnce(once);
+				if (result == null) result = caseArrivalPattern(once);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GqamPackage.OUTPUT_PIN: {
+				OutputPin outputPin = (OutputPin)theEObject;
+				T result = caseOutputPin(outputPin);
+				if (result == null) result = caseControlPin(outputPin);
+				if (result == null) result = caseMultiplicityElement(outputPin);
+				if (result == null) result = caseNamedElement(outputPin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -208,51 +271,6 @@ public class GqamSwitch<T> extends Switch<T> {
 				WorkloadBehavior workloadBehavior = (WorkloadBehavior)theEObject;
 				T result = caseWorkloadBehavior(workloadBehavior);
 				if (result == null) result = caseNamedElement(workloadBehavior);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.DELAY: {
-				Delay delay = (Delay)theEObject;
-				T result = caseDelay(delay);
-				if (result == null) result = caseStep(delay);
-				if (result == null) result = caseBehaviorScenario(delay);
-				if (result == null) result = caseNamedElement(delay);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.MULTIPLICITY_ELEMENT: {
-				MultiplicityElement multiplicityElement = (MultiplicityElement)theEObject;
-				T result = caseMultiplicityElement(multiplicityElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.CONTROL_PIN: {
-				ControlPin controlPin = (ControlPin)theEObject;
-				T result = caseControlPin(controlPin);
-				if (result == null) result = caseMultiplicityElement(controlPin);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.INPUT_PIN: {
-				InputPin inputPin = (InputPin)theEObject;
-				T result = caseInputPin(inputPin);
-				if (result == null) result = caseControlPin(inputPin);
-				if (result == null) result = caseMultiplicityElement(inputPin);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.OUTPUT_PIN: {
-				OutputPin outputPin = (OutputPin)theEObject;
-				T result = caseOutputPin(outputPin);
-				if (result == null) result = caseControlPin(outputPin);
-				if (result == null) result = caseMultiplicityElement(outputPin);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GqamPackage.ONCE: {
-				Once once = (Once)theEObject;
-				T result = caseOnce(once);
-				if (result == null) result = caseArrivalPattern(once);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -456,6 +474,21 @@ public class GqamSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Communication Channel</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Communication Channel</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommunicationChannel(CommunicationChannel object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Communication Step</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -632,6 +665,66 @@ public class GqamSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourcePackageableElement(ResourcePackageableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResource(Resource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Concurrency Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Concurrency Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConcurrencyResource(ConcurrencyResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Schedulable Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Schedulable Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSchedulableResource(SchedulableResource object) {
 		return null;
 	}
 

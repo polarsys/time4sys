@@ -21,7 +21,11 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.polarsys.time4sys.marte.gqam.*;
 
+import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.NamedElement;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,8 +104,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createClosedPatternAdapter();
 			}
 			@Override
+			public Adapter caseCommunicationChannel(CommunicationChannel object) {
+				return createCommunicationChannelAdapter();
+			}
+			@Override
 			public Adapter caseCommunicationStep(CommunicationStep object) {
 				return createCommunicationStepAdapter();
+			}
+			@Override
+			public Adapter caseControlPin(ControlPin object) {
+				return createControlPinAdapter();
+			}
+			@Override
+			public Adapter caseDelay(Delay object) {
+				return createDelayAdapter();
 			}
 			@Override
 			public Adapter caseEndToEndFlow(EndToEndFlow object) {
@@ -110,6 +126,22 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExecutionStep(ExecutionStep object) {
 				return createExecutionStepAdapter();
+			}
+			@Override
+			public Adapter caseInputPin(InputPin object) {
+				return createInputPinAdapter();
+			}
+			@Override
+			public Adapter caseMultiplicityElement(MultiplicityElement object) {
+				return createMultiplicityElementAdapter();
+			}
+			@Override
+			public Adapter caseOnce(Once object) {
+				return createOnceAdapter();
+			}
+			@Override
+			public Adapter caseOutputPin(OutputPin object) {
+				return createOutputPinAdapter();
 			}
 			@Override
 			public Adapter casePeriodicPattern(PeriodicPattern object) {
@@ -152,32 +184,24 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createWorkloadBehaviorAdapter();
 			}
 			@Override
-			public Adapter caseDelay(Delay object) {
-				return createDelayAdapter();
-			}
-			@Override
-			public Adapter caseMultiplicityElement(MultiplicityElement object) {
-				return createMultiplicityElementAdapter();
-			}
-			@Override
-			public Adapter caseControlPin(ControlPin object) {
-				return createControlPinAdapter();
-			}
-			@Override
-			public Adapter caseInputPin(InputPin object) {
-				return createInputPinAdapter();
-			}
-			@Override
-			public Adapter caseOutputPin(OutputPin object) {
-				return createOutputPinAdapter();
-			}
-			@Override
-			public Adapter caseOnce(Once object) {
-				return createOnceAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseResourcePackageableElement(ResourcePackageableElement object) {
+				return createResourcePackageableElementAdapter();
+			}
+			@Override
+			public Adapter caseResource(Resource object) {
+				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseConcurrencyResource(ConcurrencyResource object) {
+				return createConcurrencyResourceAdapter();
+			}
+			@Override
+			public Adapter caseSchedulableResource(SchedulableResource object) {
+				return createSchedulableResourceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -382,6 +406,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.CommunicationChannel <em>Communication Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.CommunicationChannel
+	 * @generated
+	 */
+	public Adapter createCommunicationChannelAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.CommunicationStep <em>Communication Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -546,6 +584,62 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.ResourcePackageableElement <em>Resource Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.ResourcePackageableElement
+	 * @generated
+	 */
+	public Adapter createResourcePackageableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.Resource <em>Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.Resource
+	 * @generated
+	 */
+	public Adapter createResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.ConcurrencyResource <em>Concurrency Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.ConcurrencyResource
+	 * @generated
+	 */
+	public Adapter createConcurrencyResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.SchedulableResource <em>Schedulable Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.SchedulableResource
+	 * @generated
+	 */
+	public Adapter createSchedulableResourceAdapter() {
 		return null;
 	}
 

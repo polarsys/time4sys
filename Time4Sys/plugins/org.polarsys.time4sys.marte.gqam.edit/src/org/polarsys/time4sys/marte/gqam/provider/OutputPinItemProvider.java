@@ -99,8 +99,10 @@ public class OutputPinItemProvider extends ControlPinItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		OutputPin outputPin = (OutputPin)object;
-		return getString("_UI_OutputPin_type") + " " + outputPin.getLowerBound();
+		String label = ((OutputPin)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_OutputPin_type") :
+			getString("_UI_OutputPin_type") + " " + label;
 	}
 	
 

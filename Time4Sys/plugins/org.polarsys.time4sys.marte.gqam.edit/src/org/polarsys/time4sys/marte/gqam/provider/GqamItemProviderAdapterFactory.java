@@ -21,6 +21,8 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
@@ -36,8 +38,13 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.util.GqamAdapterFactory;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.ResourcePackage;
+import org.polarsys.time4sys.marte.grm.util.GrmSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -346,6 +353,29 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		}
 
 		return onceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.CommunicationChannel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommunicationChannelItemProvider communicationChannelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.gqam.CommunicationChannel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommunicationChannelAdapter() {
+		if (communicationChannelItemProvider == null) {
+			communicationChannelItemProvider = new CommunicationChannelItemProvider(this);
+		}
+
+		return communicationChannelItemProvider;
 	}
 
 	/**
@@ -708,9 +738,14 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		if (behaviorScenarioItemProvider != null) behaviorScenarioItemProvider.dispose();
 		if (burstPatternItemProvider != null) burstPatternItemProvider.dispose();
 		if (closedPatternItemProvider != null) closedPatternItemProvider.dispose();
+		if (communicationChannelItemProvider != null) communicationChannelItemProvider.dispose();
 		if (communicationStepItemProvider != null) communicationStepItemProvider.dispose();
+		if (delayItemProvider != null) delayItemProvider.dispose();
 		if (endToEndFlowItemProvider != null) endToEndFlowItemProvider.dispose();
 		if (executionStepItemProvider != null) executionStepItemProvider.dispose();
+		if (inputPinItemProvider != null) inputPinItemProvider.dispose();
+		if (onceItemProvider != null) onceItemProvider.dispose();
+		if (outputPinItemProvider != null) outputPinItemProvider.dispose();
 		if (periodicPatternItemProvider != null) periodicPatternItemProvider.dispose();
 		if (precedenceRelationItemProvider != null) precedenceRelationItemProvider.dispose();
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
@@ -721,10 +756,108 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		if (stepItemProvider != null) stepItemProvider.dispose();
 		if (workloadEventItemProvider != null) workloadEventItemProvider.dispose();
 		if (workloadBehaviorItemProvider != null) workloadBehaviorItemProvider.dispose();
-		if (delayItemProvider != null) delayItemProvider.dispose();
-		if (inputPinItemProvider != null) inputPinItemProvider.dispose();
-		if (outputPinItemProvider != null) outputPinItemProvider.dispose();
-		if (onceItemProvider != null) onceItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link GrmPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class GrmChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends GrmSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseResource(Resource object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						 GqamFactory.eINSTANCE.createCommunicationChannel()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseResourcePackage(ResourcePackage object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
+						 GqamFactory.eINSTANCE.createCommunicationChannel()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return GqamEditPlugin.INSTANCE;
+		}
 	}
 
 }

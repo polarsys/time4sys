@@ -66,6 +66,8 @@ public class Time4sysFactoryImpl extends EFactoryImpl implements Time4sysFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case Time4sysPackage.PROJECT: return createProject();
+			case Time4sysPackage.TRANSFORMATION: return createTransformation();
+			case Time4sysPackage.SIMULATION: return createSimulation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,6 +81,26 @@ public class Time4sysFactoryImpl extends EFactoryImpl implements Time4sysFactory
 	public Project createProject() {
 		ProjectImpl project = new ProjectImpl();
 		return project;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Transformation createTransformation() {
+		TransformationImpl transformation = new TransformationImpl();
+		return transformation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Simulation createSimulation() {
+		SimulationImpl simulation = new SimulationImpl();
+		return simulation;
 	}
 
 	/**

@@ -30,4 +30,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated gqam -->
+      <extender
+            uri="http://www.polarsys.org/time4sys/marte/grm/1.0"
+            class="org.polarsys.time4sys.marte.gqam.provider.GqamItemProviderAdapterFactory$GrmChildCreationExtender"/>
+   </extension>
+
 </plugin>

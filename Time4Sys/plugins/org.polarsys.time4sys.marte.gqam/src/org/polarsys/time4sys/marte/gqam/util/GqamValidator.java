@@ -108,12 +108,26 @@ public class GqamValidator extends EObjectValidator {
 				return validateBurstPattern((BurstPattern)value, diagnostics, context);
 			case GqamPackage.CLOSED_PATTERN:
 				return validateClosedPattern((ClosedPattern)value, diagnostics, context);
+			case GqamPackage.COMMUNICATION_CHANNEL:
+				return validateCommunicationChannel((CommunicationChannel)value, diagnostics, context);
 			case GqamPackage.COMMUNICATION_STEP:
 				return validateCommunicationStep((CommunicationStep)value, diagnostics, context);
+			case GqamPackage.CONTROL_PIN:
+				return validateControlPin((ControlPin)value, diagnostics, context);
+			case GqamPackage.DELAY:
+				return validateDelay((Delay)value, diagnostics, context);
 			case GqamPackage.END_TO_END_FLOW:
 				return validateEndToEndFlow((EndToEndFlow)value, diagnostics, context);
 			case GqamPackage.EXECUTION_STEP:
 				return validateExecutionStep((ExecutionStep)value, diagnostics, context);
+			case GqamPackage.INPUT_PIN:
+				return validateInputPin((InputPin)value, diagnostics, context);
+			case GqamPackage.MULTIPLICITY_ELEMENT:
+				return validateMultiplicityElement((MultiplicityElement)value, diagnostics, context);
+			case GqamPackage.ONCE:
+				return validateOnce((Once)value, diagnostics, context);
+			case GqamPackage.OUTPUT_PIN:
+				return validateOutputPin((OutputPin)value, diagnostics, context);
 			case GqamPackage.PERIODIC_PATTERN:
 				return validatePeriodicPattern((PeriodicPattern)value, diagnostics, context);
 			case GqamPackage.PRECEDENCE_RELATION:
@@ -134,18 +148,6 @@ public class GqamValidator extends EObjectValidator {
 				return validateWorkloadEvent((WorkloadEvent)value, diagnostics, context);
 			case GqamPackage.WORKLOAD_BEHAVIOR:
 				return validateWorkloadBehavior((WorkloadBehavior)value, diagnostics, context);
-			case GqamPackage.DELAY:
-				return validateDelay((Delay)value, diagnostics, context);
-			case GqamPackage.MULTIPLICITY_ELEMENT:
-				return validateMultiplicityElement((MultiplicityElement)value, diagnostics, context);
-			case GqamPackage.CONTROL_PIN:
-				return validateControlPin((ControlPin)value, diagnostics, context);
-			case GqamPackage.INPUT_PIN:
-				return validateInputPin((InputPin)value, diagnostics, context);
-			case GqamPackage.OUTPUT_PIN:
-				return validateOutputPin((OutputPin)value, diagnostics, context);
-			case GqamPackage.ONCE:
-				return validateOnce((Once)value, diagnostics, context);
 			case GqamPackage.CONNECTOR_KIND:
 				return validateConnectorKind((ConnectorKind)value, diagnostics, context);
 			case GqamPackage.NFP_DURATION:
@@ -407,6 +409,15 @@ public class GqamValidator extends EObjectValidator {
 	 */
 	public boolean validateOnce(Once once, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(once, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommunicationChannel(CommunicationChannel communicationChannel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(communicationChannel, diagnostics, context);
 	}
 
 	/**

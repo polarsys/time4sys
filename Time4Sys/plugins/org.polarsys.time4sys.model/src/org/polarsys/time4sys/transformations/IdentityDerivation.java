@@ -22,6 +22,8 @@ import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 
 /**
  * @author loic
@@ -32,7 +34,7 @@ public class IdentityDerivation {
 
 	public static final String IDENTITY_RULE_NAME = "Identity Rule".intern();
 
-	public static Mapping duplicate(final Project project, final DesignModel source) {
+	public static Transformation duplicate(final Project project, final DesignModel source) {
 		return new IdentityDerivation(project, source).transform();
 	}
 
@@ -49,16 +51,18 @@ public class IdentityDerivation {
 		this.project = project;
 	}
  
-	public Mapping transform() {
+	public Transformation transform() {
 		mapping = mappingFactory.createMapping();
 		mapping.getSources().add(mappingFactory.createResourceArtefact("original", source.eResource()));
 		createRules();
 		final DesignModel target = copy();
-		project.getDerivations().add(target);
 		mapping.getTargets().add(mappingFactory.createResourceArtefact("copy", target.eResource()));
-		project.getMappings().add(mapping);
+		final Transformation transformation = Time4sysFactory.eINSTANCE.createTransformation();
+		project.getTransformations().add(transformation);
+		transformation.setMapping(mapping);
+		transformation.setResult(target);
 		finalize(target);
-		return mapping;
+		return transformation;
 	}
 
 	protected void finalize(final DesignModel target) {

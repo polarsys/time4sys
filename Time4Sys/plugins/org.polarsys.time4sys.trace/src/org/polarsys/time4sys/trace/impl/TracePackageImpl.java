@@ -781,6 +781,7 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		addEEnumLiteral(sliceKindEEnum, SliceKind.STATE);
 		addEEnumLiteral(sliceKindEEnum, SliceKind.AUTOMATON);
 		addEEnumLiteral(sliceKindEEnum, SliceKind.TEMPORAL_CHAIN);
+		addEEnumLiteral(sliceKindEEnum, SliceKind.OS);
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

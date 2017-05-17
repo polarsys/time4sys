@@ -34,6 +34,7 @@ import org.polarsys.time4sys.analysis.AnalysisFactory;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.trace.TraceFactory;
 
@@ -110,6 +111,8 @@ public class ProjectItemProvider
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__MAPPINGS);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__TRACES);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__DERIVATIONS);
+			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__TRANSFORMATIONS);
+			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__SIMULATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -173,6 +176,8 @@ public class ProjectItemProvider
 			case Time4sysPackage.PROJECT__MAPPINGS:
 			case Time4sysPackage.PROJECT__TRACES:
 			case Time4sysPackage.PROJECT__DERIVATIONS:
+			case Time4sysPackage.PROJECT__TRANSFORMATIONS:
+			case Time4sysPackage.PROJECT__SIMULATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -214,6 +219,16 @@ public class ProjectItemProvider
 			(createChildParameter
 				(Time4sysPackage.Literals.PROJECT__DERIVATIONS,
 				 DesignFactory.eINSTANCE.createDesignModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.PROJECT__TRANSFORMATIONS,
+				 Time4sysFactory.eINSTANCE.createTransformation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.PROJECT__SIMULATIONS,
+				 Time4sysFactory.eINSTANCE.createSimulation()));
 	}
 
 	/**

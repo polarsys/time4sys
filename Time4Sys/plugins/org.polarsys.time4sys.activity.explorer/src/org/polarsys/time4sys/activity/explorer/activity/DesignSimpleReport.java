@@ -70,10 +70,14 @@ public class DesignSimpleReport extends AbstractHyperlinkAdapter {
 	public static void generateReport(final DesignModel model, final Writer w) throws IOException {
 
 		w.write("Simple Report for ");
-		w.write(model.getName());
+		String modelName = model.getName();
+		if (modelName == null) {
+			modelName = "untitled";
+		}
+		w.write(modelName);
 		w.write("\n");
 		w.write("==================");
-		for (int i = 0; i < model.getName().length(); ++i) {
+		for (int i = 0; i < modelName.length(); ++i) {
 			w.write("=");
 		}
 		w.write("\n");
@@ -123,8 +127,8 @@ public class DesignSimpleReport extends AbstractHyperlinkAdapter {
 				maxOffset = maxOffset.max(pattern.getPhase());
 			}
 			maxWcet = maxWcet.max(step.getWorstCET());
-			nbDependencies += (step.getOutputRel() == null ? 0 : 1) + step.getOutputpin().size()
-					+ step.getInputpin().size();
+			nbDependencies += (step.getOutputRel() == null ? 0 : 1) + step.getOutputPin().size()
+					+ step.getInputPin().size();
 		}
 
 		w.write("Maximum period::\nmax P~i~:: ");
@@ -266,25 +270,28 @@ public class DesignSimpleReport extends AbstractHyperlinkAdapter {
 	@Override
 	protected void linkPressed(final HyperlinkEvent event, final EObject project_p, final Session session) {
 		if (project_p instanceof Project) {
-			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(project_p);
-			domain.getCommandStack().execute(new RecordingCommand(domain) {
-
-				@Override
-				protected void doExecute() {
-					final Project prj = ((Project) project_p);
-					final Mapping mapping = ToPeriodicDerivation.getOrApply(prj);
-					final DesignModel toBeAnalysedModel = (DesignModel) mapping.getSubLinks().get(0).getUniqueTargetValue("copy");
-					final URI uri = prj.eResource().getURI();
-					IPath path = new Path(uri.toPlatformString(true));
-					final String filename = path.lastSegment().replaceAll(".time4sys", "-report.asciidoc");
-					path = path.removeLastSegments(1);
-					path = path.append(filename);
-					IWorkspaceRoot wrkspc = ResourcesPlugin.getWorkspace().getRoot();
-					final IFile output = wrkspc.getFile(path);
-					generateReport(toBeAnalysedModel, output, null);
-				}
-			});
-
+			generateSimpleReport(project_p);
 		}
+	}
+
+	public static void generateSimpleReport(final EObject project_p) {
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(project_p);
+		domain.getCommandStack().execute(new RecordingCommand(domain) {
+
+			@Override
+			protected void doExecute() {
+				final Project prj = ((Project) project_p);
+				final Mapping mapping = ToPeriodicDerivation.getOrApply(prj).getMapping();
+				final DesignModel toBeAnalysedModel = (DesignModel) mapping.getSubLinks().get(0).getUniqueTargetValue("copy");
+				final URI uri = prj.eResource().getURI();
+				IPath path = new Path(uri.toPlatformString(true));
+				final String filename = path.lastSegment().replaceAll(".time4sys", "-report.asciidoc");
+				path = path.removeLastSegments(1);
+				path = path.append(filename);
+				IWorkspaceRoot wrkspc = ResourcesPlugin.getWorkspace().getRoot();
+				final IFile output = wrkspc.getFile(path);
+				generateReport(toBeAnalysedModel, output, null);
+			}
+		});
 	}
 }

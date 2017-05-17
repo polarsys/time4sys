@@ -101,6 +101,18 @@ Describe the sequence of steps of one the selected scenario and represents steps
              Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.
           </Description>
        </Activity>
+       <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.RemoveDeprecated"
+             id="org.polarsys.time4sys.activity.explorer.design.RemoveDeprecated"
+             image="icons/Transformation.jpg"
+             index="6"
+             name="Remove and replace all deprecated features used in the model.">
+          <Description>
+             Transform your design modelby removing all modeling features that are deprecated.
+             As of now:
+             * it replaces PrecedenceRelation by ControlPin.
+          </Description>
+       </Activity>       
 		</Section>
   <Predicate
         class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
