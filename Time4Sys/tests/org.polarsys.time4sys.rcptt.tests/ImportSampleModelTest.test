@@ -1,0 +1,27 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _kTrwgECAEeekNYUxN6Ockg
+Element-Name: ImportSampleModelTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _HqV8EECBEeekNYUxN6Ockg
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 5/24/17 3:09 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Model Explorer" | get-tree | get-menu "New/Other..." | click
+with [get-window New | get-tree] {
+    select "Time4Sys Designer" | key-type Right
+    key-type Left
+    select Examples | key-type Right
+    select "Examples/Sample Model" | double-click
+}
+with [get-window "New Example"] {
+    get-button Finish | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

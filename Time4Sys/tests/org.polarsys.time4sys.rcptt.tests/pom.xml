@@ -12,9 +12,9 @@
 	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	     
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>org.polarsys.time4sys.rcptt.project.tests</artifactId>
+  <artifactId>org.polarsys.time4sys.rcptt.tests</artifactId>
   <groupId>time4sys</groupId>
-  <version>2.1.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>rcpttTest</packaging>
 
   <pluginRepositories>
@@ -46,25 +46,24 @@
         <extensions>true</extensions>
         <configuration>
           <runner>
-            <version>2.1.0</version>
+            <version>2.2.0-SNAPSHOT</version>
             <vmArgs>
               <vmArg>-Xms256m</vmArg>
               <vmArg>-Xmx1024m</vmArg>
               <vmArg>-XX:+UseG1GC</vmArg>
-              <vmArg>-XX:+UseStringDeduplication</vmArg>
             </vmArgs>
           </runner>
 
           <aut>
             <explicit>../../releng/org.polarsys.time4sys.product/target/products/org.polarsys.time4sys.launcher.product-[platform].zip</explicit>
-		   <vmArgs>
-              <vmArg>-Xmx1024m</vmArg>
-			 <vmArg>-XX:MaxPermSize=256m</vmArg>
-		   </vmArgs>
-		  </aut> 
+              <vmArgs>
+                <vmArg>-Xmx1024m</vmArg>
+                <vmArg>-XX:MaxPermSize=256m</vmArg>
+              <vmArg>-XX:+UseG1GC</vmArg>
+              </vmArgs>
+          </aut> 
         </configuration>
       </plugin>
     </plugins>
   </build>
-
 </project>

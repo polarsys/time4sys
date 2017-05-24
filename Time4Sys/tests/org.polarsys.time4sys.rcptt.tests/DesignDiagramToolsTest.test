@@ -1,0 +1,579 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: DesignDiagramToolsTest
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _bN1w4ECBEeekNYUxN6Ockg
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 5/24/17 5:47 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-editor "Project EmptyProject"] {
+    get-link "" | click
+    with [get-section Design] {
+        click
+        get-link "Design Model" | click
+    }
+}
+
+get-window "New Design Architecture" | get-button OK | click
+with [get-editor "[EmptyProject] Design Architecture diagram"] {
+    get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | mouse-move 584 65 
+        -height 388 -width 598
+    with [get-palette | get-palette-entry "Hardware Resource"] {
+        mouse-move 50 15 button1 -height 37 -width 125
+        mouse-press 50 15 button1 -height 37 -width 125
+        mouse-release 50 15 button1 524288 -height 37 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 28 24 button1 CTRL -height 388 -width 598
+        mouse-press 28 24 button1 CTRL -height 388 -width 598
+        mouse-move 168 167 -mask 786432 -height 388 -width 598
+        mouse-drag 562 386 button1 786432 -height 388 -width 598
+        mouse-release 562 386 button1 786432 -height 388 -width 598
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0"] {
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 24 40 button1 CTRL -height 359 -width 529
+            mouse-press 24 40 button1 CTRL -height 359 -width 529
+            mouse-move 24 46 -mask 786432 -height 359 -width 529
+        }
+        mouse-drag 255 322 button1 786432 -height 361 -width 531
+        mouse-release 255 322 button1 786432 -height 361 -width 531
+    }
+    get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | mouse-move 595 139 
+        -height 388 -width 598
+    with [get-palette] {
+        get-palette-entry Bus | mouse-move 14 0 -height 23 -width 125
+        with [get-palette-entry "Software Resource"] {
+            mouse-move 22 19 button1 -height 37 -width 125
+            mouse-press 22 19 button1 -height 37 -width 125
+            mouse-release 22 19 button1 524288 -height 37 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 264 87 -mask CTRL -height 359 -width 529
+        with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 29 53 button1 CTRL -height 279 -width 229
+            mouse-press 29 53 button1 CTRL -height 279 -width 229
+            mouse-release 29 53 button1 786432 -height 279 -width 229
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0"] {
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 276 46 button1 CTRL -height 359 -width 529
+            mouse-press 276 46 button1 CTRL -height 359 -width 529
+            mouse-move 276 45 -mask 786432 -height 359 -width 529
+        }
+        mouse-drag 508 321 button1 786432 -height 361 -width 531
+        mouse-release 508 321 button1 786432 -height 361 -width 531
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+        | get-edit-part -name SoftwareResource2] {
+        with [get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 41 51 -mask CTRL -height 272 -width 234
+            mouse-hover 41 51 -mask CTRL -height 272 -width 234
+            mouse-move 35 41 button1 CTRL -height 272 -width 234
+            mouse-press 35 41 button1 CTRL -height 272 -width 234
+            mouse-move 34 41 -mask 786432 -height 272 -width 234
+        }
+        mouse-drag 198 225 button1 786432 -height 274 -width 236
+        mouse-release 198 225 button1 786432 -height 274 -width 236
+    }
+    get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | mouse-move 584 246 
+        -height 388 -width 598
+    with [get-palette] {
+        get-palette-entry "Mutual Exclusion" | mouse-move 63 0 -height 37 -width 125
+        get-palette-entry Bus | mouse-move 47 2 -height 23 -width 125
+        with [get-palette-entry "Software Resource Group"] {
+            mouse-move 7 8 button1 -height 37 -width 125
+            mouse-press 7 8 button1 -height 37 -width 125
+            mouse-release 7 8 button1 524288 -height 37 -width 125
+        }
+        get-palette-entry "Software Resource" | mouse-move 51 35 -height 37 -width 107
+        with [get-palette-entry "Schedulable Resource Creation"] {
+            mouse-move 67 17 button1 -height 52 -width 125
+            mouse-press 67 17 button1 -height 52 -width 125
+            mouse-release 67 17 button1 524288 -height 52 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 258 122 -height 359 -width 529
+        with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 193 82 -height 279 -width 229
+            with [get-edit-part -name SoftwareResource1 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 37 34 -mask CTRL -height 68 -width 148
+                mouse-hover 37 34 -mask CTRL -height 68 -width 148
+                mouse-move 44 31 -mask CTRL -height 68 -width 148
+                mouse-hover 44 31 -mask CTRL -height 68 -width 148
+                mouse-move 47 53 -mask CTRL -height 68 -width 148
+            }
+            mouse-move 47 169 button1 CTRL -height 279 -width 229
+            mouse-press 47 169 button1 CTRL -height 279 -width 229
+            mouse-release 47 169 button1 786432 -height 279 -width 229
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+        | get-edit-part -name SoftwareResource2 | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        mouse-move 14 48 button1 CTRL -height 184 -width 164
+        mouse-press 14 48 button1 CTRL -height 184 -width 164
+        mouse-release 14 48 button1 786432 -height 184 -width 164
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+        | get-edit-part -name SoftwareResource2 | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+        -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        mouse-move 19 34 -mask CTRL -height 68 -width 148
+        mouse-hover 19 34 -mask CTRL -height 68 -width 148
+        mouse-move 19 34 button1 CTRL -height 68 -width 148
+        mouse-press 19 34 button1 CTRL -height 68 -width 148
+        mouse-release 19 34 button1 786432 -height 68 -width 148
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 22 17 -height 111 -width 176
+            mouse-hover 22 17 -height 111 -width 176
+        }
+        mouse-move 585 194 -height 388 -width 598
+    }
+    with [get-palette] {
+        get-palette-entry PeriodicEvent | mouse-move 38 1 -height 23 -width 125
+        get-palette-entry "Mutual Exclusion" | mouse-move 33 0 -height 37 -width 125
+        with [get-palette-entry Bus] {
+            mouse-move 37 12 button1 -height 23 -width 125
+            mouse-press 37 12 button1 -height 23 -width 125
+            mouse-release 37 12 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 573 113 button1 -height 388 -width 598
+        mouse-press 573 113 button1 -height 388 -width 598
+        mouse-release 573 113 button1 524288 -height 388 -width 598
+    }
+    with [get-palette | get-palette-entry "Mutual Exclusion"] {
+        mouse-move 30 14 button1 -height 37 -width 125
+        mouse-press 30 14 button1 -height 37 -width 125
+        mouse-release 30 14 button1 524288 -height 37 -width 125
+        mouse-move 15 32 -height 37 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 575 218 button1 -height 388 -width 726
+        mouse-press 575 218 button1 -height 388 -width 726
+        mouse-release 575 218 button1 524288 -height 388 -width 726
+    }
+    get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | mouse-move 597 219 
+        -height 388 -width 755
+    with [get-palette | get-palette-entry PeriodicEvent] {
+        mouse-move 49 5 button1 -height 23 -width 125
+        mouse-press 49 5 button1 -height 23 -width 125
+        mouse-release 49 5 button1 524288 -height 23 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 578 289 button1 -height 388 -width 756
+        mouse-press 578 289 button1 -height 388 -width 756
+        mouse-release 578 289 button1 524288 -height 388 -width 756
+    }
+    with [get-palette] {
+        get-palette-entry ExecutionStep | mouse-move 25 0 -height 23 -width 125
+        with [get-palette-entry WorkloadEvent] {
+            mouse-move 6 6 button1 -height 23 -width 125
+            mouse-press 6 6 button1 -height 23 -width 125
+            mouse-release 6 6 button1 524288 -height 23 -width 125
+        }
+        get-palette-entry ExecutionStep | mouse-move 41 0 -height 23 -width 125
+        get-palette-entry SlidingWindowEvent | mouse-move 46 0 -height 23 -width 125
+        get-palette-entry ClosedEvent | mouse-move 51 1 -height 23 -width 125
+        get-palette-entry BurstEvent | mouse-move 54 0 -height 23 -width 125
+        with [get-palette-entry SporadicEvent] {
+            mouse-move 58 17 button1 -height 23 -width 125
+            mouse-press 58 17 button1 -height 23 -width 125
+            mouse-release 58 17 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 576 342 button1 -height 388 -width 755
+        mouse-press 576 342 button1 -height 388 -width 755
+        mouse-release 576 342 button1 524288 -height 388 -width 755
+    }
+    get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | mouse-move 583 323 
+        -height 388 -width 755
+    with [get-palette] {
+        get-palette-entry "Step precedence" | mouse-move 32 0 -height 23 -width 125
+        with [get-palette-entry ExecutionStep] {
+            mouse-move 37 11 button1 -height 23 -width 125
+            mouse-press 37 11 button1 -height 23 -width 125
+            mouse-release 37 11 button1 524288 -height 23 -width 125
+            mouse-move 17 21 -height 23 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 568 135 -height 388 -width 755
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            get-edit-part -name SoftwareResource2 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+                | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 147 49 
+                -height 184 -width 164
+            with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 208 173 -height 279 -width 229
+                with [get-edit-part -name SoftwareResource2 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-move 32 32 -mask CTRL -height 68 -width 148
+                    mouse-hover 32 32 -mask CTRL -height 68 -width 148
+                    mouse-move 32 32 button1 CTRL -height 68 -width 148
+                    mouse-press 32 32 button1 CTRL -height 68 -width 148
+                    mouse-release 32 32 button1 786432 -height 68 -width 148
+                }
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name "HardwareResource 0" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        get-edit-part -name "HardwareResource 1" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 138 32 
+            -mask CTRL -height 68 -width 148
+        with [get-edit-part -name SoftwareResource2 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 27 27 button1 CTRL -height 68 -width 148
+            mouse-press 27 27 button1 CTRL -height 68 -width 148
+            mouse-release 27 27 button1 786432 -height 68 -width 148
+        }
+    }
+    with [get-palette | get-palette-entry "Step precedence"] {
+        mouse-move 58 11 -height 23 -width 125
+        mouse-hover 58 11 -height 23 -width 125
+        mouse-move 58 11 button1 -height 23 -width 125
+        mouse-press 58 11 button1 -height 23 -width 125
+        mouse-release 58 11 button1 524288 -height 23 -width 125
+        mouse-move 37 21 -height 23 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 567 173 -height 388 -width 755
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 520 155 -height 359 -width 529
+            with [get-edit-part -name SoftwareResource2 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 210 117 -height 272 -width 234
+                get-edit-part -name SoftwareResource0 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+                    -name SoftwareResource0 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 106 34 -height 111 
+                    -width 176
+            }
+            mouse-move 274 201 -height 359 -width 529
+            with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource2 
+                | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 47 60 -height 68 -width 148
+                with [get-edit-part -name "Step\n"
+                    + "[:]" | get-edit-part -className SquareEditPart] {
+                    mouse-move 17 12 button1 -height 30 -width 30
+                    mouse-press 17 12 button1 -height 30 -width 30
+                    mouse-release 17 12 button1 524288 -height 30 -width 30
+                }
+            }
+            with [get-edit-part -name SoftwareResource2 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+                | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+                -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+                | get-edit-part -name SoftwareResource0 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 23 48 -height 68 -width 148
+                with [get-edit-part -name "Step\n"
+                    + "[:]" | get-edit-part -className SquareEditPart] {
+                    mouse-move 13 18 button1 -height 30 -width 30
+                    mouse-press 13 18 button1 -height 30 -width 30
+                }
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "Step\n"
+            + "[:]" | get-edit-part -className SquareEditPart | mouse-release 13 18 button1 524288 -height 30 -width 30
+        mouse-move 592 190 -height 388 -width 755
+        get-edit-part -name BUS | mouse-move 21 69 -height 70 -width 150
+    }
+    with [get-palette] {
+        with [get-palette-entry Links] {
+            mouse-move 10 9 button1 -height 23 -width 125
+            mouse-press 10 9 button1 -height 23 -width 125
+            mouse-release 10 9 button1 524288 -height 23 -width 125
+        }
+        get-palette-entry "Step precedence" | mouse-move 56 36 -height 37 -width 107
+        with [get-palette-entry "Event to Step"] {
+            mouse-move 76 11 -height 23 -width 125
+            mouse-hover 76 11 -height 23 -width 125
+            mouse-move 76 11 button1 -height 23 -width 125
+            mouse-press 76 11 button1 -height 23 -width 125
+            mouse-release 76 11 button1 524288 -height 23 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        with [get-edit-part -name "Periodic Event\n"
+            + "period: 0ps\n"
+            + "Jitter: \n"
+            + "Phase: " | get-edit-part -className WorkspaceImageEditPart] {
+            mouse-move 14 16 button1 -height 27 -width 30
+            mouse-press 14 16 button1 -height 27 -width 30
+            mouse-release 24 16 button1 524288 -height 27 -width 30
+        }
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "Step\n"
+            + "[:]" | get-edit-part -className SquareEditPart] {
+            mouse-move 15 7 button1 -height 30 -width 30
+            mouse-press 15 7 button1 -height 30 -width 30
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "Step\n"
+            + "[:]" | get-edit-part -className SquareEditPart | mouse-release 15 7 button1 524288 -height 30 -width 30
+        mouse-move 708 189 -height 388 -width 755
+        get-edit-part -name BUS | mouse-move 149 67 -height 70 -width 150
+    }
+    with [get-palette] {
+        with [get-palette-entry Links] {
+            mouse-move 12 10 button1 -height 23 -width 125
+            mouse-press 12 10 button1 -height 23 -width 125
+            mouse-release 12 10 button1 524288 -height 23 -width 125
+        }
+        get-palette-entry "Event to Step" | mouse-move 17 22 -height 23 -width 107
+        get-palette-entry "Step precedence" | mouse-move 36 20 -height 23 -width 125
+        with [get-palette-entry "Mutex locked Step/Resource"] {
+            mouse-move 48 11 button1 -height 37 -width 125
+            mouse-press 48 11 button1 -height 37 -width 125
+            mouse-release 48 11 button1 524288 -height 37 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        with [get-edit-part -name "Mutual Exclusion" | get-edit-part -className LozengeEditPart] {
+            mouse-move 15 14 button1 -height 30 -width 30
+            mouse-press 15 14 button1 -height 30 -width 30
+            mouse-release 15 14 button1 524288 -height 30 -width 30
+        }
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 94 28 -height 73 -width 148
+            mouse-hover 94 28 -height 73 -width 148
+            mouse-move 94 28 button1 -height 73 -width 148
+            mouse-press 94 28 button1 -height 73 -width 148
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name SoftwareResource2 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource0 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name SoftwareResource0 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource0 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-release 94 28 button1 524288 -height 73 -width 148
+        mouse-move 563 216 -height 388 -width 755
+        mouse-hover 563 216 -height 388 -width 755
+        mouse-move 708 188 -height 388 -width 755
+    }
+    with [get-palette] {
+        get-palette-entry "Mutex locked Step/Resource" | mouse-move 11 0 -height 37 -width 125
+        with [get-palette-entry Steps] {
+            mouse-move 11 9 button1 -height 23 -width 125
+            mouse-press 11 9 button1 -height 23 -width 125
+            mouse-release 11 9 button1 524288 -height 23 -width 125
+            mouse-hover 11 9 -height 62 -width 125
+        }
+        with [get-palette-entry "Communication Step"] {
+            mouse-move 50 11 button1 -height 37 -width 125
+            mouse-press 50 11 button1 -height 37 -width 125
+            mouse-release 50 11 button1 524288 -height 37 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram" | get-edit-part 
+        -name BUS | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 43 26 button1 -height 68 -width 148
+        mouse-press 43 26 button1 -height 68 -width 148
+        mouse-release 43 26 button1 524288 -height 68 -width 148
+    }
+    with [get-palette] {
+        get-palette-entry SporadicEvent | mouse-move 14 22 -height 23 -width 125
+        get-palette-entry "Communication Step" | mouse-move 14 33 -height 37 -width 125
+        get-palette-entry "Mutex locked Step/Resource" | mouse-move 14 28 -height 37 -width 125
+        with [get-palette-entry Constraints] {
+            mouse-hover 24 10 -height 22 -width 125
+            mouse-move 24 10 button1 -height 22 -width 125
+            mouse-press 24 10 button1 -height 22 -width 125
+            mouse-release 24 10 button1 524288 -height 22 -width 125
+        }
+        with [get-palette-entry EndToEndFlow] {
+            mouse-move 65 6 button1 -height 22 -width 125
+            mouse-press 65 6 button1 -height 22 -width 125
+            mouse-release 65 6 button1 524288 -height 22 -width 125
+            mouse-move 33 20 -height 22 -width 125
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 726 246 -height 388 -width 755
+        get-edit-part -name "Mutual Exclusion" -index 1 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 0 55 -height 68 -width 148
+        with [get-edit-part -name "Periodic Event\n"
+            + "period: 0ps\n"
+            + "Jitter: \n"
+            + "Phase: " | get-edit-part -className WorkspaceImageEditPart] {
+            mouse-hover 19 14 -height 27 -width 30
+            mouse-move 19 14 button1 -height 27 -width 30
+            mouse-press 19 14 button1 -height 27 -width 30
+            mouse-release 19 14 button1 524288 -height 27 -width 30
+        }
+        mouse-move 565 305 -height 388 -width 755
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 522 282 -height 359 -width 529
+            mouse-move 258 284 -height 359 -width 529
+            with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name SoftwareResource2 
+                | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 26 45 -height 71 -width 148
+                with [get-edit-part -name "Step\n"
+                    + "[:]" | get-edit-part -className SquareEditPart] {
+                    mouse-hover 10 15 -height 30 -width 30
+                    mouse-move 10 15 button1 -height 30 -width 30
+                    mouse-press 10 15 button1 -height 30 -width 30
+                }
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "HardwareResource 1" 
+            | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name SoftwareResource2 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | get-edit-part -name "Step\n"
+            + "[:]" | get-edit-part -className SquareEditPart] {
+            mouse-release 10 15 button1 524288 -height 30 -width 30
+            mouse-hover 10 15 -height 30 -width 30
+        }
+        mouse-move 602 334 -height 388 -width 755
+        get-edit-part -name "Mutual Exclusion" -index 1 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart | mouse-move 88 4 -height 68 -width 148
+    }
+    with [get-palette | get-palette-entry EndToEndFlow] {
+        mouse-move 21 14 button1 -height 22 -width 125
+        mouse-press 21 14 button1 -height 22 -width 125
+        mouse-release 21 14 button1 524288 -height 22 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        mouse-move 577 337 -height 388 -width 755
+        with [get-edit-part -name "Sporadic Event\n"
+            + "Min: \n"
+            + "Max: \n"
+            + "Jitter: " | get-edit-part -className WorkspaceImageEditPart] {
+            mouse-move 10 13 button1 -height 27 -width 30
+            mouse-press 10 13 button1 -height 27 -width 30
+            mouse-release 10 18 button1 524288 -height 27 -width 30
+        }
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 515 324 -height 359 -width 529
+            with [get-edit-part -name SoftwareResource2 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 172 227 -height 272 -width 234
+                with [get-edit-part -name SoftwareResource0 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-move 133 169 -height 184 -width 164
+                    with [get-edit-part -name SoftwareResource0 | get-edit-part 
+                        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+                        -name SoftwareResource0 | get-edit-part 
+                        -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                        mouse-move 18 56 -height 73 -width 148
+                        get-edit-part -name "Step\n"
+                            + "[:]" | get-edit-part -className SquareEditPart | mouse-hover 15 14 -height 30 -width 30
+                    }
+                }
+            }
+        }
+        mouse-move 667 185 -height 388 -width 755
+        with [get-edit-part -name BUS | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 76 45 -height 68 -width 148
+            with [get-edit-part -name Step3 | get-edit-part -className SquareEditPart] {
+                mouse-move 15 14 button1 -height 30 -width 30
+                mouse-press 15 14 button1 -height 30 -width 30
+            }
+        }
+    }
+    with [get-diagram -index 1 | get-edit-part -name "[EmptyProject] Design Architecture diagram"] {
+        with [get-edit-part -name BUS | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | get-edit-part -name Step3 | get-edit-part -className SquareEditPart] {
+            mouse-release 15 14 button1 524288 -height 30 -width 30
+            mouse-hover 15 14 -height 30 -width 30
+        }
+        mouse-move 569 165 -height 388 -width 755
+        with [get-edit-part -name "HardwareResource 0" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            with [get-edit-part -name SoftwareResource2] {
+                mouse-move 235 95 -height 274 -width 236
+                get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+                    -name SoftwareResource0 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 160 55 -height 184 
+                    -width 164
+            }
+            mouse-move 259 133 -height 359 -width 529
+            with [get-edit-part -name "HardwareResource 1" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 182 80 -height 279 -width 229
+                get-edit-part -name SoftwareResource1 | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 113 12 -height 68 
+                    -width 148
+            }
+        }
+    }
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
