@@ -266,6 +266,98 @@ public class TraceItemProviderAdapterFactory extends TraceAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.trace.ObjectValueChangeEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObjectValueChangeEventItemProvider objectValueChangeEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.trace.ObjectValueChangeEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createObjectValueChangeEventAdapter() {
+		if (objectValueChangeEventItemProvider == null) {
+			objectValueChangeEventItemProvider = new ObjectValueChangeEventItemProvider(this);
+		}
+
+		return objectValueChangeEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.trace.DurationValueChangeEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DurationValueChangeEventItemProvider durationValueChangeEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.trace.DurationValueChangeEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDurationValueChangeEventAdapter() {
+		if (durationValueChangeEventItemProvider == null) {
+			durationValueChangeEventItemProvider = new DurationValueChangeEventItemProvider(this);
+		}
+
+		return durationValueChangeEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.trace.DataSizeValueChangeEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataSizeValueChangeEventItemProvider dataSizeValueChangeEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.trace.DataSizeValueChangeEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataSizeValueChangeEventAdapter() {
+		if (dataSizeValueChangeEventItemProvider == null) {
+			dataSizeValueChangeEventItemProvider = new DataSizeValueChangeEventItemProvider(this);
+		}
+
+		return dataSizeValueChangeEventItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.trace.NumberValueChangeEvent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NumberValueChangeEventItemProvider numberValueChangeEventItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.trace.NumberValueChangeEvent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNumberValueChangeEventAdapter() {
+		if (numberValueChangeEventItemProvider == null) {
+			numberValueChangeEventItemProvider = new NumberValueChangeEventItemProvider(this);
+		}
+
+		return numberValueChangeEventItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -372,6 +464,10 @@ public class TraceItemProviderAdapterFactory extends TraceAdapterFactory impleme
 		if (sliceItemProvider != null) sliceItemProvider.dispose();
 		if (propertiesItemProvider != null) propertiesItemProvider.dispose();
 		if (valueChangeEventItemProvider != null) valueChangeEventItemProvider.dispose();
+		if (objectValueChangeEventItemProvider != null) objectValueChangeEventItemProvider.dispose();
+		if (durationValueChangeEventItemProvider != null) durationValueChangeEventItemProvider.dispose();
+		if (dataSizeValueChangeEventItemProvider != null) dataSizeValueChangeEventItemProvider.dispose();
+		if (numberValueChangeEventItemProvider != null) numberValueChangeEventItemProvider.dispose();
 	}
 
 }

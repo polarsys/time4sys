@@ -20,14 +20,20 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
+import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
+import org.polarsys.time4sys.trace.DurationValueChangeEvent;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.MessageEvent;
 import org.polarsys.time4sys.trace.MessageEventKind;
+import org.polarsys.time4sys.trace.NumberValueChangeEvent;
+import org.polarsys.time4sys.trace.ObjectValueChangeEvent;
 import org.polarsys.time4sys.trace.Properties;
 import org.polarsys.time4sys.trace.ResourceEvent;
 import org.polarsys.time4sys.trace.ResourceEventKind;
@@ -108,6 +114,34 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass objectValueChangeEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass durationValueChangeEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataSizeValueChangeEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass numberValueChangeEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum schedulingEventKindEEnum = null;
 
 	/**
@@ -144,6 +178,20 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 	 * @generated
 	 */
 	private EDataType nfP_TimeIntervalEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eNumberEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DataSizeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -190,6 +238,9 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		TracePackageImpl theTracePackage = (TracePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TracePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TracePackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTracePackage.createPackageContents();
@@ -535,6 +586,96 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getValueChangeEvent_Property() {
+		return (EReference)valueChangeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getValueChangeEvent_Object() {
+		return (EReference)valueChangeEventEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getObjectValueChangeEvent() {
+		return objectValueChangeEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObjectValueChangeEvent_Value() {
+		return (EReference)objectValueChangeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDurationValueChangeEvent() {
+		return durationValueChangeEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDurationValueChangeEvent_Value() {
+		return (EAttribute)durationValueChangeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDataSizeValueChangeEvent() {
+		return dataSizeValueChangeEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataSizeValueChangeEvent_Value() {
+		return (EAttribute)dataSizeValueChangeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNumberValueChangeEvent() {
+		return numberValueChangeEventEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumberValueChangeEvent_Value() {
+		return (EAttribute)numberValueChangeEventEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSchedulingEventKind() {
 		return schedulingEventKindEEnum;
 	}
@@ -582,6 +723,24 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 	 */
 	public EDataType getNFP_TimeInterval() {
 		return nfP_TimeIntervalEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getENumber() {
+		return eNumberEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_DataSize() {
+		return nfP_DataSizeEDataType;
 	}
 
 	/**
@@ -655,6 +814,20 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		createEAttribute(propertiesEClass, PROPERTIES__INDEX);
 
 		valueChangeEventEClass = createEClass(VALUE_CHANGE_EVENT);
+		createEReference(valueChangeEventEClass, VALUE_CHANGE_EVENT__PROPERTY);
+		createEReference(valueChangeEventEClass, VALUE_CHANGE_EVENT__OBJECT);
+
+		objectValueChangeEventEClass = createEClass(OBJECT_VALUE_CHANGE_EVENT);
+		createEReference(objectValueChangeEventEClass, OBJECT_VALUE_CHANGE_EVENT__VALUE);
+
+		durationValueChangeEventEClass = createEClass(DURATION_VALUE_CHANGE_EVENT);
+		createEAttribute(durationValueChangeEventEClass, DURATION_VALUE_CHANGE_EVENT__VALUE);
+
+		dataSizeValueChangeEventEClass = createEClass(DATA_SIZE_VALUE_CHANGE_EVENT);
+		createEAttribute(dataSizeValueChangeEventEClass, DATA_SIZE_VALUE_CHANGE_EVENT__VALUE);
+
+		numberValueChangeEventEClass = createEClass(NUMBER_VALUE_CHANGE_EVENT);
+		createEAttribute(numberValueChangeEventEClass, NUMBER_VALUE_CHANGE_EVENT__VALUE);
 
 		// Create enums
 		schedulingEventKindEEnum = createEEnum(SCHEDULING_EVENT_KIND);
@@ -665,6 +838,8 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 		nfP_TimeIntervalEDataType = createEDataType(NFP_TIME_INTERVAL);
+		eNumberEDataType = createEDataType(ENUMBER);
+		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
 	}
 
 	/**
@@ -690,6 +865,9 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -699,6 +877,10 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		schedulingEventEClass.getESuperTypes().add(this.getEvent());
 		messageEventEClass.getESuperTypes().add(this.getEvent());
 		valueChangeEventEClass.getESuperTypes().add(this.getEvent());
+		objectValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());
+		durationValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());
+		dataSizeValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());
+		numberValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(traceEClass, Trace.class, "Trace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -747,6 +929,20 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		initEAttribute(getProperties_Index(), ecorePackage.getELong(), "index", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueChangeEventEClass, ValueChangeEvent.class, "ValueChangeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getValueChangeEvent_Property(), theEcorePackage.getEStructuralFeature(), null, "property", null, 1, 1, ValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getValueChangeEvent_Object(), theEcorePackage.getEObject(), null, "object", null, 0, 1, ValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(objectValueChangeEventEClass, ObjectValueChangeEvent.class, "ObjectValueChangeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObjectValueChangeEvent_Value(), theEcorePackage.getEObject(), null, "value", null, 1, 1, ObjectValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(durationValueChangeEventEClass, DurationValueChangeEvent.class, "DurationValueChangeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDurationValueChangeEvent_Value(), this.getNFP_Duration(), "value", null, 1, 1, DurationValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dataSizeValueChangeEventEClass, DataSizeValueChangeEvent.class, "DataSizeValueChangeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataSizeValueChangeEvent_Value(), this.getNFP_DataSize(), "value", null, 1, 1, DataSizeValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numberValueChangeEventEClass, NumberValueChangeEvent.class, "NumberValueChangeEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumberValueChangeEvent_Value(), this.getENumber(), "value", null, 1, 1, NumberValueChangeEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(schedulingEventKindEEnum, SchedulingEventKind.class, "SchedulingEventKind");
@@ -786,6 +982,8 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_TimeIntervalEDataType, TimeInterval.class, "NFP_TimeInterval", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eNumberEDataType, Number.class, "ENumber", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

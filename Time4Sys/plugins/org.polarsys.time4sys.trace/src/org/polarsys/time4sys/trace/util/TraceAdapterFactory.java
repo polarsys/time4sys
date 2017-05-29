@@ -110,6 +110,22 @@ public class TraceAdapterFactory extends AdapterFactoryImpl {
 				return createValueChangeEventAdapter();
 			}
 			@Override
+			public Adapter caseObjectValueChangeEvent(ObjectValueChangeEvent object) {
+				return createObjectValueChangeEventAdapter();
+			}
+			@Override
+			public Adapter caseDurationValueChangeEvent(DurationValueChangeEvent object) {
+				return createDurationValueChangeEventAdapter();
+			}
+			@Override
+			public Adapter caseDataSizeValueChangeEvent(DataSizeValueChangeEvent object) {
+				return createDataSizeValueChangeEventAdapter();
+			}
+			@Override
+			public Adapter caseNumberValueChangeEvent(NumberValueChangeEvent object) {
+				return createNumberValueChangeEventAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -238,6 +254,62 @@ public class TraceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createValueChangeEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.trace.ObjectValueChangeEvent <em>Object Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.trace.ObjectValueChangeEvent
+	 * @generated
+	 */
+	public Adapter createObjectValueChangeEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.trace.DurationValueChangeEvent <em>Duration Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.trace.DurationValueChangeEvent
+	 * @generated
+	 */
+	public Adapter createDurationValueChangeEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.trace.DataSizeValueChangeEvent <em>Data Size Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.trace.DataSizeValueChangeEvent
+	 * @generated
+	 */
+	public Adapter createDataSizeValueChangeEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.trace.NumberValueChangeEvent <em>Number Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.trace.NumberValueChangeEvent
+	 * @generated
+	 */
+	public Adapter createNumberValueChangeEventAdapter() {
 		return null;
 	}
 

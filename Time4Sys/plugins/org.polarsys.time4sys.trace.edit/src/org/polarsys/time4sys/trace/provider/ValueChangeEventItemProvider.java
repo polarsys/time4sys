@@ -19,10 +19,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
 
+import org.polarsys.time4sys.trace.TracePackage;
 import org.polarsys.time4sys.trace.ValueChangeEvent;
 
 /**
@@ -53,8 +55,54 @@ public class ValueChangeEventItemProvider extends EventItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPropertyPropertyDescriptor(object);
+			addObjectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ValueChangeEvent_property_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ValueChangeEvent_property_feature", "_UI_ValueChangeEvent_type"),
+				 TracePackage.Literals.VALUE_CHANGE_EVENT__PROPERTY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ValueChangeEvent_object_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ValueChangeEvent_object_feature", "_UI_ValueChangeEvent_type"),
+				 TracePackage.Literals.VALUE_CHANGE_EVENT__OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

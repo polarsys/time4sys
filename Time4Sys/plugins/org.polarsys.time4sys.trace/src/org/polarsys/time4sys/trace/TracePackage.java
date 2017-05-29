@@ -32,6 +32,9 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Return the Events of this slice ordered by timestamp.
+ * <!-- end-model-doc -->
  * @see org.polarsys.time4sys.trace.TraceFactory
  * @model kind="package"
  * @generated
@@ -636,13 +639,31 @@ public interface TracePackage extends EPackage {
 	int VALUE_CHANGE_EVENT__ABOUT = EVENT__ABOUT;
 
 	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_CHANGE_EVENT__PROPERTY = EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_CHANGE_EVENT__OBJECT = EVENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Value Change Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_CHANGE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
+	int VALUE_CHANGE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Value Change Event</em>' class.
@@ -654,6 +675,334 @@ public interface TracePackage extends EPackage {
 	int VALUE_CHANGE_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.ObjectValueChangeEventImpl <em>Object Value Change Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.trace.impl.ObjectValueChangeEventImpl
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getObjectValueChangeEvent()
+	 * @generated
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__TIMESTAMP = VALUE_CHANGE_EVENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Trace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__TRACE = VALUE_CHANGE_EVENT__TRACE;
+
+	/**
+	 * The feature id for the '<em><b>About</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__ABOUT = VALUE_CHANGE_EVENT__ABOUT;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__PROPERTY = VALUE_CHANGE_EVENT__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__OBJECT = VALUE_CHANGE_EVENT__OBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__VALUE = VALUE_CHANGE_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Object Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Object Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT_OPERATION_COUNT = VALUE_CHANGE_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.DurationValueChangeEventImpl <em>Duration Value Change Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.trace.impl.DurationValueChangeEventImpl
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getDurationValueChangeEvent()
+	 * @generated
+	 */
+	int DURATION_VALUE_CHANGE_EVENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__TIMESTAMP = VALUE_CHANGE_EVENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Trace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__TRACE = VALUE_CHANGE_EVENT__TRACE;
+
+	/**
+	 * The feature id for the '<em><b>About</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__ABOUT = VALUE_CHANGE_EVENT__ABOUT;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__PROPERTY = VALUE_CHANGE_EVENT__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__OBJECT = VALUE_CHANGE_EVENT__OBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__VALUE = VALUE_CHANGE_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Duration Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Duration Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT_OPERATION_COUNT = VALUE_CHANGE_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.DataSizeValueChangeEventImpl <em>Data Size Value Change Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.trace.impl.DataSizeValueChangeEventImpl
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getDataSizeValueChangeEvent()
+	 * @generated
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__TIMESTAMP = VALUE_CHANGE_EVENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Trace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__TRACE = VALUE_CHANGE_EVENT__TRACE;
+
+	/**
+	 * The feature id for the '<em><b>About</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__ABOUT = VALUE_CHANGE_EVENT__ABOUT;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__PROPERTY = VALUE_CHANGE_EVENT__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__OBJECT = VALUE_CHANGE_EVENT__OBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__VALUE = VALUE_CHANGE_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Data Size Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Data Size Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT_OPERATION_COUNT = VALUE_CHANGE_EVENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.NumberValueChangeEventImpl <em>Number Value Change Event</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.trace.impl.NumberValueChangeEventImpl
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNumberValueChangeEvent()
+	 * @generated
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__TIMESTAMP = VALUE_CHANGE_EVENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Trace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__TRACE = VALUE_CHANGE_EVENT__TRACE;
+
+	/**
+	 * The feature id for the '<em><b>About</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__ABOUT = VALUE_CHANGE_EVENT__ABOUT;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__PROPERTY = VALUE_CHANGE_EVENT__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__OBJECT = VALUE_CHANGE_EVENT__OBJECT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__VALUE = VALUE_CHANGE_EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Number Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Number Value Change Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT_OPERATION_COUNT = VALUE_CHANGE_EVENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.SchedulingEventKind <em>Scheduling Event Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -661,7 +1010,7 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getSchedulingEventKind()
 	 * @generated
 	 */
-	int SCHEDULING_EVENT_KIND = 8;
+	int SCHEDULING_EVENT_KIND = 12;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.ResourceEventKind <em>Resource Event Kind</em>}' enum.
@@ -671,7 +1020,7 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getResourceEventKind()
 	 * @generated
 	 */
-	int RESOURCE_EVENT_KIND = 9;
+	int RESOURCE_EVENT_KIND = 13;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.MessageEventKind <em>Message Event Kind</em>}' enum.
@@ -681,7 +1030,7 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getMessageEventKind()
 	 * @generated
 	 */
-	int MESSAGE_EVENT_KIND = 10;
+	int MESSAGE_EVENT_KIND = 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.SliceKind <em>Slice Kind</em>}' enum.
@@ -691,7 +1040,7 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getSliceKind()
 	 * @generated
 	 */
-	int SLICE_KIND = 11;
+	int SLICE_KIND = 15;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -701,7 +1050,7 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 12;
+	int NFP_DURATION = 16;
 
 	/**
 	 * The meta object id for the '<em>NFP Time Interval</em>' data type.
@@ -711,7 +1060,28 @@ public interface TracePackage extends EPackage {
 	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNFP_TimeInterval()
 	 * @generated
 	 */
-	int NFP_TIME_INTERVAL = 13;
+	int NFP_TIME_INTERVAL = 17;
+
+
+	/**
+	 * The meta object id for the '<em>ENumber</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Number
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getENumber()
+	 * @generated
+	 */
+	int ENUMBER = 18;
+
+	/**
+	 * The meta object id for the '<em>NFP Data Size</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNFP_DataSize()
+	 * @generated
+	 */
+	int NFP_DATA_SIZE = 19;
 
 
 	/**
@@ -1101,6 +1471,112 @@ public interface TracePackage extends EPackage {
 	EClass getValueChangeEvent();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.trace.ValueChangeEvent#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Property</em>'.
+	 * @see org.polarsys.time4sys.trace.ValueChangeEvent#getProperty()
+	 * @see #getValueChangeEvent()
+	 * @generated
+	 */
+	EReference getValueChangeEvent_Property();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.trace.ValueChangeEvent#getObject <em>Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Object</em>'.
+	 * @see org.polarsys.time4sys.trace.ValueChangeEvent#getObject()
+	 * @see #getValueChangeEvent()
+	 * @generated
+	 */
+	EReference getValueChangeEvent_Object();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.trace.ObjectValueChangeEvent <em>Object Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Object Value Change Event</em>'.
+	 * @see org.polarsys.time4sys.trace.ObjectValueChangeEvent
+	 * @generated
+	 */
+	EClass getObjectValueChangeEvent();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.trace.ObjectValueChangeEvent#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.trace.ObjectValueChangeEvent#getValue()
+	 * @see #getObjectValueChangeEvent()
+	 * @generated
+	 */
+	EReference getObjectValueChangeEvent_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.trace.DurationValueChangeEvent <em>Duration Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Duration Value Change Event</em>'.
+	 * @see org.polarsys.time4sys.trace.DurationValueChangeEvent
+	 * @generated
+	 */
+	EClass getDurationValueChangeEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.trace.DurationValueChangeEvent#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.trace.DurationValueChangeEvent#getValue()
+	 * @see #getDurationValueChangeEvent()
+	 * @generated
+	 */
+	EAttribute getDurationValueChangeEvent_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.trace.DataSizeValueChangeEvent <em>Data Size Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Size Value Change Event</em>'.
+	 * @see org.polarsys.time4sys.trace.DataSizeValueChangeEvent
+	 * @generated
+	 */
+	EClass getDataSizeValueChangeEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.trace.DataSizeValueChangeEvent#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.trace.DataSizeValueChangeEvent#getValue()
+	 * @see #getDataSizeValueChangeEvent()
+	 * @generated
+	 */
+	EAttribute getDataSizeValueChangeEvent_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.trace.NumberValueChangeEvent <em>Number Value Change Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Number Value Change Event</em>'.
+	 * @see org.polarsys.time4sys.trace.NumberValueChangeEvent
+	 * @generated
+	 */
+	EClass getNumberValueChangeEvent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.trace.NumberValueChangeEvent#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.trace.NumberValueChangeEvent#getValue()
+	 * @see #getNumberValueChangeEvent()
+	 * @generated
+	 */
+	EAttribute getNumberValueChangeEvent_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.trace.SchedulingEventKind <em>Scheduling Event Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1161,6 +1637,28 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getNFP_TimeInterval();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.Number <em>ENumber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>ENumber</em>'.
+	 * @see java.lang.Number
+	 * @model instanceClass="java.lang.Number"
+	 * @generated
+	 */
+	EDataType getENumber();
+
+	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>NFP Data Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Data Size</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.DataSize"
+	 * @generated
+	 */
+	EDataType getNFP_DataSize();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1490,6 +1988,94 @@ public interface TracePackage extends EPackage {
 		EClass VALUE_CHANGE_EVENT = eINSTANCE.getValueChangeEvent();
 
 		/**
+		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_CHANGE_EVENT__PROPERTY = eINSTANCE.getValueChangeEvent_Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Object</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_CHANGE_EVENT__OBJECT = eINSTANCE.getValueChangeEvent_Object();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.impl.ObjectValueChangeEventImpl <em>Object Value Change Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.trace.impl.ObjectValueChangeEventImpl
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getObjectValueChangeEvent()
+		 * @generated
+		 */
+		EClass OBJECT_VALUE_CHANGE_EVENT = eINSTANCE.getObjectValueChangeEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJECT_VALUE_CHANGE_EVENT__VALUE = eINSTANCE.getObjectValueChangeEvent_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.impl.DurationValueChangeEventImpl <em>Duration Value Change Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.trace.impl.DurationValueChangeEventImpl
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getDurationValueChangeEvent()
+		 * @generated
+		 */
+		EClass DURATION_VALUE_CHANGE_EVENT = eINSTANCE.getDurationValueChangeEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DURATION_VALUE_CHANGE_EVENT__VALUE = eINSTANCE.getDurationValueChangeEvent_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.impl.DataSizeValueChangeEventImpl <em>Data Size Value Change Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.trace.impl.DataSizeValueChangeEventImpl
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getDataSizeValueChangeEvent()
+		 * @generated
+		 */
+		EClass DATA_SIZE_VALUE_CHANGE_EVENT = eINSTANCE.getDataSizeValueChangeEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_SIZE_VALUE_CHANGE_EVENT__VALUE = eINSTANCE.getDataSizeValueChangeEvent_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.impl.NumberValueChangeEventImpl <em>Number Value Change Event</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.trace.impl.NumberValueChangeEventImpl
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNumberValueChangeEvent()
+		 * @generated
+		 */
+		EClass NUMBER_VALUE_CHANGE_EVENT = eINSTANCE.getNumberValueChangeEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMBER_VALUE_CHANGE_EVENT__VALUE = eINSTANCE.getNumberValueChangeEvent_Value();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.SchedulingEventKind <em>Scheduling Event Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1548,6 +2134,26 @@ public interface TracePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_TIME_INTERVAL = eINSTANCE.getNFP_TimeInterval();
+
+		/**
+		 * The meta object literal for the '<em>ENumber</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Number
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getENumber()
+		 * @generated
+		 */
+		EDataType ENUMBER = eINSTANCE.getENumber();
+
+		/**
+		 * The meta object literal for the '<em>NFP Data Size</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataSize
+		 * @see org.polarsys.time4sys.trace.impl.TracePackageImpl#getNFP_DataSize()
+		 * @generated
+		 */
+		EDataType NFP_DATA_SIZE = eINSTANCE.getNFP_DataSize();
 
 	}
 

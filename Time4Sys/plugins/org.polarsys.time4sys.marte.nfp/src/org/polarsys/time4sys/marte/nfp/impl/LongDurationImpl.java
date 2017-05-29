@@ -60,7 +60,7 @@ public class LongDurationImpl extends DurationImpl {
 	}
 
 	public LongDurationImpl(final long durationInPicoseconds, final TimeUnitKind unit) {
-		super(durationInPicoseconds / asLongPicoSecond(unit), unit);
+		super(((double)durationInPicoseconds) / ((double)asLongPicoSecond(unit)), unit);
 		this.picoseconds  = durationInPicoseconds;
 		
 	}

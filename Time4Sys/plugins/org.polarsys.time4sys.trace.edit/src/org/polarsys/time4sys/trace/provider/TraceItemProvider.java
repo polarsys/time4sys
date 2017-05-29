@@ -269,6 +269,26 @@ public class TraceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(TracePackage.Literals.TRACE__EVENTS,
+				 TraceFactory.eINSTANCE.createObjectValueChangeEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TracePackage.Literals.TRACE__EVENTS,
+				 TraceFactory.eINSTANCE.createDurationValueChangeEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TracePackage.Literals.TRACE__EVENTS,
+				 TraceFactory.eINSTANCE.createDataSizeValueChangeEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TracePackage.Literals.TRACE__EVENTS,
+				 TraceFactory.eINSTANCE.createNumberValueChangeEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(TracePackage.Literals.TRACE__SLICES,
 				 TraceFactory.eINSTANCE.createSlice()));
 	}

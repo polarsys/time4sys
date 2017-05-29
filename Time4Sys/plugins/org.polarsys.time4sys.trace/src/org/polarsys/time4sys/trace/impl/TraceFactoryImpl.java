@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
@@ -79,6 +80,10 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 			case TracePackage.SLICE: return createSlice();
 			case TracePackage.PROPERTIES: return createProperties();
 			case TracePackage.VALUE_CHANGE_EVENT: return createValueChangeEvent();
+			case TracePackage.OBJECT_VALUE_CHANGE_EVENT: return createObjectValueChangeEvent();
+			case TracePackage.DURATION_VALUE_CHANGE_EVENT: return createDurationValueChangeEvent();
+			case TracePackage.DATA_SIZE_VALUE_CHANGE_EVENT: return createDataSizeValueChangeEvent();
+			case TracePackage.NUMBER_VALUE_CHANGE_EVENT: return createNumberValueChangeEvent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +109,10 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 				return createNFP_DurationFromString(eDataType, initialValue);
 			case TracePackage.NFP_TIME_INTERVAL:
 				return createNFP_TimeIntervalFromString(eDataType, initialValue);
+			case TracePackage.ENUMBER:
+				return createENumberFromString(eDataType, initialValue);
+			case TracePackage.NFP_DATA_SIZE:
+				return createNFP_DataSizeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -129,6 +138,10 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 				return convertNFP_DurationToString(eDataType, instanceValue);
 			case TracePackage.NFP_TIME_INTERVAL:
 				return convertNFP_TimeIntervalToString(eDataType, instanceValue);
+			case TracePackage.ENUMBER:
+				return convertENumberToString(eDataType, instanceValue);
+			case TracePackage.NFP_DATA_SIZE:
+				return convertNFP_DataSizeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -212,6 +225,46 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 	public ValueChangeEvent createValueChangeEvent() {
 		ValueChangeEventImpl valueChangeEvent = new ValueChangeEventImpl();
 		return valueChangeEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObjectValueChangeEvent createObjectValueChangeEvent() {
+		ObjectValueChangeEventImpl objectValueChangeEvent = new ObjectValueChangeEventImpl();
+		return objectValueChangeEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DurationValueChangeEvent createDurationValueChangeEvent() {
+		DurationValueChangeEventImpl durationValueChangeEvent = new DurationValueChangeEventImpl();
+		return durationValueChangeEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSizeValueChangeEvent createDataSizeValueChangeEvent() {
+		DataSizeValueChangeEventImpl dataSizeValueChangeEvent = new DataSizeValueChangeEventImpl();
+		return dataSizeValueChangeEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NumberValueChangeEvent createNumberValueChangeEvent() {
+		NumberValueChangeEventImpl numberValueChangeEvent = new NumberValueChangeEventImpl();
+		return numberValueChangeEvent;
 	}
 
 	/**
@@ -330,6 +383,42 @@ public class TraceFactoryImpl extends EFactoryImpl implements TraceFactory {
 	public String convertNFP_TimeIntervalToString(EDataType eDataType, Object instanceValue) {
 		assert(instanceValue == null || instanceValue instanceof TimeInterval);
 		return NfpFactory.eINSTANCE.convertTimeIntervalToString((TimeInterval)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Number createENumberFromString(EDataType eDataType, String initialValue) {
+		return (Number)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertENumberToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
+		return (DataSize)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -107,5 +107,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="absoluteDeadline" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueChangeEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueChangeEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectValueChangeEvent" eSuperTypes="#//ValueChangeEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationValueChangeEvent" eSuperTypes="#//ValueChangeEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSizeValueChangeEvent" eSuperTypes="#//ValueChangeEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//NFP_DataSize"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberValueChangeEvent" eSuperTypes="#//ValueChangeEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//ENumber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ENumber" instanceClassName="java.lang.Number"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
 </ecore:EPackage>

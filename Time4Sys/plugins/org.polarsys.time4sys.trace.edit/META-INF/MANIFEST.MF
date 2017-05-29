@@ -12,5 +12,7 @@ Export-Package: org.polarsys.time4sys.trace.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.trace;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.nfp;bundle-version="0.0.1"
 Bundle-ActivationPolicy: lazy

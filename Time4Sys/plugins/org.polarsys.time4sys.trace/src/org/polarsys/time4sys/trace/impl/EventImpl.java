@@ -48,7 +48,7 @@ import org.polarsys.time4sys.trace.TracePackage;
  *   <li>{@link org.polarsys.time4sys.trace.impl.EventImpl#getAbout <em>About</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
 public class EventImpl extends MinimalEObjectImpl.Container implements Event, Comparable<Event> {
 	/**

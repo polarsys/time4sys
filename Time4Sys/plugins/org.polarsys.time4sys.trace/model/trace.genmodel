@@ -3,7 +3,9 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.trace/src" modelPluginID="org.polarsys.time4sys.trace"
     modelName="Trace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+    operationReflection="true" importOrganizing="true"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    >
   <foreignModel>trace.ecore</foreignModel>
   <genPackages prefix="Trace" basePackage="org.polarsys.time4sys" resource="XML" disposableProviderFactory="true"
       ecorePackage="trace.ecore#/">
@@ -39,14 +41,18 @@
       <genEnumLiterals ecoreEnumLiteral="trace.ecore#//SliceKind/STATE"/>
       <genEnumLiterals ecoreEnumLiteral="trace.ecore#//SliceKind/AUTOMATON"/>
       <genEnumLiterals ecoreEnumLiteral="trace.ecore#//SliceKind/TEMPORAL_CHAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="trace.ecore#//SliceKind/OS"/>
     </genEnums>
     <genDataTypes ecoreDataType="trace.ecore#//NFP_Duration"/>
     <genDataTypes ecoreDataType="trace.ecore#//NFP_TimeInterval"/>
+    <genDataTypes ecoreDataType="trace.ecore#//ENumber"/>
+    <genDataTypes ecoreDataType="trace.ecore#//NFP_DataSize"/>
     <genClasses ecoreClass="trace.ecore#//Trace">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference trace.ecore#//Trace/events"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Trace/range"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference trace.ecore#//Trace/slices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Trace/hostId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Trace/precision"/>
     </genClasses>
     <genClasses ecoreClass="trace.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Event/timestamp"/>
@@ -68,7 +74,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference trace.ecore#//Slice/parent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Slice/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Slice/kind"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference trace.ecore#//Slice/statistic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference trace.ecore#//Slice/properties"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference trace.ecore#//Slice/subSlices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Slice/kindLabel"/>
       <genOperations ecoreOperation="trace.ecore#//Slice/getHierarchicalName">
@@ -76,15 +82,30 @@
       </genOperations>
       <genOperations ecoreOperation="trace.ecore#//Slice/getAggregatedEvents"/>
     </genClasses>
-    <genClasses ecoreClass="trace.ecore#//Statistic">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/range"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/blockingTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/executionTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/remainingTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/responseTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/absoluteDeadline"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Statistic/index"/>
+    <genClasses ecoreClass="trace.ecore#//Properties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/blockingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/executionTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/remainingTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/responseTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/absoluteDeadline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//Properties/index"/>
     </genClasses>
-    <genClasses ecoreClass="trace.ecore#//ValueChangeEvent"/>
+    <genClasses ecoreClass="trace.ecore#//ValueChangeEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference trace.ecore#//ValueChangeEvent/property"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference trace.ecore#//ValueChangeEvent/object"/>
+    </genClasses>
+    <genClasses ecoreClass="trace.ecore#//ObjectValueChangeEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference trace.ecore#//ObjectValueChangeEvent/value"/>
+    </genClasses>
+    <genClasses ecoreClass="trace.ecore#//DurationValueChangeEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//DurationValueChangeEvent/value"/>
+    </genClasses>
+    <genClasses ecoreClass="trace.ecore#//DataSizeValueChangeEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//DataSizeValueChangeEvent/value"/>
+    </genClasses>
+    <genClasses ecoreClass="trace.ecore#//NumberValueChangeEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute trace.ecore#//NumberValueChangeEvent/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

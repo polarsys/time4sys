@@ -104,6 +104,42 @@ public interface TraceFactory extends EFactory {
 	ValueChangeEvent createValueChangeEvent();
 
 	/**
+	 * Returns a new object of class '<em>Object Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Object Value Change Event</em>'.
+	 * @generated
+	 */
+	ObjectValueChangeEvent createObjectValueChangeEvent();
+
+	/**
+	 * Returns a new object of class '<em>Duration Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Duration Value Change Event</em>'.
+	 * @generated
+	 */
+	DurationValueChangeEvent createDurationValueChangeEvent();
+
+	/**
+	 * Returns a new object of class '<em>Data Size Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Size Value Change Event</em>'.
+	 * @generated
+	 */
+	DataSizeValueChangeEvent createDataSizeValueChangeEvent();
+
+	/**
+	 * Returns a new object of class '<em>Number Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Number Value Change Event</em>'.
+	 * @generated
+	 */
+	NumberValueChangeEvent createNumberValueChangeEvent();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

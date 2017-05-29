@@ -128,6 +128,38 @@ public class TraceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TracePackage.OBJECT_VALUE_CHANGE_EVENT: {
+				ObjectValueChangeEvent objectValueChangeEvent = (ObjectValueChangeEvent)theEObject;
+				T result = caseObjectValueChangeEvent(objectValueChangeEvent);
+				if (result == null) result = caseValueChangeEvent(objectValueChangeEvent);
+				if (result == null) result = caseEvent(objectValueChangeEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TracePackage.DURATION_VALUE_CHANGE_EVENT: {
+				DurationValueChangeEvent durationValueChangeEvent = (DurationValueChangeEvent)theEObject;
+				T result = caseDurationValueChangeEvent(durationValueChangeEvent);
+				if (result == null) result = caseValueChangeEvent(durationValueChangeEvent);
+				if (result == null) result = caseEvent(durationValueChangeEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TracePackage.DATA_SIZE_VALUE_CHANGE_EVENT: {
+				DataSizeValueChangeEvent dataSizeValueChangeEvent = (DataSizeValueChangeEvent)theEObject;
+				T result = caseDataSizeValueChangeEvent(dataSizeValueChangeEvent);
+				if (result == null) result = caseValueChangeEvent(dataSizeValueChangeEvent);
+				if (result == null) result = caseEvent(dataSizeValueChangeEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TracePackage.NUMBER_VALUE_CHANGE_EVENT: {
+				NumberValueChangeEvent numberValueChangeEvent = (NumberValueChangeEvent)theEObject;
+				T result = caseNumberValueChangeEvent(numberValueChangeEvent);
+				if (result == null) result = caseValueChangeEvent(numberValueChangeEvent);
+				if (result == null) result = caseEvent(numberValueChangeEvent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -249,6 +281,66 @@ public class TraceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseValueChangeEvent(ValueChangeEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Object Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Object Value Change Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObjectValueChangeEvent(ObjectValueChangeEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Duration Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Duration Value Change Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDurationValueChangeEvent(DurationValueChangeEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Size Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Size Value Change Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataSizeValueChangeEvent(DataSizeValueChangeEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Number Value Change Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Number Value Change Event</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumberValueChangeEvent(NumberValueChangeEvent object) {
 		return null;
 	}
 

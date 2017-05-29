@@ -364,6 +364,14 @@ public class DurationTest extends TestCase {
 		assertEquals(TimeUnitKind.MS, d.getUnit());
 	}
 	
+	public void testConvertTo() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("1500ms").simplify();
+		final Duration converted = d.convertToUnit(TimeUnitKind.S);
+		assertEquals("1500ms", converted.toString());
+		assertEquals(TimeUnitKind.S, converted.getUnit());
+		assertEquals(1.5, converted.getValue());
+	}
+	
 	public void testDowngradeUnitSimplificationGreaterThanOne() {
 		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("1025ms").simplify();
 		assertEquals("1025ms", d.toString());

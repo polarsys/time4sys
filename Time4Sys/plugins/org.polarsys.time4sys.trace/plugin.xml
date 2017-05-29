@@ -31,4 +31,5 @@
             type="trace"
             class="org.polarsys.time4sys.trace.util.TraceResourceFactoryImpl"/>
    </extension>
+
 </plugin>
