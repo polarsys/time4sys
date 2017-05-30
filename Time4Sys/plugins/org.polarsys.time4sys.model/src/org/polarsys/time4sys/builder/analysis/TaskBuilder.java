@@ -45,6 +45,7 @@ public class TaskBuilder {
 	public TaskBuilder(AnalysisBuilder analysisBuilder, Task task) {
 		this.analysis = analysisBuilder;
 		this.task = task;
+		assert(task != null);
 	}
 
 	public TaskBuilder called(String name) {

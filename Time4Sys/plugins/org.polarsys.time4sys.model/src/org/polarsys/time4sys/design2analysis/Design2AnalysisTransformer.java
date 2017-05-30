@@ -32,6 +32,8 @@ import org.polarsys.time4sys.builder.analysis.TaskBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -95,19 +97,35 @@ public class Design2AnalysisTransformer {
 				for(PrecedenceRelation rel: behav.getConnectors()) {
 					for(Step pred: rel.getPredec()) {
 						for(Step succ: rel.getSucces()) {
-							final TaskBuilder p = new TaskBuilder(analysis, mapsTo(pred));
-							final TaskBuilder s = new TaskBuilder(analysis, mapsTo(succ));
-							final Duration dp = p.getDeadline();
-							final Duration ds = s.getDeadline();
-							if (ds != null && ((dp == null && ds != null) || (dp.compareTo(ds) > 0))) {
-								p.updateDeadline(s.getDeadline());
-								propagationHasHappen = true;
-							}
+							propagationHasHappen = adjustDeadlineBackward(propagationHasHappen, pred, succ);
+						}
+					}
+				}
+				for(Step pred: behav.getSteps()) {
+					for(OutputPin opin: pred.getOutputPin()) {
+						for(InputPin ipin: opin.getSuccessors()) {
+							final Step succ = (Step)ipin.eContainer();
+							propagationHasHappen = adjustDeadlineBackward(propagationHasHappen, pred, succ);
 						}
 					}
 				}
 			}
 		}
+	}
+
+	public boolean adjustDeadlineBackward(boolean propagationHasHappen, final Step pred, final Step succ) {
+		System.out.println(pred.getName() + " -> " + succ.getName());
+		final Task predTask = mapsTo(pred);
+		final TaskBuilder p = new TaskBuilder(analysis, predTask);
+		final Task succTask = mapsTo(succ);
+		final TaskBuilder s = new TaskBuilder(analysis, succTask);
+		final Duration dp = p.getDeadline();
+		final Duration ds = s.getDeadline();
+		if (ds != null && ((dp == null && ds != null) || (dp.compareTo(ds) > 0))) {
+			p.updateDeadline(s.getDeadline());
+			propagationHasHappen = true;
+		}
+		return propagationHasHappen;
 	}
 
 	private void searchForScheduler(List<?> resources) {
@@ -175,7 +193,8 @@ public class Design2AnalysisTransformer {
 			}
 			steps.addAll(behavior.getSteps());
 			
-			for(Step step: steps) {
+			while(!steps.isEmpty()) {
+				final Step step = steps.poll();
 				final String name = step.getConcurRes().getName() + " - " + step.getName();
 				if (notAlreadyMapped(step)) {
 					final Scheduler anaScheduler = schedMaps.get(step.getConcurRes().getHost());
@@ -198,12 +217,18 @@ public class Design2AnalysisTransformer {
 					}
 					mapsTo(step, tb);
 				}
-				if (step.getInputRel() != null) {
+				if (step.getInputRel() != null || !step.getInputPin().isEmpty()) {
 					initOffsetForward(step);
 				}
 				final PrecedenceRelation outputRel = step.getOutputRel();
 				if (outputRel != null) {
 					steps.addAll(outputRel.getSucces());
+				}
+				for(OutputPin opin: step.getOutputPin()) {
+					for(InputPin ipin: opin.getSuccessors()) {
+						final Step sucStep = (Step)ipin.eContainer();
+						steps.add(sucStep);
+					}
 				}
 			}
 		}
@@ -212,17 +237,30 @@ public class Design2AnalysisTransformer {
 	private void initOffsetForward(final Step step) {
 		final TaskBuilder tb = new TaskBuilder(analysis, mapsTo(step));
 		Duration maxOffset = NfpFactory.eINSTANCE.createDuration();
-		for(Step predecessor: step.getInputRel().getPredec()) {
-			final Task prev = mapsTo(predecessor);
-			if (prev != null) {
-				for(Offset offset: prev.getEventModel().getOffsets()) {
-					maxOffset = maxOffset.max(offset.getValue());
-				}
+		if (step.getInputRel() != null) {
+			for(Step predecessor: step.getInputRel().getPredec()) {
+				final Task prev = mapsTo(predecessor);
+				maxOffset = computeMaxOffset(maxOffset, prev);
+			}
+		}
+		for(InputPin ipin: step.getInputPin()) {
+			for(OutputPin opin: ipin.getPredecessors()) {
+				final Task prev = mapsTo((Step)opin.eContainer());
+				maxOffset = computeMaxOffset(maxOffset, prev);
 			}
 		}
 		if (maxOffset.notZero()) {
 			tb.updateOffset(maxOffset);
 		}
+	}
+
+	public Duration computeMaxOffset(Duration maxOffset, final Task prev) {
+		if (prev != null) {
+			for(Offset offset: prev.getEventModel().getOffsets()) {
+				maxOffset = maxOffset.max(offset.getValue());
+			}
+		}
+		return maxOffset;
 	}
 
 	private boolean notAlreadyMapped(final Step step) {

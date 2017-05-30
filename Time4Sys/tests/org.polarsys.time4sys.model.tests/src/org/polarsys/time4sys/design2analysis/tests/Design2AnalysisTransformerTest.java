@@ -203,7 +203,7 @@ public class Design2AnalysisTransformerTest {
 		}
 		assertEquals(4, design.countTasks());
 		assertEquals(10, design.countSteps());
-		assertEquals(6, design.countPrecedenceRelations());
+		assertEquals(4, design.countPrecedenceRelations());
 		assertEquals(2, design.step("tau_1,1").build().getOutputRel().getSucces().size());
 		
 		assertEquals(2, design.step("tau_2,2").build().getOutputRel().getSucces().size());
