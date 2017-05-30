@@ -89,9 +89,57 @@ public abstract class AbstractRealWithUnitValueImpl<U extends Enumerator, T exte
 	}
 
 	public int compareTo(T anotherT) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		final U targetUnit = d.findClosestUnitTo(this.getUnit(), anotherT.getUnit());
+		final T v1 = this.convertToUnit(targetUnit);
+		final T v2 = convertToUnit(anotherT, targetUnit);
+		return Double.compare(v1.getValue(), v2.getValue());
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((d == null) ? 0 : d.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(getValue());
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 * @generated NOT
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof AbstractRealWithUnitValueImpl)) {
+			return false;
+		}
+		final AbstractRealWithUnitValueImpl<U, T> other;
+		try {
+			other = (AbstractRealWithUnitValueImpl<U, T>) obj;
+		} catch(ClassCastException e) {
+			return false;
+		}
+		if (getUnit() == other.getUnit()) {
+			return (Double.doubleToLongBits(getValue()) == Double.doubleToLongBits(other.getValue()));
+		} else {
+			if (isZero() && other.isZero()) {
+				return true;
+			} else {
+				final U target = d.findClosestUnitTo(getUnit(), other.getUnit());
+				return this.convertToUnit(target).equals(other.convertToUnit(target));
+			}
+		}
 	}
 
 	public boolean isZero() {
