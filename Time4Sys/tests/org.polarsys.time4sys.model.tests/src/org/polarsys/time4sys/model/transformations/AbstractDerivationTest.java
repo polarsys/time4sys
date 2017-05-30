@@ -14,6 +14,8 @@
 package org.polarsys.time4sys.model.transformations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -35,10 +37,15 @@ import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 public abstract class AbstractDerivationTest {
 	
 	protected static void assertArtefactEquals(final ResourceImpl expected, final MappableArtefact actualArtefact) {
+		assert(expected != null);
 		assertTrue(actualArtefact instanceof ResourceArtefact);
 		ResourceArtefact artefact = (ResourceArtefact)actualArtefact;
 		final Resource actualResource = artefact.getResource();
-		assertEquals(expected.getURI(), actualResource.getURI());
+		//assertNotNull(actualResource);
+		/*if (expected.getURI() == null) {
+			assertNull(actualResource);
+		}*/
+		//assertEquals(expected.getURI(), actualResource.getURI());
 		assertEquals(expected, actualResource);
 	}
 	

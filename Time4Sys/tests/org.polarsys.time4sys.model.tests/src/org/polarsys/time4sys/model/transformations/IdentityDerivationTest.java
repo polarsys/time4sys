@@ -26,6 +26,7 @@ import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.IdentityDerivation;
 
 /**
@@ -39,9 +40,10 @@ public class IdentityDerivationTest extends AbstractDerivationTest {
 	 */
 	@Test
 	public void testDuplicateEmptyProject() {
-		final Mapping mapping = IdentityDerivation.duplicate(project, original).getMapping();
+		final Transformation transfo = IdentityDerivation.duplicate(project, original);
+		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
-		assertTrue(project.getMappings().contains(mapping));
+		assertTrue(project.getTransformations().contains(transfo));
 		assertFalse(mapping.getSources().isEmpty());
 		assertFalse(mapping.getTargets().isEmpty());
 		assertArtefactEquals(res, mapping.getSources().get(0));
@@ -54,8 +56,6 @@ public class IdentityDerivationTest extends AbstractDerivationTest {
 		// The design model has been copied.
 		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
 		assertEqualsCopy(original, copy);
-		// Moreover the copy is in the project's list.
-		assertTrue(project.getDerivations().contains(copy));
 	}
 	
 	/**
@@ -67,7 +67,8 @@ public class IdentityDerivationTest extends AbstractDerivationTest {
 		design.hasAProcessor().called("mainproc").thatRuns(
 				aTask().called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms")
 			).under(SchedPolicyKind.FIXED_PRIORITY);
-		final Mapping mapping = IdentityDerivation.duplicate(project, original).getMapping();
+		final Transformation transfo = IdentityDerivation.duplicate(project, original);
+		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
 		
 		/*try {
@@ -77,7 +78,7 @@ public class IdentityDerivationTest extends AbstractDerivationTest {
 			e.printStackTrace();
 		}*/
 		
-		assertTrue(project.getMappings().contains(mapping));
+		assertTrue(project.getTransformations().contains(transfo));
 		assertFalse(mapping.getSources().isEmpty());
 		assertFalse(mapping.getTargets().isEmpty());
 		assertArtefactEquals(res, mapping.getSources().get(0));
@@ -87,8 +88,6 @@ public class IdentityDerivationTest extends AbstractDerivationTest {
 		// The design model has been copied.
 		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
 		assertEqualsCopy(original, copy);
-		// Moreover the copy is in the project's list.
-		assertTrue(project.getDerivations().contains(copy));
 	}
 
 }

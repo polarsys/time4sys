@@ -56,11 +56,12 @@ public class IdentityDerivation {
 		mapping.getSources().add(mappingFactory.createResourceArtefact("original", source.eResource()));
 		createRules();
 		final DesignModel target = copy();
-		mapping.getTargets().add(mappingFactory.createResourceArtefact("copy", target.eResource()));
+		
 		final Transformation transformation = Time4sysFactory.eINSTANCE.createTransformation();
 		project.getTransformations().add(transformation);
 		transformation.setMapping(mapping);
 		transformation.setResult(target);
+		mapping.getTargets().add(mappingFactory.createResourceArtefact("copy", target.eResource()));
 		finalize(target);
 		return transformation;
 	}

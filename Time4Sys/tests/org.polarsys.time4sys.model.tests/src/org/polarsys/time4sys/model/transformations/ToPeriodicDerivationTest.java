@@ -34,6 +34,7 @@ import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.IdentityDerivation;
 import org.polarsys.time4sys.transformations.ToPeriodicDerivation;
 
@@ -52,7 +53,8 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 		design.hasAProcessor().called("mainproc").thatRuns(
 				aTask().called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms")
 			).under(SchedPolicyKind.FIXED_PRIORITY);
-		final Mapping mapping = ToPeriodicDerivation.duplicate(project, original).getMapping();
+		final Transformation transfo = ToPeriodicDerivation.duplicate(project, original);
+		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
 		
 		/*try {
@@ -62,7 +64,7 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 			e.printStackTrace();
 		}*/
 		
-		assertTrue(project.getMappings().contains(mapping));
+		assertTrue(project.getTransformations().contains(transfo));
 		assertFalse(mapping.getSources().isEmpty());
 		assertFalse(mapping.getTargets().isEmpty());
 		assertArtefactEquals(res, mapping.getSources().get(0));
@@ -72,8 +74,6 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 		// The design model has been copied.
 		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
 		assertEqualsCopy(original, copy);
-		// Moreover the copy is in the project's list.
-		assertTrue(project.getDerivations().contains(copy));
 		assertAllArrivalPatternArePeriodic(copy);
 		
 		final Context rationale = mapping.getRationale();
@@ -99,7 +99,8 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 		design.hasAProcessor().called("mainproc").thatRuns(
 				aTask().called("T1").withSlidingWindow(2, "10ms").ofWCET("3ms").ofBCET("1ms")
 			).under(SchedPolicyKind.FIXED_PRIORITY);
-		final Mapping mapping = ToPeriodicDerivation.duplicate(project, original).getMapping();
+		final Transformation transfo = ToPeriodicDerivation.duplicate(project, original);
+		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
 		
 		try {
@@ -109,7 +110,7 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 			e.printStackTrace();
 		}
 		
-		assertTrue(project.getMappings().contains(mapping));
+		assertTrue(project.getTransformations().contains(transfo));
 		assertFalse(mapping.getSources().isEmpty());
 		assertFalse(mapping.getTargets().isEmpty());
 		assertArtefactEquals(res, mapping.getSources().get(0));
@@ -119,8 +120,6 @@ public class ToPeriodicDerivationTest extends AbstractDerivationTest {
 		// The design model has been copied.
 		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
 		assertEqualsCopy(original, copy);
-		// Moreover the copy is in the project's list.
-		assertTrue(project.getDerivations().contains(copy));
 		assertAllArrivalPatternArePeriodic(copy);
 		
 		final Context rationale = mapping.getRationale();
