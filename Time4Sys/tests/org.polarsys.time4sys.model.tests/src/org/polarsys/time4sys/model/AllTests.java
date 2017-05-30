@@ -8,17 +8,18 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-package org.polarsys.time4sys.transformations;
+package org.polarsys.time4sys.model;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.polarsys.time4sys.model.time4sys.tests.Time4sysAllTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	IdentityDerivationTest.class,
-	ToPeriodicDerivationTest.class
-	})
+	org.polarsys.time4sys.model.transformations.AllTests.class,
+	Time4sysAllTest.class
+})
 public class AllTests {
 
 }

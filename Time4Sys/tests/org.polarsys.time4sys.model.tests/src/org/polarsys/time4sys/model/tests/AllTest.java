@@ -15,7 +15,7 @@ package org.polarsys.time4sys.model.tests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.polarsys.time4sys.design2analysis.tests.Design2AnalysisTransformerTest;
+import org.polarsys.time4sys.model.design2analysis.tests.Design2AnalysisTransformerTest;
 import org.polarsys.time4sys.model.time4sys.tests.Time4sysAllTest;
 
 /**

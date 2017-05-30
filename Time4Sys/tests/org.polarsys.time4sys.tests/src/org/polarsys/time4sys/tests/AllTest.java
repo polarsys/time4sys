@@ -26,7 +26,8 @@ import org.junit.runners.Suite.SuiteClasses;
 		// org.polarsys.time4sys.marte.hrm.tests.AllTests.class,
 		org.polarsys.time4sys.marte.nfp.tests.AllTests.class,
 		// org.polarsys.time4sys.marte.srm.tests.AllTests.class,
-		org.polarsys.time4sys.model.tests.AllTest.class, })
+		org.polarsys.time4sys.model.AllTests.class,
+})
 public class AllTest {
 
 }

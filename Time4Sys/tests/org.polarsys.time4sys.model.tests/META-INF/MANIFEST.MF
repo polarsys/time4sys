@@ -7,7 +7,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.polarsys.time4sys.model.tests,
+Export-Package: org.polarsys.time4sys.model,
+ org.polarsys.time4sys.model.tests,
  org.polarsys.time4sys.model.time4sys.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model;visibility:=reexport,

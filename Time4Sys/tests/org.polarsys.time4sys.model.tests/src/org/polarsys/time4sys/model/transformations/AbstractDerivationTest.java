@@ -11,7 +11,7 @@
 /**
  * 
  */
-package org.polarsys.time4sys.transformations;
+package org.polarsys.time4sys.model.transformations;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

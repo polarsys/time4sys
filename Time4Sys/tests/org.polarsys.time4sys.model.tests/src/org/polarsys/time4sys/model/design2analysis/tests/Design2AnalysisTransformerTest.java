@@ -11,7 +11,7 @@
 /**
  * 
  */
-package org.polarsys.time4sys.design2analysis.tests;
+package org.polarsys.time4sys.model.design2analysis.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

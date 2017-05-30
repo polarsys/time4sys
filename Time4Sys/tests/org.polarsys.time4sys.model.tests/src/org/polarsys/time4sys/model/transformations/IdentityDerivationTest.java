@@ -11,7 +11,7 @@
 /**
  * 
  */
-package org.polarsys.time4sys.transformations;
+package org.polarsys.time4sys.model.transformations;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -26,6 +26,7 @@ import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.transformations.IdentityDerivation;
 
 /**
  * @author loic
