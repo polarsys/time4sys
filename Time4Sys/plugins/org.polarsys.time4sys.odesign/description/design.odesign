@@ -83,7 +83,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.BehaviorScenario">
+        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" createElements="false" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.BehaviorScenario">
           <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -295,7 +295,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" documentation="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" name="Show Hide Hardware Resource" forceRefresh="true">
+            <tools xsi:type="tool:ToolDescription" documentation="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" name="Show Hide Hardware Resource" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -348,7 +348,7 @@
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolGroup" name="Software Resource Group">
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Software Resoure Group">
             <tools xsi:type="tool_1:ContainerCreationDescription" name="Software Resource" label="Software Resource" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
               <variable name="container"/>
               <viewVariable name="containerView"/>
@@ -362,7 +362,38 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ContainerCreationDescription" name="Schedulable Resource Creation" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+            <tools xsi:type="tool:ToolDescription" documentation="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" name="Show Hide Software Resource" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+              <filters precondition="feature:synchronized" elementsToListen="aql:self">
+                <listeners domainClass="DDiagram" featureName="synchronized"/>
+              </filters>
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                      <parameters name="context" value="var:elementView"/>
+                      <parameters name="wizardMessage" value="aql:'Select Resources to show in '+ element.name"/>
+                      <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->select(p|p.oclIsTypeOf(srm::SoftwareResource))"/>
+                      <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->select(p|p.oclIsTypeOf(srm::SoftwareResource))"/>
+                      <parameters name="elementToCreateMapping" value="aql:'Software Resource'"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                      <parameters name="context" value="var:elementView"/>
+                      <parameters name="wizardMessage" value="aql:'Select Resources to show in '+ element.name"/>
+                      <parameters name="choiceSelection" value="aql:element.ownedResource->select(p|p.oclIsTypeOf(srm::SoftwareResource))"/>
+                      <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->select(p|p.oclIsTypeOf(srm::SoftwareResource))"/>
+                      <parameters name="elementToCreateMapping" value="aql:'SubSw'"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Schedulable Resource Group">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="Schedulable Resource" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -384,7 +415,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show Hide Software Resource" precondition="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" forceRefresh="true">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Schedulable Resource" precondition="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -426,7 +457,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -468,7 +499,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show Hide Mutual Exclusion" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Mutual Exclusion" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -711,7 +742,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show Hide Workload Event" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Workload Event" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -769,7 +800,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenario" precondition="aql:self.oclIsKindOf(design::DesignModel)">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenario" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -787,7 +818,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show/Hide Steps" precondition="aql:self.oclIsKindOf(grm::SchedulableResource)">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Steps" precondition="aql:self.oclIsKindOf(grm::SchedulableResource)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -805,7 +836,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenarios with their steps" precondition="aql:self.oclIsKindOf(design::DesignModel)">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenarios with their steps" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="feature:synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
@@ -1043,7 +1074,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Constraints">
-          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="EndToEndFlow" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif" extraTargetMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="EndToEndFlow" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" iconPath="/org.polarsys.time4sys.odesign/images/Event2Step.gif" extraTargetMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
