@@ -3,6 +3,8 @@ package org.polarsys.time4sys.trace.html.popup.actions;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileStore;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.List;
@@ -14,7 +16,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IObjectActionDelegate;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.ide.IDE;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.trace.Event;
@@ -28,7 +34,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 	private File output;
 	private FileOutputStream os;
 	private OutputStreamWriter w;
-	
+
 	/**
 	 * Constructor for Action1.
 	 */
@@ -65,10 +71,19 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		MessageDialog.openInformation(
-				shell,
-				"Trace Html exporter",
-				"Slice " + slice.getName() + " exported in " + output.getAbsolutePath() + ".");
+		if (MessageDialog.openQuestion(shell, "Trace Html exporter", "Slice " + slice.getName() + " exported in "
+				+ output.getAbsolutePath() + ".\n" + "Would you view it?")) {
+			if (output.exists() && output.isFile()) {
+				final IFileStore fileStore = EFS.getLocalFileSystem().getStore(output.toURI());
+				final IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+
+				try {
+					IDE.openEditorOnFileStore(page, fileStore);
+				} catch (PartInitException e) {
+					// Put your exception handler here if you wish to
+				}
+			}
+		}
 	}
 
 	/**
@@ -81,10 +96,10 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		}
 		Object obj = null;
 		if (selection instanceof IStructuredSelection) {
-			obj = ((IStructuredSelection)selection).getFirstElement();
+			obj = ((IStructuredSelection) selection).getFirstElement();
 		}
 		if (obj instanceof Slice) {
-			slice = (Slice)obj;
+			slice = (Slice) obj;
 		}
 	}
 
@@ -100,10 +115,10 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("<body>");
 		w.write("<textarea id='cpal_tasks_tsv'>PID	start	end	name	state\n");
 		exportEventsOf(slice.getName(), slice.getEvents());
-		for(Slice sub: slice.getSubSlices()) {
+		for (Slice sub : slice.getSubSlices()) {
 			exportEventsOf(sub.getName(), sub.getAggregatedEvents());
 		}
-		for(Slice sub: slice.getOwnedSubSlices()) {
+		for (Slice sub : slice.getOwnedSubSlices()) {
 			exportEventsOf(sub.getName(), sub.getAggregatedEvents());
 		}
 		w.write("\n</textarea>");
@@ -121,10 +136,10 @@ public class ExportAsHtml implements IObjectActionDelegate {
 	protected void exportEventsOf(final String label, final List<Event> events) throws IOException {
 		Duration start = null;
 		Duration end = null;
-		for(Event evt: events) {
+		for (Event evt : events) {
 			if (evt instanceof SchedulingEvent) {
-				final SchedulingEvent schedEvt = (SchedulingEvent)evt;
-				switch(schedEvt.getKind()) {
+				final SchedulingEvent schedEvt = (SchedulingEvent) evt;
+				switch (schedEvt.getKind()) {
 				case RUNNING:
 					start = schedEvt.getTimestamp();
 					break;
@@ -135,12 +150,12 @@ public class ExportAsHtml implements IObjectActionDelegate {
 						break;
 					}
 					end = schedEvt.getTimestamp();
-					assert(end != null);
+					assert (end != null);
 					w.write(Integer.toString(label.hashCode()));
 					w.write("\t");
-					w.write(Long.toString((long)start.convertToUnit(TimeUnitKind.PS).getValue()));
+					w.write(Long.toString((long) start.convertToUnit(TimeUnitKind.PS).getValue()));
 					w.write("\t");
-					w.write(Long.toString((long)end.convertToUnit(TimeUnitKind.PS).getValue()));
+					w.write(Long.toString((long) end.convertToUnit(TimeUnitKind.PS).getValue()));
 					w.write("\t");
 					w.write(label);
 					w.write("\tactivation\n");
