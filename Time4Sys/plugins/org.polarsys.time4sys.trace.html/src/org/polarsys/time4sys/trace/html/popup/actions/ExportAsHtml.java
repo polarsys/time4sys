@@ -32,6 +32,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
@@ -144,6 +145,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 	}
 
 	protected void exportEventsOf(final String label, final List<Event> events) throws IOException {
+		final Duration picosecond = NfpFactory.eINSTANCE.createDurationFromString("1ps");
 		Duration start = null;
 		Duration end = null;
 		for (Event evt : events) {
@@ -163,9 +165,9 @@ public class ExportAsHtml implements IObjectActionDelegate {
 					assert (end != null);
 					w.write(Integer.toString(label.hashCode()));
 					w.write("\t");
-					w.write(Long.toString((long) start.convertToUnit(TimeUnitKind.PS).getValue()));
+					w.write(Long.toString(start.divide(picosecond)));
 					w.write("\t");
-					w.write(Long.toString((long) end.convertToUnit(TimeUnitKind.PS).getValue()));
+					w.write(Long.toString(end.divide(picosecond)));
 					w.write("\t");
 					w.write(label);
 					w.write("\tactivation\n");
