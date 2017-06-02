@@ -648,21 +648,6 @@ public class HardwareComputingResourceItemProvider extends ComputingResourceItem
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 HrmFactory.eINSTANCE.createHardwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 HrmFactory.eINSTANCE.createHardwarePort()));
 
@@ -680,6 +665,21 @@ public class HardwareComputingResourceItemProvider extends ComputingResourceItem
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 				 SrmFactory.eINSTANCE.createSoftwareConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 HrmFactory.eINSTANCE.createHardwareService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareService()));
 
 		newChildDescriptors.add
 			(createChildParameter

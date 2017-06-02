@@ -57,6 +57,69 @@ public interface NfpFactory extends EFactory {
 	DataSize createDataSize();
 
 	/**
+	 * Returns a new object of class '<em>Probabilistic Duration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Probabilistic Duration</em>'.
+	 * @generated
+	 */
+	ProbabilisticDuration createProbabilisticDuration();
+
+	/**
+	 * Returns a new object of class '<em>Discrete Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Distribution</em>'.
+	 * @generated
+	 */
+	DiscreteDistribution createDiscreteDistribution();
+
+	/**
+	 * Returns a new object of class '<em>Bucket</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bucket</em>'.
+	 * @generated
+	 */
+	Bucket createBucket();
+
+	/**
+	 * Returns a new object of class '<em>Normal Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Normal Distribution</em>'.
+	 * @generated
+	 */
+	NormalDistribution createNormalDistribution();
+
+	/**
+	 * Returns a new object of class '<em>Generalized Extreme Value Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Generalized Extreme Value Distribution</em>'.
+	 * @generated
+	 */
+	GeneralizedExtremeValueDistribution createGeneralizedExtremeValueDistribution();
+
+	/**
+	 * Returns a new object of class '<em>Uniform Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uniform Distribution</em>'.
+	 * @generated
+	 */
+	UniformDistribution createUniformDistribution();
+
+	/**
+	 * Returns a new object of class '<em>Composite Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Distribution</em>'.
+	 * @generated
+	 */
+	CompositeDistribution createCompositeDistribution();
+
+	/**
 	 * 
 	 * @return
 	 * @generated NOT

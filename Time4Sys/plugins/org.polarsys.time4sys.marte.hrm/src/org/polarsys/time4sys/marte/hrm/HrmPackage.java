@@ -549,15 +549,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_RESOURCE__IS_ACTIVE = GrmPackage.RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_RESOURCE__PSERVICES = GrmPackage.RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -592,6 +583,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_RESOURCE__USED_BY = GrmPackage.RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RESOURCE__PSERVICES = GrmPackage.RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -706,15 +706,6 @@ public interface HrmPackage extends EPackage {
 	int FIRMWARE_ARCHITECTURE__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIRMWARE_ARCHITECTURE__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -749,6 +740,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIRMWARE_ARCHITECTURE__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRMWARE_ARCHITECTURE__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -841,15 +841,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DEVICE__IS_ACTIVE = GrmPackage.DEVICE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_DEVICE__PSERVICES = GrmPackage.DEVICE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -884,6 +875,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_DEVICE__USED_BY = GrmPackage.DEVICE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DEVICE__PSERVICES = GrmPackage.DEVICE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1084,15 +1084,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_IO__IS_ACTIVE = HARDWARE_DEVICE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_IO__PSERVICES = HARDWARE_DEVICE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1127,6 +1118,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_IO__USED_BY = HARDWARE_DEVICE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IO__PSERVICES = HARDWARE_DEVICE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1327,15 +1327,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ACTUATOR__IS_ACTIVE = HARDWARE_IO__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_ACTUATOR__PSERVICES = HARDWARE_IO__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1370,6 +1361,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ACTUATOR__USED_BY = HARDWARE_IO__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ACTUATOR__PSERVICES = HARDWARE_IO__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1570,15 +1570,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_COMMUNICATION_RESOURCE__IS_ACTIVE = GrmPackage.COMMUNICATION_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_COMMUNICATION_RESOURCE__PSERVICES = GrmPackage.COMMUNICATION_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1613,6 +1604,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMMUNICATION_RESOURCE__USED_BY = GrmPackage.COMMUNICATION_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMMUNICATION_RESOURCE__PSERVICES = GrmPackage.COMMUNICATION_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -1804,15 +1804,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ARBITER__IS_ACTIVE = HARDWARE_COMMUNICATION_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_ARBITER__PSERVICES = HARDWARE_COMMUNICATION_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1847,6 +1838,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ARBITER__USED_BY = HARDWARE_COMMUNICATION_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ARBITER__PSERVICES = HARDWARE_COMMUNICATION_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -2065,15 +2065,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_COMPUTING_RESOURCE__IS_ACTIVE = GrmPackage.COMPUTING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_COMPUTING_RESOURCE__PSERVICES = GrmPackage.COMPUTING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2108,6 +2099,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMPUTING_RESOURCE__USED_BY = GrmPackage.COMPUTING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMPUTING_RESOURCE__PSERVICES = GrmPackage.COMPUTING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -2317,15 +2317,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ASIC__IS_ACTIVE = HARDWARE_COMPUTING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_ASIC__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2360,6 +2351,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ASIC__USED_BY = HARDWARE_COMPUTING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ASIC__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -2569,15 +2569,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BRANCH_PREDICTOR__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_BRANCH_PREDICTOR__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2612,6 +2603,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BRANCH_PREDICTOR__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRANCH_PREDICTOR__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -2686,15 +2686,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MEDIA__IS_ACTIVE = HARDWARE_COMMUNICATION_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_MEDIA__PSERVICES = HARDWARE_COMMUNICATION_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2729,6 +2720,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_MEDIA__USED_BY = HARDWARE_COMMUNICATION_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEDIA__PSERVICES = HARDWARE_COMMUNICATION_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -2929,15 +2929,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BRIDGE__IS_ACTIVE = HARDWARE_MEDIA__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_BRIDGE__PSERVICES = HARDWARE_MEDIA__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2972,6 +2963,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BRIDGE__USED_BY = HARDWARE_MEDIA__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRIDGE__PSERVICES = HARDWARE_MEDIA__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -3181,15 +3181,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BUS__IS_ACTIVE = HARDWARE_MEDIA__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_BUS__PSERVICES = HARDWARE_MEDIA__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3224,6 +3215,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BUS__USED_BY = HARDWARE_MEDIA__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BUS__PSERVICES = HARDWARE_MEDIA__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -3460,15 +3460,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MEMORY__IS_ACTIVE = GrmPackage.STORAGE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_MEMORY__PSERVICES = GrmPackage.STORAGE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3503,6 +3494,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_MEMORY__USED_BY = GrmPackage.STORAGE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEMORY__PSERVICES = GrmPackage.STORAGE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -3721,15 +3721,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PROCESSING_MEMORY__IS_ACTIVE = HARDWARE_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PROCESSING_MEMORY__PSERVICES = HARDWARE_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3764,6 +3755,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PROCESSING_MEMORY__USED_BY = HARDWARE_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSING_MEMORY__PSERVICES = HARDWARE_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -4000,15 +4000,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_CACHE__IS_ACTIVE = HARDWARE_PROCESSING_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_CACHE__PSERVICES = HARDWARE_PROCESSING_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4043,6 +4034,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CACHE__USED_BY = HARDWARE_PROCESSING_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CACHE__PSERVICES = HARDWARE_PROCESSING_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -4819,15 +4819,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_TIMING_RESOURCE__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_TIMING_RESOURCE__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4862,6 +4853,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_TIMING_RESOURCE__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMING_RESOURCE__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -5044,15 +5044,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_CLOCK__IS_ACTIVE = HARDWARE_TIMING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_CLOCK__PSERVICES = HARDWARE_TIMING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5087,6 +5078,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CLOCK__USED_BY = HARDWARE_TIMING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CLOCK__PSERVICES = HARDWARE_TIMING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -5314,15 +5314,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_STORAGE_MANAGER__IS_ACTIVE = GrmPackage.RESOURCE_BROKER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_STORAGE_MANAGER__PSERVICES = GrmPackage.RESOURCE_BROKER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5357,6 +5348,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_STORAGE_MANAGER__USED_BY = GrmPackage.RESOURCE_BROKER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MANAGER__PSERVICES = GrmPackage.RESOURCE_BROKER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -5557,15 +5557,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DMA__IS_ACTIVE = HARDWARE_STORAGE_MANAGER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_DMA__PSERVICES = HARDWARE_STORAGE_MANAGER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5600,6 +5591,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_DMA__USED_BY = HARDWARE_STORAGE_MANAGER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DMA__PSERVICES = HARDWARE_STORAGE_MANAGER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -5863,15 +5863,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_STORAGE_MEMORY__IS_ACTIVE = HARDWARE_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_STORAGE_MEMORY__PSERVICES = HARDWARE_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5906,6 +5897,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_STORAGE_MEMORY__USED_BY = HARDWARE_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MEMORY__PSERVICES = HARDWARE_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -6133,15 +6133,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DRIVE__IS_ACTIVE = HARDWARE_STORAGE_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_DRIVE__PSERVICES = HARDWARE_STORAGE_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6176,6 +6167,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_DRIVE__USED_BY = HARDWARE_STORAGE_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DRIVE__PSERVICES = HARDWARE_STORAGE_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -6534,15 +6534,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_IP_BLOCK__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_IP_BLOCK__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6577,6 +6568,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_IP_BLOCK__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IP_BLOCK__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -6651,15 +6651,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ISA__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_ISA__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6694,6 +6685,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ISA__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ISA__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -6795,15 +6795,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MMU__IS_ACTIVE = HARDWARE_STORAGE_MANAGER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_MMU__PSERVICES = HARDWARE_STORAGE_MANAGER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6838,6 +6829,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_MMU__USED_BY = HARDWARE_STORAGE_MANAGER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MMU__PSERVICES = HARDWARE_STORAGE_MANAGER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -7128,15 +7128,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PLATFORM__IS_ACTIVE = HARDWARE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PLATFORM__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7171,6 +7162,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PLATFORM__USED_BY = HARDWARE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLATFORM__PSERVICES = HARDWARE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -7344,15 +7344,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PLD__IS_ACTIVE = HARDWARE_COMPUTING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PLD__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7387,6 +7378,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PLD__USED_BY = HARDWARE_COMPUTING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLD__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -7857,15 +7857,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PROCESSOR__IS_ACTIVE = HARDWARE_COMPUTING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PROCESSOR__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7900,6 +7891,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PROCESSOR__USED_BY = HARDWARE_COMPUTING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSOR__PSERVICES = HARDWARE_COMPUTING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -8217,15 +8217,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_RAM__IS_ACTIVE = HARDWARE_PROCESSING_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_RAM__PSERVICES = HARDWARE_PROCESSING_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8260,6 +8251,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_RAM__USED_BY = HARDWARE_PROCESSING_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RAM__PSERVICES = HARDWARE_PROCESSING_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -8595,15 +8595,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ROM__IS_ACTIVE = HARDWARE_STORAGE_MEMORY__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_ROM__PSERVICES = HARDWARE_STORAGE_MEMORY__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8638,6 +8629,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ROM__USED_BY = HARDWARE_STORAGE_MEMORY__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ROM__PSERVICES = HARDWARE_STORAGE_MEMORY__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -8910,15 +8910,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SENSOR__IS_ACTIVE = HARDWARE_IO__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_SENSOR__PSERVICES = HARDWARE_IO__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8953,6 +8944,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_SENSOR__USED_BY = HARDWARE_IO__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SENSOR__PSERVICES = HARDWARE_IO__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -9117,6 +9117,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SERVICE__NAME = GrmPackage.RESOURCE_SERVICE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Context</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SERVICE__CONTEXT = GrmPackage.RESOURCE_SERVICE__CONTEXT;
+
+	/**
 	 * The number of structural features of the '<em>Hardware Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9180,15 +9189,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SUPPORT__IS_ACTIVE = HARDWARE_DEVICE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_SUPPORT__PSERVICES = HARDWARE_DEVICE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9223,6 +9223,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_SUPPORT__USED_BY = HARDWARE_DEVICE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SUPPORT__PSERVICES = HARDWARE_DEVICE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -9423,15 +9432,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_TIMER__IS_ACTIVE = HARDWARE_TIMING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_TIMER__PSERVICES = HARDWARE_TIMING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9466,6 +9466,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_TIMER__USED_BY = HARDWARE_TIMING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMER__PSERVICES = HARDWARE_TIMING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -9657,15 +9666,6 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_WATCHDOG__IS_ACTIVE = HARDWARE_TIMER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_WATCHDOG__PSERVICES = HARDWARE_TIMER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9700,6 +9700,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_WATCHDOG__USED_BY = HARDWARE_TIMER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_WATCHDOG__PSERVICES = HARDWARE_TIMER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.

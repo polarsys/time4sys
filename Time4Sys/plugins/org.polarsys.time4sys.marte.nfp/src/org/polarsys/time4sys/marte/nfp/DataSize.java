@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Loï¿½c Fejoz - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.marte.nfp;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.polarsys.time4sys.marte.nfp.NfpPackage#getDataSize()
  * @model
- * @generated
+ * @generated NOT
  */
 public interface DataSize extends EObject, ValueWithUnit<DataSizeUnitKind> {
 	/**

@@ -138,6 +138,8 @@ public class GqamValidator extends EObjectValidator {
 				return validateReleaseStep((ReleaseStep)value, diagnostics, context);
 			case GqamPackage.REQUESTED_SERVICE:
 				return validateRequestedService((RequestedService)value, diagnostics, context);
+			case GqamPackage.RESOURCE_SERVICE_EXCECUTION:
+				return validateResourceServiceExcecution((ResourceServiceExcecution)value, diagnostics, context);
 			case GqamPackage.SLIDING_WINDOW_PATTERN:
 				return validateSlidingWindowPattern((SlidingWindowPattern)value, diagnostics, context);
 			case GqamPackage.SPORADIC_PATTERN:
@@ -272,6 +274,15 @@ public class GqamValidator extends EObjectValidator {
 	 */
 	public boolean validateRequestedService(RequestedService requestedService, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(requestedService, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateResourceServiceExcecution(ResourceServiceExcecution resourceServiceExcecution, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(resourceServiceExcecution, diagnostics, context);
 	}
 
 	/**

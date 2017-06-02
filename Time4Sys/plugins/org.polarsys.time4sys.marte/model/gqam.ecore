@@ -183,6 +183,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequestedService" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceServiceExcecution" eSuperTypes="#//Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceService" eType="ecore:EClass grm.ecore#//ResourceService"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SlidingWindowPattern" eSuperTypes="#//ArrivalPattern">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowSize" lowerBound="1"
         eType="#//NFP_Duration"/>
@@ -229,9 +232,5 @@
         upperBound="-1" eType="#//WorkloadEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
         eType="#//Reference" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceServiceExcecution" eSuperTypes="#//Step">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceService" eType="ecore:EClass grm.ecore#//ResourceService"
-        eOpposite="grm.ecore#//ResourceService/excecutions"/>
   </eClassifiers>
 </ecore:EPackage>

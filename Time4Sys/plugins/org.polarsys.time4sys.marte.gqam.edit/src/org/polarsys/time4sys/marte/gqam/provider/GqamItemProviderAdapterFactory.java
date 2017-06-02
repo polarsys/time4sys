@@ -471,6 +471,29 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourceServiceExcecutionItemProvider resourceServiceExcecutionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourceServiceExcecutionAdapter() {
+		if (resourceServiceExcecutionItemProvider == null) {
+			resourceServiceExcecutionItemProvider = new ResourceServiceExcecutionItemProvider(this);
+		}
+
+		return resourceServiceExcecutionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.SlidingWindowPattern} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -751,6 +774,7 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (releaseStepItemProvider != null) releaseStepItemProvider.dispose();
 		if (requestedServiceItemProvider != null) requestedServiceItemProvider.dispose();
+		if (resourceServiceExcecutionItemProvider != null) resourceServiceExcecutionItemProvider.dispose();
 		if (slidingWindowPatternItemProvider != null) slidingWindowPatternItemProvider.dispose();
 		if (sporadicPatternItemProvider != null) sporadicPatternItemProvider.dispose();
 		if (stepItemProvider != null) stepItemProvider.dispose();

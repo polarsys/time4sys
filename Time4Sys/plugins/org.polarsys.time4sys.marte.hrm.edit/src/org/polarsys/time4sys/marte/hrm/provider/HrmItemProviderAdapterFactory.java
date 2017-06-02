@@ -1397,11 +1397,6 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__PSERVICES,
-						 HrmFactory.eINSTANCE.createHardwareService()));
-
-				newChildDescriptors.add
-					(createChildParameter
 						(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 						 HrmFactory.eINSTANCE.createHardwarePort()));
 
@@ -1409,6 +1404,11 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 					(createChildParameter
 						(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 						 HrmFactory.eINSTANCE.createHardwareConnector()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GrmPackage.Literals.RESOURCE__PSERVICES,
+						 HrmFactory.eINSTANCE.createHardwareService()));
 
 				return null;
 			}
@@ -1834,11 +1834,6 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__PSERVICES,
-						 HrmFactory.eINSTANCE.createHardwareService()));
-
-				newChildDescriptors.add
-					(createChildParameter
 						(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 						 HrmFactory.eINSTANCE.createHardwarePort()));
 
@@ -1846,6 +1841,11 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 					(createChildParameter
 						(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 						 HrmFactory.eINSTANCE.createHardwareConnector()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GrmPackage.Literals.RESOURCE__PSERVICES,
+						 HrmFactory.eINSTANCE.createHardwareService()));
 
 				return null;
 			}

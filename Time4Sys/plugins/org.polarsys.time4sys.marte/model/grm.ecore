@@ -117,8 +117,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Resource"
         eOpposite="#//Resource/pServices"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="excecutions" upperBound="-1"
-        eType="ecore:EClass gqam.ecore#//ResourceServiceExcecution" eOpposite="gqam.ecore#//ResourceServiceExcecution/resourceService"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceUsage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="workload" upperBound="-1"

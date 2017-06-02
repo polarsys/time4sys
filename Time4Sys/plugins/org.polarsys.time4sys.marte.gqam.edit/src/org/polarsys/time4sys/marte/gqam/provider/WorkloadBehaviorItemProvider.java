@@ -189,6 +189,11 @@ public class WorkloadBehaviorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__DEMAND,
 				 GqamFactory.eINSTANCE.createWorkloadEvent()));
 

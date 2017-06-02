@@ -331,6 +331,11 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(GqamPackage.Literals.BEHAVIOR_SCENARIO__CONNECTORS,
 				 GqamFactory.eINSTANCE.createPrecedenceRelation()));
 	}

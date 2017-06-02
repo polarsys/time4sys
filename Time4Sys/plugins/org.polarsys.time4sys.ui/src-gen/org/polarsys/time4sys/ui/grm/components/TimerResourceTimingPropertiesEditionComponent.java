@@ -41,7 +41,7 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
 
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.TimerResource;
-
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.ui.views.grm.parts.GrmViewsRepository;
 import org.polarsys.time4sys.ui.views.grm.parts.TimingPropertiesEditionPart;
 
@@ -121,7 +121,7 @@ public class TimerResourceTimingPropertiesEditionComponent extends SinglePartPro
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		TimerResource timerResource = (TimerResource)semanticObject;
 		if (GrmViewsRepository.Timing.TimingProperties.duration == event.getAffectedEditor()) {
-			timerResource.setDuration((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
+			timerResource.setDuration((org.polarsys.time4sys.marte.nfp.Duration)EEFConverterUtil.createFromString(NfpPackage.Literals.NFP_DURATION, (String)event.getNewValue()));
 		}
 	}
 

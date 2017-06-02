@@ -165,6 +165,167 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProbabilisticDurationItemProvider probabilisticDurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProbabilisticDurationAdapter() {
+		if (probabilisticDurationItemProvider == null) {
+			probabilisticDurationItemProvider = new ProbabilisticDurationItemProvider(this);
+		}
+
+		return probabilisticDurationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DiscreteDistributionItemProvider discreteDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDiscreteDistributionAdapter() {
+		if (discreteDistributionItemProvider == null) {
+			discreteDistributionItemProvider = new DiscreteDistributionItemProvider(this);
+		}
+
+		return discreteDistributionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.Bucket} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BucketItemProvider bucketItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.Bucket}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBucketAdapter() {
+		if (bucketItemProvider == null) {
+			bucketItemProvider = new BucketItemProvider(this);
+		}
+
+		return bucketItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.NormalDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NormalDistributionItemProvider normalDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.NormalDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNormalDistributionAdapter() {
+		if (normalDistributionItemProvider == null) {
+			normalDistributionItemProvider = new NormalDistributionItemProvider(this);
+		}
+
+		return normalDistributionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GeneralizedExtremeValueDistributionItemProvider generalizedExtremeValueDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGeneralizedExtremeValueDistributionAdapter() {
+		if (generalizedExtremeValueDistributionItemProvider == null) {
+			generalizedExtremeValueDistributionItemProvider = new GeneralizedExtremeValueDistributionItemProvider(this);
+		}
+
+		return generalizedExtremeValueDistributionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.UniformDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UniformDistributionItemProvider uniformDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.UniformDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUniformDistributionAdapter() {
+		if (uniformDistributionItemProvider == null) {
+			uniformDistributionItemProvider = new UniformDistributionItemProvider(this);
+		}
+
+		return uniformDistributionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.CompositeDistribution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeDistributionItemProvider compositeDistributionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.CompositeDistribution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeDistributionAdapter() {
+		if (compositeDistributionItemProvider == null) {
+			compositeDistributionItemProvider = new CompositeDistributionItemProvider(this);
+		}
+
+		return compositeDistributionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,6 +454,13 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 		if (durationItemProvider != null) durationItemProvider.dispose();
 		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
 		if (dataSizeItemProvider != null) dataSizeItemProvider.dispose();
+		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
+		if (discreteDistributionItemProvider != null) discreteDistributionItemProvider.dispose();
+		if (bucketItemProvider != null) bucketItemProvider.dispose();
+		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
+		if (generalizedExtremeValueDistributionItemProvider != null) generalizedExtremeValueDistributionItemProvider.dispose();
+		if (uniformDistributionItemProvider != null) uniformDistributionItemProvider.dispose();
+		if (compositeDistributionItemProvider != null) compositeDistributionItemProvider.dispose();
 	}
 
 }

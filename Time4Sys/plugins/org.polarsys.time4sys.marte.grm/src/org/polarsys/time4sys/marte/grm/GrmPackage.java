@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.grm;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -425,22 +426,13 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE__IS_ACTIVE = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__PSERVICES = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__OWNED_PORT = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 5;
+	int RESOURCE__OWNED_PORT = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
@@ -449,7 +441,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__OWNED_CONNECTOR = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 6;
+	int RESOURCE__OWNED_CONNECTOR = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>RServices</b></em>' reference list.
@@ -458,7 +450,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__RSERVICES = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 7;
+	int RESOURCE__RSERVICES = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Used By</b></em>' reference list.
@@ -467,7 +459,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__USED_BY = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 8;
+	int RESOURCE__USED_BY = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__PSERVICES = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -533,15 +534,6 @@ public interface GrmPackage extends EPackage {
 	int TIMING_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMING_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -576,6 +568,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TIMING_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMING_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Timing Resource</em>' class.
@@ -641,15 +642,6 @@ public interface GrmPackage extends EPackage {
 	int CLOCK_RESOURCE__IS_ACTIVE = TIMING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLOCK_RESOURCE__PSERVICES = TIMING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -684,6 +676,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOCK_RESOURCE__USED_BY = TIMING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_RESOURCE__PSERVICES = TIMING_RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Clock Resource</em>' class.
@@ -776,15 +777,6 @@ public interface GrmPackage extends EPackage {
 	int COMMUNICATION_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,6 +811,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Communication Resource</em>' class.
@@ -884,15 +885,6 @@ public interface GrmPackage extends EPackage {
 	int COMMUNICATION_MEDIA__IS_ACTIVE = COMMUNICATION_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_MEDIA__PSERVICES = COMMUNICATION_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -927,6 +919,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_MEDIA__USED_BY = COMMUNICATION_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_MEDIA__PSERVICES = COMMUNICATION_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1055,15 +1056,6 @@ public interface GrmPackage extends EPackage {
 	int PROCESSING_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSING_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1098,6 +1090,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSING_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1181,15 +1182,6 @@ public interface GrmPackage extends EPackage {
 	int COMPUTING_RESOURCE__IS_ACTIVE = PROCESSING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTING_RESOURCE__PSERVICES = PROCESSING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1224,6 +1216,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPUTING_RESOURCE__USED_BY = PROCESSING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE__PSERVICES = PROCESSING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1307,15 +1308,6 @@ public interface GrmPackage extends EPackage {
 	int CONCURRENCY_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONCURRENCY_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1350,6 +1342,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONCURRENCY_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCURRENCY_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Concurrency Resource</em>' class.
@@ -1415,15 +1416,6 @@ public interface GrmPackage extends EPackage {
 	int DEVICE_RESOURCE__IS_ACTIVE = PROCESSING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE_RESOURCE__PSERVICES = PROCESSING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1458,6 +1450,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int DEVICE_RESOURCE__USED_BY = PROCESSING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_RESOURCE__PSERVICES = PROCESSING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Speed Factor</b></em>' attribute.
@@ -1806,15 +1807,6 @@ public interface GrmPackage extends EPackage {
 	int SYNCH_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYNCH_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1849,6 +1841,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCH_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCH_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Synch Resource</em>' class.
@@ -1914,15 +1915,6 @@ public interface GrmPackage extends EPackage {
 	int MUTUAL_EXCLUSION_RESOURCE__IS_ACTIVE = SYNCH_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MUTUAL_EXCLUSION_RESOURCE__PSERVICES = SYNCH_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1957,6 +1949,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MUTUAL_EXCLUSION_RESOURCE__USED_BY = SYNCH_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUTUAL_EXCLUSION_RESOURCE__PSERVICES = SYNCH_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Scheduler</b></em>' reference.
@@ -2094,15 +2095,6 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_BROKER__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_BROKER__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2137,6 +2129,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_BROKER__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_BROKER__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -2384,15 +2385,6 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_MANAGER__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_MANAGER__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2427,6 +2419,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_MANAGER__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MANAGER__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -2564,13 +2565,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_SERVICE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Context</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE__CONTEXT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Resource Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_SERVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Resource Service</em>' class.
@@ -2627,15 +2637,6 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULER__IS_ACTIVE = RESOURCE_BROKER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULER__PSERVICES = RESOURCE_BROKER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2670,6 +2671,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEDULER__USED_BY = RESOURCE_BROKER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER__PSERVICES = RESOURCE_BROKER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -2789,15 +2799,6 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULABLE_RESOURCE__IS_ACTIVE = CONCURRENCY_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULABLE_RESOURCE__PSERVICES = CONCURRENCY_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2832,6 +2833,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEDULABLE_RESOURCE__USED_BY = CONCURRENCY_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULABLE_RESOURCE__PSERVICES = CONCURRENCY_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Dependent Scheduler</b></em>' reference.
@@ -3014,15 +3024,6 @@ public interface GrmPackage extends EPackage {
 	int SECONDARY_SCHEDULER__IS_ACTIVE = SCHEDULER__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECONDARY_SCHEDULER__PSERVICES = SCHEDULER__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3057,6 +3058,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECONDARY_SCHEDULER__USED_BY = SCHEDULER__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECONDARY_SCHEDULER__PSERVICES = SCHEDULER__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Broked Resource</b></em>' reference list.
@@ -3230,15 +3240,6 @@ public interface GrmPackage extends EPackage {
 	int STORAGE_RESOURCE__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORAGE_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3273,6 +3274,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STORAGE_RESOURCE__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGE_RESOURCE__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The number of structural features of the '<em>Storage Resource</em>' class.
@@ -3338,15 +3348,6 @@ public interface GrmPackage extends EPackage {
 	int TIMER_RESOURCE__IS_ACTIVE = TIMING_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMER_RESOURCE__PSERVICES = TIMING_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3381,6 +3382,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TIMER_RESOURCE__USED_BY = TIMING_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER_RESOURCE__PSERVICES = TIMING_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -3545,15 +3555,6 @@ public interface GrmPackage extends EPackage {
 	int USAGE_TYPED_AMOUNT__IS_ACTIVE = RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USAGE_TYPED_AMOUNT__PSERVICES = RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3588,6 +3589,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int USAGE_TYPED_AMOUNT__USED_BY = RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TYPED_AMOUNT__PSERVICES = RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Exec Time</b></em>' attribute.
@@ -3670,6 +3680,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	int TRANSM_MODE_KIND = 40;
+
+	/**
+	 * The meta object id for the '<em>NFP Duration</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.Duration
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_Duration()
+	 * @generated
+	 */
+	int NFP_DURATION = 41;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
@@ -4061,6 +4081,17 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResourceService();
+
+	/**
+	 * Returns the meta object for the container reference '{@link org.polarsys.time4sys.marte.grm.ResourceService#getContext <em>Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Context</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.ResourceService#getContext()
+	 * @see #getResourceService()
+	 * @generated
+	 */
+	EReference getResourceService_Context();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.CommunicationEndPoint <em>Communication End Point</em>}'.
@@ -4819,6 +4850,17 @@ public interface GrmPackage extends EPackage {
 	EEnum getTransmModeKind();
 
 	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Duration</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.Duration
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.Duration"
+	 * @generated
+	 */
+	EDataType getNFP_Duration();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5170,6 +5212,14 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESOURCE_SERVICE = eINSTANCE.getResourceService();
+
+		/**
+		 * The meta object literal for the '<em><b>Context</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_SERVICE__CONTEXT = eINSTANCE.getResourceService_Context();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl <em>Communication End Point</em>}' class.
@@ -5786,6 +5836,16 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TRANSM_MODE_KIND = eINSTANCE.getTransmModeKind();
+
+		/**
+		 * The meta object literal for the '<em>NFP Duration</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.Duration
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_Duration()
+		 * @generated
+		 */
+		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.

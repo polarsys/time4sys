@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.nfp;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -504,6 +505,1579 @@ public interface NfpPackage extends EPackage {
 	int DATA_SIZE_OPERATION_COUNT = 13;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getProbabilisticDuration()
+	 * @generated
+	 */
+	int PROBABILISTIC_DURATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MIN = TIME_INTERVAL__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MAX = TIME_INTERVAL__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MIN_OPEN = TIME_INTERVAL__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MAX_OPEN = TIME_INTERVAL__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__VALUE = TIME_INTERVAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__UNIT = TIME_INTERVAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__BEST = TIME_INTERVAL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__WORST = TIME_INTERVAL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__CLOCK = TIME_INTERVAL_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__PRECISION = TIME_INTERVAL_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_FEATURE_COUNT = TIME_INTERVAL_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___COMPUTE_LENGTH = TIME_INTERVAL___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___ADD__DURATION = TIME_INTERVAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___COMPARE_TO__DURATION = TIME_INTERVAL_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = TIME_INTERVAL_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION = TIME_INTERVAL_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 12;
+
+	/**
+	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 13;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl <em>Discrete Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistribution()
+	 * @generated
+	 */
+	int DISCRETE_DISTRIBUTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Buckets</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__BUCKETS = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Discrete Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.BucketImpl <em>Bucket</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.BucketImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getBucket()
+	 * @generated
+	 */
+	int BUCKET = 5;
+
+	/**
+	 * The feature id for the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET__PROBABILITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Bucket</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Bucket</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNormalDistribution()
+	 * @generated
+	 */
+	int NORMAL_DISTRIBUTION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Mu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MU = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sigma</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__SIGMA = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Normal Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Normal Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl <em>Generalized Extreme Value Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getGeneralizedExtremeValueDistribution()
+	 * @generated
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Mu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MU = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sigma</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__SIGMA = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Xi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__XI = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Generalized Extreme Value Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Generalized Extreme Value Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl <em>Uniform Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getUniformDistribution()
+	 * @generated
+	 */
+	int UNIFORM_DISTRIBUTION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The number of structural features of the '<em>Uniform Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Uniform Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCompositeDistribution()
+	 * @generated
+	 */
+	int COMPOSITE_DISTRIBUTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__PARTS = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Composite Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,7 +2085,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getTimeUnitKind()
 	 * @generated
 	 */
-	int TIME_UNIT_KIND = 3;
+	int TIME_UNIT_KIND = 10;
 
 
 	/**
@@ -522,7 +2096,18 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataSizeUnitKind()
 	 * @generated
 	 */
-	int DATA_SIZE_UNIT_KIND = 4;
+	int DATA_SIZE_UNIT_KIND = 11;
+
+
+	/**
+	 * The meta object id for the '<em>NFP Duration</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.Duration
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_Duration()
+	 * @generated
+	 */
+	int NFP_DURATION = 12;
 
 
 	/**
@@ -958,6 +2543,175 @@ public interface NfpPackage extends EPackage {
 	EOperation getDataSize__Sub__DataSize();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration <em>Probabilistic Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Probabilistic Duration</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.ProbabilisticDuration
+	 * @generated
+	 */
+	EClass getProbabilisticDuration();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution <em>Discrete Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Distribution</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistribution
+	 * @generated
+	 */
+	EClass getDiscreteDistribution();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution#getBuckets <em>Buckets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Buckets</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistribution#getBuckets()
+	 * @see #getDiscreteDistribution()
+	 * @generated
+	 */
+	EReference getDiscreteDistribution_Buckets();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.Bucket <em>Bucket</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bucket</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.Bucket
+	 * @generated
+	 */
+	EClass getBucket();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.Bucket#getProbability <em>Probability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Probability</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.Bucket#getProbability()
+	 * @see #getBucket()
+	 * @generated
+	 */
+	EAttribute getBucket_Probability();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.Bucket#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.Bucket#getValue()
+	 * @see #getBucket()
+	 * @generated
+	 */
+	EAttribute getBucket_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.NormalDistribution <em>Normal Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Normal Distribution</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.NormalDistribution
+	 * @generated
+	 */
+	EClass getNormalDistribution();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.NormalDistribution#getMu <em>Mu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mu</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.NormalDistribution#getMu()
+	 * @see #getNormalDistribution()
+	 * @generated
+	 */
+	EAttribute getNormalDistribution_Mu();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.NormalDistribution#getSigma <em>Sigma</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sigma</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.NormalDistribution#getSigma()
+	 * @see #getNormalDistribution()
+	 * @generated
+	 */
+	EAttribute getNormalDistribution_Sigma();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution <em>Generalized Extreme Value Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Generalized Extreme Value Distribution</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution
+	 * @generated
+	 */
+	EClass getGeneralizedExtremeValueDistribution();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getMu <em>Mu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mu</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getMu()
+	 * @see #getGeneralizedExtremeValueDistribution()
+	 * @generated
+	 */
+	EAttribute getGeneralizedExtremeValueDistribution_Mu();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getSigma <em>Sigma</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sigma</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getSigma()
+	 * @see #getGeneralizedExtremeValueDistribution()
+	 * @generated
+	 */
+	EAttribute getGeneralizedExtremeValueDistribution_Sigma();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getXi <em>Xi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xi</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution#getXi()
+	 * @see #getGeneralizedExtremeValueDistribution()
+	 * @generated
+	 */
+	EAttribute getGeneralizedExtremeValueDistribution_Xi();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.UniformDistribution <em>Uniform Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Uniform Distribution</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.UniformDistribution
+	 * @generated
+	 */
+	EClass getUniformDistribution();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.CompositeDistribution <em>Composite Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Distribution</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.CompositeDistribution
+	 * @generated
+	 */
+	EClass getCompositeDistribution();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.nfp.CompositeDistribution#getParts <em>Parts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parts</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.CompositeDistribution#getParts()
+	 * @see #getCompositeDistribution()
+	 * @generated
+	 */
+	EReference getCompositeDistribution_Parts();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.nfp.TimeUnitKind <em>Time Unit Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -976,6 +2730,17 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDataSizeUnitKind();
+
+	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Duration</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.Duration
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.Duration"
+	 * @generated
+	 */
+	EDataType getNFP_Duration();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1343,6 +3108,148 @@ public interface NfpPackage extends EPackage {
 		EOperation DATA_SIZE___SUB__DATASIZE = eINSTANCE.getDataSize__Sub__DataSize();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getProbabilisticDuration()
+		 * @generated
+		 */
+		EClass PROBABILISTIC_DURATION = eINSTANCE.getProbabilisticDuration();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl <em>Discrete Distribution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistribution()
+		 * @generated
+		 */
+		EClass DISCRETE_DISTRIBUTION = eINSTANCE.getDiscreteDistribution();
+
+		/**
+		 * The meta object literal for the '<em><b>Buckets</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_DISTRIBUTION__BUCKETS = eINSTANCE.getDiscreteDistribution_Buckets();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.BucketImpl <em>Bucket</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.BucketImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getBucket()
+		 * @generated
+		 */
+		EClass BUCKET = eINSTANCE.getBucket();
+
+		/**
+		 * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUCKET__PROBABILITY = eINSTANCE.getBucket_Probability();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUCKET__VALUE = eINSTANCE.getBucket_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNormalDistribution()
+		 * @generated
+		 */
+		EClass NORMAL_DISTRIBUTION = eINSTANCE.getNormalDistribution();
+
+		/**
+		 * The meta object literal for the '<em><b>Mu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NORMAL_DISTRIBUTION__MU = eINSTANCE.getNormalDistribution_Mu();
+
+		/**
+		 * The meta object literal for the '<em><b>Sigma</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NORMAL_DISTRIBUTION__SIGMA = eINSTANCE.getNormalDistribution_Sigma();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl <em>Generalized Extreme Value Distribution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getGeneralizedExtremeValueDistribution()
+		 * @generated
+		 */
+		EClass GENERALIZED_EXTREME_VALUE_DISTRIBUTION = eINSTANCE.getGeneralizedExtremeValueDistribution();
+
+		/**
+		 * The meta object literal for the '<em><b>Mu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MU = eINSTANCE.getGeneralizedExtremeValueDistribution_Mu();
+
+		/**
+		 * The meta object literal for the '<em><b>Sigma</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERALIZED_EXTREME_VALUE_DISTRIBUTION__SIGMA = eINSTANCE.getGeneralizedExtremeValueDistribution_Sigma();
+
+		/**
+		 * The meta object literal for the '<em><b>Xi</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GENERALIZED_EXTREME_VALUE_DISTRIBUTION__XI = eINSTANCE.getGeneralizedExtremeValueDistribution_Xi();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl <em>Uniform Distribution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getUniformDistribution()
+		 * @generated
+		 */
+		EClass UNIFORM_DISTRIBUTION = eINSTANCE.getUniformDistribution();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCompositeDistribution()
+		 * @generated
+		 */
+		EClass COMPOSITE_DISTRIBUTION = eINSTANCE.getCompositeDistribution();
+
+		/**
+		 * The meta object literal for the '<em><b>Parts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_DISTRIBUTION__PARTS = eINSTANCE.getCompositeDistribution_Parts();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1361,6 +3268,16 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATA_SIZE_UNIT_KIND = eINSTANCE.getDataSizeUnitKind();
+
+		/**
+		 * The meta object literal for the '<em>NFP Duration</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.Duration
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_Duration()
+		 * @generated
+		 */
+		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
 
 	}
 

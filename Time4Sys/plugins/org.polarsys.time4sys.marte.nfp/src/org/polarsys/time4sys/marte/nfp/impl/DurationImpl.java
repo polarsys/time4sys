@@ -11,16 +11,10 @@
 package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.polarsys.time4sys.marte.nfp.DataSize;
-import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
@@ -41,7 +35,7 @@ import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
  *   <li>{@link org.polarsys.time4sys.marte.nfp.impl.DurationImpl#getPrecision <em>Precision</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
 public class DurationImpl extends AbstractRealWithUnitValueImpl<TimeUnitKind, Duration> implements Duration {
 	

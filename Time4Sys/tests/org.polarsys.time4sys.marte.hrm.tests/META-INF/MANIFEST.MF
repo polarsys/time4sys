@@ -11,6 +11,7 @@ Export-Package: org.polarsys.time4sys.marte.hrm.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.hrm;visibility:=reexport,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,
+ org.polarsys.time4sys.marte.srm;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;bundle-version="4.12.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

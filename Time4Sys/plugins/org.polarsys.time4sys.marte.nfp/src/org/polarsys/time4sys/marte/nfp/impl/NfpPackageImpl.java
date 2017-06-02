@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.nfp.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -21,13 +22,20 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.polarsys.time4sys.marte.nfp.Bucket;
+import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
+import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.NormalDistribution;
+import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +70,55 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass probabilisticDurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteDistributionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bucketEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass normalDistributionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass generalizedExtremeValueDistributionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass uniformDistributionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeDistributionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum timeUnitKindEEnum = null;
 
 	/**
@@ -70,6 +127,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	private EEnum dataSizeUnitKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DurationEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -515,6 +579,150 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getProbabilisticDuration() {
+		return probabilisticDurationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscreteDistribution() {
+		return discreteDistributionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteDistribution_Buckets() {
+		return (EReference)discreteDistributionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBucket() {
+		return bucketEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBucket_Probability() {
+		return (EAttribute)bucketEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBucket_Value() {
+		return (EAttribute)bucketEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNormalDistribution() {
+		return normalDistributionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNormalDistribution_Mu() {
+		return (EAttribute)normalDistributionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNormalDistribution_Sigma() {
+		return (EAttribute)normalDistributionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeneralizedExtremeValueDistribution() {
+		return generalizedExtremeValueDistributionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeneralizedExtremeValueDistribution_Mu() {
+		return (EAttribute)generalizedExtremeValueDistributionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeneralizedExtremeValueDistribution_Sigma() {
+		return (EAttribute)generalizedExtremeValueDistributionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeneralizedExtremeValueDistribution_Xi() {
+		return (EAttribute)generalizedExtremeValueDistributionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUniformDistribution() {
+		return uniformDistributionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCompositeDistribution() {
+		return compositeDistributionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCompositeDistribution_Parts() {
+		return (EReference)compositeDistributionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTimeUnitKind() {
 		return timeUnitKindEEnum;
 	}
@@ -526,6 +734,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 */
 	public EEnum getDataSizeUnitKind() {
 		return dataSizeUnitKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_Duration() {
+		return nfP_DurationEDataType;
 	}
 
 	/**
@@ -601,9 +818,35 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEOperation(dataSizeEClass, DATA_SIZE___SIMPLIFY);
 		createEOperation(dataSizeEClass, DATA_SIZE___SUB__DATASIZE);
 
+		probabilisticDurationEClass = createEClass(PROBABILISTIC_DURATION);
+
+		discreteDistributionEClass = createEClass(DISCRETE_DISTRIBUTION);
+		createEReference(discreteDistributionEClass, DISCRETE_DISTRIBUTION__BUCKETS);
+
+		bucketEClass = createEClass(BUCKET);
+		createEAttribute(bucketEClass, BUCKET__PROBABILITY);
+		createEAttribute(bucketEClass, BUCKET__VALUE);
+
+		normalDistributionEClass = createEClass(NORMAL_DISTRIBUTION);
+		createEAttribute(normalDistributionEClass, NORMAL_DISTRIBUTION__MU);
+		createEAttribute(normalDistributionEClass, NORMAL_DISTRIBUTION__SIGMA);
+
+		generalizedExtremeValueDistributionEClass = createEClass(GENERALIZED_EXTREME_VALUE_DISTRIBUTION);
+		createEAttribute(generalizedExtremeValueDistributionEClass, GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MU);
+		createEAttribute(generalizedExtremeValueDistributionEClass, GENERALIZED_EXTREME_VALUE_DISTRIBUTION__SIGMA);
+		createEAttribute(generalizedExtremeValueDistributionEClass, GENERALIZED_EXTREME_VALUE_DISTRIBUTION__XI);
+
+		uniformDistributionEClass = createEClass(UNIFORM_DISTRIBUTION);
+
+		compositeDistributionEClass = createEClass(COMPOSITE_DISTRIBUTION);
+		createEReference(compositeDistributionEClass, COMPOSITE_DISTRIBUTION__PARTS);
+
 		// Create enums
 		timeUnitKindEEnum = createEEnum(TIME_UNIT_KIND);
 		dataSizeUnitKindEEnum = createEEnum(DATA_SIZE_UNIT_KIND);
+
+		// Create data types
+		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 	}
 
 	/**
@@ -634,11 +877,18 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		probabilisticDurationEClass.getESuperTypes().add(this.getTimeInterval());
+		probabilisticDurationEClass.getESuperTypes().add(this.getDuration());
+		discreteDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
+		normalDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
+		generalizedExtremeValueDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
+		uniformDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
+		compositeDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(durationEClass, Duration.class, "Duration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDuration_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDuration_Unit(), this.getTimeUnitKind(), "unit", "millisecond", 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDuration_Unit(), this.getTimeUnitKind(), "unit", "millisecond", 1, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDuration_Best(), ecorePackage.getEDouble(), "best", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDuration_Worst(), ecorePackage.getEDouble(), "worst", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDuration_Clock(), ecorePackage.getEString(), "clock", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -728,6 +978,29 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		op = initEOperation(getDataSize__Sub__DataSize(), this.getDataSize(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(probabilisticDurationEClass, ProbabilisticDuration.class, "ProbabilisticDuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(discreteDistributionEClass, DiscreteDistribution.class, "DiscreteDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteDistribution_Buckets(), this.getBucket(), null, "buckets", null, 1, -1, DiscreteDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bucketEClass, Bucket.class, "Bucket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBucket_Probability(), ecorePackage.getEDouble(), "probability", null, 1, 1, Bucket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBucket_Value(), this.getNFP_Duration(), "value", null, 1, 1, Bucket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(normalDistributionEClass, NormalDistribution.class, "NormalDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNormalDistribution_Mu(), this.getNFP_Duration(), "mu", null, 1, 1, NormalDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNormalDistribution_Sigma(), this.getNFP_Duration(), "sigma", null, 1, 1, NormalDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(generalizedExtremeValueDistributionEClass, GeneralizedExtremeValueDistribution.class, "GeneralizedExtremeValueDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGeneralizedExtremeValueDistribution_Mu(), this.getNFP_Duration(), "mu", null, 1, 1, GeneralizedExtremeValueDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeneralizedExtremeValueDistribution_Sigma(), this.getNFP_Duration(), "sigma", null, 1, 1, GeneralizedExtremeValueDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeneralizedExtremeValueDistribution_Xi(), this.getNFP_Duration(), "xi", null, 1, 1, GeneralizedExtremeValueDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(uniformDistributionEClass, UniformDistribution.class, "UniformDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(compositeDistributionEClass, CompositeDistribution.class, "CompositeDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeDistribution_Parts(), this.getProbabilisticDuration(), null, "parts", null, 1, -1, CompositeDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(timeUnitKindEEnum, TimeUnitKind.class, "TimeUnitKind");
 		addEEnumLiteral(timeUnitKindEEnum, TimeUnitKind.PS);
@@ -745,6 +1018,9 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.KB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.MB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.GB);
+
+		// Initialize data types
+		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

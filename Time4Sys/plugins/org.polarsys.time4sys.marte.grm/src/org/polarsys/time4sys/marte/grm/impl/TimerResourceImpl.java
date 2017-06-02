@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.TimerResource;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +52,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float DURATION_EDEFAULT = 0.0F;
+	protected static final Duration DURATION_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
@@ -61,7 +62,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * @generated
 	 * @ordered
 	 */
-	protected float duration = DURATION_EDEFAULT;
+	protected Duration duration = DURATION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsPeriodic() <em>Is Periodic</em>}' attribute.
@@ -157,7 +158,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getDuration() {
+	public Duration getDuration() {
 		return duration;
 	}
 
@@ -166,8 +167,8 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDuration(float newDuration) {
-		float oldDuration = duration;
+	public void setDuration(Duration newDuration) {
+		Duration oldDuration = duration;
 		duration = newDuration;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.TIMER_RESOURCE__DURATION, oldDuration, duration));
@@ -424,7 +425,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GrmPackage.TIMER_RESOURCE__DURATION:
-				setDuration((Float)newValue);
+				setDuration((Duration)newValue);
 				return;
 			case GrmPackage.TIMER_RESOURCE__IS_PERIODIC:
 				setIsPeriodic((Boolean)newValue);
@@ -490,7 +491,7 @@ public class TimerResourceImpl extends TimingResourceImpl implements TimerResour
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GrmPackage.TIMER_RESOURCE__DURATION:
-				return duration != DURATION_EDEFAULT;
+				return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
 			case GrmPackage.TIMER_RESOURCE__IS_PERIODIC:
 				return isPeriodic != IS_PERIODIC_EDEFAULT;
 			case GrmPackage.TIMER_RESOURCE__START:

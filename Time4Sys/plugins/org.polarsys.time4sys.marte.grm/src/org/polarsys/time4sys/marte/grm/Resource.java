@@ -27,11 +27,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getResMult <em>Res Mult</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#isIsActive <em>Is Active</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getPServices <em>PServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getOwnedPort <em>Owned Port</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getOwnedConnector <em>Owned Connector</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getRServices <em>RServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.grm.Resource#getPServices <em>PServices</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResource()
@@ -51,6 +51,7 @@ public interface Resource extends ResourcePackageableElement {
 	 * @return the value of the '<em>Owned Resource</em>' containment reference list.
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResource_OwnedResource()
 	 * @model containment="true"
+	 *        extendedMetaData="wildcards='' name=''"
 	 * @generated
 	 */
 	EList<Resource> getOwnedResource();
@@ -136,6 +137,7 @@ public interface Resource extends ResourcePackageableElement {
 	/**
 	 * Returns the value of the '<em><b>PServices</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.grm.ResourceService}.
+	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.grm.ResourceService#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>PServices</em>' containment reference list isn't clear,
@@ -144,7 +146,8 @@ public interface Resource extends ResourcePackageableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>PServices</em>' containment reference list.
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResource_PServices()
-	 * @model containment="true"
+	 * @see org.polarsys.time4sys.marte.grm.ResourceService#getContext
+	 * @model opposite="context" containment="true"
 	 * @generated
 	 */
 	EList<ResourceService> getPServices();

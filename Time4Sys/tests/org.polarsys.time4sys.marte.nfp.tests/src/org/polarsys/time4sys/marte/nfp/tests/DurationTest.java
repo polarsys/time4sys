@@ -256,7 +256,9 @@ public class DurationTest extends TestCase {
 	 * @generated
 	 */
 	public void testMultiply__long() {
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("96ms"), NfpFactory.eINSTANCE.createDurationFromString("32ms").multiply(3));
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

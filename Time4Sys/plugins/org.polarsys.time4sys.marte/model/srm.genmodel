@@ -4,7 +4,7 @@
     modelPluginID="org.polarsys.time4sys.marte.srm" modelName="Srm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.marte.srm.edit" editorPluginID="org.polarsys.time4sys.marte.srm.editor"
-    usedGenPackages="grm.genmodel#//grm" operationReflection="true" importOrganizing="true">
+    usedGenPackages="grm.genmodel#//grm nfp.genmodel#//nfp" operationReflection="true" importOrganizing="true">
   <foreignModel>srm.ecore</foreignModel>
   <genPackages prefix="Srm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="srm.ecore#/">

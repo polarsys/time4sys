@@ -176,6 +176,15 @@ public interface GqamFactory extends EFactory {
 	RequestedService createRequestedService();
 
 	/**
+	 * Returns a new object of class '<em>Resource Service Excecution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resource Service Excecution</em>'.
+	 * @generated
+	 */
+	ResourceServiceExcecution createResourceServiceExcecution();
+
+	/**
 	 * Returns a new object of class '<em>Sliding Window Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

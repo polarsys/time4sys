@@ -190,9 +190,9 @@ public class ResourceItemProvider extends ResourcePackageableElementItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__PSERVICES);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_PORT);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR);
+			childrenFeatures.add(GrmPackage.Literals.RESOURCE__PSERVICES);
 		}
 		return childrenFeatures;
 	}
@@ -243,9 +243,9 @@ public class ResourceItemProvider extends ResourcePackageableElementItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GrmPackage.RESOURCE__OWNED_RESOURCE:
-			case GrmPackage.RESOURCE__PSERVICES:
 			case GrmPackage.RESOURCE__OWNED_PORT:
 			case GrmPackage.RESOURCE__OWNED_CONNECTOR:
+			case GrmPackage.RESOURCE__PSERVICES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -340,11 +340,6 @@ public class ResourceItemProvider extends ResourcePackageableElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 GrmFactory.eINSTANCE.createResourceService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 GrmFactory.eINSTANCE.createResourcePort()));
 
@@ -352,6 +347,11 @@ public class ResourceItemProvider extends ResourcePackageableElementItemProvider
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 				 GrmFactory.eINSTANCE.createResourceConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 GrmFactory.eINSTANCE.createResourceService()));
 	}
 
 }

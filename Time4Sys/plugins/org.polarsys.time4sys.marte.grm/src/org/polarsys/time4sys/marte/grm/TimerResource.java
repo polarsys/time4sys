@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
+import org.polarsys.time4sys.marte.nfp.Duration;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -45,12 +47,12 @@ public interface TimerResource extends TimingResource {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Duration</em>' attribute.
-	 * @see #setDuration(float)
+	 * @see #setDuration(Duration)
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getTimerResource_Duration()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_Duration"
 	 * @generated
 	 */
-	float getDuration();
+	Duration getDuration();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.TimerResource#getDuration <em>Duration</em>}' attribute.
@@ -60,7 +62,7 @@ public interface TimerResource extends TimingResource {
 	 * @see #getDuration()
 	 * @generated
 	 */
-	void setDuration(float value);
+	void setDuration(Duration value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Periodic</b></em>' attribute.

@@ -191,7 +191,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadEvent()
 	 * @generated
 	 */
-	int WORKLOAD_EVENT = 23;
+	int WORKLOAD_EVENT = 24;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl <em>Step</em>}' class.
@@ -201,7 +201,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getStep()
 	 * @generated
 	 */
-	int STEP = 22;
+	int STEP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -437,7 +437,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadBehavior()
 	 * @generated
 	 */
-	int WORKLOAD_BEHAVIOR = 24;
+	int WORKLOAD_BEHAVIOR = 25;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationStepImpl <em>Communication Step</em>}' class.
@@ -1014,7 +1014,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
 	 * @generated
 	 */
-	int SPORADIC_PATTERN = 21;
+	int SPORADIC_PATTERN = 22;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl <em>End To End Flow</em>}' class.
@@ -1044,7 +1044,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
 	 * @generated
 	 */
-	int SLIDING_WINDOW_PATTERN = 20;
+	int SLIDING_WINDOW_PATTERN = 21;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
@@ -1162,15 +1162,6 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_CHANNEL__IS_ACTIVE = GrmPackage.SCHEDULABLE_RESOURCE__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_CHANNEL__PSERVICES = GrmPackage.SCHEDULABLE_RESOURCE__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1205,6 +1196,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_CHANNEL__USED_BY = GrmPackage.SCHEDULABLE_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__PSERVICES = GrmPackage.SCHEDULABLE_RESOURCE__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Dependent Scheduler</b></em>' reference.
@@ -2863,6 +2863,241 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
+	 * @generated
+	 */
+	int RESOURCE_SERVICE_EXCECUTION = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__NAME = STEP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__STEPS = STEP__STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Root</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__ROOT = STEP__ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__PARENT_STEP = STEP__PARENT_STEP;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__CONNECTORS = STEP__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__RESP_TIME = STEP__RESP_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__BEST_CET = STEP__BEST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__IS_ATOMIC = STEP__IS_ATOMIC;
+
+	/**
+	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__BLOCKING_TIME = STEP__BLOCKING_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__REPETITIONS = STEP__REPETITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__PROBABILITY = STEP__PROBABILITY;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__PRIORITY = STEP__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__SERVICE_COUNT = STEP__SERVICE_COUNT;
+
+	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__SCENARIO = STEP__SCENARIO;
+
+	/**
+	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+
+	/**
+	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__INPUT_REL = STEP__INPUT_REL;
+
+	/**
+	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_REL = STEP__OUTPUT_REL;
+
+	/**
+	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__CONCUR_RES = STEP__CONCUR_RES;
+
+	/**
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__INPUT_PIN = STEP__INPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_PIN = STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Resource Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__RESOURCE_SERVICE = STEP_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Resource Service Excecution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Resource Service Excecution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3113,7 +3348,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getConnectorKind()
 	 * @generated
 	 */
-	int CONNECTOR_KIND = 25;
+	int CONNECTOR_KIND = 26;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -3123,7 +3358,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 26;
+	int NFP_DURATION = 27;
 
 
 	/**
@@ -3853,6 +4088,27 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRequestedService();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution <em>Resource Service Excecution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resource Service Excecution</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution
+	 * @generated
+	 */
+	EClass getResourceServiceExcecution();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution#getResourceService <em>Resource Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resource Service</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution#getResourceService()
+	 * @see #getResourceServiceExcecution()
+	 * @generated
+	 */
+	EReference getResourceServiceExcecution_ResourceService();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.SlidingWindowPattern <em>Sliding Window Pattern</em>}'.
@@ -4734,6 +4990,24 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EClass REQUESTED_SERVICE = eINSTANCE.getRequestedService();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
+		 * @generated
+		 */
+		EClass RESOURCE_SERVICE_EXCECUTION = eINSTANCE.getResourceServiceExcecution();
+
+		/**
+		 * The meta object literal for the '<em><b>Resource Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE_SERVICE_EXCECUTION__RESOURCE_SERVICE = eINSTANCE.getResourceServiceExcecution_ResourceService();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.

@@ -45,9 +45,9 @@ import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingCo
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-
+import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.srm.SoftwareTimerResource;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 
@@ -146,7 +146,7 @@ public class SoftwareTimerResourceTimingPropertiesEditionComponent extends Singl
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		SoftwareTimerResource softwareTimerResource = (SoftwareTimerResource)semanticObject;
 		if (SrmViewsRepository.Timing.Properties.duration == event.getAffectedEditor()) {
-			softwareTimerResource.setDuration((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
+			softwareTimerResource.setDuration((org.polarsys.time4sys.marte.nfp.Duration)EEFConverterUtil.createFromString(NfpPackage.Literals.NFP_DURATION, (String)event.getNewValue()));
 		}
 		if (SrmViewsRepository.Timing.Properties.isPeriodic == event.getAffectedEditor()) {
 			softwareTimerResource.setIsPeriodic((Boolean)event.getNewValue());

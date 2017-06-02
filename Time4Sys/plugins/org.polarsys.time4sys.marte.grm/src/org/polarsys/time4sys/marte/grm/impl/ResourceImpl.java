@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -48,11 +49,11 @@ import org.polarsys.time4sys.marte.grm.ResourceUsage;
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getResMult <em>Res Mult</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#isIsActive <em>Is Active</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getPServices <em>PServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getOwnedPort <em>Owned Port</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getOwnedConnector <em>Owned Connector</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getRServices <em>RServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl#getPServices <em>PServices</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,16 +130,6 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 	protected boolean isActive = IS_ACTIVE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPServices() <em>PServices</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ResourceService> pServices;
-
-	/**
 	 * The cached value of the '{@link #getOwnedPort() <em>Owned Port</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -177,6 +168,16 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 	 * @ordered
 	 */
 	protected EList<ResourceUsage> usedBy;
+
+	/**
+	 * The cached value of the '{@link #getPServices() <em>PServices</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ResourceService> pServices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,7 +280,7 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 	 */
 	public EList<ResourceService> getPServices() {
 		if (pServices == null) {
-			pServices = new EObjectContainmentEList<ResourceService>(ResourceService.class, this, GrmPackage.RESOURCE__PSERVICES);
+			pServices = new EObjectContainmentWithInverseEList<ResourceService>(ResourceService.class, this, GrmPackage.RESOURCE__PSERVICES, GrmPackage.RESOURCE_SERVICE__CONTEXT);
 		}
 		return pServices;
 	}
@@ -343,6 +344,8 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 		switch (featureID) {
 			case GrmPackage.RESOURCE__USED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsedBy()).basicAdd(otherEnd, msgs);
+			case GrmPackage.RESOURCE__PSERVICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPServices()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -357,14 +360,14 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 		switch (featureID) {
 			case GrmPackage.RESOURCE__OWNED_RESOURCE:
 				return ((InternalEList<?>)getOwnedResource()).basicRemove(otherEnd, msgs);
-			case GrmPackage.RESOURCE__PSERVICES:
-				return ((InternalEList<?>)getPServices()).basicRemove(otherEnd, msgs);
 			case GrmPackage.RESOURCE__OWNED_PORT:
 				return ((InternalEList<?>)getOwnedPort()).basicRemove(otherEnd, msgs);
 			case GrmPackage.RESOURCE__OWNED_CONNECTOR:
 				return ((InternalEList<?>)getOwnedConnector()).basicRemove(otherEnd, msgs);
 			case GrmPackage.RESOURCE__USED_BY:
 				return ((InternalEList<?>)getUsedBy()).basicRemove(otherEnd, msgs);
+			case GrmPackage.RESOURCE__PSERVICES:
+				return ((InternalEList<?>)getPServices()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -385,8 +388,6 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 				return isIsProtected();
 			case GrmPackage.RESOURCE__IS_ACTIVE:
 				return isIsActive();
-			case GrmPackage.RESOURCE__PSERVICES:
-				return getPServices();
 			case GrmPackage.RESOURCE__OWNED_PORT:
 				return getOwnedPort();
 			case GrmPackage.RESOURCE__OWNED_CONNECTOR:
@@ -395,6 +396,8 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 				return getRServices();
 			case GrmPackage.RESOURCE__USED_BY:
 				return getUsedBy();
+			case GrmPackage.RESOURCE__PSERVICES:
+				return getPServices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -421,10 +424,6 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 			case GrmPackage.RESOURCE__IS_ACTIVE:
 				setIsActive((Boolean)newValue);
 				return;
-			case GrmPackage.RESOURCE__PSERVICES:
-				getPServices().clear();
-				getPServices().addAll((Collection<? extends ResourceService>)newValue);
-				return;
 			case GrmPackage.RESOURCE__OWNED_PORT:
 				getOwnedPort().clear();
 				getOwnedPort().addAll((Collection<? extends ResourcePort>)newValue);
@@ -440,6 +439,10 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 			case GrmPackage.RESOURCE__USED_BY:
 				getUsedBy().clear();
 				getUsedBy().addAll((Collection<? extends ResourceUsage>)newValue);
+				return;
+			case GrmPackage.RESOURCE__PSERVICES:
+				getPServices().clear();
+				getPServices().addAll((Collection<? extends ResourceService>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -465,9 +468,6 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 			case GrmPackage.RESOURCE__IS_ACTIVE:
 				setIsActive(IS_ACTIVE_EDEFAULT);
 				return;
-			case GrmPackage.RESOURCE__PSERVICES:
-				getPServices().clear();
-				return;
 			case GrmPackage.RESOURCE__OWNED_PORT:
 				getOwnedPort().clear();
 				return;
@@ -479,6 +479,9 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 				return;
 			case GrmPackage.RESOURCE__USED_BY:
 				getUsedBy().clear();
+				return;
+			case GrmPackage.RESOURCE__PSERVICES:
+				getPServices().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -500,8 +503,6 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 				return isProtected != IS_PROTECTED_EDEFAULT;
 			case GrmPackage.RESOURCE__IS_ACTIVE:
 				return isActive != IS_ACTIVE_EDEFAULT;
-			case GrmPackage.RESOURCE__PSERVICES:
-				return pServices != null && !pServices.isEmpty();
 			case GrmPackage.RESOURCE__OWNED_PORT:
 				return ownedPort != null && !ownedPort.isEmpty();
 			case GrmPackage.RESOURCE__OWNED_CONNECTOR:
@@ -510,6 +511,8 @@ public abstract class ResourceImpl extends ResourcePackageableElementImpl implem
 				return rServices != null && !rServices.isEmpty();
 			case GrmPackage.RESOURCE__USED_BY:
 				return usedBy != null && !usedBy.isEmpty();
+			case GrmPackage.RESOURCE__PSERVICES:
+				return pServices != null && !pServices.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -25,7 +25,8 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.polarsys.time4sys.library,
  org.eclipse.sirius.common.ui,
  org.eclipse.sirius.common,
- org.eclipse.core.commands
+ org.eclipse.core.commands,
+ org.polarsys.time4sys.marte.nfp
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Localization: plugin

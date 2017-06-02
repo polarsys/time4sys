@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,6 +118,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return createSchedPolicyKindFromString(eDataType, initialValue);
 			case GrmPackage.TRANSM_MODE_KIND:
 				return createTransmModeKindFromString(eDataType, initialValue);
+			case GrmPackage.NFP_DURATION:
+				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -136,6 +139,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return convertSchedPolicyKindToString(eDataType, instanceValue);
 			case GrmPackage.TRANSM_MODE_KIND:
 				return convertTransmModeKindToString(eDataType, instanceValue);
+			case GrmPackage.NFP_DURATION:
+				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -477,6 +482,24 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 */
 	public String convertTransmModeKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
+		return (Duration)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

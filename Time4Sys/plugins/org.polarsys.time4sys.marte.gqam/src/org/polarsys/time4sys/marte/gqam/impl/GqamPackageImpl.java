@@ -46,6 +46,7 @@ import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.ReleaseStep;
 import org.polarsys.time4sys.marte.gqam.RequestedService;
+import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -190,6 +191,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EClass requestedServiceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass resourceServiceExcecutionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -945,6 +953,24 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResourceServiceExcecution() {
+		return resourceServiceExcecutionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceServiceExcecution_ResourceService() {
+		return (EReference)resourceServiceExcecutionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSlidingWindowPattern() {
 		return slidingWindowPatternEClass;
 	}
@@ -1287,6 +1313,9 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		requestedServiceEClass = createEClass(REQUESTED_SERVICE);
 
+		resourceServiceExcecutionEClass = createEClass(RESOURCE_SERVICE_EXCECUTION);
+		createEReference(resourceServiceExcecutionEClass, RESOURCE_SERVICE_EXCECUTION__RESOURCE_SERVICE);
+
 		slidingWindowPatternEClass = createEClass(SLIDING_WINDOW_PATTERN);
 		createEAttribute(slidingWindowPatternEClass, SLIDING_WINDOW_PATTERN__WINDOW_SIZE);
 		createEAttribute(slidingWindowPatternEClass, SLIDING_WINDOW_PATTERN__NB_EVENTS);
@@ -1373,6 +1402,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		releaseStepEClass.getESuperTypes().add(this.getStep());
 		requestedServiceEClass.getESuperTypes().add(this.getStep());
+		resourceServiceExcecutionEClass.getESuperTypes().add(this.getStep());
 		slidingWindowPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		sporadicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		stepEClass.getESuperTypes().add(this.getBehaviorScenario());
@@ -1468,6 +1498,9 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getReleaseStep_ResUnits(), ecorePackage.getEInt(), "resUnits", null, 0, 1, ReleaseStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requestedServiceEClass, RequestedService.class, "RequestedService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(resourceServiceExcecutionEClass, ResourceServiceExcecution.class, "ResourceServiceExcecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceServiceExcecution_ResourceService(), theGrmPackage.getResourceService(), null, "resourceService", null, 0, 1, ResourceServiceExcecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(slidingWindowPatternEClass, SlidingWindowPattern.class, "SlidingWindowPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSlidingWindowPattern_WindowSize(), this.getNFP_Duration(), "windowSize", null, 1, 1, SlidingWindowPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -7,7 +7,8 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.marte.grm.tests.GrmAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     providerRootExtendsClass="" editPluginID="org.polarsys.time4sys.marte.grm.edit"
-    classNamePattern="" operationReflection="true" importOrganizing="true">
+    classNamePattern=""
+    operationReflection="true" importOrganizing="true">
   <foreignModel>grm.ecore</foreignModel>
   <genPackages prefix="Grm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="grm.ecore#/">

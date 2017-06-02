@@ -94,6 +94,65 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case NfpPackage.PROBABILISTIC_DURATION: {
+				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
+				T result = caseProbabilisticDuration(probabilisticDuration);
+				if (result == null) result = caseTimeInterval(probabilisticDuration);
+				if (result == null) result = caseDuration(probabilisticDuration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.DISCRETE_DISTRIBUTION: {
+				DiscreteDistribution discreteDistribution = (DiscreteDistribution)theEObject;
+				T result = caseDiscreteDistribution(discreteDistribution);
+				if (result == null) result = caseProbabilisticDuration(discreteDistribution);
+				if (result == null) result = caseTimeInterval(discreteDistribution);
+				if (result == null) result = caseDuration(discreteDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.BUCKET: {
+				Bucket bucket = (Bucket)theEObject;
+				T result = caseBucket(bucket);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.NORMAL_DISTRIBUTION: {
+				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
+				T result = caseNormalDistribution(normalDistribution);
+				if (result == null) result = caseProbabilisticDuration(normalDistribution);
+				if (result == null) result = caseTimeInterval(normalDistribution);
+				if (result == null) result = caseDuration(normalDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.GENERALIZED_EXTREME_VALUE_DISTRIBUTION: {
+				GeneralizedExtremeValueDistribution generalizedExtremeValueDistribution = (GeneralizedExtremeValueDistribution)theEObject;
+				T result = caseGeneralizedExtremeValueDistribution(generalizedExtremeValueDistribution);
+				if (result == null) result = caseProbabilisticDuration(generalizedExtremeValueDistribution);
+				if (result == null) result = caseTimeInterval(generalizedExtremeValueDistribution);
+				if (result == null) result = caseDuration(generalizedExtremeValueDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.UNIFORM_DISTRIBUTION: {
+				UniformDistribution uniformDistribution = (UniformDistribution)theEObject;
+				T result = caseUniformDistribution(uniformDistribution);
+				if (result == null) result = caseProbabilisticDuration(uniformDistribution);
+				if (result == null) result = caseTimeInterval(uniformDistribution);
+				if (result == null) result = caseDuration(uniformDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.COMPOSITE_DISTRIBUTION: {
+				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
+				T result = caseCompositeDistribution(compositeDistribution);
+				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
+				if (result == null) result = caseTimeInterval(compositeDistribution);
+				if (result == null) result = caseDuration(compositeDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -140,6 +199,111 @@ public class NfpSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataSize(DataSize object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Probabilistic Duration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Probabilistic Duration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProbabilisticDuration(ProbabilisticDuration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteDistribution(DiscreteDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bucket</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bucket</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBucket(Bucket object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Normal Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNormalDistribution(NormalDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Generalized Extreme Value Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Generalized Extreme Value Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeneralizedExtremeValueDistribution(GeneralizedExtremeValueDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Uniform Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Uniform Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUniformDistribution(UniformDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Distribution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Distribution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeDistribution(CompositeDistribution object) {
 		return null;
 	}
 

@@ -73,6 +73,13 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			case NfpPackage.DURATION: return createDuration();
 			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
 			case NfpPackage.DATA_SIZE: return createDataSize();
+			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
+			case NfpPackage.DISCRETE_DISTRIBUTION: return createDiscreteDistribution();
+			case NfpPackage.BUCKET: return createBucket();
+			case NfpPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
+			case NfpPackage.GENERALIZED_EXTREME_VALUE_DISTRIBUTION: return createGeneralizedExtremeValueDistribution();
+			case NfpPackage.UNIFORM_DISTRIBUTION: return createUniformDistribution();
+			case NfpPackage.COMPOSITE_DISTRIBUTION: return createCompositeDistribution();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,6 +96,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return createTimeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return createDataSizeUnitKindFromString(eDataType, initialValue);
+			case NfpPackage.NFP_DURATION:
+				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +114,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return convertTimeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return convertDataSizeUnitKindToString(eDataType, instanceValue);
+			case NfpPackage.NFP_DURATION:
+				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -137,6 +148,76 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	public DataSize createDataSize() {
 		DataSizeImpl dataSize = new DataSizeImpl();
 		return dataSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProbabilisticDuration createProbabilisticDuration() {
+		ProbabilisticDurationImpl probabilisticDuration = new ProbabilisticDurationImpl();
+		return probabilisticDuration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteDistribution createDiscreteDistribution() {
+		DiscreteDistributionImpl discreteDistribution = new DiscreteDistributionImpl();
+		return discreteDistribution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bucket createBucket() {
+		BucketImpl bucket = new BucketImpl();
+		return bucket;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NormalDistribution createNormalDistribution() {
+		NormalDistributionImpl normalDistribution = new NormalDistributionImpl();
+		return normalDistribution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneralizedExtremeValueDistribution createGeneralizedExtremeValueDistribution() {
+		GeneralizedExtremeValueDistributionImpl generalizedExtremeValueDistribution = new GeneralizedExtremeValueDistributionImpl();
+		return generalizedExtremeValueDistribution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UniformDistribution createUniformDistribution() {
+		UniformDistributionImpl uniformDistribution = new UniformDistributionImpl();
+		return uniformDistribution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompositeDistribution createCompositeDistribution() {
+		CompositeDistributionImpl compositeDistribution = new CompositeDistributionImpl();
+		return compositeDistribution;
 	}
 
 	/**
@@ -175,6 +256,24 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 */
 	public String convertDataSizeUnitKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
+		return (Duration)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

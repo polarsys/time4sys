@@ -83,7 +83,7 @@ public class TimerResourceItemProvider extends TimingResourceItemProvider {
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}

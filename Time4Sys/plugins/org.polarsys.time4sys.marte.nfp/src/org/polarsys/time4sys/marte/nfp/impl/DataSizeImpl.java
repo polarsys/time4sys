@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
-import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +32,7 @@ import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
  *   <li>{@link org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl#getUnit <em>Unit</em>}</li>
  * </ul>
  *
- * @generated
+ * @generated NOT
  */
 public class DataSizeImpl extends AbstractRealWithUnitValueImpl<DataSizeUnitKind, DataSize> implements DataSize {
 	/**

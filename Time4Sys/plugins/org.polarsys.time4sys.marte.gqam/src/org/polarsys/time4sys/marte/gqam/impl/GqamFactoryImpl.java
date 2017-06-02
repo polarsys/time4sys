@@ -87,6 +87,7 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 			case GqamPackage.REFERENCE: return createReference();
 			case GqamPackage.RELEASE_STEP: return createReleaseStep();
 			case GqamPackage.REQUESTED_SERVICE: return createRequestedService();
+			case GqamPackage.RESOURCE_SERVICE_EXCECUTION: return createResourceServiceExcecution();
 			case GqamPackage.SLIDING_WINDOW_PATTERN: return createSlidingWindowPattern();
 			case GqamPackage.SPORADIC_PATTERN: return createSporadicPattern();
 			case GqamPackage.STEP: return createStep();
@@ -289,6 +290,16 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	public RequestedService createRequestedService() {
 		RequestedServiceImpl requestedService = new RequestedServiceImpl();
 		return requestedService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourceServiceExcecution createResourceServiceExcecution() {
+		ResourceServiceExcecutionImpl resourceServiceExcecution = new ResourceServiceExcecutionImpl();
+		return resourceServiceExcecution;
 	}
 
 	/**

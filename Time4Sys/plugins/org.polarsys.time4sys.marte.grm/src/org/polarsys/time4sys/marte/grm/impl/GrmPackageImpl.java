@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.grm.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
@@ -67,6 +68,7 @@ import org.polarsys.time4sys.marte.grm.TransmModeKind;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
 import org.polarsys.time4sys.marte.grm.util.GrmValidator;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -353,6 +355,13 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType nfP_DurationEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum schedPolicyKindEEnum = null;
 
 	/**
@@ -555,7 +564,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	public EReference getResource_PServices() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(4);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -564,7 +573,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	public EReference getResource_OwnedPort() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(5);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -573,7 +582,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	public EReference getResource_OwnedConnector() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -582,7 +591,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	public EReference getResource_RServices() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(7);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -591,7 +600,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	public EReference getResource_UsedBy() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(8);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -745,6 +754,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EClass getResourceService() {
 		return resourceServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getResourceService_Context() {
+		return (EReference)resourceServiceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1391,6 +1409,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getNFP_Duration() {
+		return nfP_DurationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSchedPolicyKind() {
 		return schedPolicyKindEEnum;
 	}
@@ -1481,11 +1508,11 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEAttribute(resourceEClass, RESOURCE__RES_MULT);
 		createEAttribute(resourceEClass, RESOURCE__IS_PROTECTED);
 		createEAttribute(resourceEClass, RESOURCE__IS_ACTIVE);
-		createEReference(resourceEClass, RESOURCE__PSERVICES);
 		createEReference(resourceEClass, RESOURCE__OWNED_PORT);
 		createEReference(resourceEClass, RESOURCE__OWNED_CONNECTOR);
 		createEReference(resourceEClass, RESOURCE__RSERVICES);
 		createEReference(resourceEClass, RESOURCE__USED_BY);
+		createEReference(resourceEClass, RESOURCE__PSERVICES);
 
 		resourceBrokerEClass = createEClass(RESOURCE_BROKER);
 		createEReference(resourceBrokerEClass, RESOURCE_BROKER__BROKED_RESOURCE);
@@ -1518,6 +1545,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEReference(resourcePortEClass, RESOURCE_PORT__RINTERFACE);
 
 		resourceServiceEClass = createEClass(RESOURCE_SERVICE);
+		createEReference(resourceServiceEClass, RESOURCE_SERVICE__CONTEXT);
 
 		resourceUsageEClass = createEClass(RESOURCE_USAGE);
 		createEReference(resourceUsageEClass, RESOURCE_USAGE__WORKLOAD);
@@ -1579,6 +1607,9 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		protectProtocolKindEEnum = createEEnum(PROTECT_PROTOCOL_KIND);
 		schedPolicyKindEEnum = createEEnum(SCHED_POLICY_KIND);
 		transmModeKindEEnum = createEEnum(TRANSM_MODE_KIND);
+
+		// Create data types
+		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 	}
 
 	/**
@@ -1695,11 +1726,11 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEAttribute(getResource_ResMult(), ecorePackage.getEInt(), "resMult", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_IsProtected(), ecorePackage.getEBoolean(), "isProtected", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResource_IsActive(), ecorePackage.getEBoolean(), "isActive", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResource_PServices(), this.getResourceService(), null, "pServices", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_OwnedPort(), this.getResourcePort(), null, "ownedPort", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_OwnedConnector(), this.getResourceConnector(), null, "ownedConnector", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_RServices(), this.getResourceService(), null, "rServices", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_UsedBy(), this.getResourceUsage(), this.getResourceUsage_UsedResource(), "usedBy", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_PServices(), this.getResourceService(), this.getResourceService_Context(), "pServices", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceBrokerEClass, ResourceBroker.class, "ResourceBroker", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceBroker_BrokedResource(), this.getResource(), null, "brokedResource", null, 1, -1, ResourceBroker.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1732,6 +1763,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEReference(getResourcePort_RInterface(), this.getResourceInterface(), null, "rInterface", null, 0, -1, ResourcePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceServiceEClass, ResourceService.class, "ResourceService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResourceService_Context(), this.getResource(), this.getResource_PServices(), "context", null, 0, 1, ResourceService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceUsageEClass, ResourceUsage.class, "ResourceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceUsage_Workload(), this.getUsageDemand(), this.getUsageDemand_Usage(), "workload", null, 0, -1, ResourceUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1777,7 +1809,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEClass(timingResourceEClass, TimingResource.class, "TimingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(timerResourceEClass, TimerResource.class, "TimerResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimerResource_Duration(), ecorePackage.getEFloat(), "duration", null, 0, 1, TimerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimerResource_Duration(), this.getNFP_Duration(), "duration", null, 0, 1, TimerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimerResource_IsPeriodic(), ecorePackage.getEBoolean(), "isPeriodic", null, 0, 1, TimerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimerResource_Start(), this.getResourceService(), null, "start", null, 1, 1, TimerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTimerResource_Set(), this.getResourceService(), null, "set", null, 1, 1, TimerResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1822,8 +1854,32 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		addEEnumLiteral(transmModeKindEEnum, TransmModeKind.HALF_DUPLEX);
 		addEEnumLiteral(transmModeKindEEnum, TransmModeKind.FULL_DUPLEX);
 
+		// Initialize data types
+		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		addAnnotation
+		  (getResource_OwnedResource(), 
+		   source, 
+		   new String[] {
+			 "wildcards", "",
+			 "name", ""
+		   });
 	}
 
 } //GrmPackageImpl

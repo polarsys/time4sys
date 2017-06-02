@@ -238,6 +238,15 @@ public class GqamSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GqamPackage.RESOURCE_SERVICE_EXCECUTION: {
+				ResourceServiceExcecution resourceServiceExcecution = (ResourceServiceExcecution)theEObject;
+				T result = caseResourceServiceExcecution(resourceServiceExcecution);
+				if (result == null) result = caseStep(resourceServiceExcecution);
+				if (result == null) result = caseBehaviorScenario(resourceServiceExcecution);
+				if (result == null) result = caseNamedElement(resourceServiceExcecution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GqamPackage.SLIDING_WINDOW_PATTERN: {
 				SlidingWindowPattern slidingWindowPattern = (SlidingWindowPattern)theEObject;
 				T result = caseSlidingWindowPattern(slidingWindowPattern);
@@ -545,6 +554,21 @@ public class GqamSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRequestedService(RequestedService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Resource Service Excecution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Resource Service Excecution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResourceServiceExcecution(ResourceServiceExcecution object) {
 		return null;
 	}
 

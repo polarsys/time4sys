@@ -90,6 +90,34 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 				return createDataSizeAdapter();
 			}
 			@Override
+			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
+				return createProbabilisticDurationAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteDistribution(DiscreteDistribution object) {
+				return createDiscreteDistributionAdapter();
+			}
+			@Override
+			public Adapter caseBucket(Bucket object) {
+				return createBucketAdapter();
+			}
+			@Override
+			public Adapter caseNormalDistribution(NormalDistribution object) {
+				return createNormalDistributionAdapter();
+			}
+			@Override
+			public Adapter caseGeneralizedExtremeValueDistribution(GeneralizedExtremeValueDistribution object) {
+				return createGeneralizedExtremeValueDistributionAdapter();
+			}
+			@Override
+			public Adapter caseUniformDistribution(UniformDistribution object) {
+				return createUniformDistributionAdapter();
+			}
+			@Override
+			public Adapter caseCompositeDistribution(CompositeDistribution object) {
+				return createCompositeDistributionAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -148,6 +176,104 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataSizeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration <em>Probabilistic Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.ProbabilisticDuration
+	 * @generated
+	 */
+	public Adapter createProbabilisticDurationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution <em>Discrete Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistribution
+	 * @generated
+	 */
+	public Adapter createDiscreteDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.Bucket <em>Bucket</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.Bucket
+	 * @generated
+	 */
+	public Adapter createBucketAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.NormalDistribution <em>Normal Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.NormalDistribution
+	 * @generated
+	 */
+	public Adapter createNormalDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution <em>Generalized Extreme Value Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution
+	 * @generated
+	 */
+	public Adapter createGeneralizedExtremeValueDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.UniformDistribution <em>Uniform Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.UniformDistribution
+	 * @generated
+	 */
+	public Adapter createUniformDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.CompositeDistribution <em>Composite Distribution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.CompositeDistribution
+	 * @generated
+	 */
+	public Adapter createCompositeDistributionAdapter() {
 		return null;
 	}
 

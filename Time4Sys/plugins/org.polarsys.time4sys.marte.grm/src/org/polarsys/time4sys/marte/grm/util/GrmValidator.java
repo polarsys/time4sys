@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -185,6 +186,8 @@ public class GrmValidator extends EObjectValidator {
 				return validateSchedPolicyKind((SchedPolicyKind)value, diagnostics, context);
 			case GrmPackage.TRANSM_MODE_KIND:
 				return validateTransmModeKind((TransmModeKind)value, diagnostics, context);
+			case GrmPackage.NFP_DURATION:
+				return validateNFP_Duration((Duration)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -576,6 +579,15 @@ public class GrmValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTransmModeKind(TransmModeKind transmModeKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_Duration(Duration nfP_Duration, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

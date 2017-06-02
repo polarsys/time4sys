@@ -164,6 +164,10 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createRequestedServiceAdapter();
 			}
 			@Override
+			public Adapter caseResourceServiceExcecution(ResourceServiceExcecution object) {
+				return createResourceServiceExcecutionAdapter();
+			}
+			@Override
 			public Adapter caseSlidingWindowPattern(SlidingWindowPattern object) {
 				return createSlidingWindowPatternAdapter();
 			}
@@ -472,6 +476,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRequestedServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution <em>Resource Service Excecution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution
+	 * @generated
+	 */
+	public Adapter createResourceServiceExcecutionAdapter() {
 		return null;
 	}
 

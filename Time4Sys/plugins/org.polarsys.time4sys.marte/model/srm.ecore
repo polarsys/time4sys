@@ -271,4 +271,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="durationElements" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
 </ecore:EPackage>

@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.polarsys.time4sys.marte.nfp.NfpPackage#getDuration()
  * @model
- * @generated
+ * @generated NOT
  */
 public interface Duration extends EObject, ValueWithUnit<TimeUnitKind> {
 	/**
