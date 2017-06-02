@@ -54,12 +54,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource" abstract="true" eSuperTypes="#//ResourcePackageableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedResource" upperBound="-1"
-        eType="#//Resource" containment="true" resolveProxies="false"/>
+        eType="#//Resource" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="wildcards" value=""/>
+        <details key="name" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resMult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isProtected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pServices" upperBound="-1"
-        eType="#//ResourceService" containment="true" resolveProxies="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPort" upperBound="-1"
         eType="#//ResourcePort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConnector" upperBound="-1"
@@ -68,6 +71,8 @@
         eType="#//ResourceService"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" upperBound="-1"
         eType="#//ResourceUsage" eOpposite="#//ResourceUsage/usedResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pServices" upperBound="-1"
+        eType="#//ResourceService" containment="true" eOpposite="#//ResourceService/context"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceBroker" eSuperTypes="#//Resource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="brokedResource" lowerBound="1"
@@ -109,7 +114,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rInterface" upperBound="-1"
         eType="#//ResourceInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Resource"
+        eOpposite="#//Resource/pServices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="excecutions" upperBound="-1"
+        eType="ecore:EClass gqam.ecore#//ResourceServiceExcecution" eOpposite="gqam.ecore#//ResourceServiceExcecution/resourceService"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceUsage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="workload" upperBound="-1"
         eType="#//UsageDemand" eOpposite="#//UsageDemand/usage"/>
@@ -171,7 +181,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SynchResource" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimingResource" abstract="true" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimerResource" eSuperTypes="#//TimingResource">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPeriodic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//ResourceService"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="set" lowerBound="1" eType="#//ResourceService"/>
@@ -197,4 +207,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="powerPeak" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="energy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
 </ecore:EPackage>
