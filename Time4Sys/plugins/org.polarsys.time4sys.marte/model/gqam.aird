@@ -8280,6 +8280,30 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_eI6HgRn4EeeD5JB6gash5w" fontName="Verdana" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eI6Hghn4EeeD5JB6gash5w" x="1405" y="-11" width="234" height="133"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_6qjg0EafEee_u7JIRAN0eg" type="Note" fontName="Verdana" description="@Deprecated" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_6qku8EafEee_u7JIRAN0eg" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_6qlWAEafEee_u7JIRAN0eg" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:TextStyle" xmi:id="_6qjg0UafEee_u7JIRAN0eg"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_6qjg0kafEee_u7JIRAN0eg"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6qjg00afEee_u7JIRAN0eg" x="1" y="146"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_--LSIEafEee_u7JIRAN0eg" type="Note" fontName="Verdana" description="@Deprecated" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_--LSJEafEee_u7JIRAN0eg" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_--LSJUafEee_u7JIRAN0eg" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:TextStyle" xmi:id="_--LSIUafEee_u7JIRAN0eg"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_--LSIkafEee_u7JIRAN0eg"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--LSI0afEee_u7JIRAN0eg" x="1917" y="64"/>
+        </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_aLRXwuxaEeajgM_2IzQs_g"/>
         <edges xmi:type="notation:Edge" xmi:id="_bWMSwOxaEeajgM_2IzQs_g" type="4001" element="_bViygOxaEeajgM_2IzQs_g" source="_bV-QUOxaEeajgM_2IzQs_g" target="_bWDI0-xaEeajgM_2IzQs_g">
           <children xmi:type="notation:Node" xmi:id="_bWMSxOxaEeajgM_2IzQs_g" type="6001">
@@ -8696,6 +8720,22 @@
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jtH-MxBZEeebsrtbZJi39g" points="[1090, 365, 1090, 365]$[1465, 365, 1465, 365]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jtLokBBZEeebsrtbZJi39g" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jtLokRBZEeebsrtbZJi39g" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_8aOusEafEee_u7JIRAN0eg" type="NoteAttachment" source="_bV_ec-xaEeajgM_2IzQs_g" target="_6qjg0EafEee_u7JIRAN0eg" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_8aOusUafEee_u7JIRAN0eg"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_8aOuskafEee_u7JIRAN0eg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8aOus0afEee_u7JIRAN0eg" points="[2, -14, 0, -146]$[2, 132, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8aUOQEafEee_u7JIRAN0eg" id="(0.65,0.13513513513513514)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8aU1UEafEee_u7JIRAN0eg" id="(0.77,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_AP9qIEagEee_u7JIRAN0eg" type="NoteAttachment" source="_bWAsm-xaEeajgM_2IzQs_g" target="_--LSIEafEee_u7JIRAN0eg" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_AP9qIUagEee_u7JIRAN0eg"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_AP9qIkagEee_u7JIRAN0eg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AP9qI0agEee_u7JIRAN0eg" points="[2, -8, 1, 63]$[2, -72, 1, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AQDwwEagEee_u7JIRAN0eg" id="(0.40569395017793597,0.11)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AQDwwUagEee_u7JIRAN0eg" id="(0.77,1.0)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>

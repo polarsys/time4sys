@@ -37,7 +37,7 @@
       <eParameters name="v" lowerBound="1" eType="#//Duration"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//TimeUnitKind"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//TimeUnitKind"
         defaultValueLiteral="millisecond"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="best" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="worst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -107,5 +107,31 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataSizeUnitKind"
         defaultValueLiteral="BYTE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//TimeInterval #//Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DiscreteDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buckets" lowerBound="1"
+        upperBound="-1" eType="#//Bucket" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bucket">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mu" lowerBound="1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralizedExtremeValueDistribution"
+      eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mu" lowerBound="1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xi" lowerBound="1" eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" lowerBound="1" upperBound="-1"
+        eType="#//ProbabilisticDuration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
