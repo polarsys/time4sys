@@ -15,6 +15,7 @@ import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -35,10 +36,22 @@ public class StepBuilder {
 	protected static HrmFactory hrmFactory = HrmFactory.eINSTANCE;
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 	
+	public static StepBuilder aStep(final DesignBuilder designBuilder) {
+		return new StepBuilder(designBuilder, null);
+	}
+	
+	public static StepBuilder aResourceServiceExcecution(final DesignBuilder designBuilder) {
+		return new StepBuilder(designBuilder, null).isResourceServiceExecution();
+	}
+
 	private SchedulableResourceBuilder<?,?> task;
 	private DesignBuilder design;
 	private Step step;
 	private String deadline;
+	private boolean isResourceServiceExecution = false;
+	private AlarmBuilder reset;
+	private AlarmBuilder activatedBy;
+	private int reentrantBuild = 0;
 
 	public StepBuilder(final DesignBuilder designBuilder, final SchedulableResourceBuilder<?,?> taskBuilder) {
 		assert(designBuilder != null);
@@ -56,27 +69,45 @@ public class StepBuilder {
 	}
 
 	public Step build() {
-		if (step != null) {
-			if (!design.getMainScenario().getSteps().contains(step)) {
-				design.getMainScenario().getSteps().add(step);
-			}
-			return step;
+		if (step == null) {
+			step = createRawStep();
 		}
-		step = createRawStep();
-		design.getMainScenario().getSteps().add(step);
 		if (!design.getMainScenario().getSteps().contains(step)) {
 			design.getMainScenario().getSteps().add(step);
 		}
+		if (reentrantBuild  > 2) { // Cutting potential recursive build between task and step
+			return step;
+		}
+		reentrantBuild++;
 		if (task != null) {
 			step.setConcurRes(task.build(design));
 		}
+		if (isResourceServiceExecution) {
+			final ResourceServiceExcecution resExec = (ResourceServiceExcecution)step;
+			if (reset != null) {
+				resExec.setResourceService(reset.buildResetService(design));
+			}
+			if (activatedBy != null) {
+				resExec.setResourceService(activatedBy.buildSignalService(design));
+			}
+		}
+		reentrantBuild--;
 		return step;
 	}
 
 	public Step createRawStep() {
-		return gqamFactory.createExecutionStep();
+		if (isResourceServiceExecution) {
+			return gqamFactory.createResourceServiceExcecution();
+		} else {
+			return gqamFactory.createExecutionStep();
+		}
 	}
 
+	private StepBuilder isResourceServiceExecution() {
+		isResourceServiceExecution = true;
+		return this;
+	}
+	
 	public StepBuilder ofWCET(final String wcet) {
 		build().setWorstCET(nfpFactory.createDurationFromString(wcet));
 		return this;
@@ -273,6 +304,18 @@ public class StepBuilder {
 
 	public StepBuilder ofJitter(String value) {
 		getWorkloadEvent().ofJitter(value);
+		return this;
+	}
+
+	public StepBuilder thatResets(final AlarmBuilder watchdog) {
+		isResourceServiceExecution = true;
+		reset = watchdog;
+		return this;
+	}
+
+	public StepBuilder activatedBy(final AlarmBuilder alarm) {
+		isResourceServiceExecution = true;
+		activatedBy = alarm;
 		return this;
 	}
 

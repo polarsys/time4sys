@@ -71,7 +71,18 @@ public class ProcessorBuilder {
 		}
 		return this;
 	}
+	
+	public ProcessorBuilder runs(final TaskBuilder... tasks) {
+		return thatRuns(tasks);
+	}
 
+	public ProcessorBuilder thatHandles(final AlarmBuilder... alarms) {
+		for(AlarmBuilder alrm: alarms) {
+			proc.getOwnedResource().add(alrm.build(designBuilder));
+		}
+		return this;
+	}
+	
 	public ProcessorBuilder under(final SchedPolicyKind polKind) {
 		final SoftwareScheduler sched = srmFactory.createSoftwareScheduler();
 		proc.getOwnedResource().add(sched);

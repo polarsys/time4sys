@@ -36,6 +36,7 @@ import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
@@ -72,6 +73,10 @@ public class DesignBuilder {
 		HardwareProcessor proc = hrmFactory.createHardwareProcessor();
 		design.getResourcePackage().getOwnedElement().add(proc);
 		return new ProcessorBuilder(this, proc);
+	}
+	
+	public AlarmBuilder hasAWatchdog() {
+		return new AlarmBuilder(this, null).usedAsAWatchdog();
 	}
 	
 
@@ -169,6 +174,36 @@ public class DesignBuilder {
 		return null;
 	}
 	
+
+	public AlarmBuilder watchdog(final String name) {
+		return alarm(name);
+	}
+	
+	public AlarmBuilder alarm(final String name) {
+		final Alarm alarm = searchAlarm(design.getResourcePackage().getOwnedElement(), name);
+		if (alarm == null) {
+			return null;
+		}
+		return new AlarmBuilder(this, alarm);
+	}
+	
+	private static  Alarm searchAlarm(final List<? extends ResourcePackageableElement> elts, final String name) {
+		for(ResourcePackageableElement elt: elts) {
+			if (elt instanceof Alarm) {
+				if (name.equals(((Alarm)elt).getName())) {
+					return (Alarm)elt;
+				}
+			}
+			if (elt instanceof Resource) {
+				final Alarm sub = searchAlarm(((Resource)elt).getOwnedResource(), name);
+				if (sub != null) {
+					return sub;
+				}
+			}
+		}
+		return null;
+	}
+	
 	private static  CommunicationChannel searchCommunicationChannel(final List<? extends ResourcePackageableElement> elts, final String name) {
 		for(ResourcePackageableElement elt: elts) {
 			if (elt instanceof CommunicationChannel) {
@@ -247,5 +282,6 @@ public class DesignBuilder {
 		}
 		return result;
 	}
+
 
 }

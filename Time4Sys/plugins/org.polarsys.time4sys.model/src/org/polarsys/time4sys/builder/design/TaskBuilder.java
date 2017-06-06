@@ -179,6 +179,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		}
 		return this;
 	}
+	
+	public TaskBuilder running(StepBuilder aStep) {
+		return has(aStep);
+	}
 
 	public TaskBuilder ofET(final String value) {
 		return ofBCET(value).ofWCET(value);
@@ -186,6 +190,30 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public TaskBuilder ofJitter(final String value) {
 		jitter = value;
+		return this;
+	}
+
+	public TaskBuilder runsInSequence(StepBuilder... steps) {
+		has(steps);
+		StepBuilder prev = null;
+		for(StepBuilder step: steps) {
+			if (prev != null) {
+				prev.activates(step);
+			}
+			prev = step;
+		}
+		return this;
+	}
+	
+	public TaskBuilder thatRunsInSequence(StepBuilder... steps) {
+		has(steps);
+		StepBuilder prev = null;
+		for(StepBuilder step: steps) {
+			if (prev != null) {
+				prev.activates(step);
+			}
+			prev = step;
+		}
 		return this;
 	}
 }
