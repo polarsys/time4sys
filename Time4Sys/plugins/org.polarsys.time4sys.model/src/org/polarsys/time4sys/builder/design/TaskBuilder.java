@@ -13,6 +13,9 @@
  */
 package org.polarsys.time4sys.builder.design;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -43,6 +46,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private String period;
 	private SoftwareSchedulableResource task;
 	private StepBuilder firstStep;
+	private List<StepBuilder> ownedSteps = new LinkedList<>();
 	private DesignBuilder design;
 	private String wcet;
 	private String bcet;
@@ -76,6 +80,9 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		}		
 		if (wcet != null) {
 			firstStep().ofWCET(wcet);
+		}
+		for(StepBuilder st: ownedSteps) {
+			st.build();
 		}
 		return task;
 	}
@@ -176,6 +183,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	public TaskBuilder has(StepBuilder... steps) {
 		for(StepBuilder step: steps) {
 			step.setTask(this);
+			ownedSteps.add(step);
 		}
 		return this;
 	}
@@ -206,14 +214,6 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 	
 	public TaskBuilder thatRunsInSequence(StepBuilder... steps) {
-		has(steps);
-		StepBuilder prev = null;
-		for(StepBuilder step: steps) {
-			if (prev != null) {
-				prev.activates(step);
-			}
-			prev = step;
-		}
-		return this;
+		return runsInSequence(steps);
 	}
 }

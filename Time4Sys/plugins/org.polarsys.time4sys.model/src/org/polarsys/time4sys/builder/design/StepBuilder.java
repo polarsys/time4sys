@@ -52,6 +52,7 @@ public class StepBuilder {
 	private AlarmBuilder reset;
 	private AlarmBuilder activatedBy;
 	private int reentrantBuild = 0;
+	private String name;
 
 	public StepBuilder(final DesignBuilder designBuilder, final SchedulableResourceBuilder<?,?> taskBuilder) {
 		assert(designBuilder != null);
@@ -72,6 +73,9 @@ public class StepBuilder {
 		if (step == null) {
 			step = createRawStep();
 		}
+		if (name != null) {
+			step.setName(name);
+		}
 		if (!design.getMainScenario().getSteps().contains(step)) {
 			design.getMainScenario().getSteps().add(step);
 		}
@@ -82,7 +86,7 @@ public class StepBuilder {
 		if (task != null) {
 			step.setConcurRes(task.build(design));
 		}
-		if (isResourceServiceExecution) {
+		if (step instanceof ResourceServiceExcecution) {
 			final ResourceServiceExcecution resExec = (ResourceServiceExcecution)step;
 			if (reset != null) {
 				resExec.setResourceService(reset.buildResetService(design));
@@ -161,7 +165,7 @@ public class StepBuilder {
 	}
 
 	public StepBuilder called(final String value) {
-		build().setName(value);
+		name = value;
 		return this;
 	}
 	
@@ -177,6 +181,9 @@ public class StepBuilder {
 
 	public StepBuilder isPeriodic(final String period) {
 		WorkloadEvent cause;
+		if (step == null) {
+			build();
+		}
 		if (step.getCause().isEmpty()) {
 			cause = design.hasAPeriodicEvent(period).forStep(step).build();
 		} else {

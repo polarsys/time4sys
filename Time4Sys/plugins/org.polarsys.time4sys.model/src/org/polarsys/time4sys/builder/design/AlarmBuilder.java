@@ -94,21 +94,21 @@ public class AlarmBuilder {
 				timer.setDuration(duration);
 			}
 			NotificationResource notif = null;
-			for(Resource res: timer.getOwnedResource()) {
-				if (res instanceof NotificationResource) {
-					notif = (NotificationResource)res;
-				}
+			for(NotificationResource res: alarm.getNotificationResources()) {
+				notif = (NotificationResource)res;
+				break;
 			}
 			if (notif == null) {
 				notif = srmFactory.createNotificationResource();
 				notif.setName(name + " notification");
-				timer.getOwnedResource().add(notif);
+				alarm.getOwnedResource().add(notif);
+				alarm.getNotificationResources().add(notif);
 			}
 			assert(notif != null);
 			if (notif.getSignalServices().isEmpty()) {
 				signal = grmFactory.createResourceService();
 				signal.setName(name + " signal");
-				timer.getPServices().add(signal);
+				alarm.getPServices().add(signal);
 				notif.getSignalServices().add(signal);
 			}
 			if(timer.getReset() == null) {
@@ -120,6 +120,8 @@ public class AlarmBuilder {
 		}
 		assert(reset != null);
 		assert(signal != null);
+		assert(!alarm.getNotificationResources().isEmpty());
+		assert(!alarm.getNotificationResources().get(0).getSignalServices().isEmpty());
 		return alarm;
 	}
 
@@ -141,11 +143,13 @@ public class AlarmBuilder {
 
 	public ResourceService buildResetService(final DesignBuilder value) {
 		build(value);
+		assert(reset != null);
 		return reset;
 	}
 	
 	public ResourceService buildSignalService(final DesignBuilder value) {
 		build(value);
+		assert(signal != null);
 		return signal;
 	}
 }
