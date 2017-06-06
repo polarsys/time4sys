@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.polarsys.time4sys.marte.grm.*;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -487,19 +488,20 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
-		return (Duration)super.createFromString(eDataType, initialValue);
+		return NfpFactory.eINSTANCE.createDurationFromString(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		assert(instanceValue == null || instanceValue instanceof Duration);
+		return NfpFactory.eINSTANCE.convertDurationToString((Duration)instanceValue);
 	}
 
 	/**

@@ -261,19 +261,20 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
-		return (Duration)super.createFromString(eDataType, initialValue);
+		return createDurationFromString(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		assert(instanceValue == null || instanceValue instanceof Duration);
+		return convertDurationToString((Duration)instanceValue);
 	}
 
 	/**
