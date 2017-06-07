@@ -53,6 +53,7 @@ public class StepBuilder {
 	private AlarmBuilder activatedBy;
 	private int reentrantBuild = 0;
 	private String name;
+	private Boolean isAtomic = null;
 
 	public StepBuilder(final DesignBuilder designBuilder, final SchedulableResourceBuilder<?,?> taskBuilder) {
 		assert(designBuilder != null);
@@ -94,6 +95,9 @@ public class StepBuilder {
 			if (activatedBy != null) {
 				resExec.setResourceService(activatedBy.buildSignalService(design));
 			}
+		}
+		if (isAtomic != null) {
+			step.setIsAtomic(isAtomic);
 		}
 		reentrantBuild--;
 		return step;
@@ -323,6 +327,15 @@ public class StepBuilder {
 	public StepBuilder activatedBy(final AlarmBuilder alarm) {
 		isResourceServiceExecution = true;
 		activatedBy = alarm;
+		return this;
+	}
+
+	public StepBuilder isAtomic() {
+		return isAtomic(true);
+	}
+
+	public StepBuilder isAtomic(boolean value) {
+		isAtomic  = value;
 		return this;
 	}
 

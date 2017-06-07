@@ -47,6 +47,7 @@ public class CommunicationChannelBuilder implements SchedulableResourceBuilder<C
 	private String jitter;
 	private int nbEvents = 1;
 	private String windowSize;
+	private Boolean isAtomic = null;
 	
 	public CommunicationChannelBuilder() {
 		this(null, gqamFactory.createCommunicationChannel());
@@ -74,6 +75,9 @@ public class CommunicationChannelBuilder implements SchedulableResourceBuilder<C
 		}		
 		if (wcet != null) {
 			firstStep().ofWCET(wcet);
+		}
+		if (isAtomic != null) {
+			firstStep().isAtomic(isAtomic);
 		}
 		return task;
 	}
@@ -184,6 +188,11 @@ public class CommunicationChannelBuilder implements SchedulableResourceBuilder<C
 
 	public CommunicationChannelBuilder ofJitter(final String value) {
 		jitter = value;
+		return this;
+	}
+
+	public CommunicationChannelBuilder nonPreemptive() {
+		isAtomic  = true;
 		return this;
 	}
 }
