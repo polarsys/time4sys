@@ -283,5 +283,11 @@ public class DesignBuilder {
 		return result;
 	}
 
+	public void has(final EndToEndFlowConstraintBuilder... values) {
+		for(EndToEndFlowConstraintBuilder cst: values) {
+			cst.build(this);
+		}
+	}
+
 
 }

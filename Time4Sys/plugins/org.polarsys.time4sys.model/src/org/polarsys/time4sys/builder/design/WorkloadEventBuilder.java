@@ -40,6 +40,10 @@ public class WorkloadEventBuilder {
 
 	public WorkloadEventBuilder forStep(Step step) {
 		evt.setEffect(step);
+		final String stepName = step.getName();
+		if (stepName != null) {
+			evt.setName(stepName + " activator");
+		}
 		return this;
 	}
 	
