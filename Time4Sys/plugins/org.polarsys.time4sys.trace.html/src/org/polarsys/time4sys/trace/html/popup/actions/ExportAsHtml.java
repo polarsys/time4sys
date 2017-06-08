@@ -13,12 +13,12 @@ package org.polarsys.time4sys.trace.html.popup.actions;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.filesystem.IFileStore;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.List;
 
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -33,12 +33,15 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.Slice;
 
 public class ExportAsHtml implements IObjectActionDelegate {
+	
+	public static void export(final Slice slice, final File output) throws IOException {
+		new ExportAsHtml().run(slice, output);
+	}
 
 	protected Shell shell;
 	protected Slice slice = null;
@@ -113,6 +116,28 @@ public class ExportAsHtml implements IObjectActionDelegate {
 			slice = (Slice) obj;
 		}
 	}
+	
+	public void run(final Slice slc, final File output) throws IOException {
+		assert(output != null);
+		this.output = output; 
+		run(slc, new FileOutputStream(output));
+	}
+
+	public void run(final Slice slc, final FileOutputStream fileOutputStream) throws IOException {
+		assert(fileOutputStream != null);
+		os = fileOutputStream;
+		run(slc, new OutputStreamWriter(os));
+		w.close();
+	}
+
+	public void run(final Slice slc, final OutputStreamWriter outputStreamWriter) throws IOException {
+		assert(outputStreamWriter != null);
+		assert(slc != null);
+		slice = slc;
+		w = outputStreamWriter;
+		export();
+		w.flush();
+	}
 
 	protected void export() throws IOException {
 		w.write("<!DOCTYPE html>");
@@ -125,12 +150,12 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("</head>");
 		w.write("<body>");
 		w.write("<textarea id='cpal_tasks_tsv'>PID	start	end	name	state\n");
-		exportEventsOf(slice.getName(), slice.getEvents());
+		exportEventsOf(slice.getName(), slice.getEvents(), "activation");
 		for (Slice sub : slice.getSubSlices()) {
-			exportEventsOf(sub.getName(), sub.getAggregatedEvents());
+			exportEventsOf(sub.getName(), sub, "activation");
 		}
 		for (Slice sub : slice.getOwnedSubSlices()) {
-			exportEventsOf(sub.getName(), sub.getAggregatedEvents());
+			exportEventsOf(sub.getName(), sub, "activation");
 		}
 		w.write("\n</textarea>");
 		w.write("<section id='tasks'>");
@@ -144,7 +169,17 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("</html>");
 	}
 
-	protected void exportEventsOf(final String label, final List<Event> events) throws IOException {
+	private void exportEventsOf(final String label, final Slice sub, final String stateLabel) throws IOException {
+		exportEventsOf(label, sub.getEvents(), stateLabel);
+		for (Slice subsub: sub.getSubSlices()) {
+			exportEventsOf(label, subsub, subsub.getName());
+		}
+		for (Slice subsub : sub.getOwnedSubSlices()) {
+			exportEventsOf(label, subsub, subsub.getName());
+		}
+	}
+
+	protected void exportEventsOf(final String label, final List<Event> events, final String stateLabel) throws IOException {
 		final Duration picosecond = NfpFactory.eINSTANCE.createDurationFromString("1ps");
 		Duration start = null;
 		Duration end = null;
@@ -170,7 +205,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 					w.write(Long.toString(end.divide(picosecond)));
 					w.write("\t");
 					w.write(label);
-					w.write("\tactivation\n");
+					w.write("\t" + stateLabel + "\n");
 				default:
 					break;
 				}
