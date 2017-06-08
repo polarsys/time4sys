@@ -292,6 +292,15 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getSimulation__GetDesignModel() {
+		return simulationEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Time4sysFactory getTime4sysFactory() {
 		return (Time4sysFactory)getEFactoryInstance();
 	}
@@ -335,6 +344,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		createEAttribute(simulationEClass, SIMULATION__NAME);
 		createEReference(simulationEClass, SIMULATION__MAPPING);
 		createEReference(simulationEClass, SIMULATION__TRACE);
+		createEOperation(simulationEClass, SIMULATION___GET_DESIGN_MODEL);
 	}
 
 	/**
@@ -395,6 +405,8 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		initEAttribute(getSimulation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimulation_Mapping(), theMappingPackage.getMapping(), null, "mapping", null, 1, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSimulation_Trace(), theTracePackage.getTrace(), null, "trace", null, 1, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getSimulation__GetDesignModel(), theDesignPackage.getDesignModel(), "getDesignModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

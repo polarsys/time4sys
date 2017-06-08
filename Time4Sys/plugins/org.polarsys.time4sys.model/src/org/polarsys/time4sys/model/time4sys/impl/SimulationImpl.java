@@ -6,24 +6,24 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Loï¿½c Fejoz - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.model.time4sys.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
-
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
-
 import org.polarsys.time4sys.trace.Trace;
 
 /**
@@ -211,6 +211,20 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public DesignModel getDesignModel() {
+		for(EObject obj: mapping.getSources("model")) {
+			if (obj instanceof DesignModel) {
+				return (DesignModel)obj;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -300,6 +314,20 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 				return trace != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case Time4sysPackage.SIMULATION___GET_DESIGN_MODEL:
+				return getDesignModel();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

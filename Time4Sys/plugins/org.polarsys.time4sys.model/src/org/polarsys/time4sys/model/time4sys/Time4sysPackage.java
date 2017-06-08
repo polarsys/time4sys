@@ -280,13 +280,22 @@ public interface Time4sysPackage extends EPackage {
 	int SIMULATION_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>Get Design Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION___GET_DESIGN_MODEL = 0;
+
+	/**
 	 * The number of operations of the '<em>Simulation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_OPERATION_COUNT = 0;
+	int SIMULATION_OPERATION_COUNT = 1;
 
 
 	/**
@@ -484,6 +493,16 @@ public interface Time4sysPackage extends EPackage {
 	EReference getSimulation_Trace();
 
 	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.model.time4sys.Simulation#getDesignModel() <em>Get Design Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Design Model</em>' operation.
+	 * @see org.polarsys.time4sys.model.time4sys.Simulation#getDesignModel()
+	 * @generated
+	 */
+	EOperation getSimulation__GetDesignModel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -655,6 +674,14 @@ public interface Time4sysPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SIMULATION__TRACE = eINSTANCE.getSimulation_Trace();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Design Model</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SIMULATION___GET_DESIGN_MODEL = eINSTANCE.getSimulation__GetDesignModel();
 
 	}
 
