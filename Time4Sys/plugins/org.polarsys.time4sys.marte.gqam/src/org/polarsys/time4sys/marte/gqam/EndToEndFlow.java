@@ -190,4 +190,16 @@ public interface EndToEndFlow extends EObject {
 	 */
 	void setEndToEndDeadline(Duration value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return all steps and sub-BehaviorScenarios who are on the path from stimuli to response.
+	 * 
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	EList<BehaviorScenario> findStepsOnPath();
+
 } // EndToEndFlow

@@ -23,6 +23,12 @@ import org.polarsys.time4sys.marte.gqam.GqamFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>End To End Flow</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath() <em>Find Steps On Path</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class EndToEndFlowTest extends TestCase {
@@ -94,6 +100,19 @@ public class EndToEndFlowTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath() <em>Find Steps On Path</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath()
+	 * @generated
+	 */
+	public void testFindStepsOnPath() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //EndToEndFlowTest

@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.mapping.impl;
 
+import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
@@ -386,4 +387,26 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 		return super.eInvoke(operationID, arguments);
 	}
 
+	
+	@Override
+	public String toString() {
+		StringWriter w = new StringWriter();
+		w.write("(");
+		w.write("sources[");
+		for(MappableArtefact s: getSources()) {
+			w.write(s.getName());
+			w.write(": ");
+			w.write(s.getValue().toString());
+		}
+		w.write("]");
+		w.write(", targets[");
+		for(MappableArtefact s: getTargets()) {
+			w.write(s.getName());
+			w.write(": ");
+			w.write(s.getValue().toString());
+		}
+		w.write("]");
+		w.write(")");
+		return w.toString();
+	}
 } //LinkImpl

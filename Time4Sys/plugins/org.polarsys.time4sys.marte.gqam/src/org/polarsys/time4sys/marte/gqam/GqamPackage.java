@@ -1864,13 +1864,22 @@ public interface GqamPackage extends EPackage {
 	int END_TO_END_FLOW_FEATURE_COUNT = 6;
 
 	/**
+	 * The operation id for the '<em>Find Steps On Path</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_TO_END_FLOW___FIND_STEPS_ON_PATH = 0;
+
+	/**
 	 * The number of operations of the '<em>End To End Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_TO_END_FLOW_OPERATION_COUNT = 0;
+	int END_TO_END_FLOW_OPERATION_COUNT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4347,6 +4356,16 @@ public interface GqamPackage extends EPackage {
 	EAttribute getEndToEndFlow_EndToEndDeadline();
 
 	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath() <em>Find Steps On Path</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Steps On Path</em>' operation.
+	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath()
+	 * @generated
+	 */
+	EOperation getEndToEndFlow__FindStepsOnPath();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5196,6 +5215,14 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute END_TO_END_FLOW__END_TO_END_DEADLINE = eINSTANCE.getEndToEndFlow_EndToEndDeadline();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Steps On Path</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation END_TO_END_FLOW___FIND_STEPS_ON_PATH = eINSTANCE.getEndToEndFlow__FindStepsOnPath();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.

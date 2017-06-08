@@ -12,22 +12,27 @@
  */
 package org.polarsys.time4sys.marte.gqam.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
+import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
@@ -149,6 +154,8 @@ public class EndToEndFlowImpl extends MinimalEObjectImpl.Container implements En
 	 * @ordered
 	 */
 	protected Duration endToEndDeadline = END_TO_END_DEADLINE_EDEFAULT;
+
+	private BasicEList<BehaviorScenario> stepsOnPath = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -305,6 +312,67 @@ public class EndToEndFlowImpl extends MinimalEObjectImpl.Container implements En
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * The result is memoized.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<BehaviorScenario> findStepsOnPath() {
+		if (stepsOnPath != null) {
+			return stepsOnPath;
+		}
+		final Set<BehaviorScenario> forwardMarked = new HashSet<>(); 
+		forwardMarking(forwardMarked);
+		final Set<BehaviorScenario> backwardMarked = new HashSet<>(); 
+		backwardMarking(backwardMarked);
+		forwardMarked.retainAll(backwardMarked);
+		stepsOnPath = new BasicEList<BehaviorScenario>(forwardMarked);
+		return stepsOnPath;
+	}
+
+	private void forwardMarking(final Set<BehaviorScenario> accumulator) {
+		final Queue<BehaviorScenario> toExplore = new ConcurrentLinkedQueue<>();
+		for(WorkloadEvent evt: getEndToEndStimuli()) {
+			toExplore.add(evt.getEffect());			
+		}
+		while(!toExplore.isEmpty()) {
+			final BehaviorScenario current = toExplore.poll();
+			accumulator.add(current);
+			if (current instanceof Step) {
+				final Step curStep = (Step)current;
+				for(OutputPin opin: curStep.getOutputPin()) {
+					for(InputPin ipin: opin.getSuccessors()) {
+						if (ipin.eContainer() instanceof BehaviorScenario) {
+							toExplore.add((BehaviorScenario)ipin.eContainer());
+						}
+					}
+				}
+			}
+			toExplore.addAll(current.getSteps());
+		}
+	}
+	
+	private void backwardMarking(final Set<BehaviorScenario> accumulator) {
+		final Queue<BehaviorScenario> toExplore = new ConcurrentLinkedQueue<>();
+		toExplore.add(basicGetEndToEndScenario());
+		while(!toExplore.isEmpty()) {
+			final BehaviorScenario current = toExplore.poll();
+			accumulator.add(current);
+			if (current instanceof Step) {
+				final Step curStep = (Step)current;
+				for(InputPin ipin: curStep.getInputPin()) {
+					for(OutputPin opin: ipin.getPredecessors()) {
+						if (opin.eContainer() instanceof BehaviorScenario) {
+							toExplore.add((BehaviorScenario)opin.eContainer());
+						}
+					}
+				}
+			}
+			toExplore.addAll(current.getSteps());
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -412,6 +480,20 @@ public class EndToEndFlowImpl extends MinimalEObjectImpl.Container implements En
 				return END_TO_END_DEADLINE_EDEFAULT == null ? endToEndDeadline != null : !END_TO_END_DEADLINE_EDEFAULT.equals(endToEndDeadline);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GqamPackage.END_TO_END_FLOW___FIND_STEPS_ON_PATH:
+				return findStepsOnPath();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

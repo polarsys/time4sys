@@ -1169,6 +1169,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEndToEndFlow__FindStepsOnPath() {
+		return endToEndFlowEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReference() {
 		return referenceEClass;
 	}
@@ -1280,6 +1289,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__SCHEDULABILITY_SLACK);
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_TIME);
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_DEADLINE);
+		createEOperation(endToEndFlowEClass, END_TO_END_FLOW___FIND_STEPS_ON_PATH);
 
 		executionStepEClass = createEClass(EXECUTION_STEP);
 
@@ -1466,6 +1476,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getEndToEndFlow_SchedulabilitySlack(), ecorePackage.getEDouble(), "schedulabilitySlack", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndToEndFlow_EndToEndTime(), this.getNFP_Duration(), "endToEndTime", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndToEndFlow_EndToEndDeadline(), this.getNFP_Duration(), "endToEndDeadline", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getEndToEndFlow__FindStepsOnPath(), this.getBehaviorScenario(), "findStepsOnPath", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

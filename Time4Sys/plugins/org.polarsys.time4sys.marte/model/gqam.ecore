@@ -122,6 +122,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Deprecated.&#xA;&#xA;This shall be moved to the SAM Marte Package."/>
     </eAnnotations>
+    <eOperations name="findStepsOnPath" upperBound="-1" eType="#//BehaviorScenario">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Return all steps and sub-BehaviorScenarios who are on the path from stimuli to response.&#xA;"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndStimuli" upperBound="-1"
         eType="#//WorkloadEvent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="endToEndScenario" lowerBound="1"

@@ -11379,6 +11379,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_ZaiU_gftEee6a_WTAr2MDQ" fontName="Verdana" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ZaiU_wftEee6a_WTAr2MDQ"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_L6HcgEwkEeeH1_5H3E3IVg" type="3010" element="_L5290EwkEeeH1_5H3E3IVg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_L6HcgUwkEeeH1_5H3E3IVg" fontName="Verdana" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_L6HcgkwkEeeH1_5H3E3IVg"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_ZaiVAAftEee6a_WTAr2MDQ"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_ZaiVAQftEee6a_WTAr2MDQ"/>
           </children>
@@ -11522,7 +11526,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ZaiV0gftEee6a_WTAr2MDQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_QLX2UEwkEeeH1_5H3E3IVg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -11557,6 +11561,14 @@
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_L5290EwkEeeH1_5H3E3IVg" name="findStepsOnPath() : BehaviorScenario" tooltipText="findStepsOnPath() : BehaviorScenario">
+        <target xmi:type="ecore:EOperation" href="gqam.ecore#//EndToEndFlow/findStepsOnPath"/>
+        <semanticElements xmi:type="ecore:EOperation" href="gqam.ecore#//EndToEndFlow/findStepsOnPath"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_L55aEEwkEeeH1_5H3E3IVg" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ZaiV8wftEee6a_WTAr2MDQ" name="WorkloadEvent" tooltipText="" incomingEdges="_ZaiV-wftEee6a_WTAr2MDQ _ZaiWHwftEee6a_WTAr2MDQ" width="12" height="10">

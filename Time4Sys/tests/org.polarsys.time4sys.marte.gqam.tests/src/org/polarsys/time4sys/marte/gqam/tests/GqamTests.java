@@ -42,6 +42,7 @@ public class GqamTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new GqamTests("gqam Tests");
 		suite.addTestSuite(BurstPatternTest.class);
+		suite.addTestSuite(EndToEndFlowTest.class);
 		return suite;
 	}
 
