@@ -315,13 +315,22 @@ public interface MappingPackage extends EPackage {
 	int MAPPING___GET_TARGETS__STRING = LINK___GET_TARGETS__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Links For Source</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING___GET_LINKS_FOR_SOURCE__EOBJECT = LINK_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_OPERATION_COUNT = LINK_OPERATION_COUNT + 0;
+	int MAPPING_OPERATION_COUNT = LINK_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.mapping.impl.ContextImpl <em>Context</em>}' class.
@@ -594,6 +603,16 @@ public interface MappingPackage extends EPackage {
 	EReference getMapping_Rules();
 
 	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.mapping.Mapping#getLinksForSource(org.eclipse.emf.ecore.EObject) <em>Get Links For Source</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Links For Source</em>' operation.
+	 * @see org.polarsys.time4sys.mapping.Mapping#getLinksForSource(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getMapping__GetLinksForSource__EObject();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.mapping.Context <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -808,6 +827,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAPPING__RULES = eINSTANCE.getMapping_Rules();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Links For Source</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MAPPING___GET_LINKS_FOR_SOURCE__EOBJECT = eINSTANCE.getMapping__GetLinksForSource__EObject();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.mapping.impl.ContextImpl <em>Context</em>}' class.

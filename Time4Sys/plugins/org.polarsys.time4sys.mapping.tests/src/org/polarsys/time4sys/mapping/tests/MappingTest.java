@@ -21,6 +21,12 @@ import org.polarsys.time4sys.mapping.MappingFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Mapping</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.polarsys.time4sys.mapping.Mapping#getLinksForSource(org.eclipse.emf.ecore.EObject) <em>Get Links For Source</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class MappingTest extends LinkTest {
@@ -75,6 +81,19 @@ public class MappingTest extends LinkTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.mapping.Mapping#getLinksForSource(org.eclipse.emf.ecore.EObject) <em>Get Links For Source</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.mapping.Mapping#getLinksForSource(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	public void testGetLinksForSource__EObject() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //MappingTest

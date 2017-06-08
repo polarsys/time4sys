@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.mapping;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,5 +47,16 @@ public interface Mapping extends Link {
 	 * @generated
 	 */
 	EList<Context> getRules();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return all sublinks where source appears as value in a sources MappableArtefact
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	EList<Link> getLinksForSource(EObject source);
 
 } // Mapping

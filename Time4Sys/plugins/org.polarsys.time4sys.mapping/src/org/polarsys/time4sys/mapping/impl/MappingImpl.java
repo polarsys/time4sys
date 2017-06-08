@@ -12,21 +12,25 @@
  */
 package org.polarsys.time4sys.mapping.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.time4sys.mapping.Context;
+import org.polarsys.time4sys.mapping.Link;
+import org.polarsys.time4sys.mapping.MappableArtefact;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingPackage;
+import org.polarsys.time4sys.mapping.ResourceArtefact;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,6 +85,34 @@ public class MappingImpl extends LinkImpl implements Mapping {
 			rules = new EObjectContainmentEList<Context>(Context.class, this, MappingPackage.MAPPING__RULES);
 		}
 		return rules;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Link> getLinksForSource(EObject source) {
+		final EList<Link> result = new BasicEList<>();
+		final Queue<Link> toExplore = new ConcurrentLinkedQueue<>();
+		toExplore.add(this);
+		while(!toExplore.isEmpty()) {
+			final Link current = toExplore.poll();
+			for(MappableArtefact src: current.getSources()) {
+				if (source == src.getValue()) {
+					result.add(current);
+				}
+				if (src instanceof ResourceArtefact) {
+					if (source == ((ResourceArtefact)src).getResource()) {
+						result.add(current);
+					}
+				}
+			}
+			for(Link sub: current.getSubLinks()) {
+				toExplore.add(sub);
+			}
+		}
+		return result;
 	}
 
 	/**
@@ -155,6 +187,20 @@ public class MappingImpl extends LinkImpl implements Mapping {
 				return rules != null && !rules.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MappingPackage.MAPPING___GET_LINKS_FOR_SOURCE__EOBJECT:
+				return getLinksForSource((EObject)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //MappingImpl
