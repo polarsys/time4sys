@@ -180,7 +180,13 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
 	 */
 	public String convertURIToString(EDataType eDataType, Object instanceValue) {
 		if (instanceValue instanceof org.eclipse.emf.common.util.URI) {
-			return ((org.eclipse.emf.common.util.URI)instanceValue).toPlatformString(true);
+			
+			final URI emfUri = (org.eclipse.emf.common.util.URI)instanceValue;
+			if (emfUri.isPlatform()) {
+				return emfUri.toPlatformString(true);
+			} else {
+				return emfUri.toFileString();
+			}
 		}
 		return super.convertToString(eDataType, instanceValue);
 	}
