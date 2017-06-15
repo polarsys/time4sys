@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Loï¿½c Fejoz - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.marte.nfp;
 
@@ -28,16 +28,6 @@ import org.polarsys.time4sys.marte.nfp.impl.DataSizeDimension;
  */
 public enum DataSizeUnitKind implements Enumerator {
 	/**
-	 * The '<em><b>BYTE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #BYTE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	BYTE(0, "BYTE", "BYTE"),
-
-	/**
 	 * The '<em><b>BIT</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +35,15 @@ public enum DataSizeUnitKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BIT(1, "BIT", "BIT"),
+	BIT(0, "BIT", "BIT"), /**
+	 * The '<em><b>BYTE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #BYTE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	BYTE(1, "BYTE", "BYTE"),
 
 	/**
 	 * The '<em><b>KB</b></em>' literal object.
@@ -78,21 +76,6 @@ public enum DataSizeUnitKind implements Enumerator {
 	GB(4, "GB", "GB");
 
 	/**
-	 * The '<em><b>BYTE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>BYTE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #BYTE
-	 * @model
-	 * @generated
-	 * @ordered
-	 */
-	public static final int BYTE_VALUE = 0;
-
-	/**
 	 * The '<em><b>BIT</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -105,7 +88,22 @@ public enum DataSizeUnitKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BIT_VALUE = 1;
+	public static final int BIT_VALUE = 0;
+
+	/**
+	 * The '<em><b>BYTE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>BYTE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #BYTE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BYTE_VALUE = 1;
 
 	/**
 	 * The '<em><b>KB</b></em>' literal value.
@@ -160,8 +158,8 @@ public enum DataSizeUnitKind implements Enumerator {
 	 */
 	private static final DataSizeUnitKind[] VALUES_ARRAY =
 		new DataSizeUnitKind[] {
-			BYTE,
 			BIT,
+			BYTE,
 			KB,
 			MB,
 			GB,
@@ -221,8 +219,8 @@ public enum DataSizeUnitKind implements Enumerator {
 	 */
 	public static DataSizeUnitKind get(int value) {
 		switch (value) {
-			case BYTE_VALUE: return BYTE;
 			case BIT_VALUE: return BIT;
+			case BYTE_VALUE: return BYTE;
 			case KB_VALUE: return KB;
 			case MB_VALUE: return MB;
 			case GB_VALUE: return GB;

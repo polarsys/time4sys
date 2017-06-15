@@ -19,6 +19,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	DataSizeImplTest.class,
 	LongDurationImplTest.class,
 	NfpFactoryImplTest.class,
+	NfpPackageImplTest.class
 })
 public class AllTests {
 

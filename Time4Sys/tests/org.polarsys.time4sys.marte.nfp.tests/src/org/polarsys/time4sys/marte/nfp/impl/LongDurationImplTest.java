@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.marte.nfp.impl;
 
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Before;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
@@ -38,7 +39,9 @@ public class LongDurationImplTest extends AbstractRealWithUnitValueImplTest<Time
 		v1_max_v2 = v1;
 		v1_lcm_v2 = v1;
 		v1_divide_v2 = 2;
-		v1_div_v2 = 2.0;		
+		v1_div_v2 = 2.0;
+		obj = (EObject)v1;
+		clz = obj.eClass();
 	}
 
 }

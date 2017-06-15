@@ -235,6 +235,12 @@ public class DurationTest extends TestCase {
 						NfpFactory.eINSTANCE.createDurationFromString(v2)));
 	}
 	
+	protected void assertMultiplyOfEquals(final String v1, final long v2, final String expected) {
+		assertEquals(
+				NfpFactory.eINSTANCE.createDurationFromString(expected),
+				NfpFactory.eINSTANCE.createDurationFromString(v1).multiply(v2));
+	}
+	
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
 	 * <!-- begin-user-doc -->
@@ -253,12 +259,12 @@ public class DurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#multiply(long)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testMultiply__long() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		assertMultiplyOfEquals("3ms", 3, "9ms");
+		assertMultiplyOfEquals("3ms", 0, "0ps");
+		assertMultiplyOfEquals("0ms", 3, "0ms");
 	}
 
 	/**

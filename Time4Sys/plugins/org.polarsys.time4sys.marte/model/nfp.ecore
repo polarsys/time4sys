@@ -64,8 +64,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnitKind">
-    <eLiterals name="BYTE"/>
-    <eLiterals name="BIT" value="1"/>
+    <eLiterals name="BIT"/>
+    <eLiterals name="BYTE" value="1"/>
     <eLiterals name="KB" value="2" literal=""/>
     <eLiterals name="MB" value="3"/>
     <eLiterals name="GB" value="4"/>

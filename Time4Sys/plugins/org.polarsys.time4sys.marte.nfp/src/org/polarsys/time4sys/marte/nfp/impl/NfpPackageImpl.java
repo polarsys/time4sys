@@ -1013,8 +1013,8 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		addEEnumLiteral(timeUnitKindEEnum, TimeUnitKind.D);
 
 		initEEnum(dataSizeUnitKindEEnum, DataSizeUnitKind.class, "DataSizeUnitKind");
-		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.BYTE);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.BIT);
+		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.BYTE);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.KB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.MB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.GB);

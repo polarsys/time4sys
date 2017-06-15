@@ -10,9 +10,15 @@
  *******************************************************************************/
 package org.polarsys.time4sys.marte.nfp.impl;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.marte.nfp.ValueWithUnit;
@@ -36,6 +42,8 @@ public abstract class AbstractRealWithUnitValueImplTest<U extends Enumerator, T 
 	protected long v1_divide_v2;
 	protected double v1_div_v2;
 	protected AbstractRealWithUnitValueImpl<U, T> zero;
+	protected EObject obj;
+	protected EClass clz;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -135,6 +143,7 @@ public abstract class AbstractRealWithUnitValueImplTest<U extends Enumerator, T 
 	@Test
 	public void testMin() {
 		assertEquals(v1_min_v2, v1.min((T)v2));
+		assertEquals(v1_min_v2, v2.min((T)v1));
 	}
 
 	/**
@@ -175,5 +184,19 @@ public abstract class AbstractRealWithUnitValueImplTest<U extends Enumerator, T 
 		assertFalse(v1.equals((T)v2));
 		assertTrue(zero.equals((T)zero));
 		assertFalse(zero.equals((T)v1));
+		assertFalse(v1.equals((T)null));
+		assertFalse(v1.equals(zero));
+	}
+	
+	@Test
+	public void testEGetter() {
+		for(EAttribute attr: clz.getEAllAttributes()) {
+			obj.eGet(attr);
+			if (obj.eIsSet(attr)) {
+				obj.eSet(attr, obj.eGet(attr));
+			}
+			obj.eUnset(attr);
+		}
+		
 	}
 }

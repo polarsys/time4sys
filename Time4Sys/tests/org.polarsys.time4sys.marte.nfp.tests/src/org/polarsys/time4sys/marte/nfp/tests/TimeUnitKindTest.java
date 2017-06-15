@@ -97,4 +97,28 @@ public class TimeUnitKindTest {
 		assertXUnit1IsOneUnit2(1000000.0, TimeUnitKind.PS, TimeUnitKind.US);
 		assertXUnit1IsOneUnit2(   3600.0, TimeUnitKind.S,  TimeUnitKind.H);
 	}
+	
+	@Test
+	public void testGetToString() {
+		for(TimeUnitKind k: TimeUnitKind.VALUES) {
+			assertEquals(k, TimeUnitKind.get(k.toString()));
+		}
+		assertNull(TimeUnitKind.get("dummy literal string"));
+	}
+	
+	@Test
+	public void testGetByName() {
+		for(TimeUnitKind k: TimeUnitKind.VALUES) {
+			assertEquals(k, TimeUnitKind.getByName(k.getName()));
+		}
+		assertNull(TimeUnitKind.getByName("dummy literal string"));
+	}
+	
+	@Test
+	public void testGet() {
+		for(TimeUnitKind k: TimeUnitKind.VALUES) {
+			assertEquals(k, TimeUnitKind.get(k.getValue()));
+		}
+		assertNull(TimeUnitKind.get(-1));
+	}
 }

@@ -124,12 +124,7 @@ public abstract class AbstractRealWithUnitValueImpl<U extends Enumerator, T exte
 		if (!(obj instanceof AbstractRealWithUnitValueImpl)) {
 			return false;
 		}
-		final AbstractRealWithUnitValueImpl<U, T> other;
-		try {
-			other = (AbstractRealWithUnitValueImpl<U, T>) obj;
-		} catch(ClassCastException e) {
-			return false;
-		}
+		final AbstractRealWithUnitValueImpl<U, T> other = (AbstractRealWithUnitValueImpl<U, T>) obj;
 		if (getUnit() == other.getUnit()) {
 			return (Double.doubleToLongBits(getValue()) == Double.doubleToLongBits(other.getValue()));
 		} else {

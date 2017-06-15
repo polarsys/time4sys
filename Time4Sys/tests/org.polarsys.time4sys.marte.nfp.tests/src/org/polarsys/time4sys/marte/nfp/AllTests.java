@@ -10,11 +10,12 @@
  *******************************************************************************/
 /**
  */
-package org.polarsys.time4sys.marte.nfp.tests;
+package org.polarsys.time4sys.marte.nfp;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.polarsys.time4sys.marte.nfp.impl.NfpFactoryImplTest;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,12 +25,8 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-	DurationTest.class,
-	TimeIntervalTest.class,
-	TimeUnitKindTest.class,
-	TimeIntervalTest.class,
-	NfpPackageTest.class,
-	DataSizeUnitKindTest.class
+	org.polarsys.time4sys.marte.nfp.tests.AllTests.class,
+	org.polarsys.time4sys.marte.nfp.impl.AllTests.class,
 })
 public class AllTests {
 
