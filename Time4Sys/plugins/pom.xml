@@ -59,6 +59,7 @@
 <module>org.polarsys.time4sys.odesign</module>
 <module>org.polarsys.time4sys.srm.contextual.explorer</module>
 <module>org.polarsys.time4sys.trace</module>
+<module>org.polarsys.time4sys.trace.html</module>
 <module>org.polarsys.time4sys.trace.edit</module>
 <module>org.polarsys.time4sys.trace.editor</module>
 <module>org.polarsys.time4sys.ui</module>
