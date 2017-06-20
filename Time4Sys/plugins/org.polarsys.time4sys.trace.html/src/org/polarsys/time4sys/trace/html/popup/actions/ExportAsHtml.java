@@ -71,7 +71,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 			System.out.println("Slice was null");
 			return;
 		}
-		output = new File("/tmp/slice.html");
+		output = new File("slice.html");
 		try {
 			os = new FileOutputStream(output);
 		} catch (FileNotFoundException e) {
