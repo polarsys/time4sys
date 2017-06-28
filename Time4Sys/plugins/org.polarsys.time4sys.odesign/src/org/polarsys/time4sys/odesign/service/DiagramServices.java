@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
@@ -49,10 +50,12 @@ import org.eclipse.sirius.diagram.description.EdgeMappingImport;
 import org.eclipse.sirius.diagram.description.IEdgeMapping;
 import org.eclipse.sirius.diagram.description.MappingBasedDecoration;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.description.filter.FilterDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
+import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
 
 public class DiagramServices {
@@ -428,4 +431,15 @@ public class DiagramServices {
 			((DDiagram) container).getOwnedDiagramElements().remove(anEdge);
 		}
 	}
+	
+	public boolean isFilterActivate(String filterName, DDiagram ddiag){
+        EList<FilterDescription> activatedFilters = ddiag.getActivatedFilters();
+        for (FilterDescription filterDescription : activatedFilters) {
+        	if (filterName.equalsIgnoreCase(filterDescription.getName())){
+        		return true;
+        	}
+         }
+        return false;
+	}
+	
 }

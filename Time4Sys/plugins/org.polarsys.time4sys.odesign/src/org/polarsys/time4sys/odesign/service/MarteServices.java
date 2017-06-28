@@ -22,6 +22,7 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DEdgeSpec;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
+import org.eclipse.sirius.diagram.description.filter.FilterDescription;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.polarsys.time4sys.design.DesignModel;
@@ -32,6 +33,7 @@ import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
@@ -568,4 +570,15 @@ public class MarteServices {
 		}
 		return null;
 	}
+	
+	public String computePortLabel(EObject self, EObject diagram) {
+		MultiplicityElement mult = (MultiplicityElement) self;
+		DDiagram diag = (DDiagram) diagram;
+		if (DiagramServices.getDiagramServices().isFilterActivate("Hide Pins label",diag)){
+			return "";
+		}	
+		return ("[" + mult.getLowerBound()+":"+mult.getUpperBound()+"]");
+	}
+	
+
 }
