@@ -14,10 +14,6 @@
  
 <modules>
 <module>org.polarsys.time4sys.activity.explorer</module>
-<module>org.polarsys.time4sys.analysis</module>
-<module>org.polarsys.time4sys.analysis.contextual.explorer</module>
-<module>org.polarsys.time4sys.analysis.edit</module>
-<module>org.polarsys.time4sys.analysis.editor</module>
 <module>org.polarsys.time4sys.common</module>
 <module>org.polarsys.time4sys.constraints.model</module>
 <module>org.polarsys.time4sys.constraints.model.edit</module>
