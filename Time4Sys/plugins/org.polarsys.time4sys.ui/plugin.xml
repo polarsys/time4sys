@@ -114,18 +114,6 @@
     </extension>
 
   <!-- EEF extensions -->
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <factory
-            uri="http://www.polarsys.org/time4sys/analysis/1.0"
-            class="org.polarsys.time4sys.ui.analysis.providers.AnalysisEEFAdapterFactory"
-            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
-   </extension>
-   <extension
-         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
-      <PropertiesEditionPartProvider
-            providerClass="org.polarsys.time4sys.ui.views.analysis.providers.AnalysisPropertiesEditionPartProvider">
-      </PropertiesEditionPartProvider>
-   </extension>
 
   <!-- Tabbed properties views extension -->
 

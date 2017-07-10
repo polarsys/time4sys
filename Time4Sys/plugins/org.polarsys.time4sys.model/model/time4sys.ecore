@@ -2,14 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="time4sys" nsURI="http://www.polarsys.org/time4sys/1.0" nsPrefix="time4sys">
   <eClassifiers xsi:type="ecore:EClass" name="Project">
-    <eOperations name="deriveAnalyzedSystem" lowerBound="1" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/analysis.ecore#//AnalyzedSystem">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="@Deprecated"/>
-      </eAnnotations>
-      <eParameters name="override" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/analysis.ecore#//AnalyzedSystem"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="design" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
