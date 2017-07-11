@@ -8,9 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.builder,
- org.polarsys.time4sys.builder.analysis,
  org.polarsys.time4sys.builder.design,
- org.polarsys.time4sys.design2analysis,
  org.polarsys.time4sys.model.time4sys,
  org.polarsys.time4sys.model.time4sys.impl,
  org.polarsys.time4sys.model.time4sys.util,
@@ -20,7 +18,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.design;visibility:=reexport,
  org.polarsys.time4sys.marte.gqam;visibility:=reexport,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,
- org.polarsys.time4sys.analysis;visibility:=reexport,
  org.polarsys.time4sys.marte.hrm,
  org.polarsys.time4sys.marte.srm,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

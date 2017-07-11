@@ -17,15 +17,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
-
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 

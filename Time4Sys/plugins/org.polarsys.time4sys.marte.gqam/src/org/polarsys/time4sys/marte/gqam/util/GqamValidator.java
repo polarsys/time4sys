@@ -17,13 +17,36 @@ import java.util.Map;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
-
-import org.polarsys.time4sys.marte.gqam.*;
-
+import org.polarsys.time4sys.marte.gqam.AcquireStep;
+import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
+import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.BurstPattern;
+import org.polarsys.time4sys.marte.gqam.ClosedPattern;
+import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
+import org.polarsys.time4sys.marte.gqam.CommunicationStep;
+import org.polarsys.time4sys.marte.gqam.ConnectorKind;
+import org.polarsys.time4sys.marte.gqam.ControlPin;
+import org.polarsys.time4sys.marte.gqam.Delay;
+import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.gqam.ExecutionStep;
+import org.polarsys.time4sys.marte.gqam.GqamPackage;
+import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
+import org.polarsys.time4sys.marte.gqam.Once;
+import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
+import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
+import org.polarsys.time4sys.marte.gqam.ReleaseStep;
+import org.polarsys.time4sys.marte.gqam.RequestedService;
+import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
+import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
+import org.polarsys.time4sys.marte.gqam.SporadicPattern;
+import org.polarsys.time4sys.marte.gqam.Step;
+import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
+import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**

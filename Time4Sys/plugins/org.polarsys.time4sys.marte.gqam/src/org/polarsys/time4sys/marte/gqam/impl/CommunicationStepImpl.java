@@ -13,15 +13,12 @@
 package org.polarsys.time4sys.marte.gqam.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
 

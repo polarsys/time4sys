@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.trace;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 

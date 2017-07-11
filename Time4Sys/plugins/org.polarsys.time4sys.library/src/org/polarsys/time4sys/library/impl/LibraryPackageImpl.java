@@ -15,18 +15,14 @@ package org.polarsys.time4sys.library.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.library.HardwareCANBus;
 import org.polarsys.time4sys.library.LibraryFactory;
 import org.polarsys.time4sys.library.LibraryPackage;
 import org.polarsys.time4sys.library.RateMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 
 /**

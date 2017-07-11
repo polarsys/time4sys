@@ -17,12 +17,16 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.polarsys.time4sys.mapping.*;
+import org.polarsys.time4sys.mapping.Context;
+import org.polarsys.time4sys.mapping.Link;
+import org.polarsys.time4sys.mapping.MappableArtefact;
+import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.mapping.MappingFactory;
+import org.polarsys.time4sys.mapping.MappingPackage;
+import org.polarsys.time4sys.mapping.ResourceArtefact;
 
 /**
  * <!-- begin-user-doc -->

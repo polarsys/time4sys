@@ -13,19 +13,15 @@
 package org.polarsys.time4sys.marte.srm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.TransmModeKind;
-
 import org.polarsys.time4sys.marte.srm.SoftwareCommunicationResource;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 

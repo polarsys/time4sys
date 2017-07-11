@@ -14,8 +14,6 @@ package org.polarsys.time4sys.model.time4sys;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.analysis.AnalyzedSystem;
-
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.trace.Trace;
@@ -44,31 +42,6 @@ import org.polarsys.time4sys.trace.Trace;
  * @generated
  */
 public interface Project extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Analysis</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Analysis</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Analysis</em>' containment reference.
-	 * @see #setAnalysis(AnalyzedSystem)
-	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject_Analysis()
-	 * @model containment="true"
-	 * @generated
-	 */
-	AnalyzedSystem getAnalysis();
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.time4sys.model.time4sys.Project#getAnalysis <em>Analysis</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Analysis</em>' containment reference.
-	 * @see #getAnalysis()
-	 * @generated
-	 */
-	void setAnalysis(AnalyzedSystem value);
 
 	/**
 	 * Returns the value of the '<em><b>Design</b></em>' containment reference.
@@ -201,16 +174,5 @@ public interface Project extends EObject {
 	 * @generated
 	 */
 	EList<Simulation> getSimulations();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * @Deprecated
-	 * <!-- end-model-doc -->
-	 * @model required="true" overrideRequired="true"
-	 * @generated
-	 */
-	AnalyzedSystem deriveAnalyzedSystem(boolean override);
 
 } // Project

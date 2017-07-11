@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 
 /**

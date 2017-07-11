@@ -14,7 +14,6 @@ package org.polarsys.time4sys.trace.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**

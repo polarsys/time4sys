@@ -19,14 +19,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.time4sys.marte.grm.provider.ResourcePortItemProvider;
-
 import org.polarsys.time4sys.marte.hrm.HardwarePort;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;

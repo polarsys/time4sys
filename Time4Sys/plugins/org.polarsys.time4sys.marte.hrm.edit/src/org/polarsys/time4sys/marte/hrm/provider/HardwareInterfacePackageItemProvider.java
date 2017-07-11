@@ -19,11 +19,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.grm.provider.ResourcePackageItemProvider;
-
 import org.polarsys.time4sys.marte.hrm.HardwareInterfacePackage;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.srm.SrmFactory;

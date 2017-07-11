@@ -12,10 +12,10 @@
  */
 package org.polarsys.time4sys.mapping.tests;
 
-import junit.textui.TestRunner;
-
 import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.mapping.ResourceArtefact;
+
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

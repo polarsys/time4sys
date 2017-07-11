@@ -17,11 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.polarsys.time4sys.analysis.AnalysisPackage;
-
 import org.polarsys.time4sys.design.DesignPackage;
 import org.polarsys.time4sys.mapping.MappingPackage;
 import org.polarsys.time4sys.model.time4sys.Project;
@@ -105,7 +101,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		AnalysisPackage.eINSTANCE.eClass();
 		DesignPackage.eINSTANCE.eClass();
 		MappingPackage.eINSTANCE.eClass();
 		TracePackage.eINSTANCE.eClass();
@@ -371,7 +366,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		AnalysisPackage theAnalysisPackage = (AnalysisPackage)EPackage.Registry.INSTANCE.getEPackage(AnalysisPackage.eNS_URI);
 		DesignPackage theDesignPackage = (DesignPackage)EPackage.Registry.INSTANCE.getEPackage(DesignPackage.eNS_URI);
 		MappingPackage theMappingPackage = (MappingPackage)EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI);
 		TracePackage theTracePackage = (TracePackage)EPackage.Registry.INSTANCE.getEPackage(TracePackage.eNS_URI);
@@ -384,7 +378,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProject_Analysis(), theAnalysisPackage.getAnalyzedSystem(), null, "analysis", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Design(), theDesignPackage.getDesignModel(), null, "design", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Mappings(), theMappingPackage.getMapping(), null, "mappings", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -392,9 +385,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		initEReference(getProject_Derivations(), theDesignPackage.getDesignModel(), null, "derivations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Transformations(), this.getTransformation(), null, "transformations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Simulations(), this.getSimulation(), null, "simulations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		EOperation op = initEOperation(getProject__DeriveAnalyzedSystem__boolean(), theAnalysisPackage.getAnalyzedSystem(), "deriveAnalyzedSystem", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "override", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransformation_Result(), theDesignPackage.getDesignModel(), null, "result", null, 1, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

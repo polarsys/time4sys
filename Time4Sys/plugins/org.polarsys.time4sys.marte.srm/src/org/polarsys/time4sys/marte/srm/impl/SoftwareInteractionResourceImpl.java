@@ -16,20 +16,15 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.Resource;
@@ -40,9 +35,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
-
 import org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl;
-
 import org.polarsys.time4sys.marte.srm.QueuePolicyKind;
 import org.polarsys.time4sys.marte.srm.SoftwareInteractionResource;
 import org.polarsys.time4sys.marte.srm.SoftwareResource;

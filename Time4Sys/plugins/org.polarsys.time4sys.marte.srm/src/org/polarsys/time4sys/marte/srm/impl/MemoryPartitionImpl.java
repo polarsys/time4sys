@@ -15,19 +15,14 @@ package org.polarsys.time4sys.marte.srm.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.StorageResource;
-
 import org.polarsys.time4sys.marte.srm.MemoryPartition;
 import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SrmPackage;

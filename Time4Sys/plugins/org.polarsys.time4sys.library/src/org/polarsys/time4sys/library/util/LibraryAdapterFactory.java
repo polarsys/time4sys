@@ -14,13 +14,13 @@ package org.polarsys.time4sys.library.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.time4sys.library.*;
-
+import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
+import org.polarsys.time4sys.library.HardwareCANBus;
+import org.polarsys.time4sys.library.LibraryPackage;
+import org.polarsys.time4sys.library.RateMonotonicSchedulingPolicy;
+import org.polarsys.time4sys.library.TDMA;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.NamedElement;

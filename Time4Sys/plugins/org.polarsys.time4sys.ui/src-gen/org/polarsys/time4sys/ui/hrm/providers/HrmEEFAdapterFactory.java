@@ -14,7 +14,6 @@
 package org.polarsys.time4sys.ui.hrm.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
-
 import org.polarsys.time4sys.marte.hrm.util.HrmAdapterFactory;
 
 /**

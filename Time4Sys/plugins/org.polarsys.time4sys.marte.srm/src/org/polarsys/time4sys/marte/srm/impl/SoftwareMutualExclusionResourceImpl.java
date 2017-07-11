@@ -16,18 +16,13 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
@@ -35,7 +30,6 @@ import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
 import org.polarsys.time4sys.marte.grm.ResourceBroker;
 import org.polarsys.time4sys.marte.grm.ResourceService;
-
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
 import org.polarsys.time4sys.marte.srm.MutualExclusionResourceKind;
 import org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource;

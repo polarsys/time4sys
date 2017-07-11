@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.marte.grm;
 
 import java.util.Map;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 

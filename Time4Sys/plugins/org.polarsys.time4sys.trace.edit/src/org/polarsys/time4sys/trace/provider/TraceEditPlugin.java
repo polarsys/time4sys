@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.trace.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 

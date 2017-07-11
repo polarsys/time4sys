@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.srm;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 

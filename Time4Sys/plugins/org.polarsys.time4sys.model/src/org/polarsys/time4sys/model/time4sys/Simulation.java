@@ -11,10 +11,8 @@
 package org.polarsys.time4sys.model.time4sys;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
-
 import org.polarsys.time4sys.trace.Trace;
 
 /**

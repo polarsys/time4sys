@@ -16,14 +16,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.grm.provider.SchedulableResourceItemProvider;
 
 /**

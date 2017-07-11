@@ -14,9 +14,7 @@
 package org.polarsys.time4sys.ui.views.design.parts;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
-
 import org.eclipse.jface.viewers.ViewerFilter;
 
 

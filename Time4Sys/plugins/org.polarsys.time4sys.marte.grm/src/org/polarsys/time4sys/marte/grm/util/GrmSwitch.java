@@ -14,10 +14,46 @@ package org.polarsys.time4sys.marte.grm.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
+import org.polarsys.time4sys.marte.grm.ClockResource;
+import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
+import org.polarsys.time4sys.marte.grm.CommunicationMedia;
+import org.polarsys.time4sys.marte.grm.CommunicationResource;
+import org.polarsys.time4sys.marte.grm.ComputingResource;
+import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
+import org.polarsys.time4sys.marte.grm.DeviceResource;
+import org.polarsys.time4sys.marte.grm.DynamicUsage;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
+import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
+import org.polarsys.time4sys.marte.grm.NamedElement;
+import org.polarsys.time4sys.marte.grm.ProcessingResource;
+import org.polarsys.time4sys.marte.grm.ProtectionParameter;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.ResourceBroker;
+import org.polarsys.time4sys.marte.grm.ResourceConnector;
+import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
+import org.polarsys.time4sys.marte.grm.ResourceInstance;
+import org.polarsys.time4sys.marte.grm.ResourceInterface;
+import org.polarsys.time4sys.marte.grm.ResourceManager;
+import org.polarsys.time4sys.marte.grm.ResourcePackage;
+import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.grm.ResourcePort;
+import org.polarsys.time4sys.marte.grm.ResourceService;
+import org.polarsys.time4sys.marte.grm.ResourceUsage;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
+import org.polarsys.time4sys.marte.grm.Scheduler;
+import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
+import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
+import org.polarsys.time4sys.marte.grm.StaticUsage;
+import org.polarsys.time4sys.marte.grm.StorageResource;
+import org.polarsys.time4sys.marte.grm.SynchResource;
+import org.polarsys.time4sys.marte.grm.TimerResource;
+import org.polarsys.time4sys.marte.grm.TimingResource;
+import org.polarsys.time4sys.marte.grm.UsageDemand;
+import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
 
 /**
  * <!-- begin-user-doc -->

@@ -27,8 +27,6 @@ import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.ext.base.Options;
-import org.polarsys.time4sys.analysis.AnalysisFactory;
-import org.polarsys.time4sys.analysis.AnalyzedSystem;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.model.time4sys.Project;
@@ -47,17 +45,12 @@ public class Time4SysProjectUtils {
 	 */
 	private static EObject createInitialModel(String rootObjectName) {
 		Project root = null;
-		AnalyzedSystem analysis = null;
 		DesignModel design = null;
 
 		if ("Project".equals(rootObjectName)) {
 			root = Time4sysFactory.eINSTANCE.createProject();
-			analysis = AnalysisFactory.eINSTANCE.createAnalyzedSystem();
 			design = DesignFactory.eINSTANCE.createDesignModel();
-			root.setAnalysis(analysis);
 			root.setDesign(design);
-		} else if ("Analysis".equals(rootObjectName)) {
-			return AnalysisFactory.eINSTANCE.createAnalyzedSystem();
 		} else if ("Design".equals(rootObjectName)) {
 			return DesignFactory.eINSTANCE.createDesignModel();
 		}

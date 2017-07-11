@@ -14,12 +14,19 @@ package org.polarsys.time4sys.marte.nfp.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.time4sys.marte.nfp.*;
+import org.polarsys.time4sys.marte.nfp.Bucket;
+import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.NormalDistribution;
+import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->

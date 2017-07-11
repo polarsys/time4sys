@@ -14,9 +14,7 @@ package org.polarsys.time4sys.marte.hrm.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.ComputingResource;
@@ -33,8 +31,54 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
-
-import org.polarsys.time4sys.marte.hrm.*;
+import org.polarsys.time4sys.marte.hrm.EnvCondition;
+import org.polarsys.time4sys.marte.hrm.FirmwareArchitecture;
+import org.polarsys.time4sys.marte.hrm.HardwareActuator;
+import org.polarsys.time4sys.marte.hrm.HardwareArbiter;
+import org.polarsys.time4sys.marte.hrm.HardwareAsic;
+import org.polarsys.time4sys.marte.hrm.HardwareBranchPredictor;
+import org.polarsys.time4sys.marte.hrm.HardwareBridge;
+import org.polarsys.time4sys.marte.hrm.HardwareBus;
+import org.polarsys.time4sys.marte.hrm.HardwareCache;
+import org.polarsys.time4sys.marte.hrm.HardwareCard;
+import org.polarsys.time4sys.marte.hrm.HardwareChannel;
+import org.polarsys.time4sys.marte.hrm.HardwareChip;
+import org.polarsys.time4sys.marte.hrm.HardwareClock;
+import org.polarsys.time4sys.marte.hrm.HardwareCommunicationResource;
+import org.polarsys.time4sys.marte.hrm.HardwareComponent;
+import org.polarsys.time4sys.marte.hrm.HardwareComputingResource;
+import org.polarsys.time4sys.marte.hrm.HardwareConnector;
+import org.polarsys.time4sys.marte.hrm.HardwareDevice;
+import org.polarsys.time4sys.marte.hrm.HardwareDma;
+import org.polarsys.time4sys.marte.hrm.HardwareDrive;
+import org.polarsys.time4sys.marte.hrm.HardwareInterface;
+import org.polarsys.time4sys.marte.hrm.HardwareInterfacePackage;
+import org.polarsys.time4sys.marte.hrm.HardwareIo;
+import org.polarsys.time4sys.marte.hrm.HardwareIpBlock;
+import org.polarsys.time4sys.marte.hrm.HardwareIsa;
+import org.polarsys.time4sys.marte.hrm.HardwareMedia;
+import org.polarsys.time4sys.marte.hrm.HardwareMemory;
+import org.polarsys.time4sys.marte.hrm.HardwareMmu;
+import org.polarsys.time4sys.marte.hrm.HardwarePin;
+import org.polarsys.time4sys.marte.hrm.HardwarePlatform;
+import org.polarsys.time4sys.marte.hrm.HardwarePld;
+import org.polarsys.time4sys.marte.hrm.HardwarePort;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessingMemory;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
+import org.polarsys.time4sys.marte.hrm.HardwareRam;
+import org.polarsys.time4sys.marte.hrm.HardwareResource;
+import org.polarsys.time4sys.marte.hrm.HardwareResourcePackage;
+import org.polarsys.time4sys.marte.hrm.HardwareRom;
+import org.polarsys.time4sys.marte.hrm.HardwareSensor;
+import org.polarsys.time4sys.marte.hrm.HardwareService;
+import org.polarsys.time4sys.marte.hrm.HardwareStorageManager;
+import org.polarsys.time4sys.marte.hrm.HardwareStorageMemory;
+import org.polarsys.time4sys.marte.hrm.HardwareSupport;
+import org.polarsys.time4sys.marte.hrm.HardwareTimer;
+import org.polarsys.time4sys.marte.hrm.HardwareTimingResource;
+import org.polarsys.time4sys.marte.hrm.HardwareWatchdog;
+import org.polarsys.time4sys.marte.hrm.HardwareWire;
+import org.polarsys.time4sys.marte.hrm.HrmPackage;
 
 /**
  * <!-- begin-user-doc -->

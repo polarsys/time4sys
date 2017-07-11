@@ -14,21 +14,17 @@ package org.polarsys.time4sys.model.time4sys.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.polarsys.time4sys.analysis.AnalysisFactory;
-import org.polarsys.time4sys.analysis.AnalyzedSystem;
 import org.polarsys.time4sys.design.DesignModel;
-import org.polarsys.time4sys.design2analysis.Design2AnalysisTransformer;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
@@ -58,15 +54,6 @@ import org.polarsys.time4sys.transformations.IdentityDerivation;
  * @generated
  */
 public class ProjectImpl extends MinimalEObjectImpl.Container implements Project {
-	/**
-	 * The cached value of the '{@link #getAnalysis() <em>Analysis</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAnalysis()
-	 * @generated
-	 * @ordered
-	 */
-	protected AnalyzedSystem analysis;
 
 	/**
 	 * The cached value of the '{@link #getDesign() <em>Design</em>}' containment reference.
@@ -165,49 +152,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	protected EClass eStaticClass() {
 		return Time4sysPackage.Literals.PROJECT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AnalyzedSystem getAnalysis() {
-		return analysis;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAnalysis(AnalyzedSystem newAnalysis, NotificationChain msgs) {
-		AnalyzedSystem oldAnalysis = analysis;
-		analysis = newAnalysis;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Time4sysPackage.PROJECT__ANALYSIS, oldAnalysis, newAnalysis);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAnalysis(AnalyzedSystem newAnalysis) {
-		if (newAnalysis != analysis) {
-			NotificationChain msgs = null;
-			if (analysis != null)
-				msgs = ((InternalEObject)analysis).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Time4sysPackage.PROJECT__ANALYSIS, null, msgs);
-			if (newAnalysis != null)
-				msgs = ((InternalEObject)newAnalysis).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Time4sysPackage.PROJECT__ANALYSIS, null, msgs);
-			msgs = basicSetAnalysis(newAnalysis, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Time4sysPackage.PROJECT__ANALYSIS, newAnalysis, newAnalysis));
 	}
 
 	/**
@@ -339,21 +283,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public AnalyzedSystem deriveAnalyzedSystem(boolean override) {
-		AnalyzedSystem targetSystem = analysis; 
-		if (override || analysis == null) {
-			targetSystem = AnalysisFactory.eINSTANCE.createAnalyzedSystem();
-		}
-		setAnalysis(targetSystem);
-		Design2AnalysisTransformer.transform(this);
-		return targetSystem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	public Transformation derive(final DesignModel source) {
 		return IdentityDerivation.duplicate(this, source);
 	}
@@ -366,8 +295,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Time4sysPackage.PROJECT__ANALYSIS:
-				return basicSetAnalysis(null, msgs);
 			case Time4sysPackage.PROJECT__DESIGN:
 				return basicSetDesign(null, msgs);
 			case Time4sysPackage.PROJECT__MAPPINGS:
@@ -392,8 +319,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Time4sysPackage.PROJECT__ANALYSIS:
-				return getAnalysis();
 			case Time4sysPackage.PROJECT__DESIGN:
 				return getDesign();
 			case Time4sysPackage.PROJECT__NAME:
@@ -421,9 +346,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Time4sysPackage.PROJECT__ANALYSIS:
-				setAnalysis((AnalyzedSystem)newValue);
-				return;
 			case Time4sysPackage.PROJECT__DESIGN:
 				setDesign((DesignModel)newValue);
 				return;
@@ -462,9 +384,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Time4sysPackage.PROJECT__ANALYSIS:
-				setAnalysis((AnalyzedSystem)null);
-				return;
 			case Time4sysPackage.PROJECT__DESIGN:
 				setDesign((DesignModel)null);
 				return;
@@ -498,8 +417,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Time4sysPackage.PROJECT__ANALYSIS:
-				return analysis != null;
 			case Time4sysPackage.PROJECT__DESIGN:
 				return design != null;
 			case Time4sysPackage.PROJECT__NAME:
@@ -516,20 +433,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 				return simulations != null && !simulations.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case Time4sysPackage.PROJECT___DERIVE_ANALYZED_SYSTEM__BOOLEAN:
-				return deriveAnalyzedSystem((Boolean)arguments.get(0));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -3,12 +3,9 @@
 package org.polarsys.time4sys.marte.nfp.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;

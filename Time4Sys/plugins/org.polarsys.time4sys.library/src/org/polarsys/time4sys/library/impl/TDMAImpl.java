@@ -15,15 +15,11 @@ package org.polarsys.time4sys.library.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.polarsys.time4sys.library.LibraryPackage;
 import org.polarsys.time4sys.library.TDMA;
-
 import org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**

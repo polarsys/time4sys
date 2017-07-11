@@ -8,14 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
-
 import org.polarsys.time4sys.trace.NumberValueChangeEvent;
 import org.polarsys.time4sys.trace.TracePackage;
 

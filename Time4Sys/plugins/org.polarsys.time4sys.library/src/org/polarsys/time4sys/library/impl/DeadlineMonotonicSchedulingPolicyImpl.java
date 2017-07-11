@@ -13,10 +13,8 @@
 package org.polarsys.time4sys.library.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.library.LibraryPackage;
-
 import org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl;
 
 /**

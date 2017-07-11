@@ -13,9 +13,7 @@
 package org.polarsys.time4sys.marte.srm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.marte.grm.impl.ResourceConnectorImpl;
-
 import org.polarsys.time4sys.marte.srm.SoftwareConnector;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 

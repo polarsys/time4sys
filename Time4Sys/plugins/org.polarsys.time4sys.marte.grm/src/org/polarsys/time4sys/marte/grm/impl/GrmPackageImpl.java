@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.marte.grm.impl;
 
+import static org.polarsys.time4sys.marte.grm.GrmPackage.RESOURCE;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -20,10 +22,8 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.ClockResource;
 import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;

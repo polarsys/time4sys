@@ -20,9 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.polarsys.time4sys.analysis.AnalysisFactory;
-import org.polarsys.time4sys.analysis.AnalyzedSystem;
-import org.polarsys.time4sys.builder.analysis.AnalysisBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
@@ -45,7 +42,6 @@ public class ProjectBuilder {
 	
 	private final Project project;
 	private final DesignBuilder design;
-	private AnalysisBuilder analysis;
 	
 	public ProjectBuilder() {
 		this(null);
@@ -67,29 +63,6 @@ public class ProjectBuilder {
 	public DesignBuilder design() {
 		assert(project.getDesign() == design.build());
 		return design;
-	}
-
-	public AnalysisBuilder analysis() {
-		if (analysis != null) {
-			return analysis;
-		}
-		AnalyzedSystem anaSys = project.getAnalysis();
-		if (anaSys == null) {
-			anaSys = AnalysisFactory.eINSTANCE.createAnalyzedSystem();
-		}
-		analysis = new AnalysisBuilder(anaSys);
-		project.setAnalysis(anaSys);
-		return analysis;
-	}
-
-	public AnalysisBuilder deriveAnalyzedSystem(boolean override) {
-		assert(design.build() != null);
-		assert(project.getDesign() == design.build());
-		if (override) {
-			analysis = null;
-		}
-		project.deriveAnalyzedSystem(override);
-		return analysis();
 	}
 
 	public Project build() {

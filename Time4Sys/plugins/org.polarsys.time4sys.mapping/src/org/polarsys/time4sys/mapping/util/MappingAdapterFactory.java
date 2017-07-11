@@ -14,12 +14,14 @@ package org.polarsys.time4sys.mapping.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.time4sys.mapping.*;
+import org.polarsys.time4sys.mapping.Context;
+import org.polarsys.time4sys.mapping.Link;
+import org.polarsys.time4sys.mapping.MappableArtefact;
+import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.mapping.MappingPackage;
+import org.polarsys.time4sys.mapping.ResourceArtefact;
 
 /**
  * <!-- begin-user-doc -->

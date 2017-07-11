@@ -11,15 +11,11 @@
 package org.polarsys.time4sys.odesign.helper;
 
 import java.util.Collection;
-import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.sirius.business.api.color.RGBValuesProvider;
-import org.eclipse.sirius.common.ui.tools.api.util.EclipseUIUtil;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.BorderedStyle;
 import org.eclipse.sirius.diagram.ContainerStyle;
@@ -44,7 +40,6 @@ import org.eclipse.sirius.viewpoint.description.ComputedColor;
 import org.eclipse.sirius.viewpoint.description.FixedColor;
 import org.eclipse.sirius.viewpoint.description.InterpolatedColor;
 import org.eclipse.swt.graphics.RGB;
-import org.eclipse.ui.IEditorPart;
 
 /**
  * Utility class to handle style, size and location

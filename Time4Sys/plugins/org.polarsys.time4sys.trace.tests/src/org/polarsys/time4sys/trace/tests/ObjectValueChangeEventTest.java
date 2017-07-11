@@ -2,10 +2,10 @@
  */
 package org.polarsys.time4sys.trace.tests;
 
-import junit.textui.TestRunner;
-
 import org.polarsys.time4sys.trace.ObjectValueChangeEvent;
 import org.polarsys.time4sys.trace.TraceFactory;
+
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

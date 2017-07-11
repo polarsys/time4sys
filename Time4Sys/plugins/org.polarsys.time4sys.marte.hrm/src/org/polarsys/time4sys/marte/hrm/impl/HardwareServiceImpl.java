@@ -13,9 +13,7 @@
 package org.polarsys.time4sys.marte.hrm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.marte.grm.impl.ResourceServiceImpl;
-
 import org.polarsys.time4sys.marte.hrm.HardwareService;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 

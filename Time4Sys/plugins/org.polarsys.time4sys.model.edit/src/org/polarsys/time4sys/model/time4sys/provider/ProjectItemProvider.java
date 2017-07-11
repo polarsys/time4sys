@@ -30,7 +30,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.polarsys.time4sys.analysis.AnalysisFactory;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
@@ -194,11 +193,6 @@ public class ProjectItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Time4sysPackage.Literals.PROJECT__ANALYSIS,
-				 AnalysisFactory.eINSTANCE.createAnalyzedSystem()));
 
 		newChildDescriptors.add
 			(createChildParameter

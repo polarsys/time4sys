@@ -15,11 +15,8 @@ package org.polarsys.time4sys.marte.hrm.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.hrm.HardwareBridge;
 import org.polarsys.time4sys.marte.hrm.HardwareMedia;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;

@@ -14,17 +14,12 @@
 package org.polarsys.time4sys.ui.views.hrm.providers;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
 import org.polarsys.time4sys.ui.views.hrm.parts.HrmViewsRepository;
-
 import org.polarsys.time4sys.ui.views.hrm.parts.forms.GeneralPropertiesEditionPartForm;
 import org.polarsys.time4sys.ui.views.hrm.parts.forms.OtherPropertiesEditionPartForm;
 import org.polarsys.time4sys.ui.views.hrm.parts.forms.TimingPropertiesEditionPartForm;
-
 import org.polarsys.time4sys.ui.views.hrm.parts.impl.GeneralPropertiesEditionPartImpl;
 import org.polarsys.time4sys.ui.views.hrm.parts.impl.OtherPropertiesEditionPartImpl;
 import org.polarsys.time4sys.ui.views.hrm.parts.impl.TimingPropertiesEditionPartImpl;

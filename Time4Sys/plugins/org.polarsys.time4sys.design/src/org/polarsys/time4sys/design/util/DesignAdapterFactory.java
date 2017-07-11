@@ -14,12 +14,10 @@ package org.polarsys.time4sys.design.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.time4sys.design.*;
+import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.design.DesignPackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -15,15 +15,10 @@ package org.polarsys.time4sys.marte.hrm.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.hrm.HardwareChannel;
 import org.polarsys.time4sys.marte.hrm.HardwareWire;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;

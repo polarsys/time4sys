@@ -16,22 +16,14 @@ package org.polarsys.time4sys.ui.grm.providers;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
 import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
-
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
 import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
-
 import org.eclipse.jface.viewers.IFilter;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
-
 import org.polarsys.time4sys.ui.grm.components.UsageTypedAmountGeneralPropertiesEditionComponent;
 import org.polarsys.time4sys.ui.grm.components.UsageTypedAmountOtherPropertiesEditionComponent;
 import org.polarsys.time4sys.ui.grm.components.UsageTypedAmountPropertiesEditionComponent;

@@ -13,15 +13,10 @@
 package org.polarsys.time4sys.marte.hrm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.hrm.HardwareBranchPredictor;
 import org.polarsys.time4sys.marte.hrm.HardwareCache;
 import org.polarsys.time4sys.marte.hrm.HardwareIsa;

@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.hrm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.marte.hrm.HardwareIpBlock;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 

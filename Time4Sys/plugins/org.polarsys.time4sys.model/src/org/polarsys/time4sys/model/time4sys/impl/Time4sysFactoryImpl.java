@@ -15,11 +15,13 @@ package org.polarsys.time4sys.model.time4sys.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.time4sys.model.time4sys.*;
+import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
+import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 
 /**
  * <!-- begin-user-doc -->

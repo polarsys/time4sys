@@ -13,11 +13,8 @@
 package org.polarsys.time4sys.marte.hrm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.time4sys.marte.hrm.CacheType;
 import org.polarsys.time4sys.marte.hrm.HardwareCache;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;

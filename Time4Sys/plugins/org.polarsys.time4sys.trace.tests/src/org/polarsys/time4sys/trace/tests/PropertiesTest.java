@@ -12,12 +12,11 @@
  */
 package org.polarsys.time4sys.trace.tests;
 
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import org.polarsys.time4sys.trace.Properties;
 import org.polarsys.time4sys.trace.TraceFactory;
+
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

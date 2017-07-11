@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.hrm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.marte.hrm.HardwareActuator;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 

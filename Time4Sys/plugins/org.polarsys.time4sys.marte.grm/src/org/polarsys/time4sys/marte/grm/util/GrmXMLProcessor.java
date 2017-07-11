@@ -15,11 +15,8 @@ package org.polarsys.time4sys.marte.grm.util;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 
 /**

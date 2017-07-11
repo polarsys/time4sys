@@ -22,10 +22,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.time4sys.library.LibraryPackage;
 import org.polarsys.time4sys.library.TDMA;
-
 import org.polarsys.time4sys.marte.grm.provider.SchedulingPolicyItemProvider;
 
 /**

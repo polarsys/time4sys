@@ -12,9 +12,6 @@
  */
 package org.polarsys.time4sys.model.time4sys.tests;
 
-import org.junit.Test;
-import org.polarsys.time4sys.analysis.AnalysisFactory;
-import org.polarsys.time4sys.analysis.AnalyzedSystem;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
@@ -111,7 +108,6 @@ public class ProjectTest extends TestCase {
 		ResourcePackage resPkg = grmFactory.createResourcePackage();
 		model.setResourcePackage(resPkg);
 		fixture.setDesign(model);
-		fixture.setAnalysis(AnalysisFactory.eINSTANCE.createAnalyzedSystem());
 	}
 
 	/**
@@ -122,25 +118,6 @@ public class ProjectTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '
-	 * {@link org.polarsys.time4sys.model.time4sys.Project#deriveAnalyzedSystem(boolean)
-	 * <em>Derive Analyzed System</em>}' operation. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see org.polarsys.time4sys.model.time4sys.Project#deriveAnalyzedSystem(boolean)
-	 * @generated NOT
-	 */
-	@Test
-	public void testDeriveAnalyzedSystem__boolean() {
-		final AnalyzedSystem analysedSys = fixture.getAnalysis();
-		assert (analysedSys != null);
-		final AnalyzedSystem res1 = fixture.deriveAnalyzedSystem(false);
-		assertEquals(analysedSys, res1);
-		final AnalyzedSystem res2 = fixture.deriveAnalyzedSystem(true);
-		assertNotSame(analysedSys, res2);
 	}
 
 } // ProjectTest

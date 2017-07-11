@@ -13,9 +13,7 @@
 package org.polarsys.time4sys.marte.hrm.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
 import org.polarsys.time4sys.marte.srm.provider.SrmEditPlugin;
 

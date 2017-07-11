@@ -16,17 +16,30 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
-
-import org.polarsys.time4sys.trace.*;
+import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
+import org.polarsys.time4sys.trace.DurationValueChangeEvent;
+import org.polarsys.time4sys.trace.Event;
+import org.polarsys.time4sys.trace.MessageEvent;
+import org.polarsys.time4sys.trace.MessageEventKind;
+import org.polarsys.time4sys.trace.NumberValueChangeEvent;
+import org.polarsys.time4sys.trace.ObjectValueChangeEvent;
+import org.polarsys.time4sys.trace.Properties;
+import org.polarsys.time4sys.trace.ResourceEvent;
+import org.polarsys.time4sys.trace.ResourceEventKind;
+import org.polarsys.time4sys.trace.SchedulingEvent;
+import org.polarsys.time4sys.trace.SchedulingEventKind;
+import org.polarsys.time4sys.trace.Slice;
+import org.polarsys.time4sys.trace.SliceKind;
+import org.polarsys.time4sys.trace.Trace;
+import org.polarsys.time4sys.trace.TraceFactory;
+import org.polarsys.time4sys.trace.TracePackage;
+import org.polarsys.time4sys.trace.ValueChangeEvent;
 
 /**
  * <!-- begin-user-doc -->

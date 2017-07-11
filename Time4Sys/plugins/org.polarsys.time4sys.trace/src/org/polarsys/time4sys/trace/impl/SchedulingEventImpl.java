@@ -13,11 +13,8 @@
 package org.polarsys.time4sys.trace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.SchedulingEventKind;
 import org.polarsys.time4sys.trace.TracePackage;

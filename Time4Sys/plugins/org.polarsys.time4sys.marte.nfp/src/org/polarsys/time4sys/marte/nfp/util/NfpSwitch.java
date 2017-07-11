@@ -14,10 +14,18 @@ package org.polarsys.time4sys.marte.nfp.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.marte.nfp.*;
+import org.polarsys.time4sys.marte.nfp.Bucket;
+import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.NormalDistribution;
+import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->

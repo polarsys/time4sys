@@ -16,22 +16,14 @@ package org.polarsys.time4sys.ui.hrm.providers;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
 import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
-
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
 import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
-
 import org.eclipse.jface.viewers.IFilter;
-
 import org.polarsys.time4sys.marte.hrm.HardwareTimingResource;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
-
 import org.polarsys.time4sys.ui.hrm.components.HardwareTimingResourceGeneralPropertiesEditionComponent;
 import org.polarsys.time4sys.ui.hrm.components.HardwareTimingResourceOtherPropertiesEditionComponent;
 import org.polarsys.time4sys.ui.hrm.components.HardwareTimingResourcePropertiesEditionComponent;

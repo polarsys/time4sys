@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.grm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 

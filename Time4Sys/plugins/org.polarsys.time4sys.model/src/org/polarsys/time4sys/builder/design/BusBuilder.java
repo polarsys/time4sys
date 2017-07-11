@@ -13,15 +13,10 @@ package org.polarsys.time4sys.builder.design;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
-import org.polarsys.time4sys.marte.grm.Resource;
-import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
-import org.polarsys.time4sys.marte.grm.SchedulableResource;
-import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
 import org.polarsys.time4sys.marte.hrm.HardwareArbiter;
 import org.polarsys.time4sys.marte.hrm.HardwareBus;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.srm.SoftwareScheduler;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**

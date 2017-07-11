@@ -18,10 +18,8 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;

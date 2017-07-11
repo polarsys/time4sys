@@ -13,15 +13,11 @@
 package org.polarsys.time4sys.trace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
-
 import org.polarsys.time4sys.trace.Properties;
 import org.polarsys.time4sys.trace.TracePackage;
 

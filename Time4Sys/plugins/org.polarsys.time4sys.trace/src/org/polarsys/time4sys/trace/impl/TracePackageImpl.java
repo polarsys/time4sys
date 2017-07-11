@@ -19,14 +19,11 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
-
 import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
 import org.polarsys.time4sys.trace.DurationValueChangeEvent;
 import org.polarsys.time4sys.trace.Event;

@@ -14,15 +14,10 @@
 package org.polarsys.time4sys.ui.views.nfp.providers;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
 import org.polarsys.time4sys.ui.views.nfp.parts.NfpViewsRepository;
-
 import org.polarsys.time4sys.ui.views.nfp.parts.forms.GeneralPropertiesEditionPartForm;
-
 import org.polarsys.time4sys.ui.views.nfp.parts.impl.GeneralPropertiesEditionPartImpl;
 
 /**

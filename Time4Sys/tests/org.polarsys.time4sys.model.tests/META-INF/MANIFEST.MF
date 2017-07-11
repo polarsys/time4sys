@@ -12,7 +12,6 @@ Export-Package: org.polarsys.time4sys.model,
  org.polarsys.time4sys.model.time4sys.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model;visibility:=reexport,
- org.polarsys.time4sys.analysis;visibility:=reexport,
  org.polarsys.time4sys.design;visibility:=reexport,
  org.polarsys.time4sys.marte.gqam;visibility:=reexport,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,

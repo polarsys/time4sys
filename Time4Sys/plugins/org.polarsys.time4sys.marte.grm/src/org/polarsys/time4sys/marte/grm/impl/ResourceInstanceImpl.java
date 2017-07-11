@@ -13,16 +13,11 @@
 package org.polarsys.time4sys.marte.grm.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceInstance;

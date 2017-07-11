@@ -20,11 +20,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.grm.provider.ResourceItemProvider;
-
 import org.polarsys.time4sys.marte.hrm.HardwareResource;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;

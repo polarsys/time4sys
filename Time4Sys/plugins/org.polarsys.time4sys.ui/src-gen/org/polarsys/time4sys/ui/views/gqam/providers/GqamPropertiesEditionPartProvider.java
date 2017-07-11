@@ -14,16 +14,11 @@
 package org.polarsys.time4sys.ui.views.gqam.providers;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
 import org.polarsys.time4sys.ui.views.gqam.parts.GqamViewsRepository;
-
 import org.polarsys.time4sys.ui.views.gqam.parts.forms.GeneralPropertiesEditionPartForm;
 import org.polarsys.time4sys.ui.views.gqam.parts.forms.TimingPropertiesEditionPartForm;
-
 import org.polarsys.time4sys.ui.views.gqam.parts.impl.GeneralPropertiesEditionPartImpl;
 import org.polarsys.time4sys.ui.views.gqam.parts.impl.TimingPropertiesEditionPartImpl;
 

@@ -26,15 +26,11 @@ import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.sirius.common.tools.api.util.TreeItemWrapper;
-import org.eclipse.sirius.common.ui.tools.api.navigator.GroupingContentProvider;
 import org.eclipse.sirius.common.ui.tools.api.selection.page.AbstractSelectionWizardPage;
-import org.eclipse.sirius.common.ui.tools.api.util.TreeItemWrapperContentProvider;
 import org.eclipse.sirius.common.ui.tools.api.view.common.item.ItemDecorator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -45,7 +41,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.TreeItem;
 
 import com.google.common.collect.Iterators;
 

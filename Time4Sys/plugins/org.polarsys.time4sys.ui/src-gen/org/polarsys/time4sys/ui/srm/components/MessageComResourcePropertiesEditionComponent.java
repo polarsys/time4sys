@@ -16,19 +16,12 @@ package org.polarsys.time4sys.ui.srm.components;
 // Start of user code for imports
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
 import org.eclipse.emf.eef.runtime.impl.components.ComposedPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
 import org.polarsys.time4sys.marte.srm.MessageComResource;
-
 import org.polarsys.time4sys.ui.views.srm.parts.GeneralPropertiesEditionPart;
 import org.polarsys.time4sys.ui.views.srm.parts.OtherPropertiesEditionPart;
 import org.polarsys.time4sys.ui.views.srm.parts.SrmViewsRepository;

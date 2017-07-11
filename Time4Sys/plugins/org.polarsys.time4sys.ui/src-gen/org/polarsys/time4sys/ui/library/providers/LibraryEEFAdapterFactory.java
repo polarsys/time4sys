@@ -14,7 +14,6 @@
 package org.polarsys.time4sys.ui.library.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
-
 import org.polarsys.time4sys.library.util.LibraryAdapterFactory;
 
 /**

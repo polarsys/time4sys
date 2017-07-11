@@ -15,9 +15,7 @@ package org.polarsys.time4sys.library;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 
 /**

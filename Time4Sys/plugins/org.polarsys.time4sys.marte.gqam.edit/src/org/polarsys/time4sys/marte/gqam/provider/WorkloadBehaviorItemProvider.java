@@ -21,7 +21,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;

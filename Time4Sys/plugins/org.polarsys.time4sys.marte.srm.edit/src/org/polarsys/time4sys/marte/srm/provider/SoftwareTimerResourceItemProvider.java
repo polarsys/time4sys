@@ -22,11 +22,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.grm.provider.TimerResourceItemProvider;
-
 import org.polarsys.time4sys.marte.srm.SoftwareTimerResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 import org.polarsys.time4sys.marte.srm.SrmPackage;

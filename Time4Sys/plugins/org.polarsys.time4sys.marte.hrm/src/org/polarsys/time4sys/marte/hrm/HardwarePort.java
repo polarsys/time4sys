@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.hrm;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.time4sys.marte.grm.ResourcePort;
 
 /**

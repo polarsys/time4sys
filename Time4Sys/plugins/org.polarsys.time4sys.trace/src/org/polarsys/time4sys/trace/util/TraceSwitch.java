@@ -14,10 +14,20 @@ package org.polarsys.time4sys.trace.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.trace.*;
+import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
+import org.polarsys.time4sys.trace.DurationValueChangeEvent;
+import org.polarsys.time4sys.trace.Event;
+import org.polarsys.time4sys.trace.MessageEvent;
+import org.polarsys.time4sys.trace.NumberValueChangeEvent;
+import org.polarsys.time4sys.trace.ObjectValueChangeEvent;
+import org.polarsys.time4sys.trace.Properties;
+import org.polarsys.time4sys.trace.ResourceEvent;
+import org.polarsys.time4sys.trace.SchedulingEvent;
+import org.polarsys.time4sys.trace.Slice;
+import org.polarsys.time4sys.trace.Trace;
+import org.polarsys.time4sys.trace.TracePackage;
+import org.polarsys.time4sys.trace.ValueChangeEvent;
 
 /**
  * <!-- begin-user-doc -->

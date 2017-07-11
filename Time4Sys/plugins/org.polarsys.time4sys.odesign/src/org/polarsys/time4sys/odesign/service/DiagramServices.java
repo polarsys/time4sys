@@ -55,7 +55,6 @@ import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
-import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
 
 public class DiagramServices {

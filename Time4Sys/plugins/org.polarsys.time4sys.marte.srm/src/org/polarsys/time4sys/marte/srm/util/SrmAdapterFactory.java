@@ -14,11 +14,8 @@ package org.polarsys.time4sys.marte.srm.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
@@ -40,8 +37,32 @@ import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SynchResource;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
-
-import org.polarsys.time4sys.marte.srm.*;
+import org.polarsys.time4sys.marte.srm.Alarm;
+import org.polarsys.time4sys.marte.srm.DeviceBroker;
+import org.polarsys.time4sys.marte.srm.InterruptResource;
+import org.polarsys.time4sys.marte.srm.MemoryBroker;
+import org.polarsys.time4sys.marte.srm.MemoryPartition;
+import org.polarsys.time4sys.marte.srm.MessageComResource;
+import org.polarsys.time4sys.marte.srm.NotificationResource;
+import org.polarsys.time4sys.marte.srm.SharedDataComResource;
+import org.polarsys.time4sys.marte.srm.SoftwareAccessService;
+import org.polarsys.time4sys.marte.srm.SoftwareArchitecture;
+import org.polarsys.time4sys.marte.srm.SoftwareCommunicationResource;
+import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
+import org.polarsys.time4sys.marte.srm.SoftwareConnector;
+import org.polarsys.time4sys.marte.srm.SoftwareInteractionResource;
+import org.polarsys.time4sys.marte.srm.SoftwareInterface;
+import org.polarsys.time4sys.marte.srm.SoftwareInterfacePackage;
+import org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource;
+import org.polarsys.time4sys.marte.srm.SoftwarePort;
+import org.polarsys.time4sys.marte.srm.SoftwareResource;
+import org.polarsys.time4sys.marte.srm.SoftwareResourcePackage;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
+import org.polarsys.time4sys.marte.srm.SoftwareScheduler;
+import org.polarsys.time4sys.marte.srm.SoftwareService;
+import org.polarsys.time4sys.marte.srm.SoftwareSynchronizationResource;
+import org.polarsys.time4sys.marte.srm.SoftwareTimerResource;
+import org.polarsys.time4sys.marte.srm.SrmPackage;
 
 /**
  * <!-- begin-user-doc -->

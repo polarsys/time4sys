@@ -19,10 +19,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.gqam.AcquireStep;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -52,10 +50,8 @@ import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
-
 import org.polarsys.time4sys.marte.gqam.util.GqamValidator;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 

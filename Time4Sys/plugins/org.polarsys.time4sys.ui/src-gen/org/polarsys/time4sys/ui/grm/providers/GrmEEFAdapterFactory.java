@@ -14,7 +14,6 @@
 package org.polarsys.time4sys.ui.grm.providers;
 
 import org.eclipse.emf.common.notify.Adapter;
-
 import org.polarsys.time4sys.marte.grm.util.GrmAdapterFactory;
 
 /**

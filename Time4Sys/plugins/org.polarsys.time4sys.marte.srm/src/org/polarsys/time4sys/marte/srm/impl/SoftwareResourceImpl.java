@@ -15,20 +15,13 @@ package org.polarsys.time4sys.marte.srm.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.grm.ResourceService;
-
 import org.polarsys.time4sys.marte.grm.impl.ResourceManagerImpl;
-
 import org.polarsys.time4sys.marte.srm.SoftwareResource;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 

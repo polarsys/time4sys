@@ -14,11 +14,12 @@ package org.polarsys.time4sys.library.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.library.*;
-
+import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
+import org.polarsys.time4sys.library.HardwareCANBus;
+import org.polarsys.time4sys.library.LibraryPackage;
+import org.polarsys.time4sys.library.RateMonotonicSchedulingPolicy;
+import org.polarsys.time4sys.library.TDMA;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.NamedElement;

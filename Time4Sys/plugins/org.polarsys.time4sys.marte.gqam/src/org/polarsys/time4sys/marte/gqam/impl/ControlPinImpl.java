@@ -14,12 +14,9 @@ package org.polarsys.time4sys.marte.gqam.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;

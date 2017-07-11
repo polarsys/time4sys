@@ -18,7 +18,6 @@ import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.MappableArtefact;
-import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
