@@ -13,10 +13,10 @@ package org.polarsys.time4sys.model.time4sys.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.model.time4sys.Transformation;
@@ -45,7 +45,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected DesignModel result;
+	protected EObject result;
 
 	/**
 	 * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference.
@@ -101,7 +101,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DesignModel getResult() {
+	public EObject getResult() {
 		return result;
 	}
 
@@ -110,8 +110,8 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetResult(DesignModel newResult, NotificationChain msgs) {
-		DesignModel oldResult = result;
+	public NotificationChain basicSetResult(EObject newResult, NotificationChain msgs) {
+		EObject oldResult = result;
 		result = newResult;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Time4sysPackage.TRANSFORMATION__RESULT, oldResult, newResult);
@@ -125,7 +125,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResult(DesignModel newResult) {
+	public void setResult(EObject newResult) {
 		if (newResult != result) {
 			NotificationChain msgs = null;
 			if (result != null)
@@ -246,7 +246,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Time4sysPackage.TRANSFORMATION__RESULT:
-				setResult((DesignModel)newValue);
+				setResult((EObject)newValue);
 				return;
 			case Time4sysPackage.TRANSFORMATION__MAPPING:
 				setMapping((Mapping)newValue);
@@ -267,7 +267,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Time4sysPackage.TRANSFORMATION__RESULT:
-				setResult((DesignModel)null);
+				setResult((EObject)null);
 				return;
 			case Time4sysPackage.TRANSFORMATION__MAPPING:
 				setMapping((Mapping)null);

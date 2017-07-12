@@ -11,7 +11,6 @@
 package org.polarsys.time4sys.model.time4sys;
 
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
 
 /**
@@ -42,12 +41,12 @@ public interface Transformation extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Result</em>' containment reference.
-	 * @see #setResult(DesignModel)
+	 * @see #setResult(EObject)
 	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getTransformation_Result()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	DesignModel getResult();
+	EObject getResult();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.model.time4sys.Transformation#getResult <em>Result</em>}' containment reference.
@@ -57,7 +56,7 @@ public interface Transformation extends EObject {
 	 * @see #getResult()
 	 * @generated
 	 */
-	void setResult(DesignModel value);
+	void setResult(EObject value);
 
 	/**
 	 * Returns the value of the '<em><b>Mapping</b></em>' containment reference.
