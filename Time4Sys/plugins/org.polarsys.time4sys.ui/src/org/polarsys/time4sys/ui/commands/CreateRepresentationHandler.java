@@ -52,11 +52,6 @@ public class CreateRepresentationHandler extends AbstractHandler {
 							selected.deselectViewpoint(previouslySelected, session, new NullProgressMonitor());
 						}
 						selected.selectViewpoint(
-								ViewpointRegistry.getInstance().getViewpoint(
-										URI.createURI("viewpoint:/org.polarsys.time4sys.odesign/Analysis")),
-								session, new NullProgressMonitor());
-
-						selected.selectViewpoint(
 								ViewpointRegistry.getInstance()
 										.getViewpoint(URI.createURI("viewpoint:/org.polarsys.time4sys.odesign/Design")),
 								session, new NullProgressMonitor());

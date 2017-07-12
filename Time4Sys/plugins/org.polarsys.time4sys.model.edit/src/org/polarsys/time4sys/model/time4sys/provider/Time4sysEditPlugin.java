@@ -14,6 +14,7 @@ package org.polarsys.time4sys.model.time4sys.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.design.provider.DesignEditPlugin;
 import org.polarsys.time4sys.mapping.provider.MappingEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
@@ -57,6 +58,7 @@ public final class Time4sysEditPlugin extends EMFPlugin {
 		     GrmEditPlugin.INSTANCE,
 		     MappingEditPlugin.INSTANCE,
 		     TraceEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

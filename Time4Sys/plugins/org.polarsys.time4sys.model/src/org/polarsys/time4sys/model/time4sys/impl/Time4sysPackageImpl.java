@@ -134,7 +134,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProject_Analysis() {
+	public EReference getProject_Design() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -143,17 +143,8 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProject_Design() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getProject_Name() {
-		return (EAttribute)projectEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)projectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -162,7 +153,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	public EReference getProject_Mappings() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(3);
+		return (EReference)projectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -171,7 +162,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	public EReference getProject_Traces() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(4);
+		return (EReference)projectEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -180,7 +171,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	public EReference getProject_Derivations() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(5);
+		return (EReference)projectEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -189,7 +180,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	public EReference getProject_Transformations() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(6);
+		return (EReference)projectEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -198,16 +189,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	public EReference getProject_Simulations() {
-		return (EReference)projectEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getProject__DeriveAnalyzedSystem__boolean() {
-		return projectEClass.getEOperations().get(0);
+		return (EReference)projectEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -320,7 +302,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 
 		// Create classes and their features
 		projectEClass = createEClass(PROJECT);
-		createEReference(projectEClass, PROJECT__ANALYSIS);
 		createEReference(projectEClass, PROJECT__DESIGN);
 		createEAttribute(projectEClass, PROJECT__NAME);
 		createEReference(projectEClass, PROJECT__MAPPINGS);
@@ -328,7 +309,6 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		createEReference(projectEClass, PROJECT__DERIVATIONS);
 		createEReference(projectEClass, PROJECT__TRANSFORMATIONS);
 		createEReference(projectEClass, PROJECT__SIMULATIONS);
-		createEOperation(projectEClass, PROJECT___DERIVE_ANALYZED_SYSTEM__BOOLEAN);
 
 		transformationEClass = createEClass(TRANSFORMATION);
 		createEReference(transformationEClass, TRANSFORMATION__RESULT);

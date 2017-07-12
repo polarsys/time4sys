@@ -30,12 +30,6 @@ import junit.textui.TestRunner;
 /**
  * <!-- begin-user-doc --> A test case for the model object '
  * <em><b>Project</b></em>'. <!-- end-user-doc -->
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#deriveAnalyzedSystem(boolean) <em>Derive Analyzed System</em>}</li>
- * </ul>
- * </p>
  * @generated
  */
 public class ProjectTest extends TestCase {

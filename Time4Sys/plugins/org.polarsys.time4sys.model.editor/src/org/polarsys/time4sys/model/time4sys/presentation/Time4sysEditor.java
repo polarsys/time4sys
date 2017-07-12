@@ -132,6 +132,7 @@ import org.polarsys.time4sys.mapping.provider.MappingItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.gqam.provider.GqamItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.grm.provider.GrmItemProviderAdapterFactory;
 import org.polarsys.time4sys.model.time4sys.provider.Time4sysItemProviderAdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.polarsys.time4sys.trace.provider.TraceItemProviderAdapterFactory;
 
 
@@ -683,6 +684,7 @@ public class Time4sysEditor
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MappingItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TraceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

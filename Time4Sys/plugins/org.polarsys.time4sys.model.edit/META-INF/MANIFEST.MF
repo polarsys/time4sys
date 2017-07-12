@@ -21,5 +21,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.mapping;visibility:=reexport,
  org.polarsys.time4sys.mapping.edit;visibility:=reexport,
  org.polarsys.time4sys.trace;visibility:=reexport,
- org.polarsys.time4sys.trace.edit;visibility:=reexport
+ org.polarsys.time4sys.trace.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

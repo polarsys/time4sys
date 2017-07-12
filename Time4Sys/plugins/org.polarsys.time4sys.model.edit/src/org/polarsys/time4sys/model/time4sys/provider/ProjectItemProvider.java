@@ -105,7 +105,6 @@ public class ProjectItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__ANALYSIS);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__DESIGN);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__MAPPINGS);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__TRACES);
@@ -170,7 +169,6 @@ public class ProjectItemProvider
 			case Time4sysPackage.PROJECT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case Time4sysPackage.PROJECT__ANALYSIS:
 			case Time4sysPackage.PROJECT__DESIGN:
 			case Time4sysPackage.PROJECT__MAPPINGS:
 			case Time4sysPackage.PROJECT__TRACES:

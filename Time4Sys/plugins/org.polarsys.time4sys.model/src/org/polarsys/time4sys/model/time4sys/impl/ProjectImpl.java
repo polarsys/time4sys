@@ -12,7 +12,6 @@
  */
 package org.polarsys.time4sys.model.time4sys.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -41,7 +40,6 @@ import org.polarsys.time4sys.transformations.IdentityDerivation;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getDesign <em>Design</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getMappings <em>Mappings</em>}</li>

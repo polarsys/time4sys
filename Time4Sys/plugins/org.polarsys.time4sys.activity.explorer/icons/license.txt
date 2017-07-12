@@ -4,10 +4,6 @@ These followings icons are made available under the terms of the Eclipse Public 
 
 <icon file path> - <original eclipse plug-in> - <original file path>
 
-icons/Analysis.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/Analysis.png
-icons/AnalysisModel.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/AnalysisModel.png
-icons/AnalysisOff.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/AnalysisOff.png
-icons/AnalysisOn.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/AnalysisOn.png
 icons/BehaviorScenario.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/BehaviorScenario.png
 icons/DesignModel.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/DesignModel.png
 icons/DesignOff.png - org.polarsys.time4sys.activity.explorer - org.polarsys.time4sys.activity.explorer/icons/DesignOff.png

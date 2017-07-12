@@ -27,7 +27,6 @@ import org.polarsys.time4sys.trace.Trace;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getAnalysis <em>Analysis</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getDesign <em>Design</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getMappings <em>Mappings</em>}</li>

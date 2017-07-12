@@ -101,12 +101,6 @@ public class InitTime4SysModel extends WorkspaceModifyOperation {
 										selection.selectViewpoint(
 												ViewpointRegistry.getInstance()
 														.getViewpoint(URI.createURI(
-																"viewpoint:/org.polarsys.time4sys.odesign/Analysis")),
-												session, new NullProgressMonitor());
-
-										selection.selectViewpoint(
-												ViewpointRegistry.getInstance()
-														.getViewpoint(URI.createURI(
 																"viewpoint:/org.polarsys.time4sys.odesign/Design")),
 												session, new NullProgressMonitor());
 									}

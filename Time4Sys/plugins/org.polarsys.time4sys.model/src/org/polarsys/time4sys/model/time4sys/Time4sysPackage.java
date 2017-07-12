@@ -77,16 +77,6 @@ public interface Time4sysPackage extends EPackage {
 	 */
 	int PROJECT = 0;
 
-
-	/**
-	 * The feature id for the '<em><b>Analysis</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT__ANALYSIS = 0;
-
 	/**
 	 * The feature id for the '<em><b>Design</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -94,7 +84,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__DESIGN = 1;
+	int PROJECT__DESIGN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -103,7 +93,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__NAME = 2;
+	int PROJECT__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Mappings</b></em>' containment reference list.
@@ -112,7 +102,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__MAPPINGS = 3;
+	int PROJECT__MAPPINGS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Traces</b></em>' containment reference list.
@@ -121,7 +111,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__TRACES = 4;
+	int PROJECT__TRACES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Derivations</b></em>' containment reference list.
@@ -130,7 +120,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__DERIVATIONS = 5;
+	int PROJECT__DERIVATIONS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Transformations</b></em>' containment reference list.
@@ -139,7 +129,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__TRANSFORMATIONS = 6;
+	int PROJECT__TRANSFORMATIONS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Simulations</b></em>' containment reference list.
@@ -148,7 +138,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__SIMULATIONS = 7;
+	int PROJECT__SIMULATIONS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Project</em>' class.
@@ -157,16 +147,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_FEATURE_COUNT = 8;
-
-	/**
-	 * The operation id for the '<em>Derive Analyzed System</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT___DERIVE_ANALYZED_SYSTEM__BOOLEAN = 0;
+	int PROJECT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Project</em>' class.
@@ -175,7 +156,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_OPERATION_COUNT = 1;
+	int PROJECT_OPERATION_COUNT = 0;
 
 
 	/**
@@ -309,17 +290,6 @@ public interface Time4sysPackage extends EPackage {
 	EClass getProject();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.model.time4sys.Project#getAnalysis <em>Analysis</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Analysis</em>'.
-	 * @see org.polarsys.time4sys.model.time4sys.Project#getAnalysis()
-	 * @see #getProject()
-	 * @generated
-	 */
-	EReference getProject_Analysis();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.model.time4sys.Project#getDesign <em>Design</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,16 +365,6 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProject_Simulations();
-
-	/**
-	 * Returns the meta object for the '{@link org.polarsys.time4sys.model.time4sys.Project#deriveAnalyzedSystem(boolean) <em>Derive Analyzed System</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Derive Analyzed System</em>' operation.
-	 * @see org.polarsys.time4sys.model.time4sys.Project#deriveAnalyzedSystem(boolean)
-	 * @generated
-	 */
-	EOperation getProject__DeriveAnalyzedSystem__boolean();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.model.time4sys.Transformation <em>Transformation</em>}'.
@@ -536,14 +496,6 @@ public interface Time4sysPackage extends EPackage {
 		EClass PROJECT = eINSTANCE.getProject();
 
 		/**
-		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROJECT__ANALYSIS = eINSTANCE.getProject_Analysis();
-
-		/**
 		 * The meta object literal for the '<em><b>Design</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -598,14 +550,6 @@ public interface Time4sysPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROJECT__SIMULATIONS = eINSTANCE.getProject_Simulations();
-
-		/**
-		 * The meta object literal for the '<em><b>Derive Analyzed System</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation PROJECT___DERIVE_ANALYZED_SYSTEM__BOOLEAN = eINSTANCE.getProject__DeriveAnalyzedSystem__boolean();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.model.time4sys.impl.TransformationImpl <em>Transformation</em>}' class.
