@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2017 RealTime-at-Work and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Loïc Fejoz - initial API and implementation
+ -->
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.polarsys.time4sys.trace.Slice"
+            id="org.polarsys.time4sys.trace.timinggraphics.contribution.exportas">
+         <menu
+               label="Export As"
+               path="additions"
+               id="org.polarsys.time4sys.trace.Slice.exportas">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Export as Timing Graphics(tm)..."
+               class="org.polarsys.time4sys.trace.timinggraphics.popup.actions.ExportAsTimingGraphics"
+               menubarPath="org.polarsys.time4sys.trace.Slice.exportas/group1"
+               enablesFor="1"
+               id="org.polarsys.time4sys.trace.timinggraphics.action.exportas">
+         </action>
+      </objectContribution>
+      <objectContribution
+            objectClass="org.polarsys.time4sys.trace.Trace"
+            id="org.polarsys.time4sys.trace.trace.timinggraphics.contribution.exportas">
+         <menu
+               label="Export As"
+               path="additions"
+               id="org.polarsys.time4sys.trace.Trace.exportas">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               label="Export Hierarchy as Timing Graphics(tm)..."
+               class="org.polarsys.time4sys.trace.timinggraphics.popup.actions.ExportAsTimingGraphics"
+               menubarPath="org.polarsys.time4sys.trace.Trace.exportas/group1"
+               enablesFor="1"
+               id="org.polarsys.time4sys.trace.Trace.timinggraphics.action.exportas">
+         </action>      
+      </objectContribution>
+   </extension>
+
+</plugin>

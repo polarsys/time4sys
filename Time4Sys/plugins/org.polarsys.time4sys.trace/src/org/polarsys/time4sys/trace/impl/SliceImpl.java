@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.Properties;
 import org.polarsys.time4sys.trace.Slice;
@@ -417,6 +419,19 @@ public class SliceImpl extends MinimalEObjectImpl.Container implements Slice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Duration getLatestTimestamp() {
+		Duration max = NfpFactory.eINSTANCE.createDurationFromString("0ps");
+		for(Event evt: getAggregatedEvents()) {//TODO more efficient visiting
+			max = max.max(evt.getTimestamp());
+		}
+		return max;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -609,6 +624,8 @@ public class SliceImpl extends MinimalEObjectImpl.Container implements Slice {
 				return getHierarchicalName((String)arguments.get(0));
 			case TracePackage.SLICE___GET_AGGREGATED_EVENTS:
 				return getAggregatedEvents();
+			case TracePackage.SLICE___GET_LATEST_TIMESTAMP:
+				return getLatestTimestamp();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

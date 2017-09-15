@@ -64,6 +64,7 @@
       <eParameters name="separator" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
     <eOperations name="getAggregatedEvents" upperBound="-1" eType="#//Event"/>
+    <eOperations name="getLatestTimestamp" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
         eType="#//Event"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSubSlices" upperBound="-1"

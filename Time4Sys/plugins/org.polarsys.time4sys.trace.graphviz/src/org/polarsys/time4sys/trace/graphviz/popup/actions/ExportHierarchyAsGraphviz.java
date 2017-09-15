@@ -146,7 +146,7 @@ public class ExportHierarchyAsGraphviz implements IObjectActionDelegate {
 		run(new FileOutputStream(output));
 	}
 	
-	private void run(Trace trc, File output) throws IOException {
+	public void run(Trace trc, File output) throws IOException {
 		assert(output != null);
 		trace = trc;
 		this.output = output;

@@ -502,13 +502,22 @@ public interface TracePackage extends EPackage {
 	int SLICE___GET_AGGREGATED_EVENTS = 1;
 
 	/**
+	 * The operation id for the '<em>Get Latest Timestamp</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLICE___GET_LATEST_TIMESTAMP = 2;
+
+	/**
 	 * The number of operations of the '<em>Slice</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE_OPERATION_COUNT = 2;
+	int SLICE_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.PropertiesImpl <em>Properties</em>}' class.
@@ -1374,6 +1383,16 @@ public interface TracePackage extends EPackage {
 	EOperation getSlice__GetAggregatedEvents();
 
 	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.trace.Slice#getLatestTimestamp() <em>Get Latest Timestamp</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Latest Timestamp</em>' operation.
+	 * @see org.polarsys.time4sys.trace.Slice#getLatestTimestamp()
+	 * @generated
+	 */
+	EOperation getSlice__GetLatestTimestamp();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.trace.Properties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1910,6 +1929,14 @@ public interface TracePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SLICE___GET_AGGREGATED_EVENTS = eINSTANCE.getSlice__GetAggregatedEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Latest Timestamp</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SLICE___GET_LATEST_TIMESTAMP = eINSTANCE.getSlice__GetLatestTimestamp();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.trace.impl.PropertiesImpl <em>Properties</em>}' class.

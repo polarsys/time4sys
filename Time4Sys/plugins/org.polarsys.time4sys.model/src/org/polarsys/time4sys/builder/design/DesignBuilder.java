@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -39,6 +40,7 @@ import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
+import org.polarsys.time4sys.model.time4sys.Project;
 
 /**
  * @author loic
@@ -54,6 +56,7 @@ public class DesignBuilder {
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 
 	private DesignModel design;
+	private ProjectBuilder prjBuidler;
 
 	/**
 	 * 
@@ -287,6 +290,19 @@ public class DesignBuilder {
 		for(EndToEndFlowConstraintBuilder cst: values) {
 			cst.build(this);
 		}
+	}
+
+	public ProjectBuilder getProject() {
+		if (prjBuidler != null) {
+			return prjBuidler;
+		}
+		prjBuidler = new ProjectBuilder(this);
+		return prjBuidler;
+	}
+
+	public DesignBuilder isNamed(final String name) {
+		design.setName(name);
+		return this;
 	}
 
 

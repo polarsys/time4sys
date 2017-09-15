@@ -44,7 +44,22 @@ public class ProjectBuilder {
 	private final DesignBuilder design;
 	
 	public ProjectBuilder() {
-		this(null);
+		this((Project)null);
+	}
+	
+	public ProjectBuilder(final DesignBuilder designBuilder) {
+		if (designBuilder == null) {
+			throw new IllegalArgumentException("designBuilder must not be null");
+		}
+		design = designBuilder;
+		if (design.build().eContainer() instanceof Project) {
+			project = (Project)design.build().eContainer();
+		} else {
+			project = Time4sysFactory.eINSTANCE.createProject();
+			project.setDesign(design.build());
+		}
+		assert(design != null);
+		assert(project.getDesign() == design.build());
 	}
 
 	public ProjectBuilder(final Project prj) {
@@ -102,4 +117,8 @@ public class ProjectBuilder {
 		resource.save(new HashMap<Object, Object>());		
 	}
 
+	public ProjectBuilder isNamed(final String name) {
+		project.setName(name);
+		return this;
+	}
 }

@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Trace Graphviz Exporter
-Bundle-SymbolicName: org.polarsys.time4sys.trace.graphviz;singleton:=true
+Bundle-Name: Timinggraphics
+Bundle-SymbolicName: org.polarsys.time4sys.trace.timinggraphics;singleton:=true
 Bundle-Version: 0.0.0.qualifier
-Bundle-Activator: org.polarsys.time4sys.trace.graphviz.Activator
+Bundle-Activator: org.polarsys.time4sys.trace.timinggraphics.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
@@ -15,6 +15,3 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.time4sys.model
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Bundle-Vendor: Time4Sys Project
-Export-Package: org.polarsys.time4sys.trace.graphviz,
- org.polarsys.time4sys.trace.graphviz.popup.actions

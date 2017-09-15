@@ -502,6 +502,15 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getSlice__GetLatestTimestamp() {
+		return sliceEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProperties() {
 		return propertiesEClass;
 	}
@@ -800,6 +809,7 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		createEAttribute(sliceEClass, SLICE__KIND_LABEL);
 		createEOperation(sliceEClass, SLICE___GET_HIERARCHICAL_NAME__STRING);
 		createEOperation(sliceEClass, SLICE___GET_AGGREGATED_EVENTS);
+		createEOperation(sliceEClass, SLICE___GET_LATEST_TIMESTAMP);
 
 		propertiesEClass = createEClass(PROPERTIES);
 		createEAttribute(propertiesEClass, PROPERTIES__RANGE);
@@ -915,6 +925,8 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		addEParameter(op, ecorePackage.getEString(), "separator", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getSlice__GetAggregatedEvents(), this.getEvent(), "getAggregatedEvents", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getSlice__GetLatestTimestamp(), this.getNFP_Duration(), "getLatestTimestamp", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperties_Range(), this.getNFP_TimeInterval(), "range", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

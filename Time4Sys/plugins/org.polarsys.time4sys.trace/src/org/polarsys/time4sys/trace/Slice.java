@@ -14,6 +14,7 @@ package org.polarsys.time4sys.trace;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -250,5 +251,13 @@ public interface Slice extends EObject {
 	 * @generated
 	 */
 	EList<Event> getAggregatedEvents();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.polarsys.time4sys.trace.NFP_Duration"
+	 * @generated
+	 */
+	Duration getLatestTimestamp();
 
 } // Slice
