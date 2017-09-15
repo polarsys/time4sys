@@ -59,4 +59,15 @@ public interface Mapping extends Link {
 	 */
 	EList<Link> getLinksForSource(EObject source);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Return all sublinks where source appears as value in a sources MappableArtefact
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated NOT
+	 */
+	EList<Link> getLinksForSlice(EObject target);
+
 } // Mapping

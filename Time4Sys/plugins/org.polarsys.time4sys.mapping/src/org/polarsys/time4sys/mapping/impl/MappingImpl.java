@@ -31,6 +31,7 @@ import org.polarsys.time4sys.mapping.MappableArtefact;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingPackage;
 import org.polarsys.time4sys.mapping.ResourceArtefact;
+import org.polarsys.time4sys.trace.Slice;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +115,35 @@ public class MappingImpl extends LinkImpl implements Mapping {
 		}
 		return result;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Link> getLinksForSlice(EObject target) {
+		final EList<Link> result = new BasicEList<>();
+		final Queue<Link> toExplore = new ConcurrentLinkedQueue<>();
+		toExplore.add(this);
+		while(!toExplore.isEmpty()) {
+			final Link current = toExplore.poll();
+			for(MappableArtefact tgt: current.getTargets()) {
+				if (target == tgt.getValue()) {
+					result.add(current);
+				}
+				if (tgt instanceof Slice) {
+					if (target == ((ResourceArtefact)tgt).getResource()) {
+						result.add(current);
+					}
+				}
+			}
+			for(Link sub: current.getSubLinks()) {
+				toExplore.add(sub);
+			}
+		}
+		return result;
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
