@@ -154,7 +154,7 @@ public class MarteServices {
 				}
 				result += "]";
 				if (step.getWorstCET() != null) {
-					result += step.getWorstCET().getUnit();
+					result += step.getWorstCET().getUnit().getName();
 				}
 
 				return result;
@@ -578,5 +578,8 @@ public class MarteServices {
 		return ("[" + mult.getLowerBound()+":"+mult.getUpperBound()+"]");
 	}
 	
+	public void removeInput(OutputPin output, EObject input){
+		output.getSuccessors().remove(input);
+	}
 
 }
