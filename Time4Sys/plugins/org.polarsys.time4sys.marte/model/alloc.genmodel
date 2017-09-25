@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.alloc/src" editDirectory="/org.polarsys.time4sys.marte.alloc.edit/src"
+    editorDirectory="/org.polarsys.time4sys.marte.alloc.editor/src" modelPluginID="org.polarsys.time4sys.marte.alloc"
+    modelName="alloc" editPluginClass="org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin"
+    editorPluginClass="org.polarsys.time4sys.marte.alloc.editor.AllocEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" editPluginID="org.polarsys.time4sys.marte.alloc.edit"
+    editorPluginID="org.polarsys.time4sys.marte.alloc.editor" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>alloc.ecore</foreignModel>
+  <genPackages prefix="Alloc" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
+      ecorePackage="alloc.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="alloc.ecore#//AllocationNature">
+      <genEnumLiterals ecoreEnumLiteral="alloc.ecore#//AllocationNature/spatialDistribution"/>
+      <genEnumLiterals ecoreEnumLiteral="alloc.ecore#//AllocationNature/timeScheduling"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="alloc.ecore#//AllocationKind">
+      <genEnumLiterals ecoreEnumLiteral="alloc.ecore#//AllocationKind/structural"/>
+      <genEnumLiterals ecoreEnumLiteral="alloc.ecore#//AllocationKind/behavioral"/>
+      <genEnumLiterals ecoreEnumLiteral="alloc.ecore#//AllocationKind/hybrid"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="alloc.ecore#//DirectedRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference alloc.ecore#//DirectedRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference alloc.ecore#//DirectedRelationship/target"/>
+    </genClasses>
+    <genClasses ecoreClass="alloc.ecore#//Dependency"/>
+    <genClasses ecoreClass="alloc.ecore#//Abstraction"/>
+    <genClasses ecoreClass="alloc.ecore#//Allocate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute alloc.ecore#//Allocate/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute alloc.ecore#//Allocate/nature"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

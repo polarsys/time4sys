@@ -118,6 +118,7 @@ import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.polarsys.time4sys.marte.alloc.provider.AllocItemProviderAdapterFactory;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -683,6 +684,7 @@ public class DesignEditor
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HrmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AllocItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

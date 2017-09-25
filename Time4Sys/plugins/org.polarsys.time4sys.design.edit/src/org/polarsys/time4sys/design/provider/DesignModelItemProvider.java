@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
+import org.polarsys.time4sys.marte.alloc.AllocFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
@@ -67,9 +68,33 @@ public class DesignModelItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEndToEndFlowsPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addRelationshipsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the End To End Flows feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEndToEndFlowsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DesignModel_endToEndFlows_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DesignModel_endToEndFlows_feature", "_UI_DesignModel_type"),
+				 DesignPackage.Literals.DESIGN_MODEL__END_TO_END_FLOWS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -95,6 +120,28 @@ public class DesignModelItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Relationships feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRelationshipsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DesignModel_relationships_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DesignModel_relationships_feature", "_UI_DesignModel_type"),
+				 DesignPackage.Literals.DESIGN_MODEL__RELATIONSHIPS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -109,6 +156,7 @@ public class DesignModelItemProvider
 			childrenFeatures.add(DesignPackage.Literals.DESIGN_MODEL__WORKLOAD_BEHAVIOR);
 			childrenFeatures.add(DesignPackage.Literals.DESIGN_MODEL__RESOURCE_PACKAGE);
 			childrenFeatures.add(DesignPackage.Literals.DESIGN_MODEL__END_TO_END_FLOWS);
+			childrenFeatures.add(DesignPackage.Literals.DESIGN_MODEL__RELATIONSHIPS);
 		}
 		return childrenFeatures;
 	}
@@ -170,6 +218,7 @@ public class DesignModelItemProvider
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 			case DesignPackage.DESIGN_MODEL__RESOURCE_PACKAGE:
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -221,6 +270,21 @@ public class DesignModelItemProvider
 			(createChildParameter
 				(DesignPackage.Literals.DESIGN_MODEL__END_TO_END_FLOWS,
 				 GqamFactory.eINSTANCE.createEndToEndFlow()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DesignPackage.Literals.DESIGN_MODEL__RELATIONSHIPS,
+				 AllocFactory.eINSTANCE.createDependency()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DesignPackage.Literals.DESIGN_MODEL__RELATIONSHIPS,
+				 AllocFactory.eINSTANCE.createAbstraction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DesignPackage.Literals.DESIGN_MODEL__RELATIONSHIPS,
+				 AllocFactory.eINSTANCE.createAllocate()));
 	}
 
 	/**

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
+import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
@@ -89,6 +90,7 @@ public class DesignPackageImpl extends EPackageImpl implements DesignPackage {
 		EcorePackage.eINSTANCE.eClass();
 		GqamPackage.eINSTANCE.eClass();
 		HrmPackage.eINSTANCE.eClass();
+		AllocPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDesignPackage.createPackageContents();
@@ -155,6 +157,15 @@ public class DesignPackageImpl extends EPackageImpl implements DesignPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDesignModel_Relationships() {
+		return (EReference)designModelEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DesignFactory getDesignFactory() {
 		return (DesignFactory)getEFactoryInstance();
 	}
@@ -183,6 +194,7 @@ public class DesignPackageImpl extends EPackageImpl implements DesignPackage {
 		createEReference(designModelEClass, DESIGN_MODEL__RESOURCE_PACKAGE);
 		createEReference(designModelEClass, DESIGN_MODEL__END_TO_END_FLOWS);
 		createEAttribute(designModelEClass, DESIGN_MODEL__NAME);
+		createEReference(designModelEClass, DESIGN_MODEL__RELATIONSHIPS);
 	}
 
 	/**
@@ -211,6 +223,7 @@ public class DesignPackageImpl extends EPackageImpl implements DesignPackage {
 		// Obtain other dependent packages
 		GqamPackage theGqamPackage = (GqamPackage)EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI);
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
+		AllocPackage theAllocPackage = (AllocPackage)EPackage.Registry.INSTANCE.getEPackage(AllocPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -224,6 +237,7 @@ public class DesignPackageImpl extends EPackageImpl implements DesignPackage {
 		initEReference(getDesignModel_ResourcePackage(), theGrmPackage.getResourcePackage(), null, "resourcePackage", null, 0, 1, DesignModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDesignModel_EndToEndFlows(), theGqamPackage.getEndToEndFlow(), null, "endToEndFlows", null, 0, -1, DesignModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDesignModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, DesignModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDesignModel_Relationships(), theAllocPackage.getDirectedRelationship(), null, "relationships", null, 0, -1, DesignModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
