@@ -6,6 +6,7 @@
     editorPluginClass="org.polarsys.time4sys.marte.alloc.editor.AllocEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="7.0" copyrightFields="false" editPluginID="org.polarsys.time4sys.marte.alloc.edit"
+    usedGenPackages="grm.genmodel#//grm"
     editorPluginID="org.polarsys.time4sys.marte.alloc.editor" operationReflection="true"
     importOrganizing="true">
   <foreignModel>alloc.ecore</foreignModel>

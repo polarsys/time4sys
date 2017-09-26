@@ -2,15 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alloc" nsURI="http://www.polarsys.org/time4sys/marte/alloc/1.0"
     nsPrefix="alloc">
-  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DirectedRelationship"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Dependency"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Allocate" eSuperTypes="#//Abstraction">
+  <eClassifiers xsi:type="ecore:EClass" name="Allocate" eSuperTypes="core_elements.ecore#//Abstraction">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Allocate is a dependency based on UML::Abstraction. It is a mechanism for associating elements of different types, or in different hierarchies, at an abstract level. Allocate is used for assessing user model consistency and directing future design activity. It is expected that an «allocate» relationship between model elements is a precursor to a more concrete relationship between the elements, their properties, operations, attributes, or sub-classes."/>
     </eAnnotations>
@@ -25,6 +17,8 @@
         <details key="documentation" value="This identifies the purpose of the allocation, whether the allocation is equivalent to a spatial distribution, where several application model elements are distributed to different resources or whether timed elements are scheduled according to a given scheduler."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impliedConstraint" upperBound="-1"
+        eType="ecore:EClass nfp_annotation.ecore#//Constraint"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AllocationNature">
     <eLiterals name="spatialDistribution">

@@ -3,6 +3,10 @@
   <viewpoint:DAnalysis xmi:id="_y76wYKHUEee6IYftfInM1Q" selectedViews="_0nsVsKHUEee6IYftfInM1Q" version="11.1.0.201608251200">
     <semanticResources>alloc.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>grm.ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+    <semanticResources>core_elements.ecore</semanticResources>
+    <semanticResources>nfp_annotation.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_0nsVsKHUEee6IYftfInM1Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="__OacwKHUEee6IYftfInM1Q" name="Alloc class diagram" representation="__Obq4KHUEee6IYftfInM1Q">
