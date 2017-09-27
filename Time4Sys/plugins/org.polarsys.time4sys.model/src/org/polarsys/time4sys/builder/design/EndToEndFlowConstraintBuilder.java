@@ -10,12 +10,12 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
-import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamFactory;
 
 /**
  * @author loic
@@ -50,7 +50,7 @@ public class EndToEndFlowConstraintBuilder {
 	}
 
 	public void build(final DesignBuilder designBuilder) {
-		final EndToEndFlow endToEndFlow = GqamFactory.eINSTANCE.createEndToEndFlow();
+		final EndToEndFlow endToEndFlow = SamFactory.eINSTANCE.createEndToEndFlow();
 		final Step initiator = stimuli.build();
 		for(WorkloadEvent cause: initiator.getCause()) {
 			endToEndFlow.getEndToEndStimuli().add(cause);

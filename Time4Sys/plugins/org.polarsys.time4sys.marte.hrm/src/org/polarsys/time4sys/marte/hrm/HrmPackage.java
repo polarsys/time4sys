@@ -503,6 +503,15 @@ public interface HrmPackage extends EPackage {
 	int ENV_CONDITION_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RESOURCE__EANNOTATIONS = GrmPackage.RESOURCE__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -611,6 +620,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_RESOURCE_FEATURE_COUNT = GrmPackage.RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RESOURCE___GET_EANNOTATION__STRING = GrmPackage.RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -658,6 +676,15 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 */
 	int FIRMWARE_ARCHITECTURE = 1;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRMWARE_ARCHITECTURE__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -786,6 +813,15 @@ public interface HrmPackage extends EPackage {
 	int FIRMWARE_ARCHITECTURE_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIRMWARE_ARCHITECTURE___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Firmware Architecture</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -793,6 +829,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIRMWARE_ARCHITECTURE_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DEVICE__EANNOTATIONS = GrmPackage.DEVICE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1029,6 +1074,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DEVICE_FEATURE_COUNT = GrmPackage.DEVICE_RESOURCE_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DEVICE___GET_EANNOTATION__STRING = GrmPackage.DEVICE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Device</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1036,6 +1090,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_DEVICE_OPERATION_COUNT = GrmPackage.DEVICE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IO__EANNOTATIONS = HARDWARE_DEVICE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1272,6 +1335,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_IO_FEATURE_COUNT = HARDWARE_DEVICE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IO___GET_EANNOTATION__STRING = HARDWARE_DEVICE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Io</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1279,6 +1351,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_IO_OPERATION_COUNT = HARDWARE_DEVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ACTUATOR__EANNOTATIONS = HARDWARE_IO__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1515,6 +1596,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ACTUATOR_FEATURE_COUNT = HARDWARE_IO_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ACTUATOR___GET_EANNOTATION__STRING = HARDWARE_IO___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Actuator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1522,6 +1612,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ACTUATOR_OPERATION_COUNT = HARDWARE_IO_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMMUNICATION_RESOURCE__EANNOTATIONS = GrmPackage.COMMUNICATION_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1749,6 +1848,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_COMMUNICATION_RESOURCE_FEATURE_COUNT = GrmPackage.COMMUNICATION_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING = GrmPackage.COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Communication Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1756,6 +1864,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMMUNICATION_RESOURCE_OPERATION_COUNT = GrmPackage.COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ARBITER__EANNOTATIONS = HARDWARE_COMMUNICATION_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2010,6 +2127,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ARBITER_FEATURE_COUNT = HARDWARE_COMMUNICATION_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ARBITER___GET_EANNOTATION__STRING = HARDWARE_COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Arbiter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2017,6 +2143,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ARBITER_OPERATION_COUNT = HARDWARE_COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMPUTING_RESOURCE__EANNOTATIONS = GrmPackage.COMPUTING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2262,6 +2397,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_COMPUTING_RESOURCE_FEATURE_COUNT = GrmPackage.COMPUTING_RESOURCE_FEATURE_COUNT + 14;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMPUTING_RESOURCE___GET_EANNOTATION__STRING = GrmPackage.COMPUTING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Computing Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2269,6 +2413,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMPUTING_RESOURCE_OPERATION_COUNT = GrmPackage.COMPUTING_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ASIC__EANNOTATIONS = HARDWARE_COMPUTING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2514,6 +2667,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ASIC_FEATURE_COUNT = HARDWARE_COMPUTING_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ASIC___GET_EANNOTATION__STRING = HARDWARE_COMPUTING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Asic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2521,6 +2683,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ASIC_OPERATION_COUNT = HARDWARE_COMPUTING_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRANCH_PREDICTOR__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2631,6 +2802,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BRANCH_PREDICTOR_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRANCH_PREDICTOR___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Branch Predictor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2638,6 +2818,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BRANCH_PREDICTOR_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEDIA__EANNOTATIONS = HARDWARE_COMMUNICATION_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2874,6 +3063,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MEDIA_FEATURE_COUNT = HARDWARE_COMMUNICATION_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEDIA___GET_EANNOTATION__STRING = HARDWARE_COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2881,6 +3079,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_MEDIA_OPERATION_COUNT = HARDWARE_COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRIDGE__EANNOTATIONS = HARDWARE_MEDIA__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3126,6 +3333,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BRIDGE_FEATURE_COUNT = HARDWARE_MEDIA_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BRIDGE___GET_EANNOTATION__STRING = HARDWARE_MEDIA___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Bridge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3133,6 +3349,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BRIDGE_OPERATION_COUNT = HARDWARE_MEDIA_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BUS__EANNOTATIONS = HARDWARE_MEDIA__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3405,6 +3630,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_BUS_FEATURE_COUNT = HARDWARE_MEDIA_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_BUS___GET_EANNOTATION__STRING = HARDWARE_MEDIA___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Bus</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3412,6 +3646,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_BUS_OPERATION_COUNT = HARDWARE_MEDIA_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEMORY__EANNOTATIONS = GrmPackage.STORAGE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3666,6 +3909,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MEMORY_FEATURE_COUNT = GrmPackage.STORAGE_RESOURCE_FEATURE_COUNT + 17;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MEMORY___GET_EANNOTATION__STRING = GrmPackage.STORAGE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Memory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3673,6 +3925,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_MEMORY_OPERATION_COUNT = GrmPackage.STORAGE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSING_MEMORY__EANNOTATIONS = HARDWARE_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3945,6 +4206,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PROCESSING_MEMORY_FEATURE_COUNT = HARDWARE_MEMORY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSING_MEMORY___GET_EANNOTATION__STRING = HARDWARE_MEMORY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Processing Memory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3952,6 +4222,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PROCESSING_MEMORY_OPERATION_COUNT = HARDWARE_MEMORY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CACHE__EANNOTATIONS = HARDWARE_PROCESSING_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4267,6 +4546,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CACHE_FEATURE_COUNT = HARDWARE_PROCESSING_MEMORY_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CACHE___GET_EANNOTATION__STRING = HARDWARE_PROCESSING_MEMORY___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Hardware Cache</em>' class.
@@ -4773,6 +5061,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_CHIP_OPERATION_COUNT = HARDWARE_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMING_RESOURCE__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4989,6 +5286,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_TIMING_RESOURCE_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMING_RESOURCE___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Timing Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4996,6 +5302,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_TIMING_RESOURCE_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CLOCK__EANNOTATIONS = HARDWARE_TIMING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5223,6 +5538,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_CLOCK_FEATURE_COUNT = HARDWARE_TIMING_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CLOCK___GET_EANNOTATION__STRING = HARDWARE_TIMING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Clock</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5266,6 +5590,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CONNECTOR_OPERATION_COUNT = GrmPackage.RESOURCE_CONNECTOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MANAGER__EANNOTATIONS = GrmPackage.RESOURCE_BROKER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5502,6 +5835,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_STORAGE_MANAGER_FEATURE_COUNT = GrmPackage.RESOURCE_BROKER_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MANAGER___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_BROKER___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Storage Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5509,6 +5851,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_STORAGE_MANAGER_OPERATION_COUNT = GrmPackage.RESOURCE_BROKER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DMA__EANNOTATIONS = HARDWARE_STORAGE_MANAGER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5808,6 +6159,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DMA_FEATURE_COUNT = HARDWARE_STORAGE_MANAGER_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DMA___GET_EANNOTATION__STRING = HARDWARE_STORAGE_MANAGER___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Dma</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5815,6 +6175,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_DMA_OPERATION_COUNT = HARDWARE_STORAGE_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MEMORY__EANNOTATIONS = HARDWARE_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6078,6 +6447,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_STORAGE_MEMORY_FEATURE_COUNT = HARDWARE_MEMORY_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_STORAGE_MEMORY___GET_EANNOTATION__STRING = HARDWARE_MEMORY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Storage Memory</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6085,6 +6463,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_STORAGE_MEMORY_OPERATION_COUNT = HARDWARE_MEMORY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DRIVE__EANNOTATIONS = HARDWARE_STORAGE_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6357,6 +6744,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_DRIVE_FEATURE_COUNT = HARDWARE_STORAGE_MEMORY_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_DRIVE___GET_EANNOTATION__STRING = HARDWARE_STORAGE_MEMORY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Drive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6406,6 +6802,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_INTERFACE = 20;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_INTERFACE__EANNOTATIONS = GrmPackage.RESOURCE_INTERFACE__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6433,6 +6838,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_INTERFACE_FEATURE_COUNT = GrmPackage.RESOURCE_INTERFACE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_INTERFACE___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_INTERFACE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6450,6 +6864,15 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 */
 	int HARDWARE_INTERFACE_PACKAGE = 21;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_INTERFACE_PACKAGE__EANNOTATIONS = GrmPackage.RESOURCE_PACKAGE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6479,6 +6902,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_INTERFACE_PACKAGE_FEATURE_COUNT = GrmPackage.RESOURCE_PACKAGE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_INTERFACE_PACKAGE___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_PACKAGE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Interface Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6486,6 +6918,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_INTERFACE_PACKAGE_OPERATION_COUNT = GrmPackage.RESOURCE_PACKAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IP_BLOCK__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6596,6 +7037,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_IP_BLOCK_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_IP_BLOCK___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Ip Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6603,6 +7053,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_IP_BLOCK_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ISA__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6740,6 +7199,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ISA_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ISA___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Isa</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6747,6 +7215,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ISA_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MMU__EANNOTATIONS = HARDWARE_STORAGE_MANAGER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7028,6 +7505,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MMU_FEATURE_COUNT = HARDWARE_STORAGE_MANAGER_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_MMU___GET_EANNOTATION__STRING = HARDWARE_STORAGE_MANAGER___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Mmu</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7037,13 +7523,22 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_MMU_OPERATION_COUNT = HARDWARE_STORAGE_MANAGER_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PIN__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PIN__NAME = GrmPackage.NAMED_ELEMENT__NAME;
+	int HARDWARE_PIN__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -7052,7 +7547,7 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PIN__WIDTH = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int HARDWARE_PIN__WIDTH = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -7061,7 +7556,7 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PIN__DIRECTION = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int HARDWARE_PIN__DIRECTION = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Hardware Pin</em>' class.
@@ -7070,7 +7565,16 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PIN_FEATURE_COUNT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int HARDWARE_PIN_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PIN___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Hardware Pin</em>' class.
@@ -7079,7 +7583,16 @@ public interface HrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PIN_OPERATION_COUNT = GrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int HARDWARE_PIN_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLATFORM__EANNOTATIONS = HARDWARE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7289,6 +7802,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PLATFORM_FEATURE_COUNT = HARDWARE_RESOURCE_FEATURE_COUNT + 11;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLATFORM___GET_EANNOTATION__STRING = HARDWARE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Platform</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7296,6 +7818,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PLATFORM_OPERATION_COUNT = HARDWARE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLD__EANNOTATIONS = HARDWARE_COMPUTING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7631,6 +8162,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PLD_FEATURE_COUNT = HARDWARE_COMPUTING_RESOURCE_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PLD___GET_EANNOTATION__STRING = HARDWARE_COMPUTING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Pld</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7647,6 +8187,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PORT__PACKET_SIZE = GrmPackage.RESOURCE_PORT__PACKET_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__EANNOTATIONS = GrmPackage.RESOURCE_PORT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -7802,6 +8351,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PORT_FEATURE_COUNT = GrmPackage.RESOURCE_PORT_FEATURE_COUNT + 13;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_PORT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7809,6 +8367,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PORT_OPERATION_COUNT = GrmPackage.RESOURCE_PORT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSOR__EANNOTATIONS = HARDWARE_COMPUTING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8162,6 +8729,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_PROCESSOR_FEATURE_COUNT = HARDWARE_COMPUTING_RESOURCE_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PROCESSOR___GET_EANNOTATION__STRING = HARDWARE_COMPUTING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Processor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8169,6 +8745,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_PROCESSOR_OPERATION_COUNT = HARDWARE_COMPUTING_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RAM__EANNOTATIONS = HARDWARE_PROCESSING_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8504,6 +9089,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_RAM_FEATURE_COUNT = HARDWARE_PROCESSING_MEMORY_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RAM___GET_EANNOTATION__STRING = HARDWARE_PROCESSING_MEMORY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Ram</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8511,6 +9105,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_RAM_OPERATION_COUNT = HARDWARE_PROCESSING_MEMORY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RESOURCE_PACKAGE__EANNOTATIONS = GrmPackage.RESOURCE_PACKAGE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8540,6 +9143,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_RESOURCE_PACKAGE_FEATURE_COUNT = GrmPackage.RESOURCE_PACKAGE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_RESOURCE_PACKAGE___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_PACKAGE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Resource Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8547,6 +9159,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_RESOURCE_PACKAGE_OPERATION_COUNT = GrmPackage.RESOURCE_PACKAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ROM__EANNOTATIONS = HARDWARE_STORAGE_MEMORY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -8855,6 +9476,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_ROM_FEATURE_COUNT = HARDWARE_STORAGE_MEMORY_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_ROM___GET_EANNOTATION__STRING = HARDWARE_STORAGE_MEMORY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Rom</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8862,6 +9492,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_ROM_OPERATION_COUNT = HARDWARE_STORAGE_MEMORY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SENSOR__EANNOTATIONS = HARDWARE_IO__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9098,6 +9737,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SENSOR_FEATURE_COUNT = HARDWARE_IO_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SENSOR___GET_EANNOTATION__STRING = HARDWARE_IO___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9105,6 +9753,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_SENSOR_OPERATION_COUNT = HARDWARE_IO_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SERVICE__EANNOTATIONS = GrmPackage.RESOURCE_SERVICE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9134,6 +9791,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SERVICE_FEATURE_COUNT = GrmPackage.RESOURCE_SERVICE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SERVICE___GET_EANNOTATION__STRING = GrmPackage.RESOURCE_SERVICE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9141,6 +9807,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_SERVICE_OPERATION_COUNT = GrmPackage.RESOURCE_SERVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SUPPORT__EANNOTATIONS = HARDWARE_DEVICE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9377,6 +10052,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_SUPPORT_FEATURE_COUNT = HARDWARE_DEVICE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_SUPPORT___GET_EANNOTATION__STRING = HARDWARE_DEVICE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Support</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9384,6 +10068,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_SUPPORT_OPERATION_COUNT = HARDWARE_DEVICE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMER__EANNOTATIONS = HARDWARE_TIMING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9611,6 +10304,15 @@ public interface HrmPackage extends EPackage {
 	int HARDWARE_TIMER_FEATURE_COUNT = HARDWARE_TIMING_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_TIMER___GET_EANNOTATION__STRING = HARDWARE_TIMING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Hardware Timer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9618,6 +10320,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_TIMER_OPERATION_COUNT = HARDWARE_TIMING_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_WATCHDOG__EANNOTATIONS = HARDWARE_TIMER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9843,6 +10554,15 @@ public interface HrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_WATCHDOG_FEATURE_COUNT = HARDWARE_TIMER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_WATCHDOG___GET_EANNOTATION__STRING = HARDWARE_TIMER___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Hardware Watchdog</em>' class.

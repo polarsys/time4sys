@@ -15,6 +15,13 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.grm.edit;visibility:=reexport,
- org.polarsys.time4sys.marte.nfp.edit;visibility:=reexport
+ org.polarsys.time4sys.marte.srm.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.hrm.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.alloc.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.sam.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.annotation.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

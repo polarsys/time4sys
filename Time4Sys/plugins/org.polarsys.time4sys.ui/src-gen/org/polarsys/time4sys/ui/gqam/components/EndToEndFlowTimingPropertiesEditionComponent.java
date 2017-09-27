@@ -29,7 +29,8 @@ import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamPackage;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.ui.views.gqam.parts.GqamViewsRepository;
 import org.polarsys.time4sys.ui.views.gqam.parts.TimingPropertiesEditionPart;
@@ -101,10 +102,10 @@ public class EndToEndFlowTimingPropertiesEditionComponent extends SinglePartProp
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == GqamViewsRepository.Timing.TimingProperties.endToEndDeadline) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline();
+			return SamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline();
 		}
 		if (editorKey == GqamViewsRepository.Timing.TimingProperties.endToEndTime) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime();
+			return SamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -132,14 +133,14 @@ public class EndToEndFlowTimingPropertiesEditionComponent extends SinglePartProp
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			TimingPropertiesEditionPart timingPart = (TimingPropertiesEditionPart)editingPart;
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && timingPart != null && isAccessible(GqamViewsRepository.Timing.TimingProperties.endToEndDeadline)) {
+			if (SamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && timingPart != null && isAccessible(GqamViewsRepository.Timing.TimingProperties.endToEndDeadline)) {
 				if (msg.getNewValue() != null) {
 					timingPart.setEndToEndDeadline(EcoreUtil.convertToString(GqamPackage.Literals.NFP_DURATION, msg.getNewValue()));
 				} else {
 					timingPart.setEndToEndDeadline("");
 				}
 			}
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && timingPart != null && isAccessible(GqamViewsRepository.Timing.TimingProperties.endToEndTime)) {
+			if (SamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && timingPart != null && isAccessible(GqamViewsRepository.Timing.TimingProperties.endToEndTime)) {
 				if (msg.getNewValue() != null) {
 					timingPart.setEndToEndTime(EcoreUtil.convertToString(GqamPackage.Literals.NFP_DURATION, msg.getNewValue()));
 				} else {
@@ -158,8 +159,8 @@ public class EndToEndFlowTimingPropertiesEditionComponent extends SinglePartProp
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline(),
-			GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime()		);
+			SamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline(),
+			SamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime()		);
 		return new NotificationFilter[] {filter,};
 	}
 
@@ -194,16 +195,16 @@ public class EndToEndFlowTimingPropertiesEditionComponent extends SinglePartProp
 				if (GqamViewsRepository.Timing.TimingProperties.endToEndDeadline == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(SamPackage.eINSTANCE.getEndToEndFlow_EndToEndDeadline().getEAttributeType(), newValue);
 				}
 				if (GqamViewsRepository.Timing.TimingProperties.endToEndTime == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(SamPackage.eINSTANCE.getEndToEndFlow_EndToEndTime().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

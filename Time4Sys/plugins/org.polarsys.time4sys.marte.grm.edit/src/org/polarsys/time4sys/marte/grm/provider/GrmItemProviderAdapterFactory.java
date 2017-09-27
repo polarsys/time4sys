@@ -20,6 +20,8 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.command.CommandParameter;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
@@ -34,6 +36,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.util.GrmAdapterFactory;
 
@@ -963,6 +966,177 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		if (timerResourceItemProvider != null) timerResourceItemProvider.dispose();
 		if (usageDemandItemProvider != null) usageDemandItemProvider.dispose();
 		if (usageTypedAmountItemProvider != null) usageTypedAmountItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class CoreElementsChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createClockResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createCommunicationMedia()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createComputingResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createConcurrencyResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createDeviceResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createSynchResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createMutualExclusionResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourceBroker()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourceInstance()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourceInterface()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourceManager()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourcePackage()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createScheduler()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createSchedulableResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createSecondaryScheduler()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createStorageResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createTimerResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createUsageTypedAmount()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return GrmEditPlugin.INSTANCE;
+		}
 	}
 
 }

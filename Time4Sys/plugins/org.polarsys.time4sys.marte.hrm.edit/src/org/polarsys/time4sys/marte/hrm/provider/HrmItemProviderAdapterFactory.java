@@ -39,13 +39,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceInterface;
-import org.polarsys.time4sys.marte.grm.ResourcePackage;
 import org.polarsys.time4sys.marte.grm.util.GrmSwitch;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 import org.polarsys.time4sys.marte.hrm.util.HrmAdapterFactory;
-import org.polarsys.time4sys.marte.srm.SrmPackage;
-import org.polarsys.time4sys.marte.srm.util.SrmSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -1431,176 +1428,6 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
-			@Override
-			public Object caseResourcePackage(ResourcePackage object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createFirmwareArchitecture()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareDevice()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareIo()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareActuator()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareCommunicationResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareArbiter()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareComputingResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareAsic()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareBranchPredictor()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareMedia()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareBridge()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareBus()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareMemory()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareCache()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareTimingResource()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareClock()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareStorageManager()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareDma()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareDrive()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareInterface()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareIpBlock()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareIsa()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareMmu()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwarePlatform()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwarePld()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareProcessor()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareRam()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareRom()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareSensor()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareSupport()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareTimer()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
-						 HrmFactory.eINSTANCE.createHardwareWatchdog()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
 			protected CommandParameter createChildParameter(Object feature, Object child) {
 				return new CommandParameter(null, feature, child);
 			}
@@ -1629,19 +1456,19 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 	}
 
 	/**
-	 * A child creation extender for the {@link SrmPackage}.
+	 * A child creation extender for the {@link org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class SrmChildCreationExtender implements IChildCreationExtender {
+	public static class CoreElementsChildCreationExtender implements IChildCreationExtender {
 		/**
 		 * The switch for creating child descriptors specific to each extended class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected static class CreationSwitch extends SrmSwitch<Object> {
+		protected static class CreationSwitch extends org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch<Object> {
 			/**
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
@@ -1674,180 +1501,179 @@ public class HrmItemProviderAdapterFactory extends HrmAdapterFactory implements 
 			 * @generated
 			 */
 			@Override
-			public Object caseResource(Resource object) {
+			public Object casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createFirmwareArchitecture()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareDevice()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareIo()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareActuator()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareCommunicationResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareArbiter()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareComputingResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareAsic()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareBranchPredictor()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareMedia()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareBridge()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareBus()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareMemory()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareCache()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareTimingResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareClock()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareStorageManager()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareDma()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareDrive()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 HrmFactory.eINSTANCE.createHardwareInterface()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 HrmFactory.eINSTANCE.createHardwareInterfacePackage()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareIpBlock()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareIsa()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareMmu()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwarePlatform()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwarePld()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareProcessor()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareRam()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 HrmFactory.eINSTANCE.createHardwareResourcePackage()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareRom()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareSensor()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareSupport()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareTimer()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 HrmFactory.eINSTANCE.createHardwareWatchdog()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_PORT,
-						 HrmFactory.eINSTANCE.createHardwarePort()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
-						 HrmFactory.eINSTANCE.createHardwareConnector()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(GrmPackage.Literals.RESOURCE__PSERVICES,
-						 HrmFactory.eINSTANCE.createHardwareService()));
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

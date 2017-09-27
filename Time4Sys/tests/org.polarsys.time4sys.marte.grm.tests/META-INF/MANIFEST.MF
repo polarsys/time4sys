@@ -10,6 +10,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.marte.grm.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;bundle-version="4.12.0";visibility:=reexport,
  org.polarsys.time4sys.marte.gqam

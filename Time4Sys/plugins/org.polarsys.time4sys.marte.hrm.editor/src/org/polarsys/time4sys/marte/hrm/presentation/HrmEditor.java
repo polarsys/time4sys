@@ -129,7 +129,7 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.polarsys.time4sys.marte.grm.provider.GrmItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory;
-import org.polarsys.time4sys.marte.srm.provider.SrmItemProviderAdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
 
 /**
@@ -676,7 +676,8 @@ public class HrmEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SrmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

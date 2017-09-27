@@ -14,7 +14,10 @@ package org.polarsys.time4sys.marte.gqam.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
+import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
 import org.polarsys.time4sys.marte.nfp.provider.NfpEditPlugin;
 
 /**
@@ -51,6 +54,9 @@ public final class GqamEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     GrmEditPlugin.INSTANCE,
 		     NfpEditPlugin.INSTANCE,
+		     Nfp_AnnotationEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
+		     CoreElementsEditPlugin.INSTANCE,
 		   });
 	}
 

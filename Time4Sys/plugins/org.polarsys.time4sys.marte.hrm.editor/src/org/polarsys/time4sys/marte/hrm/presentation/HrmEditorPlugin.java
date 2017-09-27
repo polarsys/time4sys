@@ -15,8 +15,8 @@ package org.polarsys.time4sys.marte.hrm.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
-import org.polarsys.time4sys.marte.srm.provider.SrmEditPlugin;
 
 /**
  * This is the central singleton for the Hrm editor plugin.
@@ -51,7 +51,8 @@ public final class HrmEditorPlugin extends EMFPlugin {
 		super
 			(new ResourceLocator [] {
 				GrmEditPlugin.INSTANCE,
-				SrmEditPlugin.INSTANCE,
+				org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
 			});
 	}
 

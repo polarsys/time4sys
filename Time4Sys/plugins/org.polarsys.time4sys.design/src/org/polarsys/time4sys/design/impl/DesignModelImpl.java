@@ -20,17 +20,23 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
-import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageImpl;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.ModelingConcern;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,16 +46,47 @@ import org.polarsys.time4sys.marte.grm.ResourcePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getOwns <em>Owns</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getAnnotationConcern <em>Annotation Concern</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getOwnedRule <em>Owned Rule</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getWorkloadBehavior <em>Workload Behavior</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getResourcePackage <em>Resource Package</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getEndToEndFlows <em>End To End Flows</em>}</li>
- *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getRelationships <em>Relationships</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DesignModelImpl extends MinimalEObjectImpl.Container implements DesignModel {
+public class DesignModelImpl extends PackageImpl implements DesignModel {
+	/**
+	 * The cached value of the '{@link #getOwns() <em>Owns</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwns()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AnnotatedElement> owns;
+
+	/**
+	 * The cached value of the '{@link #getAnnotationConcern() <em>Annotation Concern</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAnnotationConcern()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ModelingConcern> annotationConcern;
+
+	/**
+	 * The cached value of the '{@link #getOwnedRule() <em>Owned Rule</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constraint> ownedRule;
+
 	/**
 	 * The cached value of the '{@link #getWorkloadBehavior() <em>Workload Behavior</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -81,36 +118,6 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	protected EList<EndToEndFlow> endToEndFlows;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getRelationships() <em>Relationships</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRelationships()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DirectedRelationship> relationships;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -129,6 +136,42 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	protected EClass eStaticClass() {
 		return DesignPackage.Literals.DESIGN_MODEL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AnnotatedElement> getOwns() {
+		if (owns == null) {
+			owns = new EObjectContainmentWithInverseEList<AnnotatedElement>(AnnotatedElement.class, this, DesignPackage.DESIGN_MODEL__OWNS, AnnotationPackage.ANNOTATED_ELEMENT__OWNER);
+		}
+		return owns;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ModelingConcern> getAnnotationConcern() {
+		if (annotationConcern == null) {
+			annotationConcern = new EObjectResolvingEList<ModelingConcern>(ModelingConcern.class, this, DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN);
+		}
+		return annotationConcern;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Constraint> getOwnedRule() {
+		if (ownedRule == null) {
+			ownedRule = new EObjectContainmentEList<Constraint>(Constraint.class, this, DesignPackage.DESIGN_MODEL__OWNED_RULE);
+		}
+		return ownedRule;
 	}
 
 	/**
@@ -234,32 +277,14 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DesignPackage.DESIGN_MODEL__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DirectedRelationship> getRelationships() {
-		if (relationships == null) {
-			relationships = new EObjectContainmentEList<DirectedRelationship>(DirectedRelationship.class, this, DesignPackage.DESIGN_MODEL__RELATIONSHIPS);
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwns()).basicAdd(otherEnd, msgs);
 		}
-		return relationships;
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -270,14 +295,16 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				return ((InternalEList<?>)getOwns()).basicRemove(otherEnd, msgs);
+			case DesignPackage.DESIGN_MODEL__OWNED_RULE:
+				return ((InternalEList<?>)getOwnedRule()).basicRemove(otherEnd, msgs);
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 				return basicSetWorkloadBehavior(null, msgs);
 			case DesignPackage.DESIGN_MODEL__RESOURCE_PACKAGE:
 				return basicSetResourcePackage(null, msgs);
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				return ((InternalEList<?>)getEndToEndFlows()).basicRemove(otherEnd, msgs);
-			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
-				return ((InternalEList<?>)getRelationships()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -290,16 +317,18 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				return getOwns();
+			case DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN:
+				return getAnnotationConcern();
+			case DesignPackage.DESIGN_MODEL__OWNED_RULE:
+				return getOwnedRule();
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 				return getWorkloadBehavior();
 			case DesignPackage.DESIGN_MODEL__RESOURCE_PACKAGE:
 				return getResourcePackage();
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				return getEndToEndFlows();
-			case DesignPackage.DESIGN_MODEL__NAME:
-				return getName();
-			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
-				return getRelationships();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +342,18 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				getOwns().clear();
+				getOwns().addAll((Collection<? extends AnnotatedElement>)newValue);
+				return;
+			case DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN:
+				getAnnotationConcern().clear();
+				getAnnotationConcern().addAll((Collection<? extends ModelingConcern>)newValue);
+				return;
+			case DesignPackage.DESIGN_MODEL__OWNED_RULE:
+				getOwnedRule().clear();
+				getOwnedRule().addAll((Collection<? extends Constraint>)newValue);
+				return;
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 				setWorkloadBehavior((WorkloadBehavior)newValue);
 				return;
@@ -322,13 +363,6 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				getEndToEndFlows().clear();
 				getEndToEndFlows().addAll((Collection<? extends EndToEndFlow>)newValue);
-				return;
-			case DesignPackage.DESIGN_MODEL__NAME:
-				setName((String)newValue);
-				return;
-			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
-				getRelationships().clear();
-				getRelationships().addAll((Collection<? extends DirectedRelationship>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,6 +376,15 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				getOwns().clear();
+				return;
+			case DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN:
+				getAnnotationConcern().clear();
+				return;
+			case DesignPackage.DESIGN_MODEL__OWNED_RULE:
+				getOwnedRule().clear();
+				return;
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 				setWorkloadBehavior((WorkloadBehavior)null);
 				return;
@@ -350,12 +393,6 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 				return;
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				getEndToEndFlows().clear();
-				return;
-			case DesignPackage.DESIGN_MODEL__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
-				getRelationships().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -369,16 +406,18 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DesignPackage.DESIGN_MODEL__OWNS:
+				return owns != null && !owns.isEmpty();
+			case DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN:
+				return annotationConcern != null && !annotationConcern.isEmpty();
+			case DesignPackage.DESIGN_MODEL__OWNED_RULE:
+				return ownedRule != null && !ownedRule.isEmpty();
 			case DesignPackage.DESIGN_MODEL__WORKLOAD_BEHAVIOR:
 				return workloadBehavior != null;
 			case DesignPackage.DESIGN_MODEL__RESOURCE_PACKAGE:
 				return resourcePackage != null;
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				return endToEndFlows != null && !endToEndFlows.isEmpty();
-			case DesignPackage.DESIGN_MODEL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
-				return relationships != null && !relationships.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -389,14 +428,34 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotatedModel.class) {
+			switch (derivedFeatureID) {
+				case DesignPackage.DESIGN_MODEL__OWNS: return AnnotationPackage.ANNOTATED_MODEL__OWNS;
+				case DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN: return AnnotationPackage.ANNOTATED_MODEL__ANNOTATION_CONCERN;
+				case DesignPackage.DESIGN_MODEL__OWNED_RULE: return AnnotationPackage.ANNOTATED_MODEL__OWNED_RULE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotatedModel.class) {
+			switch (baseFeatureID) {
+				case AnnotationPackage.ANNOTATED_MODEL__OWNS: return DesignPackage.DESIGN_MODEL__OWNS;
+				case AnnotationPackage.ANNOTATED_MODEL__ANNOTATION_CONCERN: return DesignPackage.DESIGN_MODEL__ANNOTATION_CONCERN;
+				case AnnotationPackage.ANNOTATED_MODEL__OWNED_RULE: return DesignPackage.DESIGN_MODEL__OWNED_RULE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //DesignModelImpl

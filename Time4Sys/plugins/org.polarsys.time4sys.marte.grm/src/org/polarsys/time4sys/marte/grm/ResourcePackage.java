@@ -12,39 +12,20 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resource Package</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.polarsys.time4sys.marte.grm.ResourcePackage#getOwnedElement <em>Owned Element</em>}</li>
- * </ul>
+ * <!-- begin-model-doc -->
+ * Deprecated. Use CoreElements::Package
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResourcePackage()
  * @model
  * @generated
  */
-public interface ResourcePackage extends NamedElement {
-	/**
-	 * Returns the value of the '<em><b>Owned Element</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.time4sys.marte.grm.ResourcePackageableElement}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Element</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Element</em>' containment reference list.
-	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResourcePackage_OwnedElement()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ResourcePackageableElement> getOwnedElement();
+public interface ResourcePackage extends org.polarsys.time4sys.marte.nfp.coreelements.Package {
 
 } // ResourcePackage

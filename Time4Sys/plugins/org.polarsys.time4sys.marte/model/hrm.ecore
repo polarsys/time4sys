@@ -147,7 +147,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTlbs" upperBound="-1"
         eType="#//HardwareCache" changeable="false" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HardwarePin" eSuperTypes="grm.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="HardwarePin" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Direction"/>
   </eClassifiers>

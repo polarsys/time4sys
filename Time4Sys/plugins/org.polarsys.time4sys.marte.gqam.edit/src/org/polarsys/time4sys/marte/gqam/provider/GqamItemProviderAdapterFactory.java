@@ -41,8 +41,12 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.util.GqamAdapterFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
-import org.polarsys.time4sys.marte.grm.ResourcePackage;
 import org.polarsys.time4sys.marte.grm.util.GrmSwitch;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.util.AnnotationSwitch;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -216,6 +220,29 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.TimedObserver} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TimedObserverItemProvider timedObserverItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.gqam.TimedObserver}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTimedObserverAdapter() {
+		if (timedObserverItemProvider == null) {
+			timedObserverItemProvider = new TimedObserverItemProvider(this);
+		}
+
+		return timedObserverItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.PrecedenceRelation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +332,29 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		}
 
 		return inputPinItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.LatencyObserver} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LatencyObserverItemProvider latencyObserverItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.gqam.LatencyObserver}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLatencyObserverAdapter() {
+		if (latencyObserverItemProvider == null) {
+			latencyObserverItemProvider = new LatencyObserverItemProvider(this);
+		}
+
+		return latencyObserverItemProvider;
 	}
 
 	/**
@@ -584,29 +634,6 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.EndToEndFlow} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EndToEndFlowItemProvider endToEndFlowItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.gqam.EndToEndFlow}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEndToEndFlowAdapter() {
-		if (endToEndFlowItemProvider == null) {
-			endToEndFlowItemProvider = new EndToEndFlowItemProvider(this);
-		}
-
-		return endToEndFlowItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.gqam.Reference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -762,9 +789,9 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		if (communicationChannelItemProvider != null) communicationChannelItemProvider.dispose();
 		if (communicationStepItemProvider != null) communicationStepItemProvider.dispose();
 		if (delayItemProvider != null) delayItemProvider.dispose();
-		if (endToEndFlowItemProvider != null) endToEndFlowItemProvider.dispose();
 		if (executionStepItemProvider != null) executionStepItemProvider.dispose();
 		if (inputPinItemProvider != null) inputPinItemProvider.dispose();
+		if (latencyObserverItemProvider != null) latencyObserverItemProvider.dispose();
 		if (onceItemProvider != null) onceItemProvider.dispose();
 		if (outputPinItemProvider != null) outputPinItemProvider.dispose();
 		if (periodicPatternItemProvider != null) periodicPatternItemProvider.dispose();
@@ -776,8 +803,9 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 		if (slidingWindowPatternItemProvider != null) slidingWindowPatternItemProvider.dispose();
 		if (sporadicPatternItemProvider != null) sporadicPatternItemProvider.dispose();
 		if (stepItemProvider != null) stepItemProvider.dispose();
-		if (workloadEventItemProvider != null) workloadEventItemProvider.dispose();
+		if (timedObserverItemProvider != null) timedObserverItemProvider.dispose();
 		if (workloadBehaviorItemProvider != null) workloadBehaviorItemProvider.dispose();
+		if (workloadEventItemProvider != null) workloadEventItemProvider.dispose();
 	}
 
 	/**
@@ -840,12 +868,225 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 			 * <!-- end-user-doc -->
 			 * @generated
 			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return GqamEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link CoreElementsPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class CoreElementsChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends CoreElementsSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
 			@Override
-			public Object caseResourcePackage(ResourcePackage object) {
+			public Object casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(GrmPackage.Literals.RESOURCE_PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GqamFactory.eINSTANCE.createCommunicationChannel()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GqamFactory.eINSTANCE.createTimedObserver()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GqamFactory.eINSTANCE.createLatencyObserver()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return GqamEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link AnnotationPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class AnnotationChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends AnnotationSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseAnnotatedModel(AnnotatedModel object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createStep()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createAcquireStep()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createCommunicationStep()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createDelay()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createExecutionStep()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createReleaseStep()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createRequestedService()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNED_RULE,
+						 GqamFactory.eINSTANCE.createTimedObserver()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNED_RULE,
+						 GqamFactory.eINSTANCE.createLatencyObserver()));
 
 				return null;
 			}

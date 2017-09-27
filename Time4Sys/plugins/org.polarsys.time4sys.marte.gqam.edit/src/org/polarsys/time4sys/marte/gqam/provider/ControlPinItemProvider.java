@@ -19,6 +19,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -26,7 +28,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-import org.polarsys.time4sys.marte.grm.GrmPackage;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.gqam.ControlPin} object.
@@ -72,9 +73,9 @@ public class ControlPinItemProvider extends MultiplicityElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 GrmPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_ENamedElement_name_feature"),
+				 getString("_UI_ENamedElement_name_description"),
+				 EcorePackage.Literals.ENAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -95,6 +96,7 @@ public class ControlPinItemProvider extends MultiplicityElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
 			childrenFeatures.add(GqamPackage.Literals.CONTROL_PIN__PATTERN);
 		}
 		return childrenFeatures;
@@ -143,6 +145,7 @@ public class ControlPinItemProvider extends MultiplicityElementItemProvider {
 			case GqamPackage.CONTROL_PIN__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -160,6 +163,11 @@ public class ControlPinItemProvider extends MultiplicityElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

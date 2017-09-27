@@ -72,52 +72,6 @@ public class AllocItemProviderAdapterFactory extends AllocAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.alloc.Dependency} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DependencyItemProvider dependencyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.alloc.Dependency}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDependencyAdapter() {
-		if (dependencyItemProvider == null) {
-			dependencyItemProvider = new DependencyItemProvider(this);
-		}
-
-		return dependencyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.alloc.Abstraction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AbstractionItemProvider abstractionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.alloc.Abstraction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAbstractionAdapter() {
-		if (abstractionItemProvider == null) {
-			abstractionItemProvider = new AbstractionItemProvider(this);
-		}
-
-		return abstractionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.alloc.Allocate} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -239,8 +193,6 @@ public class AllocItemProviderAdapterFactory extends AllocAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
-		if (dependencyItemProvider != null) dependencyItemProvider.dispose();
-		if (abstractionItemProvider != null) abstractionItemProvider.dispose();
 		if (allocateItemProvider != null) allocateItemProvider.dispose();
 	}
 

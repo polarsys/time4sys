@@ -31,16 +31,15 @@ import org.polarsys.time4sys.marte.grm.CommunicationMedia;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
-import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 import org.polarsys.time4sys.marte.hrm.HardwareBus;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
-import org.polarsys.time4sys.model.time4sys.Project;
 
 /**
  * @author loic
@@ -131,9 +130,9 @@ public class DesignBuilder {
 		return countTasks(design.getResourcePackage().getOwnedElement());
 	}
 
-	private static  int countTasks(final List<? extends ResourcePackageableElement> elts) {
+	private static  int countTasks(final List<? extends PackageableElement> elts) {
 		int t = 0;
-		for(ResourcePackageableElement elt: elts) {
+		for(PackageableElement elt: elts) {
 			if (elt instanceof SoftwareSchedulableResource) {
 				t++;
 			}
@@ -160,8 +159,8 @@ public class DesignBuilder {
 		return new CommunicationChannelBuilder(this, task);
 	}
 
-	private static  SoftwareSchedulableResource searchTask(final List<? extends ResourcePackageableElement> elts, final String name) {
-		for(ResourcePackageableElement elt: elts) {
+	private static  SoftwareSchedulableResource searchTask(final List<? extends PackageableElement> elts, final String name) {
+		for(PackageableElement elt: elts) {
 			if (elt instanceof SoftwareSchedulableResource) {
 				if (name.equals(((SoftwareSchedulableResource)elt).getName())) {
 					return (SoftwareSchedulableResource)elt;
@@ -190,8 +189,8 @@ public class DesignBuilder {
 		return new AlarmBuilder(this, alarm);
 	}
 	
-	private static  Alarm searchAlarm(final List<? extends ResourcePackageableElement> elts, final String name) {
-		for(ResourcePackageableElement elt: elts) {
+	private static  Alarm searchAlarm(final List<? extends PackageableElement> elts, final String name) {
+		for(PackageableElement elt: elts) {
 			if (elt instanceof Alarm) {
 				if (name.equals(((Alarm)elt).getName())) {
 					return (Alarm)elt;
@@ -207,8 +206,8 @@ public class DesignBuilder {
 		return null;
 	}
 	
-	private static  CommunicationChannel searchCommunicationChannel(final List<? extends ResourcePackageableElement> elts, final String name) {
-		for(ResourcePackageableElement elt: elts) {
+	private static  CommunicationChannel searchCommunicationChannel(final List<? extends PackageableElement> elts, final String name) {
+		for(PackageableElement elt: elts) {
 			if (elt instanceof CommunicationChannel) {
 				if (name.equals(((CommunicationChannel)elt).getName())) {
 					return (CommunicationChannel)elt;

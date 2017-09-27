@@ -22,7 +22,8 @@ import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
 import org.eclipse.jface.viewers.IFilter;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamPackage;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.ui.gqam.components.EndToEndFlowGeneralPropertiesEditionComponent;
 import org.polarsys.time4sys.ui.gqam.components.EndToEndFlowPropertiesEditionComponent;
@@ -56,7 +57,7 @@ public class EndToEndFlowPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public boolean provides(PropertiesEditingContext editingContext) {
 		return (editingContext.getEObject() instanceof EndToEndFlow) 
-					&& (GqamPackage.Literals.END_TO_END_FLOW == editingContext.getEObject().eClass());
+					&& (SamPackage.Literals.END_TO_END_FLOW == editingContext.getEObject().eClass());
 	}
 
 	/**
@@ -144,7 +145,7 @@ public class EndToEndFlowPropertiesEditionProvider extends PropertiesEditingProv
 		 */
 		public boolean select(Object toTest) {
 			EObject eObj = EEFUtils.resolveSemanticObject(toTest);
-			return eObj != null && GqamPackage.Literals.END_TO_END_FLOW == eObj.eClass();
+			return eObj != null && SamPackage.Literals.END_TO_END_FLOW == eObj.eClass();
 		}
 		
 	}

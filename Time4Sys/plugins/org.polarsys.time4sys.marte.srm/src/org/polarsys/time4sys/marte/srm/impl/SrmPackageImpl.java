@@ -14,11 +14,14 @@ package org.polarsys.time4sys.marte.srm.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.srm.AccessPolicyKind;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
@@ -277,6 +280,13 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType nfP_DurationEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum notificationResourceKindEEnum = null;
 
 	/**
@@ -341,6 +351,7 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 
 		// Initialize simple dependencies
 		GrmPackage.eINSTANCE.eClass();
+		NfpPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSrmPackage.createPackageContents();
@@ -1460,6 +1471,15 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getNFP_Duration() {
+		return nfP_DurationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getNotificationResourceKind() {
 		return notificationResourceKindEEnum;
 	}
@@ -1661,6 +1681,9 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 		mutualExclusionResourceKindEEnum = createEEnum(MUTUAL_EXCLUSION_RESOURCE_KIND);
 		notificationResourceKindEEnum = createEEnum(NOTIFICATION_RESOURCE_KIND);
 		occurencePolicyKindEEnum = createEEnum(OCCURENCE_POLICY_KIND);
+
+		// Create data types
+		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 	}
 
 	/**
@@ -1688,6 +1711,7 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 
 		// Obtain other dependent packages
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
+		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1836,7 +1860,7 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 		initEAttribute(getSoftwareMutualExclusionResource_Mechanism(), this.getMutualExclusionResourceKind(), "mechanism", null, 0, 1, SoftwareMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareMutualExclusionResource_AcquireServices(), theGrmPackage.getResourceService(), null, "acquireServices", null, 0, -1, SoftwareMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSoftwareMutualExclusionResource_ReleaseServices(), theGrmPackage.getResourceService(), null, "releaseServices", null, 0, -1, SoftwareMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSoftwareMutualExclusionResource_AccessTokenElements(), theGrmPackage.getNamedElement(), null, "accessTokenElements", null, 0, -1, SoftwareMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSoftwareMutualExclusionResource_AccessTokenElements(), theCoreElementsPackage.getModelElement(), null, "accessTokenElements", null, 0, -1, SoftwareMutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(softwarePortEClass, SoftwarePort.class, "SoftwarePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1926,6 +1950,9 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 		addEEnumLiteral(occurencePolicyKindEEnum, OccurencePolicyKind.MEMORYLESS);
 		addEEnumLiteral(occurencePolicyKindEEnum, OccurencePolicyKind.UNDEF);
 		addEEnumLiteral(occurencePolicyKindEEnum, OccurencePolicyKind.OTHER);
+
+		// Initialize data types
+		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

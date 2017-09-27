@@ -22,24 +22,6 @@ public interface AllocFactory extends EFactory {
 	AllocFactory eINSTANCE = org.polarsys.time4sys.marte.alloc.impl.AllocFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dependency</em>'.
-	 * @generated
-	 */
-	Dependency createDependency();
-
-	/**
-	 * Returns a new object of class '<em>Abstraction</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Abstraction</em>'.
-	 * @generated
-	 */
-	Abstraction createAbstraction();
-
-	/**
 	 * Returns a new object of class '<em>Allocate</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

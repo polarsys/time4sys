@@ -15,39 +15,19 @@ package org.polarsys.time4sys.marte.gqam.util;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.marte.gqam.AcquireStep;
-import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
-import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.BurstPattern;
-import org.polarsys.time4sys.marte.gqam.ClosedPattern;
-import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
-import org.polarsys.time4sys.marte.gqam.CommunicationStep;
-import org.polarsys.time4sys.marte.gqam.ControlPin;
-import org.polarsys.time4sys.marte.gqam.Delay;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
-import org.polarsys.time4sys.marte.gqam.ExecutionStep;
-import org.polarsys.time4sys.marte.gqam.GqamPackage;
-import org.polarsys.time4sys.marte.gqam.InputPin;
-import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
-import org.polarsys.time4sys.marte.gqam.Once;
-import org.polarsys.time4sys.marte.gqam.OutputPin;
-import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
-import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
-import org.polarsys.time4sys.marte.gqam.Reference;
-import org.polarsys.time4sys.marte.gqam.ReleaseStep;
-import org.polarsys.time4sys.marte.gqam.RequestedService;
-import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
-import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
-import org.polarsys.time4sys.marte.gqam.SporadicPattern;
-import org.polarsys.time4sys.marte.gqam.Step;
-import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
-import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.gqam.*;
 import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.Constraint;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,16 +122,16 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createDelayAdapter();
 			}
 			@Override
-			public Adapter caseEndToEndFlow(EndToEndFlow object) {
-				return createEndToEndFlowAdapter();
-			}
-			@Override
 			public Adapter caseExecutionStep(ExecutionStep object) {
 				return createExecutionStepAdapter();
 			}
 			@Override
 			public Adapter caseInputPin(InputPin object) {
 				return createInputPinAdapter();
+			}
+			@Override
+			public Adapter caseLatencyObserver(LatencyObserver object) {
+				return createLatencyObserverAdapter();
 			}
 			@Override
 			public Adapter caseMultiplicityElement(MultiplicityElement object) {
@@ -202,16 +182,40 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createStepAdapter();
 			}
 			@Override
-			public Adapter caseWorkloadEvent(WorkloadEvent object) {
-				return createWorkloadEventAdapter();
+			public Adapter caseTimedObserver(TimedObserver object) {
+				return createTimedObserverAdapter();
 			}
 			@Override
 			public Adapter caseWorkloadBehavior(WorkloadBehavior object) {
 				return createWorkloadBehaviorAdapter();
 			}
 			@Override
+			public Adapter caseWorkloadEvent(WorkloadEvent object) {
+				return createWorkloadEventAdapter();
+			}
+			@Override
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
+			}
+			@Override
+			public Adapter caseENamedElement(ENamedElement object) {
+				return createENamedElementAdapter();
+			}
+			@Override
+			public Adapter caseModelElement(ModelElement object) {
+				return createModelElementAdapter();
+			}
+			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseAnnotatedElement(AnnotatedElement object) {
+				return createAnnotatedElementAdapter();
+			}
+			@Override
+			public Adapter casePackageableElement(PackageableElement object) {
+				return createPackageableElementAdapter();
 			}
 			@Override
 			public Adapter caseResourcePackageableElement(ResourcePackageableElement object) {
@@ -228,6 +232,14 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSchedulableResource(SchedulableResource object) {
 				return createSchedulableResourceAdapter();
+			}
+			@Override
+			public Adapter caseConstraint(Constraint object) {
+				return createConstraintAdapter();
+			}
+			@Override
+			public Adapter caseAnnotation_Constraint(org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint object) {
+				return createAnnotation_ConstraintAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -306,6 +318,90 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @generated
+	 */
+	public Adapter createEModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.ENamedElement
+	 * @generated
+	 */
+	public Adapter createENamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.ModelElement <em>Model Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.ModelElement
+	 * @generated
+	 */
+	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement <em>Annotated Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement
+	 * @generated
+	 */
+	public Adapter createAnnotatedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement <em>Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement
+	 * @generated
+	 */
+	public Adapter createPackageableElementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.Step <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -316,6 +412,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.TimedObserver <em>Timed Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.TimedObserver
+	 * @generated
+	 */
+	public Adapter createTimedObserverAdapter() {
 		return null;
 	}
 
@@ -400,6 +510,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInputPinAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver <em>Latency Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.LatencyObserver
+	 * @generated
+	 */
+	public Adapter createLatencyObserverAdapter() {
 		return null;
 	}
 
@@ -586,20 +710,6 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow <em>End To End Flow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow
-	 * @generated
-	 */
-	public Adapter createEndToEndFlowAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -610,20 +720,6 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.grm.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -680,6 +776,34 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSchedulableResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.Constraint
+	 * @generated
+	 */
+	public Adapter createConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint
+	 * @generated
+	 */
+	public Adapter createAnnotation_ConstraintAdapter() {
 		return null;
 	}
 

@@ -15,9 +15,11 @@ package org.polarsys.time4sys.library.presentation;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
 import org.polarsys.time4sys.marte.hrm.provider.HrmEditPlugin;
+import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
 
 /**
  * This is the central singleton for the Library editor plugin.
@@ -54,6 +56,9 @@ public final class LibraryEditorPlugin extends EMFPlugin {
 				GqamEditPlugin.INSTANCE,
 				GrmEditPlugin.INSTANCE,
 				HrmEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
+				org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin.INSTANCE,
+				Nfp_AnnotationEditPlugin.INSTANCE,
 			});
 	}
 

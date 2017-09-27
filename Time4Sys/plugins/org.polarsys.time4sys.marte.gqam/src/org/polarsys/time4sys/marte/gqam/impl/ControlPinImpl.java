@@ -12,16 +12,25 @@
  */
 package org.polarsys.time4sys.marte.gqam.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-import org.polarsys.time4sys.marte.grm.GrmPackage;
-import org.polarsys.time4sys.marte.grm.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +40,7 @@ import org.polarsys.time4sys.marte.grm.NamedElement;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl#getEAnnotations <em>EAnnotations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ControlPinImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
@@ -38,6 +48,15 @@ import org.polarsys.time4sys.marte.grm.NamedElement;
  * @generated
  */
 public abstract class ControlPinImpl extends MultiplicityElementImpl implements ControlPin {
+	/**
+	 * The cached value of the '{@link #getEAnnotations() <em>EAnnotations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EAnnotation> eAnnotations;
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -83,6 +102,18 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	protected EClass eStaticClass() {
 		return GqamPackage.Literals.CONTROL_PIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EAnnotation> getEAnnotations() {
+		if (eAnnotations == null) {
+			eAnnotations = new EObjectContainmentWithInverseEList<EAnnotation>(EAnnotation.class, this, GqamPackage.CONTROL_PIN__EANNOTATIONS, EcorePackage.EANNOTATION__EMODEL_ELEMENT);
+		}
+		return eAnnotations;
 	}
 
 	/**
@@ -154,9 +185,37 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAnnotation getEAnnotation(String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
 			case GqamPackage.CONTROL_PIN__PATTERN:
 				return basicSetPattern(null, msgs);
 		}
@@ -171,6 +230,8 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				return getEAnnotations();
 			case GqamPackage.CONTROL_PIN__NAME:
 				return getName();
 			case GqamPackage.CONTROL_PIN__PATTERN:
@@ -184,9 +245,14 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				getEAnnotations().clear();
+				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+				return;
 			case GqamPackage.CONTROL_PIN__NAME:
 				setName((String)newValue);
 				return;
@@ -205,6 +271,9 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				getEAnnotations().clear();
+				return;
 			case GqamPackage.CONTROL_PIN__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -223,6 +292,8 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GqamPackage.CONTROL_PIN__EANNOTATIONS:
+				return eAnnotations != null && !eAnnotations.isEmpty();
 			case GqamPackage.CONTROL_PIN__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case GqamPackage.CONTROL_PIN__PATTERN:
@@ -238,9 +309,25 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (derivedFeatureID) {
+				case GqamPackage.CONTROL_PIN__EANNOTATIONS: return EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (derivedFeatureID) {
+				case GqamPackage.CONTROL_PIN__NAME: return EcorePackage.ENAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == ModelElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case GqamPackage.CONTROL_PIN__NAME: return GrmPackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -254,13 +341,74 @@ public abstract class ControlPinImpl extends MultiplicityElementImpl implements 
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (baseFeatureID) {
+				case EcorePackage.EMODEL_ELEMENT__EANNOTATIONS: return GqamPackage.CONTROL_PIN__EANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (baseFeatureID) {
+				case EcorePackage.ENAMED_ELEMENT__NAME: return GqamPackage.CONTROL_PIN__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == ModelElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case GrmPackage.NAMED_ELEMENT__NAME: return GqamPackage.CONTROL_PIN__NAME;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (baseOperationID) {
+				case EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING: return GqamPackage.CONTROL_PIN___GET_EANNOTATION__STRING;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ModelElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GqamPackage.CONTROL_PIN___GET_EANNOTATION__STRING:
+				return getEAnnotation((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

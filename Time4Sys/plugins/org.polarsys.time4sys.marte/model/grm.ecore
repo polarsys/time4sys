@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grm" nsURI="http://www.polarsys.org/time4sys/marte/grm/1.0"
     nsPrefix="grm">
-  <eClassifiers xsi:type="ecore:EClass" name="AccessControlPolicy" eSuperTypes="core_elements.ecore#//NamedElemement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessControlPolicy" eSuperTypes="core_elements.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClockResource" eSuperTypes="#//TimingResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -36,7 +36,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="speedFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mainScheduler" eType="#//Scheduler"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProtectionParameter" eSuperTypes="core_elements.ecore#//NamedElemement">
+  <eClassifiers xsi:type="ecore:EClass" name="ProtectionParameter" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priorityCeiling" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="preemptionLevel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -83,7 +83,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
         eType="#//ResourcePort"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceControlPolicy" eSuperTypes="core_elements.ecore#//NamedElemement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceControlPolicy" eSuperTypes="core_elements.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ResourceInstance" eSuperTypes="#//ResourcePackageableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Resource"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1" eType="#//ResourcePort"
@@ -110,13 +110,13 @@
       <details key="documentation" value="Deprecated. Use CoreElements::PackageElement"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourcePort" eSuperTypes="#//CommunicationEndPoint core_elements.ecore#//NamedElemement">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourcePort" eSuperTypes="#//CommunicationEndPoint core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pInterface" upperBound="-1"
         eType="#//ResourceInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rInterface" upperBound="-1"
         eType="#//ResourceInterface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="core_elements.ecore#//NamedElemement">
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceService" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Resource"
         eOpposite="#//Resource/pServices"/>
   </eClassifiers>
@@ -155,7 +155,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="schedParams" upperBound="-1"
         eType="#//SchedulingParameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SchedulingParameter" eSuperTypes="core_elements.ecore#//NamedElemement">
+  <eClassifiers xsi:type="ecore:EClass" name="SchedulingParameter" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SchedulingPolicy" eSuperTypes="#//AccessControlPolicy">

@@ -70,43 +70,6 @@ public interface GrmPackage extends EPackage {
 	GrmPackage eINSTANCE = org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.NamedElementImpl <em>Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.grm.impl.NamedElementImpl
-	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePackageImpl <em>Resource Package</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,7 +77,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePackage()
 	 * @generated
 	 */
-	int RESOURCE_PACKAGE = 21;
+	int RESOURCE_PACKAGE = 20;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePackageableElementImpl <em>Resource Packageable Element</em>}' class.
@@ -124,7 +87,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePackageableElement()
 	 * @generated
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT = 22;
+	int RESOURCE_PACKAGEABLE_ELEMENT = 21;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceInstanceImpl <em>Resource Instance</em>}' class.
@@ -134,7 +97,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceInstance()
 	 * @generated
 	 */
-	int RESOURCE_INSTANCE = 18;
+	int RESOURCE_INSTANCE = 17;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl <em>Resource</em>}' class.
@@ -144,7 +107,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 14;
+	int RESOURCE = 13;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.StorageResourceImpl <em>Storage Resource</em>}' class.
@@ -154,7 +117,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getStorageResource()
 	 * @generated
 	 */
-	int STORAGE_RESOURCE = 32;
+	int STORAGE_RESOURCE = 31;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.TimingResourceImpl <em>Timing Resource</em>}' class.
@@ -164,7 +127,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTimingResource()
 	 * @generated
 	 */
-	int TIMING_RESOURCE = 34;
+	int TIMING_RESOURCE = 33;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.CommunicationResourceImpl <em>Communication Resource</em>}' class.
@@ -184,7 +147,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSynchResource()
 	 * @generated
 	 */
-	int SYNCH_RESOURCE = 33;
+	int SYNCH_RESOURCE = 32;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ConcurrencyResourceImpl <em>Concurrency Resource</em>}' class.
@@ -204,7 +167,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProcessingResource()
 	 * @generated
 	 */
-	int PROCESSING_RESOURCE = 12;
+	int PROCESSING_RESOURCE = 11;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ComputingResourceImpl <em>Computing Resource</em>}' class.
@@ -244,7 +207,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTimerResource()
 	 * @generated
 	 */
-	int TIMER_RESOURCE = 35;
+	int TIMER_RESOURCE = 34;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceServiceImpl <em>Resource Service</em>}' class.
@@ -254,7 +217,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceService()
 	 * @generated
 	 */
-	int RESOURCE_SERVICE = 24;
+	int RESOURCE_SERVICE = 23;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl <em>Communication End Point</em>}' class.
@@ -284,7 +247,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceConnector()
 	 * @generated
 	 */
-	int RESOURCE_CONNECTOR = 16;
+	int RESOURCE_CONNECTOR = 15;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePortImpl <em>Resource Port</em>}' class.
@@ -294,7 +257,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePort()
 	 * @generated
 	 */
-	int RESOURCE_PORT = 23;
+	int RESOURCE_PORT = 22;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceBrokerImpl <em>Resource Broker</em>}' class.
@@ -304,7 +267,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceBroker()
 	 * @generated
 	 */
-	int RESOURCE_BROKER = 15;
+	int RESOURCE_BROKER = 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceManagerImpl <em>Resource Manager</em>}' class.
@@ -314,7 +277,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceManager()
 	 * @generated
 	 */
-	int RESOURCE_MANAGER = 20;
+	int RESOURCE_MANAGER = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.AccessControlPolicyImpl <em>Access Control Policy</em>}' class.
@@ -327,13 +290,22 @@ public interface GrmPackage extends EPackage {
 	int ACCESS_CONTROL_POLICY = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CONTROL_POLICY__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY__NAME = NAMED_ELEMENT__NAME;
+	int ACCESS_CONTROL_POLICY__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Access Control Policy</em>' class.
@@ -342,7 +314,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ACCESS_CONTROL_POLICY_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CONTROL_POLICY___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Access Control Policy</em>' class.
@@ -351,7 +332,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ACCESS_CONTROL_POLICY_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -360,7 +350,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT__NAME = NAMED_ELEMENT__NAME;
+	int RESOURCE_PACKAGEABLE_ELEMENT__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Resource Packageable Element</em>' class.
@@ -369,7 +359,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Packageable Element</em>' class.
@@ -378,7 +377,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__EANNOTATIONS = RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -480,6 +488,15 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_FEATURE_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___GET_EANNOTATION__STRING = RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -487,6 +504,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_OPERATION_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMING_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -588,6 +614,15 @@ public interface GrmPackage extends EPackage {
 	int TIMING_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMING_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Timing Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -595,6 +630,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TIMING_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_RESOURCE__EANNOTATIONS = TIMING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -696,6 +740,15 @@ public interface GrmPackage extends EPackage {
 	int CLOCK_RESOURCE_FEATURE_COUNT = TIMING_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOCK_RESOURCE___GET_EANNOTATION__STRING = TIMING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Clock Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,6 +783,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_END_POINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -831,6 +893,15 @@ public interface GrmPackage extends EPackage {
 	int COMMUNICATION_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Communication Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -838,6 +909,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_MEDIA__EANNOTATIONS = COMMUNICATION_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1002,6 +1082,15 @@ public interface GrmPackage extends EPackage {
 	int COMMUNICATION_MEDIA_FEATURE_COUNT = COMMUNICATION_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_MEDIA___GET_EANNOTATION__STRING = COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Communication Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1009,6 +1098,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_MEDIA_OPERATION_COUNT = COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1128,6 +1226,15 @@ public interface GrmPackage extends EPackage {
 	int PROCESSING_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Processing Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1135,6 +1242,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSING_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE__EANNOTATIONS = PROCESSING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1254,6 +1370,15 @@ public interface GrmPackage extends EPackage {
 	int COMPUTING_RESOURCE_FEATURE_COUNT = PROCESSING_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPUTING_RESOURCE___GET_EANNOTATION__STRING = PROCESSING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Computing Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1261,6 +1386,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPUTING_RESOURCE_OPERATION_COUNT = PROCESSING_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCURRENCY_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1362,6 +1496,15 @@ public interface GrmPackage extends EPackage {
 	int CONCURRENCY_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCURRENCY_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Concurrency Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1369,6 +1512,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONCURRENCY_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_RESOURCE__EANNOTATIONS = PROCESSING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1488,6 +1640,15 @@ public interface GrmPackage extends EPackage {
 	int DEVICE_RESOURCE_FEATURE_COUNT = PROCESSING_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEVICE_RESOURCE___GET_EANNOTATION__STRING = PROCESSING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Device Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1504,7 +1665,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceControlPolicy()
 	 * @generated
 	 */
-	int RESOURCE_CONTROL_POLICY = 17;
+	int RESOURCE_CONTROL_POLICY = 16;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulerImpl <em>Scheduler</em>}' class.
@@ -1514,7 +1675,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getScheduler()
 	 * @generated
 	 */
-	int SCHEDULER = 26;
+	int SCHEDULER = 25;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SecondarySchedulerImpl <em>Secondary Scheduler</em>}' class.
@@ -1524,7 +1685,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSecondaryScheduler()
 	 * @generated
 	 */
-	int SECONDARY_SCHEDULER = 30;
+	int SECONDARY_SCHEDULER = 29;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulableResourceImpl <em>Schedulable Resource</em>}' class.
@@ -1534,7 +1695,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulableResource()
 	 * @generated
 	 */
-	int SCHEDULABLE_RESOURCE = 27;
+	int SCHEDULABLE_RESOURCE = 26;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulingParameterImpl <em>Scheduling Parameter</em>}' class.
@@ -1544,7 +1705,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulingParameter()
 	 * @generated
 	 */
-	int SCHEDULING_PARAMETER = 28;
+	int SCHEDULING_PARAMETER = 27;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl <em>Scheduling Policy</em>}' class.
@@ -1554,7 +1715,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulingPolicy()
 	 * @generated
 	 */
-	int SCHEDULING_POLICY = 29;
+	int SCHEDULING_POLICY = 28;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.MutualExclusionResourceImpl <em>Mutual Exclusion Resource</em>}' class.
@@ -1584,7 +1745,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProtectionParameter()
 	 * @generated
 	 */
-	int PROTECTION_PARAMETER = 13;
+	int PROTECTION_PARAMETER = 12;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.UsageDemandImpl <em>Usage Demand</em>}' class.
@@ -1594,7 +1755,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getUsageDemand()
 	 * @generated
 	 */
-	int USAGE_DEMAND = 36;
+	int USAGE_DEMAND = 35;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceUsageImpl <em>Resource Usage</em>}' class.
@@ -1604,7 +1765,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceUsage()
 	 * @generated
 	 */
-	int RESOURCE_USAGE = 25;
+	int RESOURCE_USAGE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
@@ -1659,7 +1820,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getUsageTypedAmount()
 	 * @generated
 	 */
-	int USAGE_TYPED_AMOUNT = 37;
+	int USAGE_TYPED_AMOUNT = 36;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.DynamicUsageImpl <em>Dynamic Usage</em>}' class.
@@ -1717,6 +1878,15 @@ public interface GrmPackage extends EPackage {
 	int DYNAMIC_USAGE_OPERATION_COUNT = RESOURCE_USAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUTUAL_EXCLUSION_PROTOCOL__EANNOTATIONS = ACCESS_CONTROL_POLICY__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1753,6 +1923,15 @@ public interface GrmPackage extends EPackage {
 	int MUTUAL_EXCLUSION_PROTOCOL_FEATURE_COUNT = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUTUAL_EXCLUSION_PROTOCOL___GET_EANNOTATION__STRING = ACCESS_CONTROL_POLICY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Mutual Exclusion Protocol</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1760,6 +1939,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MUTUAL_EXCLUSION_PROTOCOL_OPERATION_COUNT = ACCESS_CONTROL_POLICY_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCH_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1861,6 +2049,15 @@ public interface GrmPackage extends EPackage {
 	int SYNCH_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYNCH_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Synch Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1868,6 +2065,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCH_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUTUAL_EXCLUSION_RESOURCE__EANNOTATIONS = SYNCH_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1996,6 +2202,15 @@ public interface GrmPackage extends EPackage {
 	int MUTUAL_EXCLUSION_RESOURCE_FEATURE_COUNT = SYNCH_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MUTUAL_EXCLUSION_RESOURCE___GET_EANNOTATION__STRING = SYNCH_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Mutual Exclusion Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2005,13 +2220,22 @@ public interface GrmPackage extends EPackage {
 	int MUTUAL_EXCLUSION_RESOURCE_OPERATION_COUNT = SYNCH_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTION_PARAMETER__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__NAME = NAMED_ELEMENT__NAME;
+	int PROTECTION_PARAMETER__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Ceiling</b></em>' attribute.
@@ -2020,7 +2244,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__PRIORITY_CEILING = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PROTECTION_PARAMETER__PRIORITY_CEILING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Preemption Level</b></em>' attribute.
@@ -2029,7 +2253,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__PREEMPTION_LEVEL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PROTECTION_PARAMETER__PREEMPTION_LEVEL = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Protection Parameter</em>' class.
@@ -2038,7 +2262,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PROTECTION_PARAMETER_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROTECTION_PARAMETER___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Protection Parameter</em>' class.
@@ -2047,7 +2280,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int PROTECTION_PARAMETER_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_BROKER__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2167,6 +2409,15 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_BROKER_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_BROKER___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource Broker</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2212,13 +2463,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_CONNECTOR_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CONTROL_POLICY__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY__NAME = NAMED_ELEMENT__NAME;
+	int RESOURCE_CONTROL_POLICY__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Resource Control Policy</em>' class.
@@ -2227,7 +2487,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_CONTROL_POLICY_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CONTROL_POLICY___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Control Policy</em>' class.
@@ -2236,7 +2505,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_CONTROL_POLICY_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INSTANCE__EANNOTATIONS = RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2275,6 +2553,15 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_INSTANCE_FEATURE_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INSTANCE___GET_EANNOTATION__STRING = RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2291,7 +2578,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getStaticUsage()
 	 * @generated
 	 */
-	int STATIC_USAGE = 31;
+	int STATIC_USAGE = 30;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceInterfaceImpl <em>Resource Interface</em>}' class.
@@ -2301,7 +2588,16 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceInterface()
 	 * @generated
 	 */
-	int RESOURCE_INTERFACE = 19;
+	int RESOURCE_INTERFACE = 18;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INTERFACE__EANNOTATIONS = RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2331,6 +2627,15 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_INTERFACE_FEATURE_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_INTERFACE___GET_EANNOTATION__STRING = RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2338,6 +2643,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_INTERFACE_OPERATION_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MANAGER__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2457,6 +2771,15 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_MANAGER_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_MANAGER___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2466,13 +2789,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_MANAGER_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PACKAGE__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE__NAME = NAMED_ELEMENT__NAME;
+	int RESOURCE_PACKAGE__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' containment reference list.
@@ -2481,7 +2813,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE__OWNED_ELEMENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_PACKAGE__OWNED_ELEMENT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__OWNED_ELEMENT;
 
 	/**
 	 * The number of structural features of the '<em>Resource Package</em>' class.
@@ -2490,7 +2822,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_PACKAGE_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PACKAGE___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Package</em>' class.
@@ -2499,7 +2840,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_PACKAGE_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
@@ -2511,13 +2852,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_PORT__PACKET_SIZE = COMMUNICATION_END_POINT__PACKET_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__EANNOTATIONS = COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT__NAME = COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
+	int RESOURCE_PORT__NAME = COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>PInterface</b></em>' reference list.
@@ -2526,7 +2876,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT__PINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
+	int RESOURCE_PORT__PINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>RInterface</b></em>' reference list.
@@ -2535,7 +2885,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT__RINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
+	int RESOURCE_PORT__RINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Resource Port</em>' class.
@@ -2544,7 +2894,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT_FEATURE_COUNT = COMMUNICATION_END_POINT_FEATURE_COUNT + 3;
+	int RESOURCE_PORT_FEATURE_COUNT = COMMUNICATION_END_POINT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT___GET_EANNOTATION__STRING = COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Resource Port</em>' class.
@@ -2553,7 +2912,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT_OPERATION_COUNT = COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
+	int RESOURCE_PORT_OPERATION_COUNT = COMMUNICATION_END_POINT_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2562,7 +2930,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE__NAME = NAMED_ELEMENT__NAME;
+	int RESOURCE_SERVICE__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' container reference.
@@ -2571,7 +2939,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE__CONTEXT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_SERVICE__CONTEXT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Service</em>' class.
@@ -2580,7 +2948,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_SERVICE_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Service</em>' class.
@@ -2589,7 +2966,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_SERVICE_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER__EANNOTATIONS = RESOURCE_BROKER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2745,6 +3131,15 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULER_FEATURE_COUNT = RESOURCE_BROKER_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULER___GET_EANNOTATION__STRING = RESOURCE_BROKER___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Scheduler</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2752,6 +3147,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEDULER_OPERATION_COUNT = RESOURCE_BROKER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULABLE_RESOURCE__EANNOTATIONS = CONCURRENCY_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2880,6 +3284,15 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULABLE_RESOURCE_FEATURE_COUNT = CONCURRENCY_RESOURCE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULABLE_RESOURCE___GET_EANNOTATION__STRING = CONCURRENCY_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Schedulable Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2889,13 +3302,22 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULABLE_RESOURCE_OPERATION_COUNT = CONCURRENCY_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__NAME = NAMED_ELEMENT__NAME;
+	int SCHEDULING_PARAMETER__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2904,7 +3326,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__VALUE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SCHEDULING_PARAMETER__VALUE = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Scheduling Parameter</em>' class.
@@ -2913,7 +3335,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SCHEDULING_PARAMETER_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Scheduling Parameter</em>' class.
@@ -2922,7 +3353,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SCHEDULING_PARAMETER_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_POLICY__EANNOTATIONS = ACCESS_CONTROL_POLICY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2961,6 +3401,15 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULING_POLICY_FEATURE_COUNT = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_POLICY___GET_EANNOTATION__STRING = ACCESS_CONTROL_POLICY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has Valid Policy</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2977,6 +3426,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCHEDULING_POLICY_OPERATION_COUNT = ACCESS_CONTROL_POLICY_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECONDARY_SCHEDULER__EANNOTATIONS = SCHEDULER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3141,6 +3599,15 @@ public interface GrmPackage extends EPackage {
 	int SECONDARY_SCHEDULER_FEATURE_COUNT = SCHEDULER_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECONDARY_SCHEDULER___GET_EANNOTATION__STRING = SCHEDULER___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Secondary Scheduler</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3193,6 +3660,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_USAGE_OPERATION_COUNT = RESOURCE_USAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGE_RESOURCE__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3294,6 +3770,15 @@ public interface GrmPackage extends EPackage {
 	int STORAGE_RESOURCE_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STORAGE_RESOURCE___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Storage Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3301,6 +3786,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STORAGE_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER_RESOURCE__EANNOTATIONS = TIMING_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3465,6 +3959,15 @@ public interface GrmPackage extends EPackage {
 	int TIMER_RESOURCE_FEATURE_COUNT = TIMING_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMER_RESOURCE___GET_EANNOTATION__STRING = TIMING_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Timer Resource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3508,6 +4011,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int USAGE_DEMAND_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TYPED_AMOUNT__EANNOTATIONS = RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3663,6 +4175,15 @@ public interface GrmPackage extends EPackage {
 	int USAGE_TYPED_AMOUNT_FEATURE_COUNT = RESOURCE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_TYPED_AMOUNT___GET_EANNOTATION__STRING = RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Usage Typed Amount</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3679,7 +4200,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTransmModeKind()
 	 * @generated
 	 */
-	int TRANSM_MODE_KIND = 40;
+	int TRANSM_MODE_KIND = 39;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -3689,7 +4210,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 41;
+	int NFP_DURATION = 40;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
@@ -3699,7 +4220,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedPolicyKind()
 	 * @generated
 	 */
-	int SCHED_POLICY_KIND = 39;
+	int SCHED_POLICY_KIND = 38;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.ProtectProtocolKind <em>Protect Protocol Kind</em>}' enum.
@@ -3709,7 +4230,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProtectProtocolKind()
 	 * @generated
 	 */
-	int PROTECT_PROTOCOL_KIND = 38;
+	int PROTECT_PROTOCOL_KIND = 37;
 
 
 	/**
@@ -3721,38 +4242,6 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResourcePackage();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.grm.ResourcePackage#getOwnedElement <em>Owned Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Element</em>'.
-	 * @see org.polarsys.time4sys.marte.grm.ResourcePackage#getOwnedElement()
-	 * @see #getResourcePackage()
-	 * @generated
-	 */
-	EReference getResourcePackage_OwnedElement();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see org.polarsys.time4sys.marte.grm.NamedElement
-	 * @generated
-	 */
-	EClass getNamedElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.NamedElement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.polarsys.time4sys.marte.grm.NamedElement#getName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.ResourcePackageableElement <em>Resource Packageable Element</em>}'.
@@ -4912,32 +5401,6 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESOURCE_PACKAGE = eINSTANCE.getResourcePackage();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Element</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_PACKAGE__OWNED_ELEMENT = eINSTANCE.getResourcePackage_OwnedElement();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.NamedElementImpl <em>Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.time4sys.marte.grm.impl.NamedElementImpl
-		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNamedElement()
-		 * @generated
-		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePackageableElementImpl <em>Resource Packageable Element</em>}' class.

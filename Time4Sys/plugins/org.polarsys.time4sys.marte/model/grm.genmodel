@@ -8,6 +8,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     providerRootExtendsClass="" editPluginID="org.polarsys.time4sys.marte.grm.edit"
     classNamePattern=""
+    usedGenPackages="core_elements.genmodel#//coreelements"
     operationReflection="true" importOrganizing="true">
   <foreignModel>grm.ecore</foreignModel>
   <genPackages prefix="Grm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
@@ -61,9 +62,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/scheduler"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/protocol"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grm.ecore#//MutualExclusionResource/protectParams"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="grm.ecore#//NamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//NamedElement/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="grm.ecore#//ProcessingResource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//ProcessingResource/speedFactor"/>
@@ -167,9 +165,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/usedMemory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/powerPeak"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//UsageTypedAmount/energy"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="grm.ecore#//Time4SysElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grm.ecore#//Time4SysElement/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

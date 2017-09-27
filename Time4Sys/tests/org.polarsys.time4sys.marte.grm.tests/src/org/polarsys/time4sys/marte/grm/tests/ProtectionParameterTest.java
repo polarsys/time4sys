@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -23,7 +24,15 @@ import org.polarsys.time4sys.marte.grm.ProtectionParameter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProtectionParameterTest extends NamedElementTest {
+public class ProtectionParameterTest extends TestCase {
+
+	/**
+	 * The fixture for this Protection Parameter test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProtectionParameter fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +54,23 @@ public class ProtectionParameterTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Protection Parameter test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ProtectionParameter fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Protection Parameter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ProtectionParameter getFixture() {
-		return (ProtectionParameter)fixture;
+		return fixture;
 	}
 
 	/**

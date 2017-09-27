@@ -2,6 +2,8 @@
  */
 package org.polarsys.time4sys.marte.alloc.tests;
 
+import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.alloc.AllocFactory;
@@ -13,7 +15,15 @@ import org.polarsys.time4sys.marte.alloc.Allocate;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AllocateTest extends AbstractionTest {
+public class AllocateTest extends TestCase {
+
+	/**
+	 * The fixture for this Allocate test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Allocate fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,14 +45,23 @@ public class AllocateTest extends AbstractionTest {
 	}
 
 	/**
+	 * Sets the fixture for this Allocate test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Allocate fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Allocate test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Allocate getFixture() {
-		return (Allocate)fixture;
+		return fixture;
 	}
 
 	/**

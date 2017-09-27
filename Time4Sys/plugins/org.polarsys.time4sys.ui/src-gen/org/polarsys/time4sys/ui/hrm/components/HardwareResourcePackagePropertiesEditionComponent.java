@@ -39,9 +39,9 @@ import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 import org.polarsys.time4sys.marte.hrm.HardwareResourcePackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 import org.polarsys.time4sys.ui.views.hrm.parts.GeneralPropertiesEditionPart;
 import org.polarsys.time4sys.ui.views.hrm.parts.HrmViewsRepository;
 
@@ -94,7 +94,7 @@ public class HardwareResourcePackagePropertiesEditionComponent extends SinglePar
 				generalPart.setName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, hardwareResourcePackage.getName()));
 			
 			if (isAccessible(HrmViewsRepository.General.Properties.ownedElement)) {
-				ownedElementSettings = new ReferencesTableSettings(hardwareResourcePackage, GrmPackage.eINSTANCE.getResourcePackage_OwnedElement());
+				ownedElementSettings = new ReferencesTableSettings(hardwareResourcePackage, CoreElementsPackage.eINSTANCE.getPackage_OwnedElement());
 				generalPart.initOwnedElement(ownedElementSettings);
 			}
 			// init filters
@@ -132,10 +132,10 @@ public class HardwareResourcePackagePropertiesEditionComponent extends SinglePar
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == HrmViewsRepository.General.Properties.name) {
-			return GrmPackage.eINSTANCE.getNamedElement_Name();
+			return EcorePackage.eINSTANCE.getENamedElement_Name();
 		}
 		if (editorKey == HrmViewsRepository.General.Properties.ownedElement) {
-			return GrmPackage.eINSTANCE.getResourcePackage_OwnedElement();
+			return CoreElementsPackage.eINSTANCE.getPackage_OwnedElement();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -185,14 +185,14 @@ public class HardwareResourcePackagePropertiesEditionComponent extends SinglePar
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			GeneralPropertiesEditionPart generalPart = (GeneralPropertiesEditionPart)editingPart;
-			if (GrmPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(HrmViewsRepository.General.Properties.name)) {
+			if (EcorePackage.eINSTANCE.getENamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(HrmViewsRepository.General.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					generalPart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
 					generalPart.setName("");
 				}
 			}
-			if (GrmPackage.eINSTANCE.getResourcePackage_OwnedElement().equals(msg.getFeature()) && isAccessible(HrmViewsRepository.General.Properties.ownedElement))
+			if (CoreElementsPackage.eINSTANCE.getPackage_OwnedElement().equals(msg.getFeature()) && isAccessible(HrmViewsRepository.General.Properties.ownedElement))
 				generalPart.updateOwnedElement();
 			
 		}
@@ -206,8 +206,8 @@ public class HardwareResourcePackagePropertiesEditionComponent extends SinglePar
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GrmPackage.eINSTANCE.getNamedElement_Name(),
-			GrmPackage.eINSTANCE.getResourcePackage_OwnedElement()		);
+			EcorePackage.eINSTANCE.getENamedElement_Name(),
+			CoreElementsPackage.eINSTANCE.getPackage_OwnedElement()		);
 		return new NotificationFilter[] {filter,};
 	}
 
@@ -232,9 +232,9 @@ public class HardwareResourcePackagePropertiesEditionComponent extends SinglePar
 				if (HrmViewsRepository.General.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

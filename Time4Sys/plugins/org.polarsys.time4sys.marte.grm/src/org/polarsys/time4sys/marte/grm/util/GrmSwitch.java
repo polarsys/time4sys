@@ -12,48 +12,13 @@
  */
 package org.polarsys.time4sys.marte.grm.util;
 
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
-import org.polarsys.time4sys.marte.grm.ClockResource;
-import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
-import org.polarsys.time4sys.marte.grm.CommunicationMedia;
-import org.polarsys.time4sys.marte.grm.CommunicationResource;
-import org.polarsys.time4sys.marte.grm.ComputingResource;
-import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
-import org.polarsys.time4sys.marte.grm.DeviceResource;
-import org.polarsys.time4sys.marte.grm.DynamicUsage;
-import org.polarsys.time4sys.marte.grm.GrmPackage;
-import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
-import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
-import org.polarsys.time4sys.marte.grm.ProcessingResource;
-import org.polarsys.time4sys.marte.grm.ProtectionParameter;
-import org.polarsys.time4sys.marte.grm.Resource;
-import org.polarsys.time4sys.marte.grm.ResourceBroker;
-import org.polarsys.time4sys.marte.grm.ResourceConnector;
-import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
-import org.polarsys.time4sys.marte.grm.ResourceInstance;
-import org.polarsys.time4sys.marte.grm.ResourceInterface;
-import org.polarsys.time4sys.marte.grm.ResourceManager;
-import org.polarsys.time4sys.marte.grm.ResourcePackage;
-import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
-import org.polarsys.time4sys.marte.grm.ResourcePort;
-import org.polarsys.time4sys.marte.grm.ResourceService;
-import org.polarsys.time4sys.marte.grm.ResourceUsage;
-import org.polarsys.time4sys.marte.grm.SchedulableResource;
-import org.polarsys.time4sys.marte.grm.Scheduler;
-import org.polarsys.time4sys.marte.grm.SchedulingParameter;
-import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
-import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
-import org.polarsys.time4sys.marte.grm.StaticUsage;
-import org.polarsys.time4sys.marte.grm.StorageResource;
-import org.polarsys.time4sys.marte.grm.SynchResource;
-import org.polarsys.time4sys.marte.grm.TimerResource;
-import org.polarsys.time4sys.marte.grm.TimingResource;
-import org.polarsys.time4sys.marte.grm.UsageDemand;
-import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
+import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,6 +81,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				AccessControlPolicy accessControlPolicy = (AccessControlPolicy)theEObject;
 				T result = caseAccessControlPolicy(accessControlPolicy);
 				if (result == null) result = caseNamedElement(accessControlPolicy);
+				if (result == null) result = caseENamedElement(accessControlPolicy);
+				if (result == null) result = caseModelElement(accessControlPolicy);
+				if (result == null) result = caseEModelElement(accessControlPolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -125,7 +93,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTimingResource(clockResource);
 				if (result == null) result = caseResource(clockResource);
 				if (result == null) result = caseResourcePackageableElement(clockResource);
+				if (result == null) result = casePackageableElement(clockResource);
 				if (result == null) result = caseNamedElement(clockResource);
+				if (result == null) result = caseENamedElement(clockResource);
+				if (result == null) result = caseModelElement(clockResource);
+				if (result == null) result = caseEModelElement(clockResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,7 +114,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseProcessingResource(communicationMedia);
 				if (result == null) result = caseResource(communicationMedia);
 				if (result == null) result = caseResourcePackageableElement(communicationMedia);
+				if (result == null) result = casePackageableElement(communicationMedia);
 				if (result == null) result = caseNamedElement(communicationMedia);
+				if (result == null) result = caseENamedElement(communicationMedia);
+				if (result == null) result = caseModelElement(communicationMedia);
+				if (result == null) result = caseEModelElement(communicationMedia);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -152,7 +128,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseProcessingResource(computingResource);
 				if (result == null) result = caseResource(computingResource);
 				if (result == null) result = caseResourcePackageableElement(computingResource);
+				if (result == null) result = casePackageableElement(computingResource);
 				if (result == null) result = caseNamedElement(computingResource);
+				if (result == null) result = caseENamedElement(computingResource);
+				if (result == null) result = caseModelElement(computingResource);
+				if (result == null) result = caseEModelElement(computingResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,7 +141,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseConcurrencyResource(concurrencyResource);
 				if (result == null) result = caseResource(concurrencyResource);
 				if (result == null) result = caseResourcePackageableElement(concurrencyResource);
+				if (result == null) result = casePackageableElement(concurrencyResource);
 				if (result == null) result = caseNamedElement(concurrencyResource);
+				if (result == null) result = caseENamedElement(concurrencyResource);
+				if (result == null) result = caseModelElement(concurrencyResource);
+				if (result == null) result = caseEModelElement(concurrencyResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -170,7 +154,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseCommunicationResource(communicationResource);
 				if (result == null) result = caseResource(communicationResource);
 				if (result == null) result = caseResourcePackageableElement(communicationResource);
+				if (result == null) result = casePackageableElement(communicationResource);
 				if (result == null) result = caseNamedElement(communicationResource);
+				if (result == null) result = caseENamedElement(communicationResource);
+				if (result == null) result = caseModelElement(communicationResource);
+				if (result == null) result = caseEModelElement(communicationResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -180,7 +168,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseProcessingResource(deviceResource);
 				if (result == null) result = caseResource(deviceResource);
 				if (result == null) result = caseResourcePackageableElement(deviceResource);
+				if (result == null) result = casePackageableElement(deviceResource);
 				if (result == null) result = caseNamedElement(deviceResource);
+				if (result == null) result = caseENamedElement(deviceResource);
+				if (result == null) result = caseModelElement(deviceResource);
+				if (result == null) result = caseEModelElement(deviceResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -196,6 +188,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseMutualExclusionProtocol(mutualExclusionProtocol);
 				if (result == null) result = caseAccessControlPolicy(mutualExclusionProtocol);
 				if (result == null) result = caseNamedElement(mutualExclusionProtocol);
+				if (result == null) result = caseENamedElement(mutualExclusionProtocol);
+				if (result == null) result = caseModelElement(mutualExclusionProtocol);
+				if (result == null) result = caseEModelElement(mutualExclusionProtocol);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -205,13 +200,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSynchResource(mutualExclusionResource);
 				if (result == null) result = caseResource(mutualExclusionResource);
 				if (result == null) result = caseResourcePackageableElement(mutualExclusionResource);
+				if (result == null) result = casePackageableElement(mutualExclusionResource);
 				if (result == null) result = caseNamedElement(mutualExclusionResource);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GrmPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
+				if (result == null) result = caseENamedElement(mutualExclusionResource);
+				if (result == null) result = caseModelElement(mutualExclusionResource);
+				if (result == null) result = caseEModelElement(mutualExclusionResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -220,7 +213,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseProcessingResource(processingResource);
 				if (result == null) result = caseResource(processingResource);
 				if (result == null) result = caseResourcePackageableElement(processingResource);
+				if (result == null) result = casePackageableElement(processingResource);
 				if (result == null) result = caseNamedElement(processingResource);
+				if (result == null) result = caseENamedElement(processingResource);
+				if (result == null) result = caseModelElement(processingResource);
+				if (result == null) result = caseEModelElement(processingResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -228,6 +225,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				ProtectionParameter protectionParameter = (ProtectionParameter)theEObject;
 				T result = caseProtectionParameter(protectionParameter);
 				if (result == null) result = caseNamedElement(protectionParameter);
+				if (result == null) result = caseENamedElement(protectionParameter);
+				if (result == null) result = caseModelElement(protectionParameter);
+				if (result == null) result = caseEModelElement(protectionParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -235,7 +235,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				Resource resource = (Resource)theEObject;
 				T result = caseResource(resource);
 				if (result == null) result = caseResourcePackageableElement(resource);
+				if (result == null) result = casePackageableElement(resource);
 				if (result == null) result = caseNamedElement(resource);
+				if (result == null) result = caseENamedElement(resource);
+				if (result == null) result = caseModelElement(resource);
+				if (result == null) result = caseEModelElement(resource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -244,7 +248,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseResourceBroker(resourceBroker);
 				if (result == null) result = caseResource(resourceBroker);
 				if (result == null) result = caseResourcePackageableElement(resourceBroker);
+				if (result == null) result = casePackageableElement(resourceBroker);
 				if (result == null) result = caseNamedElement(resourceBroker);
+				if (result == null) result = caseENamedElement(resourceBroker);
+				if (result == null) result = caseModelElement(resourceBroker);
+				if (result == null) result = caseEModelElement(resourceBroker);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -258,6 +266,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				ResourceControlPolicy resourceControlPolicy = (ResourceControlPolicy)theEObject;
 				T result = caseResourceControlPolicy(resourceControlPolicy);
 				if (result == null) result = caseNamedElement(resourceControlPolicy);
+				if (result == null) result = caseENamedElement(resourceControlPolicy);
+				if (result == null) result = caseModelElement(resourceControlPolicy);
+				if (result == null) result = caseEModelElement(resourceControlPolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -265,7 +276,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				ResourceInstance resourceInstance = (ResourceInstance)theEObject;
 				T result = caseResourceInstance(resourceInstance);
 				if (result == null) result = caseResourcePackageableElement(resourceInstance);
+				if (result == null) result = casePackageableElement(resourceInstance);
 				if (result == null) result = caseNamedElement(resourceInstance);
+				if (result == null) result = caseENamedElement(resourceInstance);
+				if (result == null) result = caseModelElement(resourceInstance);
+				if (result == null) result = caseEModelElement(resourceInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -273,7 +288,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				ResourceInterface resourceInterface = (ResourceInterface)theEObject;
 				T result = caseResourceInterface(resourceInterface);
 				if (result == null) result = caseResourcePackageableElement(resourceInterface);
+				if (result == null) result = casePackageableElement(resourceInterface);
 				if (result == null) result = caseNamedElement(resourceInterface);
+				if (result == null) result = caseENamedElement(resourceInterface);
+				if (result == null) result = caseModelElement(resourceInterface);
+				if (result == null) result = caseEModelElement(resourceInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -282,21 +301,34 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseResourceManager(resourceManager);
 				if (result == null) result = caseResource(resourceManager);
 				if (result == null) result = caseResourcePackageableElement(resourceManager);
+				if (result == null) result = casePackageableElement(resourceManager);
 				if (result == null) result = caseNamedElement(resourceManager);
+				if (result == null) result = caseENamedElement(resourceManager);
+				if (result == null) result = caseModelElement(resourceManager);
+				if (result == null) result = caseEModelElement(resourceManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GrmPackage.RESOURCE_PACKAGE: {
 				ResourcePackage resourcePackage = (ResourcePackage)theEObject;
 				T result = caseResourcePackage(resourcePackage);
+				if (result == null) result = casePackage(resourcePackage);
+				if (result == null) result = casePackageableElement(resourcePackage);
 				if (result == null) result = caseNamedElement(resourcePackage);
+				if (result == null) result = caseENamedElement(resourcePackage);
+				if (result == null) result = caseModelElement(resourcePackage);
+				if (result == null) result = caseEModelElement(resourcePackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case GrmPackage.RESOURCE_PACKAGEABLE_ELEMENT: {
 				ResourcePackageableElement resourcePackageableElement = (ResourcePackageableElement)theEObject;
 				T result = caseResourcePackageableElement(resourcePackageableElement);
+				if (result == null) result = casePackageableElement(resourcePackageableElement);
 				if (result == null) result = caseNamedElement(resourcePackageableElement);
+				if (result == null) result = caseENamedElement(resourcePackageableElement);
+				if (result == null) result = caseModelElement(resourcePackageableElement);
+				if (result == null) result = caseEModelElement(resourcePackageableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -305,6 +337,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseResourcePort(resourcePort);
 				if (result == null) result = caseCommunicationEndPoint(resourcePort);
 				if (result == null) result = caseNamedElement(resourcePort);
+				if (result == null) result = caseENamedElement(resourcePort);
+				if (result == null) result = caseModelElement(resourcePort);
+				if (result == null) result = caseEModelElement(resourcePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -312,6 +347,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				ResourceService resourceService = (ResourceService)theEObject;
 				T result = caseResourceService(resourceService);
 				if (result == null) result = caseNamedElement(resourceService);
+				if (result == null) result = caseENamedElement(resourceService);
+				if (result == null) result = caseModelElement(resourceService);
+				if (result == null) result = caseEModelElement(resourceService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,7 +365,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceBroker(scheduler);
 				if (result == null) result = caseResource(scheduler);
 				if (result == null) result = caseResourcePackageableElement(scheduler);
+				if (result == null) result = casePackageableElement(scheduler);
 				if (result == null) result = caseNamedElement(scheduler);
+				if (result == null) result = caseENamedElement(scheduler);
+				if (result == null) result = caseModelElement(scheduler);
+				if (result == null) result = caseEModelElement(scheduler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -337,7 +379,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConcurrencyResource(schedulableResource);
 				if (result == null) result = caseResource(schedulableResource);
 				if (result == null) result = caseResourcePackageableElement(schedulableResource);
+				if (result == null) result = casePackageableElement(schedulableResource);
 				if (result == null) result = caseNamedElement(schedulableResource);
+				if (result == null) result = caseENamedElement(schedulableResource);
+				if (result == null) result = caseModelElement(schedulableResource);
+				if (result == null) result = caseEModelElement(schedulableResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -345,6 +391,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				SchedulingParameter schedulingParameter = (SchedulingParameter)theEObject;
 				T result = caseSchedulingParameter(schedulingParameter);
 				if (result == null) result = caseNamedElement(schedulingParameter);
+				if (result == null) result = caseENamedElement(schedulingParameter);
+				if (result == null) result = caseModelElement(schedulingParameter);
+				if (result == null) result = caseEModelElement(schedulingParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,6 +402,9 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseSchedulingPolicy(schedulingPolicy);
 				if (result == null) result = caseAccessControlPolicy(schedulingPolicy);
 				if (result == null) result = caseNamedElement(schedulingPolicy);
+				if (result == null) result = caseENamedElement(schedulingPolicy);
+				if (result == null) result = caseModelElement(schedulingPolicy);
+				if (result == null) result = caseEModelElement(schedulingPolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -363,7 +415,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceBroker(secondaryScheduler);
 				if (result == null) result = caseResource(secondaryScheduler);
 				if (result == null) result = caseResourcePackageableElement(secondaryScheduler);
+				if (result == null) result = casePackageableElement(secondaryScheduler);
 				if (result == null) result = caseNamedElement(secondaryScheduler);
+				if (result == null) result = caseENamedElement(secondaryScheduler);
+				if (result == null) result = caseModelElement(secondaryScheduler);
+				if (result == null) result = caseEModelElement(secondaryScheduler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -379,7 +435,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseStorageResource(storageResource);
 				if (result == null) result = caseResource(storageResource);
 				if (result == null) result = caseResourcePackageableElement(storageResource);
+				if (result == null) result = casePackageableElement(storageResource);
 				if (result == null) result = caseNamedElement(storageResource);
+				if (result == null) result = caseENamedElement(storageResource);
+				if (result == null) result = caseModelElement(storageResource);
+				if (result == null) result = caseEModelElement(storageResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -388,7 +448,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseSynchResource(synchResource);
 				if (result == null) result = caseResource(synchResource);
 				if (result == null) result = caseResourcePackageableElement(synchResource);
+				if (result == null) result = casePackageableElement(synchResource);
 				if (result == null) result = caseNamedElement(synchResource);
+				if (result == null) result = caseENamedElement(synchResource);
+				if (result == null) result = caseModelElement(synchResource);
+				if (result == null) result = caseEModelElement(synchResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -397,7 +461,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseTimingResource(timingResource);
 				if (result == null) result = caseResource(timingResource);
 				if (result == null) result = caseResourcePackageableElement(timingResource);
+				if (result == null) result = casePackageableElement(timingResource);
 				if (result == null) result = caseNamedElement(timingResource);
+				if (result == null) result = caseENamedElement(timingResource);
+				if (result == null) result = caseModelElement(timingResource);
+				if (result == null) result = caseEModelElement(timingResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -407,7 +475,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTimingResource(timerResource);
 				if (result == null) result = caseResource(timerResource);
 				if (result == null) result = caseResourcePackageableElement(timerResource);
+				if (result == null) result = casePackageableElement(timerResource);
 				if (result == null) result = caseNamedElement(timerResource);
+				if (result == null) result = caseENamedElement(timerResource);
+				if (result == null) result = caseModelElement(timerResource);
+				if (result == null) result = caseEModelElement(timerResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -422,7 +494,11 @@ public class GrmSwitch<T> extends Switch<T> {
 				T result = caseUsageTypedAmount(usageTypedAmount);
 				if (result == null) result = caseResource(usageTypedAmount);
 				if (result == null) result = caseResourcePackageableElement(usageTypedAmount);
+				if (result == null) result = casePackageableElement(usageTypedAmount);
 				if (result == null) result = caseNamedElement(usageTypedAmount);
+				if (result == null) result = caseENamedElement(usageTypedAmount);
+				if (result == null) result = caseModelElement(usageTypedAmount);
+				if (result == null) result = caseEModelElement(usageTypedAmount);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -442,21 +518,6 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResourcePackage(ResourcePackage object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -952,6 +1013,96 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUsageTypedAmount(UsageTypedAmount object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseENamedElement(ENamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 		return null;
 	}
 

@@ -8,6 +8,12 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
+import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
+
 /**
  * This is the central singleton for the alloc editor plugin.
  * <!-- begin-user-doc -->
@@ -40,6 +46,9 @@ public final class AllocEditorPlugin extends EMFPlugin {
 	public AllocEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				Nfp_AnnotationEditPlugin.INSTANCE,
+				CoreElementsEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
 			});
 	}
 

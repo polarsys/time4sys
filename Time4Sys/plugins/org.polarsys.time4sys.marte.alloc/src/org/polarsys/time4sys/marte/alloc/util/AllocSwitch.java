@@ -2,12 +2,21 @@
  */
 package org.polarsys.time4sys.marte.alloc.util;
 
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.polarsys.time4sys.marte.alloc.*;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
+import org.polarsys.time4sys.marte.nfp.coreelements.Dependency;
+import org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,38 +75,37 @@ public class AllocSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AllocPackage.DIRECTED_RELATIONSHIP: {
-				DirectedRelationship directedRelationship = (DirectedRelationship)theEObject;
-				T result = caseDirectedRelationship(directedRelationship);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AllocPackage.DEPENDENCY: {
-				Dependency dependency = (Dependency)theEObject;
-				T result = caseDependency(dependency);
-				if (result == null) result = caseDirectedRelationship(dependency);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AllocPackage.ABSTRACTION: {
-				Abstraction abstraction = (Abstraction)theEObject;
-				T result = caseAbstraction(abstraction);
-				if (result == null) result = caseDependency(abstraction);
-				if (result == null) result = caseDirectedRelationship(abstraction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AllocPackage.ALLOCATE: {
 				Allocate allocate = (Allocate)theEObject;
 				T result = caseAllocate(allocate);
 				if (result == null) result = caseAbstraction(allocate);
 				if (result == null) result = caseDependency(allocate);
 				if (result == null) result = caseDirectedRelationship(allocate);
+				if (result == null) result = casePackageableElement(allocate);
+				if (result == null) result = caseNamedElement(allocate);
+				if (result == null) result = caseENamedElement(allocate);
+				if (result == null) result = caseModelElement(allocate);
+				if (result == null) result = caseEModelElement(allocate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Allocate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Allocate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAllocate(Allocate object) {
+		return null;
 	}
 
 	/**
@@ -112,6 +120,81 @@ public class AllocSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDirectedRelationship(DirectedRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseENamedElement(ENamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(ModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 
@@ -142,21 +225,6 @@ public class AllocSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstraction(Abstraction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Allocate</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Allocate</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAllocate(Allocate object) {
 		return null;
 	}
 

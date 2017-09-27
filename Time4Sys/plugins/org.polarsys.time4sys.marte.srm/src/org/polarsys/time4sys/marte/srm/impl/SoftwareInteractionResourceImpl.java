@@ -12,21 +12,26 @@
  */
 package org.polarsys.time4sys.marte.srm.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceConnector;
 import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
@@ -36,6 +41,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
 import org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 import org.polarsys.time4sys.marte.srm.QueuePolicyKind;
 import org.polarsys.time4sys.marte.srm.SoftwareInteractionResource;
 import org.polarsys.time4sys.marte.srm.SoftwareResource;
@@ -49,16 +55,17 @@ import org.polarsys.time4sys.marte.srm.SrmPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getEAnnotations <em>EAnnotations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getOwnedResource <em>Owned Resource</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getResMult <em>Res Mult</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#isIsProtected <em>Is Protected</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#isIsActive <em>Is Active</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getPServices <em>PServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getOwnedPort <em>Owned Port</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getOwnedConnector <em>Owned Connector</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getRServices <em>RServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getUsedBy <em>Used By</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getPServices <em>PServices</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getManagedResource <em>Managed Resource</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getResCtrlPolicy <em>Res Ctrl Policy</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.srm.impl.SoftwareInteractionResourceImpl#getCreateServices <em>Create Services</em>}</li>
@@ -76,6 +83,16 @@ import org.polarsys.time4sys.marte.srm.SrmPackage;
  * @generated
  */
 public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPointImpl implements SoftwareInteractionResource {
+	/**
+	 * The cached value of the '{@link #getEAnnotations() <em>EAnnotations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEAnnotations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EAnnotation> eAnnotations;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -167,16 +184,6 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	protected boolean isActive = IS_ACTIVE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPServices() <em>PServices</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPServices()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ResourceService> pServices;
-
-	/**
 	 * The cached value of the '{@link #getOwnedPort() <em>Owned Port</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -215,6 +222,16 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 * @ordered
 	 */
 	protected EList<ResourceUsage> usedBy;
+
+	/**
+	 * The cached value of the '{@link #getPServices() <em>PServices</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPServices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ResourceService> pServices;
 
 	/**
 	 * The cached value of the '{@link #getManagedResource() <em>Managed Resource</em>}' reference list.
@@ -400,6 +417,18 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EAnnotation> getEAnnotations() {
+		if (eAnnotations == null) {
+			eAnnotations = new EObjectContainmentWithInverseEList<EAnnotation>(EAnnotation.class, this, SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS, EcorePackage.EANNOTATION__EMODEL_ELEMENT);
+		}
+		return eAnnotations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -498,7 +527,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 */
 	public EList<ResourceService> getPServices() {
 		if (pServices == null) {
-			pServices = new EObjectContainmentEList<ResourceService>(ResourceService.class, this, SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES);
+			pServices = new EObjectContainmentWithInverseEList<ResourceService>(ResourceService.class, this, SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES, GrmPackage.RESOURCE_SERVICE__CONTEXT);
 		}
 		return pServices;
 	}
@@ -736,12 +765,27 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAnnotation getEAnnotation(String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsedBy()).basicAdd(otherEnd, msgs);
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPServices()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -754,16 +798,18 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE:
 				return ((InternalEList<?>)getOwnedResource()).basicRemove(otherEnd, msgs);
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
-				return ((InternalEList<?>)getPServices()).basicRemove(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 				return ((InternalEList<?>)getOwnedPort()).basicRemove(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR:
 				return ((InternalEList<?>)getOwnedConnector()).basicRemove(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				return ((InternalEList<?>)getUsedBy()).basicRemove(otherEnd, msgs);
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				return ((InternalEList<?>)getPServices()).basicRemove(otherEnd, msgs);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY:
 				return ((InternalEList<?>)getResCtrlPolicy()).basicRemove(otherEnd, msgs);
 		}
@@ -778,6 +824,8 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				return getEAnnotations();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME:
 				return getName();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE:
@@ -788,8 +836,6 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				return isIsProtected();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE:
 				return isIsActive();
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
-				return getPServices();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 				return getOwnedPort();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR:
@@ -798,6 +844,8 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				return getRServices();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				return getUsedBy();
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				return getPServices();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE:
 				return getManagedResource();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY:
@@ -835,6 +883,10 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				getEAnnotations().clear();
+				getEAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
+				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME:
 				setName((String)newValue);
 				return;
@@ -851,10 +903,6 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE:
 				setIsActive((Boolean)newValue);
 				return;
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
-				getPServices().clear();
-				getPServices().addAll((Collection<? extends ResourceService>)newValue);
-				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 				getOwnedPort().clear();
 				getOwnedPort().addAll((Collection<? extends ResourcePort>)newValue);
@@ -870,6 +918,10 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				getUsedBy().clear();
 				getUsedBy().addAll((Collection<? extends ResourceUsage>)newValue);
+				return;
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				getPServices().clear();
+				getPServices().addAll((Collection<? extends ResourceService>)newValue);
 				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE:
 				getManagedResource().clear();
@@ -927,6 +979,9 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				getEAnnotations().clear();
+				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -942,9 +997,6 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE:
 				setIsActive(IS_ACTIVE_EDEFAULT);
 				return;
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
-				getPServices().clear();
-				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 				getOwnedPort().clear();
 				return;
@@ -956,6 +1008,9 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				getUsedBy().clear();
+				return;
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				getPServices().clear();
 				return;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE:
 				getManagedResource().clear();
@@ -1005,6 +1060,8 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
+				return eAnnotations != null && !eAnnotations.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE:
@@ -1015,8 +1072,6 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				return isProtected != IS_PROTECTED_EDEFAULT;
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE:
 				return isActive != IS_ACTIVE_EDEFAULT;
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
-				return pServices != null && !pServices.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 				return ownedPort != null && !ownedPort.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR:
@@ -1025,6 +1080,8 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				return rServices != null && !rServices.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY:
 				return usedBy != null && !usedBy.isEmpty();
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
+				return pServices != null && !pServices.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE:
 				return managedResource != null && !managedResource.isEmpty();
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY:
@@ -1060,9 +1117,30 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (derivedFeatureID) {
+				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS: return EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (derivedFeatureID) {
+				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME: return EcorePackage.ENAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME: return GrmPackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+			switch (derivedFeatureID) {
 				default: return -1;
 			}
 		}
@@ -1077,11 +1155,11 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_MULT: return GrmPackage.RESOURCE__RES_MULT;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_PROTECTED: return GrmPackage.RESOURCE__IS_PROTECTED;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE: return GrmPackage.RESOURCE__IS_ACTIVE;
-				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES: return GrmPackage.RESOURCE__PSERVICES;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT: return GrmPackage.RESOURCE__OWNED_PORT;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR: return GrmPackage.RESOURCE__OWNED_CONNECTOR;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RSERVICES: return GrmPackage.RESOURCE__RSERVICES;
 				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY: return GrmPackage.RESOURCE__USED_BY;
+				case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES: return GrmPackage.RESOURCE__PSERVICES;
 				default: return -1;
 			}
 		}
@@ -1113,9 +1191,30 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (baseFeatureID) {
+				case EcorePackage.EMODEL_ELEMENT__EANNOTATIONS: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (baseFeatureID) {
+				case EcorePackage.ENAMED_ELEMENT__NAME: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case GrmPackage.NAMED_ELEMENT__NAME: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
@@ -1130,11 +1229,11 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				case GrmPackage.RESOURCE__RES_MULT: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_MULT;
 				case GrmPackage.RESOURCE__IS_PROTECTED: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_PROTECTED;
 				case GrmPackage.RESOURCE__IS_ACTIVE: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE;
-				case GrmPackage.RESOURCE__PSERVICES: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES;
 				case GrmPackage.RESOURCE__OWNED_PORT: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT;
 				case GrmPackage.RESOURCE__OWNED_CONNECTOR: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR;
 				case GrmPackage.RESOURCE__RSERVICES: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RSERVICES;
 				case GrmPackage.RESOURCE__USED_BY: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__USED_BY;
+				case GrmPackage.RESOURCE__PSERVICES: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES;
 				default: return -1;
 			}
 		}
@@ -1157,6 +1256,76 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == EModelElement.class) {
+			switch (baseOperationID) {
+				case EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING: return SrmPackage.SOFTWARE_INTERACTION_RESOURCE___GET_EANNOTATION__STRING;
+				default: return -1;
+			}
+		}
+		if (baseClass == ENamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ResourcePackageableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == Resource.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == ResourceManager.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == SoftwareResource.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE___GET_EANNOTATION__STRING:
+				return getEAnnotation((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

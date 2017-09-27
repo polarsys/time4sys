@@ -31,6 +31,9 @@ import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +43,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#isIsAtomic <em>Is Atomic</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getBlockingTime <em>Blocking Time</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getRepetitions <em>Repetitions</em>}</li>
@@ -255,6 +259,47 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	protected EClass eStaticClass() {
 		return GqamPackage.Literals.STEP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AnnotatedModel getOwner() {
+		if (eContainerFeatureID() != GqamPackage.STEP__OWNER) return null;
+		return (AnnotatedModel)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwner(AnnotatedModel newOwner, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newOwner, GqamPackage.STEP__OWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwner(AnnotatedModel newOwner) {
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != GqamPackage.STEP__OWNER && newOwner != null)) {
+			if (EcoreUtil.isAncestor(this, newOwner))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newOwner != null)
+				msgs = ((InternalEObject)newOwner).eInverseAdd(this, AnnotationPackage.ANNOTATED_MODEL__OWNS, AnnotatedModel.class, msgs);
+			msgs = basicSetOwner(newOwner, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.STEP__OWNER, newOwner, newOwner));
 	}
 
 	/**
@@ -674,6 +719,10 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetOwner((AnnotatedModel)otherEnd, msgs);
 			case GqamPackage.STEP__SCENARIO:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -702,6 +751,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				return basicSetOwner(null, msgs);
 			case GqamPackage.STEP__SCENARIO:
 				return basicSetScenario(null, msgs);
 			case GqamPackage.STEP__CHILD_SCENARIO:
@@ -726,6 +777,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
+			case GqamPackage.STEP__OWNER:
+				return eInternalContainer().eInverseRemove(this, AnnotationPackage.ANNOTATED_MODEL__OWNS, AnnotatedModel.class, msgs);
 			case GqamPackage.STEP__SCENARIO:
 				return eInternalContainer().eInverseRemove(this, GqamPackage.BEHAVIOR_SCENARIO__STEPS, BehaviorScenario.class, msgs);
 		}
@@ -740,6 +793,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				return getOwner();
 			case GqamPackage.STEP__IS_ATOMIC:
 				return isIsAtomic();
 			case GqamPackage.STEP__BLOCKING_TIME:
@@ -783,6 +838,9 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				setOwner((AnnotatedModel)newValue);
+				return;
 			case GqamPackage.STEP__IS_ATOMIC:
 				setIsAtomic((Boolean)newValue);
 				return;
@@ -836,6 +894,9 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				setOwner((AnnotatedModel)null);
+				return;
 			case GqamPackage.STEP__IS_ATOMIC:
 				setIsAtomic(IS_ATOMIC_EDEFAULT);
 				return;
@@ -887,6 +948,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GqamPackage.STEP__OWNER:
+				return getOwner() != null;
 			case GqamPackage.STEP__IS_ATOMIC:
 				return isAtomic != IS_ATOMIC_EDEFAULT;
 			case GqamPackage.STEP__BLOCKING_TIME:
@@ -915,6 +978,38 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 				return outputPin != null && !outputPin.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotatedElement.class) {
+			switch (derivedFeatureID) {
+				case GqamPackage.STEP__OWNER: return AnnotationPackage.ANNOTATED_ELEMENT__OWNER;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == AnnotatedElement.class) {
+			switch (baseFeatureID) {
+				case AnnotationPackage.ANNOTATED_ELEMENT__OWNER: return GqamPackage.STEP__OWNER;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

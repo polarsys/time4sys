@@ -223,7 +223,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="releaseServices" upperBound="-1"
         eType="ecore:EClass grm.ecore#//ResourceService"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="accessTokenElements" upperBound="-1"
-        eType="ecore:EClass grm.ecore#//NamedElement"/>
+        eType="ecore:EClass core_elements.ecore#//ModelElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SoftwarePort" eSuperTypes="grm.ecore#//ResourcePort"/>
   <eClassifiers xsi:type="ecore:EClass" name="SoftwareResource" eSuperTypes="grm.ecore#//ResourceManager">

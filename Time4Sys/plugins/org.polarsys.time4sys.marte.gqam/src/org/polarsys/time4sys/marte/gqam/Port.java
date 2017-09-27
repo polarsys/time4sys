@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
-import org.polarsys.time4sys.marte.grm.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

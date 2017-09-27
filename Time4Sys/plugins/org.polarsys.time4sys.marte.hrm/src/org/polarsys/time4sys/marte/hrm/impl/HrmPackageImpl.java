@@ -79,7 +79,6 @@ import org.polarsys.time4sys.marte.hrm.PortType;
 import org.polarsys.time4sys.marte.hrm.ReplPolicy;
 import org.polarsys.time4sys.marte.hrm.RomType;
 import org.polarsys.time4sys.marte.hrm.WritePolicy;
-import org.polarsys.time4sys.marte.srm.SrmPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -541,7 +540,7 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		SrmPackage.eINSTANCE.eClass();
+		GrmPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theHrmPackage.createPackageContents();
@@ -2201,6 +2200,7 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 
 		// Obtain other dependent packages
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
+		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2243,7 +2243,7 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 		hardwareMemoryEClass.getESuperTypes().add(this.getHardwareResource());
 		hardwareMemoryEClass.getESuperTypes().add(this.getHardwareChip());
 		hardwareMmuEClass.getESuperTypes().add(this.getHardwareStorageManager());
-		hardwarePinEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
+		hardwarePinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		hardwarePlatformEClass.getESuperTypes().add(this.getHardwareResource());
 		hardwarePlatformEClass.getESuperTypes().add(this.getHardwareCard());
 		hardwarePldEClass.getESuperTypes().add(this.getHardwareComputingResource());

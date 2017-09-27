@@ -18,32 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.time4sys.marte.gqam.AcquireStep;
-import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.BurstPattern;
-import org.polarsys.time4sys.marte.gqam.ClosedPattern;
-import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
-import org.polarsys.time4sys.marte.gqam.CommunicationStep;
-import org.polarsys.time4sys.marte.gqam.ConnectorKind;
-import org.polarsys.time4sys.marte.gqam.Delay;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
-import org.polarsys.time4sys.marte.gqam.ExecutionStep;
-import org.polarsys.time4sys.marte.gqam.GqamFactory;
-import org.polarsys.time4sys.marte.gqam.GqamPackage;
-import org.polarsys.time4sys.marte.gqam.InputPin;
-import org.polarsys.time4sys.marte.gqam.Once;
-import org.polarsys.time4sys.marte.gqam.OutputPin;
-import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
-import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
-import org.polarsys.time4sys.marte.gqam.Reference;
-import org.polarsys.time4sys.marte.gqam.ReleaseStep;
-import org.polarsys.time4sys.marte.gqam.RequestedService;
-import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
-import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
-import org.polarsys.time4sys.marte.gqam.SporadicPattern;
-import org.polarsys.time4sys.marte.gqam.Step;
-import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
-import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.gqam.*;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
@@ -98,9 +73,9 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 			case GqamPackage.COMMUNICATION_CHANNEL: return createCommunicationChannel();
 			case GqamPackage.COMMUNICATION_STEP: return createCommunicationStep();
 			case GqamPackage.DELAY: return createDelay();
-			case GqamPackage.END_TO_END_FLOW: return createEndToEndFlow();
 			case GqamPackage.EXECUTION_STEP: return createExecutionStep();
 			case GqamPackage.INPUT_PIN: return createInputPin();
+			case GqamPackage.LATENCY_OBSERVER: return createLatencyObserver();
 			case GqamPackage.ONCE: return createOnce();
 			case GqamPackage.OUTPUT_PIN: return createOutputPin();
 			case GqamPackage.PERIODIC_PATTERN: return createPeriodicPattern();
@@ -112,8 +87,9 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 			case GqamPackage.SLIDING_WINDOW_PATTERN: return createSlidingWindowPattern();
 			case GqamPackage.SPORADIC_PATTERN: return createSporadicPattern();
 			case GqamPackage.STEP: return createStep();
-			case GqamPackage.WORKLOAD_EVENT: return createWorkloadEvent();
+			case GqamPackage.TIMED_OBSERVER: return createTimedObserver();
 			case GqamPackage.WORKLOAD_BEHAVIOR: return createWorkloadBehavior();
+			case GqamPackage.WORKLOAD_EVENT: return createWorkloadEvent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -129,6 +105,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 		switch (eDataType.getClassifierID()) {
 			case GqamPackage.CONNECTOR_KIND:
 				return createConnectorKindFromString(eDataType, initialValue);
+			case GqamPackage.LAXITY_KIND:
+				return createLaxityKindFromString(eDataType, initialValue);
 			case GqamPackage.NFP_DURATION:
 				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
@@ -146,6 +124,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 		switch (eDataType.getClassifierID()) {
 			case GqamPackage.CONNECTOR_KIND:
 				return convertConnectorKindToString(eDataType, instanceValue);
+			case GqamPackage.LAXITY_KIND:
+				return convertLaxityKindToString(eDataType, instanceValue);
 			case GqamPackage.NFP_DURATION:
 				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
@@ -208,6 +188,16 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimedObserver createTimedObserver() {
+		TimedObserverImpl timedObserver = new TimedObserverImpl();
+		return timedObserver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PrecedenceRelation createPrecedenceRelation() {
 		PrecedenceRelationImpl precedenceRelation = new PrecedenceRelationImpl();
 		return precedenceRelation;
@@ -241,6 +231,16 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	public InputPin createInputPin() {
 		InputPinImpl inputPin = new InputPinImpl();
 		return inputPin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LatencyObserver createLatencyObserver() {
+		LatencyObserverImpl latencyObserver = new LatencyObserverImpl();
+		return latencyObserver;
 	}
 
 	/**
@@ -368,16 +368,6 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EndToEndFlow createEndToEndFlow() {
-		EndToEndFlowImpl endToEndFlow = new EndToEndFlowImpl();
-		return endToEndFlow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Reference createReference() {
 		ReferenceImpl reference = new ReferenceImpl();
 		return reference;
@@ -400,6 +390,26 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * @generated
 	 */
 	public String convertConnectorKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LaxityKind createLaxityKindFromString(EDataType eDataType, String initialValue) {
+		LaxityKind result = LaxityKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLaxityKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

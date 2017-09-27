@@ -7,7 +7,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.design.tests.DesignAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.design.edit" editorPluginID="org.polarsys.time4sys.design.editor"
-    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore gqam.genmodel#//gqam grm.genmodel#//grm srm.genmodel#//srm hrm.genmodel#//hrm alloc.genmodel#//alloc"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore gqam.genmodel#//gqam grm.genmodel#//grm srm.genmodel#//srm hrm.genmodel#//hrm alloc.genmodel#//alloc sam.genmodel#//sam"
     operationReflection="true" importOrganizing="true">
   <foreignModel>design.ecore</foreignModel>
   <genPackages prefix="Design" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"

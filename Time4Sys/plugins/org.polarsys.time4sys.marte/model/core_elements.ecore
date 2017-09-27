@@ -2,21 +2,21 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="coreelements" nsURI="http://www.polarsys.org/time4sys/marte/core/1.0"
     nsPrefix="core">
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElemement" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//ENamedElement #//ModelElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Dependency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="#//PackageableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DirectedRelationship #//PackageableElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DirectedRelationship #//PackageableElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Dependency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="../../org.eclipse.emf.ecore/model/Ecore.ecore#//ENamedElement #//ModelElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" upperBound="-1"
         eType="#//PackageableElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageableElement" abstract="true"
-      eSuperTypes="#//NamedElemement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="#//PackageableElement"/>
+      eSuperTypes="#//NamedElement"/>
 </ecore:EPackage>

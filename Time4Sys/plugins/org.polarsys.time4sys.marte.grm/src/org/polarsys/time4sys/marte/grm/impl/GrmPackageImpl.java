@@ -37,7 +37,6 @@ import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.ProtectProtocolKind;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
@@ -83,13 +82,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	private EClass resourcePackageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -417,6 +409,9 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theGrmPackage.createPackageContents();
 
@@ -448,33 +443,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EClass getResourcePackage() {
 		return resourcePackageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getResourcePackage_OwnedElement() {
-		return (EReference)resourcePackageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1492,9 +1460,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEReference(mutualExclusionResourceEClass, MUTUAL_EXCLUSION_RESOURCE__PROTOCOL);
 		createEReference(mutualExclusionResourceEClass, MUTUAL_EXCLUSION_RESOURCE__PROTECT_PARAMS);
 
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-
 		processingResourceEClass = createEClass(PROCESSING_RESOURCE);
 		createEAttribute(processingResourceEClass, PROCESSING_RESOURCE__SPEED_FACTOR);
 		createEReference(processingResourceEClass, PROCESSING_RESOURCE__MAIN_SCHEDULER);
@@ -1536,7 +1501,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEReference(resourceManagerEClass, RESOURCE_MANAGER__RES_CTRL_POLICY);
 
 		resourcePackageEClass = createEClass(RESOURCE_PACKAGE);
-		createEReference(resourcePackageEClass, RESOURCE_PACKAGE__OWNED_ELEMENT);
 
 		resourcePackageableElementEClass = createEClass(RESOURCE_PACKAGEABLE_ELEMENT);
 
@@ -1635,12 +1599,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		accessControlPolicyEClass.getESuperTypes().add(this.getNamedElement());
+		accessControlPolicyEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		clockResourceEClass.getESuperTypes().add(this.getTimingResource());
 		communicationMediaEClass.getESuperTypes().add(this.getCommunicationResource());
 		communicationMediaEClass.getESuperTypes().add(this.getProcessingResource());
@@ -1652,21 +1619,21 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		mutualExclusionProtocolEClass.getESuperTypes().add(this.getAccessControlPolicy());
 		mutualExclusionResourceEClass.getESuperTypes().add(this.getSynchResource());
 		processingResourceEClass.getESuperTypes().add(this.getResource());
-		protectionParameterEClass.getESuperTypes().add(this.getNamedElement());
+		protectionParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceEClass.getESuperTypes().add(this.getResourcePackageableElement());
 		resourceBrokerEClass.getESuperTypes().add(this.getResource());
-		resourceControlPolicyEClass.getESuperTypes().add(this.getNamedElement());
+		resourceControlPolicyEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceInstanceEClass.getESuperTypes().add(this.getResourcePackageableElement());
 		resourceInterfaceEClass.getESuperTypes().add(this.getResourcePackageableElement());
 		resourceManagerEClass.getESuperTypes().add(this.getResource());
-		resourcePackageEClass.getESuperTypes().add(this.getNamedElement());
-		resourcePackageableElementEClass.getESuperTypes().add(this.getNamedElement());
+		resourcePackageEClass.getESuperTypes().add(theCoreElementsPackage.getPackage());
+		resourcePackageableElementEClass.getESuperTypes().add(theCoreElementsPackage.getPackageableElement());
 		resourcePortEClass.getESuperTypes().add(this.getCommunicationEndPoint());
-		resourcePortEClass.getESuperTypes().add(this.getNamedElement());
-		resourceServiceEClass.getESuperTypes().add(this.getNamedElement());
+		resourcePortEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
+		resourceServiceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulerEClass.getESuperTypes().add(this.getResourceBroker());
 		schedulableResourceEClass.getESuperTypes().add(this.getConcurrencyResource());
-		schedulingParameterEClass.getESuperTypes().add(this.getNamedElement());
+		schedulingParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulingPolicyEClass.getESuperTypes().add(this.getAccessControlPolicy());
 		secondarySchedulerEClass.getESuperTypes().add(this.getScheduler());
 		staticUsageEClass.getESuperTypes().add(this.getResourceUsage());
@@ -1710,9 +1677,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEReference(getMutualExclusionResource_Protocol(), this.getMutualExclusionProtocol(), null, "protocol", null, 1, 1, MutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMutualExclusionResource_ProtectParams(), this.getProtectionParameter(), null, "protectParams", null, 0, -1, MutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(processingResourceEClass, ProcessingResource.class, "ProcessingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProcessingResource_SpeedFactor(), ecorePackage.getEFloat(), "speedFactor", null, 0, 1, ProcessingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcessingResource_MainScheduler(), this.getScheduler(), null, "mainScheduler", null, 0, 1, ProcessingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1754,7 +1718,6 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEReference(getResourceManager_ResCtrlPolicy(), this.getResourceControlPolicy(), null, "resCtrlPolicy", null, 1, -1, ResourceManager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourcePackageEClass, ResourcePackage.class, "ResourcePackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResourcePackage_OwnedElement(), this.getResourcePackageableElement(), null, "ownedElement", null, 0, -1, ResourcePackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourcePackageableElementEClass, ResourcePackageableElement.class, "ResourcePackageableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

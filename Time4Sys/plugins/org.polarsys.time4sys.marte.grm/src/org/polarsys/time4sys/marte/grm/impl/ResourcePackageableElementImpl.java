@@ -23,7 +23,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
  *
  * @generated
  */
-public abstract class ResourcePackageableElementImpl extends NamedElementImpl implements ResourcePackageableElement {
+public abstract class ResourcePackageableElementImpl extends org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageableElementImpl implements ResourcePackageableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated core_elements -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.nfp.coreelements.presentation.CoreElementsModelWizardID"
+            name="%_UI_CoreElementsModelWizard_label"
+            class="org.polarsys.time4sys.marte.nfp.coreelements.presentation.CoreElementsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CoreElementsModelFile.gif">
+         <description>%_UI_CoreElementsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated core_elements -->
+      <editor
+            id="org.polarsys.time4sys.marte.nfp.coreelements.presentation.CoreElementsEditorID"
+            name="%_UI_CoreElementsEditor_label"
+            icon="icons/full/obj16/CoreElementsModelFile.gif"
+            extensions="coreelements"
+            class="org.polarsys.time4sys.marte.nfp.coreelements.presentation.CoreElementsEditor"
+            contributorClass="org.polarsys.time4sys.marte.nfp.coreelements.presentation.CoreElementsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

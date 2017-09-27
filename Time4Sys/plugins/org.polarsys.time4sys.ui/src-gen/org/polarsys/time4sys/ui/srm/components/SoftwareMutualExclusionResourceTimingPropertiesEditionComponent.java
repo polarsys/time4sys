@@ -47,9 +47,10 @@ import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSet
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
 import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
 import org.polarsys.time4sys.marte.srm.MutualExclusionResourceKind;
 import org.polarsys.time4sys.marte.srm.QueuePolicyKind;
@@ -178,7 +179,7 @@ public class SoftwareMutualExclusionResourceTimingPropertiesEditionComponent ext
 			
 			
 			if (isAccessible(SrmViewsRepository.Timing.Properties.accessTokenElements)) {
-				timingPart.addFilterToAccessTokenElements(new EObjectFilter(GrmPackage.Literals.NAMED_ELEMENT));
+				timingPart.addFilterToAccessTokenElements(new EObjectFilter(CoreElementsPackage.Literals.NAMED_ELEMENT));
 				// Start of user code for additional businessfilters for accessTokenElements
 				// End of user code
 			}

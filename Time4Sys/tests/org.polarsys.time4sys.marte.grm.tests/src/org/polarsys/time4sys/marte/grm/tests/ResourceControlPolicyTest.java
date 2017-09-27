@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -23,7 +24,15 @@ import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourceControlPolicyTest extends NamedElementTest {
+public class ResourceControlPolicyTest extends TestCase {
+
+	/**
+	 * The fixture for this Resource Control Policy test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourceControlPolicy fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +54,23 @@ public class ResourceControlPolicyTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Resource Control Policy test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ResourceControlPolicy fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Resource Control Policy test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ResourceControlPolicy getFixture() {
-		return (ResourceControlPolicy)fixture;
+		return fixture;
 	}
 
 	/**

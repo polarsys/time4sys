@@ -12,16 +12,19 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resource Packageable Element</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * Deprecated. Use CoreElements::PackageElement
+ * <!-- end-model-doc -->
  *
  *
  * @see org.polarsys.time4sys.marte.grm.GrmPackage#getResourcePackageableElement()
  * @model abstract="true"
  * @generated
  */
-public interface ResourcePackageableElement extends NamedElement {
+public interface ResourcePackageableElement extends org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement {
 } // ResourcePackageableElement

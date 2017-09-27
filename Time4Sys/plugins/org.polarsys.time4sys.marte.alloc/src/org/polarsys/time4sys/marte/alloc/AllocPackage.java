@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -58,144 +60,6 @@ public interface AllocPackage extends EPackage {
 	AllocPackage eINSTANCE = org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.alloc.impl.DirectedRelationshipImpl
-	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getDirectedRelationship()
-	 * @generated
-	 */
-	int DIRECTED_RELATIONSHIP = 0;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_RELATIONSHIP__SOURCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_RELATIONSHIP__TARGET = 1;
-
-	/**
-	 * The number of structural features of the '<em>Directed Relationship</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_RELATIONSHIP_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Directed Relationship</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_RELATIONSHIP_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.impl.DependencyImpl <em>Dependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.alloc.impl.DependencyImpl
-	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getDependency()
-	 * @generated
-	 */
-	int DEPENDENCY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY__SOURCE = DIRECTED_RELATIONSHIP__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY__TARGET = DIRECTED_RELATIONSHIP__TARGET;
-
-	/**
-	 * The number of structural features of the '<em>Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_FEATURE_COUNT = DIRECTED_RELATIONSHIP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Dependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPENDENCY_OPERATION_COUNT = DIRECTED_RELATIONSHIP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.impl.AbstractionImpl <em>Abstraction</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.alloc.impl.AbstractionImpl
-	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getAbstraction()
-	 * @generated
-	 */
-	int ABSTRACTION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACTION__SOURCE = DEPENDENCY__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACTION__TARGET = DEPENDENCY__TARGET;
-
-	/**
-	 * The number of structural features of the '<em>Abstraction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACTION_FEATURE_COUNT = DEPENDENCY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Abstraction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACTION_OPERATION_COUNT = DEPENDENCY_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.impl.AllocateImpl <em>Allocate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -203,7 +67,7 @@ public interface AllocPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getAllocate()
 	 * @generated
 	 */
-	int ALLOCATE = 3;
+	int ALLOCATE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference list.
@@ -212,7 +76,7 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE__SOURCE = ABSTRACTION__SOURCE;
+	int ALLOCATE__SOURCE = CoreElementsPackage.ABSTRACTION__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
@@ -221,7 +85,25 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE__TARGET = ABSTRACTION__TARGET;
+	int ALLOCATE__TARGET = CoreElementsPackage.ABSTRACTION__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATE__EANNOTATIONS = CoreElementsPackage.ABSTRACTION__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATE__NAME = CoreElementsPackage.ABSTRACTION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -230,7 +112,7 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE__KIND = ABSTRACTION_FEATURE_COUNT + 0;
+	int ALLOCATE__KIND = CoreElementsPackage.ABSTRACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Nature</b></em>' attribute.
@@ -239,7 +121,16 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE__NATURE = ABSTRACTION_FEATURE_COUNT + 1;
+	int ALLOCATE__NATURE = CoreElementsPackage.ABSTRACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Implied Constraint</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATE__IMPLIED_CONSTRAINT = CoreElementsPackage.ABSTRACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Allocate</em>' class.
@@ -248,7 +139,16 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE_FEATURE_COUNT = ABSTRACTION_FEATURE_COUNT + 2;
+	int ALLOCATE_FEATURE_COUNT = CoreElementsPackage.ABSTRACTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATE___GET_EANNOTATION__STRING = CoreElementsPackage.ABSTRACTION___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Allocate</em>' class.
@@ -257,7 +157,7 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATE_OPERATION_COUNT = ABSTRACTION_OPERATION_COUNT + 0;
+	int ALLOCATE_OPERATION_COUNT = CoreElementsPackage.ABSTRACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.AllocationNature <em>Allocation Nature</em>}' enum.
@@ -267,7 +167,7 @@ public interface AllocPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getAllocationNature()
 	 * @generated
 	 */
-	int ALLOCATION_NATURE = 4;
+	int ALLOCATION_NATURE = 1;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.alloc.AllocationKind <em>Allocation Kind</em>}' enum.
@@ -277,60 +177,8 @@ public interface AllocPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getAllocationKind()
 	 * @generated
 	 */
-	int ALLOCATION_KIND = 5;
+	int ALLOCATION_KIND = 2;
 
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.alloc.DirectedRelationship <em>Directed Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Directed Relationship</em>'.
-	 * @see org.polarsys.time4sys.marte.alloc.DirectedRelationship
-	 * @generated
-	 */
-	EClass getDirectedRelationship();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.alloc.DirectedRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Source</em>'.
-	 * @see org.polarsys.time4sys.marte.alloc.DirectedRelationship#getSource()
-	 * @see #getDirectedRelationship()
-	 * @generated
-	 */
-	EReference getDirectedRelationship_Source();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.alloc.DirectedRelationship#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Target</em>'.
-	 * @see org.polarsys.time4sys.marte.alloc.DirectedRelationship#getTarget()
-	 * @see #getDirectedRelationship()
-	 * @generated
-	 */
-	EReference getDirectedRelationship_Target();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.alloc.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dependency</em>'.
-	 * @see org.polarsys.time4sys.marte.alloc.Dependency
-	 * @generated
-	 */
-	EClass getDependency();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.alloc.Abstraction <em>Abstraction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstraction</em>'.
-	 * @see org.polarsys.time4sys.marte.alloc.Abstraction
-	 * @generated
-	 */
-	EClass getAbstraction();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.alloc.Allocate <em>Allocate</em>}'.
@@ -363,6 +211,17 @@ public interface AllocPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAllocate_Nature();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.alloc.Allocate#getImpliedConstraint <em>Implied Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Implied Constraint</em>'.
+	 * @see org.polarsys.time4sys.marte.alloc.Allocate#getImpliedConstraint()
+	 * @see #getAllocate()
+	 * @generated
+	 */
+	EReference getAllocate_ImpliedConstraint();
 
 	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.alloc.AllocationNature <em>Allocation Nature</em>}'.
@@ -408,52 +267,6 @@ public interface AllocPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.alloc.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.time4sys.marte.alloc.impl.DirectedRelationshipImpl
-		 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getDirectedRelationship()
-		 * @generated
-		 */
-		EClass DIRECTED_RELATIONSHIP = eINSTANCE.getDirectedRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getDirectedRelationship_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getDirectedRelationship_Target();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.alloc.impl.DependencyImpl <em>Dependency</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.time4sys.marte.alloc.impl.DependencyImpl
-		 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getDependency()
-		 * @generated
-		 */
-		EClass DEPENDENCY = eINSTANCE.getDependency();
-
-		/**
-		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.alloc.impl.AbstractionImpl <em>Abstraction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.time4sys.marte.alloc.impl.AbstractionImpl
-		 * @see org.polarsys.time4sys.marte.alloc.impl.AllocPackageImpl#getAbstraction()
-		 * @generated
-		 */
-		EClass ABSTRACTION = eINSTANCE.getAbstraction();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.alloc.impl.AllocateImpl <em>Allocate</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -478,6 +291,14 @@ public interface AllocPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ALLOCATE__NATURE = eINSTANCE.getAllocate_Nature();
+
+		/**
+		 * The meta object literal for the '<em><b>Implied Constraint</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALLOCATE__IMPLIED_CONSTRAINT = eINSTANCE.getAllocate_ImpliedConstraint();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.alloc.AllocationNature <em>Allocation Nature</em>}' enum.

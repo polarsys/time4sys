@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
-import org.polarsys.time4sys.marte.grm.provider.NamedElementItemProvider;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.gqam.WorkloadBehavior} object.

@@ -21,7 +21,7 @@ import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.MappableArtefact;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingFactory;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.model.time4sys.Project;

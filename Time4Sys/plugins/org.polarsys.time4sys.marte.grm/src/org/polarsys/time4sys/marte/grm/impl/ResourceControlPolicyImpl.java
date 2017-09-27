@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.grm.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

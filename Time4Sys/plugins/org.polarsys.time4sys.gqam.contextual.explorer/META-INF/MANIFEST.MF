@@ -8,4 +8,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.gqam.edit,
- org.polarsys.time4sys.marte.gqam
+ org.polarsys.time4sys.marte.gqam,
+ org.polarsys.time4sys.marte.sam;bundle-version="1.0.0"

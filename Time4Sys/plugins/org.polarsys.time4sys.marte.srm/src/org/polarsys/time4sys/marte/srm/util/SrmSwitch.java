@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.marte.srm.util;
 
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -20,7 +22,6 @@ import org.polarsys.time4sys.marte.grm.CommunicationMedia;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceBroker;
@@ -36,6 +37,8 @@ import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SynchResource;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.srm.*;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.DeviceBroker;
 import org.polarsys.time4sys.marte.srm.InterruptResource;
@@ -130,7 +133,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(alarm);
 				if (result == null) result = caseResource(alarm);
 				if (result == null) result = caseResourcePackageableElement(alarm);
+				if (result == null) result = casePackageableElement(alarm);
 				if (result == null) result = caseNamedElement(alarm);
+				if (result == null) result = caseENamedElement(alarm);
+				if (result == null) result = caseModelElement(alarm);
+				if (result == null) result = caseEModelElement(alarm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,7 +149,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(deviceBroker);
 				if (result == null) result = caseResource(deviceBroker);
 				if (result == null) result = caseResourcePackageableElement(deviceBroker);
+				if (result == null) result = casePackageableElement(deviceBroker);
 				if (result == null) result = caseNamedElement(deviceBroker);
+				if (result == null) result = caseENamedElement(deviceBroker);
+				if (result == null) result = caseModelElement(deviceBroker);
+				if (result == null) result = caseEModelElement(deviceBroker);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -155,7 +166,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(interruptResource);
 				if (result == null) result = caseResource(interruptResource);
 				if (result == null) result = caseResourcePackageableElement(interruptResource);
+				if (result == null) result = casePackageableElement(interruptResource);
 				if (result == null) result = caseNamedElement(interruptResource);
+				if (result == null) result = caseENamedElement(interruptResource);
+				if (result == null) result = caseModelElement(interruptResource);
+				if (result == null) result = caseEModelElement(interruptResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,7 +182,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(memoryBroker);
 				if (result == null) result = caseResource(memoryBroker);
 				if (result == null) result = caseResourcePackageableElement(memoryBroker);
+				if (result == null) result = casePackageableElement(memoryBroker);
 				if (result == null) result = caseNamedElement(memoryBroker);
+				if (result == null) result = caseENamedElement(memoryBroker);
+				if (result == null) result = caseModelElement(memoryBroker);
+				if (result == null) result = caseEModelElement(memoryBroker);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -178,7 +197,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(memoryPartition);
 				if (result == null) result = caseResource(memoryPartition);
 				if (result == null) result = caseResourcePackageableElement(memoryPartition);
+				if (result == null) result = casePackageableElement(memoryPartition);
 				if (result == null) result = caseNamedElement(memoryPartition);
+				if (result == null) result = caseENamedElement(memoryPartition);
+				if (result == null) result = caseModelElement(memoryPartition);
+				if (result == null) result = caseEModelElement(memoryPartition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,7 +218,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(messageComResource);
 				if (result == null) result = caseResource(messageComResource);
 				if (result == null) result = caseResourcePackageableElement(messageComResource);
+				if (result == null) result = casePackageableElement(messageComResource);
 				if (result == null) result = caseNamedElement(messageComResource);
+				if (result == null) result = caseENamedElement(messageComResource);
+				if (result == null) result = caseModelElement(messageComResource);
+				if (result == null) result = caseEModelElement(messageComResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -210,7 +237,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(notificationResource);
 				if (result == null) result = caseResource(notificationResource);
 				if (result == null) result = caseResourcePackageableElement(notificationResource);
+				if (result == null) result = casePackageableElement(notificationResource);
 				if (result == null) result = caseNamedElement(notificationResource);
+				if (result == null) result = caseENamedElement(notificationResource);
+				if (result == null) result = caseModelElement(notificationResource);
+				if (result == null) result = caseEModelElement(notificationResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -227,7 +258,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(sharedDataComResource);
 				if (result == null) result = caseResource(sharedDataComResource);
 				if (result == null) result = caseResourcePackageableElement(sharedDataComResource);
+				if (result == null) result = casePackageableElement(sharedDataComResource);
 				if (result == null) result = caseNamedElement(sharedDataComResource);
+				if (result == null) result = caseENamedElement(sharedDataComResource);
+				if (result == null) result = caseModelElement(sharedDataComResource);
+				if (result == null) result = caseEModelElement(sharedDataComResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,6 +271,9 @@ public class SrmSwitch<T> extends Switch<T> {
 				T result = caseSoftwareAccessService(softwareAccessService);
 				if (result == null) result = caseResourceService(softwareAccessService);
 				if (result == null) result = caseNamedElement(softwareAccessService);
+				if (result == null) result = caseENamedElement(softwareAccessService);
+				if (result == null) result = caseModelElement(softwareAccessService);
+				if (result == null) result = caseEModelElement(softwareAccessService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -246,7 +284,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareArchitecture);
 				if (result == null) result = caseResource(softwareArchitecture);
 				if (result == null) result = caseResourcePackageableElement(softwareArchitecture);
+				if (result == null) result = casePackageableElement(softwareArchitecture);
 				if (result == null) result = caseNamedElement(softwareArchitecture);
+				if (result == null) result = caseENamedElement(softwareArchitecture);
+				if (result == null) result = caseModelElement(softwareArchitecture);
+				if (result == null) result = caseEModelElement(softwareArchitecture);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,7 +304,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareCommunicationResource);
 				if (result == null) result = caseResource(softwareCommunicationResource);
 				if (result == null) result = caseResourcePackageableElement(softwareCommunicationResource);
+				if (result == null) result = casePackageableElement(softwareCommunicationResource);
 				if (result == null) result = caseNamedElement(softwareCommunicationResource);
+				if (result == null) result = caseENamedElement(softwareCommunicationResource);
+				if (result == null) result = caseModelElement(softwareCommunicationResource);
+				if (result == null) result = caseEModelElement(softwareCommunicationResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -274,7 +320,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareConcurrentResource);
 				if (result == null) result = caseResource(softwareConcurrentResource);
 				if (result == null) result = caseResourcePackageableElement(softwareConcurrentResource);
+				if (result == null) result = casePackageableElement(softwareConcurrentResource);
 				if (result == null) result = caseNamedElement(softwareConcurrentResource);
+				if (result == null) result = caseENamedElement(softwareConcurrentResource);
+				if (result == null) result = caseModelElement(softwareConcurrentResource);
+				if (result == null) result = caseEModelElement(softwareConcurrentResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -293,7 +343,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareInteractionResource);
 				if (result == null) result = caseResource(softwareInteractionResource);
 				if (result == null) result = caseResourcePackageableElement(softwareInteractionResource);
+				if (result == null) result = casePackageableElement(softwareInteractionResource);
 				if (result == null) result = caseNamedElement(softwareInteractionResource);
+				if (result == null) result = caseENamedElement(softwareInteractionResource);
+				if (result == null) result = caseModelElement(softwareInteractionResource);
+				if (result == null) result = caseEModelElement(softwareInteractionResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -302,7 +356,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				T result = caseSoftwareInterface(softwareInterface);
 				if (result == null) result = caseResourceInterface(softwareInterface);
 				if (result == null) result = caseResourcePackageableElement(softwareInterface);
+				if (result == null) result = casePackageableElement(softwareInterface);
 				if (result == null) result = caseNamedElement(softwareInterface);
+				if (result == null) result = caseENamedElement(softwareInterface);
+				if (result == null) result = caseModelElement(softwareInterface);
+				if (result == null) result = caseEModelElement(softwareInterface);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -310,7 +368,12 @@ public class SrmSwitch<T> extends Switch<T> {
 				SoftwareInterfacePackage softwareInterfacePackage = (SoftwareInterfacePackage)theEObject;
 				T result = caseSoftwareInterfacePackage(softwareInterfacePackage);
 				if (result == null) result = caseResourcePackage(softwareInterfacePackage);
+				if (result == null) result = casePackage(softwareInterfacePackage);
+				if (result == null) result = casePackageableElement(softwareInterfacePackage);
 				if (result == null) result = caseNamedElement(softwareInterfacePackage);
+				if (result == null) result = caseENamedElement(softwareInterfacePackage);
+				if (result == null) result = caseModelElement(softwareInterfacePackage);
+				if (result == null) result = caseEModelElement(softwareInterfacePackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -326,7 +389,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareMutualExclusionResource);
 				if (result == null) result = caseResource(softwareMutualExclusionResource);
 				if (result == null) result = caseResourcePackageableElement(softwareMutualExclusionResource);
+				if (result == null) result = casePackageableElement(softwareMutualExclusionResource);
 				if (result == null) result = caseNamedElement(softwareMutualExclusionResource);
+				if (result == null) result = caseENamedElement(softwareMutualExclusionResource);
+				if (result == null) result = caseModelElement(softwareMutualExclusionResource);
+				if (result == null) result = caseEModelElement(softwareMutualExclusionResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -336,6 +403,9 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourcePort(softwarePort);
 				if (result == null) result = caseCommunicationEndPoint(softwarePort);
 				if (result == null) result = caseNamedElement(softwarePort);
+				if (result == null) result = caseENamedElement(softwarePort);
+				if (result == null) result = caseModelElement(softwarePort);
+				if (result == null) result = caseEModelElement(softwarePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -345,7 +415,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareResource);
 				if (result == null) result = caseResource(softwareResource);
 				if (result == null) result = caseResourcePackageableElement(softwareResource);
+				if (result == null) result = casePackageableElement(softwareResource);
 				if (result == null) result = caseNamedElement(softwareResource);
+				if (result == null) result = caseENamedElement(softwareResource);
+				if (result == null) result = caseModelElement(softwareResource);
+				if (result == null) result = caseEModelElement(softwareResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,7 +427,12 @@ public class SrmSwitch<T> extends Switch<T> {
 				SoftwareResourcePackage softwareResourcePackage = (SoftwareResourcePackage)theEObject;
 				T result = caseSoftwareResourcePackage(softwareResourcePackage);
 				if (result == null) result = caseResourcePackage(softwareResourcePackage);
+				if (result == null) result = casePackage(softwareResourcePackage);
+				if (result == null) result = casePackageableElement(softwareResourcePackage);
 				if (result == null) result = caseNamedElement(softwareResourcePackage);
+				if (result == null) result = caseENamedElement(softwareResourcePackage);
+				if (result == null) result = caseModelElement(softwareResourcePackage);
+				if (result == null) result = caseEModelElement(softwareResourcePackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -367,7 +446,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareSchedulableResource);
 				if (result == null) result = caseResource(softwareSchedulableResource);
 				if (result == null) result = caseResourcePackageableElement(softwareSchedulableResource);
+				if (result == null) result = casePackageableElement(softwareSchedulableResource);
 				if (result == null) result = caseNamedElement(softwareSchedulableResource);
+				if (result == null) result = caseENamedElement(softwareSchedulableResource);
+				if (result == null) result = caseModelElement(softwareSchedulableResource);
+				if (result == null) result = caseEModelElement(softwareSchedulableResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -378,7 +461,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceBroker(softwareScheduler);
 				if (result == null) result = caseResource(softwareScheduler);
 				if (result == null) result = caseResourcePackageableElement(softwareScheduler);
+				if (result == null) result = casePackageableElement(softwareScheduler);
 				if (result == null) result = caseNamedElement(softwareScheduler);
+				if (result == null) result = caseENamedElement(softwareScheduler);
+				if (result == null) result = caseModelElement(softwareScheduler);
+				if (result == null) result = caseEModelElement(softwareScheduler);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -387,6 +474,9 @@ public class SrmSwitch<T> extends Switch<T> {
 				T result = caseSoftwareService(softwareService);
 				if (result == null) result = caseResourceService(softwareService);
 				if (result == null) result = caseNamedElement(softwareService);
+				if (result == null) result = caseENamedElement(softwareService);
+				if (result == null) result = caseModelElement(softwareService);
+				if (result == null) result = caseEModelElement(softwareService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -400,7 +490,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourceManager(softwareSynchronizationResource);
 				if (result == null) result = caseResource(softwareSynchronizationResource);
 				if (result == null) result = caseResourcePackageableElement(softwareSynchronizationResource);
+				if (result == null) result = casePackageableElement(softwareSynchronizationResource);
 				if (result == null) result = caseNamedElement(softwareSynchronizationResource);
+				if (result == null) result = caseENamedElement(softwareSynchronizationResource);
+				if (result == null) result = caseModelElement(softwareSynchronizationResource);
+				if (result == null) result = caseEModelElement(softwareSynchronizationResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -411,7 +505,11 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTimingResource(softwareTimerResource);
 				if (result == null) result = caseResource(softwareTimerResource);
 				if (result == null) result = caseResourcePackageableElement(softwareTimerResource);
+				if (result == null) result = casePackageableElement(softwareTimerResource);
 				if (result == null) result = caseNamedElement(softwareTimerResource);
+				if (result == null) result = caseENamedElement(softwareTimerResource);
+				if (result == null) result = caseModelElement(softwareTimerResource);
+				if (result == null) result = caseEModelElement(softwareTimerResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -536,6 +634,81 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSoftwareTimerResource(SoftwareTimerResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseENamedElement(ENamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
 		return null;
 	}
 
@@ -791,21 +964,6 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSoftwareInterfacePackage(SoftwareInterfacePackage object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
@@ -1076,6 +1234,21 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResourceInterface(ResourceInterface object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 		return null;
 	}
 
