@@ -21,6 +21,12 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Resource Port</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link org.eclipse.emf.ecore.EModelElement#getEAnnotation(java.lang.String) <em>Get EAnnotation</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ResourcePortTest extends CommunicationEndPointTest {
@@ -75,6 +81,19 @@ public class ResourcePortTest extends CommunicationEndPointTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link org.eclipse.emf.ecore.EModelElement#getEAnnotation(java.lang.String) <em>Get EAnnotation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EModelElement#getEAnnotation(java.lang.String)
+	 * @generated
+	 */
+	public void testGetEAnnotation__String() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //ResourcePortTest

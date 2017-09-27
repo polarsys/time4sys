@@ -25,7 +25,7 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
-import org.polarsys.time4sys.marte.grm.impl.NamedElementImpl;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -14,5 +14,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,
- org.polarsys.time4sys.marte.nfp;bundle-version="0.0.1"
+ org.polarsys.time4sys.marte.nfp;bundle-version="0.0.1";visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements;visibility:=reexport
 Bundle-ActivationPolicy: lazy

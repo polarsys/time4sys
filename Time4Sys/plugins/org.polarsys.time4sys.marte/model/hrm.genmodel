@@ -5,7 +5,7 @@
     modelName="Hrm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.marte.hrm.edit" editorPluginID="org.polarsys.time4sys.marte.hrm.editor"
-    usedGenPackages="grm.genmodel#//grm srm.genmodel#//srm" operationReflection="true"
+    usedGenPackages="grm.genmodel#//grm core_elements.genmodel#//coreelements" operationReflection="true"
     importOrganizing="true">
   <foreignModel>hrm.ecore</foreignModel>
   <genPackages prefix="Hrm" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"

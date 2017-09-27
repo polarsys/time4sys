@@ -119,6 +119,8 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.polarsys.time4sys.marte.alloc.provider.AllocItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.sam.provider.SamItemProviderAdapterFactory;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -133,6 +135,7 @@ import org.polarsys.time4sys.design.provider.DesignItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.gqam.provider.GqamItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.grm.provider.GrmItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.provider.AnnotationItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.srm.provider.SrmItemProviderAdapterFactory;
 
 
@@ -685,6 +688,9 @@ public class DesignEditor
 		adapterFactory.addAdapterFactory(new SrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AllocItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SamItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AnnotationItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

@@ -77,6 +77,15 @@ public interface GqamFactory extends EFactory {
 	Step createStep();
 
 	/**
+	 * Returns a new object of class '<em>Timed Observer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Timed Observer</em>'.
+	 * @generated
+	 */
+	TimedObserver createTimedObserver();
+
+	/**
 	 * Returns a new object of class '<em>Precedence Relation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,6 +120,15 @@ public interface GqamFactory extends EFactory {
 	 * @generated
 	 */
 	InputPin createInputPin();
+
+	/**
+	 * Returns a new object of class '<em>Latency Observer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Latency Observer</em>'.
+	 * @generated
+	 */
+	LatencyObserver createLatencyObserver();
 
 	/**
 	 * Returns a new object of class '<em>Output Pin</em>'.
@@ -219,15 +237,6 @@ public interface GqamFactory extends EFactory {
 	 * @generated
 	 */
 	SporadicPattern createSporadicPattern();
-
-	/**
-	 * Returns a new object of class '<em>End To End Flow</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>End To End Flow</em>'.
-	 * @generated
-	 */
-	EndToEndFlow createEndToEndFlow();
 
 	/**
 	 * Returns a new object of class '<em>Reference</em>'.

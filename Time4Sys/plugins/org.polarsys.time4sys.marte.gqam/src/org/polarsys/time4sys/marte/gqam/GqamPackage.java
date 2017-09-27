@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,13 +86,22 @@ public interface GqamPackage extends EPackage {
 	int BEHAVIOR_SCENARIO = 2;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__NAME = GrmPackage.NAMED_ELEMENT__NAME;
+	int BEHAVIOR_SCENARIO__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -99,7 +110,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__STEPS = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BEHAVIOR_SCENARIO__STEPS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -108,7 +119,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__CAUSE = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BEHAVIOR_SCENARIO__CAUSE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -117,7 +128,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__ROOT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int BEHAVIOR_SCENARIO__ROOT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -126,7 +137,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__PARENT_STEP = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int BEHAVIOR_SCENARIO__PARENT_STEP = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -135,7 +146,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__CONNECTORS = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int BEHAVIOR_SCENARIO__CONNECTORS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -144,7 +155,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__RESP_TIME = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int BEHAVIOR_SCENARIO__RESP_TIME = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -153,7 +164,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__BEST_CET = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int BEHAVIOR_SCENARIO__BEST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -162,7 +173,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__WORST_CET = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+	int BEHAVIOR_SCENARIO__WORST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Behavior Scenario</em>' class.
@@ -171,7 +182,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO_FEATURE_COUNT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int BEHAVIOR_SCENARIO_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Behavior Scenario</em>' class.
@@ -180,7 +200,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO_OPERATION_COUNT = GrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int BEHAVIOR_SCENARIO_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl <em>Workload Event</em>}' class.
@@ -190,7 +210,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadEvent()
 	 * @generated
 	 */
-	int WORKLOAD_EVENT = 24;
+	int WORKLOAD_EVENT = 26;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl <em>Step</em>}' class.
@@ -201,6 +221,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int STEP = 23;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__EANNOTATIONS = BEHAVIOR_SCENARIO__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -284,13 +313,22 @@ public interface GqamPackage extends EPackage {
 	int STEP__WORST_CET = BEHAVIOR_SCENARIO__WORST_CET;
 
 	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OWNER = BEHAVIOR_SCENARIO_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__IS_ATOMIC = BEHAVIOR_SCENARIO_FEATURE_COUNT + 0;
+	int STEP__IS_ATOMIC = BEHAVIOR_SCENARIO_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -299,7 +337,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__BLOCKING_TIME = BEHAVIOR_SCENARIO_FEATURE_COUNT + 1;
+	int STEP__BLOCKING_TIME = BEHAVIOR_SCENARIO_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -308,7 +346,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__REPETITIONS = BEHAVIOR_SCENARIO_FEATURE_COUNT + 2;
+	int STEP__REPETITIONS = BEHAVIOR_SCENARIO_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -317,7 +355,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__PROBABILITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 3;
+	int STEP__PROBABILITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -326,7 +364,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__PRIORITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 4;
+	int STEP__PRIORITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -335,7 +373,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__SERVICE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 5;
+	int STEP__SERVICE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -344,7 +382,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 6;
+	int STEP__SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -353,7 +391,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__CHILD_SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 7;
+	int STEP__CHILD_SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -362,7 +400,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__INPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 8;
+	int STEP__INPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -371,7 +409,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__OUTPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 9;
+	int STEP__OUTPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -380,7 +418,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__CONCUR_RES = BEHAVIOR_SCENARIO_FEATURE_COUNT + 10;
+	int STEP__CONCUR_RES = BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -389,7 +427,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__INPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
+	int STEP__INPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -398,7 +436,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__OUTPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
+	int STEP__OUTPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Step</em>' class.
@@ -407,7 +445,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 13;
+	int STEP_FEATURE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 14;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___GET_EANNOTATION__STRING = BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Step</em>' class.
@@ -457,6 +504,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int ACQUIRE_STEP = 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -538,6 +594,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACQUIRE_STEP__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -684,6 +749,15 @@ public interface GqamPackage extends EPackage {
 	int ACQUIRE_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Acquire Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -720,7 +794,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getExecutionStep()
 	 * @generated
 	 */
-	int EXECUTION_STEP = 10;
+	int EXECUTION_STEP = 9;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
@@ -1016,16 +1090,6 @@ public interface GqamPackage extends EPackage {
 	int SPORADIC_PATTERN = 22;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl <em>End To End Flow</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getEndToEndFlow()
-	 * @generated
-	 */
-	int END_TO_END_FLOW = 9;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1083,7 +1147,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getInputPin()
 	 * @generated
 	 */
-	int INPUT_PIN = 11;
+	int INPUT_PIN = 10;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
@@ -1114,6 +1178,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int COMMUNICATION_CHANNEL = 5;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL__EANNOTATIONS = GrmPackage.SCHEDULABLE_RESOURCE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1242,6 +1315,15 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_CHANNEL_FEATURE_COUNT = GrmPackage.SCHEDULABLE_RESOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_CHANNEL___GET_EANNOTATION__STRING = GrmPackage.SCHEDULABLE_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Communication Channel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1249,6 +1331,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_CHANNEL_OPERATION_COUNT = GrmPackage.SCHEDULABLE_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1330,6 +1421,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_STEP__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -1476,6 +1576,15 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Communication Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1539,13 +1648,22 @@ public interface GqamPackage extends EPackage {
 	int CONTROL_PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN__EANNOTATIONS = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROL_PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -1554,7 +1672,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROL_PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Control Pin</em>' class.
@@ -1563,7 +1681,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
+	int CONTROL_PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROL_PIN___GET_EANNOTATION__STRING = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Control Pin</em>' class.
@@ -1572,7 +1699,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
+	int CONTROL_PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1654,6 +1790,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELAY__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -1791,6 +1936,15 @@ public interface GqamPackage extends EPackage {
 	int DELAY_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Delay</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1800,85 +1954,13 @@ public interface GqamPackage extends EPackage {
 	int DELAY_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>End To End Stimuli</b></em>' reference list.
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_TO_END_FLOW__END_TO_END_STIMULI = 0;
-
-	/**
-	 * The feature id for the '<em><b>End To End Scenario</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW__END_TO_END_SCENARIO = 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Schedulable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW__IS_SCHEDULABLE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Schedulability Slack</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW__SCHEDULABILITY_SLACK = 3;
-
-	/**
-	 * The feature id for the '<em><b>End To End Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW__END_TO_END_TIME = 4;
-
-	/**
-	 * The feature id for the '<em><b>End To End Deadline</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW__END_TO_END_DEADLINE = 5;
-
-	/**
-	 * The number of structural features of the '<em>End To End Flow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW_FEATURE_COUNT = 6;
-
-	/**
-	 * The operation id for the '<em>Find Steps On Path</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW___FIND_STEPS_ON_PATH = 0;
-
-	/**
-	 * The number of operations of the '<em>End To End Flow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_TO_END_FLOW_OPERATION_COUNT = 1;
+	int EXECUTION_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1960,6 +2042,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTION_STEP__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -2088,6 +2179,15 @@ public interface GqamPackage extends EPackage {
 	int EXECUTION_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Execution Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2113,6 +2213,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__EANNOTATIONS = CONTROL_PIN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2151,6 +2260,15 @@ public interface GqamPackage extends EPackage {
 	int INPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN___GET_EANNOTATION__STRING = CONTROL_PIN___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Input Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2158,6 +2276,215 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PIN_OPERATION_COUNT = CONTROL_PIN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
+	 * @generated
+	 */
+	int TIMED_OBSERVER = 24;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__EANNOTATIONS = AnnotationPackage.CONSTRAINT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__NAME = AnnotationPackage.CONSTRAINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__CONSTRAINED_ELEMENT = AnnotationPackage.CONSTRAINT__CONSTRAINED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__CONTEXT = AnnotationPackage.CONSTRAINT__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__KIND = AnnotationPackage.CONSTRAINT__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__LAXITY = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Timed Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER_FEATURE_COUNT = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER___GET_EANNOTATION__STRING = AnnotationPackage.CONSTRAINT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Timed Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER_OPERATION_COUNT = AnnotationPackage.CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
+	 * @generated
+	 */
+	int LATENCY_OBSERVER = 11;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__EANNOTATIONS = TIMED_OBSERVER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__NAME = TIMED_OBSERVER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__CONSTRAINED_ELEMENT = TIMED_OBSERVER__CONSTRAINED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__CONTEXT = TIMED_OBSERVER__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__KIND = TIMED_OBSERVER__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__LAXITY = TIMED_OBSERVER__LAXITY;
+
+	/**
+	 * The feature id for the '<em><b>Latency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__LATENCY = TIMED_OBSERVER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Miss Ratio</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__MISS_RATIO = TIMED_OBSERVER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max Jitter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__MAX_JITTER = TIMED_OBSERVER_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Latency Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER_FEATURE_COUNT = TIMED_OBSERVER_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER___GET_EANNOTATION__STRING = TIMED_OBSERVER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Latency Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER_OPERATION_COUNT = TIMED_OBSERVER_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2232,6 +2559,15 @@ public interface GqamPackage extends EPackage {
 	int OUTPUT_PIN__UPPER_BOUND = CONTROL_PIN__UPPER_BOUND;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__EANNOTATIONS = CONTROL_PIN__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2266,6 +2602,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTPUT_PIN_FEATURE_COUNT = CONTROL_PIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN___GET_EANNOTATION__STRING = CONTROL_PIN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Output Pin</em>' class.
@@ -2421,6 +2766,15 @@ public interface GqamPackage extends EPackage {
 	int REFERENCE_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2500,6 +2854,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELEASE_STEP__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -2646,6 +3009,15 @@ public interface GqamPackage extends EPackage {
 	int RELEASE_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Release Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2653,6 +3025,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELEASE_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2734,6 +3115,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUESTED_SERVICE__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -2862,6 +3252,15 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE_FEATURE_COUNT = STEP_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Requested Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2879,6 +3278,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_SERVICE_EXCECUTION = 20;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__EANNOTATIONS = STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2960,6 +3368,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_SERVICE_EXCECUTION__WORST_CET = STEP__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__OWNER = STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -3095,6 +3512,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_SERVICE_EXCECUTION_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Service Excecution</em>' class.
@@ -3250,49 +3676,13 @@ public interface GqamPackage extends EPackage {
 	int SPORADIC_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_EVENT__NAME = GrmPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Effect</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKLOAD_EVENT__EFFECT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKLOAD_EVENT__PATTERN = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Workload Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKLOAD_EVENT_FEATURE_COUNT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Workload Event</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKLOAD_EVENT_OPERATION_COUNT = GrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int WORKLOAD_BEHAVIOR__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3301,7 +3691,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR__NAME = GrmPackage.NAMED_ELEMENT__NAME;
+	int WORKLOAD_BEHAVIOR__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' containment reference list.
@@ -3310,7 +3700,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR__BEHAVIOR = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int WORKLOAD_BEHAVIOR__BEHAVIOR = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Demand</b></em>' containment reference list.
@@ -3319,7 +3709,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR__DEMAND = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int WORKLOAD_BEHAVIOR__DEMAND = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>References</b></em>' containment reference list.
@@ -3328,7 +3718,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR__REFERENCES = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int WORKLOAD_BEHAVIOR__REFERENCES = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Workload Behavior</em>' class.
@@ -3337,7 +3727,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR_FEATURE_COUNT = GrmPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int WORKLOAD_BEHAVIOR_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_BEHAVIOR___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Workload Behavior</em>' class.
@@ -3346,7 +3745,70 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_BEHAVIOR_OPERATION_COUNT = GrmPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int WORKLOAD_BEHAVIOR_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Effect</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT__EFFECT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT__PATTERN = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Workload Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Workload Event</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKLOAD_EVENT_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.ConnectorKind <em>Connector Kind</em>}' enum.
@@ -3356,7 +3818,17 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getConnectorKind()
 	 * @generated
 	 */
-	int CONNECTOR_KIND = 26;
+	int CONNECTOR_KIND = 27;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.LaxityKind <em>Laxity Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.LaxityKind
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLaxityKind()
+	 * @generated
+	 */
+	int LAXITY_KIND = 28;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -3366,7 +3838,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 27;
+	int NFP_DURATION = 29;
 
 
 	/**
@@ -3693,6 +4165,27 @@ public interface GqamPackage extends EPackage {
 	EReference getStep_OutputPin();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.TimedObserver <em>Timed Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timed Observer</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.TimedObserver
+	 * @generated
+	 */
+	EClass getTimedObserver();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.polarsys.time4sys.marte.gqam.TimedObserver#getLaxity <em>Laxity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Laxity</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.TimedObserver#getLaxity()
+	 * @see #getTimedObserver()
+	 * @generated
+	 */
+	EAttribute getTimedObserver_Laxity();
+
+	/**
 	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.Step#getInputRel <em>Input Rel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3949,6 +4442,49 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInputPin_Predecessors();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver <em>Latency Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Latency Observer</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LatencyObserver
+	 * @generated
+	 */
+	EClass getLatencyObserver();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver#getLatency <em>Latency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Latency</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LatencyObserver#getLatency()
+	 * @see #getLatencyObserver()
+	 * @generated
+	 */
+	EAttribute getLatencyObserver_Latency();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver#getMissRatio <em>Miss Ratio</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Miss Ratio</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LatencyObserver#getMissRatio()
+	 * @see #getLatencyObserver()
+	 * @generated
+	 */
+	EAttribute getLatencyObserver_MissRatio();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver#getMaxJitter <em>Max Jitter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Jitter</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LatencyObserver#getMaxJitter()
+	 * @see #getLatencyObserver()
+	 * @generated
+	 */
+	EAttribute getLatencyObserver_MaxJitter();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.OutputPin <em>Output Pin</em>}'.
@@ -4279,92 +4815,6 @@ public interface GqamPackage extends EPackage {
 	EAttribute getSporadicPattern_MaxInterarrival();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow <em>End To End Flow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>End To End Flow</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow
-	 * @generated
-	 */
-	EClass getEndToEndFlow();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndStimuli <em>End To End Stimuli</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>End To End Stimuli</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndStimuli()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EReference getEndToEndFlow_EndToEndStimuli();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndScenario <em>End To End Scenario</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>End To End Scenario</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndScenario()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EReference getEndToEndFlow_EndToEndScenario();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#isIsSchedulable <em>Is Schedulable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Schedulable</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#isIsSchedulable()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EAttribute getEndToEndFlow_IsSchedulable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#getSchedulabilitySlack <em>Schedulability Slack</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Schedulability Slack</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#getSchedulabilitySlack()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EAttribute getEndToEndFlow_SchedulabilitySlack();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndTime <em>End To End Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>End To End Time</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndTime()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EAttribute getEndToEndFlow_EndToEndTime();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndDeadline <em>End To End Deadline</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>End To End Deadline</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#getEndToEndDeadline()
-	 * @see #getEndToEndFlow()
-	 * @generated
-	 */
-	EAttribute getEndToEndFlow_EndToEndDeadline();
-
-	/**
-	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath() <em>Find Steps On Path</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Find Steps On Path</em>' operation.
-	 * @see org.polarsys.time4sys.marte.gqam.EndToEndFlow#findStepsOnPath()
-	 * @generated
-	 */
-	EOperation getEndToEndFlow__FindStepsOnPath();
-
-	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.Reference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4394,6 +4844,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getConnectorKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.gqam.LaxityKind <em>Laxity Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Laxity Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LaxityKind
+	 * @generated
+	 */
+	EEnum getLaxityKind();
 
 	/**
 	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
@@ -4680,6 +5140,24 @@ public interface GqamPackage extends EPackage {
 		EReference STEP__OUTPUT_PIN = eINSTANCE.getStep_OutputPin();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
+		 * @generated
+		 */
+		EClass TIMED_OBSERVER = eINSTANCE.getTimedObserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Laxity</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIMED_OBSERVER__LAXITY = eINSTANCE.getTimedObserver_Laxity();
+
+		/**
 		 * The meta object literal for the '<em><b>Input Rel</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4882,6 +5360,40 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INPUT_PIN__PREDECESSORS = eINSTANCE.getInputPin_Predecessors();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
+		 * @generated
+		 */
+		EClass LATENCY_OBSERVER = eINSTANCE.getLatencyObserver();
+
+		/**
+		 * The meta object literal for the '<em><b>Latency</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LATENCY_OBSERVER__LATENCY = eINSTANCE.getLatencyObserver_Latency();
+
+		/**
+		 * The meta object literal for the '<em><b>Miss Ratio</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LATENCY_OBSERVER__MISS_RATIO = eINSTANCE.getLatencyObserver_MissRatio();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Jitter</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LATENCY_OBSERVER__MAX_JITTER = eINSTANCE.getLatencyObserver_MaxJitter();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
@@ -5158,72 +5670,6 @@ public interface GqamPackage extends EPackage {
 		EAttribute SPORADIC_PATTERN__MAX_INTERARRIVAL = eINSTANCE.getSporadicPattern_MaxInterarrival();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl <em>End To End Flow</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.time4sys.marte.gqam.impl.EndToEndFlowImpl
-		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getEndToEndFlow()
-		 * @generated
-		 */
-		EClass END_TO_END_FLOW = eINSTANCE.getEndToEndFlow();
-
-		/**
-		 * The meta object literal for the '<em><b>End To End Stimuli</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference END_TO_END_FLOW__END_TO_END_STIMULI = eINSTANCE.getEndToEndFlow_EndToEndStimuli();
-
-		/**
-		 * The meta object literal for the '<em><b>End To End Scenario</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference END_TO_END_FLOW__END_TO_END_SCENARIO = eINSTANCE.getEndToEndFlow_EndToEndScenario();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Schedulable</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_TO_END_FLOW__IS_SCHEDULABLE = eINSTANCE.getEndToEndFlow_IsSchedulable();
-
-		/**
-		 * The meta object literal for the '<em><b>Schedulability Slack</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_TO_END_FLOW__SCHEDULABILITY_SLACK = eINSTANCE.getEndToEndFlow_SchedulabilitySlack();
-
-		/**
-		 * The meta object literal for the '<em><b>End To End Time</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_TO_END_FLOW__END_TO_END_TIME = eINSTANCE.getEndToEndFlow_EndToEndTime();
-
-		/**
-		 * The meta object literal for the '<em><b>End To End Deadline</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute END_TO_END_FLOW__END_TO_END_DEADLINE = eINSTANCE.getEndToEndFlow_EndToEndDeadline();
-
-		/**
-		 * The meta object literal for the '<em><b>Find Steps On Path</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation END_TO_END_FLOW___FIND_STEPS_ON_PATH = eINSTANCE.getEndToEndFlow__FindStepsOnPath();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5250,6 +5696,16 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum CONNECTOR_KIND = eINSTANCE.getConnectorKind();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.LaxityKind <em>Laxity Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.LaxityKind
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLaxityKind()
+		 * @generated
+		 */
+		EEnum LAXITY_KIND = eINSTANCE.getLaxityKind();
 
 		/**
 		 * The meta object literal for the '<em>NFP Duration</em>' data type.

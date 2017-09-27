@@ -156,9 +156,15 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.polarsys.time4sys.marte.alloc.provider.AllocItemProviderAdapterFactory;
 
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 import org.polarsys.time4sys.marte.alloc.editor.AllocEditorPlugin;
+
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.provider.AnnotationItemProviderAdapterFactory;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory;
 
 
 /**
@@ -704,6 +710,9 @@ public class AllocEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AllocItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AnnotationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

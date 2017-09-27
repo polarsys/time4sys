@@ -13,11 +13,10 @@
 package org.polarsys.time4sys.design;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,15 +30,13 @@ import org.polarsys.time4sys.marte.grm.ResourcePackage;
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getWorkloadBehavior <em>Workload Behavior</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getResourcePackage <em>Resource Package</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getEndToEndFlows <em>End To End Flows</em>}</li>
- *   <li>{@link org.polarsys.time4sys.design.DesignModel#getName <em>Name</em>}</li>
- *   <li>{@link org.polarsys.time4sys.design.DesignModel#getRelationships <em>Relationships</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.design.DesignPackage#getDesignModel()
  * @model
  * @generated
  */
-public interface DesignModel extends EObject {
+public interface DesignModel extends org.polarsys.time4sys.marte.nfp.coreelements.Package, AnnotatedModel {
 	/**
 	 * Returns the value of the '<em><b>Workload Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -94,7 +91,7 @@ public interface DesignModel extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>End To End Flows</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.EndToEndFlow}.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.sam.EndToEndFlow}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>End To End Flows</em>' containment reference list isn't clear,
@@ -107,47 +104,5 @@ public interface DesignModel extends EObject {
 	 * @generated
 	 */
 	EList<EndToEndFlow> getEndToEndFlows();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.polarsys.time4sys.design.DesignPackage#getDesignModel_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link org.polarsys.time4sys.design.DesignModel#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Relationships</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.time4sys.marte.alloc.DirectedRelationship}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relationships</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Relationships</em>' containment reference list.
-	 * @see org.polarsys.time4sys.design.DesignPackage#getDesignModel_Relationships()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DirectedRelationship> getRelationships();
 
 } // DesignModel

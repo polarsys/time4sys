@@ -57,8 +57,6 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AllocPackage.DEPENDENCY: return createDependency();
-			case AllocPackage.ABSTRACTION: return createAbstraction();
 			case AllocPackage.ALLOCATE: return createAllocate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -97,26 +95,6 @@ public class AllocFactoryImpl extends EFactoryImpl implements AllocFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Dependency createDependency() {
-		DependencyImpl dependency = new DependencyImpl();
-		return dependency;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Abstraction createAbstraction() {
-		AbstractionImpl abstraction = new AbstractionImpl();
-		return abstraction;
 	}
 
 	/**

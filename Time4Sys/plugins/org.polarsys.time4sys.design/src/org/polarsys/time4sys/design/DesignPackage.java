@@ -12,10 +12,10 @@
  */
 package org.polarsys.time4sys.design;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,31 +77,13 @@ public interface DesignPackage extends EPackage {
 	int DESIGN_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Workload Behavior</b></em>' containment reference.
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL__WORKLOAD_BEHAVIOR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Resource Package</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESIGN_MODEL__RESOURCE_PACKAGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>End To End Flows</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DESIGN_MODEL__END_TO_END_FLOWS = 2;
+	int DESIGN_MODEL__EANNOTATIONS = CoreElementsPackage.PACKAGE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,16 +92,70 @@ public interface DesignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL__NAME = 3;
+	int DESIGN_MODEL__NAME = CoreElementsPackage.PACKAGE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Relationships</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Element</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL__RELATIONSHIPS = 4;
+	int DESIGN_MODEL__OWNED_ELEMENT = CoreElementsPackage.PACKAGE__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owns</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__OWNS = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Annotation Concern</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__ANNOTATION_CONCERN = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__OWNED_RULE = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Workload Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__WORKLOAD_BEHAVIOR = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Resource Package</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__RESOURCE_PACKAGE = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>End To End Flows</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__END_TO_END_FLOWS = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -128,7 +164,16 @@ public interface DesignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL_FEATURE_COUNT = 5;
+	int DESIGN_MODEL_FEATURE_COUNT = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL___GET_EANNOTATION__STRING = CoreElementsPackage.PACKAGE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -137,7 +182,7 @@ public interface DesignPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL_OPERATION_COUNT = 0;
+	int DESIGN_MODEL_OPERATION_COUNT = CoreElementsPackage.PACKAGE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -182,28 +227,6 @@ public interface DesignPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDesignModel_EndToEndFlows();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.design.DesignModel#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.polarsys.time4sys.design.DesignModel#getName()
-	 * @see #getDesignModel()
-	 * @generated
-	 */
-	EAttribute getDesignModel_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.design.DesignModel#getRelationships <em>Relationships</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Relationships</em>'.
-	 * @see org.polarsys.time4sys.design.DesignModel#getRelationships()
-	 * @see #getDesignModel()
-	 * @generated
-	 */
-	EReference getDesignModel_Relationships();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -261,22 +284,6 @@ public interface DesignPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DESIGN_MODEL__END_TO_END_FLOWS = eINSTANCE.getDesignModel_EndToEndFlows();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DESIGN_MODEL__NAME = eINSTANCE.getDesignModel_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Relationships</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DESIGN_MODEL__RELATIONSHIPS = eINSTANCE.getDesignModel_Relationships();
 
 	}
 

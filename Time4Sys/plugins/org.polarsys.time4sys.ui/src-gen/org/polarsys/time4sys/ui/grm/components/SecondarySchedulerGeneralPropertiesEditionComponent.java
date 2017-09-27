@@ -315,7 +315,7 @@ public class SecondarySchedulerGeneralPropertiesEditionComponent extends SingleP
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == GrmViewsRepository.General.Properties.name) {
-			return GrmPackage.eINSTANCE.getNamedElement_Name();
+			return EcorePackage.eINSTANCE.getENamedElement_Name();
 		}
 		if (editorKey == GrmViewsRepository.General.Properties.ownedResource) {
 			return GrmPackage.eINSTANCE.getResource_OwnedResource();
@@ -537,7 +537,7 @@ public class SecondarySchedulerGeneralPropertiesEditionComponent extends SingleP
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			GeneralPropertiesEditionPart generalPart = (GeneralPropertiesEditionPart)editingPart;
-			if (GrmPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GrmViewsRepository.General.Properties.name)) {
+			if (EcorePackage.eINSTANCE.getENamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GrmViewsRepository.General.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					generalPart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
@@ -588,7 +588,7 @@ public class SecondarySchedulerGeneralPropertiesEditionComponent extends SingleP
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GrmPackage.eINSTANCE.getNamedElement_Name(),
+			EcorePackage.eINSTANCE.getENamedElement_Name(),
 			GrmPackage.eINSTANCE.getResource_OwnedResource(),
 			GrmPackage.eINSTANCE.getResource_ResMult(),
 			GrmPackage.eINSTANCE.getResource_IsProtected(),
@@ -636,9 +636,9 @@ public class SecondarySchedulerGeneralPropertiesEditionComponent extends SingleP
 				if (GrmViewsRepository.General.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (GrmViewsRepository.General.Properties.resMult == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();

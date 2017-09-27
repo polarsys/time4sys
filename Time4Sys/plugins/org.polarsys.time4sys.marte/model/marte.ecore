@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     name="Marte" nsURI="http://www.polarsys.org/time4sys/marte/1.0" nsPrefix="marte">
-  <eAnnotations source="http://www.polarsys.org/time4sys/asciidocgen" references="gqam.ecore#/ grm.ecore#/ hrm.ecore#/ nfp.ecore#/ srm.ecore#/ alloc.ecore#/"/>
+  <eAnnotations source="http://www.polarsys.org/time4sys/asciidocgen" references="core_elements.ecore#/ nfp_annotation.ecore#/ alloc.ecore#/ gqam.ecore#/ grm.ecore#/ hrm.ecore#/ nfp.ecore#/ sam.ecore#/ srm.ecore#/"/>
 </ecore:EPackage>

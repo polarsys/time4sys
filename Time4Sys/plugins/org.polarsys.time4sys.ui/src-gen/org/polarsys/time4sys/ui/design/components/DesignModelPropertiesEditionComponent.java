@@ -40,7 +40,8 @@ import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.ui.views.design.parts.DesignModelPropertiesEditionPart;
 import org.polarsys.time4sys.ui.views.design.parts.DesignViewsRepository;
 
@@ -130,7 +131,7 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == DesignViewsRepository.DesignModel.Properties.name) {
-			return DesignPackage.eINSTANCE.getDesignModel_Name();
+			return EcorePackage.eINSTANCE.getENamedElement_Name();
 		}
 		if (editorKey == DesignViewsRepository.DesignModel.Properties.endToEndFlows) {
 			return DesignPackage.eINSTANCE.getDesignModel_EndToEndFlows();
@@ -183,7 +184,7 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			DesignModelPropertiesEditionPart basePart = (DesignModelPropertiesEditionPart)editingPart;
-			if (DesignPackage.eINSTANCE.getDesignModel_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(DesignViewsRepository.DesignModel.Properties.name)) {
+			if (EcorePackage.eINSTANCE.getENamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(DesignViewsRepository.DesignModel.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					basePart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
@@ -204,7 +205,7 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			DesignPackage.eINSTANCE.getDesignModel_Name(),
+				EcorePackage.eINSTANCE.getENamedElement_Name(),
 			DesignPackage.eINSTANCE.getDesignModel_EndToEndFlows()		);
 		return new NotificationFilter[] {filter,};
 	}
@@ -223,9 +224,9 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 				if (DesignViewsRepository.DesignModel.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(DesignPackage.eINSTANCE.getDesignModel_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(DesignPackage.eINSTANCE.getDesignModel_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

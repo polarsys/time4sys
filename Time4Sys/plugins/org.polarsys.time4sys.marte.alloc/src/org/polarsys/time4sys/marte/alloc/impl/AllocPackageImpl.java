@@ -10,14 +10,15 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.polarsys.time4sys.marte.alloc.Abstraction;
 import org.polarsys.time4sys.marte.alloc.AllocFactory;
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.alloc.Allocate;
 import org.polarsys.time4sys.marte.alloc.AllocationKind;
 import org.polarsys.time4sys.marte.alloc.AllocationNature;
-import org.polarsys.time4sys.marte.alloc.Dependency;
-import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
+
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,27 +27,6 @@ import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
  * @generated
  */
 public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass directedRelationshipEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dependencyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractionEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,6 +94,9 @@ public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		AnnotationPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theAllocPackage.createPackageContents();
 
@@ -127,51 +110,6 @@ public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AllocPackage.eNS_URI, theAllocPackage);
 		return theAllocPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDirectedRelationship() {
-		return directedRelationshipEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDirectedRelationship_Source() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDirectedRelationship_Target() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDependency() {
-		return dependencyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAbstraction() {
-		return abstractionEClass;
 	}
 
 	/**
@@ -199,6 +137,15 @@ public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
 	 */
 	public EAttribute getAllocate_Nature() {
 		return (EAttribute)allocateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAllocate_ImpliedConstraint() {
+		return (EReference)allocateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -247,17 +194,10 @@ public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		directedRelationshipEClass = createEClass(DIRECTED_RELATIONSHIP);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__SOURCE);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__TARGET);
-
-		dependencyEClass = createEClass(DEPENDENCY);
-
-		abstractionEClass = createEClass(ABSTRACTION);
-
 		allocateEClass = createEClass(ALLOCATE);
 		createEAttribute(allocateEClass, ALLOCATE__KIND);
 		createEAttribute(allocateEClass, ALLOCATE__NATURE);
+		createEReference(allocateEClass, ALLOCATE__IMPLIED_CONSTRAINT);
 
 		// Create enums
 		allocationNatureEEnum = createEEnum(ALLOCATION_NATURE);
@@ -287,27 +227,22 @@ public class AllocPackageImpl extends EPackageImpl implements AllocPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
+		AnnotationPackage theAnnotationPackage = (AnnotationPackage)EPackage.Registry.INSTANCE.getEPackage(AnnotationPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		dependencyEClass.getESuperTypes().add(this.getDirectedRelationship());
-		abstractionEClass.getESuperTypes().add(this.getDependency());
-		allocateEClass.getESuperTypes().add(this.getAbstraction());
+		allocateEClass.getESuperTypes().add(theCoreElementsPackage.getAbstraction());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(directedRelationshipEClass, DirectedRelationship.class, "DirectedRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDirectedRelationship_Source(), ecorePackage.getEObject(), null, "source", null, 0, -1, DirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDirectedRelationship_Target(), ecorePackage.getEObject(), null, "target", null, 0, -1, DirectedRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(abstractionEClass, Abstraction.class, "Abstraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(allocateEClass, Allocate.class, "Allocate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAllocate_Kind(), this.getAllocationKind(), "kind", "hybrid", 0, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAllocate_Nature(), this.getAllocationNature(), "nature", null, 0, 1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAllocate_ImpliedConstraint(), theAnnotationPackage.getConstraint(), null, "impliedConstraint", null, 0, -1, Allocate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(allocationNatureEEnum, AllocationNature.class, "AllocationNature");

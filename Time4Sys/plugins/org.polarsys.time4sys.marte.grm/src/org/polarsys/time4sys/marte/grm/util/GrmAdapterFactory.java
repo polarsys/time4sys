@@ -15,46 +15,11 @@ package org.polarsys.time4sys.marte.grm.util;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
-import org.polarsys.time4sys.marte.grm.ClockResource;
-import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
-import org.polarsys.time4sys.marte.grm.CommunicationMedia;
-import org.polarsys.time4sys.marte.grm.CommunicationResource;
-import org.polarsys.time4sys.marte.grm.ComputingResource;
-import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
-import org.polarsys.time4sys.marte.grm.DeviceResource;
-import org.polarsys.time4sys.marte.grm.DynamicUsage;
-import org.polarsys.time4sys.marte.grm.GrmPackage;
-import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
-import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
-import org.polarsys.time4sys.marte.grm.ProcessingResource;
-import org.polarsys.time4sys.marte.grm.ProtectionParameter;
-import org.polarsys.time4sys.marte.grm.Resource;
-import org.polarsys.time4sys.marte.grm.ResourceBroker;
-import org.polarsys.time4sys.marte.grm.ResourceConnector;
-import org.polarsys.time4sys.marte.grm.ResourceControlPolicy;
-import org.polarsys.time4sys.marte.grm.ResourceInstance;
-import org.polarsys.time4sys.marte.grm.ResourceInterface;
-import org.polarsys.time4sys.marte.grm.ResourceManager;
-import org.polarsys.time4sys.marte.grm.ResourcePackage;
-import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
-import org.polarsys.time4sys.marte.grm.ResourcePort;
-import org.polarsys.time4sys.marte.grm.ResourceService;
-import org.polarsys.time4sys.marte.grm.ResourceUsage;
-import org.polarsys.time4sys.marte.grm.SchedulableResource;
-import org.polarsys.time4sys.marte.grm.Scheduler;
-import org.polarsys.time4sys.marte.grm.SchedulingParameter;
-import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
-import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
-import org.polarsys.time4sys.marte.grm.StaticUsage;
-import org.polarsys.time4sys.marte.grm.StorageResource;
-import org.polarsys.time4sys.marte.grm.SynchResource;
-import org.polarsys.time4sys.marte.grm.TimerResource;
-import org.polarsys.time4sys.marte.grm.TimingResource;
-import org.polarsys.time4sys.marte.grm.UsageDemand;
-import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
+import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -155,10 +120,6 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseMutualExclusionResource(MutualExclusionResource object) {
 				return createMutualExclusionResourceAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseProcessingResource(ProcessingResource object) {
@@ -265,6 +226,30 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 				return createUsageTypedAmountAdapter();
 			}
 			@Override
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
+			}
+			@Override
+			public Adapter caseENamedElement(ENamedElement object) {
+				return createENamedElementAdapter();
+			}
+			@Override
+			public Adapter caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+				return createModelElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+				return createPackageableElementAdapter();
+			}
+			@Override
+			public Adapter casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
+				return createPackageAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -295,20 +280,6 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createResourcePackageAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.grm.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -771,6 +742,90 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUsageTypedAmountAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @generated
+	 */
+	public Adapter createEModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.ENamedElement
+	 * @generated
+	 */
+	public Adapter createENamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.ModelElement <em>Model Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.ModelElement
+	 * @generated
+	 */
+	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement <em>Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement
+	 * @generated
+	 */
+	public Adapter createPackageableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.Package <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.Package
+	 * @generated
+	 */
+	public Adapter createPackageAdapter() {
 		return null;
 	}
 

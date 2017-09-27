@@ -27,7 +27,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourcePackageableElementItemProvider extends NamedElementItemProvider {
+public class ResourcePackageableElementItemProvider extends org.polarsys.time4sys.marte.nfp.coreelements.provider.PackageableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

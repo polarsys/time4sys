@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.nfp.annotation/src"
+    editDirectory="/org.polarsys.time4sys.marte.nfp.annotation.edit/src" editorDirectory="/org.polarsys.time4sys.marte.nfp.annotation.editor/src"
+    modelPluginID="org.polarsys.time4sys.marte.nfp.annotation" modelName="Nfp_Annotation"
+    modelPluginClass="org.polarsys.time4sys.marte.nfp.annotation.AnnotationPlugin"
+    editPluginClass="org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin"
+    editorPluginClass="org.polarsys.time4sys.marte.nfp.annotation.presentation.Nfp_AnnotationEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" editPluginID="org.polarsys.time4sys.marte.nfp.annotation.edit"
+    editorPluginID="org.polarsys.time4sys.marte.nfp.annotation.editor" usedGenPackages="core_elements.genmodel#//coreelements ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>nfp_annotation.ecore</foreignModel>
+  <genPackages prefix="Annotation" basePackage="org.polarsys.time4sys.marte.nfp.annotation"
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="nfp_annotation.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="nfp_annotation.ecore#//ConstraintKind">
+      <genEnumLiterals ecoreEnumLiteral="nfp_annotation.ecore#//ConstraintKind/required"/>
+      <genEnumLiterals ecoreEnumLiteral="nfp_annotation.ecore#//ConstraintKind/offered"/>
+      <genEnumLiterals ecoreEnumLiteral="nfp_annotation.ecore#//ConstraintKind/contract"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="nfp_annotation.ecore#//AnnotatedElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference nfp_annotation.ecore#//AnnotatedElement/owner"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="nfp_annotation.ecore#//AnnotatedModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nfp_annotation.ecore#//AnnotatedModel/owns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nfp_annotation.ecore#//AnnotatedModel/annotationConcern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nfp_annotation.ecore#//AnnotatedModel/ownedRule"/>
+    </genClasses>
+    <genClasses ecoreClass="nfp_annotation.ecore#//ModelingConcern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nfp_annotation.ecore#//ModelingConcern/description"/>
+    </genClasses>
+    <genClasses ecoreClass="nfp_annotation.ecore#//Constraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nfp_annotation.ecore#//Constraint/constrainedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nfp_annotation.ecore#//Constraint/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nfp_annotation.ecore#//Constraint/kind"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

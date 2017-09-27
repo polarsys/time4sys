@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
@@ -23,7 +24,15 @@ import org.polarsys.time4sys.marte.grm.GrmFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AccessControlPolicyTest extends NamedElementTest {
+public class AccessControlPolicyTest extends TestCase {
+
+	/**
+	 * The fixture for this Access Control Policy test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AccessControlPolicy fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +54,23 @@ public class AccessControlPolicyTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Access Control Policy test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(AccessControlPolicy fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Access Control Policy test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected AccessControlPolicy getFixture() {
-		return (AccessControlPolicy)fixture;
+		return fixture;
 	}
 
 	/**

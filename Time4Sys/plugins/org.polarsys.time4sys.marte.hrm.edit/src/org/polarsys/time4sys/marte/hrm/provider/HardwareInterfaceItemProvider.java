@@ -18,12 +18,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.provider.ResourceInterfaceItemProvider;
 import org.polarsys.time4sys.marte.hrm.HardwareInterface;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
-import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.hrm.HardwareInterface} object.
@@ -109,18 +110,13 @@ public class HardwareInterfaceItemProvider extends ResourceInterfaceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(GrmPackage.Literals.RESOURCE_INTERFACE__OWNED_SERVICE,
 				 HrmFactory.eINSTANCE.createHardwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE_INTERFACE__OWNED_SERVICE,
-				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE_INTERFACE__OWNED_SERVICE,
-				 SrmFactory.eINSTANCE.createSoftwareService()));
 	}
 
 }

@@ -11,5 +11,7 @@ Export-Package: org.polarsys.time4sys.marte.alloc,
  org.polarsys.time4sys.marte.alloc.impl,
  org.polarsys.time4sys.marte.alloc.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.annotation;visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements;visibility:=reexport
 Bundle-ActivationPolicy: lazy

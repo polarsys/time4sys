@@ -254,7 +254,7 @@ public class SoftwareResourceGeneralPropertiesEditionComponent extends SinglePar
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == SrmViewsRepository.General.Properties.name) {
-			return GrmPackage.eINSTANCE.getNamedElement_Name();
+			return EcorePackage.eINSTANCE.getENamedElement_Name();
 		}
 		if (editorKey == SrmViewsRepository.General.Properties.isProtected) {
 			return GrmPackage.eINSTANCE.getResource_IsProtected();
@@ -433,7 +433,7 @@ public class SoftwareResourceGeneralPropertiesEditionComponent extends SinglePar
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			GeneralPropertiesEditionPart generalPart = (GeneralPropertiesEditionPart)editingPart;
-			if (GrmPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(SrmViewsRepository.General.Properties.name)) {
+			if (EcorePackage.eINSTANCE.getENamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(SrmViewsRepository.General.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					generalPart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
@@ -506,7 +506,7 @@ public class SoftwareResourceGeneralPropertiesEditionComponent extends SinglePar
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GrmPackage.eINSTANCE.getNamedElement_Name(),
+			EcorePackage.eINSTANCE.getENamedElement_Name(),
 			GrmPackage.eINSTANCE.getResource_IsProtected(),
 			GrmPackage.eINSTANCE.getResource_IsActive(),
 			GrmPackage.eINSTANCE.getResource_ResMult(),
@@ -552,9 +552,9 @@ public class SoftwareResourceGeneralPropertiesEditionComponent extends SinglePar
 				if (SrmViewsRepository.General.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
 				}
 				if (SrmViewsRepository.General.Properties.isProtected == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();

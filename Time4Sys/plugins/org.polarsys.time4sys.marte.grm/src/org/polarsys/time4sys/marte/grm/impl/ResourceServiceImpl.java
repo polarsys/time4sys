@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceService;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

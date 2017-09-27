@@ -18,6 +18,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
@@ -25,7 +27,6 @@ import org.polarsys.time4sys.marte.grm.provider.ResourceItemProvider;
 import org.polarsys.time4sys.marte.hrm.HardwareResource;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
-import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.hrm.HardwareResource} object.
@@ -120,6 +121,11 @@ public class HardwareResourceItemProvider extends ResourceItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -278,83 +284,8 @@ public class HardwareResourceItemProvider extends ResourceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createInterruptResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createAlarm()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createDeviceBroker()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createMemoryBroker()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createMemoryPartition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createMessageComResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createNotificationResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSharedDataComResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareArchitecture()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareMutualExclusionResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareSchedulableResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareScheduler()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 SrmFactory.eINSTANCE.createSoftwareTimerResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 HrmFactory.eINSTANCE.createHardwarePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
-				 SrmFactory.eINSTANCE.createSoftwarePort()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -363,23 +294,8 @@ public class HardwareResourceItemProvider extends ResourceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
-				 SrmFactory.eINSTANCE.createSoftwareConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__PSERVICES,
 				 HrmFactory.eINSTANCE.createHardwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareService()));
 	}
 
 }

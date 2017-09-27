@@ -18,7 +18,7 @@ import java.util.List;
 
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 /**
  * <!-- begin-user-doc -->

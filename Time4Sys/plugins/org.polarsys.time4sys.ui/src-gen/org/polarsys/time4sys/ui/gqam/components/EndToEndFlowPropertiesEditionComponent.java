@@ -21,7 +21,7 @@ import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.impl.components.ComposedPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.ui.views.gqam.parts.GeneralPropertiesEditionPart;
 import org.polarsys.time4sys.ui.views.gqam.parts.GqamViewsRepository;
 import org.polarsys.time4sys.ui.views.gqam.parts.TimingPropertiesEditionPart;

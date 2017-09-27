@@ -29,8 +29,8 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
-import org.polarsys.time4sys.marte.grm.impl.NamedElementImpl;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

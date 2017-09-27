@@ -7,9 +7,18 @@ import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 
 import org.polarsys.time4sys.marte.alloc.*;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
+import org.polarsys.time4sys.marte.nfp.coreelements.Dependency;
+import org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -68,8 +77,32 @@ public class AllocAdapterFactory extends AdapterFactoryImpl {
 	protected AllocSwitch<Adapter> modelSwitch =
 		new AllocSwitch<Adapter>() {
 			@Override
+			public Adapter caseAllocate(Allocate object) {
+				return createAllocateAdapter();
+			}
+			@Override
 			public Adapter caseDirectedRelationship(DirectedRelationship object) {
 				return createDirectedRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
+			}
+			@Override
+			public Adapter caseENamedElement(ENamedElement object) {
+				return createENamedElementAdapter();
+			}
+			@Override
+			public Adapter caseModelElement(ModelElement object) {
+				return createModelElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter casePackageableElement(PackageableElement object) {
+				return createPackageableElementAdapter();
 			}
 			@Override
 			public Adapter caseDependency(Dependency object) {
@@ -78,10 +111,6 @@ public class AllocAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAbstraction(Abstraction object) {
 				return createAbstractionAdapter();
-			}
-			@Override
-			public Adapter caseAllocate(Allocate object) {
-				return createAllocateAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -104,48 +133,6 @@ public class AllocAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.alloc.DirectedRelationship <em>Directed Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.alloc.DirectedRelationship
-	 * @generated
-	 */
-	public Adapter createDirectedRelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.alloc.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.alloc.Dependency
-	 * @generated
-	 */
-	public Adapter createDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.alloc.Abstraction <em>Abstraction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.alloc.Abstraction
-	 * @generated
-	 */
-	public Adapter createAbstractionAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.alloc.Allocate <em>Allocate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -156,6 +143,118 @@ public class AllocAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAllocateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship
+	 * @generated
+	 */
+	public Adapter createDirectedRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @generated
+	 */
+	public Adapter createEModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.ENamedElement <em>ENamed Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.ENamedElement
+	 * @generated
+	 */
+	public Adapter createENamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.ModelElement <em>Model Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.ModelElement
+	 * @generated
+	 */
+	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement <em>Packageable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement
+	 * @generated
+	 */
+	public Adapter createPackageableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.Dependency <em>Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.Dependency
+	 * @generated
+	 */
+	public Adapter createDependencyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.coreelements.Abstraction <em>Abstraction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.coreelements.Abstraction
+	 * @generated
+	 */
+	public Adapter createAbstractionAdapter() {
 		return null;
 	}
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->

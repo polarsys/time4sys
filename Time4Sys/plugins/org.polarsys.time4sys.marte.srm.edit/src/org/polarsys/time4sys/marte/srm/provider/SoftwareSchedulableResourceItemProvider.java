@@ -19,6 +19,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -926,6 +928,11 @@ public class SoftwareSchedulableResourceItemProvider extends SchedulableResource
 
 		newChildDescriptors.add
 			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 				 SrmFactory.eINSTANCE.createSoftwareResource()));
 
@@ -996,16 +1003,6 @@ public class SoftwareSchedulableResourceItemProvider extends SchedulableResource
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 SrmFactory.eINSTANCE.createSoftwarePort()));
 
@@ -1013,6 +1010,16 @@ public class SoftwareSchedulableResourceItemProvider extends SchedulableResource
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 				 SrmFactory.eINSTANCE.createSoftwareConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareService()));
 
 		newChildDescriptors.add
 			(createChildParameter

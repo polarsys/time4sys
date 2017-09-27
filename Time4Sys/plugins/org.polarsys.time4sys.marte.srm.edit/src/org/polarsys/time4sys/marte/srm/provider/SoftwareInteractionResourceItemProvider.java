@@ -19,6 +19,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -90,9 +92,9 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 GrmPackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_ENamedElement_name_feature"),
+				 getString("_UI_ENamedElement_name_description"),
+				 EcorePackage.Literals.ENAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -465,10 +467,11 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__PSERVICES);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_PORT);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR);
+			childrenFeatures.add(GrmPackage.Literals.RESOURCE__PSERVICES);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE_MANAGER__RES_CTRL_POLICY);
 		}
 		return childrenFeatures;
@@ -527,10 +530,11 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR:
+			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -548,6 +552,11 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -696,21 +705,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 SrmFactory.eINSTANCE.createSoftwareService()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 GrmFactory.eINSTANCE.createResourceService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 SrmFactory.eINSTANCE.createSoftwarePort()));
 
@@ -728,6 +722,21 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 				 GrmFactory.eINSTANCE.createResourceConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareAccessService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 SrmFactory.eINSTANCE.createSoftwareService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 GrmFactory.eINSTANCE.createResourceService()));
 
 		newChildDescriptors.add
 			(createChildParameter

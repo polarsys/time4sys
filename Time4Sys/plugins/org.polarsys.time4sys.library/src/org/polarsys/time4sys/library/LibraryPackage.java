@@ -78,6 +78,15 @@ public interface LibraryPackage extends EPackage {
 	int TDMA = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TDMA__EANNOTATIONS = GrmPackage.SCHEDULING_POLICY__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,6 +132,15 @@ public interface LibraryPackage extends EPackage {
 	int TDMA_FEATURE_COUNT = GrmPackage.SCHEDULING_POLICY_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TDMA___GET_EANNOTATION__STRING = GrmPackage.SCHEDULING_POLICY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has Valid Policy</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,6 +167,15 @@ public interface LibraryPackage extends EPackage {
 	 * @generated
 	 */
 	int DEADLINE_MONOTONIC_SCHEDULING_POLICY = 1;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEADLINE_MONOTONIC_SCHEDULING_POLICY__EANNOTATIONS = GrmPackage.SCHEDULING_POLICY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -187,6 +214,15 @@ public interface LibraryPackage extends EPackage {
 	int DEADLINE_MONOTONIC_SCHEDULING_POLICY_FEATURE_COUNT = GrmPackage.SCHEDULING_POLICY_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEADLINE_MONOTONIC_SCHEDULING_POLICY___GET_EANNOTATION__STRING = GrmPackage.SCHEDULING_POLICY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has Valid Policy</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,6 +249,15 @@ public interface LibraryPackage extends EPackage {
 	 * @generated
 	 */
 	int RATE_MONOTONIC_SCHEDULING_POLICY = 2;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RATE_MONOTONIC_SCHEDULING_POLICY__EANNOTATIONS = GrmPackage.SCHEDULING_POLICY__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -251,6 +296,15 @@ public interface LibraryPackage extends EPackage {
 	int RATE_MONOTONIC_SCHEDULING_POLICY_FEATURE_COUNT = GrmPackage.SCHEDULING_POLICY_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RATE_MONOTONIC_SCHEDULING_POLICY___GET_EANNOTATION__STRING = GrmPackage.SCHEDULING_POLICY___GET_EANNOTATION__STRING;
+
+	/**
 	 * The operation id for the '<em>Has Valid Policy</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +331,15 @@ public interface LibraryPackage extends EPackage {
 	 * @generated
 	 */
 	int HARDWARE_CAN_BUS = 3;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CAN_BUS__EANNOTATIONS = HrmPackage.HARDWARE_BUS__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,15 +387,6 @@ public interface LibraryPackage extends EPackage {
 	int HARDWARE_CAN_BUS__IS_ACTIVE = HrmPackage.HARDWARE_BUS__IS_ACTIVE;
 
 	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_CAN_BUS__PSERVICES = HrmPackage.HARDWARE_BUS__PSERVICES;
-
-	/**
 	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -367,6 +421,15 @@ public interface LibraryPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CAN_BUS__USED_BY = HrmPackage.HARDWARE_BUS__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CAN_BUS__PSERVICES = HrmPackage.HARDWARE_BUS__PSERVICES;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' reference.
@@ -547,6 +610,15 @@ public interface LibraryPackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_CAN_BUS_FEATURE_COUNT = HrmPackage.HARDWARE_BUS_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_CAN_BUS___GET_EANNOTATION__STRING = HrmPackage.HARDWARE_BUS___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Hardware CAN Bus</em>' class.

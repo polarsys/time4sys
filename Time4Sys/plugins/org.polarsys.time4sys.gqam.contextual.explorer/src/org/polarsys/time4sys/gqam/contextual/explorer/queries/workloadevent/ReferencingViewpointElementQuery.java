@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 /**
 * <!-- begin-user-doc -->

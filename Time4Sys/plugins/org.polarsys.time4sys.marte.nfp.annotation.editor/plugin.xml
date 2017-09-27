@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated nfp_annotation -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.nfp.annotation.annotation.presentation.AnnotationModelWizardID"
+            name="%_UI_AnnotationModelWizard_label"
+            class="org.polarsys.time4sys.marte.nfp.annotation.annotation.presentation.AnnotationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AnnotationModelFile.gif">
+         <description>%_UI_AnnotationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated nfp_annotation -->
+      <editor
+            id="org.polarsys.time4sys.marte.nfp.annotation.annotation.presentation.AnnotationEditorID"
+            name="%_UI_AnnotationEditor_label"
+            icon="icons/full/obj16/AnnotationModelFile.gif"
+            extensions="annotation"
+            class="org.polarsys.time4sys.marte.nfp.annotation.annotation.presentation.AnnotationEditor"
+            contributorClass="org.polarsys.time4sys.marte.nfp.annotation.annotation.presentation.AnnotationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

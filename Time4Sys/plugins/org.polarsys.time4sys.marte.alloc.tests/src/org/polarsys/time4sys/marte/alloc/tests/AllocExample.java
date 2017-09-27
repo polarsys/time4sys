@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import org.polarsys.time4sys.marte.alloc.AllocFactory;
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
-import org.polarsys.time4sys.marte.alloc.Dependency;
+import org.polarsys.time4sys.marte.alloc.Allocate;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class AllocExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.alloc"));
-				Dependency root = AllocFactory.eINSTANCE.createDependency();
+				Allocate root = AllocFactory.eINSTANCE.createAllocate();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

@@ -31,6 +31,7 @@ public class AllocTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new AllocTests("alloc Tests");
+		suite.addTestSuite(AllocateTest.class);
 		return suite;
 	}
 

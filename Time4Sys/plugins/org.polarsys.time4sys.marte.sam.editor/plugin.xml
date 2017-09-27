@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated sam -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.sam.presentation.SamModelWizardID"
+            name="%_UI_SamModelWizard_label"
+            class="org.polarsys.time4sys.marte.sam.presentation.SamModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SamModelFile.gif">
+         <description>%_UI_SamModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated sam -->
+      <editor
+            id="org.polarsys.time4sys.marte.sam.presentation.SamEditorID"
+            name="%_UI_SamEditor_label"
+            icon="icons/full/obj16/SamModelFile.gif"
+            extensions="sam"
+            class="org.polarsys.time4sys.marte.sam.presentation.SamEditor"
+            contributorClass="org.polarsys.time4sys.marte.sam.presentation.SamActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

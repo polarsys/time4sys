@@ -137,7 +137,7 @@ public class WorkloadEventPropertiesEditionComponent extends SinglePartPropertie
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == GqamViewsRepository.General.Properties.name) {
-			return GrmPackage.eINSTANCE.getNamedElement_Name();
+			return EcorePackage.eINSTANCE.getENamedElement_Name();
 		}
 		if (editorKey == GqamViewsRepository.General.Properties.effect) {
 			return GqamPackage.eINSTANCE.getWorkloadEvent_Effect();
@@ -181,7 +181,7 @@ public class WorkloadEventPropertiesEditionComponent extends SinglePartPropertie
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			GeneralPropertiesEditionPart generalPart = (GeneralPropertiesEditionPart)editingPart;
-			if (GrmPackage.eINSTANCE.getNamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.name)) {
+			if (EcorePackage.eINSTANCE.getENamedElement_Name().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.name)) {
 				if (msg.getNewValue() != null) {
 					generalPart.setName(EcoreUtil.convertToString(EcorePackage.Literals.ESTRING, msg.getNewValue()));
 				} else {
@@ -202,7 +202,7 @@ public class WorkloadEventPropertiesEditionComponent extends SinglePartPropertie
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GrmPackage.eINSTANCE.getNamedElement_Name(),
+			EcorePackage.eINSTANCE.getENamedElement_Name(),
 			GqamPackage.eINSTANCE.getWorkloadEvent_Effect()		);
 		return new NotificationFilter[] {filter,};
 	}
@@ -228,9 +228,9 @@ public class WorkloadEventPropertiesEditionComponent extends SinglePartPropertie
 				if (GqamViewsRepository.General.Properties.name == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GrmPackage.eINSTANCE.getNamedElement_Name().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);

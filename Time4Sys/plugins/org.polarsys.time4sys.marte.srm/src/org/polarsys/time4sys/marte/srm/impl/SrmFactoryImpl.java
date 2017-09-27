@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.srm.AccessPolicyKind;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
@@ -144,6 +145,8 @@ public class SrmFactoryImpl extends EFactoryImpl implements SrmFactory {
 				return createNotificationResourceKindFromString(eDataType, initialValue);
 			case SrmPackage.OCCURENCE_POLICY_KIND:
 				return createOccurencePolicyKindFromString(eDataType, initialValue);
+			case SrmPackage.NFP_DURATION:
+				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -173,6 +176,8 @@ public class SrmFactoryImpl extends EFactoryImpl implements SrmFactory {
 				return convertNotificationResourceKindToString(eDataType, instanceValue);
 			case SrmPackage.OCCURENCE_POLICY_KIND:
 				return convertOccurencePolicyKindToString(eDataType, instanceValue);
+			case SrmPackage.NFP_DURATION:
+				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -486,6 +491,24 @@ public class SrmFactoryImpl extends EFactoryImpl implements SrmFactory {
 	 */
 	public String convertOccurencePolicyKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
+		return (Duration)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

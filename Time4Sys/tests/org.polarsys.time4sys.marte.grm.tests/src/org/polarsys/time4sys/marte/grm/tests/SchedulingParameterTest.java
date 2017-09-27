@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -23,7 +24,15 @@ import org.polarsys.time4sys.marte.grm.SchedulingParameter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SchedulingParameterTest extends NamedElementTest {
+public class SchedulingParameterTest extends TestCase {
+
+	/**
+	 * The fixture for this Scheduling Parameter test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SchedulingParameter fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +54,23 @@ public class SchedulingParameterTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Scheduling Parameter test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(SchedulingParameter fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Scheduling Parameter test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected SchedulingParameter getFixture() {
-		return (SchedulingParameter)fixture;
+		return fixture;
 	}
 
 	/**

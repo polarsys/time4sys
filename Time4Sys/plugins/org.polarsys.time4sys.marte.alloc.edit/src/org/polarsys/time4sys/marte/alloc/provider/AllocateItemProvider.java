@@ -9,6 +9,8 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -16,7 +18,10 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.alloc.Allocate;
-import org.polarsys.time4sys.marte.alloc.AllocationKind;
+
+import org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.AbstractionItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.alloc.Allocate} object.
@@ -48,6 +53,7 @@ public class AllocateItemProvider extends AbstractionItemProvider {
 
 			addKindPropertyDescriptor(object);
 			addNaturePropertyDescriptor(object);
+			addImpliedConstraintPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +103,28 @@ public class AllocateItemProvider extends AbstractionItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Implied Constraint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImpliedConstraintPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Allocate_impliedConstraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Allocate_impliedConstraint_feature", "_UI_Allocate_type"),
+				 AllocPackage.Literals.ALLOCATE__IMPLIED_CONSTRAINT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Allocate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,8 +143,7 @@ public class AllocateItemProvider extends AbstractionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		AllocationKind labelValue = ((Allocate)object).getKind();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Allocate)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Allocate_type") :
 			getString("_UI_Allocate_type") + " " + label;
@@ -153,6 +180,17 @@ public class AllocateItemProvider extends AbstractionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return AllocEditPlugin.INSTANCE;
 	}
 
 }

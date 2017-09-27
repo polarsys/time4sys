@@ -2,6 +2,11 @@
  */
 package org.polarsys.time4sys.marte.alloc;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +23,7 @@ package org.polarsys.time4sys.marte.alloc;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.alloc.Allocate#getKind <em>Kind</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.alloc.Allocate#getNature <em>Nature</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.alloc.Allocate#getImpliedConstraint <em>Implied Constraint</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.alloc.AllocPackage#getAllocate()
@@ -81,5 +87,21 @@ public interface Allocate extends Abstraction {
 	 * @generated
 	 */
 	void setNature(AllocationNature value);
+
+	/**
+	 * Returns the value of the '<em><b>Implied Constraint</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implied Constraint</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implied Constraint</em>' reference list.
+	 * @see org.polarsys.time4sys.marte.alloc.AllocPackage#getAllocate_ImpliedConstraint()
+	 * @model
+	 * @generated
+	 */
+	EList<Constraint> getImpliedConstraint();
 
 } // Allocate

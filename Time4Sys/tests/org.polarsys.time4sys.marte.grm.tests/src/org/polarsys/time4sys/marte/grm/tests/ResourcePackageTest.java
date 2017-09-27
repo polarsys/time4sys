@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -23,7 +24,15 @@ import org.polarsys.time4sys.marte.grm.ResourcePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourcePackageTest extends NamedElementTest {
+public class ResourcePackageTest extends TestCase {
+
+	/**
+	 * The fixture for this Resource Package test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourcePackage fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,14 +54,23 @@ public class ResourcePackageTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Resource Package test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ResourcePackage fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Resource Package test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ResourcePackage getFixture() {
-		return (ResourcePackage)fixture;
+		return fixture;
 	}
 
 	/**

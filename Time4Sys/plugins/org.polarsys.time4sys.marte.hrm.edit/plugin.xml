@@ -36,8 +36,8 @@
             uri="http://www.polarsys.org/time4sys/marte/grm/1.0"
             class="org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory$GrmChildCreationExtender"/>
       <extender
-            uri="http://www.polarsys.org/time4sys/marte/srm/1.0"
-            class="org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory$SrmChildCreationExtender"/>
+            uri="http://www.polarsys.org/time4sys/marte/core/1.0"
+            class="org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory$CoreElementsChildCreationExtender"/>
    </extension>
 
 </plugin>

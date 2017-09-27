@@ -2,16 +2,26 @@
  */
 package org.polarsys.time4sys.marte.alloc.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.alloc.Allocate;
 import org.polarsys.time4sys.marte.alloc.AllocationKind;
 import org.polarsys.time4sys.marte.alloc.AllocationNature;
+
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
+
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.AbstractionImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +33,7 @@ import org.polarsys.time4sys.marte.alloc.AllocationNature;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.alloc.impl.AllocateImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.alloc.impl.AllocateImpl#getNature <em>Nature</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.alloc.impl.AllocateImpl#getImpliedConstraint <em>Implied Constraint</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +78,16 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 	 * @ordered
 	 */
 	protected AllocationNature nature = NATURE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getImpliedConstraint() <em>Implied Constraint</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImpliedConstraint()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constraint> impliedConstraint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,6 +155,18 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Constraint> getImpliedConstraint() {
+		if (impliedConstraint == null) {
+			impliedConstraint = new EObjectResolvingEList<Constraint>(Constraint.class, this, AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT);
+		}
+		return impliedConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -141,6 +174,8 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 				return getKind();
 			case AllocPackage.ALLOCATE__NATURE:
 				return getNature();
+			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+				return getImpliedConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +185,7 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -158,6 +194,10 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 				return;
 			case AllocPackage.ALLOCATE__NATURE:
 				setNature((AllocationNature)newValue);
+				return;
+			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+				getImpliedConstraint().clear();
+				getImpliedConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,6 +217,9 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 			case AllocPackage.ALLOCATE__NATURE:
 				setNature(NATURE_EDEFAULT);
 				return;
+			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+				getImpliedConstraint().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,6 +236,8 @@ public class AllocateImpl extends AbstractionImpl implements Allocate {
 				return kind != KIND_EDEFAULT;
 			case AllocPackage.ALLOCATE__NATURE:
 				return nature != NATURE_EDEFAULT;
+			case AllocPackage.ALLOCATE__IMPLIED_CONSTRAINT:
+				return impliedConstraint != null && !impliedConstraint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

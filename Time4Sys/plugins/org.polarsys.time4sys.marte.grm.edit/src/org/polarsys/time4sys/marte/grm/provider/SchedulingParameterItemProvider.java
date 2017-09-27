@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.grm.SchedulingParameter} object.

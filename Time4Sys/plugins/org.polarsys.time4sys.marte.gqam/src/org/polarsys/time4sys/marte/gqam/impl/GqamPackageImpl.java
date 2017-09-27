@@ -31,11 +31,12 @@ import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.Delay;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.LatencyObserver;
+import org.polarsys.time4sys.marte.gqam.LaxityKind;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
@@ -48,12 +49,15 @@ import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
+import org.polarsys.time4sys.marte.gqam.TimedObserver;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.gqam.util.GqamValidator;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,6 +106,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass timedObserverEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass precedenceRelationEClass = null;
 
 	/**
@@ -138,6 +149,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EClass inputPinEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass latencyObserverEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,13 +253,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass endToEndFlowEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass referenceEClass = null;
 
 	/**
@@ -250,6 +261,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EEnum connectorKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum laxityKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,6 +325,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		// Initialize simple dependencies
 		GrmPackage.eINSTANCE.eClass();
 		NfpPackage.eINSTANCE.eClass();
+		AnnotationPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGqamPackage.createPackageContents();
@@ -607,6 +626,24 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimedObserver() {
+		return timedObserverEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimedObserver_Laxity() {
+		return (EAttribute)timedObserverEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getStep_InputRel() {
 		return (EReference)stepEClass.getEStructuralFeatures().get(8);
 	}
@@ -816,6 +853,42 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 */
 	public EReference getInputPin_Predecessors() {
 		return (EReference)inputPinEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLatencyObserver() {
+		return latencyObserverEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLatencyObserver_Latency() {
+		return (EAttribute)latencyObserverEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLatencyObserver_MissRatio() {
+		return (EAttribute)latencyObserverEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLatencyObserver_MaxJitter() {
+		return (EAttribute)latencyObserverEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1102,78 +1175,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEndToEndFlow() {
-		return endToEndFlowEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEndToEndFlow_EndToEndStimuli() {
-		return (EReference)endToEndFlowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEndToEndFlow_EndToEndScenario() {
-		return (EReference)endToEndFlowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEndToEndFlow_IsSchedulable() {
-		return (EAttribute)endToEndFlowEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEndToEndFlow_SchedulabilitySlack() {
-		return (EAttribute)endToEndFlowEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEndToEndFlow_EndToEndTime() {
-		return (EAttribute)endToEndFlowEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEndToEndFlow_EndToEndDeadline() {
-		return (EAttribute)endToEndFlowEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getEndToEndFlow__FindStepsOnPath() {
-		return endToEndFlowEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getReference() {
 		return referenceEClass;
 	}
@@ -1194,6 +1195,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 */
 	public EEnum getConnectorKind() {
 		return connectorKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getLaxityKind() {
+		return laxityKindEEnum;
 	}
 
 	/**
@@ -1278,19 +1288,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		delayEClass = createEClass(DELAY);
 		createEAttribute(delayEClass, DELAY__DURATION);
 
-		endToEndFlowEClass = createEClass(END_TO_END_FLOW);
-		createEReference(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_STIMULI);
-		createEReference(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_SCENARIO);
-		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__IS_SCHEDULABLE);
-		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__SCHEDULABILITY_SLACK);
-		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_TIME);
-		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_DEADLINE);
-		createEOperation(endToEndFlowEClass, END_TO_END_FLOW___FIND_STEPS_ON_PATH);
-
 		executionStepEClass = createEClass(EXECUTION_STEP);
 
 		inputPinEClass = createEClass(INPUT_PIN);
 		createEReference(inputPinEClass, INPUT_PIN__PREDECESSORS);
+
+		latencyObserverEClass = createEClass(LATENCY_OBSERVER);
+		createEAttribute(latencyObserverEClass, LATENCY_OBSERVER__LATENCY);
+		createEAttribute(latencyObserverEClass, LATENCY_OBSERVER__MISS_RATIO);
+		createEAttribute(latencyObserverEClass, LATENCY_OBSERVER__MAX_JITTER);
 
 		multiplicityElementEClass = createEClass(MULTIPLICITY_ELEMENT);
 		createEAttribute(multiplicityElementEClass, MULTIPLICITY_ELEMENT__LOWER_BOUND);
@@ -1345,17 +1351,21 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(stepEClass, STEP__INPUT_PIN);
 		createEReference(stepEClass, STEP__OUTPUT_PIN);
 
-		workloadEventEClass = createEClass(WORKLOAD_EVENT);
-		createEReference(workloadEventEClass, WORKLOAD_EVENT__EFFECT);
-		createEReference(workloadEventEClass, WORKLOAD_EVENT__PATTERN);
+		timedObserverEClass = createEClass(TIMED_OBSERVER);
+		createEAttribute(timedObserverEClass, TIMED_OBSERVER__LAXITY);
 
 		workloadBehaviorEClass = createEClass(WORKLOAD_BEHAVIOR);
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__BEHAVIOR);
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__DEMAND);
 		createEReference(workloadBehaviorEClass, WORKLOAD_BEHAVIOR__REFERENCES);
 
+		workloadEventEClass = createEClass(WORKLOAD_EVENT);
+		createEReference(workloadEventEClass, WORKLOAD_EVENT__EFFECT);
+		createEReference(workloadEventEClass, WORKLOAD_EVENT__PATTERN);
+
 		// Create enums
 		connectorKindEEnum = createEEnum(CONNECTOR_KIND);
+		laxityKindEEnum = createEEnum(LAXITY_KIND);
 
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
@@ -1386,6 +1396,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		// Obtain other dependent packages
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
+		AnnotationPackage theAnnotationPackage = (AnnotationPackage)EPackage.Registry.INSTANCE.getEPackage(AnnotationPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1393,16 +1405,17 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		// Add supertypes to classes
 		acquireStepEClass.getESuperTypes().add(this.getStep());
-		behaviorScenarioEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
+		behaviorScenarioEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		burstPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		closedPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		communicationChannelEClass.getESuperTypes().add(theGrmPackage.getSchedulableResource());
 		communicationStepEClass.getESuperTypes().add(this.getStep());
 		controlPinEClass.getESuperTypes().add(this.getMultiplicityElement());
-		controlPinEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
+		controlPinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		delayEClass.getESuperTypes().add(this.getStep());
 		executionStepEClass.getESuperTypes().add(this.getStep());
 		inputPinEClass.getESuperTypes().add(this.getControlPin());
+		latencyObserverEClass.getESuperTypes().add(this.getTimedObserver());
 		onceEClass.getESuperTypes().add(this.getArrivalPattern());
 		outputPinEClass.getESuperTypes().add(this.getControlPin());
 		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
@@ -1412,8 +1425,10 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		slidingWindowPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		sporadicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		stepEClass.getESuperTypes().add(this.getBehaviorScenario());
-		workloadEventEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
-		workloadBehaviorEClass.getESuperTypes().add(theGrmPackage.getNamedElement());
+		stepEClass.getESuperTypes().add(theAnnotationPackage.getAnnotatedElement());
+		timedObserverEClass.getESuperTypes().add(theAnnotationPackage.getConstraint());
+		workloadBehaviorEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
+		workloadEventEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(acquireStepEClass, AcquireStep.class, "AcquireStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1465,20 +1480,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDelay_Duration(), this.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(endToEndFlowEClass, EndToEndFlow.class, "EndToEndFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEndToEndFlow_EndToEndStimuli(), this.getWorkloadEvent(), null, "endToEndStimuli", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndToEndFlow_EndToEndScenario(), this.getBehaviorScenario(), null, "endToEndScenario", null, 1, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndToEndFlow_IsSchedulable(), ecorePackage.getEBoolean(), "isSchedulable", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndToEndFlow_SchedulabilitySlack(), ecorePackage.getEDouble(), "schedulabilitySlack", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndToEndFlow_EndToEndTime(), this.getNFP_Duration(), "endToEndTime", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEndToEndFlow_EndToEndDeadline(), this.getNFP_Duration(), "endToEndDeadline", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getEndToEndFlow__FindStepsOnPath(), this.getBehaviorScenario(), "findStepsOnPath", 0, -1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInputPin_Predecessors(), this.getOutputPin(), this.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(latencyObserverEClass, LatencyObserver.class, "LatencyObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLatencyObserver_Latency(), this.getNFP_Duration(), "latency", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLatencyObserver_MissRatio(), ecorePackage.getEDouble(), "missRatio", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLatencyObserver_MaxJitter(), this.getNFP_Duration(), "maxJitter", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(multiplicityElementEClass, MultiplicityElement.class, "MultiplicityElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMultiplicityElement_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1533,14 +1543,17 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getStep_InputPin(), this.getInputPin(), null, "inputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_OutputPin(), this.getOutputPin(), null, "outputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(timedObserverEClass, TimedObserver.class, "TimedObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimedObserver_Laxity(), this.getLaxityKind(), "laxity", null, 0, -1, TimedObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workloadBehaviorEClass, WorkloadBehavior.class, "WorkloadBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkloadBehavior_Behavior(), this.getBehaviorScenario(), null, "behavior", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadBehavior_Demand(), this.getWorkloadEvent(), null, "demand", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadBehavior_References(), this.getReference(), null, "references", null, 0, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(connectorKindEEnum, ConnectorKind.class, "ConnectorKind");
@@ -1549,6 +1562,12 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		addEEnumLiteral(connectorKindEEnum, ConnectorKind.MERGE);
 		addEEnumLiteral(connectorKindEEnum, ConnectorKind.FORK);
 		addEEnumLiteral(connectorKindEEnum, ConnectorKind.JOIN);
+
+		initEEnum(laxityKindEEnum, LaxityKind.class, "LaxityKind");
+		addEEnumLiteral(laxityKindEEnum, LaxityKind.UNDEF);
+		addEEnumLiteral(laxityKindEEnum, LaxityKind.HARD);
+		addEEnumLiteral(laxityKindEEnum, LaxityKind.SOFT);
+		addEEnumLiteral(laxityKindEEnum, LaxityKind.OTHER);
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

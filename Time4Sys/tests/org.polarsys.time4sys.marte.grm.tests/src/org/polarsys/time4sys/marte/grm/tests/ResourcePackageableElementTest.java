@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
+import junit.framework.TestCase;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 
 /**
@@ -20,7 +21,15 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class ResourcePackageableElementTest extends NamedElementTest {
+public abstract class ResourcePackageableElementTest extends TestCase {
+
+	/**
+	 * The fixture for this Resource Packageable Element test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourcePackageableElement fixture = null;
 
 	/**
 	 * Constructs a new Resource Packageable Element test case with the given name.
@@ -33,14 +42,23 @@ public abstract class ResourcePackageableElementTest extends NamedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Resource Packageable Element test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(ResourcePackageableElement fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Resource Packageable Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected ResourcePackageableElement getFixture() {
-		return (ResourcePackageableElement)fixture;
+		return fixture;
 	}
 
 } //ResourcePackageableElementTest

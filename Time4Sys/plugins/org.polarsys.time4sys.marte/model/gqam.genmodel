@@ -7,7 +7,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.marte.gqam.tests.GqamAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.marte.gqam.edit" editorPluginID="org.polarsys.time4sys.marte.gqam.editor"
-    usedGenPackages="grm.genmodel#//grm nfp.genmodel#//nfp" operationReflection="true"
+    usedGenPackages="grm.genmodel#//grm nfp.genmodel#//nfp nfp_annotation.genmodel#//annotation" operationReflection="true"
     importOrganizing="true">
   <foreignModel>gqam.ecore</foreignModel>
   <genPackages prefix="Gqam" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"

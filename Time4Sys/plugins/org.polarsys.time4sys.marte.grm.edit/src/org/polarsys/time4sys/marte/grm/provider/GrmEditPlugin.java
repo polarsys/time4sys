@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.grm.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
  * This is the central singleton for the Grm edit plugin.
@@ -47,6 +48,8 @@ public final class GrmEditPlugin extends EMFPlugin {
 	public GrmEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

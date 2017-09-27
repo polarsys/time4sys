@@ -12,9 +12,12 @@
  */
 package org.polarsys.time4sys.library.util;
 
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.library.*;
 import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.library.HardwareCANBus;
 import org.polarsys.time4sys.library.LibraryPackage;
@@ -22,7 +25,6 @@ import org.polarsys.time4sys.library.RateMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.library.TDMA;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
 import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
@@ -32,6 +34,7 @@ import org.polarsys.time4sys.marte.hrm.HardwareCommunicationResource;
 import org.polarsys.time4sys.marte.hrm.HardwareComponent;
 import org.polarsys.time4sys.marte.hrm.HardwareMedia;
 import org.polarsys.time4sys.marte.hrm.HardwareResource;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,6 +99,9 @@ public class LibrarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseSchedulingPolicy(tdma);
 				if (result == null) result = caseAccessControlPolicy(tdma);
 				if (result == null) result = caseNamedElement(tdma);
+				if (result == null) result = caseENamedElement(tdma);
+				if (result == null) result = caseModelElement(tdma);
+				if (result == null) result = caseEModelElement(tdma);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,6 +111,9 @@ public class LibrarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseSchedulingPolicy(deadlineMonotonicSchedulingPolicy);
 				if (result == null) result = caseAccessControlPolicy(deadlineMonotonicSchedulingPolicy);
 				if (result == null) result = caseNamedElement(deadlineMonotonicSchedulingPolicy);
+				if (result == null) result = caseENamedElement(deadlineMonotonicSchedulingPolicy);
+				if (result == null) result = caseModelElement(deadlineMonotonicSchedulingPolicy);
+				if (result == null) result = caseEModelElement(deadlineMonotonicSchedulingPolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,6 +123,9 @@ public class LibrarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseSchedulingPolicy(rateMonotonicSchedulingPolicy);
 				if (result == null) result = caseAccessControlPolicy(rateMonotonicSchedulingPolicy);
 				if (result == null) result = caseNamedElement(rateMonotonicSchedulingPolicy);
+				if (result == null) result = caseENamedElement(rateMonotonicSchedulingPolicy);
+				if (result == null) result = caseModelElement(rateMonotonicSchedulingPolicy);
+				if (result == null) result = caseEModelElement(rateMonotonicSchedulingPolicy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,7 +141,11 @@ public class LibrarySwitch<T> extends Switch<T> {
 				if (result == null) result = caseResource(hardwareCANBus);
 				if (result == null) result = caseHardwareComponent(hardwareCANBus);
 				if (result == null) result = caseResourcePackageableElement(hardwareCANBus);
+				if (result == null) result = casePackageableElement(hardwareCANBus);
 				if (result == null) result = caseNamedElement(hardwareCANBus);
+				if (result == null) result = caseENamedElement(hardwareCANBus);
+				if (result == null) result = caseModelElement(hardwareCANBus);
+				if (result == null) result = caseEModelElement(hardwareCANBus);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -198,6 +214,51 @@ public class LibrarySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseENamedElement(ENamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -239,6 +300,21 @@ public class LibrarySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSchedulingPolicy(SchedulingPolicy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Packageable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
 		return null;
 	}
 

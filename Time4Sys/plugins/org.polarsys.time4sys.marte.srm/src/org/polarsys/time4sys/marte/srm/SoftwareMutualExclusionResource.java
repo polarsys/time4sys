@@ -14,7 +14,6 @@ package org.polarsys.time4sys.marte.srm;
 
 import org.eclipse.emf.common.util.EList;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
-import org.polarsys.time4sys.marte.grm.NamedElement;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 
 /**
@@ -130,7 +129,7 @@ public interface SoftwareMutualExclusionResource extends SoftwareSynchronization
 
 	/**
 	 * Returns the value of the '<em><b>Access Token Elements</b></em>' reference list.
-	 * The list contents are of type {@link org.polarsys.time4sys.marte.grm.NamedElement}.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.nfp.coreelements.ModelElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Access Token Elements</em>' reference list isn't clear,
@@ -142,6 +141,6 @@ public interface SoftwareMutualExclusionResource extends SoftwareSynchronization
 	 * @model
 	 * @generated
 	 */
-	EList<NamedElement> getAccessTokenElements();
+	EList<org.polarsys.time4sys.marte.nfp.coreelements.ModelElement> getAccessTokenElements();
 
 } // SoftwareMutualExclusionResource

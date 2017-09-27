@@ -18,9 +18,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.polarsys.time4sys.library.HardwareCANBus;
 import org.polarsys.time4sys.library.LibraryFactory;
+import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.hrm.provider.HardwareBusItemProvider;
 
@@ -108,8 +111,18 @@ public class HardwareCANBusItemProvider extends HardwareBusItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 				 LibraryFactory.eINSTANCE.createHardwareCANBus()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 GqamFactory.eINSTANCE.createCommunicationChannel()));
 	}
 
 }

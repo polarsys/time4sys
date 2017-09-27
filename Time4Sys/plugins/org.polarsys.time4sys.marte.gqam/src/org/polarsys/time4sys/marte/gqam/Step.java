@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.gqam;
 import org.eclipse.emf.common.util.EList;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +45,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  * @model
  * @generated
  */
-public interface Step extends BehaviorScenario {
+public interface Step extends BehaviorScenario, AnnotatedElement {
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getSteps <em>Steps</em>}'.
@@ -327,6 +328,9 @@ public interface Step extends BehaviorScenario {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The higher the value of the priority, the higher the urgency of the step.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Priority</em>' attribute.
 	 * @see #setPriority(int)
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_Priority()

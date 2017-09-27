@@ -128,9 +128,11 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.polarsys.time4sys.library.provider.LibraryItemProviderAdapterFactory;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.gqam.provider.GqamItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.grm.provider.GrmItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.hrm.provider.HrmItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.provider.AnnotationItemProviderAdapterFactory;
 
 
 /**
@@ -679,6 +681,9 @@ public class LibraryEditor
 		adapterFactory.addAdapterFactory(new GqamItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new HrmItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AnnotationItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

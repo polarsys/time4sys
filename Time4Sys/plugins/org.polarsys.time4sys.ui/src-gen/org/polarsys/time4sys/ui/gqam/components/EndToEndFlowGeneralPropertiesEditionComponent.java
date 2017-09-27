@@ -41,7 +41,8 @@ import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSet
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamPackage;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -107,13 +108,13 @@ public class EndToEndFlowGeneralPropertiesEditionComponent extends SinglePartPro
 			
 			if (isAccessible(GqamViewsRepository.General.Properties.endToEndScenario)) {
 				// init part
-				endToEndScenarioSettings = new EObjectFlatComboSettings(endToEndFlow, GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario());
+				endToEndScenarioSettings = new EObjectFlatComboSettings(endToEndFlow, SamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario());
 				generalPart.initEndToEndScenario(endToEndScenarioSettings);
 				// set the button mode
 				generalPart.setEndToEndScenarioButtonMode(ButtonsModeEnum.BROWSE);
 			}
 			if (isAccessible(GqamViewsRepository.General.Properties.endToEndStimuli)) {
-				endToEndStimuliSettings = new ReferencesTableSettings(endToEndFlow, GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli());
+				endToEndStimuliSettings = new ReferencesTableSettings(endToEndFlow, SamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli());
 				generalPart.initEndToEndStimuli(endToEndStimuliSettings);
 			}
 			// init filters
@@ -160,16 +161,16 @@ public class EndToEndFlowGeneralPropertiesEditionComponent extends SinglePartPro
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
 		if (editorKey == GqamViewsRepository.General.Properties.isSchedulable) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable();
+			return SamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable();
 		}
 		if (editorKey == GqamViewsRepository.General.Properties.schedulabilitySlack) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack();
+			return SamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack();
 		}
 		if (editorKey == GqamViewsRepository.General.Properties.endToEndScenario) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario();
+			return SamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario();
 		}
 		if (editorKey == GqamViewsRepository.General.Properties.endToEndStimuli) {
-			return GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli();
+			return SamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli();
 		}
 		return super.associatedFeature(editorKey);
 	}
@@ -224,19 +225,19 @@ public class EndToEndFlowGeneralPropertiesEditionComponent extends SinglePartPro
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			GeneralPropertiesEditionPart generalPart = (GeneralPropertiesEditionPart)editingPart;
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.isSchedulable))
+			if (SamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.isSchedulable))
 				generalPart.setIsSchedulable((Boolean)msg.getNewValue());
 			
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.schedulabilitySlack)) {
+			if (SamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.schedulabilitySlack)) {
 				if (msg.getNewValue() != null) {
 					generalPart.setSchedulabilitySlack(EcoreUtil.convertToString(EcorePackage.Literals.EDOUBLE, msg.getNewValue()));
 				} else {
 					generalPart.setSchedulabilitySlack("");
 				}
 			}
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario().equals(msg.getFeature()) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.endToEndScenario))
+			if (SamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario().equals(msg.getFeature()) && generalPart != null && isAccessible(GqamViewsRepository.General.Properties.endToEndScenario))
 				generalPart.setEndToEndScenario((EObject)msg.getNewValue());
-			if (GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli().equals(msg.getFeature())  && isAccessible(GqamViewsRepository.General.Properties.endToEndStimuli))
+			if (SamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli().equals(msg.getFeature())  && isAccessible(GqamViewsRepository.General.Properties.endToEndStimuli))
 				generalPart.updateEndToEndStimuli();
 			
 		}
@@ -250,10 +251,10 @@ public class EndToEndFlowGeneralPropertiesEditionComponent extends SinglePartPro
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-			GqamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable(),
-			GqamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack(),
-			GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario(),
-			GqamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli()		);
+			SamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable(),
+			SamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack(),
+			SamPackage.eINSTANCE.getEndToEndFlow_EndToEndScenario(),
+			SamPackage.eINSTANCE.getEndToEndFlow_EndToEndStimuli()		);
 		return new NotificationFilter[] {filter,};
 	}
 
@@ -288,16 +289,16 @@ public class EndToEndFlowGeneralPropertiesEditionComponent extends SinglePartPro
 				if (GqamViewsRepository.General.Properties.isSchedulable == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GqamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GqamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(SamPackage.eINSTANCE.getEndToEndFlow_IsSchedulable().getEAttributeType(), newValue);
 				}
 				if (GqamViewsRepository.General.Properties.schedulabilitySlack == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(GqamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(SamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().getEAttributeType(), (String)newValue);
 					}
-					ret = Diagnostician.INSTANCE.validate(GqamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().getEAttributeType(), newValue);
+					ret = Diagnostician.INSTANCE.validate(SamPackage.eINSTANCE.getEndToEndFlow_SchedulabilitySlack().getEAttributeType(), newValue);
 				}
 			} catch (IllegalArgumentException iae) {
 				ret = BasicDiagnostic.toDiagnostic(iae);
