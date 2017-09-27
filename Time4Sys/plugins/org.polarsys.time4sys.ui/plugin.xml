@@ -15,7 +15,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:common.new.menu">
+            locationURI="popup:common.export">
          <command
                commandId="org.polarsys.time4sys.Time4SysProject"
                icon="icons/NewTime4SysModel.png"
