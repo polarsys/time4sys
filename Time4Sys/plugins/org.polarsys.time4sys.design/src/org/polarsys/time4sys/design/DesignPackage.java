@@ -113,13 +113,22 @@ public interface DesignPackage extends EPackage {
 	int DESIGN_MODEL__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Relationships</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESIGN_MODEL__RELATIONSHIPS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DESIGN_MODEL_FEATURE_COUNT = 4;
+	int DESIGN_MODEL_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -186,6 +195,17 @@ public interface DesignPackage extends EPackage {
 	EAttribute getDesignModel_Name();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.design.DesignModel#getRelationships <em>Relationships</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Relationships</em>'.
+	 * @see org.polarsys.time4sys.design.DesignModel#getRelationships()
+	 * @see #getDesignModel()
+	 * @generated
+	 */
+	EReference getDesignModel_Relationships();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +269,14 @@ public interface DesignPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DESIGN_MODEL__NAME = eINSTANCE.getDesignModel_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Relationships</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DESIGN_MODEL__RELATIONSHIPS = eINSTANCE.getDesignModel_Relationships();
 
 	}
 

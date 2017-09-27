@@ -16,7 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Reference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="grm.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="core_elements.ecore#//NamedElemement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//Step" containment="true" eOpposite="#//Step/scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cause" upperBound="-1"
@@ -98,7 +98,7 @@
     <eLiterals name="Fork" value="3"/>
     <eLiterals name="Join" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlPin" abstract="true" eSuperTypes="#//MultiplicityElement grm.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ControlPin" abstract="true" eSuperTypes="#//MultiplicityElement core_elements.ecore#//NamedElemement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The concept is from UML 2.5 Pin, where isControlPin=true."/>
     </eAnnotations>
@@ -208,7 +208,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="repetitions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The higher the value of the priority, the higher the urgency of the step."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="#//BehaviorScenario"
         eOpposite="#//BehaviorScenario/steps"/>
@@ -224,13 +228,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputPin" upperBound="-1"
         eType="#//OutputPin" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkloadEvent" eSuperTypes="grm.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkloadEvent" eSuperTypes="core_elements.ecore#//NamedElemement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="effect" eType="#//BehaviorScenario"
         eOpposite="#//BehaviorScenario/cause"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
         containment="true" eOpposite="#//ArrivalPattern/parent"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WorkloadBehavior" eSuperTypes="grm.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkloadBehavior" eSuperTypes="core_elements.ecore#//NamedElemement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" lowerBound="1"
         upperBound="-1" eType="#//BehaviorScenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="demand" lowerBound="1"

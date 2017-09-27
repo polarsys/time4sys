@@ -15,6 +15,7 @@ package org.polarsys.time4sys.design.provider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+import org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
 import org.polarsys.time4sys.marte.hrm.provider.HrmEditPlugin;
@@ -57,6 +58,7 @@ public final class DesignEditPlugin extends EMFPlugin {
 		     GrmEditPlugin.INSTANCE,
 		     SrmEditPlugin.INSTANCE,
 		     HrmEditPlugin.INSTANCE,
+		     AllocEditPlugin.INSTANCE,
 		   });
 	}
 

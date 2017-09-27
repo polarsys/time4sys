@@ -7,7 +7,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.design.tests.DesignAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.design.edit" editorPluginID="org.polarsys.time4sys.design.editor"
-    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore gqam.genmodel#//gqam grm.genmodel#//grm srm.genmodel#//srm hrm.genmodel#//hrm"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore gqam.genmodel#//gqam grm.genmodel#//grm srm.genmodel#//srm hrm.genmodel#//hrm alloc.genmodel#//alloc"
     operationReflection="true" importOrganizing="true">
   <foreignModel>design.ecore</foreignModel>
   <genPackages prefix="Design" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
@@ -15,8 +15,9 @@
     <genClasses ecoreClass="design.ecore#//DesignModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/workloadBehavior"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/resourcePackage"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/endToEndFlows"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/endToEndFlows"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute design.ecore#//DesignModel/name"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference design.ecore#//DesignModel/relationships"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

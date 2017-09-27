@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated alloc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.alloc.presentation.AllocModelWizardID"
+            name="%_UI_AllocModelWizard_label"
+            class="org.polarsys.time4sys.marte.alloc.presentation.AllocModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AllocModelFile.gif">
+         <description>%_UI_AllocModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated alloc -->
+      <editor
+            id="org.polarsys.time4sys.marte.alloc.presentation.AllocEditorID"
+            name="%_UI_AllocEditor_label"
+            icon="icons/full/obj16/AllocModelFile.gif"
+            extensions="alloc"
+            class="org.polarsys.time4sys.marte.alloc.presentation.AllocEditor"
+            contributorClass="org.polarsys.time4sys.marte.alloc.presentation.AllocActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

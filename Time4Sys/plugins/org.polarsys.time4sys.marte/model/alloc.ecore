@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alloc" nsURI="http://www.polarsys.org/time4sys/marte/alloc/1.0"
+    nsPrefix="alloc">
+  <eClassifiers xsi:type="ecore:EClass" name="Allocate" eSuperTypes="core_elements.ecore#//Abstraction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Allocate is a dependency based on UML::Abstraction. It is a mechanism for associating elements of different types, or in different hierarchies, at an abstract level. Allocate is used for assessing user model consistency and directing future design activity. It is expected that an «allocate» relationship between model elements is a precursor to a more concrete relationship between the elements, their properties, operations, attributes, or sub-classes."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//AllocationKind"
+        defaultValueLiteral="hybrid">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This differentiates the kind of allocations, whether both allocated elements on each side are structural, behavioral, or whether this is a hybrid allocation."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nature" eType="#//AllocationNature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This identifies the purpose of the allocation, whether the allocation is equivalent to a spatial distribution, where several application model elements are distributed to different resources or whether timed elements are scheduled according to a given scheduler."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impliedConstraint" upperBound="-1"
+        eType="ecore:EClass nfp_annotation.ecore#//Constraint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AllocationNature">
+    <eLiterals name="spatialDistribution">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="It indicates that the suppliers are distributed on the clients. Spatial distribution is the allocation of computations to processing elements, of data to memories, and of data/control dependencies to communication resources."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="timeScheduling">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="It indicates that the allocation consists in a temporal/behavioral ordering of the suppliers, the order being given by the clients. Scheduling is the temporal/behavioral ordering of the activities (computations, data storage movements or communication) allocated to each resource."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AllocationKind">
+    <eLiterals name="structural" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that the suppliers and the clients are all structural named elements."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="behavioral" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that the suppliers and the clients are all behavioral named elements."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="hybrid">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that the suppliers and the clients are not of the same kind."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+</ecore:EPackage>

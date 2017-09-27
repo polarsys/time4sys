@@ -14,6 +14,7 @@ package org.polarsys.time4sys.design;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
 import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
@@ -31,6 +32,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackage;
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getResourcePackage <em>Resource Package</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getEndToEndFlows <em>End To End Flows</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.DesignModel#getName <em>Name</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.design.DesignModel#getRelationships <em>Relationships</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.design.DesignPackage#getDesignModel()
@@ -131,5 +133,21 @@ public interface DesignModel extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Relationships</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.alloc.DirectedRelationship}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Relationships</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Relationships</em>' containment reference list.
+	 * @see org.polarsys.time4sys.design.DesignPackage#getDesignModel_Relationships()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<DirectedRelationship> getRelationships();
 
 } // DesignModel

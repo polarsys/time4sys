@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
+import org.polarsys.time4sys.marte.alloc.DirectedRelationship;
 import org.polarsys.time4sys.marte.gqam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
@@ -43,6 +44,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackage;
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getResourcePackage <em>Resource Package</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getEndToEndFlows <em>End To End Flows</em>}</li>
  *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.design.impl.DesignModelImpl#getRelationships <em>Relationships</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,6 +99,16 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRelationships() <em>Relationships</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelationships()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<DirectedRelationship> relationships;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,6 +255,18 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<DirectedRelationship> getRelationships() {
+		if (relationships == null) {
+			relationships = new EObjectContainmentEList<DirectedRelationship>(DirectedRelationship.class, this, DesignPackage.DESIGN_MODEL__RELATIONSHIPS);
+		}
+		return relationships;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -252,6 +276,8 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 				return basicSetResourcePackage(null, msgs);
 			case DesignPackage.DESIGN_MODEL__END_TO_END_FLOWS:
 				return ((InternalEList<?>)getEndToEndFlows()).basicRemove(otherEnd, msgs);
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
+				return ((InternalEList<?>)getRelationships()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -272,6 +298,8 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 				return getEndToEndFlows();
 			case DesignPackage.DESIGN_MODEL__NAME:
 				return getName();
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
+				return getRelationships();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +326,10 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 			case DesignPackage.DESIGN_MODEL__NAME:
 				setName((String)newValue);
 				return;
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
+				getRelationships().clear();
+				getRelationships().addAll((Collection<? extends DirectedRelationship>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,6 +354,9 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 			case DesignPackage.DESIGN_MODEL__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
+				getRelationships().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,6 +377,8 @@ public class DesignModelImpl extends MinimalEObjectImpl.Container implements Des
 				return endToEndFlows != null && !endToEndFlows.isEmpty();
 			case DesignPackage.DESIGN_MODEL__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DesignPackage.DESIGN_MODEL__RELATIONSHIPS:
+				return relationships != null && !relationships.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

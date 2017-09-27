@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="annotation" nsURI="http://www.polarsys.org/time4sys/marte/nfp/annotation/1.0"
+    nsPrefix="nfp_annotation">
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotatedElement" abstract="true" eSuperTypes="core_elements.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//AnnotatedModel"
+        eOpposite="#//AnnotatedModel/owns"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotatedModel" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owns" upperBound="-1" eType="#//AnnotatedElement"
+        containment="true" eOpposite="#//AnnotatedElement/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotationConcern" upperBound="-1"
+        eType="#//ModelingConcern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelingConcern" eSuperTypes="core_elements.ecore#//PackageableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="core_elements.ecore#//Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedElement" upperBound="-1"
+        eType="#//AnnotatedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//AnnotatedModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ConstraintKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstraintKind">
+    <eLiterals name="required"/>
+    <eLiterals name="offered" value="1"/>
+    <eLiterals name="contract" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>
