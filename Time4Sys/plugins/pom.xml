@@ -31,6 +31,13 @@
 <module>org.polarsys.time4sys.mapping.edit</module>
 <module>org.polarsys.time4sys.mapping.editor</module>
 <module>org.polarsys.time4sys.marte</module>
+<module>org.polarsys.time4sys.marte.alloc</module>
+<module>org.polarsys.time4sys.marte.alloc.edit</module>
+<module>org.polarsys.time4sys.marte.alloc.editor</module>
+<module>org.polarsys.time4sys.marte.coreelements</module>
+<module>org.polarsys.time4sys.marte.coreelements.edit</module>
+<module>org.polarsys.time4sys.marte.coreelements.editor</module>
+<module>org.polarsys.time4sys.trace.graphviz</module>
 <module>org.polarsys.time4sys.marte.gqam</module>
 <module>org.polarsys.time4sys.marte.gqam.edit</module>
 <module>org.polarsys.time4sys.marte.gqam.editor</module>
@@ -43,6 +50,12 @@
 <module>org.polarsys.time4sys.marte.nfp</module>
 <module>org.polarsys.time4sys.marte.nfp.edit</module>
 <module>org.polarsys.time4sys.marte.nfp.editor</module>
+<module>org.polarsys.time4sys.marte.nfp.annotation</module>
+<module>org.polarsys.time4sys.marte.nfp.annotation.edit</module>
+<module>org.polarsys.time4sys.marte.nfp.annotation.editor</module>
+<module>org.polarsys.time4sys.marte.sam</module>
+<module>org.polarsys.time4sys.marte.sam.edit</module>
+<module>org.polarsys.time4sys.marte.sam.editor</module>
 <module>org.polarsys.time4sys.marte.srm</module>
 <module>org.polarsys.time4sys.marte.srm.edit</module>
 <module>org.polarsys.time4sys.marte.srm.editor</module>
@@ -55,6 +68,7 @@
 <module>org.polarsys.time4sys.trace.html</module>
 <module>org.polarsys.time4sys.trace.edit</module>
 <module>org.polarsys.time4sys.trace.editor</module>
+<module>org.polarsys.time4sys.trace.timinggraphics</module>
 <module>org.polarsys.time4sys.ui</module>
 <module>org.polarsys.time4sys.ui.perspective</module>
 </modules>
