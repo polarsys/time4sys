@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: GQAM Contextual Explorer contribution
 Bundle-Vendor: http://www.time4sys-projet.fr/
 Bundle-SymbolicName: org.polarsys.time4sys.gqam.contextual.explorer;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.gqam.edit,
  org.polarsys.time4sys.marte.gqam,
- org.polarsys.time4sys.marte.sam;bundle-version="1.0.0"
+ org.polarsys.time4sys.marte.sam

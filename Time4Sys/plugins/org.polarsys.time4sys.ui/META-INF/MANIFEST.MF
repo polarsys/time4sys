@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Time4Sys User Interface
 Bundle-SymbolicName: org.polarsys.time4sys.ui;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.sirius.ext.base,
  org.eclipse.sirius.diagram.ui,

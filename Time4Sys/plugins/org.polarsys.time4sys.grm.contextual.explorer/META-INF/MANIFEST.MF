@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: GRM Contextual Explorer contribution
 Bundle-Vendor: http://www.time4sys-projet.fr/
 Bundle-SymbolicName: org.polarsys.time4sys.grm.contextual.explorer;singleton:=true
-Bundle-Version: 0.0.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
