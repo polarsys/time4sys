@@ -50,6 +50,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.impl.LongDurationImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
@@ -197,7 +198,14 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 	static private void setTimePropery(final Element parent, final String eltName, final Duration value) {
 		final Document doc = parent.getOwnerDocument();
 		final Element prop = doc.createElement(eltName);
-		prop.appendChild(doc.createTextNode(Double.toString(value.convertToUnit(TimeUnitKind.MS).getValue())));
+		final Duration durInPS = value.convertToUnit(TimeUnitKind.PS);
+		final long picoseconds;
+		if (durInPS instanceof LongDurationImpl) {
+			picoseconds = ((LongDurationImpl)durInPS).getValueInPicoSeconds();
+		} else {
+			picoseconds = (long) durInPS.getValue();
+		}
+		prop.appendChild(doc.createTextNode(Long.toString(picoseconds)));
 		parent.appendChild(prop);
 	}
 
@@ -313,9 +321,9 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		return filteredSlices;
 	}
 
-	private static List<Slice> getSlicesOfSlices(Slice sub) {
+	private static List<Slice> getSlicesOfSlices(final Slice sub) {
 		List<Slice> slices = new ArrayList<Slice>();
-		if (sub.getOwnedSubSlices().size()>0){
+		/*if (sub.getOwnedSubSlices().size()>0){
 			slices.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getOwnedSubSlices()){
 				slices = getSlicesOfSlices(slices, owned);
@@ -326,25 +334,25 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			for (Slice owned : sub.getSubSlices()){
 				slices = getSlicesOfSlices(slices, owned);
 			}
-		}
-		return slices;
+		}*/
+		return getSlicesOfSlices(slices, sub);
 	}
 	
-	private static List<Slice> getSlicesOfSlices(List<Slice> slices, Slice sub) {
+	private static List<Slice> getSlicesOfSlices(final List<Slice> accumulator, final Slice sub) {
 		if (sub.getOwnedSubSlices().size()>0){
-			slices.addAll(sub.getOwnedSubSlices());
+			accumulator.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getOwnedSubSlices()){
-				slices = getSlicesOfSlices(slices, sub);
+				getSlicesOfSlices(accumulator, owned);
 			}
 		}
 		if (sub.getSubSlices().size()>0){
-			slices.addAll(sub.getOwnedSubSlices());
+			accumulator.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getSubSlices()){
-				slices = getSlicesOfSlices(slices, sub);
+				getSlicesOfSlices(accumulator, owned);
 			}
 		}
 
-		return slices;
+		return accumulator;
 	}
 
 	static private void createGanttElement(final Element parent, final Slice job) {
