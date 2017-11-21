@@ -19,8 +19,6 @@ public class ActivityExplorerContributionHelper {
 
 	public static final String Analysis_Extension_ID = "org.polarsys.time4sys.analysis.tools.analysisTools"; //$NON-NLS-1$
 
-	private static String Section_Extension_ID = "org.polarsys.time4sys.analysis.tools.section";
-
 	public static void addExtensions() {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		Bundle bundle = Activator.getDefault().getBundle();
@@ -28,12 +26,21 @@ public class ActivityExplorerContributionHelper {
 		int position = 1;
 		for (IConfigurationElement analysisExtension : registry.getConfigurationElementsFor(Analysis_Extension_ID)) {
 
-			String activityExtension = "<extension point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">"
+			String activityExtension = "<plugin><extension point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">"
 					+ "<Activity "
-					+ "class=\"org.polarsys.time4sys.analysis.tools.ActivityExplorerActivityContribution\" "
-					+ "sectionId=\"org.polarsys.time4sys.analysis.tools.section\" "
+					+ "id=\"org.polarsys.time4sys.analysis.tools.Activity" + position+ "\" "
+					+ "class=\""+analysisExtension.getAttribute("class")+"\" "
+					+ "sectionId=\"org.polarsys.time4sys.analysis.tools.analysis.section\" "
 					+ "image=\"icons/Transformation.jpg\" " + "index=\"" + position + "\" " + "name=\""
-					+ analysisExtension.getAttribute("Label") + "\">" + "</Activity>"+"</extension>";
+					+ analysisExtension.getAttribute("Label") + "\">" + "</Activity>"+"</extension> "
+
+					+"<extension point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">"
+					+ "<Activity "
+					+ "id=\"org.polarsys.time4sys.analysis.tools.Validation" + position+ "\" "
+					+ "class=\"org.polarsys.time4sys.analysis.tools.ContextValidationActivities\" "
+					+ "sectionId=\"org.polarsys.time4sys.analysis.tools.validation.section\" "
+					+ "image=\"icons/Transformation.jpg\" " + "index=\"" + position + "\" " + "name=\""
+					+ "Validate context for " +analysisExtension.getAttribute("Label") + " tool" + "\">" + "</Activity>"+"</extension></plugin>";
 			position++;
 
 			try {
@@ -41,11 +48,16 @@ public class ActivityExplorerContributionHelper {
 				Field field = ExtensionRegistry.class.getDeclaredField("masterToken");
 				field.setAccessible(true);
 				Object masterToken = field.get(registry);
-				InputStream is = new ByteArrayInputStream(activityExtension.getBytes());
-				if (!registry.addContribution(is, analysisExtension.getContributor(), true, null, null, masterToken)) {
+				InputStream isAnalysis = new ByteArrayInputStream(activityExtension.getBytes());
+//				InputStream isContextValidation = new ByteArrayInputStream(contextValidationExtension.getBytes());
+				if (!registry.addContribution(isAnalysis, analysisExtension.getContributor(), false, null, null, masterToken)) {
 					System.out.println(
-							"Contribution is not registered : " + is.toString());
+							"Contribution is not registered : " + isAnalysis.toString());
 				}
+//				if (!registry.addContribution(isContextValidation, analysisExtension.getContributor(), false, null, null, masterToken)) {
+//					System.out.println(
+//							"Contribution is not registered : " + isContextValidation.toString());
+//				}
 
 			} catch (NoSuchFieldException | SecurityException e) {
 				// TODO Auto-generated catch block

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
   <ownedViewpoints name="Design" modelFileExtension="time4sys design">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" name="Design Architecture" titleExpression="aql:'['+self.eContainer().name+'] Design Architecture diagram'" showOnStartup="true" domainClass="design.DesignModel">
       <metamodel href="../../org.polarsys.time4sys.marte/model/design.ecore#/"/>
@@ -85,6 +85,13 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
+        <nodeMappings name="Constraint" domainClass="annotation.Constraint">
+          <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
         <edgeMappings name="ComputedEvent2Task" preconditionExpression="aql:diagram.activatedFilters->select(p|p.name=='HideSteps')->size()!=0" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']" targetFinderExpression="aql:self.effect.concurRes">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
@@ -165,6 +172,22 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="EndToEndFlow" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli" domainClass="sam.EndToEndFlow" useDomainElement="true">
+          <style lineStyle="dash_dot" targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ConstraintAnnotatedElement" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']" targetFinderExpression="aql:self.constrainedElement">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings name="Hardware Computing Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="&lt;%self+mainScheduler+mainScheduler.policy+mainScheduler.policy.params%>" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.ProcessingResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SwResource2HwResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']">
           <borderedNodeMappings name="bordered_Scheduler" semanticCandidatesExpression="feature:mainScheduler" semanticElements="aql:self.policy+self.policy.params" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.Scheduler">
             <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:self.policy.policy" tooltipExpression="aql:'Scheduling Policy: ' + self.policy.policy" labelPosition="node" resizeKind="NSEW" width="8" height="3" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
@@ -220,7 +243,7 @@
             </style>
           </conditionnalStyles>
         </containerMappings>
-        <containerMappings name="Software Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="aql:self+schedParams" domainClass="srm.SoftwareResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']">
+        <containerMappings name="Software Resource" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" semanticElements="aql:self+schedParams" domainClass="srm.SoftwareConcurrentResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']">
           <subNodeMappings name="SwTimerResource" preconditionExpression="aql:container.oclIsKindOf(srm::Alarm)" semanticCandidatesExpression="aql:self.timers" domainClass="srm.SoftwareTimerResource">
             <borderedNodeMappings name="StartResourceServicePort" semanticCandidatesExpression="feature:start" semanticElements="feature:start" domainClass="grm.ResourceService">
               <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="aql:'[Start] '+self.name" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
@@ -1092,9 +1115,58 @@
             </initialOperation>
           </ownedTools>
         </toolSections>
+        <toolSections name="Constraints">
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Constraint Creation">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="TimedObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.TimedObserver" referenceName="ownedRule"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:NodeCreationDescription" name="LatencyObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.LatencyObserver" referenceName="ownedRule"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:NodeCreationDescription" name="SchedulingObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SchedulingObserver" referenceName="ownedRule"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="ConstraintedElement" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='ConstraintAnnotatedElement']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool:SetValue" featureName="constrainedElement" valueExpression="aql:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Doublie click tools">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation/>
+          </ownedTools>
+        </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="NORTH_EAST" decoratorPath="/org.polarsys.time4sys.odesign/images/schedulersmall.png" preconditionExpression="aql:self.mainScheduler != null" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']"/>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" decoratorPath="/org.polarsys.time4sys.odesign/images/redflag16.png" preconditionExpression="aql:self.hasDeadline2()" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="NORTH_EAST" preconditionExpression="aql:self.mainScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" preconditionExpression="aql:self.hasDeadline2()" imageExpression="/org.polarsys.time4sys.odesign/images/redflag16.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Computing%20Resource']/@subContainerMappings[name='SubSw']"/>
         </decorationDescriptionsSet>
       </defaultLayer>
       <toolSection name="Behaviours">
@@ -1128,7 +1200,15 @@
           <element name="element"/>
           <elementView name="elementView"/>
           <initialOperation>
-            <firstModelOperations xsi:type="tool:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
+            <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+              <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                <initialOperation/>
+              </buttons>
+              <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                <initialOperation/>
+              </buttons>
+              <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.6 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5"/>
+            </firstModelOperations>
           </initialOperation>
         </ownedTools>
         <ownedTools xsi:type="tool:PopupMenu" name="Behavior Scenario">
@@ -1362,6 +1442,8 @@
       </ownedLineMappings>
       <ownedColumnMappings name="Priority" headerLabelExpression="Priority" featureName="schedParams" labelExpression="service:getPriority">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
@@ -1373,6 +1455,8 @@
       </ownedColumnMappings>
       <ownedColumnMappings name="Period" headerLabelExpression="Period" featureName="pattern" labelExpression="aql:container.getPeriod()">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
@@ -1389,6 +1473,8 @@
       </ownedColumnMappings>
       <ownedColumnMappings name="Offset" headerLabelExpression="Offset" featureName="pattern" labelExpression="aql:container.getOffset()">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
@@ -1402,6 +1488,8 @@
       </ownedColumnMappings>
       <ownedColumnMappings name="Jitter" headerLabelExpression="Jitter" featureName="pattern" labelExpression="aql:container.getJitter()">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
@@ -1415,6 +1503,8 @@
       </ownedColumnMappings>
       <ownedColumnMappings name="CET" headerLabelExpression="CET" featureName="name" labelExpression="aql:container.getTimeIntervalCET(root)">
         <directEdit>
+          <variables name="table" documentation="The current DTable."/>
+          <variables name="line" documentation="The DLine of the current DCell."/>
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
@@ -1439,252 +1529,254 @@
     <entries xsi:type="description:UserFixedColor" red="208" green="226" blue="238" name="CustomGrayedBlue"/>
     <entries xsi:type="description:UserFixedColor" red="159" green="126" blue="226" name="CustomPurple"/>
   </userColorsPalettes>
-  <extensions xsi:type="properties:ViewExtensionDescription" identifier="org.eclipse.sirius.ui.properties">
-    <pages identifier="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@groups.0 //@extensions.0/@groups.2 //@extensions.0/@groups.3 //@extensions.0/@groups.4 //@extensions.0/@groups.5 //@extensions.0/@groups.6"/>
-    <groups identifier="org.eclipse.sirius.ui.properties.namegroup" labelExpression="Properties" domainClass="grm.NamedElement" semanticCandidateExpression="var:self">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:(eStructuralFeature.name='name') and input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextAreaDescription" identifier="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
-          <widget xsi:type="properties:CheckboxDescription" identifier="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-          <widget xsi:type="properties:RadioDescription" identifier="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:(eStructuralFeature.name!='id') and input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.patterngroup" labelExpression="Arrival Pattern" domainClass="gqam.ArrivalPattern" semanticCandidateExpression="aql:self">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextAreaDescription" identifier="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-          <widget xsi:type="properties:RadioDescription" identifier="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
-          <widget xsi:type="properties:CheckboxDescription" identifier="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:self.eClass().eAllStructuralFeatures->select(f|f.containment)">
-        <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
-          <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" identifier="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.referencegroup" labelExpression="Reference">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
-          <widget xsi:type="properties:CheckboxDescription" identifier="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-        <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
-          <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" identifier="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
-        </ifs>
-      </controls>
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:self.eClass().eAllStructuralFeatures->select(f|f.containment)">
-        <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
-          <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" identifier="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.schedulingparamgroup" labelExpression="Scheduling Parameter" domainClass="grm.SchedulingParameter" semanticCandidateExpression="aql:self.schedParams">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.stepgroup" labelExpression="Timing" domainClass="gqam.Step" semanticCandidateExpression="var:self">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:(eStructuralFeature.name='bestCET' or eStructuralFeature.name='worstCET') and eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
-          <widget xsi:type="properties:TextDescription" identifier="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-    </groups>
-    <groups identifier="org.eclipse.sirius.ui.properties.scheduler" labelExpression="Sheduler" domainClass="grm.SchedulingPolicy" semanticCandidateExpression="aql:self.policy">
-      <controls xsi:type="properties:DynamicMappingFor" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-        <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-          <widget xsi:type="properties:RadioDescription" identifier="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
-            <initialOperation>
-              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
-            </initialOperation>
-            <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-              <style>
-                <labelFontFormat>bold</labelFontFormat>
-              </style>
-            </conditionalStyles>
-          </widget>
-        </ifs>
-      </controls>
-    </groups>
+  <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
+    <categories name="Default">
+      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.6"/>
+      <groups name="org.eclipse.sirius.ui.properties.namegroup" labelExpression="Properties" domainClass="grm.NamedElement" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:(eStructuralFeature.name='name') and input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:(eStructuralFeature.name!='id') and input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.patterngroup" labelExpression="Arrival Pattern" domainClass="gqam.ArrivalPattern" semanticCandidateExpression="aql:self">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.eClass().eAllStructuralFeatures->select(f|f.containment)">
+          <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.referencegroup" labelExpression="Reference">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+          <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.eClass().eAllStructuralFeatures->select(f|f.containment)">
+          <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.schedulingparamgroup" labelExpression="Scheduling Parameter" domainClass="grm.SchedulingParameter" semanticCandidateExpression="aql:self.schedParams">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.stepgroup" labelExpression="Timing" domainClass="gqam.Step" semanticCandidateExpression="var:self">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:(eStructuralFeature.name='bestCET' or eStructuralFeature.name='worstCET') and eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.scheduler" labelExpression="Sheduler" domainClass="grm.SchedulingPolicy" semanticCandidateExpression="aql:self.policy">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+          <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+              </initialOperation>
+              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
+                <style>
+                  <labelFontFormat>bold</labelFontFormat>
+                </style>
+              </conditionalStyles>
+            </widget>
+          </ifs>
+        </controls>
+      </groups>
+    </categories>
   </extensions>
 </description:Group>

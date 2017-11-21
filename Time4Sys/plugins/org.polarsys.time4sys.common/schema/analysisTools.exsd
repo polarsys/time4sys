@@ -58,7 +58,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.polarsys.time4sys.analysis.tools.IAnalysisTools"/>
+                  <meta.attribute kind="java" basedOn="org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter:"/>
                </appinfo>
             </annotation>
          </attribute>
