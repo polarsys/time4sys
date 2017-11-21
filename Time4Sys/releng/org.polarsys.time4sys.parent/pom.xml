@@ -28,9 +28,9 @@
    <url>http://download.eclipse.org/releases/mars/</url>
  </repository>
   <repository>
-  <id>SiriusMars</id>
+  <id>SiriusNeon</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/sirius/updates/releases/4.1.6/mars/</url>
+   <url>http://download.eclipse.org/sirius/updates/releases/5.1.0/neon/</url>
  </repository>
   <repository>
    <id>EEF</id>
