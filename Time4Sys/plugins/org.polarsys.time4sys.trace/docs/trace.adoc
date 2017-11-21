@@ -115,7 +115,7 @@ image::trace-class-diagram-overview.png[]
 	
 //End of user code
 
-
+Return the Events of this slice ordered by timestamp.
 
 [[trace_classifier]]
 === Trace classifier
@@ -163,6 +163,10 @@ A generic container of list of events that has either been observed, simulated, 
 * <<schedulingevent_classifier,SchedulingEvent>> from <<trace_package,trace>>
 * <<messageevent_classifier,MessageEvent>> from <<trace_package,trace>>
 * <<valuechangeevent_classifier,ValueChangeEvent>> from <<trace_package,trace>>
+* <<objectvaluechangeevent_classifier,ObjectValueChangeEvent>> from <<trace_package,trace>>
+* <<durationvaluechangeevent_classifier,DurationValueChangeEvent>> from <<trace_package,trace>>
+* <<datasizevaluechangeevent_classifier,DataSizeValueChangeEvent>> from <<trace_package,trace>>
+* <<numbervaluechangeevent_classifier,NumberValueChangeEvent>> from <<trace_package,trace>>
 
 
 
@@ -409,6 +413,7 @@ TODO: write a semantic
 * STATE 
 * AUTOMATON 
 * TEMPORAL_CHAIN 
+* OS 
 
 ==== Semantics
 
@@ -458,6 +463,12 @@ TODO: write a semantic
 
 * <<event_classifier,Event>> from <<trace_package,trace>>
 
+==== Specializations
+
+* <<objectvaluechangeevent_classifier,ObjectValueChangeEvent>> from <<trace_package,trace>>
+* <<durationvaluechangeevent_classifier,DurationValueChangeEvent>> from <<trace_package,trace>>
+* <<datasizevaluechangeevent_classifier,DataSizeValueChangeEvent>> from <<trace_package,trace>>
+* <<numbervaluechangeevent_classifier,NumberValueChangeEvent>> from <<trace_package,trace>>
 
 
 
@@ -465,6 +476,139 @@ TODO: write a semantic
 ==== Semantics
 
 //Start of user code ValueChangeEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[objectvaluechangeevent_classifier]]
+=== ObjectValueChangeEvent classifier
+
+
+
+//Start of user code ObjectValueChangeEvent-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<valuechangeevent_classifier,ValueChangeEvent>> from <<trace_package,trace>>
+
+
+
+
+
+==== Semantics
+
+//Start of user code ObjectValueChangeEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[durationvaluechangeevent_classifier]]
+=== DurationValueChangeEvent classifier
+
+
+
+//Start of user code DurationValueChangeEvent-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<valuechangeevent_classifier,ValueChangeEvent>> from <<trace_package,trace>>
+
+
+
+
+==== Attributes
+
+* value: NFP_Duration [1:1]
+
+==== Semantics
+
+//Start of user code DurationValueChangeEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[datasizevaluechangeevent_classifier]]
+=== DataSizeValueChangeEvent classifier
+
+
+
+//Start of user code DataSizeValueChangeEvent-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<valuechangeevent_classifier,ValueChangeEvent>> from <<trace_package,trace>>
+
+
+
+
+==== Attributes
+
+* value: NFP_DataSize [1:1]
+
+==== Semantics
+
+//Start of user code DataSizeValueChangeEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[numbervaluechangeevent_classifier]]
+=== NumberValueChangeEvent classifier
+
+
+
+//Start of user code NumberValueChangeEvent-overview
+TODO: write an overview
+//End of user code
+
+==== Generalizations
+
+* <<valuechangeevent_classifier,ValueChangeEvent>> from <<trace_package,trace>>
+
+
+
+
+==== Attributes
+
+* value: ENumber [1:1]
+
+==== Semantics
+
+//Start of user code NumberValueChangeEvent-semantics
+TODO: write a semantic
+//End of user code
+
+[[enumber_classifier]]
+=== ENumber classifier
+
+
+
+//Start of user code ENumber-overview
+TODO: write an overview
+//End of user code
+
+
+See java.lang.Number.
+
+//Start of user code ENumber-semantics
+TODO: write a semantic
+//End of user code
+
+[[nfp_datasize_classifier]]
+=== NFP_DataSize classifier
+
+
+
+//Start of user code NFP_DataSize-overview
+TODO: write an overview
+//End of user code
+
+
+See org.polarsys.time4sys.marte.nfp.DataSize.
+
+//Start of user code NFP_DataSize-semantics
 TODO: write a semantic
 //End of user code
 
