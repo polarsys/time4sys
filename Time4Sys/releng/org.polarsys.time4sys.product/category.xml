@@ -18,9 +18,6 @@
    <feature id="org.eclipse.sirius.interpreter.feature" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
-   <feature id="org.eclipse.acceleo" version="0.0.0">
-      <category name="Time4Sys Dependencies"/>
-   </feature>
    <feature id="org.eclipse.eef.sdk.feature" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
@@ -47,9 +44,7 @@
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.8/R20161202101843" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/acceleo/updates/releases/3.5/R201409021433" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/4.1.2/mars/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.7/R20161021093809" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.7.0-N20160909-032108/mars/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.0/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" enabled="true" />
 </site>

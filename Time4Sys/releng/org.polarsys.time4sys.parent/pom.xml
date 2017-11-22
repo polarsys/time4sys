@@ -38,7 +38,7 @@
    <url>http://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601041621/</url>
  </repository>
    <repository>
-   <id>amalgamMars</id>
+   <id>amalgam</id>
    <layout>p2</layout>
    <url>http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/</url>
  </repository>
