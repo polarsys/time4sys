@@ -69,7 +69,7 @@ public class ContextValidationActivities extends AbstractHyperlinkAdapter {
 								ConstraintSeverity severity = ConstraintSeverity.getInstance(constraint.getAttribute("severity"));
 								int status = Integer.valueOf(constraint.getAttribute("statusCode"));
 								String name = constraint.getAttribute("name");
-								IConstraintDescriptor descriptor = createDescriptor(status, severity, name);
+//								IConstraintDescriptor descriptor = createDescriptor(status, severity, name);
 								
 								
 								clazz.validate(null);
@@ -105,56 +105,56 @@ public class ContextValidationActivities extends AbstractHyperlinkAdapter {
 		return result;
 	}
 
-	// To create a new Descriptor
-	private final IConstraintDescriptor createDescriptor(int status, ConstraintSeverity severity, String name) {
-		IConstraintDescriptor descriptor = new AbstractConstraintDescriptor() {
-
-			public boolean targetsTypeOf(EObject object) {
-				return false;
-			}
-
-			public boolean targetsEvent(Notification notification) {
-				return false;
-			}
-
-			public int getStatusCode() {
-				return status;
-			}
-
-			public ConstraintSeverity getSeverity() {
-				return severity;
-			}
-
-			public String getPluginId() {
-				return EMFModelValidationPlugin.getPluginId();
-			}
-
-			public String getName() {
-				return name; //$NON-NLS-1$
-			}
-
-			public String getMessagePattern() {
-				return ""; //$NON-NLS-1$
-			}
-
-			public String getId() {
-				return getPluginId() + ".resourceMarker"; //$NON-NLS-1$
-			}
-
-			public EvaluationMode<?> getEvaluationMode() {
-				return EvaluationMode.BATCH;
-			}
-
-			public String getDescription() {
-				return null;
-			}
-
-			public String getBody() {
-				return null;
-			}
-		};
-		return descriptor;
-	}
+//	 To create a new Descriptor
+//	private final IConstraintDescriptor createDescriptor(int status, ConstraintSeverity severity, String name) {
+//		IConstraintDescriptor descriptor = new AbstractConstraintDescriptor() {
+//
+//			public boolean targetsTypeOf(EObject object) {
+//				return false;
+//			}
+//
+//			public boolean targetsEvent(Notification notification) {
+//				return false;
+//			}
+//
+//			public int getStatusCode() {
+//				return status;
+//			}
+//
+//			public ConstraintSeverity getSeverity() {
+//				return severity;
+//			}
+//
+//			public String getPluginId() {
+//				return EMFModelValidationPlugin.getPluginId();
+//			}
+//
+//			public String getName() {
+//				return name; //$NON-NLS-1$
+//			}
+//
+//			public String getMessagePattern() {
+//				return ""; //$NON-NLS-1$
+//			}
+//
+//			public String getId() {
+//				return getPluginId() + ".resourceMarker"; //$NON-NLS-1$
+//			}
+//
+//			public EvaluationMode<?> getEvaluationMode() {
+//				return EvaluationMode.BATCH;
+//			}
+//
+//			public String getDescription() {
+//				return null;
+//			}
+//
+//			public String getBody() {
+//				return null;
+//			}
+//		};
+//		return descriptor;
+//	}
 
 	// To create a Constraint with this descriptor
 
