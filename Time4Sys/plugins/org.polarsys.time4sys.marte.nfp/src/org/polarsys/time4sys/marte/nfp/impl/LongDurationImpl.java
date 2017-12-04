@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.MathContext;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
@@ -106,6 +107,15 @@ public class LongDurationImpl extends DurationImpl {
 	public double div(final Duration v) {
 		if (v instanceof LongDurationImpl) {
 			return new BigDecimal(picoseconds).divide(new BigDecimal(((LongDurationImpl)v).picoseconds)).doubleValue();
+		} else {
+			return super.div(v);
+		}
+	}
+	
+	@Override
+	public double div(final Duration v, final MathContext mc) {
+		if (v instanceof LongDurationImpl) {
+			return new BigDecimal(picoseconds).divide(new BigDecimal(((LongDurationImpl)v).picoseconds), mc).doubleValue();
 		} else {
 			return super.div(v);
 		}

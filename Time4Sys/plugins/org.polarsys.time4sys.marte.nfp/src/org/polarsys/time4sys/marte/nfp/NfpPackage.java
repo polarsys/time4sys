@@ -179,13 +179,22 @@ public interface NfpPackage extends EPackage {
 	int DURATION___DIV__DURATION = 3;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIV__DURATION_MATHCONTEXT = 4;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___DIVIDE__DURATION = 4;
+	int DURATION___DIVIDE__DURATION = 5;
 
 	/**
 	 * The operation id for the '<em>Is Zero</em>' operation.
@@ -194,7 +203,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___IS_ZERO = 5;
+	int DURATION___IS_ZERO = 6;
 
 	/**
 	 * The operation id for the '<em>Lcm</em>' operation.
@@ -203,7 +212,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___LCM__DURATION = 6;
+	int DURATION___LCM__DURATION = 7;
 
 	/**
 	 * The operation id for the '<em>Max</em>' operation.
@@ -212,7 +221,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___MAX__DURATION = 7;
+	int DURATION___MAX__DURATION = 8;
 
 	/**
 	 * The operation id for the '<em>Min</em>' operation.
@@ -221,7 +230,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___MIN__DURATION = 8;
+	int DURATION___MIN__DURATION = 9;
 
 	/**
 	 * The operation id for the '<em>Multiply</em>' operation.
@@ -230,7 +239,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___MULTIPLY__LONG = 9;
+	int DURATION___MULTIPLY__LONG = 10;
 
 	/**
 	 * The operation id for the '<em>Not Zero</em>' operation.
@@ -239,7 +248,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___NOT_ZERO = 10;
+	int DURATION___NOT_ZERO = 11;
 
 	/**
 	 * The operation id for the '<em>Simplify</em>' operation.
@@ -248,7 +257,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___SIMPLIFY = 11;
+	int DURATION___SIMPLIFY = 12;
 
 	/**
 	 * The operation id for the '<em>Sub</em>' operation.
@@ -257,7 +266,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION___SUB__DURATION = 12;
+	int DURATION___SUB__DURATION = 13;
 
 	/**
 	 * The number of operations of the '<em>Duration</em>' class.
@@ -266,7 +275,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION_OPERATION_COUNT = 13;
+	int DURATION_OPERATION_COUNT = 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
@@ -659,13 +668,22 @@ public interface NfpPackage extends EPackage {
 	int PROBABILISTIC_DURATION___DIV__DURATION = TIME_INTERVAL_OPERATION_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT = TIME_INTERVAL_OPERATION_COUNT + 4;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 4;
+	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Is Zero</em>' operation.
@@ -674,7 +692,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 5;
+	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Lcm</em>' operation.
@@ -683,7 +701,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 6;
+	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Max</em>' operation.
@@ -692,7 +710,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 7;
+	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Min</em>' operation.
@@ -701,7 +719,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
+	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Multiply</em>' operation.
@@ -710,7 +728,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 9;
+	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Not Zero</em>' operation.
@@ -719,7 +737,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 10;
+	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Simplify</em>' operation.
@@ -728,7 +746,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 11;
+	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Sub</em>' operation.
@@ -737,7 +755,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 12;
+	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
@@ -746,7 +764,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 13;
+	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl <em>Discrete Distribution</em>}' class.
@@ -910,6 +928,15 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -1220,6 +1247,15 @@ public interface NfpPackage extends EPackage {
 	int NORMAL_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1491,6 +1527,15 @@ public interface NfpPackage extends EPackage {
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1733,6 +1778,15 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int UNIFORM_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -1988,6 +2042,15 @@ public interface NfpPackage extends EPackage {
 	int COMPOSITE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2108,6 +2171,17 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	int NFP_DURATION = 12;
+
+
+	/**
+	 * The meta object id for the '<em>Math Context</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.math.MathContext
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
+	 * @generated
+	 */
+	int MATH_CONTEXT = 13;
 
 
 	/**
@@ -2305,6 +2379,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDuration__Div__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext) <em>Div</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Div</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext)
+	 * @generated
+	 */
+	EOperation getDuration__Div__Duration_MathContext();
 
 	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration) <em>Divide</em>}' operation.
@@ -2743,6 +2827,17 @@ public interface NfpPackage extends EPackage {
 	EDataType getNFP_Duration();
 
 	/**
+	 * Returns the meta object for data type '{@link java.math.MathContext <em>Math Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Math Context</em>'.
+	 * @see java.math.MathContext
+	 * @model instanceClass="java.math.MathContext"
+	 * @generated
+	 */
+	EDataType getMathContext();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2918,6 +3013,14 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DURATION___DIV__DURATION = eINSTANCE.getDuration__Div__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Div</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DURATION___DIV__DURATION_MATHCONTEXT = eINSTANCE.getDuration__Div__Duration_MathContext();
 
 		/**
 		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
@@ -3278,6 +3381,16 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
+
+		/**
+		 * The meta object literal for the '<em>Math Context</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.math.MathContext
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
+		 * @generated
+		 */
+		EDataType MATH_CONTEXT = eINSTANCE.getMathContext();
 
 	}
 

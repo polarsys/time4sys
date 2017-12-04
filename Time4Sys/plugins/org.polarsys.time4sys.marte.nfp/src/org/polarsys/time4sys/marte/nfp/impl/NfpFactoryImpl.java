@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.nfp.impl;
 
+import java.math.MathContext;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -106,6 +107,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return createDataSizeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.NFP_DURATION:
 				return createNFP_DurationFromString(eDataType, initialValue);
+			case NfpPackage.MATH_CONTEXT:
+				return createMathContextFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -124,6 +127,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return convertDataSizeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.NFP_DURATION:
 				return convertNFP_DurationToString(eDataType, instanceValue);
+			case NfpPackage.MATH_CONTEXT:
+				return convertMathContextToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -283,6 +288,24 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
 		assert(instanceValue == null || instanceValue instanceof Duration);
 		return convertDurationToString((Duration)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MathContext createMathContextFromString(EDataType eDataType, String initialValue) {
+		return (MathContext)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMathContextToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

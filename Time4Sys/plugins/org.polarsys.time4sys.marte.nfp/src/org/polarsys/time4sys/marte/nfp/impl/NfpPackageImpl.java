@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.nfp.impl;
 
+import java.math.MathContext;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -132,6 +133,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	private EDataType nfP_DurationEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mathContextEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -281,7 +289,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Simplify() {
-		return durationEClass.getEOperations().get(11);
+		return durationEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -290,7 +298,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Sub__Duration() {
-		return durationEClass.getEOperations().get(12);
+		return durationEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -308,7 +316,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__IsZero() {
-		return durationEClass.getEOperations().get(5);
+		return durationEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -317,7 +325,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__NotZero() {
-		return durationEClass.getEOperations().get(10);
+		return durationEClass.getEOperations().get(11);
 	}
 
 	/**
@@ -326,15 +334,6 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Max__Duration() {
-		return durationEClass.getEOperations().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDuration__Min__Duration() {
 		return durationEClass.getEOperations().get(8);
 	}
 
@@ -343,7 +342,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDuration__Multiply__long() {
+	public EOperation getDuration__Min__Duration() {
 		return durationEClass.getEOperations().get(9);
 	}
 
@@ -352,8 +351,17 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDuration__Multiply__long() {
+		return durationEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getDuration__Lcm__Duration() {
-		return durationEClass.getEOperations().get(6);
+		return durationEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -370,8 +378,17 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDuration__Divide__Duration() {
+	public EOperation getDuration__Div__Duration_MathContext() {
 		return durationEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDuration__Divide__Duration() {
+		return durationEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -748,6 +765,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getMathContext() {
+		return mathContextEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NfpFactory getNfpFactory() {
 		return (NfpFactory)getEFactoryInstance();
 	}
@@ -782,6 +808,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEOperation(durationEClass, DURATION___COMPARE_TO__DURATION);
 		createEOperation(durationEClass, DURATION___CONVERT_TO_UNIT__TIMEUNITKIND);
 		createEOperation(durationEClass, DURATION___DIV__DURATION);
+		createEOperation(durationEClass, DURATION___DIV__DURATION_MATHCONTEXT);
 		createEOperation(durationEClass, DURATION___DIVIDE__DURATION);
 		createEOperation(durationEClass, DURATION___IS_ZERO);
 		createEOperation(durationEClass, DURATION___LCM__DURATION);
@@ -845,6 +872,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
+		mathContextEDataType = createEDataType(MATH_CONTEXT);
 	}
 
 	/**
@@ -903,6 +931,10 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 
 		op = initEOperation(getDuration__Div__Duration(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDuration__Div__Duration_MathContext(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getMathContext(), "mc", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getDuration__Divide__Duration(), ecorePackage.getELong(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1019,6 +1051,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mathContextEDataType, MathContext.class, "MathContext", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
