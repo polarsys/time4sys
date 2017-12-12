@@ -34,6 +34,7 @@ public class NfpTests extends TestSuite {
 		suite.addTestSuite(DurationTest.class);
 		suite.addTestSuite(TimeIntervalTest.class);
 		suite.addTestSuite(DataSizeTest.class);
+		suite.addTestSuite(DataTxRateTest.class);
 		suite.addTestSuite(ProbabilisticDurationTest.class);
 		suite.addTestSuite(DiscreteDistributionTest.class);
 		suite.addTestSuite(NormalDistributionTest.class);

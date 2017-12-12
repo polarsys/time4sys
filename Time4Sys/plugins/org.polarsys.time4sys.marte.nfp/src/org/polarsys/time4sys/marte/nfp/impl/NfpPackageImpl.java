@@ -25,6 +25,8 @@ import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
+import org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind;
 import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
@@ -63,6 +65,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	private EClass dataSizeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dataTxRateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +135,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	private EEnum dataSizeUnitKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataTxRateUnitKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -594,6 +610,150 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDataTxRate() {
+		return dataTxRateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataTxRate_Value() {
+		return (EAttribute)dataTxRateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDataTxRate_Unit() {
+		return (EAttribute)dataTxRateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Add__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__CompareTo__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__ConvertToUnit__DataTxRateUnitKind() {
+		return dataTxRateEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Div__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Divide__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__IsZero() {
+		return dataTxRateEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Lcm__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Max__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Min__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Multiply__long() {
+		return dataTxRateEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__NotZero() {
+		return dataTxRateEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Simplify() {
+		return dataTxRateEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataTxRate__Sub__DataTxRate() {
+		return dataTxRateEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProbabilisticDuration() {
 		return probabilisticDurationEClass;
 	}
@@ -756,6 +916,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDataTxRateUnitKind() {
+		return dataTxRateUnitKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNFP_Duration() {
 		return nfP_DurationEDataType;
 	}
@@ -843,6 +1012,23 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEOperation(dataSizeEClass, DATA_SIZE___SIMPLIFY);
 		createEOperation(dataSizeEClass, DATA_SIZE___SUB__DATASIZE);
 
+		dataTxRateEClass = createEClass(DATA_TX_RATE);
+		createEAttribute(dataTxRateEClass, DATA_TX_RATE__VALUE);
+		createEAttribute(dataTxRateEClass, DATA_TX_RATE__UNIT);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___ADD__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___COMPARE_TO__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___CONVERT_TO_UNIT__DATATXRATEUNITKIND);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___DIV__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___DIVIDE__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___IS_ZERO);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___LCM__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___MAX__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___MIN__DATATXRATE);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___MULTIPLY__LONG);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___NOT_ZERO);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___SIMPLIFY);
+		createEOperation(dataTxRateEClass, DATA_TX_RATE___SUB__DATATXRATE);
+
 		probabilisticDurationEClass = createEClass(PROBABILISTIC_DURATION);
 
 		discreteDistributionEClass = createEClass(DISCRETE_DISTRIBUTION);
@@ -869,6 +1055,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		// Create enums
 		timeUnitKindEEnum = createEEnum(TIME_UNIT_KIND);
 		dataSizeUnitKindEEnum = createEEnum(DATA_SIZE_UNIT_KIND);
+		dataTxRateUnitKindEEnum = createEEnum(DATA_TX_RATE_UNIT_KIND);
 
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
@@ -1008,6 +1195,46 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		op = initEOperation(getDataSize__Sub__DataSize(), this.getDataSize(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDataSize(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(dataTxRateEClass, DataTxRate.class, "DataTxRate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDataTxRate_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DataTxRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataTxRate_Unit(), this.getDataTxRateUnitKind(), "unit", "B_PER_S", 1, 1, DataTxRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Add__DataTxRate(), this.getDataTxRate(), "add", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__CompareTo__DataTxRate(), ecorePackage.getEInt(), "compareTo", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "anotherDuration", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__ConvertToUnit__DataTxRateUnitKind(), this.getDataTxRate(), "convertToUnit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRateUnitKind(), "unit", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Div__DataTxRate(), ecorePackage.getEDouble(), "div", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Divide__DataTxRate(), ecorePackage.getELong(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataTxRate__IsZero(), ecorePackage.getEBoolean(), "isZero", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Lcm__DataTxRate(), this.getDataTxRate(), "lcm", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Max__DataTxRate(), this.getDataTxRate(), "max", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Min__DataTxRate(), this.getDataTxRate(), "min", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Multiply__long(), this.getDataTxRate(), "multiply", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataTxRate__NotZero(), ecorePackage.getEBoolean(), "notZero", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getDataTxRate__Simplify(), this.getDataTxRate(), "simplify", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataTxRate__Sub__DataTxRate(), this.getDataTxRate(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDataTxRate(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(probabilisticDurationEClass, ProbabilisticDuration.class, "ProbabilisticDuration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(discreteDistributionEClass, DiscreteDistribution.class, "DiscreteDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1048,6 +1275,11 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.KB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.MB);
 		addEEnumLiteral(dataSizeUnitKindEEnum, DataSizeUnitKind.GB);
+
+		initEEnum(dataTxRateUnitKindEEnum, DataTxRateUnitKind.class, "DataTxRateUnitKind");
+		addEEnumLiteral(dataTxRateUnitKindEEnum, DataTxRateUnitKind.BPER_S);
+		addEEnumLiteral(dataTxRateUnitKindEEnum, DataTxRateUnitKind.KB_PER_S);
+		addEEnumLiteral(dataTxRateUnitKindEEnum, DataTxRateUnitKind.MB_PER_S);
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

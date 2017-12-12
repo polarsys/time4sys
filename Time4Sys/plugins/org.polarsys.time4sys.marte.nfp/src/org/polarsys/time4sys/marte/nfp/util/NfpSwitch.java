@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.nfp.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -99,6 +100,12 @@ public class NfpSwitch<T> extends Switch<T> {
 			case NfpPackage.DATA_SIZE: {
 				DataSize dataSize = (DataSize)theEObject;
 				T result = caseDataSize(dataSize);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.DATA_TX_RATE: {
+				DataTxRate dataTxRate = (DataTxRate)theEObject;
+				T result = caseDataTxRate(dataTxRate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -312,6 +319,21 @@ public class NfpSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompositeDistribution(CompositeDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Tx Rate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Tx Rate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataTxRate(DataTxRate object) {
 		return null;
 	}
 

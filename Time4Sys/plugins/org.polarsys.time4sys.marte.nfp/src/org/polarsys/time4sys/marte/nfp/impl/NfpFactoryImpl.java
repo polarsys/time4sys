@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -82,6 +83,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			case NfpPackage.DURATION: return createDuration();
 			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
 			case NfpPackage.DATA_SIZE: return createDataSize();
+			case NfpPackage.DATA_TX_RATE: return createDataTxRate();
 			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
 			case NfpPackage.DISCRETE_DISTRIBUTION: return createDiscreteDistribution();
 			case NfpPackage.BUCKET: return createBucket();
@@ -105,6 +107,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return createTimeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return createDataSizeUnitKindFromString(eDataType, initialValue);
+			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
+				return createDataTxRateUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.NFP_DURATION:
 				return createNFP_DurationFromString(eDataType, initialValue);
 			case NfpPackage.MATH_CONTEXT:
@@ -125,6 +129,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 				return convertTimeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return convertDataSizeUnitKindToString(eDataType, instanceValue);
+			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
+				return convertDataTxRateUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.NFP_DURATION:
 				return convertNFP_DurationToString(eDataType, instanceValue);
 			case NfpPackage.MATH_CONTEXT:
@@ -161,6 +167,16 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	public DataSize createDataSize() {
 		DataSizeImpl dataSize = new DataSizeImpl();
 		return dataSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataTxRate createDataTxRate() {
+		DataTxRateImpl dataTxRate = new DataTxRateImpl();
+		return dataTxRate;
 	}
 
 	/**
@@ -268,6 +284,26 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 * @generated
 	 */
 	public String convertDataSizeUnitKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataTxRateUnitKind createDataTxRateUnitKindFromString(EDataType eDataType, String initialValue) {
+		DataTxRateUnitKind result = DataTxRateUnitKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDataTxRateUnitKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

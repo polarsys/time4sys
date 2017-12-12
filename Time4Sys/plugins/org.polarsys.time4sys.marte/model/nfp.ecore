@@ -112,6 +112,49 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataSizeUnitKind"
         defaultValueLiteral="BYTE"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTxRate">
+    <eOperations name="add" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="anotherDuration" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="unit" lowerBound="1" eType="#//DataTxRateUnitKind"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="lcm" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="max" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="other" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="min" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="other" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="multiply" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="simplify" lowerBound="1" eType="#//DataTxRate"/>
+    <eOperations name="sub" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataTxRateUnitKind"
+        defaultValueLiteral="B_PER_S"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataTxRateUnitKind">
+    <eLiterals name="B_PER_S"/>
+    <eLiterals name="KB_PER_S" value="1" literal="kb/s"/>
+    <eLiterals name="MB_PER_S" value="2" literal="mb/s"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//TimeInterval #//Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteDistribution" eSuperTypes="#//ProbabilisticDuration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buckets" lowerBound="1"

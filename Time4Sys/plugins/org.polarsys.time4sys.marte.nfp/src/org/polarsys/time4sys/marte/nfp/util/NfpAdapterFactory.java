@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -95,6 +96,10 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDataSize(DataSize object) {
 				return createDataSizeAdapter();
+			}
+			@Override
+			public Adapter caseDataTxRate(DataTxRate object) {
+				return createDataTxRateAdapter();
 			}
 			@Override
 			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
@@ -281,6 +286,20 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompositeDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.DataTxRate <em>Data Tx Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @generated
+	 */
+	public Adapter createDataTxRateAdapter() {
 		return null;
 	}
 

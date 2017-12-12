@@ -514,6 +514,169 @@ public interface NfpPackage extends EPackage {
 	int DATA_SIZE_OPERATION_COUNT = 13;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl <em>Data Tx Rate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRate()
+	 * @generated
+	 */
+	int DATA_TX_RATE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE__UNIT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Data Tx Rate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___ADD__DATATXRATE = 0;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___COMPARE_TO__DATATXRATE = 1;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___CONVERT_TO_UNIT__DATATXRATEUNITKIND = 2;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___DIV__DATATXRATE = 3;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___DIVIDE__DATATXRATE = 4;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___IS_ZERO = 5;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___LCM__DATATXRATE = 6;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___MAX__DATATXRATE = 7;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___MIN__DATATXRATE = 8;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___MULTIPLY__LONG = 9;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___NOT_ZERO = 10;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___SIMPLIFY = 11;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE___SUB__DATATXRATE = 12;
+
+	/**
+	 * The number of operations of the '<em>Data Tx Rate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_TX_RATE_OPERATION_COUNT = 13;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -521,7 +684,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getProbabilisticDuration()
 	 * @generated
 	 */
-	int PROBABILISTIC_DURATION = 3;
+	int PROBABILISTIC_DURATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -774,7 +937,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistribution()
 	 * @generated
 	 */
-	int DISCRETE_DISTRIBUTION = 4;
+	int DISCRETE_DISTRIBUTION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1036,7 +1199,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getBucket()
 	 * @generated
 	 */
-	int BUCKET = 5;
+	int BUCKET = 6;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -1082,7 +1245,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int NORMAL_DISTRIBUTION = 6;
+	int NORMAL_DISTRIBUTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1353,7 +1516,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getGeneralizedExtremeValueDistribution()
 	 * @generated
 	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION = 7;
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1633,7 +1796,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getUniformDistribution()
 	 * @generated
 	 */
-	int UNIFORM_DISTRIBUTION = 8;
+	int UNIFORM_DISTRIBUTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1886,7 +2049,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCompositeDistribution()
 	 * @generated
 	 */
-	int COMPOSITE_DISTRIBUTION = 9;
+	int COMPOSITE_DISTRIBUTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -2148,7 +2311,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getTimeUnitKind()
 	 * @generated
 	 */
-	int TIME_UNIT_KIND = 10;
+	int TIME_UNIT_KIND = 11;
 
 
 	/**
@@ -2159,8 +2322,18 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataSizeUnitKind()
 	 * @generated
 	 */
-	int DATA_SIZE_UNIT_KIND = 11;
+	int DATA_SIZE_UNIT_KIND = 12;
 
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRateUnitKind()
+	 * @generated
+	 */
+	int DATA_TX_RATE_UNIT_KIND = 13;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -2170,7 +2343,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 12;
+	int NFP_DURATION = 14;
 
 
 	/**
@@ -2181,7 +2354,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
 	 * @generated
 	 */
-	int MATH_CONTEXT = 13;
+	int MATH_CONTEXT = 15;
 
 
 	/**
@@ -2627,6 +2800,168 @@ public interface NfpPackage extends EPackage {
 	EOperation getDataSize__Sub__DataSize();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.DataTxRate <em>Data Tx Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Tx Rate</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @generated
+	 */
+	EClass getDataTxRate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#getValue()
+	 * @see #getDataTxRate()
+	 * @generated
+	 */
+	EAttribute getDataTxRate_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#getUnit()
+	 * @see #getDataTxRate()
+	 * @generated
+	 */
+	EAttribute getDataTxRate_Unit();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#add(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#add(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Add__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#compareTo(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Compare To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compare To</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#compareTo(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__CompareTo__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#convertToUnit(org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind) <em>Convert To Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Convert To Unit</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#convertToUnit(org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind)
+	 * @generated
+	 */
+	EOperation getDataTxRate__ConvertToUnit__DataTxRateUnitKind();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#div(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Div</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Div</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#div(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Div__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#divide(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Divide</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#divide(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Divide__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#isZero() <em>Is Zero</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Zero</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#isZero()
+	 * @generated
+	 */
+	EOperation getDataTxRate__IsZero();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#lcm(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Lcm</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lcm</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#lcm(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Lcm__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#max(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Max</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Max</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#max(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Max__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#min(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Min</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Min</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#min(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Min__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#multiply(long) <em>Multiply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Multiply</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#multiply(long)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Multiply__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#notZero() <em>Not Zero</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Not Zero</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#notZero()
+	 * @generated
+	 */
+	EOperation getDataTxRate__NotZero();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#simplify() <em>Simplify</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Simplify</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#simplify()
+	 * @generated
+	 */
+	EOperation getDataTxRate__Simplify();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#sub(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Sub</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Sub</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#sub(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Sub__DataTxRate();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration <em>Probabilistic Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2814,6 +3149,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDataSizeUnitKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Data Tx Rate Unit Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+	 * @generated
+	 */
+	EEnum getDataTxRateUnitKind();
 
 	/**
 	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
@@ -3211,6 +3556,136 @@ public interface NfpPackage extends EPackage {
 		EOperation DATA_SIZE___SUB__DATASIZE = eINSTANCE.getDataSize__Sub__DataSize();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl <em>Data Tx Rate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRate()
+		 * @generated
+		 */
+		EClass DATA_TX_RATE = eINSTANCE.getDataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TX_RATE__VALUE = eINSTANCE.getDataTxRate_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TX_RATE__UNIT = eINSTANCE.getDataTxRate_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Add</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___ADD__DATATXRATE = eINSTANCE.getDataTxRate__Add__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Compare To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___COMPARE_TO__DATATXRATE = eINSTANCE.getDataTxRate__CompareTo__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Convert To Unit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___CONVERT_TO_UNIT__DATATXRATEUNITKIND = eINSTANCE.getDataTxRate__ConvertToUnit__DataTxRateUnitKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Div</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___DIV__DATATXRATE = eINSTANCE.getDataTxRate__Div__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___DIVIDE__DATATXRATE = eINSTANCE.getDataTxRate__Divide__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Zero</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___IS_ZERO = eINSTANCE.getDataTxRate__IsZero();
+
+		/**
+		 * The meta object literal for the '<em><b>Lcm</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___LCM__DATATXRATE = eINSTANCE.getDataTxRate__Lcm__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MAX__DATATXRATE = eINSTANCE.getDataTxRate__Max__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Min</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MIN__DATATXRATE = eINSTANCE.getDataTxRate__Min__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiply</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MULTIPLY__LONG = eINSTANCE.getDataTxRate__Multiply__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Not Zero</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___NOT_ZERO = eINSTANCE.getDataTxRate__NotZero();
+
+		/**
+		 * The meta object literal for the '<em><b>Simplify</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___SIMPLIFY = eINSTANCE.getDataTxRate__Simplify();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___SUB__DATATXRATE = eINSTANCE.getDataTxRate__Sub__DataTxRate();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3371,6 +3846,16 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATA_SIZE_UNIT_KIND = eINSTANCE.getDataSizeUnitKind();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRateUnitKind()
+		 * @generated
+		 */
+		EEnum DATA_TX_RATE_UNIT_KIND = eINSTANCE.getDataTxRateUnitKind();
 
 		/**
 		 * The meta object literal for the '<em>NFP Duration</em>' data type.
