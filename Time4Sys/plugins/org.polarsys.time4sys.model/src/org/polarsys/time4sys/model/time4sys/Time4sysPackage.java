@@ -252,13 +252,22 @@ public interface Time4sysPackage extends EPackage {
 	int SIMULATION__TRACE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION__SEED = 3;
+
+	/**
 	 * The number of structural features of the '<em>Simulation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_FEATURE_COUNT = 3;
+	int SIMULATION_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Get Design Model</em>' operation.
@@ -453,6 +462,17 @@ public interface Time4sysPackage extends EPackage {
 	EReference getSimulation_Trace();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.model.time4sys.Simulation#getSeed <em>Seed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Seed</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.Simulation#getSeed()
+	 * @see #getSimulation()
+	 * @generated
+	 */
+	EAttribute getSimulation_Seed();
+
+	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.model.time4sys.Simulation#getDesignModel() <em>Get Design Model</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -618,6 +638,14 @@ public interface Time4sysPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SIMULATION__TRACE = eINSTANCE.getSimulation_Trace();
+
+		/**
+		 * The meta object literal for the '<em><b>Seed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIMULATION__SEED = eINSTANCE.getSimulation_Seed();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Design Model</b></em>' operation.

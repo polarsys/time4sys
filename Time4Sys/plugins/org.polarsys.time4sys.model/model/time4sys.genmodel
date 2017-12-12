@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.model/src" modelPluginID="org.polarsys.time4sys.model"
     modelName="Time4sys" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../org.polarsys.time4sys.marte/model/Alloc.genmodel#//Alloc ../../org.polarsys.time4sys.marte/model/design.genmodel#//design ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.mapping/model/mapping.genmodel#//mapping ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
+    usedGenPackages="../../org.polarsys.time4sys.marte/model/alloc.genmodel#//alloc ../../org.polarsys.time4sys.marte/model/design.genmodel#//design ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.mapping/model/mapping.genmodel#//mapping ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
     operationReflection="true" importOrganizing="true">
   <foreignModel>time4sys.ecore</foreignModel>
   <genPackages prefix="Time4sys" basePackage="org.polarsys.time4sys.model" resource="XMI"

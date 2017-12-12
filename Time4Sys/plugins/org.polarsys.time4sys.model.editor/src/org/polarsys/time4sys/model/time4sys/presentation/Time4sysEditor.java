@@ -129,8 +129,12 @@ import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 import org.polarsys.time4sys.design.provider.DesignItemProviderAdapterFactory;
 import org.polarsys.time4sys.mapping.provider.MappingItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.alloc.provider.AllocItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.gqam.provider.GqamItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.grm.provider.GrmItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.provider.AnnotationItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory;
+import org.polarsys.time4sys.marte.sam.provider.SamItemProviderAdapterFactory;
 import org.polarsys.time4sys.model.time4sys.provider.Time4sysItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.polarsys.time4sys.trace.provider.TraceItemProviderAdapterFactory;
@@ -679,12 +683,16 @@ public class Time4sysEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new Time4sysItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AllocItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DesignItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GqamItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new MappingItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TraceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AnnotationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SamItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

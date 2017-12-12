@@ -12,6 +12,7 @@ package org.polarsys.time4sys.model.time4sys.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.math.BigInteger;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -37,6 +38,7 @@ import org.polarsys.time4sys.trace.Trace;
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.SimulationImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.SimulationImpl#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.SimulationImpl#getTrace <em>Trace</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.SimulationImpl#getSeed <em>Seed</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,6 +83,26 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 	 * @ordered
 	 */
 	protected Trace trace;
+
+	/**
+	 * The default value of the '{@link #getSeed() <em>Seed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final BigInteger SEED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSeed() <em>Seed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSeed()
+	 * @generated
+	 * @ordered
+	 */
+	protected BigInteger seed = SEED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,6 +233,27 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BigInteger getSeed() {
+		return seed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSeed(BigInteger newSeed) {
+		BigInteger oldSeed = seed;
+		seed = newSeed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Time4sysPackage.SIMULATION__SEED, oldSeed, seed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public DesignModel getDesignModel() {
@@ -252,6 +295,8 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 				return getMapping();
 			case Time4sysPackage.SIMULATION__TRACE:
 				return getTrace();
+			case Time4sysPackage.SIMULATION__SEED:
+				return getSeed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,6 +317,9 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 				return;
 			case Time4sysPackage.SIMULATION__TRACE:
 				setTrace((Trace)newValue);
+				return;
+			case Time4sysPackage.SIMULATION__SEED:
+				setSeed((BigInteger)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,6 +342,9 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 			case Time4sysPackage.SIMULATION__TRACE:
 				setTrace((Trace)null);
 				return;
+			case Time4sysPackage.SIMULATION__SEED:
+				setSeed(SEED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -312,6 +363,8 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 				return mapping != null;
 			case Time4sysPackage.SIMULATION__TRACE:
 				return trace != null;
+			case Time4sysPackage.SIMULATION__SEED:
+				return SEED_EDEFAULT == null ? seed != null : !SEED_EDEFAULT.equals(seed);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -342,6 +395,8 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", seed: ");
+		result.append(seed);
 		result.append(')');
 		return result.toString();
 	}

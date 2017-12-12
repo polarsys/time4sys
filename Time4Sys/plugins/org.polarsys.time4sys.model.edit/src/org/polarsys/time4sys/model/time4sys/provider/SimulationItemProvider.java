@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Loï¿½c Fejoz - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.model.time4sys.provider;
 
@@ -69,6 +69,7 @@ public class SimulationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addSeedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class SimulationItemProvider
 				 getString("_UI_Simulation_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Simulation_name_feature", "_UI_Simulation_type"),
 				 Time4sysPackage.Literals.SIMULATION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Seed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSeedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Simulation_seed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Simulation_seed_feature", "_UI_Simulation_type"),
+				 Time4sysPackage.Literals.SIMULATION__SEED,
 				 true,
 				 false,
 				 false,
@@ -165,6 +188,7 @@ public class SimulationItemProvider
 
 		switch (notification.getFeatureID(Simulation.class)) {
 			case Time4sysPackage.SIMULATION__NAME:
+			case Time4sysPackage.SIMULATION__SEED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case Time4sysPackage.SIMULATION__MAPPING:
