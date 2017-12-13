@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.polarsys.time4sys.builder.ProjectBuilder;
+import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -37,9 +38,12 @@ import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
+import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 
 /**
  * @author loic
@@ -69,6 +73,11 @@ public class DesignBuilder {
 			ResourcePackage resPkg = grmFactory.createResourcePackage();
 			design.setResourcePackage(resPkg);
 		}
+	}
+
+	public DesignBuilder(final ProjectBuilder projectBuilder, final DesignModel designModel) {
+		this(designModel);
+		prjBuidler = projectBuilder;
 	}
 
 	public ProcessorBuilder hasAProcessor() {
@@ -302,6 +311,22 @@ public class DesignBuilder {
 	public DesignBuilder isNamed(final String name) {
 		design.setName(name);
 		return this;
+	}
+
+	public SimulationBuilder hasASimulation() {
+		if (prjBuidler == null) {
+			final Simulation simu = Time4sysFactory.eINSTANCE.createSimulation();
+			return new SimulationBuilder(prjBuidler, simu).of(this);
+		} else {
+			final SimulationBuilder result = prjBuidler.hasASimulation().of(this);
+			return result;
+		}
+		
+	}
+
+	public EndToEndFlowConstraintBuilder firstEndToEndFlowsConstraints() {
+		final EndToEndFlow first = design.getEndToEndFlows().get(0);
+		return new EndToEndFlowConstraintBuilder(first);
 	}
 
 

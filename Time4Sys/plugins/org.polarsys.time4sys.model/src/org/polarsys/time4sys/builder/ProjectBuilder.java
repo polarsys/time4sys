@@ -21,14 +21,18 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
+import org.polarsys.time4sys.builder.design.ProcessorBuilder;
+import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 
 public class ProjectBuilder {
@@ -69,7 +73,7 @@ public class ProjectBuilder {
 			project = prj;
 		}
 		DesignModel designModel = project.getDesign();
-		design = new DesignBuilder(designModel);
+		design = new DesignBuilder(this, designModel);
 		project.setDesign(design.build());
 		assert(design != null);
 		assert(project.getDesign() == design.build());
@@ -120,5 +124,11 @@ public class ProjectBuilder {
 	public ProjectBuilder isNamed(final String name) {
 		project.setName(name);
 		return this;
+	}
+
+	public SimulationBuilder hasASimulation() {
+		final Simulation theSimu = Time4sysFactory.eINSTANCE.createSimulation();
+		project.getSimulations().add(theSimu);
+		return new SimulationBuilder(this, theSimu);
 	}
 }

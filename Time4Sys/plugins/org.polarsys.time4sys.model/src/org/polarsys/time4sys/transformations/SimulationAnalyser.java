@@ -40,13 +40,16 @@ import org.polarsys.time4sys.trace.Slice;
 public class SimulationAnalyser {
 	
 	public static Transformation analyse(final Simulation simu) {
+		if (simu == null) {
+			return null;
+		}
 		Project project = null;
 		EObject container = simu.eContainer();
 		if (container instanceof Project) {
 			project = (Project)container;
 		}
 		final Transformation transfo = analyse(project, simu);
-		if (project != null) {
+		if (project != null && transfo != null) {
 			project.getTransformations().add(transfo);
 		}
 		return transfo;
@@ -69,7 +72,7 @@ public class SimulationAnalyser {
 		this.project = project;
 		this.simu = simu;
 		assert(simu != null);
-		assert(project != null);
+		//assert(project != null);
 	}
 
 	private Transformation transform() {

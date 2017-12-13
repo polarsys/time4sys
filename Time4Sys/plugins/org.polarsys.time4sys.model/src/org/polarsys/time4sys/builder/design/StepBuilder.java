@@ -172,6 +172,16 @@ public class StepBuilder {
 		name = value;
 		return this;
 	}
+
+	public String name() {
+		if (name != null) {
+			return name;
+		}
+		if (step != null) {
+			return step.getName();
+		}
+		return name;
+	}
 	
 	protected WorkloadEventBuilder getWorkloadEvent() {
 		WorkloadEventBuilder cause;
@@ -337,6 +347,11 @@ public class StepBuilder {
 	public StepBuilder isAtomic(boolean value) {
 		isAtomic  = value;
 		return this;
+	}
+
+	public AlarmBuilder activation() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

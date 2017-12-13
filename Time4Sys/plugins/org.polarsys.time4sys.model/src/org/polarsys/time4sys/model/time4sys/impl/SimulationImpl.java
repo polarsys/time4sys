@@ -257,6 +257,9 @@ public class SimulationImpl extends MinimalEObjectImpl.Container implements Simu
 	 * @generated NOT
 	 */
 	public DesignModel getDesignModel() {
+		if (mapping == null) {
+			return null;
+		}
 		for(EObject obj: mapping.getSources("model")) {
 			if (obj instanceof DesignModel) {
 				return (DesignModel)obj;

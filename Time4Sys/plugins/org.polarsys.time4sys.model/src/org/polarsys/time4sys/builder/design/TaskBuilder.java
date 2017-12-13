@@ -53,6 +53,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private String jitter;
 	private int nbEvents = 1;
 	private String windowSize;
+	private String deadline;
 	
 	public TaskBuilder() {
 		this(null, srmFactory.createSoftwareSchedulableResource());
@@ -83,6 +84,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		}
 		for(StepBuilder st: ownedSteps) {
 			st.build();
+		}
+		if (deadline != null) {
+			design.has(EndToEndFlowConstraintBuilder.anEndToEndConstraint().from(firstStep()).to(this).withDeadline(deadline));
+			deadline = null;
 		}
 		return task;
 	}
@@ -156,6 +161,8 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public TaskBuilder ofDeadline(final String value) {
 		getSchedParams("Deadline").setValue(value);
+		/* NB: An EndToEndFlow will also be created later */
+		deadline = value;
 		return this;
 	}
 	

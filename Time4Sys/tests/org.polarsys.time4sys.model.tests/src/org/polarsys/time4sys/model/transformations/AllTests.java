@@ -17,6 +17,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 	IdentityDerivationTest.class,
+	SimulationAnalyserTest.class,
 	ToPeriodicDerivationTest.class
 	})
 public class AllTests {

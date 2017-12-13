@@ -58,7 +58,9 @@ public class IdentityDerivation {
 		final DesignModel target = copy();
 		
 		final Transformation transformation = Time4sysFactory.eINSTANCE.createTransformation();
-		project.getTransformations().add(transformation);
+		if (project != null) {
+			project.getTransformations().add(transformation);
+		}
 		transformation.setMapping(mapping);
 		transformation.setResult(target);
 		mapping.getTargets().add(mappingFactory.createResourceArtefact("copy", target.eResource()));
