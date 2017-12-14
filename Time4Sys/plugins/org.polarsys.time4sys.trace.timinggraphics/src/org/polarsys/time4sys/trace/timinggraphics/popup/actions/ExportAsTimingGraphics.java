@@ -51,6 +51,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.nfp.impl.LongDurationImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
@@ -308,11 +309,15 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
 	private static int addLoadItem(final Element pieDatasetElt, final Slice sub, final Duration simDuration) {
 		final Duration sliceDuration = SliceDurationStatistics.computeExecutionTimeDuration(sub);
-		final int percentage = (int) (sliceDuration.div(simDuration, MathContext.DECIMAL32) * 10000.0);
-		final Element pieItemElt = createChildElement(pieDatasetElt, "PieItem");
-		setTextProperty(pieItemElt, "Key", sub.getName());
-		setPercentagePropertyTwoDigits(pieItemElt, "Value", percentage);
-		return percentage;
+		if (sliceDuration.notZero()) {
+			final int percentage = (int) (sliceDuration.div(simDuration, MathContext.DECIMAL32) * 10000.0);
+			final Element pieItemElt = createChildElement(pieDatasetElt, "PieItem");
+			setTextProperty(pieItemElt, "Key", sub.getName());
+			setPercentagePropertyTwoDigits(pieItemElt, "Value", percentage);
+			return percentage;
+		} else {
+			return 0;
+		}
 	}
 
 	protected void exportGanttXml(final OutputStreamWriter w) throws IOException, ParserConfigurationException, TransformerException {
