@@ -37,6 +37,12 @@ import javax.xml.transform.stream.StreamResult;
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
 import org.eclipse.core.internal.resources.TestingSupport;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
+import org.osgi.service.prefs.Preferences;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -50,6 +56,7 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
@@ -60,6 +67,7 @@ import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.Slice;
 import org.polarsys.time4sys.trace.SliceKind;
 import org.polarsys.time4sys.trace.Trace;
+import org.polarsys.time4sys.trace.timinggraphics.Activator;
 import org.polarsys.time4sys.trace.util.SliceDurationStatistics;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -108,24 +116,51 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		if (slice == null && trace == null) {
 			return;
 		}
-		final Exception errGantt = writeGanttXml(new File("timingGraphics/gantt.xml"));
-		final Exception errGraphics = writeGraphicsXml(new File("timingGraphics/graphics.xml"));
+		final File folder = getTimingGraphicsFolder();
+		final Exception errGantt = writeGanttXml(new File(folder, "gantt.xml"));
+		final Exception errGraphics = writeGraphicsXml(new File(folder, "graphics.xml"));
 		if ((errGantt == null || errGraphics == null) && 
 			MessageDialog.openQuestion(shell, "Trace Timing Graphics(tm) exporter",
 				"Gantt chart(s) exported in " + output.getAbsolutePath() + ".\n" + "Would you view it?")) {
+			/* If no errors raised during the export */
 			if (output.exists() && output.isFile()) {
-				final IFileStore fileStore = EFS.getLocalFileSystem().getStore(output.toURI());
-				final IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+				final Bundle plugin = Platform.getBundle("org.polarsys.time4sys.trace.timinggraphics");
+				if (plugin == null) {
+					/* And no Timing Graphics plugin */
+					final IFileStore fileStore = EFS.getLocalFileSystem().getStore(output.toURI());
+					final IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
-				try {
-					IDE.openEditorOnFileStore(page, fileStore);
-				} catch (PartInitException e) {
-					// Put your exception handler here if you wish to
+					try {
+						IDE.openEditorOnFileStore(page, fileStore);
+					} catch (PartInitException e) {
+						// Put your exception handler here if you wish to
+						e.printStackTrace();
+					}
+				} else {
+					/* And the Timing graphics plugin is installed */
+					try {
+						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView("com.linkconet.e3.dashboard.realtimecharts.ui.views.GanttChartsView");
+					} catch (PartInitException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
 		}
 	}
 	
+	private File getTimingGraphicsFolder() {
+		final ScopedPreferenceStore preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, "com.linkconet.e3.dashboard.RealTimeCharts.ui");
+		final String path = preferenceStore.getString("xmlFilesLocation");
+		final File folder;
+		if (path == null || path.trim().isEmpty()) {
+			folder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "timingGraphics");
+		} else {
+			folder = new File(path);
+		}
+		return folder;
+	}
+
 	private Exception writeGanttXml(final File outputFile) {
 		output = outputFile;
 		final FileOutputStream os;
