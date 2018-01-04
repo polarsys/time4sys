@@ -71,4 +71,14 @@ public class SliceBuilder {
 		return slice;
 	}
 
+	public SliceBuilder ofKindPackage() {
+		slice.setKindLabel("package");
+		return this;
+	}
+	
+	public SliceBuilder ofKind(final SliceKind k) {
+		slice.setKind(k);
+		return this;
+	}
+
 }

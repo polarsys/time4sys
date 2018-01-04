@@ -22,9 +22,17 @@ public class MappingBuilder {
 		simu = simulationBuilder;
 		mapping = aMap;
 	}
+	
+	public MappingBuilder(final Mapping aMap) {
+		this(null, aMap);
+	}
 
 	public void about(final DesignBuilder designBuilder) {
 		final DesignModel model = designBuilder.build();
+		about(model);
+	}
+	
+	public void about(DesignModel model) {
 		mapping.getSources().add(MappingFactory.eINSTANCE.createMappableArtefact("model", model));
 	}
 
