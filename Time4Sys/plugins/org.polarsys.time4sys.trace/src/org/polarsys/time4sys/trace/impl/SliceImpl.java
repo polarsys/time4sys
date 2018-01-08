@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.trace.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -648,6 +649,19 @@ public class SliceImpl extends MinimalEObjectImpl.Container implements Slice {
 		result.append(kindLabel);
 		result.append(')');
 		return result.toString();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public <T extends Event> List<T> getAggregatedEvents(Class<T> clz) {
+		final int count = getAggregatedEvents().size();
+		final List<T> result = new ArrayList<T>(count);
+		for(Event evt: getAggregatedEvents()) {
+			if (clz.isInstance(evt)) {
+				result.add((T)evt);
+			}
+		}
+		return result;
 	}
 
 } //SliceImpl

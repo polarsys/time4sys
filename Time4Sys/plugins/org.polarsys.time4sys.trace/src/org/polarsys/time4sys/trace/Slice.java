@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.trace;
 
+import java.util.List;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.nfp.Duration;
@@ -252,6 +254,14 @@ public interface Slice extends EObject {
 	 */
 	EList<Event> getAggregatedEvents();
 
+	/**
+	 * Filter aggregated events by type
+	 * @param clz
+	 * @return
+	 * @generated NOT
+	 */
+	<T extends Event> List<T> getAggregatedEvents(Class<T> clz);
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
