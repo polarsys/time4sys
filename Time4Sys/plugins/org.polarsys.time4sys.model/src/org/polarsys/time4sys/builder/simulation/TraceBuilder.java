@@ -28,6 +28,7 @@ import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
+import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;
@@ -37,6 +38,7 @@ import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.trace.DurationValueChangeEvent;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.SchedulingEventKind;
@@ -388,6 +390,16 @@ public class TraceBuilder {
 		evt.setTimestamp(currentTime);
 		evt.setKind(kind);
 		trace.getEvents().add(evt);
+		parent.getEvents().add(evt);
+		return evt;
+	}
+	
+	public DurationValueChangeEvent logWorkloadDemand(final Duration currentTime, final Slice parent, final ProcessingResource procResource, final Duration workload) {
+		final DurationValueChangeEvent evt = TraceFactory.eINSTANCE.createDurationValueChangeEvent();
+		evt.setTimestamp(currentTime);
+		evt.setTrace(trace);
+		evt.setObject(procResource);
+		//TODO evt.setProperty(prop);
 		parent.getEvents().add(evt);
 		return evt;
 	}
