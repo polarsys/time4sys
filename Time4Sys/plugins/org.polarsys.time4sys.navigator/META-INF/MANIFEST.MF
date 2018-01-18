@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UML Designer Navigator
+Bundle-SymbolicName: org.polarsys.time4sys.navigator;singleton:=true
+Bundle-Version: 8.0.0.qualifier
+Bundle-Activator: org.polarsys.time4sys.navigator.Activator
+Bundle-Vendor: Artal Technologies
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.navigator,
+ org.eclipse.emf.transaction,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.sirius.common.ui,
+ org.eclipse.sirius.ui,
+ org.eclipse.ui.views.properties.tabbed,
+ org.polarsys.time4sys.marte.coreelements,
+ org.eclipse.sirius.diagram,
+ org.polarsys.time4sys.model.editor
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.sirius.business.api.session,
+ org.polarsys.time4sys.model.time4sys

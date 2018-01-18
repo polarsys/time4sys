@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.internal.EMFModelValidationPlugin;
+import org.eclipse.emf.validation.internal.service.AbstractGetConstraintsOperation;
 import org.eclipse.emf.validation.model.ConstraintSeverity;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
@@ -57,6 +58,10 @@ public class ContextValidationActivities extends AbstractHyperlinkAdapter {
 					}
 				}
 			}
+			//Peut être à t'on seulement besoin du context
+			//Si le context est OK -> On récupère le ClientSelector et on le passe à true
+			// -> on fait un validate
+			//On repasse le contexte Selector à false.
 			for (IConfigurationElement constraintProvider : getAllReferencedExtension(registry,
 					"org.eclipse.emf.validation.constraintProviders")) {
 				for (IConfigurationElement constraints : constraintProvider.getChildren("constraints")) {
@@ -69,10 +74,8 @@ public class ContextValidationActivities extends AbstractHyperlinkAdapter {
 								ConstraintSeverity severity = ConstraintSeverity.getInstance(constraint.getAttribute("severity"));
 								int status = Integer.valueOf(constraint.getAttribute("statusCode"));
 								String name = constraint.getAttribute("name");
-//								IConstraintDescriptor descriptor = createDescriptor(status, severity, name);
 								
-								
-								clazz.validate(null);
+								Diagnostician.INSTANCE.validate(root);
 							} catch (CoreException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
