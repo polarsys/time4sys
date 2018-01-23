@@ -10,7 +10,9 @@
  *******************************************************************************/
 package org.polarsys.time4sys.transformations;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.util.EList;
@@ -140,10 +142,33 @@ public class SimulationAnalyser {
 	}
 
 	private SchedulingEvent searchTerminationEvent(final EList<Event> events) {
-		return (SchedulingEvent)events.get(events.size() - 1);
+		final ArrayList<Event> reversedEvents = new ArrayList<Event>(events);
+		Collections.reverse(reversedEvents);
+		for(Event evt: reversedEvents) {
+			if (evt instanceof SchedulingEvent) {
+				final SchedulingEvent schedEvt = (SchedulingEvent) evt;
+				switch(schedEvt.getKind()) {
+				case TERMINATED:
+					return schedEvt;
+				default:
+				}
+			}
+		}
+		return null;
 	}
 
 	private SchedulingEvent searchActivationEvent(final EList<Event> events) {
-		return (SchedulingEvent)events.get(0);
+		for(Event evt: events) {
+			if (evt instanceof SchedulingEvent) {
+				final SchedulingEvent schedEvt = (SchedulingEvent) evt;
+				switch(schedEvt.getKind()) {
+				case RUNNING: //in case of malformed trace having direct running and no activated
+				case ACTIVATED:
+					return schedEvt;
+				default:
+				}
+			}
+		}
+		return null;
 	}
 }
