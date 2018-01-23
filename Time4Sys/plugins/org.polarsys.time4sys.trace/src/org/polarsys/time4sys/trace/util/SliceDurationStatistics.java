@@ -42,13 +42,19 @@ public class SliceDurationStatistics {
 		return accumulator;
 	}
 
-	private static Duration computeExecutionTimeDuration(final List<Event> events) {
+	/**
+	 * Compute the total execution duration.  
+	 * @param events
+	 * @return
+	 */
+	public static Duration computeExecutionTimeDuration(final List<Event> events) {
 		Duration accumulator = LongDurationImpl.ZERO;
 		Duration start = null;;
 		for(Event evt: events) {
 			if (evt instanceof SchedulingEvent) {
 				final SchedulingEvent schedEvt = (SchedulingEvent)evt;
 				switch(schedEvt.getKind()) {
+				case ACTIVATED: // In case the events is malformed.
 				case RUNNING:
 					start = schedEvt.getTimestamp();
 					break;
