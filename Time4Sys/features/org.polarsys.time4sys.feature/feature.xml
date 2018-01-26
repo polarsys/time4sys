@@ -35,13 +35,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.analysis"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.time4sys.analysis.contextual.explorer"
          download-size="0"
          install-size="0"
@@ -83,6 +76,13 @@
          version="0.0.0"
          unpack="false"/>
 
+    <plugin
+         id="org.polarsys.time4sys.docs"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
    <plugin
          id="org.polarsys.time4sys.example.ui"
          download-size="0"
@@ -139,6 +139,48 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.time4sys.marte.alloc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.alloc.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.alloc.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
+   <plugin
+         id="org.polarsys.time4sys.marte.coreelements"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.coreelements.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.coreelements.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
    <plugin
          id="org.polarsys.time4sys.marte.gqam"
          download-size="0"
@@ -287,20 +329,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.time4sys.ui.perspective"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.time4sys.mapping"
          download-size="0"
          install-size="0"
@@ -342,8 +370,15 @@
          version="0.0.0"
          unpack="false"/>
 
+      <plugin
+         id="org.polarsys.time4sys.trace.exectime.csv"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
    <plugin
-         id="org.polarsys.time4sys.docs"
+         id="org.polarsys.time4sys.trace.graphviz"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -351,6 +386,20 @@
 
    <plugin
          id="org.polarsys.time4sys.trace.html"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.ui.perspective"
          download-size="0"
          install-size="0"
          version="0.0.0"
