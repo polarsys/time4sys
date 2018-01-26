@@ -62,6 +62,7 @@
 <module>org.polarsys.time4sys.model</module>
 <module>org.polarsys.time4sys.model.edit</module>
 <module>org.polarsys.time4sys.model.editor</module>
+<module>org.polarsys.time4sys.navigator</module>
 <module>org.polarsys.time4sys.odesign</module>
 <module>org.polarsys.time4sys.srm.contextual.explorer</module>
 <module>org.polarsys.time4sys.trace</module>
