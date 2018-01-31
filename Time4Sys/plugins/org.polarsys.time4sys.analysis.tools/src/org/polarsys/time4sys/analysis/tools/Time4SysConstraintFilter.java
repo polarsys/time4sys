@@ -13,7 +13,6 @@ public class Time4SysConstraintFilter implements IConstraintFilter{
 	   */
 	  public boolean accept(IConstraintDescriptor constraint_p, EObject target_p) {
 	    boolean result = true;
-	    constraint_p.
 	    return result;
 	}
 
