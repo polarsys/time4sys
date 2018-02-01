@@ -265,6 +265,28 @@
          version="0.0.0"
          unpack="false"/>
 
+	<plugin
+         id="org.polarsys.time4sys.marte.nfp.annotation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.nfp.annotation.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.nfp.annotation.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+		 
    <plugin
          id="org.polarsys.time4sys.marte.srm"
          download-size="0"
@@ -405,6 +427,14 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.time4sys.trace.timinggraphics"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+		 
    <plugin
          id="org.polarsys.time4sys.trace.html"
          download-size="0"
