@@ -287,6 +287,27 @@
          unpack="false"/>
 
    <plugin
+         id="org.polarsys.time4sys.marte.sam"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.sam.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.sam.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+		 
+   <plugin
          id="org.polarsys.time4sys.model"
          download-size="0"
          install-size="0"
