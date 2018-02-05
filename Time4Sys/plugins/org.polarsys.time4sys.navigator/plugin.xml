@@ -229,12 +229,6 @@
            schemeId="org.polarsys.time4sys.navigator.scheme"
            sequence="M1+X">
      </key>
-     <key
-           commandId="org.polarsys.time4sys.navigator.commands.delete"
-           contextId="org.eclipse.ui.contexts.window"
-           schemeId="org.polarsys.time4sys.navigator.scheme"
-           sequence="M1+Suppr">
-     </key>
      <scheme
            id="org.polarsys.time4sys.navigator.scheme"
            name="navigator.scheme">

@@ -172,10 +172,10 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EndToEndFlow" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli" domainClass="sam.EndToEndFlow" useDomainElement="true">
+        <edgeMappings name="EndToEndFlow" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli.pattern" domainClass="sam.EndToEndFlow" useDomainElement="true">
           <style lineStyle="dash_dot" targetArrow="InputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
-            <centerLabelStyleDescription iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
+            <centerLabelStyleDescription labelExpression="feature:name" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -1073,7 +1073,7 @@
         </toolSections>
         <toolSections name="Constraints">
           <ownedTools xsi:type="tool_1:ToolGroup" name="Constraint Creation">
-            <tools xsi:type="tool_1:NodeCreationDescription" name="TimedObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="TimedObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -1082,7 +1082,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:NodeCreationDescription" name="LatencyObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="LatencyObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -1091,7 +1091,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:NodeCreationDescription" name="SchedulingObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="SchedulingObserver" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='Constraint']" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -1109,6 +1109,20 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source">
                 <subModelOperations xsi:type="tool:SetValue" featureName="constrainedElement" valueExpression="aql:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="EndToEndFlow" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" iconPath="/org.polarsys.time4sys.odesign/images/Event2Step.gif">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sam.EndToEndFlow" referenceName="endToEndFlows" variableName="endToEndFlow">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="endToEndStimuli" valueExpression="aql:source.eContainer()"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="endToEndScenario" valueExpression="var:target"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

@@ -30,9 +30,6 @@
    <feature id="org.eclipse.sirius.runtime.ide.eef" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
-   <feature id="org.eclipse.sirius.specifier" version="0.0.0">
-      <category name="Time4Sys Dependencies"/>
-   </feature>
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
          Install Time4Sys plugins.
