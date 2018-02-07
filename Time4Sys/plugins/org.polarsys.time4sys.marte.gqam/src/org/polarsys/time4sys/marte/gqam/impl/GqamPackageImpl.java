@@ -54,6 +54,7 @@ import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.gqam.util.GqamValidator;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
@@ -268,6 +269,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EEnum laxityKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DataSizeEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1211,6 +1219,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getNFP_DataSize() {
+		return nfP_DataSizeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNFP_Duration() {
 		return nfP_DurationEDataType;
 	}
@@ -1368,6 +1385,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		laxityKindEEnum = createEEnum(LAXITY_KIND);
 
 		// Create data types
+		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 	}
 
@@ -1471,7 +1489,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEClass(communicationChannelEClass, CommunicationChannel.class, "CommunicationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(communicationStepEClass, CommunicationStep.class, "CommunicationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationStep_MsgSize(), ecorePackage.getEInt(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationStep_MsgSize(), this.getNFP_DataSize(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationStep_ComRes(), theGrmPackage.getCommunicationResource(), null, "comRes", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlPinEClass, ControlPin.class, "ControlPin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1570,6 +1588,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		addEEnumLiteral(laxityKindEEnum, LaxityKind.OTHER);
 
 		// Initialize data types
+		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource

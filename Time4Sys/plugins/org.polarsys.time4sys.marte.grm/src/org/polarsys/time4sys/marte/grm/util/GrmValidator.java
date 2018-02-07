@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
@@ -193,6 +195,10 @@ public class GrmValidator extends EObjectValidator {
 				return validateTransmModeKind((TransmModeKind)value, diagnostics, context);
 			case GrmPackage.NFP_DURATION:
 				return validateNFP_Duration((Duration)value, diagnostics, context);
+			case GrmPackage.NFP_DATA_SIZE:
+				return validateNFP_DataSize((DataSize)value, diagnostics, context);
+			case GrmPackage.NFP_DATA_TX_RATE:
+				return validateNFP_DataTxRate((DataTxRate)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -885,6 +891,24 @@ public class GrmValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNFP_Duration(Duration nfP_Duration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_DataSize(DataSize nfP_DataSize, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_DataTxRate(DataTxRate nfP_DataTxRate, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

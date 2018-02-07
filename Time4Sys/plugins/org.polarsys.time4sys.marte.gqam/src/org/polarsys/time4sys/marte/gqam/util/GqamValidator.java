@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.polarsys.time4sys.marte.gqam.*;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
@@ -162,6 +163,8 @@ public class GqamValidator extends EObjectValidator {
 				return validateConnectorKind((ConnectorKind)value, diagnostics, context);
 			case GqamPackage.LAXITY_KIND:
 				return validateLaxityKind((LaxityKind)value, diagnostics, context);
+			case GqamPackage.NFP_DATA_SIZE:
+				return validateNFP_DataSize((DataSize)value, diagnostics, context);
 			case GqamPackage.NFP_DURATION:
 				return validateNFP_Duration((Duration)value, diagnostics, context);
 			default:
@@ -626,6 +629,15 @@ public class GqamValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLaxityKind(LaxityKind laxityKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_DataSize(DataSize nfP_DataSize, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

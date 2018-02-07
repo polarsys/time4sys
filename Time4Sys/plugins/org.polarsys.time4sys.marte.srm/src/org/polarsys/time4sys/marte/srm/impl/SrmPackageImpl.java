@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 import org.polarsys.time4sys.marte.srm.AccessPolicyKind;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
@@ -1711,7 +1712,7 @@ public class SrmPackageImpl extends EPackageImpl implements SrmPackage {
 
 		// Obtain other dependent packages
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
 
 		// Create type parameters
 

@@ -38,8 +38,9 @@ import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SynchResource;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
-import org.polarsys.time4sys.marte.srm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.DeviceBroker;
 import org.polarsys.time4sys.marte.srm.InterruptResource;
@@ -232,7 +233,7 @@ public class SrmAdapterFactory extends AdapterFactoryImpl {
 				return createENamedElementAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+			public Adapter caseModelElement(ModelElement object) {
 				return createModelElementAdapter();
 			}
 			@Override
@@ -240,7 +241,7 @@ public class SrmAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+			public Adapter casePackageableElement(PackageableElement object) {
 				return createPackageableElementAdapter();
 			}
 			@Override

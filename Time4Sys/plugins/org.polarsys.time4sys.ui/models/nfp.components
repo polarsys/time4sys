@@ -38,6 +38,24 @@
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//TimeInterval"/>
       </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_NxRr8AwSEeifrKRhvY_zag" name="DataSize" views="_NG09QLhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_mjVQUAwSEeifrKRhvY_zag" name="value" views="_NG09QrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataSize/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_y8xSMAwSEeifrKRhvY_zag" name="unit">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataSize/unit"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataSize"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_KchhMAwTEeifrKRhvY_zag" name="DataTxRate" views="_NG09QLhpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Vk1SYAwTEeifrKRhvY_zag" name="value" views="_NG09QrhpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataTxRate/value"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_Z0V_wAwTEeifrKRhvY_zag" name="unit" views="_NG09Q7hpEeaQLaG4Uu9sMw">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataTxRate/unit"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.ecore#//DataTxRate"/>
+      </bindings>
     </categories>
     <model href="platform:/resource/org.polarsys.time4sys.marte/model/nfp.genmodel#//nfp"/>
   </eef-components:PropertiesEditionContext>

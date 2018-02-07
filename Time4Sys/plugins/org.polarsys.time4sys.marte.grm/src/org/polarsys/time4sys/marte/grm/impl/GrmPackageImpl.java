@@ -67,7 +67,10 @@ import org.polarsys.time4sys.marte.grm.TransmModeKind;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
 import org.polarsys.time4sys.marte.grm.util.GrmValidator;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -354,6 +357,20 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType nfP_DataSizeEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DataTxRateEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum schedPolicyKindEEnum = null;
 
 	/**
@@ -410,7 +427,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eINSTANCE.eClass();
+		CoreElementsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGrmPackage.createPackageContents();
@@ -1386,6 +1403,24 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getNFP_DataSize() {
+		return nfP_DataSizeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_DataTxRate() {
+		return nfP_DataTxRateEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSchedPolicyKind() {
 		return schedPolicyKindEEnum;
 	}
@@ -1574,6 +1609,8 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
+		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
+		nfP_DataTxRateEDataType = createEDataType(NFP_DATA_TX_RATE);
 	}
 
 	/**
@@ -1600,7 +1637,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1652,10 +1689,10 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEAttribute(getCommunicationEndPoint_PacketSize(), ecorePackage.getEInt(), "packetSize", null, 0, 1, CommunicationEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationMediaEClass, CommunicationMedia.class, "CommunicationMedia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationMedia_ElementSize(), ecorePackage.getEInt(), "elementSize", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_Capacity(), ecorePackage.getEFloat(), "capacity", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_PacketTime(), ecorePackage.getEFloat(), "packetTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_BlockingTime(), ecorePackage.getEFloat(), "blockingTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_ElementSize(), this.getNFP_DataSize(), "elementSize", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_Capacity(), this.getNFP_DataTxRate(), "capacity", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_PacketTime(), this.getNFP_Duration(), "packetTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_BlockingTime(), this.getNFP_Duration(), "blockingTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationMedia_TransmMode(), this.getTransmModeKind(), "transmMode", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceEClass, ComputingResource.class, "ComputingResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1819,6 +1856,8 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_DataTxRateEDataType, DataTxRate.class, "NFP_DataTxRate", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

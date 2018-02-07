@@ -88,7 +88,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationChannel" eSuperTypes="grm.ecore#//SchedulableResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationStep" eSuperTypes="#//Step">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="#//NFP_DataSize"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comRes" eType="ecore:EClass grm.ecore#//CommunicationResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConnectorKind">
@@ -146,6 +146,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="Once" eSuperTypes="#//ArrivalPattern"/>
   <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//ControlPin">

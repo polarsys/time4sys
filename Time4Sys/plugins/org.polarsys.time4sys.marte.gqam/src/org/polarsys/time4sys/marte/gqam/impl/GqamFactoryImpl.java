@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.polarsys.time4sys.marte.gqam.*;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
@@ -107,6 +108,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 				return createConnectorKindFromString(eDataType, initialValue);
 			case GqamPackage.LAXITY_KIND:
 				return createLaxityKindFromString(eDataType, initialValue);
+			case GqamPackage.NFP_DATA_SIZE:
+				return createNFP_DataSizeFromString(eDataType, initialValue);
 			case GqamPackage.NFP_DURATION:
 				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
@@ -126,6 +129,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 				return convertConnectorKindToString(eDataType, instanceValue);
 			case GqamPackage.LAXITY_KIND:
 				return convertLaxityKindToString(eDataType, instanceValue);
+			case GqamPackage.NFP_DATA_SIZE:
+				return convertNFP_DataSizeToString(eDataType, instanceValue);
 			case GqamPackage.NFP_DURATION:
 				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
@@ -411,6 +416,24 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 */
 	public String convertLaxityKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
+		return (DataSize)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

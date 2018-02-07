@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,7 +236,7 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 				return createENamedElementAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+			public Adapter caseModelElement(ModelElement object) {
 				return createModelElementAdapter();
 			}
 			@Override
@@ -242,7 +244,7 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+			public Adapter casePackageableElement(PackageableElement object) {
 				return createPackageableElementAdapter();
 			}
 			@Override

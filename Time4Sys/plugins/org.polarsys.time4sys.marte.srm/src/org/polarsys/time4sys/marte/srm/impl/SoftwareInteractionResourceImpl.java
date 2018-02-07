@@ -41,7 +41,9 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
 import org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.srm.QueuePolicyKind;
 import org.polarsys.time4sys.marte.srm.SoftwareInteractionResource;
 import org.polarsys.time4sys.marte.srm.SoftwareResource;
@@ -1129,7 +1131,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -1139,7 +1141,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+		if (baseClass == PackageableElement.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -1203,7 +1205,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
@@ -1213,7 +1215,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+		if (baseClass == PackageableElement.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
@@ -1276,7 +1278,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (baseOperationID) {
 				default: return -1;
 			}
@@ -1286,7 +1288,7 @@ public abstract class SoftwareInteractionResourceImpl extends CommunicationEndPo
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement.class) {
+		if (baseClass == PackageableElement.class) {
 			switch (baseOperationID) {
 				default: return -1;
 			}

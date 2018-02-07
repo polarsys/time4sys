@@ -8,10 +8,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationMedia" eSuperTypes="#//CommunicationResource #//ProcessingResource">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementSize" eType="#//NFP_DataSize"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="#//NFP_DataTxRate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmMode" eType="#//TransmModeKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComputingResource" eSuperTypes="#//ProcessingResource"/>
@@ -208,4 +208,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="energy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataTxRate" instanceClassName="org.polarsys.time4sys.marte.nfp.DataTxRate"/>
 </ecore:EPackage>

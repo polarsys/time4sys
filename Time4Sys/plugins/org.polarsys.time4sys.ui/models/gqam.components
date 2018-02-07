@@ -117,7 +117,7 @@
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG7bhpEeaQLaG4Uu9sMw" name="isAtomic" views="_HfHHfbhpEeaQLaG4Uu9sMw">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//Step/isAtomic"/>
         </properties>
-        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG-LhpEeaQLaG4Uu9sMw" name="msgSize" views="_HfHHq7hpEeaQLaG4Uu9sMw">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG-LhpEeaQLaG4Uu9sMw" name="msgSize">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//CommunicationStep/msgSize"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHG7rhpEeaQLaG4Uu9sMw" name="blockingTime" views="_HfHHfrhpEeaQLaG4Uu9sMw">
@@ -259,10 +259,10 @@
           <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/period"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHGbhpEeaQLaG4Uu9sMw" name="jitter" views="_HfHHz7hpEeaQLaG4Uu9sMw">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/jitter"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/jitter"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHGrhpEeaQLaG4Uu9sMw" name="phase" views="_HfHH0LhpEeaQLaG4Uu9sMw">
-          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/phase"/>
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/phase"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHG7hpEeaQLaG4Uu9sMw" name="occurences" views="_HfHH0bhpEeaQLaG4Uu9sMw">
           <model xsi:type="ecore:EAttribute" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/occurences"/>
@@ -271,7 +271,7 @@
           <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/parent"/>
         </properties>
         <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_HfHHHLhpEeaQLaG4Uu9sMw" name="reference" views="_HfHH0rhpEeaQLaG4Uu9sMw">
-          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern/reference"/>
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//ArrivalPattern/reference"/>
         </properties>
         <model xsi:type="ecore:EClass" href="platform:/resource/org.polarsys.time4sys.marte/model/gqam.ecore#//PeriodicPattern"/>
       </bindings>
@@ -537,9 +537,6 @@
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHdLhpEeaQLaG4Uu9sMw" name="name">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
-          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHq7hpEeaQLaG4Uu9sMw" name="msgSize">
-            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
-          </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHH2rhpEeaQLaG4Uu9sMw" name="referenceName">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
@@ -678,6 +675,14 @@
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
           <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHerhpEeaQLaG4Uu9sMw" name="respTime">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_0i8hoAwZEeifrKRhvY_zag" name="Network">
+        <elements xsi:type="eef-views:Container" xmi:id="_3p_LEAwZEeifrKRhvY_zag" name="Network properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_HfHHq7hpEeaQLaG4Uu9sMw" name="msgSize">
             <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
           </elements>
         </elements>

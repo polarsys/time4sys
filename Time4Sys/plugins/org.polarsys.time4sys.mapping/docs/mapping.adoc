@@ -42,7 +42,7 @@ The root object of a mapping file will be ...a Mapping object with one source an
 
 
 .mapping-class-diagram-overview
-[caption="mapping class diagram overview -- http://www.polarsys.org/time4sys/trace/1.0"]
+[caption="mapping class diagram overview -- http://www.polarsys.org/time4sys/mapping/1.0"]
 image::mapping-class-diagram-overview.png[]
 
 

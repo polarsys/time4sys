@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -296,7 +297,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int ACCESS_CONTROL_POLICY__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,7 +306,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
+	int ACCESS_CONTROL_POLICY__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Access Control Policy</em>' class.
@@ -314,7 +315,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ACCESS_CONTROL_POLICY_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -323,7 +324,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int ACCESS_CONTROL_POLICY___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Access Control Policy</em>' class.
@@ -332,7 +333,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACCESS_CONTROL_POLICY_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ACCESS_CONTROL_POLICY_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -341,7 +342,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT__EANNOTATIONS;
+	int RESOURCE_PACKAGEABLE_ELEMENT__EANNOTATIONS = CoreElementsPackage.PACKAGEABLE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,7 +351,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT__NAME;
+	int RESOURCE_PACKAGEABLE_ELEMENT__NAME = CoreElementsPackage.PACKAGEABLE_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Resource Packageable Element</em>' class.
@@ -359,7 +360,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_PACKAGEABLE_ELEMENT_FEATURE_COUNT = CoreElementsPackage.PACKAGEABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -368,7 +369,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
+	int RESOURCE_PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING = CoreElementsPackage.PACKAGEABLE_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Packageable Element</em>' class.
@@ -377,7 +378,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT = CoreElementsPackage.PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2226,7 +2227,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int PROTECTION_PARAMETER__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2235,7 +2236,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
+	int PROTECTION_PARAMETER__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Priority Ceiling</b></em>' attribute.
@@ -2244,7 +2245,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__PRIORITY_CEILING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PROTECTION_PARAMETER__PRIORITY_CEILING = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Preemption Level</b></em>' attribute.
@@ -2253,7 +2254,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER__PREEMPTION_LEVEL = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PROTECTION_PARAMETER__PREEMPTION_LEVEL = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Protection Parameter</em>' class.
@@ -2262,7 +2263,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PROTECTION_PARAMETER_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2271,7 +2272,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int PROTECTION_PARAMETER___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Protection Parameter</em>' class.
@@ -2280,7 +2281,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROTECTION_PARAMETER_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int PROTECTION_PARAMETER_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2469,7 +2470,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int RESOURCE_CONTROL_POLICY__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2478,7 +2479,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
+	int RESOURCE_CONTROL_POLICY__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Resource Control Policy</em>' class.
@@ -2487,7 +2488,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_CONTROL_POLICY_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2496,7 +2497,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int RESOURCE_CONTROL_POLICY___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Control Policy</em>' class.
@@ -2505,7 +2506,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONTROL_POLICY_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_CONTROL_POLICY_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2795,7 +2796,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__EANNOTATIONS;
+	int RESOURCE_PACKAGE__EANNOTATIONS = CoreElementsPackage.PACKAGE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2804,7 +2805,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__NAME;
+	int RESOURCE_PACKAGE__NAME = CoreElementsPackage.PACKAGE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' containment reference list.
@@ -2813,7 +2814,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE__OWNED_ELEMENT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE__OWNED_ELEMENT;
+	int RESOURCE_PACKAGE__OWNED_ELEMENT = CoreElementsPackage.PACKAGE__OWNED_ELEMENT;
 
 	/**
 	 * The number of structural features of the '<em>Resource Package</em>' class.
@@ -2822,7 +2823,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE_FEATURE_COUNT + 0;
+	int RESOURCE_PACKAGE_FEATURE_COUNT = CoreElementsPackage.PACKAGE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2831,7 +2832,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE___GET_EANNOTATION__STRING;
+	int RESOURCE_PACKAGE___GET_EANNOTATION__STRING = CoreElementsPackage.PACKAGE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Package</em>' class.
@@ -2840,7 +2841,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PACKAGE_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.PACKAGE_OPERATION_COUNT + 0;
+	int RESOURCE_PACKAGE_OPERATION_COUNT = CoreElementsPackage.PACKAGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
@@ -2921,7 +2922,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int RESOURCE_SERVICE__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2930,7 +2931,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
+	int RESOURCE_SERVICE__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' container reference.
@@ -2939,7 +2940,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE__CONTEXT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_SERVICE__CONTEXT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Service</em>' class.
@@ -2948,7 +2949,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_SERVICE_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2957,7 +2958,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int RESOURCE_SERVICE___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Service</em>' class.
@@ -2966,7 +2967,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_SERVICE_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3308,7 +3309,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__EANNOTATIONS = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int SCHEDULING_PARAMETER__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3317,7 +3318,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__NAME = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT__NAME;
+	int SCHEDULING_PARAMETER__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -3326,7 +3327,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__VALUE = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SCHEDULING_PARAMETER__VALUE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Scheduling Parameter</em>' class.
@@ -3335,7 +3336,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER_FEATURE_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SCHEDULING_PARAMETER_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3344,7 +3345,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER___GET_EANNOTATION__STRING = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int SCHEDULING_PARAMETER___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Scheduling Parameter</em>' class.
@@ -3353,7 +3354,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER_OPERATION_COUNT = org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SCHEDULING_PARAMETER_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4211,6 +4212,26 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	int NFP_DURATION = 40;
+
+	/**
+	 * The meta object id for the '<em>NFP Data Size</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataSize()
+	 * @generated
+	 */
+	int NFP_DATA_SIZE = 41;
+
+	/**
+	 * The meta object id for the '<em>NFP Data Tx Rate</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataTxRate()
+	 * @generated
+	 */
+	int NFP_DATA_TX_RATE = 42;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
@@ -5350,6 +5371,28 @@ public interface GrmPackage extends EPackage {
 	EDataType getNFP_Duration();
 
 	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>NFP Data Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Data Size</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.DataSize"
+	 * @generated
+	 */
+	EDataType getNFP_DataSize();
+
+	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.DataTxRate <em>NFP Data Tx Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Data Tx Rate</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.DataTxRate"
+	 * @generated
+	 */
+	EDataType getNFP_DataTxRate();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6309,6 +6352,26 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
+
+		/**
+		 * The meta object literal for the '<em>NFP Data Size</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataSize
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataSize()
+		 * @generated
+		 */
+		EDataType NFP_DATA_SIZE = eINSTANCE.getNFP_DataSize();
+
+		/**
+		 * The meta object literal for the '<em>NFP Data Tx Rate</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataTxRate()
+		 * @generated
+		 */
+		EDataType NFP_DATA_TX_RATE = eINSTANCE.getNFP_DataTxRate();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.

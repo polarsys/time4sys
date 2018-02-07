@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourceInterface;
 import org.polarsys.time4sys.marte.grm.ResourcePort;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
@@ -327,7 +328,7 @@ public class ResourcePortImpl extends CommunicationEndPointImpl implements Resou
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -359,7 +360,7 @@ public class ResourcePortImpl extends CommunicationEndPointImpl implements Resou
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
@@ -390,7 +391,7 @@ public class ResourcePortImpl extends CommunicationEndPointImpl implements Resou
 				default: return -1;
 			}
 		}
-		if (baseClass == org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class) {
+		if (baseClass == ModelElement.class) {
 			switch (baseOperationID) {
 				default: return -1;
 			}

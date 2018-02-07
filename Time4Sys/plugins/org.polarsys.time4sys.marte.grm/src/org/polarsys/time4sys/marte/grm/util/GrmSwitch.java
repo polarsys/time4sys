@@ -18,7 +18,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -1057,7 +1059,7 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+	public T caseModelElement(ModelElement object) {
 		return null;
 	}
 
@@ -1087,7 +1089,7 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 

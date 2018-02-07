@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.time4sys.marte.grm.*;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.ClockResource;
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
@@ -154,6 +155,10 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return createTransmModeKindFromString(eDataType, initialValue);
 			case GrmPackage.NFP_DURATION:
 				return createNFP_DurationFromString(eDataType, initialValue);
+			case GrmPackage.NFP_DATA_SIZE:
+				return createNFP_DataSizeFromString(eDataType, initialValue);
+			case GrmPackage.NFP_DATA_TX_RATE:
+				return createNFP_DataTxRateFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -175,6 +180,10 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return convertTransmModeKindToString(eDataType, instanceValue);
 			case GrmPackage.NFP_DURATION:
 				return convertNFP_DurationToString(eDataType, instanceValue);
+			case GrmPackage.NFP_DATA_SIZE:
+				return convertNFP_DataSizeToString(eDataType, instanceValue);
+			case GrmPackage.NFP_DATA_TX_RATE:
+				return convertNFP_DataTxRateToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -535,6 +544,42 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
 		assert(instanceValue == null || instanceValue instanceof Duration);
 		return NfpFactory.eINSTANCE.convertDurationToString((Duration)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
+		return (DataSize)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataTxRate createNFP_DataTxRateFromString(EDataType eDataType, String initialValue) {
+		return (DataTxRate)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNFP_DataTxRateToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

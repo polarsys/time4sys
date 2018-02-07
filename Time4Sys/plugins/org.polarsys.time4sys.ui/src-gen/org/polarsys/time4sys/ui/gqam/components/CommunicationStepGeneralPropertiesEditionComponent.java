@@ -58,7 +58,6 @@ import org.polarsys.time4sys.ui.views.gqam.parts.GqamViewsRepository;
 
 
 // End of user code
-
 /**
  * 
  * 

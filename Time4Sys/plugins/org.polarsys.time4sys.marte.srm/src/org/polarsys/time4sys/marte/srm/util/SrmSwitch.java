@@ -37,8 +37,9 @@ import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SynchResource;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
-import org.polarsys.time4sys.marte.srm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.DeviceBroker;
 import org.polarsys.time4sys.marte.srm.InterruptResource;
@@ -678,7 +679,7 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+	public T caseModelElement(ModelElement object) {
 		return null;
 	}
 
@@ -708,7 +709,7 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 

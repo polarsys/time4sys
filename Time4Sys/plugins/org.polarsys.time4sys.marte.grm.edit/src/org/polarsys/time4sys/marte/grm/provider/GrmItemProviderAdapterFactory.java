@@ -39,6 +39,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.util.GrmAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -969,7 +971,7 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 	}
 
 	/**
-	 * A child creation extender for the {@link org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage}.
+	 * A child creation extender for the {@link CoreElementsPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -981,7 +983,7 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected static class CreationSwitch extends org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch<Object> {
+		protected static class CreationSwitch extends CoreElementsSwitch<Object> {
 			/**
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
@@ -1017,92 +1019,92 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 			public Object casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createClockResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createCommunicationMedia()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createComputingResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createConcurrencyResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createDeviceResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSynchResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createMutualExclusionResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceBroker()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceInstance()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceInterface()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceManager()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourcePackage()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createScheduler()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSchedulableResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSecondaryScheduler()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createStorageResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createTimerResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createUsageTypedAmount()));
 
 				return null;

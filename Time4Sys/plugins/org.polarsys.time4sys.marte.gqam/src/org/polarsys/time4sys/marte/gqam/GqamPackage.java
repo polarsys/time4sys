@@ -3831,6 +3831,16 @@ public interface GqamPackage extends EPackage {
 	int LAXITY_KIND = 28;
 
 	/**
+	 * The meta object id for the '<em>NFP Data Size</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_DataSize()
+	 * @generated
+	 */
+	int NFP_DATA_SIZE = 29;
+
+	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3838,7 +3848,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 29;
+	int NFP_DURATION = 30;
 
 
 	/**
@@ -4856,6 +4866,17 @@ public interface GqamPackage extends EPackage {
 	EEnum getLaxityKind();
 
 	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>NFP Data Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Data Size</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataSize
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.DataSize"
+	 * @generated
+	 */
+	EDataType getNFP_DataSize();
+
+	/**
 	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5706,6 +5727,16 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LAXITY_KIND = eINSTANCE.getLaxityKind();
+
+		/**
+		 * The meta object literal for the '<em>NFP Data Size</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataSize
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_DataSize()
+		 * @generated
+		 */
+		EDataType NFP_DATA_SIZE = eINSTANCE.getNFP_DataSize();
 
 		/**
 		 * The meta object literal for the '<em>NFP Duration</em>' data type.

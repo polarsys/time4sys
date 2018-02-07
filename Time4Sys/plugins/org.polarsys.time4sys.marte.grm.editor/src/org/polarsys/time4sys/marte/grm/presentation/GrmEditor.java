@@ -117,6 +117,7 @@ import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -674,7 +675,7 @@ public class GrmEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new CoreElementsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
