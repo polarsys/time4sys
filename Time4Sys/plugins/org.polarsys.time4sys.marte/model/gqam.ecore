@@ -2,9 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gqam" nsURI="http://www.polarsys.org/time4sys/marte/gqam/1.0"
     nsPrefix="gqam">
-  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="Same as the UML 2.5 Pin with isControl=true."/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AcquireStep" eSuperTypes="#//Step">
     <eStructuralFeatures xsi:type="ecore:EReference" name="acqRes" eType="ecore:EClass grm.ecore#//Resource"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resUnits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -98,12 +95,19 @@
     <eLiterals name="Fork" value="3"/>
     <eLiterals name="Join" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlPin" abstract="true" eSuperTypes="#//MultiplicityElement core_elements.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="#//MultiplicityElement core_elements.ecore#//NamedElement #//ObjectNode">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The concept is from UML 2.5 Pin, where isControlPin=true."/>
+      <details key="documentation" value="The concept is from UML 2.5 Pin"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControl" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contrary to UML specification, default is true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="#//Step">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -119,12 +123,16 @@
         eType="#//NFP_Duration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" eSuperTypes="#//Step"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//ControlPin">
+  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//Pin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="from UML 2.5"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
-        eType="#//OutputPin" eOpposite="#//OutputPin/successors"/>
+        eType="#//OutputPin" eOpposite="#//OutputPin/successors">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="In UML 2.5, this would be an ActivityEdge."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LatencyObserver" eSuperTypes="#//TimedObserver">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latency" eType="#//NFP_Duration"/>
@@ -149,7 +157,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="Once" eSuperTypes="#//ArrivalPattern"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//ControlPin">
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//Pin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="from UML 2.5"/>
     </eAnnotations>
@@ -239,5 +247,45 @@
         eOpposite="#//BehaviorScenario/cause"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
         containment="true" eOpposite="#//ArrivalPattern/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordering" eType="#//ObjectNodeOrderingKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates how the tokens held by the ObjectNode are ordered for selection to traverse ActivityEdges outgoing from the ObjectNode.&#xD;&#xA;from UML 2.5"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the type of the tokens that the ObjectNode hold.&#xD;&#xA;Same as UML 2.5 OCL expression: self.type.name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ObjectNodeOrderingKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="ObjectNodeOrderingKind is an enumeration indicating queuing order for offering the tokens held by an ObjectNode.&#xD;&#xA;from UML 2.5"/>
+    </eAnnotations>
+    <eLiterals name="UNORDERED">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are unordered."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LIFO" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are queued in a last in, first out manner."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FIFO" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are queued in a first in, first out manner."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ORDERED" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are ordered.&#xD;&#xA;ORDERED means that an algorithm exists on how to choose the order but is not LIFO nor FIFO.&#xD;&#xA;For example, it could FIFO within a priority level.&#xD;&#xA;The ObjectNode.selection attribute shall point out a procedure for that."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
 </ecore:EPackage>

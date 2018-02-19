@@ -4,7 +4,11 @@
     nsPrefix="core">
   <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Dependency"/>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="#//PackageableElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DirectedRelationship #//PackageableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DirectedRelationship #//PackageableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
