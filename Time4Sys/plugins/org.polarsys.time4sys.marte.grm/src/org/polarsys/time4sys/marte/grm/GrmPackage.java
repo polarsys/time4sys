@@ -33,6 +33,9 @@ import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Generic Resource Modeling
+ * <!-- end-model-doc -->
  * @see org.polarsys.time4sys.marte.grm.GrmFactory
  * @model kind="package"
  * @generated

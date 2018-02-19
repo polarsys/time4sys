@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_rqrCQEd9Eeet8-kvhueSdw" selectedViews="_r-adoEd9Eeet8-kvhueSdw" version="11.1.0.201608251200">
+  <viewpoint:DAnalysis xmi:id="_rqrCQEd9Eeet8-kvhueSdw" selectedViews="_r-adoEd9Eeet8-kvhueSdw" version="12.0.0.201704271200">
     <semanticResources>grm.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
     <semanticResources>gqam.ecore</semanticResources>
     <semanticResources>core_elements.ecore</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+    <semanticResources>nfp_annotation.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_r-adoEd9Eeet8-kvhueSdw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_tuEdYEd9Eeet8-kvhueSdw" name="grm class diagram" representation="_tuEdYUd9Eeet8-kvhueSdw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_tuEdYEd9Eeet8-kvhueSdw" name="grm class diagram" repPath="#_tuEdYUd9Eeet8-kvhueSdw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="grm.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1786,7 +1787,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD48YUd9Eeet8-kvhueSdw" name="elementSize : EInt" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD48YUd9Eeet8-kvhueSdw" name="elementSize : NFP_DataSize" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/elementSize"/>
         <semanticElements xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/elementSize"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_uD5jcEd9Eeet8-kvhueSdw" labelAlignment="LEFT">
@@ -1794,7 +1795,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jcUd9Eeet8-kvhueSdw" name="capacity : EFloat = 0.0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jcUd9Eeet8-kvhueSdw" name="capacity : NFP_DataTxRate" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/capacity"/>
         <semanticElements xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/capacity"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_uD5jckd9Eeet8-kvhueSdw" labelAlignment="LEFT">
@@ -1802,7 +1803,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jc0d9Eeet8-kvhueSdw" name="packetTime : EFloat = 0.0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jc0d9Eeet8-kvhueSdw" name="packetTime : NFP_Duration" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/packetTime"/>
         <semanticElements xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/packetTime"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_uD5jdEd9Eeet8-kvhueSdw" labelAlignment="LEFT">
@@ -1810,7 +1811,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jdUd9Eeet8-kvhueSdw" name="blockingTime : EFloat = 0.0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uD5jdUd9Eeet8-kvhueSdw" name="blockingTime : NFP_Duration" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/blockingTime"/>
         <semanticElements xmi:type="ecore:EAttribute" href="grm.ecore#//CommunicationMedia/blockingTime"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_uD6KgEd9Eeet8-kvhueSdw" labelAlignment="LEFT">

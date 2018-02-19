@@ -190,6 +190,15 @@ public class SamPackageImpl extends EPackageImpl implements SamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEndToEndFlow_InvolvedElement() {
+		return (EReference)endToEndFlowEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getEndToEndFlow__FindStepsOnPath() {
 		return endToEndFlowEClass.getEOperations().get(0);
 	}
@@ -275,6 +284,7 @@ public class SamPackageImpl extends EPackageImpl implements SamPackage {
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_TIME);
 		createEAttribute(endToEndFlowEClass, END_TO_END_FLOW__END_TO_END_DEADLINE);
 		createEReference(endToEndFlowEClass, END_TO_END_FLOW__TIMING);
+		createEReference(endToEndFlowEClass, END_TO_END_FLOW__INVOLVED_ELEMENT);
 		createEOperation(endToEndFlowEClass, END_TO_END_FLOW___FIND_STEPS_ON_PATH);
 
 		schedulingObserverEClass = createEClass(SCHEDULING_OBSERVER);
@@ -332,6 +342,7 @@ public class SamPackageImpl extends EPackageImpl implements SamPackage {
 		initEAttribute(getEndToEndFlow_EndToEndTime(), theGqamPackage.getNFP_Duration(), "endToEndTime", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndToEndFlow_EndToEndDeadline(), theGqamPackage.getNFP_Duration(), "endToEndDeadline", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndToEndFlow_Timing(), theGqamPackage.getTimedObserver(), null, "timing", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndToEndFlow_InvolvedElement(), theGqamPackage.getFlowInvolvedElement(), null, "involvedElement", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEndToEndFlow__FindStepsOnPath(), theGqamPackage.getBehaviorScenario(), "findStepsOnPath", 0, -1, IS_UNIQUE, IS_ORDERED);
 

@@ -119,24 +119,28 @@ public class GqamValidator extends EObjectValidator {
 				return validateCommunicationChannel((CommunicationChannel)value, diagnostics, context);
 			case GqamPackage.COMMUNICATION_STEP:
 				return validateCommunicationStep((CommunicationStep)value, diagnostics, context);
-			case GqamPackage.PIN:
-				return validatePin((Pin)value, diagnostics, context);
 			case GqamPackage.DELAY:
 				return validateDelay((Delay)value, diagnostics, context);
 			case GqamPackage.EXECUTION_STEP:
 				return validateExecutionStep((ExecutionStep)value, diagnostics, context);
+			case GqamPackage.FLOW_INVOLVED_ELEMENT:
+				return validateFlowInvolvedElement((FlowInvolvedElement)value, diagnostics, context);
 			case GqamPackage.INPUT_PIN:
 				return validateInputPin((InputPin)value, diagnostics, context);
 			case GqamPackage.LATENCY_OBSERVER:
 				return validateLatencyObserver((LatencyObserver)value, diagnostics, context);
 			case GqamPackage.MULTIPLICITY_ELEMENT:
 				return validateMultiplicityElement((MultiplicityElement)value, diagnostics, context);
+			case GqamPackage.OBJECT_NODE:
+				return validateObjectNode((ObjectNode)value, diagnostics, context);
 			case GqamPackage.ONCE:
 				return validateOnce((Once)value, diagnostics, context);
 			case GqamPackage.OUTPUT_PIN:
 				return validateOutputPin((OutputPin)value, diagnostics, context);
 			case GqamPackage.PERIODIC_PATTERN:
 				return validatePeriodicPattern((PeriodicPattern)value, diagnostics, context);
+			case GqamPackage.PIN:
+				return validatePin((Pin)value, diagnostics, context);
 			case GqamPackage.PRECEDENCE_RELATION:
 				return validatePrecedenceRelation((PrecedenceRelation)value, diagnostics, context);
 			case GqamPackage.REFERENCE:
@@ -159,8 +163,6 @@ public class GqamValidator extends EObjectValidator {
 				return validateWorkloadBehavior((WorkloadBehavior)value, diagnostics, context);
 			case GqamPackage.WORKLOAD_EVENT:
 				return validateWorkloadEvent((WorkloadEvent)value, diagnostics, context);
-			case GqamPackage.OBJECT_NODE:
-				return validateObjectNode((ObjectNode)value, diagnostics, context);
 			case GqamPackage.CONNECTOR_KIND:
 				return validateConnectorKind((ConnectorKind)value, diagnostics, context);
 			case GqamPackage.LAXITY_KIND:
@@ -296,6 +298,15 @@ public class GqamValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(executionStep, diagnostics, context);
 		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(executionStep, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlowInvolvedElement(FlowInvolvedElement flowInvolvedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(flowInvolvedElement, diagnostics, context);
 	}
 
 	/**

@@ -25,7 +25,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface Pin extends MultiplicityElement, NamedElement, ObjectNode {
+public interface Pin extends MultiplicityElement, NamedElement, ObjectNode, FlowInvolvedElement {
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

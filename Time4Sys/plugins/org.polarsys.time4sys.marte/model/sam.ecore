@@ -21,6 +21,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endToEndDeadline" eType="ecore:EDataType gqam.ecore#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timing" upperBound="-1"
         eType="ecore:EClass gqam.ecore#//TimedObserver" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvedElement" upperBound="-1"
+        eType="ecore:EClass gqam.ecore#//FlowInvolvedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Elements  involved in the specific path of interest in the context of the targeted performance analysis."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchedulingObserver" eSuperTypes="gqam.ecore#//TimedObserver">

@@ -39,7 +39,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
  * @model
  * @generated
  */
-public interface BehaviorScenario extends NamedElement {
+public interface BehaviorScenario extends NamedElement, FlowInvolvedElement {
 	/**
 	 * Returns the value of the '<em><b>Steps</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.Step}.

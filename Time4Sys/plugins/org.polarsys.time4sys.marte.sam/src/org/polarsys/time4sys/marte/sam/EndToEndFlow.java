@@ -4,6 +4,7 @@ package org.polarsys.time4sys.marte.sam;
 
 import org.eclipse.emf.common.util.EList;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.TimedObserver;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 
@@ -33,6 +34,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
  *   <li>{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#getEndToEndTime <em>End To End Time</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#getEndToEndDeadline <em>End To End Deadline</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#getTiming <em>Timing</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#getInvolvedElement <em>Involved Element</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.sam.SamPackage#getEndToEndFlow()
@@ -201,6 +203,21 @@ public interface EndToEndFlow extends NamedElement, AnnotatedElement {
 	 * @generated
 	 */
 	EList<TimedObserver> getTiming();
+
+	/**
+	 * Returns the value of the '<em><b>Involved Element</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.FlowInvolvedElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Elements  involved in the specific path of interest in the context of the targeted performance analysis.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Involved Element</em>' reference list.
+	 * @see org.polarsys.time4sys.marte.sam.SamPackage#getEndToEndFlow_InvolvedElement()
+	 * @model
+	 * @generated
+	 */
+	EList<FlowInvolvedElement> getInvolvedElement();
 
 	/**
 	 * <!-- begin-user-doc -->

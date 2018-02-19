@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
+import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.ObjectNode;
 import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
@@ -497,6 +498,11 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 				default: return -1;
 			}
 		}
+		if (baseClass == FlowInvolvedElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -536,6 +542,11 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 				default: return -1;
 			}
 		}
+		if (baseClass == FlowInvolvedElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -568,6 +579,11 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 			}
 		}
 		if (baseClass == ObjectNode.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == FlowInvolvedElement.class) {
 			switch (baseOperationID) {
 				default: return -1;
 			}

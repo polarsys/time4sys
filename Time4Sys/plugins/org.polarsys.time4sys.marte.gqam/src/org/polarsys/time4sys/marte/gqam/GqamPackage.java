@@ -35,6 +35,9 @@ import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Generic Quantitative Analysis Modeling
+ * <!-- end-model-doc -->
  * @see org.polarsys.time4sys.marte.gqam.GqamFactory
  * @model kind="package"
  * @generated
@@ -207,7 +210,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadEvent()
 	 * @generated
 	 */
-	int WORKLOAD_EVENT = 26;
+	int WORKLOAD_EVENT = 28;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl <em>Step</em>}' class.
@@ -217,7 +220,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getStep()
 	 * @generated
 	 */
-	int STEP = 23;
+	int STEP = 25;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -470,7 +473,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPrecedenceRelation()
 	 * @generated
 	 */
-	int PRECEDENCE_RELATION = 16;
+	int PRECEDENCE_RELATION = 18;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadBehaviorImpl <em>Workload Behavior</em>}' class.
@@ -480,7 +483,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getWorkloadBehavior()
 	 * @generated
 	 */
-	int WORKLOAD_BEHAVIOR = 25;
+	int WORKLOAD_BEHAVIOR = 27;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationStepImpl <em>Communication Step</em>}' class.
@@ -771,7 +774,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReleaseStep()
 	 * @generated
 	 */
-	int RELEASE_STEP = 18;
+	int RELEASE_STEP = 20;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl <em>Requested Service</em>}' class.
@@ -781,7 +784,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getRequestedService()
 	 * @generated
 	 */
-	int REQUESTED_SERVICE = 19;
+	int REQUESTED_SERVICE = 21;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl <em>Execution Step</em>}' class.
@@ -791,7 +794,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getExecutionStep()
 	 * @generated
 	 */
-	int EXECUTION_STEP = 9;
+	int EXECUTION_STEP = 8;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
@@ -1074,7 +1077,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPeriodicPattern()
 	 * @generated
 	 */
-	int PERIODIC_PATTERN = 15;
+	int PERIODIC_PATTERN = 16;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl <em>Sporadic Pattern</em>}' class.
@@ -1084,7 +1087,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
 	 * @generated
 	 */
-	int SPORADIC_PATTERN = 22;
+	int SPORADIC_PATTERN = 24;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -1094,7 +1097,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReference()
 	 * @generated
 	 */
-	int REFERENCE = 17;
+	int REFERENCE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.
@@ -1104,7 +1107,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
 	 * @generated
 	 */
-	int SLIDING_WINDOW_PATTERN = 21;
+	int SLIDING_WINDOW_PATTERN = 23;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
@@ -1114,7 +1117,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getDelay()
 	 * @generated
 	 */
-	int DELAY = 8;
+	int DELAY = 7;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl <em>Multiplicity Element</em>}' class.
@@ -1144,7 +1147,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOutputPin()
 	 * @generated
 	 */
-	int OUTPUT_PIN = 14;
+	int OUTPUT_PIN = 15;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OnceImpl <em>Once</em>}' class.
@@ -1154,7 +1157,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOnce()
 	 * @generated
 	 */
-	int ONCE = 13;
+	int ONCE = 14;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl <em>Communication Channel</em>}' class.
@@ -1581,42 +1584,6 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT__LOWER_BOUND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT__UPPER_BOUND = 1;
-
-	/**
-	 * The number of structural features of the '<em>Multiplicity Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Multiplicity Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl <em>Pin</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1624,106 +1591,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPin()
 	 * @generated
 	 */
-	int PIN = 7;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__LOWER_BOUND = MULTIPLICITY_ELEMENT__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__EANNOTATIONS = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__ORDERING = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Typename</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__TYPENAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__IS_CONTROL = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN___GET_EANNOTATION__STRING = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 1;
+	int PIN = 17;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2221,6 +2089,169 @@ public interface GqamPackage extends EPackage {
 	int EXECUTION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl <em>Flow Involved Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getFlowInvolvedElement()
+	 * @generated
+	 */
+	int FLOW_INVOLVED_ELEMENT = 9;
+
+	/**
+	 * The number of structural features of the '<em>Flow Involved Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_INVOLVED_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Flow Involved Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_INVOLVED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_ELEMENT__LOWER_BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_ELEMENT__UPPER_BOUND = 1;
+
+	/**
+	 * The number of structural features of the '<em>Multiplicity Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Multiplicity Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__LOWER_BOUND = MULTIPLICITY_ELEMENT__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__EANNOTATIONS = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__ORDERING = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Typename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__TYPENAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__IS_CONTROL = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN___GET_EANNOTATION__STRING = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2336,7 +2367,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
 	 * @generated
 	 */
-	int TIMED_OBSERVER = 24;
+	int TIMED_OBSERVER = 26;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2536,6 +2567,62 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int LATENCY_OBSERVER_OPERATION_COUNT = TIMED_OBSERVER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
+	 * @generated
+	 */
+	int RESOURCE_SERVICE_EXCECUTION = 22;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl <em>Object Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getObjectNode()
+	 * @generated
+	 */
+	int OBJECT_NODE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE__ORDERING = 0;
+
+	/**
+	 * The feature id for the '<em><b>Typename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE__TYPENAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Object Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Object Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -3348,16 +3435,6 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
-	 * @generated
-	 */
-	int RESOURCE_SERVICE_EXCECUTION = 20;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3889,52 +3966,6 @@ public interface GqamPackage extends EPackage {
 	int WORKLOAD_EVENT_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl <em>Object Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getObjectNode()
-	 * @generated
-	 */
-	int OBJECT_NODE = 27;
-
-	/**
-	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_NODE__ORDERING = 0;
-
-	/**
-	 * The feature id for the '<em><b>Typename</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_NODE__TYPENAME = 1;
-
-	/**
-	 * The number of structural features of the '<em>Object Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_NODE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Object Node</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT_NODE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.ConnectorKind <em>Connector Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3942,7 +3973,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getConnectorKind()
 	 * @generated
 	 */
-	int CONNECTOR_KIND = 28;
+	int CONNECTOR_KIND = 29;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.LaxityKind <em>Laxity Kind</em>}' enum.
@@ -3952,7 +3983,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLaxityKind()
 	 * @generated
 	 */
-	int LAXITY_KIND = 29;
+	int LAXITY_KIND = 30;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind <em>Object Node Ordering Kind</em>}' enum.
@@ -3962,7 +3993,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getObjectNodeOrderingKind()
 	 * @generated
 	 */
-	int OBJECT_NODE_ORDERING_KIND = 30;
+	int OBJECT_NODE_ORDERING_KIND = 31;
 
 	/**
 	 * The meta object id for the '<em>NFP Data Size</em>' data type.
@@ -3972,7 +4003,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_DataSize()
 	 * @generated
 	 */
-	int NFP_DATA_SIZE = 31;
+	int NFP_DATA_SIZE = 32;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -3982,7 +4013,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 32;
+	int NFP_DURATION = 33;
 
 
 	/**
@@ -4882,6 +4913,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExecutionStep();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.FlowInvolvedElement <em>Flow Involved Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flow Involved Element</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.FlowInvolvedElement
+	 * @generated
+	 */
+	EClass getFlowInvolvedElement();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern <em>Arrival Pattern</em>}'.
@@ -5816,6 +5857,16 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXECUTION_STEP = eINSTANCE.getExecutionStep();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl <em>Flow Involved Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getFlowInvolvedElement()
+		 * @generated
+		 */
+		EClass FLOW_INVOLVED_ELEMENT = eINSTANCE.getFlowInvolvedElement();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
