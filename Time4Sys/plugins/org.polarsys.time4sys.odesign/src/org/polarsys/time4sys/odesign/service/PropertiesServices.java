@@ -52,7 +52,7 @@ public class PropertiesServices {
 	
 		toBeFilterd.remove(GqamPackage.Literals.ARRIVAL_PATTERN__REFERENCE);
 		toBeFilterd.remove(GqamPackage.Literals.BEHAVIOR_SCENARIO__PARENT_STEP);
-		toBeFilterd.remove(GqamPackage.Literals.CONTROL_PIN__PATTERN);
+		toBeFilterd.remove(GqamPackage.Literals.PIN__PATTERN);
 		toBeFilterd.remove(GqamPackage.Literals.STEP__PROBABILITY);
 		toBeFilterd.remove(GqamPackage.Literals.WORKLOAD_BEHAVIOR__REFERENCES);
 	

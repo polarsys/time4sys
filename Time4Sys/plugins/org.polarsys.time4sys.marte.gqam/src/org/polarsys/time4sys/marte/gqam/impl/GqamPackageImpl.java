@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.gqam.AcquireStep;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
@@ -29,7 +30,6 @@ import org.polarsys.time4sys.marte.gqam.ClosedPattern;
 import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
-import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.Delay;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
@@ -38,9 +38,12 @@ import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.LatencyObserver;
 import org.polarsys.time4sys.marte.gqam.LaxityKind;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
+import org.polarsys.time4sys.marte.gqam.ObjectNode;
+import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
 import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
+import org.polarsys.time4sys.marte.gqam.Pin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.ReleaseStep;
@@ -100,6 +103,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass objectNodeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass stepEClass = null;
 
 	/**
@@ -142,13 +152,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass controlPinEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass inputPinEClass = null;
 
 	/**
@@ -185,6 +188,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EClass communicationStepEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pinEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -269,6 +279,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	private EEnum laxityKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum objectNodeOrderingKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -571,6 +588,33 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getObjectNode() {
+		return objectNodeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getObjectNode_Ordering() {
+		return (EAttribute)objectNodeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getObjectNode_Typename() {
+		return (EAttribute)objectNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStep() {
 		return stepEClass;
 	}
@@ -832,24 +876,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getControlPin() {
-		return controlPinEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getControlPin_Pattern() {
-		return (EReference)controlPinEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInputPin() {
 		return inputPinEClass;
 	}
@@ -960,6 +986,33 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 */
 	public EReference getCommunicationStep_ComRes() {
 		return (EReference)communicationStepEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPin() {
+		return pinEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPin_Pattern() {
+		return (EReference)pinEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPin_IsControl() {
+		return (EAttribute)pinEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1219,6 +1272,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getObjectNodeOrderingKind() {
+		return objectNodeOrderingKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNFP_DataSize() {
 		return nfP_DataSizeEDataType;
 	}
@@ -1299,8 +1361,9 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEAttribute(communicationStepEClass, COMMUNICATION_STEP__MSG_SIZE);
 		createEReference(communicationStepEClass, COMMUNICATION_STEP__COM_RES);
 
-		controlPinEClass = createEClass(CONTROL_PIN);
-		createEReference(controlPinEClass, CONTROL_PIN__PATTERN);
+		pinEClass = createEClass(PIN);
+		createEReference(pinEClass, PIN__PATTERN);
+		createEAttribute(pinEClass, PIN__IS_CONTROL);
 
 		delayEClass = createEClass(DELAY);
 		createEAttribute(delayEClass, DELAY__DURATION);
@@ -1380,9 +1443,14 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(workloadEventEClass, WORKLOAD_EVENT__EFFECT);
 		createEReference(workloadEventEClass, WORKLOAD_EVENT__PATTERN);
 
+		objectNodeEClass = createEClass(OBJECT_NODE);
+		createEAttribute(objectNodeEClass, OBJECT_NODE__ORDERING);
+		createEAttribute(objectNodeEClass, OBJECT_NODE__TYPENAME);
+
 		// Create enums
 		connectorKindEEnum = createEEnum(CONNECTOR_KIND);
 		laxityKindEEnum = createEEnum(LAXITY_KIND);
+		objectNodeOrderingKindEEnum = createEEnum(OBJECT_NODE_ORDERING_KIND);
 
 		// Create data types
 		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
@@ -1415,6 +1483,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		// Obtain other dependent packages
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
 		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		AnnotationPackage theAnnotationPackage = (AnnotationPackage)EPackage.Registry.INSTANCE.getEPackage(AnnotationPackage.eNS_URI);
 
 		// Create type parameters
@@ -1428,14 +1497,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		closedPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		communicationChannelEClass.getESuperTypes().add(theGrmPackage.getSchedulableResource());
 		communicationStepEClass.getESuperTypes().add(this.getStep());
-		controlPinEClass.getESuperTypes().add(this.getMultiplicityElement());
-		controlPinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
+		pinEClass.getESuperTypes().add(this.getMultiplicityElement());
+		pinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
+		pinEClass.getESuperTypes().add(this.getObjectNode());
 		delayEClass.getESuperTypes().add(this.getStep());
 		executionStepEClass.getESuperTypes().add(this.getStep());
-		inputPinEClass.getESuperTypes().add(this.getControlPin());
+		inputPinEClass.getESuperTypes().add(this.getPin());
 		latencyObserverEClass.getESuperTypes().add(this.getTimedObserver());
 		onceEClass.getESuperTypes().add(this.getArrivalPattern());
-		outputPinEClass.getESuperTypes().add(this.getControlPin());
+		outputPinEClass.getESuperTypes().add(this.getPin());
 		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
 		releaseStepEClass.getESuperTypes().add(this.getStep());
 		requestedServiceEClass.getESuperTypes().add(this.getStep());
@@ -1492,8 +1562,9 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getCommunicationStep_MsgSize(), this.getNFP_DataSize(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationStep_ComRes(), theGrmPackage.getCommunicationResource(), null, "comRes", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(controlPinEClass, ControlPin.class, "ControlPin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getControlPin_Pattern(), this.getArrivalPattern(), null, "pattern", null, 0, 1, ControlPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pinEClass, Pin.class, "Pin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPin_Pattern(), this.getArrivalPattern(), null, "pattern", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPin_IsControl(), theEcorePackage.getEBoolean(), "isControl", "true", 1, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDelay_Duration(), this.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1573,6 +1644,10 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(objectNodeEClass, ObjectNode.class, "ObjectNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getObjectNode_Ordering(), this.getObjectNodeOrderingKind(), "ordering", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectNode_Typename(), theEcorePackage.getEString(), "typename", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(connectorKindEEnum, ConnectorKind.class, "ConnectorKind");
 		addEEnumLiteral(connectorKindEEnum, ConnectorKind.SEQUENCE);
@@ -1586,6 +1661,12 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		addEEnumLiteral(laxityKindEEnum, LaxityKind.HARD);
 		addEEnumLiteral(laxityKindEEnum, LaxityKind.SOFT);
 		addEEnumLiteral(laxityKindEEnum, LaxityKind.OTHER);
+
+		initEEnum(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.class, "ObjectNodeOrderingKind");
+		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.UNORDERED);
+		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.LIFO);
+		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.FIFO);
+		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.ORDERED);
 
 		// Initialize data types
 		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

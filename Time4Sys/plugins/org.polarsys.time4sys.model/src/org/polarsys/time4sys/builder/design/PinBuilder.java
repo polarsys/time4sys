@@ -10,18 +10,18 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
-import org.polarsys.time4sys.marte.gqam.ControlPin;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
+import org.polarsys.time4sys.marte.gqam.Pin;
 
 /**
  * @author loic
  *
  */
-public abstract class ControlPinBuilder<P extends ControlPin, B extends ControlPinBuilder<?,B>> {
+public abstract class PinBuilder<P extends Pin, B extends PinBuilder<?,B>> {
 
 	protected P pin;
 
-	protected ControlPinBuilder(P pin) {
+	protected PinBuilder(P pin) {
 		this.pin = pin;
 		if (!pin.eIsSet(GqamPackage.eINSTANCE.getMultiplicityElement_LowerBound())) {
 			pin.setLowerBound(1);

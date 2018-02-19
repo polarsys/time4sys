@@ -108,6 +108,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 				return createConnectorKindFromString(eDataType, initialValue);
 			case GqamPackage.LAXITY_KIND:
 				return createLaxityKindFromString(eDataType, initialValue);
+			case GqamPackage.OBJECT_NODE_ORDERING_KIND:
+				return createObjectNodeOrderingKindFromString(eDataType, initialValue);
 			case GqamPackage.NFP_DATA_SIZE:
 				return createNFP_DataSizeFromString(eDataType, initialValue);
 			case GqamPackage.NFP_DURATION:
@@ -129,6 +131,8 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 				return convertConnectorKindToString(eDataType, instanceValue);
 			case GqamPackage.LAXITY_KIND:
 				return convertLaxityKindToString(eDataType, instanceValue);
+			case GqamPackage.OBJECT_NODE_ORDERING_KIND:
+				return convertObjectNodeOrderingKindToString(eDataType, instanceValue);
 			case GqamPackage.NFP_DATA_SIZE:
 				return convertNFP_DataSizeToString(eDataType, instanceValue);
 			case GqamPackage.NFP_DURATION:
@@ -415,6 +419,26 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	 * @generated
 	 */
 	public String convertLaxityKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObjectNodeOrderingKind createObjectNodeOrderingKindFromString(EDataType eDataType, String initialValue) {
+		ObjectNodeOrderingKind result = ObjectNodeOrderingKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertObjectNodeOrderingKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

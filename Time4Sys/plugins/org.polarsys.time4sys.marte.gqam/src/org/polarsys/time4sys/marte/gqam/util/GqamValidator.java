@@ -119,8 +119,8 @@ public class GqamValidator extends EObjectValidator {
 				return validateCommunicationChannel((CommunicationChannel)value, diagnostics, context);
 			case GqamPackage.COMMUNICATION_STEP:
 				return validateCommunicationStep((CommunicationStep)value, diagnostics, context);
-			case GqamPackage.CONTROL_PIN:
-				return validateControlPin((ControlPin)value, diagnostics, context);
+			case GqamPackage.PIN:
+				return validatePin((Pin)value, diagnostics, context);
 			case GqamPackage.DELAY:
 				return validateDelay((Delay)value, diagnostics, context);
 			case GqamPackage.EXECUTION_STEP:
@@ -159,10 +159,14 @@ public class GqamValidator extends EObjectValidator {
 				return validateWorkloadBehavior((WorkloadBehavior)value, diagnostics, context);
 			case GqamPackage.WORKLOAD_EVENT:
 				return validateWorkloadEvent((WorkloadEvent)value, diagnostics, context);
+			case GqamPackage.OBJECT_NODE:
+				return validateObjectNode((ObjectNode)value, diagnostics, context);
 			case GqamPackage.CONNECTOR_KIND:
 				return validateConnectorKind((ConnectorKind)value, diagnostics, context);
 			case GqamPackage.LAXITY_KIND:
 				return validateLaxityKind((LaxityKind)value, diagnostics, context);
+			case GqamPackage.OBJECT_NODE_ORDERING_KIND:
+				return validateObjectNodeOrderingKind((ObjectNodeOrderingKind)value, diagnostics, context);
 			case GqamPackage.NFP_DATA_SIZE:
 				return validateNFP_DataSize((DataSize)value, diagnostics, context);
 			case GqamPackage.NFP_DURATION:
@@ -253,6 +257,25 @@ public class GqamValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(communicationStep, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(communicationStep, diagnostics, context);
 		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(communicationStep, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePin(Pin pin, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(pin, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(pin, diagnostics, context);
 		return result;
 	}
 
@@ -439,6 +462,15 @@ public class GqamValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateObjectNode(ObjectNode objectNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(objectNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateWorkloadBehavior(WorkloadBehavior workloadBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(workloadBehavior, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(workloadBehavior, diagnostics, context);
@@ -508,25 +540,6 @@ public class GqamValidator extends EObjectValidator {
 	 */
 	public boolean validateMultiplicityElement(MultiplicityElement multiplicityElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(multiplicityElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateControlPin(ControlPin controlPin, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(controlPin, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(controlPin, diagnostics, context);
-		return result;
 	}
 
 	/**
@@ -629,6 +642,15 @@ public class GqamValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLaxityKind(LaxityKind laxityKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectNodeOrderingKind(ObjectNodeOrderingKind objectNodeOrderingKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

@@ -28,13 +28,12 @@ import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
-import org.polarsys.time4sys.marte.gqam.ControlPin;
-import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
+import org.polarsys.time4sys.marte.gqam.Pin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
@@ -46,6 +45,7 @@ import org.polarsys.time4sys.marte.hrm.HardwareComputingResource;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
@@ -456,8 +456,8 @@ public class MarteServices {
 				DDiagram dDiagram = (DDiagram) diagram;
 				for (EObject controlPin : dDiagram.getDiagramElements()) {
 					EObject target = ((DDiagramElement) controlPin).getTarget();
-					if (target instanceof ControlPin) {
-						result.add(((ControlPin) target).getPattern());
+					if (target instanceof Pin) {
+						result.add(((Pin) target).getPattern());
 					}
 				}
 			}

@@ -114,8 +114,8 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 				return createCommunicationStepAdapter();
 			}
 			@Override
-			public Adapter caseControlPin(ControlPin object) {
-				return createControlPinAdapter();
+			public Adapter casePin(Pin object) {
+				return createPinAdapter();
 			}
 			@Override
 			public Adapter caseDelay(Delay object) {
@@ -192,6 +192,10 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseWorkloadEvent(WorkloadEvent object) {
 				return createWorkloadEventAdapter();
+			}
+			@Override
+			public Adapter caseObjectNode(ObjectNode object) {
+				return createObjectNodeAdapter();
 			}
 			@Override
 			public Adapter caseEModelElement(EModelElement object) {
@@ -314,6 +318,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createWorkloadEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.ObjectNode <em>Object Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.ObjectNode
+	 * @generated
+	 */
+	public Adapter createObjectNodeAdapter() {
 		return null;
 	}
 
@@ -486,20 +504,6 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.ControlPin <em>Control Pin</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.time4sys.marte.gqam.ControlPin
-	 * @generated
-	 */
-	public Adapter createControlPinAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.InputPin <em>Input Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -580,6 +584,20 @@ public class GqamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommunicationStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.gqam.Pin <em>Pin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.gqam.Pin
+	 * @generated
+	 */
+	public Adapter createPinAdapter() {
 		return null;
 	}
 

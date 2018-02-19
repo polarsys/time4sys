@@ -29,7 +29,7 @@ import org.polarsys.time4sys.marte.gqam.InputPin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class InputPinItemProvider extends ControlPinItemProvider {
+public class InputPinItemProvider extends PinItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
