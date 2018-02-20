@@ -30,7 +30,7 @@
   <repository>
   <id>SiriusNeon</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/sirius/updates/releases/5.1.0/neon/</url>
+   <url>http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/</url>
  </repository>
   <repository>
    <id>EEF</id>
