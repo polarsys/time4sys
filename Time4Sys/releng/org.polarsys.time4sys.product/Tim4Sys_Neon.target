@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="15">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.junit" version="4.12.0.v201504281640"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/"/>
+</location>
+<location path="${eclipse_home}" type="Profile"/>
+</locations>
+</target>
