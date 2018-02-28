@@ -78,7 +78,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.BehaviorScenario">
+        <nodeMappings name="BehaviorScenario" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Behavior%20Scenario%20creation']" preconditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.workloadBehavior.behavior" createElements="false" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.BehaviorScenario">
           <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -163,6 +163,14 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
+          <conditionnalStyles predicateExpression="aql:not(self.isControl)">
+            <style lineStyle="dash" sizeComputationExpression="2" endsCentering="Both">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+              <centerLabelStyleDescription>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
         </edgeMappings>
         <edgeMappings name="EventOnPort" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin']" targetFinderExpression="aql:self.eInverse('pattern')">
           <style sizeComputationExpression="2" endsCentering="Target">
@@ -200,16 +208,28 @@
           <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubSw" preconditionExpression="aql:(self.oclIsKindOf(grm::ConcurrencyResource)) or self.oclIsKindOf(srm::SoftwareResource)" semanticCandidatesExpression="aql:self.ownedResource" semanticElements="var:self" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.Resource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']">
             <subNodeMappings name="ExecutionStep" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Del%20ExecutionStep']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep%20Edit']" semanticCandidatesExpression="aql:self.eInverse('concurRes')" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step">
               <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="feature:outputPin" synchronizationLock="true" domainClass="gqam.OutputPin">
-                <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Outputport.png">
+                <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/OutputFlowPin.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
+                <conditionnalStyles predicateExpression="aql:not(self.isControl)">
+                  <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/OutputDataPin.png">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  </style>
+                </conditionnalStyles>
               </borderedNodeMappings>
               <borderedNodeMappings name="InputPin" semanticCandidatesExpression="feature:inputPin" synchronizationLock="true" domainClass="gqam.InputPin">
-                <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Inputport.png">
+                <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/InputFlowPin.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
+                <conditionnalStyles predicateExpression="aql:not(self.isControl)">
+                  <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/InputDataPin.png">
+                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  </style>
+                </conditionnalStyles>
               </borderedNodeMappings>
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:formatStepLabel(view)" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
@@ -623,7 +643,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::ControlPin)">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.PeriodicPattern" referenceName="pattern" variableName="pattern"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
@@ -645,7 +665,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::ControlPin)">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SporadicPattern" referenceName="pattern" variableName="pattern"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
@@ -667,7 +687,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::ControlPin)">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BurstPattern" referenceName="pattern" variableName="pattern"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
@@ -689,7 +709,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::ControlPin)">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ClosedPattern" referenceName="pattern" variableName="pattern"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
@@ -711,7 +731,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::ControlPin)">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SlidingWindowPattern" referenceName="pattern" variableName="pattern"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
@@ -1259,13 +1279,23 @@
           </initialOperation>
         </ownedTools>
         <ownedTools xsi:type="tool:PopupMenu" name="Behavior Scenario">
-          <menuItemDescription xsi:type="tool:OperationAction" name="Create new Behavior Scenario" precondition="service:self.isValidBehaviorScenarioSelection(views)">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new Behavior Scenario" precondition="service:self.isValidBehaviorScenarioSelection(views)">
             <view name="views"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.createBehaviorScenario(views)">
                 <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)">
                   <subModelOperations xsi:type="tool_1:CreateView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" containerViewExpression="aql:views->first().getDiagramContainer()"/>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </menuItemDescription>
+        </ownedTools>
+        <ownedTools xsi:type="tool:PopupMenu" name="End To End Flow">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new End To End Flow" precondition="service:self.isValidETEFSelection(views)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createETEF(views)">
+                <subModelOperations xsi:type="tool_1:CreateEdgeView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" containerViewExpression="aql:views->first().getDiagramContainer()" sourceExpression="aql:self.endToEndStimuli" targetExpression="aql:self.endToEndScenario"/>
               </firstModelOperations>
             </initialOperation>
           </menuItemDescription>

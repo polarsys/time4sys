@@ -27,6 +27,7 @@ public class DesignRefreshExtension implements IRefreshExtension {
 	   */
 	  public void postRefresh(DDiagram diagram_p) {
 	      BehaviorScenarioServices.getService().updateBehaviorScenarioStyles(diagram_p);
+	      BehaviorScenarioServices.getService().updateETEFStyles(diagram_p);
 	    }
 
 }

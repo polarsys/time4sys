@@ -52,8 +52,10 @@ import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator
 @SuppressWarnings("restriction")
 public class RotativeImageEditPart extends WorkspaceImageEditPart implements IStyleEditPart {
 
-  public static final String[] IMAGES_ID = { "/org.polarsys.time4sys.odesign/images/Outputport.png", //$NON-NLS-1$
-                                            "/org.polarsys.time4sys.odesign/images/Inputport.png", //$NON-NLS-1$
+  public static final String[] IMAGES_ID = { "/org.polarsys.time4sys.odesign/images/OutputDataPin.png", //$NON-NLS-1$
+		  "/org.polarsys.time4sys.odesign/images/OutputFlowPin.png", //$NON-NLS-1$
+          "/org.polarsys.time4sys.odesign/images/InputFlowPin.png", //$NON-NLS-1$
+          "/org.polarsys.time4sys.odesign/images/InputDataPin.png" //$NON-NLS-1$
   };
 
   /**

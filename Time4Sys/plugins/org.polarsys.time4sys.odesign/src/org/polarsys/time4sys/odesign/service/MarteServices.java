@@ -362,7 +362,7 @@ public class MarteServices {
 		return new Integer(value).floatValue();
 	}
 
-	public EObject getDesign(EObject context) {
+	public static DesignModel getDesign(EObject context) {
 		org.eclipse.emf.ecore.resource.Resource res = context.eResource();
 		EList<EObject> contents = res.getContents();
 		for (EObject content : contents) {
@@ -372,7 +372,7 @@ public class MarteServices {
 				return design;
 			}
 		}
-		return context;
+		return null;
 	}
 
 	public void deleteStep2InputRel(EObject context) {
