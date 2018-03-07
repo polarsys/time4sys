@@ -7,9 +7,14 @@
            class="org.polarsys.time4sys.editor.internal.Time4SysCommonActionProvider"
            id="org.polarsys.time4sys.editor.internal.CommonActionProvider1">
         <enablement>
-           <instanceof
-                 value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
-           </instanceof>
+           <or>
+              <instanceof
+                    value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
+              </instanceof>
+              <instanceof
+                    value="org.polarsys.time4sys.model.time4sys.Project">
+              </instanceof>
+           </or>
         </enablement>
      </actionProvider>
   </extension>

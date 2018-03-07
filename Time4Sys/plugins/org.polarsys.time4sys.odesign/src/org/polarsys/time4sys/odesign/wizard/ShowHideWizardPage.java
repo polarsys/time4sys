@@ -55,8 +55,7 @@ public class ShowHideWizardPage extends AbstractSelectionWizardPage {
     private final AdapterFactoryLabelProvider myAdapterFactoryLabelProvider;
 
     /** The selected instances * */
-    private EList<EObject> selectedElements = new BasicEList<EObject>(); //TODO: uniformiser tout ca pour que selected et unselected utilisé seulement des listes.
-//   ensuit on passer à l'implem des acions à faire.
+    private EList<EObject> selectedElements = new BasicEList<EObject>(); 
 
     private EList<EObject> unselectedElements = new BasicEList<EObject>();
 
@@ -117,16 +116,6 @@ public class ShowHideWizardPage extends AbstractSelectionWizardPage {
 
     }
 
-//    private TreeItemWrapper convertToTree(final Collection<?> objects2) {
-//        final TreeItemWrapper root = new TreeItemWrapper(null, null);
-//        final Iterator<?> iter = objects2.iterator();
-//        while (iter.hasNext()) {
-//            final TreeItemWrapper treeItemWrapper = new TreeItemWrapper(iter.next(), root);
-//            root.getChildren().add(treeItemWrapper);
-//        }
-//        return root;
-//    }
-
     /**
      * {@inheritDoc}
      * 
@@ -154,16 +143,6 @@ public class ShowHideWizardPage extends AbstractSelectionWizardPage {
         createSelectionComposite(otherComposite);
 
         createButtonListeners();
-
-//        myViewerfilter.setTreeViewer(unselectedElementsTableViewer);
-
-        /* expand before compute prefix => see trac #1323 */
-//        expandTreeViewer(unselectedElementsTableViewer);
-
-//        initRootPrefix();
-//        if (unselectedElementsTableViewer.getTree().getItemCount() > 0) {
-//            unselectedElementsTableViewer.getTree().setSelection(unselectedElementsTableViewer.getTree().getItem(0));
-//        }
 
         setControl(pageComposite);
     }

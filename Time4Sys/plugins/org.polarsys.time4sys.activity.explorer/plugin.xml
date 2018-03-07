@@ -118,6 +118,54 @@ Describe the sequence of steps of one the selected scenario and represents steps
         class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
   </Predicate>
 	</Page>
+ <Page
+       class="org.polarsys.time4sys.activity.explorer.pages.AnalysisPage"
+       id="org.polarsys.time4sys.activity.page"
+       imageOff="icons/AnalysisOff.png"
+       imageOn="icons/AnalysisOn.png"
+       index="1"
+       tabName="Analysis"
+       title="Analysis Description"
+       viewer="true">
+    <Description>
+       Define the Hardware resources and the Software resources allocated on them.  Represent the execution and communication steps which are executed by a software resource or in a communication resources, and represent the link between them in one or several scenarios.
+    </Description>
+    <Overview
+          imageOff="icons/AnalysisOff.png"
+          imageOn="icons/AnalysisOn.png">
+       <Description>
+          &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Visualize the result of previous transformation in new diagrams.&lt;/p&gt;
+       </Description>
+    </Overview>
+    <Section
+          expanded="false"
+          filtering="true"
+          id="org.polarsys.time4sys.analysis.section"
+          index="1"
+          name="Analysis">
+       <Description>
+          &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;Visualize the result of previous transformation in new diagrams.&lt;/p&gt;
+       </Description>
+       <Activity
+             class="org.polarsys.time4sys.activity.explorer.activity.AnalysisActivity"
+             id="org.polarsys.time4sys.design.activity.diagram"
+             image="icons/DesignModel.png"
+             index="1"
+             name="Transformed Design Model">
+          <Description>
+             Design Model
+Define the Hardware resources and the Software resources allocated on them.
+Represent the execution and communication steps which are executed by a software resource or in a communication resources.
+Describes the link between them in one or several scenarios.
+          </Description>
+       </Activity>
+    </Section>
+    <Predicate
+          class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
+    </Predicate>
+ </Page>
 </extension>
 <extension
       point="org.eclipse.ui.navigator.navigatorContent">

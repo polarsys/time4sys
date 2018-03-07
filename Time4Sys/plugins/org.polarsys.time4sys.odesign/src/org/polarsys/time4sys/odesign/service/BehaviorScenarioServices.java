@@ -64,7 +64,7 @@ import org.polarsys.time4sys.odesign.helper.ShapeUtil;
 @SuppressWarnings("restriction")
 public class BehaviorScenarioServices {
 
-	private static final Integer THICK_BORDER_SIZE = Integer.valueOf(2);
+	private static final Integer THICK_BORDER_SIZE = Integer.valueOf(1);
 
 	private static BehaviorScenarioServices instance;
 

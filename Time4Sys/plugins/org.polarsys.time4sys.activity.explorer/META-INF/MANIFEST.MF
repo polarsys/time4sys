@@ -19,9 +19,13 @@ Require-Bundle: org.eclipse.ui.workbench,
  org.polarsys.time4sys.model,
  org.eclipse.emf.transaction,
  org.eclipse.core.resources,
- org.polarsys.time4sys.ui
-Import-Package: org.eclipse.sirius.ui.tools.internal.actions.session;version="2.0.4",
- org.eclipse.sirius.ui.tools.internal.views.common.action;version="2.1.0",
+ org.polarsys.time4sys.ui,
+ org.polarsys.capella.common.ef,
+ org.eclipse.sirius.common.ui,
+ org.eclipse.sirius.common
+Import-Package: org.eclipse.sirius.diagram.ui.provider,
+ org.eclipse.sirius.ui.tools.internal.actions.session,
+ org.eclipse.sirius.ui.tools.internal.views.common.action,
  org.polarsys.time4sys.model.time4sys
 Export-Package: org.polarsys.time4sys.activity.explorer,
  org.polarsys.time4sys.activity.explorer.activity,

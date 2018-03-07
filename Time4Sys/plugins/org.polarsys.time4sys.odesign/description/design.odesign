@@ -164,9 +164,9 @@
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql:not(self.isControl)">
-            <style lineStyle="dash" sizeComputationExpression="2" endsCentering="Both">
+            <style lineStyle="dash" sourceArrow="InputArrow" sizeComputationExpression="2" endsCentering="Both">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
-              <centerLabelStyleDescription>
+              <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </centerLabelStyleDescription>
             </style>
@@ -1592,6 +1592,7 @@
         </directEdit>
       </ownedColumnMappings>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramImportDescription" name="Transformed Design" domainClass="design.DesignModel" importedDiagram="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.PropertiesServices"/>
