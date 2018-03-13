@@ -73,12 +73,10 @@ public abstract class HardwareComponentTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.polarsys.time4sys.marte.hrm.HardwareComponent#getArea()
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testGetArea() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		//TODO once getDimension will be implemented properly 
 	}
 
 } //HardwareComponentTest

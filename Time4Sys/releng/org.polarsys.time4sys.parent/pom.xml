@@ -54,8 +54,9 @@
 				<configuration>
 					<argLine>${tycho.testArgLine}</argLine>
 					<useUIHarness>false</useUIHarness>
+					<failIfNoTests>false</failIfNoTests>
 					<includes>
-						<include>**/*Test.java</include>
+						<include>**/*Test.java</include> 
 					</includes>
 				</configuration>
 			</plugin>
