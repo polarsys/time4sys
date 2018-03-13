@@ -8,23 +8,17 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- */
-package org.polarsys.time4sys.marte.grm.tests;
+package org.polarsys.time4sys.model.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImplTest;
 
-/**
- * <!-- begin-user-doc -->
- * A test suite for the '<em><b>Library</b></em>' model.
- * <!-- end-user-doc -->
- * @generated NOT
- */
 @RunWith(Suite.class)
-@SuiteClasses({SchedulingPolicyTest.class, SchedulingPolicyImplTest.class})
+@SuiteClasses({
+	org.polarsys.time4sys.builder.simulation.AllTests.class,
+	org.polarsys.time4sys.model.AllTests.class
+})
 public class AllTests {
 
 }

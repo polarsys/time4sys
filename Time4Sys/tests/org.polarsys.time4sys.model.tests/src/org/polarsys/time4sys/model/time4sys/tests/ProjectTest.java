@@ -15,9 +15,7 @@ package org.polarsys.time4sys.model.time4sys.tests;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
-import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
-import org.polarsys.time4sys.marte.grm.ResourcePackage;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
@@ -97,10 +95,6 @@ public class ProjectTest extends TestCase {
 	protected void setUp() throws Exception {
 		setFixture(Time4sysFactory.eINSTANCE.createProject());
 		DesignModel model = df.createDesignModel();
-		WorkloadBehavior behavior = gqamFactory.createWorkloadBehavior();
-		model.setWorkloadBehavior(behavior);
-		ResourcePackage resPkg = grmFactory.createResourcePackage();
-		model.setResourcePackage(resPkg);
 		fixture.setDesign(model);
 	}
 

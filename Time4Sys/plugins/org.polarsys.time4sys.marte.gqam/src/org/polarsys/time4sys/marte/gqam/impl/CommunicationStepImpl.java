@@ -112,6 +112,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @deprecated Use getConcurRes instead
 	 */
 	@Deprecated
 	public CommunicationResource getComRes() {
@@ -139,6 +140,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @deprecated Use setConcurRes instead
 	 */
 	@Deprecated
 	public void setComRes(CommunicationResource newComRes) {
