@@ -49,7 +49,7 @@
     <command
       commandId="org.polarsys.time4sys.simulation.commands.analyse"
       id="org.polarsys.time4sys.simulation.contrib.analyse"
-      label="Analyse simmulation trace"
+      label="Analyse simulation trace"
       mnemonic="A">
       <visibleWhen>
         <with
