@@ -85,7 +85,7 @@ public class SimulationAnalyserTest {
 		// When we analyse the simulation
 		final Transformation analysis = SimulationAnalyser.analyse(aSimu.build());
 		// (For manual inspection)
-		aProject.saveAsEcore("/home/loic/projets/runtime-EclipseApplication/test/" + this.getClass().getSimpleName()+ "-testAnalyseOneStep.time4sys");
+		//aProject.saveAsEcore("/home/loic/projets/runtime-EclipseApplication/test/" + this.getClass().getSimpleName()+ "-testAnalyseOneStep.time4sys");
 		// Then...
 		assertNotNull(analysis);
 		assertNotNull(analysis.getResult());

@@ -313,12 +313,18 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public EAnnotation getEAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public EAnnotation getEAnnotation(final String source) {
+		if (source == null) {
+			return null;
+		}
+		for(EAnnotation annot: getEAnnotations()) {
+			if (source.equals(annot.getSource())) {
+				return annot;
+			}
+		}
+		return null;
 	}
 
 	/**

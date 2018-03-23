@@ -12,10 +12,13 @@
  */
 package org.polarsys.time4sys.marte.gqam.tests;
 
-import junit.textui.TestRunner;
-
+import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
+import org.polarsys.time4sys.marte.srm.SrmFactory;
+
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,5 +79,22 @@ public class CommunicationStepTest extends StepTest {
 	protected void tearDown() throws Exception {
 		setFixture(null);
 	}
+	
+	public void testConcurResRedefinition() {
+		final CommunicationStep comStep = (CommunicationStep)fixture;
+		final CommunicationChannel aComChan = GqamFactory.eINSTANCE.createCommunicationChannel();
+		assertNull(comStep.getConcurRes());
+		comStep.setConcurRes(aComChan);
+		assertEquals(aComChan, comStep.getConcurRes());
+		final SchedulableResource aSchedRes = SrmFactory.eINSTANCE.createSoftwareSchedulableResource();
+		try {
+			comStep.setConcurRes(aSchedRes);
+			fail("concurRes attribute is redefined to accept only CommunicationChannel.");
+		} catch (IllegalArgumentException e) {
+			
+		}
+	}
+	
+	
 
 } //CommunicationStepTest

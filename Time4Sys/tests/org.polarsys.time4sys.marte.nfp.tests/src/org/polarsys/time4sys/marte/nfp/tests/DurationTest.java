@@ -12,15 +12,14 @@
  */
 package org.polarsys.time4sys.marte.nfp.tests;
 
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
-import static org.junit.Assert.fail;
+import java.math.MathContext;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -296,12 +295,12 @@ public class DurationTest extends TestCase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext)
-	 * @generated
+	 * @generated NOT
 	 */
 	public void testDiv__Duration_MathContext() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
+		final MathContext mathContext = new MathContext(2);
+		assertEquals(5.3, NfpFactory.eINSTANCE.createDurationFromString("16ms").div(NfpFactory.eINSTANCE.createDurationFromString("3ms"), mathContext), 0.0000001);
+		//NB: If not using MathContext, one will get an arithmetic exception.
 	}
 
 	/**

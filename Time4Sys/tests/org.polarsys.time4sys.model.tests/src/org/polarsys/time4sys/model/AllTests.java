@@ -13,12 +13,13 @@ package org.polarsys.time4sys.model;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.polarsys.time4sys.model.time4sys.tests.Time4sysAllTest;
+import org.polarsys.time4sys.model.time4sys.tests.Time4sysAllTests;
 
 @RunWith(Suite.class)
 @SuiteClasses({
 	org.polarsys.time4sys.model.transformations.AllTests.class,
-	Time4sysAllTest.class
+	org.polarsys.time4sys.builder.simulation.AllTests.class,
+	Time4sysAllTests.class
 })
 public class AllTests {
 
