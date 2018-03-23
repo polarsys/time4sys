@@ -206,7 +206,7 @@
           <subNodeMappings xsi:type="description_1:NodeMappingImport" name="SubBus" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.ownedResource" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="hrm.HardwareBus" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element']" inheritsAncestorFilters="false"/>
           <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubHw" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.ownedResource" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubHw'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']"/>
           <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="SubSw" preconditionExpression="aql:(self.oclIsKindOf(grm::ConcurrencyResource)) or self.oclIsKindOf(srm::SoftwareResource)" semanticCandidatesExpression="aql:self.ownedResource" semanticElements="var:self" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="grm.Resource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='SubSwResource2HwResource']" reusedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subNodeMappings[name='SubBus']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" importedMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']">
-            <subNodeMappings name="ExecutionStep" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Del%20ExecutionStep']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep%20Edit']" semanticCandidatesExpression="aql:self.eInverse('concurRes')" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step">
+            <subNodeMappings name="ExecutionStep" preconditionExpression="aql:not(self.oclIsTypeOf(gqam::Delay))" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Del%20ExecutionStep']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep%20Edit']" semanticCandidatesExpression="aql:self.eInverse('concurRes')" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.Step">
               <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="feature:outputPin" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" domainClass="gqam.OutputPin">
                 <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/OutputFlowPin.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -248,6 +248,12 @@
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
                 </style>
               </conditionnalStyles>
+            </subNodeMappings>
+            <subNodeMappings name="Delay" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Del%20ExecutionStep']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep%20Edit']" semanticCandidatesExpression="aql:self.eInverse('concurRes')" domainClass="gqam.Delay" reusedBorderedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin']">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="4" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/Delay.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
             </subNodeMappings>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/computingResource.png" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomYellow']">
@@ -779,7 +785,7 @@
                   <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
                       <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step' + container.steps->size()"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step ' + (execStep.eContainer().steps->size()).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -799,6 +805,25 @@
                     <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.CommunicationStep" referenceName="steps" variableName="comStep">
                       <subModelOperations xsi:type="tool:SetValue" featureName="comRes" valueExpression="var:container"/>
                       <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step' + self.scenario.steps->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:NodeCreationDescription" name="Delay" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='Delay']" iconPath="/org.polarsys.time4sys.odesign/images/Delay.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Delay" referenceName="steps" variableName="delay">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Delay ' + (delay.eContainer().steps->filter(gqam::Delay)->size()).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1150,90 +1175,6 @@
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" preconditionExpression="aql:self.hasDeadline2()" imageExpression="/org.polarsys.time4sys.odesign/images/redflag16.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']"/>
         </decorationDescriptionsSet>
       </defaultLayer>
-      <additionalLayers name="Communication">
-        <toolSections name="Resources">
-          <ownedTools xsi:type="tool_1:ToolGroup" name="Bus Group">
-            <tools xsi:type="tool_1:ContainerCreationDescription" name="create HwBus" label="Bus" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" iconPath="/org.polarsys.time4sys.odesign/images/ComResource.gif">
-              <variable name="container"/>
-              <viewVariable name="containerView"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:resourcePackage">
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
-                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </tools>
-            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
-              <filters precondition="feature:synchronized" elementsToListen="aql:self">
-                <listeners domainClass="DDiagram" featureName="synchronized"/>
-              </filters>
-              <element name="element"/>
-              <elementView name="elementView"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'"/>
-                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
-                    <parameters name="context" value="var:elementView"/>
-                    <parameters name="wizardMessage" value="aql:'Select Bus to show in '+ element.name"/>
-                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareBus)"/>
-                    <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(hrm::HardwareBus)"/>
-                    <parameters name="elementToCreateMapping" value="aql:'HwBus'"/>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </tools>
-          </ownedTools>
-          <groupExtensions group="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Hardware%20Resource%20Group']">
-            <tools xsi:type="tool_1:ContainerCreationDescription" name="Communication Media Creation" label="Communication Media " forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubHw']" iconPath="/org.polarsys.time4sys.odesign/images/ComMedia.gif">
-              <variable name="container"/>
-              <viewVariable name="containerView"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
-                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedElement" variableName="hw">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(grm::CommunicationMedia)">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedResource" variableName="hw">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </tools>
-          </groupExtensions>
-          <groupExtensions group="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Software%20Resource%20Group']">
-            <tools xsi:type="tool_1:ContainerCreationDescription" name="Communication Channel Creation" label="Communication Channel " forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/ComChannel.gif">
-              <variable name="container"/>
-              <viewVariable name="containerView"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
-                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.CommunicationChannel" referenceName="ownedResource" variableName="sw">
-                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'CommunicationChannel' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                    </subModelOperations>
-                  </subModelOperations>
-                </firstModelOperations>
-              </initialOperation>
-            </tools>
-          </groupExtensions>
-        </toolSections>
-      </additionalLayers>
       <toolSection name="Behaviours">
         <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Name">
           <mask mask="{0}"/>
@@ -1265,14 +1206,14 @@
           <element name="element"/>
           <elementView name="elementView"/>
           <initialOperation>
-            <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+            <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Edition Wizard">
               <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                 <initialOperation/>
               </buttons>
               <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
                 <initialOperation/>
               </buttons>
-              <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.4"/>
+              <page name="Default Page" labelExpression="aql: 'Edit '+self.name" semanticCandidateExpression="var:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3"/>
             </firstModelOperations>
           </initialOperation>
         </ownedTools>
@@ -1592,7 +1533,92 @@
         </directEdit>
       </ownedColumnMappings>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramImportDescription" name="Transformed Design" domainClass="design.DesignModel" importedDiagram="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']"/>
+    <ownedRepresentations xsi:type="description_1:DiagramImportDescription" name="Transformed Design" domainClass="design.DesignModel" importedDiagram="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']">
+      <additionalLayers name="Communication">
+        <toolSections name="Resources">
+          <ownedTools xsi:type="tool_1:ToolGroup" name="Bus Group">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="create HwBus" label="Bus" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']" iconPath="/org.polarsys.time4sys.odesign/images/ComResource.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="feature:resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+              <filters precondition="feature:synchronized" elementsToListen="aql:self">
+                <listeners domainClass="DDiagram" featureName="synchronized"/>
+              </filters>
+              <element name="element"/>
+              <elementView name="elementView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'"/>
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                    <parameters name="context" value="var:elementView"/>
+                    <parameters name="wizardMessage" value="aql:'Select Bus to show in '+ element.name"/>
+                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareBus)"/>
+                    <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(hrm::HardwareBus)"/>
+                    <parameters name="elementToCreateMapping" value="aql:'HwBus'"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <groupExtensions group="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Hardware%20Resource%20Group']">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="Communication Media Creation" label="Communication Media " forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubHw']" iconPath="/org.polarsys.time4sys.odesign/images/ComMedia.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedElement" variableName="hw">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(grm::CommunicationMedia)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedResource" variableName="hw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </groupExtensions>
+          <groupExtensions group="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Software%20Resource%20Group']">
+            <tools xsi:type="tool_1:ContainerCreationDescription" name="Communication Channel Creation" label="Communication Channel " forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/ComChannel.gif">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.CommunicationChannel" referenceName="ownedResource" variableName="sw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'CommunicationChannel' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </groupExtensions>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.PropertiesServices"/>
@@ -1608,7 +1634,7 @@
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
     <categories name="Default">
-      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4" indented="true"/>
+      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3" indented="true"/>
       <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
@@ -1692,7 +1718,7 @@
               </conditionalStyles>
             </widget>
           </ifs>
-          <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EAttribute) and eStructuralFeature.many">
+          <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:not(eStructuralFeature.eType.oclIsKindOf(ecore::EEnum)) and eStructuralFeature.many">
             <widget xsi:type="properties:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
           </ifs>
         </controls>
@@ -1700,22 +1726,6 @@
       <groups name="org.eclipse.sirius.ui.properties.schedulingparamgroup" labelExpression="Scheduling Parameter" domainClass="grm.SchedulingParameter" semanticCandidateExpression="aql:self.schedParams">
         <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
           <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
-              <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
-              </initialOperation>
-              <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
-                <style>
-                  <labelFontFormat>bold</labelFontFormat>
-                </style>
-              </conditionalStyles>
-            </widget>
-          </ifs>
-        </controls>
-      </groups>
-      <groups name="org.eclipse.sirius.ui.properties.stepgroup" labelExpression="Timing" domainClass="gqam.Step" semanticCandidateExpression="var:self">
-        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
-          <ifs predicateExpression="aql:(eStructuralFeature.name='bestCET' or eStructuralFeature.name='worstCET') and eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
