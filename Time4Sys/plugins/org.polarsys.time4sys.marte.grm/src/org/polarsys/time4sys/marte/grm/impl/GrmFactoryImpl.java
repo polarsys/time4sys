@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.marte.grm.*;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
@@ -110,8 +111,12 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 			case GrmPackage.CONCURRENCY_RESOURCE: return createConcurrencyResource();
 			case GrmPackage.DEVICE_RESOURCE: return createDeviceResource();
 			case GrmPackage.DYNAMIC_USAGE: return createDynamicUsage();
+			case GrmPackage.EDF_PARAMETERS: return createEDFParameters();
+			case GrmPackage.FIXED_PRIORITY_PARAMETERS: return createFixedPriorityParameters();
 			case GrmPackage.MUTUAL_EXCLUSION_PROTOCOL: return createMutualExclusionProtocol();
 			case GrmPackage.MUTUAL_EXCLUSION_RESOURCE: return createMutualExclusionResource();
+			case GrmPackage.PERIODIC_SERVER_PARAMETERS: return createPeriodicServerParameters();
+			case GrmPackage.POOLING_PARAMETERS: return createPoolingParameters();
 			case GrmPackage.PROTECTION_PARAMETER: return createProtectionParameter();
 			case GrmPackage.RESOURCE_BROKER: return createResourceBroker();
 			case GrmPackage.RESOURCE_CONNECTOR: return createResourceConnector();
@@ -131,6 +136,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 			case GrmPackage.STATIC_USAGE: return createStaticUsage();
 			case GrmPackage.STORAGE_RESOURCE: return createStorageResource();
 			case GrmPackage.SYNCH_RESOURCE: return createSynchResource();
+			case GrmPackage.TABLE_DRIVEN_SCHEDULE: return createTableDrivenSchedule();
+			case GrmPackage.TABLE_ENTRY_TYPE: return createTableEntryType();
 			case GrmPackage.TIMER_RESOURCE: return createTimerResource();
 			case GrmPackage.USAGE_DEMAND: return createUsageDemand();
 			case GrmPackage.USAGE_TYPED_AMOUNT: return createUsageTypedAmount();
@@ -147,6 +154,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case GrmPackage.PERIODIC_SERVER_KIND:
+				return createPeriodicServerKindFromString(eDataType, initialValue);
 			case GrmPackage.PROTECT_PROTOCOL_KIND:
 				return createProtectProtocolKindFromString(eDataType, initialValue);
 			case GrmPackage.SCHED_POLICY_KIND:
@@ -172,6 +181,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case GrmPackage.PERIODIC_SERVER_KIND:
+				return convertPeriodicServerKindToString(eDataType, instanceValue);
 			case GrmPackage.PROTECT_PROTOCOL_KIND:
 				return convertProtectProtocolKindToString(eDataType, instanceValue);
 			case GrmPackage.SCHED_POLICY_KIND:
@@ -227,6 +238,26 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	public SynchResource createSynchResource() {
 		SynchResourceImpl synchResource = new SynchResourceImpl();
 		return synchResource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TableDrivenSchedule createTableDrivenSchedule() {
+		TableDrivenScheduleImpl tableDrivenSchedule = new TableDrivenScheduleImpl();
+		return tableDrivenSchedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TableEntryType createTableEntryType() {
+		TableEntryTypeImpl tableEntryType = new TableEntryTypeImpl();
+		return tableEntryType;
 	}
 
 	/**
@@ -432,6 +463,26 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PeriodicServerParameters createPeriodicServerParameters() {
+		PeriodicServerParametersImpl periodicServerParameters = new PeriodicServerParametersImpl();
+		return periodicServerParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PoolingParameters createPoolingParameters() {
+		PoolingParametersImpl poolingParameters = new PoolingParametersImpl();
+		return poolingParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MutualExclusionProtocol createMutualExclusionProtocol() {
 		MutualExclusionProtocolImpl mutualExclusionProtocol = new MutualExclusionProtocolImpl();
 		return mutualExclusionProtocol;
@@ -482,9 +533,49 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PeriodicServerKind createPeriodicServerKindFromString(EDataType eDataType, String initialValue) {
+		PeriodicServerKind result = PeriodicServerKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPeriodicServerKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DynamicUsage createDynamicUsage() {
 		DynamicUsageImpl dynamicUsage = new DynamicUsageImpl();
 		return dynamicUsage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDFParameters createEDFParameters() {
+		EDFParametersImpl edfParameters = new EDFParametersImpl();
+		return edfParameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FixedPriorityParameters createFixedPriorityParameters() {
+		FixedPriorityParametersImpl fixedPriorityParameters = new FixedPriorityParametersImpl();
+		return fixedPriorityParameters;
 	}
 
 	/**

@@ -13,6 +13,8 @@
  */
 package org.polarsys.time4sys.builder.design;
 
+import java.util.function.Predicate;
+
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -23,6 +25,8 @@ import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SoftwareScheduler;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
@@ -59,7 +63,7 @@ public class ProcessorBuilder {
 
 	public ProcessorBuilder thatRuns(final TaskBuilder... tasks) {
 		for(TaskBuilder tb: tasks) {
-			proc.getOwnedResource().add(tb.build(designBuilder));
+			addOwnedResource(tb.build(designBuilder));
 			
 		}
 		return this;
@@ -67,7 +71,7 @@ public class ProcessorBuilder {
 	
 	public ProcessorBuilder thatRuns(final StepBuilder... steps) {
 		for(StepBuilder step: steps) {
-			proc.getOwnedResource().add(step.getTask().build(designBuilder));
+			addOwnedResource(step.getTask().build(designBuilder));
 		}
 		return this;
 	}
@@ -78,7 +82,7 @@ public class ProcessorBuilder {
 
 	public ProcessorBuilder thatHandles(final AlarmBuilder... alarms) {
 		for(AlarmBuilder alrm: alarms) {
-			proc.getOwnedResource().add(alrm.build(designBuilder));
+			addOwnedResource(alrm.build(designBuilder));
 		}
 		return this;
 	}
@@ -97,9 +101,29 @@ public class ProcessorBuilder {
 		}
 		return this;
 	}
+	
+
+	public TableDrivenSchedPolicyBuilder underTableDrivenSchedPolicy() {
+		under(SchedPolicyKind.TIME_TABLE_DRIVEN);
+		return new TableDrivenSchedPolicyBuilder(proc.getMainScheduler());
+	}
 
 	public HardwareProcessor build() {
 		return proc;
 	}
+
+	public void addOwnedResource(final SoftwareConcurrentResource value) {
+		proc.getOwnedResource().add(value);
+	}
+
+	public long countTasks() {
+		return proc.getOwnedResource().stream().filter(new Predicate<Resource>() {
+			@Override
+			public boolean test(Resource p) {
+				return p instanceof SoftwareSchedulableResource;
+			}
+		}).count();
+	}
+
 
 }

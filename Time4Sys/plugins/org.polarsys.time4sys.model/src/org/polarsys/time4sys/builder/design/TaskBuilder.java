@@ -223,4 +223,8 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	public TaskBuilder thatRunsInSequence(StepBuilder... steps) {
 		return runsInSequence(steps);
 	}
+
+	public String getName() {
+		return task.getName();
+	}
 }

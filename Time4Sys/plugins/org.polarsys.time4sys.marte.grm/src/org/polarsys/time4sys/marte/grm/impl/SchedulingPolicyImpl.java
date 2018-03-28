@@ -16,15 +16,18 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.marte.grm.ScheduleSpecification;
 import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
 import org.polarsys.time4sys.marte.grm.util.GrmValidator;
 
@@ -37,6 +40,7 @@ import org.polarsys.time4sys.marte.grm.util.GrmValidator;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl#getPolicy <em>Policy</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl#getOtherSchedPolicy <em>Other Sched Policy</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl#getSchedule <em>Schedule</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +83,16 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 	 * @ordered
 	 */
 	protected String otherSchedPolicy = OTHER_SCHED_POLICY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSchedule() <em>Schedule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSchedule()
+	 * @generated
+	 * @ordered
+	 */
+	protected ScheduleSpecification schedule;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -161,6 +175,49 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScheduleSpecification getSchedule() {
+		return schedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSchedule(ScheduleSpecification newSchedule, NotificationChain msgs) {
+		ScheduleSpecification oldSchedule = schedule;
+		schedule = newSchedule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GrmPackage.SCHEDULING_POLICY__SCHEDULE, oldSchedule, newSchedule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSchedule(ScheduleSpecification newSchedule) {
+		if (newSchedule != schedule) {
+			NotificationChain msgs = null;
+			if (schedule != null)
+				msgs = ((InternalEObject)schedule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GrmPackage.SCHEDULING_POLICY__SCHEDULE, null, msgs);
+			if (newSchedule != null)
+				msgs = ((InternalEObject)newSchedule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GrmPackage.SCHEDULING_POLICY__SCHEDULE, null, msgs);
+			msgs = basicSetSchedule(newSchedule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.SCHEDULING_POLICY__SCHEDULE, newSchedule, newSchedule));
+	}
+
+	/**
 	 * @generated NOT
 	 */
 	public boolean hasValidPolicy(DiagnosticChain diagnostics, Map<?, ?> context) {
@@ -182,6 +239,20 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case GrmPackage.SCHEDULING_POLICY__SCHEDULE:
+				return basicSetSchedule(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -192,6 +263,8 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 				return getPolicy();
 			case GrmPackage.SCHEDULING_POLICY__OTHER_SCHED_POLICY:
 				return getOtherSchedPolicy();
+			case GrmPackage.SCHEDULING_POLICY__SCHEDULE:
+				return getSchedule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +281,9 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 				return;
 			case GrmPackage.SCHEDULING_POLICY__OTHER_SCHED_POLICY:
 				setOtherSchedPolicy((String)newValue);
+				return;
+			case GrmPackage.SCHEDULING_POLICY__SCHEDULE:
+				setSchedule((ScheduleSpecification)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,6 +302,9 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 			case GrmPackage.SCHEDULING_POLICY__OTHER_SCHED_POLICY:
 				setOtherSchedPolicy(OTHER_SCHED_POLICY_EDEFAULT);
 				return;
+			case GrmPackage.SCHEDULING_POLICY__SCHEDULE:
+				setSchedule((ScheduleSpecification)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +320,8 @@ public class SchedulingPolicyImpl extends AccessControlPolicyImpl implements Sch
 				return policy != POLICY_EDEFAULT;
 			case GrmPackage.SCHEDULING_POLICY__OTHER_SCHED_POLICY:
 				return OTHER_SCHED_POLICY_EDEFAULT == null ? otherSchedPolicy != null : !OTHER_SCHED_POLICY_EDEFAULT.equals(otherSchedPolicy);
+			case GrmPackage.SCHEDULING_POLICY__SCHEDULE:
+				return schedule != null;
 		}
 		return super.eIsSet(featureID);
 	}
