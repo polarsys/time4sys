@@ -85,15 +85,18 @@ public class NfpSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case NfpPackage.DURATION: {
-				Duration duration = (Duration)theEObject;
-				T result = caseDuration(duration);
+			case NfpPackage.BUCKET: {
+				Bucket bucket = (Bucket)theEObject;
+				T result = caseBucket(bucket);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.TIME_INTERVAL: {
-				TimeInterval timeInterval = (TimeInterval)theEObject;
-				T result = caseTimeInterval(timeInterval);
+			case NfpPackage.COMPOSITE_DISTRIBUTION: {
+				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
+				T result = caseCompositeDistribution(compositeDistribution);
+				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
+				if (result == null) result = caseTimeInterval(compositeDistribution);
+				if (result == null) result = caseDuration(compositeDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,14 +112,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.PROBABILISTIC_DURATION: {
-				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
-				T result = caseProbabilisticDuration(probabilisticDuration);
-				if (result == null) result = caseTimeInterval(probabilisticDuration);
-				if (result == null) result = caseDuration(probabilisticDuration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case NfpPackage.DISCRETE_DISTRIBUTION: {
 				DiscreteDistribution discreteDistribution = (DiscreteDistribution)theEObject;
 				T result = caseDiscreteDistribution(discreteDistribution);
@@ -126,18 +121,9 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.BUCKET: {
-				Bucket bucket = (Bucket)theEObject;
-				T result = caseBucket(bucket);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NfpPackage.NORMAL_DISTRIBUTION: {
-				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
-				T result = caseNormalDistribution(normalDistribution);
-				if (result == null) result = caseProbabilisticDuration(normalDistribution);
-				if (result == null) result = caseTimeInterval(normalDistribution);
-				if (result == null) result = caseDuration(normalDistribution);
+			case NfpPackage.DURATION: {
+				Duration duration = (Duration)theEObject;
+				T result = caseDuration(duration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,21 +136,35 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case NfpPackage.NORMAL_DISTRIBUTION: {
+				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
+				T result = caseNormalDistribution(normalDistribution);
+				if (result == null) result = caseProbabilisticDuration(normalDistribution);
+				if (result == null) result = caseTimeInterval(normalDistribution);
+				if (result == null) result = caseDuration(normalDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.PROBABILISTIC_DURATION: {
+				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
+				T result = caseProbabilisticDuration(probabilisticDuration);
+				if (result == null) result = caseTimeInterval(probabilisticDuration);
+				if (result == null) result = caseDuration(probabilisticDuration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.TIME_INTERVAL: {
+				TimeInterval timeInterval = (TimeInterval)theEObject;
+				T result = caseTimeInterval(timeInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case NfpPackage.UNIFORM_DISTRIBUTION: {
 				UniformDistribution uniformDistribution = (UniformDistribution)theEObject;
 				T result = caseUniformDistribution(uniformDistribution);
 				if (result == null) result = caseProbabilisticDuration(uniformDistribution);
 				if (result == null) result = caseTimeInterval(uniformDistribution);
 				if (result == null) result = caseDuration(uniformDistribution);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NfpPackage.COMPOSITE_DISTRIBUTION: {
-				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
-				T result = caseCompositeDistribution(compositeDistribution);
-				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
-				if (result == null) result = caseTimeInterval(compositeDistribution);
-				if (result == null) result = caseDuration(compositeDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

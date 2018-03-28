@@ -139,12 +139,12 @@ public class CompositeDistributionItemProvider extends ProbabilisticDurationItem
 		newChildDescriptors.add
 			(createChildParameter
 				(NfpPackage.Literals.COMPOSITE_DISTRIBUTION__PARTS,
-				 NfpFactory.eINSTANCE.createDiscreteDistribution()));
+				 NfpFactory.eINSTANCE.createCompositeDistribution()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(NfpPackage.Literals.COMPOSITE_DISTRIBUTION__PARTS,
-				 NfpFactory.eINSTANCE.createNormalDistribution()));
+				 NfpFactory.eINSTANCE.createDiscreteDistribution()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -154,12 +154,12 @@ public class CompositeDistributionItemProvider extends ProbabilisticDurationItem
 		newChildDescriptors.add
 			(createChildParameter
 				(NfpPackage.Literals.COMPOSITE_DISTRIBUTION__PARTS,
-				 NfpFactory.eINSTANCE.createUniformDistribution()));
+				 NfpFactory.eINSTANCE.createNormalDistribution()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(NfpPackage.Literals.COMPOSITE_DISTRIBUTION__PARTS,
-				 NfpFactory.eINSTANCE.createCompositeDistribution()));
+				 NfpFactory.eINSTANCE.createUniformDistribution()));
 	}
 
 }

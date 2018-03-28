@@ -86,12 +86,12 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	protected NfpSwitch<Adapter> modelSwitch =
 		new NfpSwitch<Adapter>() {
 			@Override
-			public Adapter caseDuration(Duration object) {
-				return createDurationAdapter();
+			public Adapter caseBucket(Bucket object) {
+				return createBucketAdapter();
 			}
 			@Override
-			public Adapter caseTimeInterval(TimeInterval object) {
-				return createTimeIntervalAdapter();
+			public Adapter caseCompositeDistribution(CompositeDistribution object) {
+				return createCompositeDistributionAdapter();
 			}
 			@Override
 			public Adapter caseDataSize(DataSize object) {
@@ -102,32 +102,32 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 				return createDataTxRateAdapter();
 			}
 			@Override
-			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
-				return createProbabilisticDurationAdapter();
-			}
-			@Override
 			public Adapter caseDiscreteDistribution(DiscreteDistribution object) {
 				return createDiscreteDistributionAdapter();
 			}
 			@Override
-			public Adapter caseBucket(Bucket object) {
-				return createBucketAdapter();
-			}
-			@Override
-			public Adapter caseNormalDistribution(NormalDistribution object) {
-				return createNormalDistributionAdapter();
+			public Adapter caseDuration(Duration object) {
+				return createDurationAdapter();
 			}
 			@Override
 			public Adapter caseGeneralizedExtremeValueDistribution(GeneralizedExtremeValueDistribution object) {
 				return createGeneralizedExtremeValueDistributionAdapter();
 			}
 			@Override
-			public Adapter caseUniformDistribution(UniformDistribution object) {
-				return createUniformDistributionAdapter();
+			public Adapter caseNormalDistribution(NormalDistribution object) {
+				return createNormalDistributionAdapter();
 			}
 			@Override
-			public Adapter caseCompositeDistribution(CompositeDistribution object) {
-				return createCompositeDistributionAdapter();
+			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
+				return createProbabilisticDurationAdapter();
+			}
+			@Override
+			public Adapter caseTimeInterval(TimeInterval object) {
+				return createTimeIntervalAdapter();
+			}
+			@Override
+			public Adapter caseUniformDistribution(UniformDistribution object) {
+				return createUniformDistributionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
