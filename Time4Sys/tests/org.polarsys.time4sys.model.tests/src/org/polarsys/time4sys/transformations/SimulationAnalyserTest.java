@@ -8,7 +8,7 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-package org.polarsys.time4sys.model.transformations;
+package org.polarsys.time4sys.transformations;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

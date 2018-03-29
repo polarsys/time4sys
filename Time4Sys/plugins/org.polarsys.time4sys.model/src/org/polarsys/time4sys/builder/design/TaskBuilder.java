@@ -17,11 +17,16 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
+import org.polarsys.time4sys.marte.grm.EDFParameters;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
@@ -35,6 +40,10 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
  */
 public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulableResource, TaskBuilder> {
 
+	private static final String EDF_POLICY_NAME = "EDF";
+	private static final String FP_POLICY_NAME = "FixedPriority";
+	private static final EClass FP_PARAM_ECLASS = GrmPackage.eINSTANCE.getFixedPriorityParameters();
+	private static final EClass EDF_PARAM_ECLASS = GrmPackage.eINSTANCE.getEDFParameters();
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
 	protected static GqamFactory gqamFactory = GqamFactory.eINSTANCE;
 	protected static SrmFactory srmFactory = SrmFactory.eINSTANCE;
@@ -170,28 +179,31 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	public TaskBuilder ofDeadline(final String value) {
-		getSchedParams("Deadline").setValue(value);
+		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, EDF_PARAM_ECLASS);
+		edfParam.setDeadline(NfpFactory.eINSTANCE.createDurationFromString(value));
 		/* NB: An EndToEndFlow will also be created later */
 		deadline = value;
 		return this;
 	}
 	
 	public TaskBuilder ofPriority(final int value) {
-		getSchedParams("FixedPriority").setValue(Integer.toString(value));
+		final FixedPriorityParameters schedParam = (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		//schedParam.setValue(Integer.toString(value));
+		schedParam.setPriority(value);
 		return this;
 	}
 	
 	public int getPriority() {
-		return Integer.parseInt(getSchedParams("FixedPriority").getValue());
+		return Integer.parseInt(getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS).getValue());
 	}
 
-	private SchedulingParameter getSchedParams(final String key) {
+	private SchedulingParameter getSchedParams(final String key, final EClass eClass) {
 		for(SchedulingParameter v: task.getSchedParams()) {
 			if (key.equals(v.getName())) {
 				return v;
 			}
 		}
-		final SchedulingParameter sp = grmFactory.createSchedulingParameter();
+		final SchedulingParameter sp = (SchedulingParameter)grmFactory.create(eClass);
 		sp.setName(key);
 		task.getSchedParams().add(sp);
 		return sp;

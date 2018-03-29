@@ -8,7 +8,7 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-package org.polarsys.time4sys.model.transformations;
+package org.polarsys.time4sys.transformations;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -18,7 +18,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 	IdentityDerivationTest.class,
 	SimulationAnalyserTest.class,
-	ToPeriodicDerivationTest.class
+	ToPeriodicDerivationTest.class,
+	RemoveAndReplaceDeprecatedTest.class,
 	})
 public class AllTests {
 

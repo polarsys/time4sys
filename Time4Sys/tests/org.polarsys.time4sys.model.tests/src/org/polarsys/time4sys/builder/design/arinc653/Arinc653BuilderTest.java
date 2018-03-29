@@ -133,7 +133,7 @@ public class Arinc653BuilderTest {
 			}
 			
 		});
-		//assertEquals(1, t1FPParam.count());
+		assertEquals(1, t1FPParam.count());
 		
 		try {
 			theProject.saveAsEcore("../../runtime-EclipseApplication/test/testArinc653BuilderWithTasks.time4sys");
