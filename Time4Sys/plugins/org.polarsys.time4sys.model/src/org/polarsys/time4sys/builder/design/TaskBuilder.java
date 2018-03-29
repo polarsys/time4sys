@@ -29,6 +29,7 @@ import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
@@ -186,6 +187,12 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		return this;
 	}
 	
+
+	public Duration getDeadline() {
+		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, null);
+		return edfParam.getDeadline();
+	}
+	
 	public TaskBuilder ofPriority(final int value) {
 		final FixedPriorityParameters schedParam = (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
 		//schedParam.setValue(Integer.toString(value));
@@ -194,7 +201,8 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 	
 	public int getPriority() {
-		return Integer.parseInt(getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS).getValue());
+		final FixedPriorityParameters fp = (FixedPriorityParameters) getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		return fp.getPriority();
 	}
 
 	private SchedulingParameter getSchedParams(final String key, final EClass eClass) {
@@ -202,6 +210,9 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 			if (key.equals(v.getName())) {
 				return v;
 			}
+		}
+		if (eClass == null) {
+			return null;
 		}
 		final SchedulingParameter sp = (SchedulingParameter)grmFactory.create(eClass);
 		sp.setName(key);
