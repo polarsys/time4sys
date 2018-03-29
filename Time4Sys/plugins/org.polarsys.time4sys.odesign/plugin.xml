@@ -32,6 +32,14 @@
            actionClass="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps"
            id="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps">
      </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.wizard.AddRemoveInvolvedElement"
+           id="org.polarsys.time4sys.odesign.wizard.AddRemoveInvolvedElement">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli"
+           id="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli">
+     </javaActions>
   </extension>
   <extension
         point="org.eclipse.sirius.refreshExtensionProvider">

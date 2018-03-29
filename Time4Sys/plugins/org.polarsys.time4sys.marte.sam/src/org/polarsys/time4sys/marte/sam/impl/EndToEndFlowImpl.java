@@ -393,7 +393,7 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 	 */
 	public EList<FlowInvolvedElement> getInvolvedElement() {
 		if (involvedElement == null) {
-			involvedElement = new EObjectResolvingEList<FlowInvolvedElement>(FlowInvolvedElement.class, this, SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT);
+			involvedElement = new EObjectNotUniqueEList<FlowInvolvedElement>(FlowInvolvedElement.class, this, SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT);
 		}
 		return involvedElement;
 	}

@@ -445,13 +445,11 @@ public class MarteServices {
 		}
 	}
 
-	public List<ArrivalPattern> getAllPatternInDesign(EObject design, EObject diagram) {
+	public List<ArrivalPattern> getAllPatternInDiagram(EObject obj, EObject diagram) {
 		List<ArrivalPattern> result = new ArrayList<ArrivalPattern>();
-		if (design instanceof DesignModel) {
-			DesignModel designModel = (DesignModel) design;
-			for (WorkloadEvent demand : designModel.getWorkloadBehavior().getDemand()) {
-				result.add(demand.getPattern());
-			}
+		if (obj instanceof DesignModel) {
+			DesignModel design = (DesignModel) obj;
+			result = getAllPatternInDesign(design);
 			if (diagram instanceof DDiagram) {
 				DDiagram dDiagram = (DDiagram) diagram;
 				for (EObject controlPin : dDiagram.getDiagramElements()) {
@@ -461,6 +459,14 @@ public class MarteServices {
 					}
 				}
 			}
+		}
+		return result;
+	}
+
+	public static List<ArrivalPattern> getAllPatternInDesign(DesignModel design) {
+		List<ArrivalPattern> result = new ArrayList<ArrivalPattern>();
+		for (WorkloadEvent demand : design.getWorkloadBehavior().getDemand()) {
+			result.add(demand.getPattern());
 		}
 		return result;
 	}
@@ -514,9 +520,7 @@ public class MarteServices {
 		List<ArrivalPattern> results = new ArrayList<ArrivalPattern>();
 		if (obj instanceof DesignModel) {
 			DesignModel design = (DesignModel) obj;
-			for (WorkloadEvent we : design.getWorkloadBehavior().getDemand()) {
-				results.add(we.getPattern());
-			}
+			getAllPatternInDesign(design);
 			for (Step step : getAllSteps(design.getWorkloadBehavior())) {
 				for (OutputPin outputPin : step.getOutputPin()) {
 					if (outputPin.getPattern() != null) {
