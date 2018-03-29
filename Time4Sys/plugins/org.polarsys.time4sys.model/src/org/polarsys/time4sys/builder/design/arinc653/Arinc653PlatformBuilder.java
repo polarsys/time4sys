@@ -15,6 +15,7 @@ import java.util.Collections;
 
 import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.design.TableDrivenSchedPolicyBuilder;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
@@ -37,13 +38,17 @@ public class Arinc653PlatformBuilder {
 
 	public Arinc653PlatformBuilder called(final String name) {
 		processorBuilder.called(name);
+		schedBuilder.called(name + " Main Scheduler");
 		return this;
 	}
 
 	public Arinc653PlatformBuilder thatRuns(final Arinc653MIFBuilder... mifs) {
+		assert(mifs != null);
+		assert(processorBuilder != null);
 		mifsArray = mifs;
 		for(Arinc653MIFBuilder aMIF: mifs) {
 			processorBuilder.addOwnedResource(aMIF.build(designBuilder));
+			processorBuilder.addSchedulable(aMIF.build(designBuilder));
 			schedBuilder.addEntry(aMIF.getOrCreateTableEntry());
 		}
 		return this;
@@ -69,6 +74,15 @@ public class Arinc653PlatformBuilder {
 
 	public Duration getMAFDuration() {
 		return schedBuilder.getMAFDuration();
+	}
+
+	public HardwareProcessor build() {
+		final HardwareProcessor result = processorBuilder.build();
+		for(Arinc653MIFBuilder mifB: mifsArray) {
+			mifB.build(designBuilder);
+		}
+		schedBuilder.build();
+		return result;
 	}
 
 }

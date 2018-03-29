@@ -14,6 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
@@ -62,6 +63,9 @@ public class TableDrivenSchedPolicyBuilder {
 	}
 
 	public Duration getMAFDuration() {
+		if (schedule.eIsSet(GrmPackage.eINSTANCE.getTableDrivenSchedule_FrameCycleTime())) {
+			return schedule.getFrameCycleTime();
+		}
 		Duration sum = nfpFactory.createDurationFromString("0ms"); 
 		for(TableEntryType entry: schedule.getEntries()) {
 			for(Duration t: entry.getTimeSlot()) {
@@ -73,6 +77,14 @@ public class TableDrivenSchedPolicyBuilder {
 
 	public void addEntry(final TableEntryType entry) {
 		schedule.getEntries().add(entry);
+	}
+
+	public void build() {
+		schedule.setFrameCycleTime(getMAFDuration());
+	}
+
+	public void called(final String name) {
+		scheduler.setName(name);
 	}
 
 }

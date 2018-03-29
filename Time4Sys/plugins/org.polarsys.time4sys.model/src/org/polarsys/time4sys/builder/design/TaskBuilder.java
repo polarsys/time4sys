@@ -13,6 +13,7 @@
  */
 package org.polarsys.time4sys.builder.design;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,9 +21,11 @@ import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
@@ -88,6 +91,13 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		if (deadline != null) {
 			design.has(EndToEndFlowConstraintBuilder.anEndToEndConstraint().from(firstStep()).to(this).withDeadline(deadline));
 			deadline = null;
+		}
+		return task;
+	}
+	
+	public SoftwareSchedulableResource build() {
+		if (design == null) {
+			throw new IllegalStateException("Build() cannot be called until it has been built with a DesignBuilder once.");
 		}
 		return task;
 	}
@@ -226,5 +236,17 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public String getName() {
 		return task.getName();
+	}
+
+	public void addOwnedResource(final Resource value) {
+		task.getOwnedResource().add(value);
+	}
+	
+	public void addOwnedResource(final TaskBuilder value) {
+		task.getOwnedResource().add(value.task);
+	}
+
+	public Collection<Resource> getOwnedResource() {
+		return task.getOwnedResource();
 	}
 }

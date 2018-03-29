@@ -10,13 +10,20 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design.arinc653;
 
+import java.util.function.Predicate;
+
 import org.eclipse.emf.common.util.EList;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
+import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
@@ -35,6 +42,9 @@ public class Arinc653MIFBuilder {
 
 	private TaskBuilder taskBuilder;
 	private DesignBuilder designBuilder;
+	private TaskBuilder[] subTasks;
+	private SecondaryScheduler sched;
+	private String timeBudget;
 	
 	public Arinc653MIFBuilder() {
 		taskBuilder = new TaskBuilder();
@@ -45,9 +55,17 @@ public class Arinc653MIFBuilder {
 		return this;
 	}
 
-	public Arinc653MIFBuilder ofTimeBudget(String string) {
-		// TODO Auto-generated method stub
+	public Arinc653MIFBuilder ofTimeBudget(final String value) {
+		timeBudget = value;
+		if (designBuilder != null) {
+			final Duration d = NfpFactory.eINSTANCE.createDurationFromString(value);
+			getOrCreateTableEntry().setInitialBudget(d);
+		}
 		return this;
+	}
+	
+	public Duration getTimeBudget() {
+		return getOrCreateTableEntry().getInitialBudget();
 	}
 
 	public Arinc653MIFBuilder withOffset(String string) {
@@ -66,7 +84,7 @@ public class Arinc653MIFBuilder {
 	
 	public TableEntryType getOrCreateTableEntry() {
 		if (designBuilder == null) {
-			throw new IllegalStateException("getMIFDuration cannot be called until it has been built");
+			throw new IllegalStateException("getOrCreateTableEntry cannot be called until it has been built");
 		}
 		SoftwareSchedulableResource raw = taskBuilder.build(designBuilder);
 		for(SchedulingParameter param: raw.getSchedParams()) {
@@ -91,6 +109,68 @@ public class Arinc653MIFBuilder {
 
 	public SoftwareSchedulableResource build(final DesignBuilder designBuilder) {
 		this.designBuilder = designBuilder;
-		return taskBuilder.build(designBuilder);
+		if (timeBudget != null) {
+			ofTimeBudget(timeBudget);
+		}
+		final SoftwareSchedulableResource result = taskBuilder.build(designBuilder);
+		if (subTasks != null) {
+			for(TaskBuilder tb: subTasks) {
+				tb.build(designBuilder);
+			}
+		}
+		getOrCreateTableEntry().setName(getName() + " Slot");
+		return result;
 	}
+
+	public SoftwareSchedulableResource build() {
+		if (designBuilder == null) {
+			throw new IllegalStateException("Build() cannot be called until it has been built with a DesignBuilder once.");
+		}
+		return taskBuilder.build();
+	}
+	
+	public void addOwnedResource(final TaskBuilder tb) {
+		taskBuilder.addOwnedResource(tb);
+	}
+	
+
+	private void addOwnedResource(Resource res) {
+		taskBuilder.addOwnedResource(res);
+	}
+
+	public long countTasks() {
+		return taskBuilder.getOwnedResource().stream().filter(new Predicate<Resource>() {
+			@Override
+			public boolean test(Resource p) {
+				return p instanceof SoftwareSchedulableResource;
+			}
+		}).count();
+	}
+	
+	public Arinc653MIFBuilder runs(final TaskBuilder... tasks) {
+		return thatRuns(tasks);
+	}
+	
+	public Arinc653MIFBuilder thatRuns(final TaskBuilder... tasks) {
+		subTasks = tasks;
+		for(TaskBuilder tb: tasks) {
+			addOwnedResource(tb);
+		}
+		return this;
+	}
+
+	public Arinc653MIFBuilder under(SchedPolicyKind kind) {
+		sched = GrmFactory.eINSTANCE.createSecondaryScheduler();
+		addOwnedResource(sched);
+		final SoftwareSchedulableResource mifTask = taskBuilder.build();
+		sched.getVirtualProcessingUnit().add(mifTask);
+		sched.setName(mifTask.getName() + " Scheduler");
+		ProcessorBuilder.initSchedulerPolicy(sched, mifTask, kind);
+		return this;
+	}
+
+	public SecondaryScheduler getScheduler() {
+		return sched;
+	}
+
 }
