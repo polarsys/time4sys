@@ -13,16 +13,25 @@
  */
 package org.polarsys.time4sys.builder.design;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
+import org.polarsys.time4sys.marte.grm.EDFParameters;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.grm.Resource;
+import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
@@ -32,6 +41,10 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
  */
 public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulableResource, TaskBuilder> {
 
+	private static final String EDF_POLICY_NAME = "EDF";
+	private static final String FP_POLICY_NAME = "FixedPriority";
+	private static final EClass FP_PARAM_ECLASS = GrmPackage.eINSTANCE.getFixedPriorityParameters();
+	private static final EClass EDF_PARAM_ECLASS = GrmPackage.eINSTANCE.getEDFParameters();
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
 	protected static GqamFactory gqamFactory = GqamFactory.eINSTANCE;
 	protected static SrmFactory srmFactory = SrmFactory.eINSTANCE;
@@ -88,6 +101,13 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		if (deadline != null) {
 			design.has(EndToEndFlowConstraintBuilder.anEndToEndConstraint().from(firstStep()).to(this).withDeadline(deadline));
 			deadline = null;
+		}
+		return task;
+	}
+	
+	public SoftwareSchedulableResource build() {
+		if (design == null) {
+			throw new IllegalStateException("Build() cannot be called until it has been built with a DesignBuilder once.");
 		}
 		return task;
 	}
@@ -160,28 +180,41 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	public TaskBuilder ofDeadline(final String value) {
-		getSchedParams("Deadline").setValue(value);
+		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, EDF_PARAM_ECLASS);
+		edfParam.setDeadline(NfpFactory.eINSTANCE.createDurationFromString(value));
 		/* NB: An EndToEndFlow will also be created later */
 		deadline = value;
 		return this;
 	}
 	
+
+	public Duration getDeadline() {
+		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, null);
+		return edfParam.getDeadline();
+	}
+	
 	public TaskBuilder ofPriority(final int value) {
-		getSchedParams("FixedPriority").setValue(Integer.toString(value));
+		final FixedPriorityParameters schedParam = (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		//schedParam.setValue(Integer.toString(value));
+		schedParam.setPriority(value);
 		return this;
 	}
 	
 	public int getPriority() {
-		return Integer.parseInt(getSchedParams("FixedPriority").getValue());
+		final FixedPriorityParameters fp = (FixedPriorityParameters) getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		return fp.getPriority();
 	}
 
-	private SchedulingParameter getSchedParams(final String key) {
+	private SchedulingParameter getSchedParams(final String key, final EClass eClass) {
 		for(SchedulingParameter v: task.getSchedParams()) {
 			if (key.equals(v.getName())) {
 				return v;
 			}
 		}
-		final SchedulingParameter sp = grmFactory.createSchedulingParameter();
+		if (eClass == null) {
+			return null;
+		}
+		final SchedulingParameter sp = (SchedulingParameter)grmFactory.create(eClass);
 		sp.setName(key);
 		task.getSchedParams().add(sp);
 		return sp;
@@ -222,5 +255,21 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	
 	public TaskBuilder thatRunsInSequence(StepBuilder... steps) {
 		return runsInSequence(steps);
+	}
+
+	public String getName() {
+		return task.getName();
+	}
+
+	public void addOwnedResource(final Resource value) {
+		task.getOwnedResource().add(value);
+	}
+	
+	public void addOwnedResource(final TaskBuilder value) {
+		task.getOwnedResource().add(value.task);
+	}
+
+	public Collection<Resource> getOwnedResource() {
+		return task.getOwnedResource();
 	}
 }

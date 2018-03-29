@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 
@@ -60,7 +60,7 @@ public class NfpExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.nfp"));
-				Duration root = NfpFactory.eINSTANCE.createDuration();
+				Bucket root = NfpFactory.eINSTANCE.createBucket();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

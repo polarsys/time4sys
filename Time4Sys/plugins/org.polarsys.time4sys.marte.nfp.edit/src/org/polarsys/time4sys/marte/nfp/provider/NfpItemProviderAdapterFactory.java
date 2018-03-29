@@ -472,17 +472,17 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	 * @generated
 	 */
 	public void dispose() {
-		if (durationItemProvider != null) durationItemProvider.dispose();
-		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
+		if (bucketItemProvider != null) bucketItemProvider.dispose();
+		if (compositeDistributionItemProvider != null) compositeDistributionItemProvider.dispose();
 		if (dataSizeItemProvider != null) dataSizeItemProvider.dispose();
 		if (dataTxRateItemProvider != null) dataTxRateItemProvider.dispose();
-		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
 		if (discreteDistributionItemProvider != null) discreteDistributionItemProvider.dispose();
-		if (bucketItemProvider != null) bucketItemProvider.dispose();
-		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
+		if (durationItemProvider != null) durationItemProvider.dispose();
 		if (generalizedExtremeValueDistributionItemProvider != null) generalizedExtremeValueDistributionItemProvider.dispose();
+		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
+		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
+		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
 		if (uniformDistributionItemProvider != null) uniformDistributionItemProvider.dispose();
-		if (compositeDistributionItemProvider != null) compositeDistributionItemProvider.dispose();
 	}
 
 }

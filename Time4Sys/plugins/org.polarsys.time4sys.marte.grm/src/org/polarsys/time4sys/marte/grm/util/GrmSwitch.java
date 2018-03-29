@@ -185,6 +185,28 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GrmPackage.EDF_PARAMETERS: {
+				EDFParameters edfParameters = (EDFParameters)theEObject;
+				T result = caseEDFParameters(edfParameters);
+				if (result == null) result = caseSchedulingParameter(edfParameters);
+				if (result == null) result = caseNamedElement(edfParameters);
+				if (result == null) result = caseENamedElement(edfParameters);
+				if (result == null) result = caseModelElement(edfParameters);
+				if (result == null) result = caseEModelElement(edfParameters);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrmPackage.FIXED_PRIORITY_PARAMETERS: {
+				FixedPriorityParameters fixedPriorityParameters = (FixedPriorityParameters)theEObject;
+				T result = caseFixedPriorityParameters(fixedPriorityParameters);
+				if (result == null) result = caseSchedulingParameter(fixedPriorityParameters);
+				if (result == null) result = caseNamedElement(fixedPriorityParameters);
+				if (result == null) result = caseENamedElement(fixedPriorityParameters);
+				if (result == null) result = caseModelElement(fixedPriorityParameters);
+				if (result == null) result = caseEModelElement(fixedPriorityParameters);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GrmPackage.MUTUAL_EXCLUSION_PROTOCOL: {
 				MutualExclusionProtocol mutualExclusionProtocol = (MutualExclusionProtocol)theEObject;
 				T result = caseMutualExclusionProtocol(mutualExclusionProtocol);
@@ -207,6 +229,30 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseENamedElement(mutualExclusionResource);
 				if (result == null) result = caseModelElement(mutualExclusionResource);
 				if (result == null) result = caseEModelElement(mutualExclusionResource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrmPackage.PERIODIC_SERVER_PARAMETERS: {
+				PeriodicServerParameters periodicServerParameters = (PeriodicServerParameters)theEObject;
+				T result = casePeriodicServerParameters(periodicServerParameters);
+				if (result == null) result = caseFixedPriorityParameters(periodicServerParameters);
+				if (result == null) result = caseSchedulingParameter(periodicServerParameters);
+				if (result == null) result = caseNamedElement(periodicServerParameters);
+				if (result == null) result = caseENamedElement(periodicServerParameters);
+				if (result == null) result = caseModelElement(periodicServerParameters);
+				if (result == null) result = caseEModelElement(periodicServerParameters);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrmPackage.POOLING_PARAMETERS: {
+				PoolingParameters poolingParameters = (PoolingParameters)theEObject;
+				T result = casePoolingParameters(poolingParameters);
+				if (result == null) result = caseFixedPriorityParameters(poolingParameters);
+				if (result == null) result = caseSchedulingParameter(poolingParameters);
+				if (result == null) result = caseNamedElement(poolingParameters);
+				if (result == null) result = caseENamedElement(poolingParameters);
+				if (result == null) result = caseModelElement(poolingParameters);
+				if (result == null) result = caseEModelElement(poolingParameters);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -389,6 +435,12 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GrmPackage.SCHEDULE_SPECIFICATION: {
+				ScheduleSpecification scheduleSpecification = (ScheduleSpecification)theEObject;
+				T result = caseScheduleSpecification(scheduleSpecification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GrmPackage.SCHEDULING_PARAMETER: {
 				SchedulingParameter schedulingParameter = (SchedulingParameter)theEObject;
 				T result = caseSchedulingParameter(schedulingParameter);
@@ -455,6 +507,24 @@ public class GrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseENamedElement(synchResource);
 				if (result == null) result = caseModelElement(synchResource);
 				if (result == null) result = caseEModelElement(synchResource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrmPackage.TABLE_DRIVEN_SCHEDULE: {
+				TableDrivenSchedule tableDrivenSchedule = (TableDrivenSchedule)theEObject;
+				T result = caseTableDrivenSchedule(tableDrivenSchedule);
+				if (result == null) result = caseScheduleSpecification(tableDrivenSchedule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GrmPackage.TABLE_ENTRY_TYPE: {
+				TableEntryType tableEntryType = (TableEntryType)theEObject;
+				T result = caseTableEntryType(tableEntryType);
+				if (result == null) result = caseSchedulingParameter(tableEntryType);
+				if (result == null) result = caseNamedElement(tableEntryType);
+				if (result == null) result = caseENamedElement(tableEntryType);
+				if (result == null) result = caseModelElement(tableEntryType);
+				if (result == null) result = caseEModelElement(tableEntryType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -625,6 +695,36 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSynchResource(SynchResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Driven Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Driven Schedule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableDrivenSchedule(TableDrivenSchedule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table Entry Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table Entry Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTableEntryType(TableEntryType object) {
 		return null;
 	}
 
@@ -899,6 +999,21 @@ public class GrmSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Schedule Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Schedule Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScheduleSpecification(ScheduleSpecification object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Scheduling Parameter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -940,6 +1055,36 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMutualExclusionResource(MutualExclusionResource object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Periodic Server Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Periodic Server Parameters</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePeriodicServerParameters(PeriodicServerParameters object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pooling Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pooling Parameters</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePoolingParameters(PoolingParameters object) {
 		return null;
 	}
 
@@ -1120,6 +1265,36 @@ public class GrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDynamicUsage(DynamicUsage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EDF Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EDF Parameters</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEDFParameters(EDFParameters object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fixed Priority Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fixed Priority Parameters</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFixedPriorityParameters(FixedPriorityParameters object) {
 		return null;
 	}
 

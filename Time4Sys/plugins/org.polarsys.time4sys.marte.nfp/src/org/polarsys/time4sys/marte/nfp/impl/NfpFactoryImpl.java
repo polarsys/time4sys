@@ -80,17 +80,17 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case NfpPackage.DURATION: return createDuration();
-			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
+			case NfpPackage.BUCKET: return createBucket();
+			case NfpPackage.COMPOSITE_DISTRIBUTION: return createCompositeDistribution();
 			case NfpPackage.DATA_SIZE: return createDataSize();
 			case NfpPackage.DATA_TX_RATE: return createDataTxRate();
-			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
 			case NfpPackage.DISCRETE_DISTRIBUTION: return createDiscreteDistribution();
-			case NfpPackage.BUCKET: return createBucket();
-			case NfpPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
+			case NfpPackage.DURATION: return createDuration();
 			case NfpPackage.GENERALIZED_EXTREME_VALUE_DISTRIBUTION: return createGeneralizedExtremeValueDistribution();
+			case NfpPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
+			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
+			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
 			case NfpPackage.UNIFORM_DISTRIBUTION: return createUniformDistribution();
-			case NfpPackage.COMPOSITE_DISTRIBUTION: return createCompositeDistribution();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,16 +103,18 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case NfpPackage.TIME_UNIT_KIND:
-				return createTimeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return createDataSizeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
 				return createDataTxRateUnitKindFromString(eDataType, initialValue);
-			case NfpPackage.NFP_DURATION:
-				return createNFP_DurationFromString(eDataType, initialValue);
+			case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
+				return createDiscreteDistributionKindFromString(eDataType, initialValue);
+			case NfpPackage.TIME_UNIT_KIND:
+				return createTimeUnitKindFromString(eDataType, initialValue);
 			case NfpPackage.MATH_CONTEXT:
 				return createMathContextFromString(eDataType, initialValue);
+			case NfpPackage.NFP_DURATION:
+				return createNFP_DurationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -125,16 +127,18 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case NfpPackage.TIME_UNIT_KIND:
-				return convertTimeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.DATA_SIZE_UNIT_KIND:
 				return convertDataSizeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
 				return convertDataTxRateUnitKindToString(eDataType, instanceValue);
-			case NfpPackage.NFP_DURATION:
-				return convertNFP_DurationToString(eDataType, instanceValue);
+			case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
+				return convertDiscreteDistributionKindToString(eDataType, instanceValue);
+			case NfpPackage.TIME_UNIT_KIND:
+				return convertTimeUnitKindToString(eDataType, instanceValue);
 			case NfpPackage.MATH_CONTEXT:
 				return convertMathContextToString(eDataType, instanceValue);
+			case NfpPackage.NFP_DURATION:
+				return convertNFP_DurationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -304,6 +308,26 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 * @generated
 	 */
 	public String convertDataTxRateUnitKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteDistributionKind createDiscreteDistributionKindFromString(EDataType eDataType, String initialValue) {
+		DiscreteDistributionKind result = DiscreteDistributionKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDiscreteDistributionKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

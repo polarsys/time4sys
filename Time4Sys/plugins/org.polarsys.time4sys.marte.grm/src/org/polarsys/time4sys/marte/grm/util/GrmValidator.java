@@ -131,10 +131,18 @@ public class GrmValidator extends EObjectValidator {
 				return validateDeviceResource((DeviceResource)value, diagnostics, context);
 			case GrmPackage.DYNAMIC_USAGE:
 				return validateDynamicUsage((DynamicUsage)value, diagnostics, context);
+			case GrmPackage.EDF_PARAMETERS:
+				return validateEDFParameters((EDFParameters)value, diagnostics, context);
+			case GrmPackage.FIXED_PRIORITY_PARAMETERS:
+				return validateFixedPriorityParameters((FixedPriorityParameters)value, diagnostics, context);
 			case GrmPackage.MUTUAL_EXCLUSION_PROTOCOL:
 				return validateMutualExclusionProtocol((MutualExclusionProtocol)value, diagnostics, context);
 			case GrmPackage.MUTUAL_EXCLUSION_RESOURCE:
 				return validateMutualExclusionResource((MutualExclusionResource)value, diagnostics, context);
+			case GrmPackage.PERIODIC_SERVER_PARAMETERS:
+				return validatePeriodicServerParameters((PeriodicServerParameters)value, diagnostics, context);
+			case GrmPackage.POOLING_PARAMETERS:
+				return validatePoolingParameters((PoolingParameters)value, diagnostics, context);
 			case GrmPackage.PROCESSING_RESOURCE:
 				return validateProcessingResource((ProcessingResource)value, diagnostics, context);
 			case GrmPackage.PROTECTION_PARAMETER:
@@ -167,6 +175,8 @@ public class GrmValidator extends EObjectValidator {
 				return validateScheduler((Scheduler)value, diagnostics, context);
 			case GrmPackage.SCHEDULABLE_RESOURCE:
 				return validateSchedulableResource((SchedulableResource)value, diagnostics, context);
+			case GrmPackage.SCHEDULE_SPECIFICATION:
+				return validateScheduleSpecification((ScheduleSpecification)value, diagnostics, context);
 			case GrmPackage.SCHEDULING_PARAMETER:
 				return validateSchedulingParameter((SchedulingParameter)value, diagnostics, context);
 			case GrmPackage.SCHEDULING_POLICY:
@@ -179,6 +189,10 @@ public class GrmValidator extends EObjectValidator {
 				return validateStorageResource((StorageResource)value, diagnostics, context);
 			case GrmPackage.SYNCH_RESOURCE:
 				return validateSynchResource((SynchResource)value, diagnostics, context);
+			case GrmPackage.TABLE_DRIVEN_SCHEDULE:
+				return validateTableDrivenSchedule((TableDrivenSchedule)value, diagnostics, context);
+			case GrmPackage.TABLE_ENTRY_TYPE:
+				return validateTableEntryType((TableEntryType)value, diagnostics, context);
 			case GrmPackage.TIMING_RESOURCE:
 				return validateTimingResource((TimingResource)value, diagnostics, context);
 			case GrmPackage.TIMER_RESOURCE:
@@ -187,6 +201,8 @@ public class GrmValidator extends EObjectValidator {
 				return validateUsageDemand((UsageDemand)value, diagnostics, context);
 			case GrmPackage.USAGE_TYPED_AMOUNT:
 				return validateUsageTypedAmount((UsageTypedAmount)value, diagnostics, context);
+			case GrmPackage.PERIODIC_SERVER_KIND:
+				return validatePeriodicServerKind((PeriodicServerKind)value, diagnostics, context);
 			case GrmPackage.PROTECT_PROTOCOL_KIND:
 				return validateProtectProtocolKind((ProtectProtocolKind)value, diagnostics, context);
 			case GrmPackage.SCHED_POLICY_KIND:
@@ -360,6 +376,44 @@ public class GrmValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateEDFParameters(EDFParameters edfParameters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(edfParameters, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(edfParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(edfParameters, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFixedPriorityParameters(FixedPriorityParameters fixedPriorityParameters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(fixedPriorityParameters, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fixedPriorityParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(fixedPriorityParameters, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateMutualExclusionProtocol(MutualExclusionProtocol mutualExclusionProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(mutualExclusionProtocol, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(mutualExclusionProtocol, diagnostics, context);
@@ -390,6 +444,44 @@ public class GrmValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mutualExclusionResource, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mutualExclusionResource, diagnostics, context);
 		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(mutualExclusionResource, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePeriodicServerParameters(PeriodicServerParameters periodicServerParameters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(periodicServerParameters, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(periodicServerParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(periodicServerParameters, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePoolingParameters(PoolingParameters poolingParameters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(poolingParameters, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(poolingParameters, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(poolingParameters, diagnostics, context);
 		return result;
 	}
 
@@ -682,6 +774,15 @@ public class GrmValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateScheduleSpecification(ScheduleSpecification scheduleSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(scheduleSpecification, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSchedulingParameter(SchedulingParameter schedulingParameter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(schedulingParameter, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(schedulingParameter, diagnostics, context);
@@ -797,6 +898,34 @@ public class GrmValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateTableDrivenSchedule(TableDrivenSchedule tableDrivenSchedule, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(tableDrivenSchedule, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTableEntryType(TableEntryType tableEntryType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(tableEntryType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tableEntryType, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(tableEntryType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateTimingResource(TimingResource timingResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(timingResource, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(timingResource, diagnostics, context);
@@ -856,6 +985,15 @@ public class GrmValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(usageTypedAmount, diagnostics, context);
 		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(usageTypedAmount, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePeriodicServerKind(PeriodicServerKind periodicServerKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

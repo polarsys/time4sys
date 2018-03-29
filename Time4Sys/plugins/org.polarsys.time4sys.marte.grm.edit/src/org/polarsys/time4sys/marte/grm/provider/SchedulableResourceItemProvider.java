@@ -194,6 +194,31 @@ public class SchedulableResourceItemProvider extends ConcurrencyResourceItemProv
 			(createChildParameter
 				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
 				 GrmFactory.eINSTANCE.createSchedulingParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createEDFParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createFixedPriorityParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createPeriodicServerParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createPoolingParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createTableEntryType()));
 	}
 
 }

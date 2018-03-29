@@ -116,12 +116,28 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 				return createDynamicUsageAdapter();
 			}
 			@Override
+			public Adapter caseEDFParameters(EDFParameters object) {
+				return createEDFParametersAdapter();
+			}
+			@Override
+			public Adapter caseFixedPriorityParameters(FixedPriorityParameters object) {
+				return createFixedPriorityParametersAdapter();
+			}
+			@Override
 			public Adapter caseMutualExclusionProtocol(MutualExclusionProtocol object) {
 				return createMutualExclusionProtocolAdapter();
 			}
 			@Override
 			public Adapter caseMutualExclusionResource(MutualExclusionResource object) {
 				return createMutualExclusionResourceAdapter();
+			}
+			@Override
+			public Adapter casePeriodicServerParameters(PeriodicServerParameters object) {
+				return createPeriodicServerParametersAdapter();
+			}
+			@Override
+			public Adapter casePoolingParameters(PoolingParameters object) {
+				return createPoolingParametersAdapter();
 			}
 			@Override
 			public Adapter caseProcessingResource(ProcessingResource object) {
@@ -188,6 +204,10 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 				return createSchedulableResourceAdapter();
 			}
 			@Override
+			public Adapter caseScheduleSpecification(ScheduleSpecification object) {
+				return createScheduleSpecificationAdapter();
+			}
+			@Override
 			public Adapter caseSchedulingParameter(SchedulingParameter object) {
 				return createSchedulingParameterAdapter();
 			}
@@ -210,6 +230,14 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSynchResource(SynchResource object) {
 				return createSynchResourceAdapter();
+			}
+			@Override
+			public Adapter caseTableDrivenSchedule(TableDrivenSchedule object) {
+				return createTableDrivenScheduleAdapter();
+			}
+			@Override
+			public Adapter caseTableEntryType(TableEntryType object) {
+				return createTableEntryTypeAdapter();
 			}
 			@Override
 			public Adapter caseTimingResource(TimingResource object) {
@@ -380,6 +408,34 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSynchResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule <em>Table Driven Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.TableDrivenSchedule
+	 * @generated
+	 */
+	public Adapter createTableDrivenScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.TableEntryType <em>Table Entry Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType
+	 * @generated
+	 */
+	public Adapter createTableEntryTypeAdapter() {
 		return null;
 	}
 
@@ -636,6 +692,20 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.ScheduleSpecification <em>Schedule Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.ScheduleSpecification
+	 * @generated
+	 */
+	public Adapter createScheduleSpecificationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.SchedulingParameter <em>Scheduling Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -674,6 +744,34 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMutualExclusionResourceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters <em>Periodic Server Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters
+	 * @generated
+	 */
+	public Adapter createPeriodicServerParametersAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.PoolingParameters <em>Pooling Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.PoolingParameters
+	 * @generated
+	 */
+	public Adapter createPoolingParametersAdapter() {
 		return null;
 	}
 
@@ -842,6 +940,34 @@ public class GrmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDynamicUsageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.EDFParameters <em>EDF Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.EDFParameters
+	 * @generated
+	 */
+	public Adapter createEDFParametersAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.grm.FixedPriorityParameters <em>Fixed Priority Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.grm.FixedPriorityParameters
+	 * @generated
+	 */
+	public Adapter createFixedPriorityParametersAdapter() {
 		return null;
 	}
 

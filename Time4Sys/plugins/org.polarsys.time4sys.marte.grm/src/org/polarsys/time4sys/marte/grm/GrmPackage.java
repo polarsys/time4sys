@@ -81,7 +81,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePackage()
 	 * @generated
 	 */
-	int RESOURCE_PACKAGE = 20;
+	int RESOURCE_PACKAGE = 24;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePackageableElementImpl <em>Resource Packageable Element</em>}' class.
@@ -91,7 +91,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePackageableElement()
 	 * @generated
 	 */
-	int RESOURCE_PACKAGEABLE_ELEMENT = 21;
+	int RESOURCE_PACKAGEABLE_ELEMENT = 25;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceInstanceImpl <em>Resource Instance</em>}' class.
@@ -101,7 +101,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceInstance()
 	 * @generated
 	 */
-	int RESOURCE_INSTANCE = 17;
+	int RESOURCE_INSTANCE = 21;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceImpl <em>Resource</em>}' class.
@@ -111,7 +111,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 13;
+	int RESOURCE = 17;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.StorageResourceImpl <em>Storage Resource</em>}' class.
@@ -121,7 +121,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getStorageResource()
 	 * @generated
 	 */
-	int STORAGE_RESOURCE = 31;
+	int STORAGE_RESOURCE = 36;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.TimingResourceImpl <em>Timing Resource</em>}' class.
@@ -131,7 +131,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTimingResource()
 	 * @generated
 	 */
-	int TIMING_RESOURCE = 33;
+	int TIMING_RESOURCE = 40;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.CommunicationResourceImpl <em>Communication Resource</em>}' class.
@@ -151,7 +151,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSynchResource()
 	 * @generated
 	 */
-	int SYNCH_RESOURCE = 32;
+	int SYNCH_RESOURCE = 37;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ConcurrencyResourceImpl <em>Concurrency Resource</em>}' class.
@@ -171,7 +171,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProcessingResource()
 	 * @generated
 	 */
-	int PROCESSING_RESOURCE = 11;
+	int PROCESSING_RESOURCE = 15;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ComputingResourceImpl <em>Computing Resource</em>}' class.
@@ -211,7 +211,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTimerResource()
 	 * @generated
 	 */
-	int TIMER_RESOURCE = 34;
+	int TIMER_RESOURCE = 41;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceServiceImpl <em>Resource Service</em>}' class.
@@ -221,7 +221,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceService()
 	 * @generated
 	 */
-	int RESOURCE_SERVICE = 23;
+	int RESOURCE_SERVICE = 27;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.CommunicationEndPointImpl <em>Communication End Point</em>}' class.
@@ -251,7 +251,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceConnector()
 	 * @generated
 	 */
-	int RESOURCE_CONNECTOR = 15;
+	int RESOURCE_CONNECTOR = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourcePortImpl <em>Resource Port</em>}' class.
@@ -261,7 +261,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourcePort()
 	 * @generated
 	 */
-	int RESOURCE_PORT = 22;
+	int RESOURCE_PORT = 26;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceBrokerImpl <em>Resource Broker</em>}' class.
@@ -271,7 +271,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceBroker()
 	 * @generated
 	 */
-	int RESOURCE_BROKER = 14;
+	int RESOURCE_BROKER = 18;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceManagerImpl <em>Resource Manager</em>}' class.
@@ -281,7 +281,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceManager()
 	 * @generated
 	 */
-	int RESOURCE_MANAGER = 19;
+	int RESOURCE_MANAGER = 23;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.AccessControlPolicyImpl <em>Access Control Policy</em>}' class.
@@ -1669,7 +1669,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceControlPolicy()
 	 * @generated
 	 */
-	int RESOURCE_CONTROL_POLICY = 16;
+	int RESOURCE_CONTROL_POLICY = 20;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulerImpl <em>Scheduler</em>}' class.
@@ -1679,7 +1679,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getScheduler()
 	 * @generated
 	 */
-	int SCHEDULER = 25;
+	int SCHEDULER = 29;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SecondarySchedulerImpl <em>Secondary Scheduler</em>}' class.
@@ -1689,7 +1689,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSecondaryScheduler()
 	 * @generated
 	 */
-	int SECONDARY_SCHEDULER = 29;
+	int SECONDARY_SCHEDULER = 34;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulableResourceImpl <em>Schedulable Resource</em>}' class.
@@ -1699,7 +1699,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulableResource()
 	 * @generated
 	 */
-	int SCHEDULABLE_RESOURCE = 26;
+	int SCHEDULABLE_RESOURCE = 30;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulingParameterImpl <em>Scheduling Parameter</em>}' class.
@@ -1709,7 +1709,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulingParameter()
 	 * @generated
 	 */
-	int SCHEDULING_PARAMETER = 27;
+	int SCHEDULING_PARAMETER = 32;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulingPolicyImpl <em>Scheduling Policy</em>}' class.
@@ -1719,7 +1719,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedulingPolicy()
 	 * @generated
 	 */
-	int SCHEDULING_POLICY = 28;
+	int SCHEDULING_POLICY = 33;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.MutualExclusionResourceImpl <em>Mutual Exclusion Resource</em>}' class.
@@ -1729,7 +1729,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getMutualExclusionResource()
 	 * @generated
 	 */
-	int MUTUAL_EXCLUSION_RESOURCE = 10;
+	int MUTUAL_EXCLUSION_RESOURCE = 12;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.MutualExclusionProtocolImpl <em>Mutual Exclusion Protocol</em>}' class.
@@ -1739,7 +1739,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getMutualExclusionProtocol()
 	 * @generated
 	 */
-	int MUTUAL_EXCLUSION_PROTOCOL = 9;
+	int MUTUAL_EXCLUSION_PROTOCOL = 11;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ProtectionParameterImpl <em>Protection Parameter</em>}' class.
@@ -1749,7 +1749,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProtectionParameter()
 	 * @generated
 	 */
-	int PROTECTION_PARAMETER = 12;
+	int PROTECTION_PARAMETER = 16;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.UsageDemandImpl <em>Usage Demand</em>}' class.
@@ -1759,7 +1759,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getUsageDemand()
 	 * @generated
 	 */
-	int USAGE_DEMAND = 35;
+	int USAGE_DEMAND = 42;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceUsageImpl <em>Resource Usage</em>}' class.
@@ -1769,7 +1769,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceUsage()
 	 * @generated
 	 */
-	int RESOURCE_USAGE = 24;
+	int RESOURCE_USAGE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
@@ -1824,7 +1824,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getUsageTypedAmount()
 	 * @generated
 	 */
-	int USAGE_TYPED_AMOUNT = 36;
+	int USAGE_TYPED_AMOUNT = 43;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.DynamicUsageImpl <em>Dynamic Usage</em>}' class.
@@ -1880,6 +1880,256 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_USAGE_OPERATION_COUNT = RESOURCE_USAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.PeriodicServerParametersImpl <em>Periodic Server Parameters</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.PeriodicServerParametersImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPeriodicServerParameters()
+	 * @generated
+	 */
+	int PERIODIC_SERVER_PARAMETERS = 13;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.PoolingParametersImpl <em>Pooling Parameters</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.PoolingParametersImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPoolingParameters()
+	 * @generated
+	 */
+	int POOLING_PARAMETERS = 14;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.StaticUsageImpl <em>Static Usage</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.StaticUsageImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getStaticUsage()
+	 * @generated
+	 */
+	int STATIC_USAGE = 35;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceInterfaceImpl <em>Resource Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.ResourceInterfaceImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceInterface()
+	 * @generated
+	 */
+	int RESOURCE_INTERFACE = 22;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ScheduleSpecificationImpl <em>Schedule Specification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.ScheduleSpecificationImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getScheduleSpecification()
+	 * @generated
+	 */
+	int SCHEDULE_SPECIFICATION = 31;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER__VALUE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Scheduling Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Scheduling Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_PARAMETER_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.EDFParametersImpl <em>EDF Parameters</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.EDFParametersImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getEDFParameters()
+	 * @generated
+	 */
+	int EDF_PARAMETERS = 9;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS__EANNOTATIONS = SCHEDULING_PARAMETER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS__NAME = SCHEDULING_PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS__VALUE = SCHEDULING_PARAMETER__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Deadline</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS__DEADLINE = SCHEDULING_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EDF Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS_FEATURE_COUNT = SCHEDULING_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS___GET_EANNOTATION__STRING = SCHEDULING_PARAMETER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>EDF Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDF_PARAMETERS_OPERATION_COUNT = SCHEDULING_PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.FixedPriorityParametersImpl <em>Fixed Priority Parameters</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.FixedPriorityParametersImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getFixedPriorityParameters()
+	 * @generated
+	 */
+	int FIXED_PRIORITY_PARAMETERS = 10;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS__EANNOTATIONS = SCHEDULING_PARAMETER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS__NAME = SCHEDULING_PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS__VALUE = SCHEDULING_PARAMETER__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS__PRIORITY = SCHEDULING_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Fixed Priority Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT = SCHEDULING_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS___GET_EANNOTATION__STRING = SCHEDULING_PARAMETER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Fixed Priority Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIXED_PRIORITY_PARAMETERS_OPERATION_COUNT = SCHEDULING_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2222,6 +2472,195 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MUTUAL_EXCLUSION_RESOURCE_OPERATION_COUNT = SYNCH_RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__EANNOTATIONS = FIXED_PRIORITY_PARAMETERS__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__NAME = FIXED_PRIORITY_PARAMETERS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__VALUE = FIXED_PRIORITY_PARAMETERS__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__PRIORITY = FIXED_PRIORITY_PARAMETERS__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__KIND = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Background Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__BACKGROUND_PRIORITY = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Initial Budget</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__INITIAL_BUDGET = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Replenish Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__REPLENISH_PERIOD = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Max Pending Replenish</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS__MAX_PENDING_REPLENISH = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Periodic Server Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS_FEATURE_COUNT = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS___GET_EANNOTATION__STRING = FIXED_PRIORITY_PARAMETERS___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Periodic Server Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_SERVER_PARAMETERS_OPERATION_COUNT = FIXED_PRIORITY_PARAMETERS_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__EANNOTATIONS = FIXED_PRIORITY_PARAMETERS__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__NAME = FIXED_PRIORITY_PARAMETERS__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__VALUE = FIXED_PRIORITY_PARAMETERS__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__PRIORITY = FIXED_PRIORITY_PARAMETERS__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__PERIOD = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Overhead</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS__OVERHEAD = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Pooling Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS_FEATURE_COUNT = FIXED_PRIORITY_PARAMETERS_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS___GET_EANNOTATION__STRING = FIXED_PRIORITY_PARAMETERS___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Pooling Parameters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POOLING_PARAMETERS_OPERATION_COUNT = FIXED_PRIORITY_PARAMETERS_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2573,26 +3012,6 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_INSTANCE_OPERATION_COUNT = RESOURCE_PACKAGEABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.StaticUsageImpl <em>Static Usage</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.grm.impl.StaticUsageImpl
-	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getStaticUsage()
-	 * @generated
-	 */
-	int STATIC_USAGE = 30;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.ResourceInterfaceImpl <em>Resource Interface</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.grm.impl.ResourceInterfaceImpl
-	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getResourceInterface()
-	 * @generated
-	 */
-	int RESOURCE_INTERFACE = 18;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3306,58 +3725,22 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULABLE_RESOURCE_OPERATION_COUNT = CONCURRENCY_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Schedule Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+	int SCHEDULE_SPECIFICATION_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The number of operations of the '<em>Schedule Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_PARAMETER__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULING_PARAMETER__VALUE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Scheduling Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULING_PARAMETER_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULING_PARAMETER___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Scheduling Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCHEDULING_PARAMETER_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SCHEDULE_SPECIFICATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3396,13 +3779,22 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULING_POLICY__OTHER_SCHED_POLICY = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Schedule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_POLICY__SCHEDULE = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Scheduling Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULING_POLICY_FEATURE_COUNT = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 2;
+	int SCHEDULING_POLICY_FEATURE_COUNT = ACCESS_CONTROL_POLICY_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3790,6 +4182,152 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STORAGE_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.TableDrivenScheduleImpl <em>Table Driven Schedule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.TableDrivenScheduleImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTableDrivenSchedule()
+	 * @generated
+	 */
+	int TABLE_DRIVEN_SCHEDULE = 38;
+
+	/**
+	 * The feature id for the '<em><b>Frame Cycle Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE__FRAME_CYCLE_TIME = SCHEDULE_SPECIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entries</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE__ENTRIES = SCHEDULE_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Table Driven Schedule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE_FEATURE_COUNT = SCHEDULE_SPECIFICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Table Driven Schedule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE_OPERATION_COUNT = SCHEDULE_SPECIFICATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.TableEntryTypeImpl <em>Table Entry Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.impl.TableEntryTypeImpl
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTableEntryType()
+	 * @generated
+	 */
+	int TABLE_ENTRY_TYPE = 39;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__EANNOTATIONS = SCHEDULING_PARAMETER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__NAME = SCHEDULING_PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__VALUE = SCHEDULING_PARAMETER__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Schedule</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__SCHEDULE = SCHEDULING_PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Slot</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__TIME_SLOT = SCHEDULING_PARAMETER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__OFFSET = SCHEDULING_PARAMETER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Initial Budget</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__INITIAL_BUDGET = SCHEDULING_PARAMETER_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Table Entry Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE_FEATURE_COUNT = SCHEDULING_PARAMETER_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE___GET_EANNOTATION__STRING = SCHEDULING_PARAMETER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Table Entry Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE_OPERATION_COUNT = SCHEDULING_PARAMETER_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4197,6 +4735,16 @@ public interface GrmPackage extends EPackage {
 	int USAGE_TYPED_AMOUNT_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.PeriodicServerKind <em>Periodic Server Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerKind
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPeriodicServerKind()
+	 * @generated
+	 */
+	int PERIODIC_SERVER_KIND = 44;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.TransmModeKind <em>Transm Mode Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4204,7 +4752,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTransmModeKind()
 	 * @generated
 	 */
-	int TRANSM_MODE_KIND = 39;
+	int TRANSM_MODE_KIND = 47;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -4214,7 +4762,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 40;
+	int NFP_DURATION = 48;
 
 	/**
 	 * The meta object id for the '<em>NFP Data Size</em>' data type.
@@ -4224,7 +4772,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataSize()
 	 * @generated
 	 */
-	int NFP_DATA_SIZE = 41;
+	int NFP_DATA_SIZE = 49;
 
 	/**
 	 * The meta object id for the '<em>NFP Data Tx Rate</em>' data type.
@@ -4234,7 +4782,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_DataTxRate()
 	 * @generated
 	 */
-	int NFP_DATA_TX_RATE = 42;
+	int NFP_DATA_TX_RATE = 50;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
@@ -4244,7 +4792,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getSchedPolicyKind()
 	 * @generated
 	 */
-	int SCHED_POLICY_KIND = 38;
+	int SCHED_POLICY_KIND = 46;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.ProtectProtocolKind <em>Protect Protocol Kind</em>}' enum.
@@ -4254,7 +4802,7 @@ public interface GrmPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getProtectProtocolKind()
 	 * @generated
 	 */
-	int PROTECT_PROTOCOL_KIND = 37;
+	int PROTECT_PROTOCOL_KIND = 45;
 
 
 	/**
@@ -4457,6 +5005,92 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSynchResource();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule <em>Table Driven Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table Driven Schedule</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableDrivenSchedule
+	 * @generated
+	 */
+	EClass getTableDrivenSchedule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule#getFrameCycleTime <em>Frame Cycle Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frame Cycle Time</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableDrivenSchedule#getFrameCycleTime()
+	 * @see #getTableDrivenSchedule()
+	 * @generated
+	 */
+	EAttribute getTableDrivenSchedule_FrameCycleTime();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule#getEntries <em>Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Entries</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableDrivenSchedule#getEntries()
+	 * @see #getTableDrivenSchedule()
+	 * @generated
+	 */
+	EReference getTableDrivenSchedule_Entries();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.TableEntryType <em>Table Entry Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table Entry Type</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType
+	 * @generated
+	 */
+	EClass getTableEntryType();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.grm.TableEntryType#getSchedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Schedule</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType#getSchedule()
+	 * @see #getTableEntryType()
+	 * @generated
+	 */
+	EReference getTableEntryType_Schedule();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.polarsys.time4sys.marte.grm.TableEntryType#getTimeSlot <em>Time Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Time Slot</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType#getTimeSlot()
+	 * @see #getTableEntryType()
+	 * @generated
+	 */
+	EAttribute getTableEntryType_TimeSlot();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.polarsys.time4sys.marte.grm.TableEntryType#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Offset</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType#getOffset()
+	 * @see #getTableEntryType()
+	 * @generated
+	 */
+	EAttribute getTableEntryType_Offset();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.TableEntryType#getInitialBudget <em>Initial Budget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Budget</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType#getInitialBudget()
+	 * @see #getTableEntryType()
+	 * @generated
+	 */
+	EAttribute getTableEntryType_InitialBudget();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.ConcurrencyResource <em>Concurrency Resource</em>}'.
@@ -4991,6 +5625,16 @@ public interface GrmPackage extends EPackage {
 	EReference getSchedulableResource_SchedParams();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.ScheduleSpecification <em>Schedule Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Schedule Specification</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.ScheduleSpecification
+	 * @generated
+	 */
+	EClass getScheduleSpecification();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.SchedulingParameter <em>Scheduling Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5044,6 +5688,17 @@ public interface GrmPackage extends EPackage {
 	EAttribute getSchedulingPolicy_OtherSchedPolicy();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#getSchedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Schedule</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.SchedulingPolicy#getSchedule()
+	 * @see #getSchedulingPolicy()
+	 * @generated
+	 */
+	EReference getSchedulingPolicy_Schedule();
+
+	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#hasValidPolicy(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Has Valid Policy</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5095,6 +5750,103 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMutualExclusionResource_ProtectParams();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters <em>Periodic Server Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Periodic Server Parameters</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters
+	 * @generated
+	 */
+	EClass getPeriodicServerParameters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getKind()
+	 * @see #getPeriodicServerParameters()
+	 * @generated
+	 */
+	EAttribute getPeriodicServerParameters_Kind();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getBackgroundPriority <em>Background Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Background Priority</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getBackgroundPriority()
+	 * @see #getPeriodicServerParameters()
+	 * @generated
+	 */
+	EAttribute getPeriodicServerParameters_BackgroundPriority();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getInitialBudget <em>Initial Budget</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Budget</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getInitialBudget()
+	 * @see #getPeriodicServerParameters()
+	 * @generated
+	 */
+	EAttribute getPeriodicServerParameters_InitialBudget();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getReplenishPeriod <em>Replenish Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Replenish Period</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getReplenishPeriod()
+	 * @see #getPeriodicServerParameters()
+	 * @generated
+	 */
+	EAttribute getPeriodicServerParameters_ReplenishPeriod();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getMaxPendingReplenish <em>Max Pending Replenish</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Pending Replenish</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerParameters#getMaxPendingReplenish()
+	 * @see #getPeriodicServerParameters()
+	 * @generated
+	 */
+	EAttribute getPeriodicServerParameters_MaxPendingReplenish();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.PoolingParameters <em>Pooling Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pooling Parameters</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PoolingParameters
+	 * @generated
+	 */
+	EClass getPoolingParameters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PoolingParameters#getPeriod <em>Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Period</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PoolingParameters#getPeriod()
+	 * @see #getPoolingParameters()
+	 * @generated
+	 */
+	EAttribute getPoolingParameters_Period();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.PoolingParameters#getOverhead <em>Overhead</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Overhead</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PoolingParameters#getOverhead()
+	 * @see #getPoolingParameters()
+	 * @generated
+	 */
+	EAttribute getPoolingParameters_Overhead();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.MutualExclusionProtocol <em>Mutual Exclusion Protocol</em>}'.
@@ -5312,6 +6064,16 @@ public interface GrmPackage extends EPackage {
 	EAttribute getUsageTypedAmount_Energy();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.grm.PeriodicServerKind <em>Periodic Server Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Periodic Server Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.PeriodicServerKind
+	 * @generated
+	 */
+	EEnum getPeriodicServerKind();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.DynamicUsage <em>Dynamic Usage</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5320,6 +6082,48 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDynamicUsage();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.EDFParameters <em>EDF Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EDF Parameters</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.EDFParameters
+	 * @generated
+	 */
+	EClass getEDFParameters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.EDFParameters#getDeadline <em>Deadline</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Deadline</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.EDFParameters#getDeadline()
+	 * @see #getEDFParameters()
+	 * @generated
+	 */
+	EAttribute getEDFParameters_Deadline();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.FixedPriorityParameters <em>Fixed Priority Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fixed Priority Parameters</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.FixedPriorityParameters
+	 * @generated
+	 */
+	EClass getFixedPriorityParameters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.grm.FixedPriorityParameters#getPriority <em>Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Priority</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.FixedPriorityParameters#getPriority()
+	 * @see #getFixedPriorityParameters()
+	 * @generated
+	 */
+	EAttribute getFixedPriorityParameters_Priority();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.StaticUsage <em>Static Usage</em>}'.
@@ -5605,6 +6409,74 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYNCH_RESOURCE = eINSTANCE.getSynchResource();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.TableDrivenScheduleImpl <em>Table Driven Schedule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.TableDrivenScheduleImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTableDrivenSchedule()
+		 * @generated
+		 */
+		EClass TABLE_DRIVEN_SCHEDULE = eINSTANCE.getTableDrivenSchedule();
+
+		/**
+		 * The meta object literal for the '<em><b>Frame Cycle Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE_DRIVEN_SCHEDULE__FRAME_CYCLE_TIME = eINSTANCE.getTableDrivenSchedule_FrameCycleTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Entries</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE_DRIVEN_SCHEDULE__ENTRIES = eINSTANCE.getTableDrivenSchedule_Entries();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.TableEntryTypeImpl <em>Table Entry Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.TableEntryTypeImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getTableEntryType()
+		 * @generated
+		 */
+		EClass TABLE_ENTRY_TYPE = eINSTANCE.getTableEntryType();
+
+		/**
+		 * The meta object literal for the '<em><b>Schedule</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE_ENTRY_TYPE__SCHEDULE = eINSTANCE.getTableEntryType_Schedule();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Slot</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE_ENTRY_TYPE__TIME_SLOT = eINSTANCE.getTableEntryType_TimeSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Offset</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE_ENTRY_TYPE__OFFSET = eINSTANCE.getTableEntryType_Offset();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Budget</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE_ENTRY_TYPE__INITIAL_BUDGET = eINSTANCE.getTableEntryType_InitialBudget();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.ConcurrencyResourceImpl <em>Concurrency Resource</em>}' class.
@@ -6043,6 +6915,16 @@ public interface GrmPackage extends EPackage {
 		EReference SCHEDULABLE_RESOURCE__SCHED_PARAMS = eINSTANCE.getSchedulableResource_SchedParams();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.ScheduleSpecificationImpl <em>Schedule Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.ScheduleSpecificationImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getScheduleSpecification()
+		 * @generated
+		 */
+		EClass SCHEDULE_SPECIFICATION = eINSTANCE.getScheduleSpecification();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.SchedulingParameterImpl <em>Scheduling Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6087,6 +6969,14 @@ public interface GrmPackage extends EPackage {
 		EAttribute SCHEDULING_POLICY__OTHER_SCHED_POLICY = eINSTANCE.getSchedulingPolicy_OtherSchedPolicy();
 
 		/**
+		 * The meta object literal for the '<em><b>Schedule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCHEDULING_POLICY__SCHEDULE = eINSTANCE.getSchedulingPolicy_Schedule();
+
+		/**
 		 * The meta object literal for the '<em><b>Has Valid Policy</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6127,6 +7017,82 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MUTUAL_EXCLUSION_RESOURCE__PROTECT_PARAMS = eINSTANCE.getMutualExclusionResource_ProtectParams();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.PeriodicServerParametersImpl <em>Periodic Server Parameters</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.PeriodicServerParametersImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPeriodicServerParameters()
+		 * @generated
+		 */
+		EClass PERIODIC_SERVER_PARAMETERS = eINSTANCE.getPeriodicServerParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERIODIC_SERVER_PARAMETERS__KIND = eINSTANCE.getPeriodicServerParameters_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Background Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERIODIC_SERVER_PARAMETERS__BACKGROUND_PRIORITY = eINSTANCE.getPeriodicServerParameters_BackgroundPriority();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Budget</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERIODIC_SERVER_PARAMETERS__INITIAL_BUDGET = eINSTANCE.getPeriodicServerParameters_InitialBudget();
+
+		/**
+		 * The meta object literal for the '<em><b>Replenish Period</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERIODIC_SERVER_PARAMETERS__REPLENISH_PERIOD = eINSTANCE.getPeriodicServerParameters_ReplenishPeriod();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Pending Replenish</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERIODIC_SERVER_PARAMETERS__MAX_PENDING_REPLENISH = eINSTANCE.getPeriodicServerParameters_MaxPendingReplenish();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.PoolingParametersImpl <em>Pooling Parameters</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.PoolingParametersImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPoolingParameters()
+		 * @generated
+		 */
+		EClass POOLING_PARAMETERS = eINSTANCE.getPoolingParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Period</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POOLING_PARAMETERS__PERIOD = eINSTANCE.getPoolingParameters_Period();
+
+		/**
+		 * The meta object literal for the '<em><b>Overhead</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POOLING_PARAMETERS__OVERHEAD = eINSTANCE.getPoolingParameters_Overhead();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.MutualExclusionProtocolImpl <em>Mutual Exclusion Protocol</em>}' class.
@@ -6299,6 +7265,16 @@ public interface GrmPackage extends EPackage {
 		EAttribute USAGE_TYPED_AMOUNT__ENERGY = eINSTANCE.getUsageTypedAmount_Energy();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.PeriodicServerKind <em>Periodic Server Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.PeriodicServerKind
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getPeriodicServerKind()
+		 * @generated
+		 */
+		EEnum PERIODIC_SERVER_KIND = eINSTANCE.getPeriodicServerKind();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.DynamicUsageImpl <em>Dynamic Usage</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6307,6 +7283,42 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DYNAMIC_USAGE = eINSTANCE.getDynamicUsage();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.EDFParametersImpl <em>EDF Parameters</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.EDFParametersImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getEDFParameters()
+		 * @generated
+		 */
+		EClass EDF_PARAMETERS = eINSTANCE.getEDFParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Deadline</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDF_PARAMETERS__DEADLINE = eINSTANCE.getEDFParameters_Deadline();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.FixedPriorityParametersImpl <em>Fixed Priority Parameters</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.grm.impl.FixedPriorityParametersImpl
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getFixedPriorityParameters()
+		 * @generated
+		 */
+		EClass FIXED_PRIORITY_PARAMETERS = eINSTANCE.getFixedPriorityParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIXED_PRIORITY_PARAMETERS__PRIORITY = eINSTANCE.getFixedPriorityParameters_Priority();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.StaticUsageImpl <em>Static Usage</em>}' class.
