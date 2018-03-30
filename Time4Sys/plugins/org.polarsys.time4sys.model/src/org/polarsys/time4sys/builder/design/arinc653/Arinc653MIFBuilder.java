@@ -60,6 +60,7 @@ public class Arinc653MIFBuilder {
 		if (designBuilder != null) {
 			final Duration d = NfpFactory.eINSTANCE.createDurationFromString(value);
 			getOrCreateTableEntry().setInitialBudget(d);
+			taskBuilder.ofWCET(value);
 		}
 		return this;
 	}
