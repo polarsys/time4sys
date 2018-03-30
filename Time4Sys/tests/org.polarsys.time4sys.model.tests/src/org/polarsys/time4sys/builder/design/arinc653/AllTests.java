@@ -5,7 +5,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ Arinc653BuilderTest.class })
+@SuiteClasses({
+	Arinc653BuilderTest.class,
+	Arinc653SpareTaskBuilderTest.class,
+})
 public class AllTests {
 
 }

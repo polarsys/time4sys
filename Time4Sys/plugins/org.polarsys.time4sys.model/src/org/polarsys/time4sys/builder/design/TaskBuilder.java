@@ -14,7 +14,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -278,5 +280,16 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public Collection<Resource> getOwnedResource() {
 		return task.getOwnedResource();
+	}
+
+	public EAnnotation annotate(final String source) {
+		EAnnotation annot = task.getEAnnotation(source);
+		if (annot != null) {
+			return annot;
+		}
+		annot = EcoreFactory.eINSTANCE.createEAnnotation();
+		annot.setSource(source);
+		task.getEAnnotations().add(annot);
+		return annot;
 	}
 }
