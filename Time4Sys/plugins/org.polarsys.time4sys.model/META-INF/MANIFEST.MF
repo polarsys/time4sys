@@ -9,9 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.builder,
  org.polarsys.time4sys.builder.design,
+ org.polarsys.time4sys.builder.design.arinc653,
+ org.polarsys.time4sys.builder.design.posix,
  org.polarsys.time4sys.builder.mapping,
  org.polarsys.time4sys.builder.simulation,
- org.polarsys.time4sys.builder.design.arinc653,
  org.polarsys.time4sys.model.time4sys,
  org.polarsys.time4sys.model.time4sys.impl,
  org.polarsys.time4sys.model.time4sys.util,

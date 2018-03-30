@@ -8,9 +8,6 @@
  * Contributors:
  *     Loïc Fejoz - initial API and implementation
  *******************************************************************************/
-/**
- * 
- */
 package org.polarsys.time4sys.builder.design;
 
 import java.util.Collection;
@@ -26,12 +23,10 @@ import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.Resource;
-import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
@@ -42,7 +37,7 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
 public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulableResource, TaskBuilder> {
 
 	private static final String EDF_POLICY_NAME = "EDF";
-	private static final String FP_POLICY_NAME = "FixedPriority";
+	protected static final String FP_POLICY_NAME = "FixedPriority";
 	private static final EClass FP_PARAM_ECLASS = GrmPackage.eINSTANCE.getFixedPriorityParameters();
 	private static final EClass EDF_PARAM_ECLASS = GrmPackage.eINSTANCE.getEDFParameters();
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
@@ -67,16 +62,28 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private int nbEvents = 1;
 	private String windowSize;
 	private String deadline;
+	protected EClass fpParamEClass;
+
 	
 	public TaskBuilder() {
-		this(null, srmFactory.createSoftwareSchedulableResource());
+		this(FP_PARAM_ECLASS);
+	}
+
+	public TaskBuilder(final EClass pssParamEclass) {
+		this(null, srmFactory.createSoftwareSchedulableResource(), pssParamEclass);
 	}
 	
 	public TaskBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw) {
+		this(designBuilder, raw, FP_PARAM_ECLASS);
+	}
+	
+	public TaskBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw, final EClass fpParamEClass) {
 		assert(raw != null);
 		task = raw;
 		design = designBuilder;
+		this.fpParamEClass = fpParamEClass;
 	}
+
 
 	public SoftwareSchedulableResource build(final DesignBuilder design) {
 		this.design = design;
@@ -194,18 +201,18 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 	
 	public TaskBuilder ofPriority(final int value) {
-		final FixedPriorityParameters schedParam = (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		final FixedPriorityParameters schedParam = (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, fpParamEClass);
 		//schedParam.setValue(Integer.toString(value));
 		schedParam.setPriority(value);
 		return this;
 	}
 	
 	public int getPriority() {
-		final FixedPriorityParameters fp = (FixedPriorityParameters) getSchedParams(FP_POLICY_NAME, FP_PARAM_ECLASS);
+		final FixedPriorityParameters fp = (FixedPriorityParameters) getSchedParams(FP_POLICY_NAME, fpParamEClass);
 		return fp.getPriority();
 	}
 
-	private SchedulingParameter getSchedParams(final String key, final EClass eClass) {
+	protected SchedulingParameter getSchedParams(final String key, final EClass eClass) {
 		for(SchedulingParameter v: task.getSchedParams()) {
 			if (key.equals(v.getName())) {
 				return v;
