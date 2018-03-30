@@ -16,9 +16,11 @@ import java.util.List;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterSiriusVariables;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DEdgeSpec;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
@@ -29,6 +31,7 @@ import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
+import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
@@ -375,76 +378,56 @@ public class MarteServices {
 		return null;
 	}
 
-	public void deleteStep2InputRel(EObject context) {
-		if (context instanceof Step) {
-			Step step = (Step) context;
-			PrecedenceRelation pr = step.getOutputRel();
-			/* case 2 predecessors */
-			if (pr.getPredec().size() == 2) {
-				Step stepToRemove = null;
-				for (Step predecStep : pr.getPredec()) {
-					if ("intermediate step".equals(predecStep.getName())) {
-						/* shortcut intermediate step and remove it */
-						pr.getSucces().get(0).setInputRel(predecStep.getInputRel());
-						stepToRemove = predecStep;
-						step.getScenario().getConnectors().remove(pr);
-					}
+	public void deleteConnection(DEdge views) {
+		EObject source = views.getSourceNode();
+		EObject target = views.getTargetNode();
+		if (source instanceof DNode && target instanceof DNode){
+			EObject sourcePin =((DNode) source).getTarget();
+			EObject targetPin =((DNode) target).getTarget();
+			if (sourcePin instanceof OutputPin && targetPin instanceof InputPin) {
+				OutputPin outputPin = (OutputPin) sourcePin;
+				InputPin inputPin = (InputPin) targetPin;
+				boolean hasMultipleOutputs = outputPin.getSuccessors().size()>1;
+				boolean hasMultipleInputs = inputPin.getPredecessors().size()>1;
+				if (hasMultipleOutputs){
+					outputPin.getSuccessors().remove(inputPin);
+				} else {
+					EcoreUtil.delete(outputPin);
 				}
-				if (stepToRemove != null) {
-					stepToRemove.getScenario().getSteps().remove(stepToRemove);
-				}
-				pr.getPredec().remove(step);
-				pr.setConnectorKind(ConnectorKind.SEQUENCE);
-
-			} else if (pr.getPredec().size() > 2) {
-				pr.getPredec().remove(step);
-				if (step.getOutputRel().getSucces().size() == 0) {
-					step.getScenario().getConnectors().remove(pr);
+				if (hasMultipleInputs){
+					inputPin.getPredecessors().remove(outputPin);
+				} else {
+					EcoreUtil.delete(inputPin);
 				}
 			}
 		}
 	}
+	
+	public void createPrecedenceRelation(EObject sourceObj, EObject targetObj) {
+		OutputPin outputPin = null;
+		InputPin inputPin = null;
+		if (sourceObj instanceof Step){
+			Step sourceStep = (Step) sourceObj;
+			outputPin = GqamFactory.eINSTANCE.createOutputPin();
+			sourceStep.getOutputPin().add(outputPin);
 
-	public void deleteOutputRel2Step(EObject views) {
-		if (views instanceof DEdgeSpec) {
-			EObject context = ((DEdgeSpec) views).getTarget();
-			EObject targetNode = ((DEdgeSpec) views).getTargetNode();
-			EObject target = ((DDiagramElement) targetNode).getTarget();
+		} else if (sourceObj instanceof OutputPin){
+			outputPin = (OutputPin) sourceObj;
+		}
+		if (targetObj instanceof Step){
+			Step targetStep = (Step) targetObj;
+			inputPin = GqamFactory.eINSTANCE.createInputPin();
+			targetStep.getInputPin().add(inputPin);
 
-			if (context instanceof PrecedenceRelation) {
-				PrecedenceRelation pr = (PrecedenceRelation) context;
-				BehaviorScenario scenario = pr.getPredec().get(0).getScenario();
-				/* case only 2 successors -> modify relation construction */
-				if (pr.getSucces().size() == 2) {
-					Step stepToRemove = null;
-					for (Step succesStep : pr.getSucces()) {
-						if ("intermediate step".equals(succesStep.getName())) {
-							/* shortcut intermediate step and remove it */
-							pr.getPredec().get(0).setOutputRel(succesStep.getOutputRel());
-							stepToRemove = succesStep;
-							scenario.getConnectors().remove(pr);
-						}
-					}
-					if (stepToRemove != null) {
-						stepToRemove.getScenario().getSteps().remove(stepToRemove);
-					}
-					pr.getSucces().remove(target);
-					pr.setConnectorKind(ConnectorKind.SEQUENCE);
-				}
-				/* case more than 2 successors -> remove successor Step */
-				else if (pr.getSucces().size() > 2) {
-					if (target instanceof Step) {
-						Step targetStep = (Step) target;
-						pr.getSucces().remove(targetStep);
-						if (targetStep.getInputRel().getPredec().size() == 0) {
-							targetStep.getScenario().getConnectors().remove(pr);
-						}
-					}
-				}
-			}
+		}
+		else if (targetObj instanceof InputPin){
+			inputPin = (InputPin) targetObj;
+		}
+		if (outputPin!=null && inputPin!=null){
+		outputPin.getSuccessors().add(inputPin);
 		}
 	}
-
+	
 	public List<ArrivalPattern> getAllPatternInDiagram(EObject obj, EObject diagram) {
 		List<ArrivalPattern> result = new ArrayList<ArrivalPattern>();
 		if (obj instanceof DesignModel) {
