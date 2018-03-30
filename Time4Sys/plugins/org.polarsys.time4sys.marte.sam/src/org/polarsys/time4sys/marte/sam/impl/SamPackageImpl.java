@@ -342,7 +342,7 @@ public class SamPackageImpl extends EPackageImpl implements SamPackage {
 		initEAttribute(getEndToEndFlow_EndToEndTime(), theGqamPackage.getNFP_Duration(), "endToEndTime", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndToEndFlow_EndToEndDeadline(), theGqamPackage.getNFP_Duration(), "endToEndDeadline", null, 0, 1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEndToEndFlow_Timing(), theGqamPackage.getTimedObserver(), null, "timing", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndToEndFlow_InvolvedElement(), theGqamPackage.getFlowInvolvedElement(), null, "involvedElement", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndToEndFlow_InvolvedElement(), theGqamPackage.getFlowInvolvedElement(), null, "involvedElement", null, 0, -1, EndToEndFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEndToEndFlow__FindStepsOnPath(), theGqamPackage.getBehaviorScenario(), "findStepsOnPath", 0, -1, IS_UNIQUE, IS_ORDERED);
 

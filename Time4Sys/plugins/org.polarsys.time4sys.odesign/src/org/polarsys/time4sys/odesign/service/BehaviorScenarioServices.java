@@ -108,7 +108,7 @@ public class BehaviorScenarioServices {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param function
 	 * @param displayedFunctions
@@ -340,13 +340,12 @@ public class BehaviorScenarioServices {
 	}
 
 	public EndToEndFlow createETEF(EObject context, List<EObject> views) {
-		//Ca marche pour 1 event-step, mais pas pour plus long event-step-step
 		EndToEndFlow etef = SamFactory.eINSTANCE.createEndToEndFlow();
 		if (!views.isEmpty()) {
 			etef.setName("End To End Flow");
 			DesignModel design = MarteServices.getDesign(context);
 			design.getEndToEndFlows().add(etef);
-			Step step=null;
+			Step step = null;
 			for (EObject aSelectedElement : views) {
 				if ((aSelectedElement instanceof DEdge) && (((DEdge) aSelectedElement).getTarget() != null)) {
 					EObject obj = ((DDiagramElement) aSelectedElement).getTarget();
@@ -355,7 +354,8 @@ public class BehaviorScenarioServices {
 						etef.getEndToEndStimuli().add(we);
 						step = (Step) we.getEffect();
 						etef.getInvolvedElement().add(step);
-					} else if (obj instanceof OutputPin) {
+					} 
+					else if (obj instanceof OutputPin) {
 						if ((obj.eContainer() instanceof BehaviorScenario)) {
 							OutputPin outputPin = (OutputPin) obj;
 							InputPin inputPin = getTargetInputPin((DEdge) aSelectedElement);
@@ -375,9 +375,9 @@ public class BehaviorScenarioServices {
 
 	private InputPin getTargetInputPin(DEdge aSelectedElement) {
 		EdgeTarget targetNode = aSelectedElement.getTargetNode();
-		if (targetNode instanceof DNode){
+		if (targetNode instanceof DNode) {
 			EObject target = ((DNode) targetNode).getTarget();
-			if (target instanceof InputPin){
+			if (target instanceof InputPin) {
 				return (InputPin) target;
 			}
 		}

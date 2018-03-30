@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
   <ownedViewpoints name="Design" modelFileExtension="time4sys design">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" name="Design Architecture" titleExpression="aql:'['+self.eContainer().name+'] Design Architecture diagram'" showOnStartup="true" domainClass="design.DesignModel">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" name="Design Architecture" titleExpression="aql:'['+self.eContainer().name+'] Design Architecture diagram'" domainClass="design.DesignModel">
       <metamodel href="../../org.polarsys.time4sys.marte/model/design.ecore#/"/>
       <metamodel href="../../org.polarsys.time4sys.marte/model/hrm.ecore#/"/>
       <metamodel href="../../org.polarsys.time4sys.marte/model/library.ecore#/"/>
@@ -36,7 +36,7 @@
         </firstModelOperations>
       </diagramInitialisation>
       <defaultLayer name="Default">
-        <nodeMappings name="ArrivalPattern" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ArrivalPattern']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Event%20Label%20Edit']" semanticCandidatesExpression="service:getAllPatternInDesign(diagram)" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.ArrivalPattern">
+        <nodeMappings name="ArrivalPattern" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ArrivalPattern']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Event%20Label%20Edit']" semanticCandidatesExpression="service:getAllPatternInDiagram(diagram)" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="gqam.ArrivalPattern">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -180,7 +180,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EndToEndFlow" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli.pattern" domainClass="sam.EndToEndFlow" useDomainElement="true">
+        <edgeMappings name="EndToEndFlow" detailDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='EndToEndFlow%20diagram%20creation']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" targetFinderExpression="aql:self.endToEndScenario" sourceFinderExpression="aql:self.endToEndStimuli.pattern" domainClass="sam.EndToEndFlow" useDomainElement="true">
           <style lineStyle="dash_dot" targetArrow="InputClosedArrow" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
             <centerLabelStyleDescription labelExpression="feature:name" iconPath="/org.polarsys.time4sys.odesign/images/EndToEndDeadline.gif">
@@ -1099,6 +1099,11 @@
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:DiagramCreationDescription" name="EndToEndFlow diagram creation" diagramDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']">
+            <initialOperation/>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
           <ownedTools xsi:type="tool_1:DeleteElementDescription" name="ArrivalPattern">
             <element name="element"/>
             <elementView name="elementView"/>
@@ -1242,7 +1247,192 @@
         </ownedTools>
       </toolSection>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']" name="Scenario Steps activity diagram" titleExpression="aql:'['+self.name+'] Scenario steps diagram'" domainClass="gqam.BehaviorScenario" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="End To End Flow activity diagram" titleExpression="aql:'['+self.name+'] End To End Flow diagram'" domainClass="sam.EndToEndFlow">
+      <defaultLayer name="Default">
+        <nodeMappings name="ArrivalPattern" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ArrivalPattern']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='Event%20Label%20Edit']" semanticCandidatesExpression="aql:self.endToEndStimuli.pattern" synchronizationLock="true" domainClass="gqam.ArrivalPattern">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::PeriodicPattern)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Periodic Event\n' + 'period: '+ self.period + '\nJitter: ' + self.jitter + '\nPhase: ' + self.phase" sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::SporadicPattern)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Sporadic Event\n' + 'Min: '+ self.min + '\nMax: ' + self.max + '\nJitter: ' + self.jitter" sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::BurstPattern)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Burst Event\n' + 'Jitter: '+ self.jitter + '\nMin Interarrival: ' + self.minInterarrival + '\nMax Interarrival: ' + self.maxInterarrival + '\nMin Event Interval: ' + self.minEventInterval + '\nMax Event Interval: ' + self.maxEventInterval " sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::ClosedPattern)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Closed Event\n' + 'Jitter: '+ self.jitter + '\nExt Delay: ' + self.extDelay + '\nPopulation: ' + self.population" sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::SlidingWindowPattern)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Sliding Window Event\n' + 'Jitter: '+ self.jitter + '\nWindow Size: ' + self.windowSize + '\nNb Events: ' + self.nbEvents" sizeComputationExpression="5" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/periodic.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="PrecedenceRelation" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" targetFinderExpression="aql:self.successors">
+          <style sizeComputationExpression="2" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Event2Step" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteEvent2Step']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']" targetFinderExpression="aql:self.eInverse('pattern').effect" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectEvent']">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Step" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20Involved%20ELement']" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:involvedElement" synchronizationLock="true" domainClass="gqam.Step" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']">
+          <borderedNodeMappings name="OutputPin" semanticCandidatesExpression="aql:self.outputPin.filterInvolved(diagram)" synchronizationLock="true" domainClass="gqam.OutputPin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/OutputFlowPin.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:not(self.isControl)">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/OutputDataPin.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="InputPin" semanticCandidatesExpression="aql:self.inputPin.filterInvolved(diagram)" synchronizationLock="true" domainClass="gqam.InputPin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/InputFlowPin.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:not(self.isControl)">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:self.computePortLabel(diagram)" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.polarsys.time4sys.odesign/images/InputDataPin.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <subContainerMappings name="SubStep" preconditionExpression="aql:self.eContainer() = container" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="feature:eAllContents" createElements="false" domainClass="gqam.Step" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.concurRes = null">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:self.name" roundedCorner="true" backgroundStyle="Liquid">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </conditionnalStyles>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.concurRes = null">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="Step">
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Open Design properties wizard">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerDropDescription" name="Drop Element" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='End%20To%20End%20Flow%20activity%20diagram']/@defaultLayer/@containerMappings[name='Step']/@subContainerMappings[name='SubStep']" dragSource="BOTH" moveEdges="true">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Step)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="scenario" valueExpression="var:newSemanticContainer"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::BehaviorScenario)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="steps" valueExpression="var:element"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Add/Remove Involved Elements" precondition="aql:self.oclIsKindOf(gqam::Step)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.AddRemoveInvolvedElement">
+                    <parameters name="elementToCreateMapping" value="aql:'Step'"/>
+                    <parameters name="context" value="var:elementView"/>
+                    <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
+                    <parameters name="choiceSelection" value="aql:element.outputPin.successors.eContainer()"/>
+                    <parameters name="initialSelection" value="aql:element.outputPin.successors.eContainer().filterInvolved(elementView)"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DeleteElementDescription" name="Delete Involved ELement">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.removeInvolvement(elementView)"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Add/Remove Stimuli" precondition="aql:self.oclIsKindOf(sam::EndToEndFlow)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectStimuli" id="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli">
+                  <parameters name="elementToCreateMapping" value="aql:'ArrivalPattern'"/>
+                  <parameters name="context" value="var:elementView"/>
+                  <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
+                  <parameters name="choiceSelection" value="aql:element.getDesign().getAllPatternInDiagram()"/>
+                  <parameters name="initialSelection" value="aql:element.endToEndStimuli"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Scenario%20Steps%20activity%20diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop%20Element']" name="Scenario Steps activity diagram" titleExpression="aql:'['+self.name+'] Scenario steps diagram'" domainClass="gqam.BehaviorScenario">
       <validationSet name="Step without concurent resource">
         <ownedRules xsi:type="validation:SemanticValidationRule" name="Validate Steps" level="ERROR" message="aql:'The step &quot;' + self.name +'&quot; shall be associated to a concurent resource.'" targetClass="gqam.Step">
           <audits auditExpression="aql:self.concurRes != null"/>
@@ -1623,6 +1813,7 @@
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.PropertiesServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.EndToEndFlowServices"/>
   </ownedViewpoints>
   <userColorsPalettes>
     <entries xsi:type="description:UserFixedColor" red="138" green="197" blue="255" name="CustomBlue"/>
