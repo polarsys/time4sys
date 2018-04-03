@@ -18,10 +18,12 @@ import org.polarsys.time4sys.builder.ProjectBuilder;
  */
 public class Arinc653Builder {
 
+	public static final String ARINC653_URL = "http://www.polarsys.org/time4sys/org.polarsys.time4sys.builder.design.arinc653";
+
 	/**
-	 * 
+	 * This is an helper class.
 	 */
-	public Arinc653Builder() {
+	private Arinc653Builder() {
 	}
 
 	public static Arinc653DesignBuilder newDesign(final ProjectBuilder theProject) {

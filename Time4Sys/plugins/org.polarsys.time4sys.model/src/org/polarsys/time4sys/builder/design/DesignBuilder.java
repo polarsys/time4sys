@@ -22,9 +22,11 @@ import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
+import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
+import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -120,6 +122,30 @@ public class DesignBuilder {
 		final SlidingWindowPattern pattern = gqamFactory.createSlidingWindowPattern();
 		pattern.setWindowSize(windowSize);
 		pattern.setNbEvents(nbEvents);
+		taskActivation.setPattern(pattern);
+		return new WorkloadEventBuilder(this, taskActivation);
+	}
+	
+	public WorkloadEventBuilder hasSporadicEvent(final String minInterarrivalStr, final String maxInterarrivalStr) {
+		final WorkloadEvent taskActivation = gqamFactory.createWorkloadEvent();
+		design.getWorkloadBehavior().getDemand().add(taskActivation);
+		final SporadicPattern pattern = gqamFactory.createSporadicPattern();
+		if (minInterarrivalStr != null) {
+			final Duration value = nfpFactory.createDurationFromString(minInterarrivalStr);
+			pattern.setMinInterarrival(value);
+		}
+		if (maxInterarrivalStr != null) {
+			final Duration value = nfpFactory.createDurationFromString(maxInterarrivalStr);
+			pattern.setMaxInterarrival(value);
+		}
+		taskActivation.setPattern(pattern);
+		return new WorkloadEventBuilder(this, taskActivation);
+	}
+	
+	public WorkloadEventBuilder hasActivationOnce() {
+		final WorkloadEvent taskActivation = gqamFactory.createWorkloadEvent();
+		design.getWorkloadBehavior().getDemand().add(taskActivation);
+		final Once pattern = gqamFactory.createOnce();
 		taskActivation.setPattern(pattern);
 		return new WorkloadEventBuilder(this, taskActivation);
 	}
@@ -328,6 +354,5 @@ public class DesignBuilder {
 		final EndToEndFlow first = design.getEndToEndFlows().get(0);
 		return new EndToEndFlowConstraintBuilder(first);
 	}
-
 
 }

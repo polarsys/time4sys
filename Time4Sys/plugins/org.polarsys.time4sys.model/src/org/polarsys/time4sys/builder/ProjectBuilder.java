@@ -85,6 +85,7 @@ public class ProjectBuilder {
 	}
 
 	public Project build() {
+		design.build();
 		return project;
 	}
 

@@ -56,7 +56,7 @@ public class Arinc653SpareTaskBuilderTest {
 	@Test
 	public void testNotSpareTaskButAnnotated() {
 		final TaskBuilder tb = aSpareTask().called("S1");
-		tb.annotate(Arinc653SpareTaskBuilder.ARINC653_URL).getDetails().put(Arinc653SpareTaskBuilder.SPARE_ATTR, "False");
+		tb.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(Arinc653SpareTaskBuilder.SPARE_ATTR, "False");
 		final SoftwareSchedulableResource task = tb.build(designBuilder);
 		assertFalse(Arinc653SpareTaskBuilder.isSpare(task));
 	}
