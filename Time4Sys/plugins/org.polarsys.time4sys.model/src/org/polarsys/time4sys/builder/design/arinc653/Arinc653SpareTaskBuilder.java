@@ -14,7 +14,6 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 public class Arinc653SpareTaskBuilder {
 	
 	public static final String SPARE_ATTR = "spare";
-	public static final String ARINC653_URL = "http://www.polarsys.org/time4sys/org.polarsys.time4sys.builder.design.arinc653";
 
 	public static TaskBuilder aSpareTask() {
 		final TaskBuilder taskBuilder = new TaskBuilder();
@@ -23,12 +22,12 @@ public class Arinc653SpareTaskBuilder {
 	}
 	
 	public static void asSpare(final TaskBuilder taskBuilder) {
-		final EAnnotation annot = taskBuilder.annotate(ARINC653_URL);
+		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
 		annot.getDetails().put(SPARE_ATTR, Boolean.TRUE.toString());
 	}
 	
 	public static boolean isSpare(final SoftwareSchedulableResource task) {
-		final EAnnotation annot = task.getEAnnotation(ARINC653_URL);
+		final EAnnotation annot = task.getEAnnotation(Arinc653Builder.ARINC653_URL);
 		if (annot == null) {
 			return false;
 		}

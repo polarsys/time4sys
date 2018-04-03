@@ -140,5 +140,6 @@ public class Arinc653BuilderTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		assertTrue(Arinc653MIFBuilder.isMIF(mif1.build()));
 	}
 }

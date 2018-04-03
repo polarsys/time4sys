@@ -31,6 +31,8 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
  *
  */
 public class Arinc653MIFBuilder {
+	
+	public static final String PARTITION_ATTR = "partition";
 
 	public static Arinc653MIFBuilder aMIF() {
 		return new Arinc653MIFBuilder();
@@ -38,6 +40,15 @@ public class Arinc653MIFBuilder {
 	
 	public static Arinc653MIFBuilder aPartition() {
 		return aMIF();
+	}
+	
+	public static boolean isMIF(final SoftwareSchedulableResource aTask) {
+		final TaskBuilder taskBuilder = new TaskBuilder(null, aTask);
+		if (taskBuilder.hasAnnotation(Arinc653Builder.ARINC653_URL)) {
+			final String partitionVal = taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().get(PARTITION_ATTR);
+			return (partitionVal != null) && Boolean.parseBoolean(partitionVal);
+		}
+		return false;
 	}
 
 	private TaskBuilder taskBuilder;
@@ -48,6 +59,7 @@ public class Arinc653MIFBuilder {
 	
 	public Arinc653MIFBuilder() {
 		taskBuilder = new TaskBuilder();
+		taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
 	}
 
 	public Arinc653MIFBuilder called(String value) {
@@ -69,7 +81,7 @@ public class Arinc653MIFBuilder {
 		return getOrCreateTableEntry().getInitialBudget();
 	}
 
-	public Arinc653MIFBuilder withOffset(String string) {
+	public Arinc653MIFBuilder withOffset(final String offset) {
 		// TODO Auto-generated method stub
 		return this;
 	}

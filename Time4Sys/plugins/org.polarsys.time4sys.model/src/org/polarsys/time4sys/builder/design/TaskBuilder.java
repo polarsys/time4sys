@@ -292,4 +292,8 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		task.getEAnnotations().add(annot);
 		return annot;
 	}
+
+	public boolean hasAnnotation(final String source) {
+		return task.getEAnnotation(source) != null;
+	}
 }
