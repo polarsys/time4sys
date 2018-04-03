@@ -219,6 +219,27 @@ public class StepBuilder {
 		}
 		return this;
 	}
+	
+	public StepBuilder isSporadic(final String minInterarrival, final String maxInterarrival) {
+		WorkloadEvent cause;
+		if (step.getCause().isEmpty()) {
+			cause = design.hasSporadicEvent(minInterarrival, maxInterarrival).forStep(step).build();
+		} else {
+			cause = step.getCause().get(0);
+		}
+		return this;
+	}
+	
+
+	public StepBuilder isActivatedOnce() {
+		WorkloadEvent cause;
+		if (step.getCause().isEmpty()) {
+			cause = design.hasActivationOnce().forStep(step).build();
+		} else {
+			cause = step.getCause().get(0);
+		}
+		return this;
+	}
 
 	public StepBuilder ofET(String value) {
 		return ofWCET(value).ofBCET(value);

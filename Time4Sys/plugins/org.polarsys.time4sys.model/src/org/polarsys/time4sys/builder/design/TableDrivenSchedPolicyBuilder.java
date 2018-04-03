@@ -44,10 +44,15 @@ public class TableDrivenSchedPolicyBuilder {
 	}
 
 	public void withMIFDuration(final Duration mif) {
+		Duration currentOffset = NfpFactory.eINSTANCE.createDurationFromString("0ms");
 		for(TableEntryType entry: schedule.getEntries()) {
 			entry.getTimeSlot().clear();
 			entry.getTimeSlot().add(mif);
+			entry.getOffset().clear();
+			entry.getOffset().add(currentOffset);
+			currentOffset = currentOffset.add(mif);
 		}
+		schedule.setFrameCycleTime(currentOffset);
 	}
 
 	public Duration getMIFDuration() {
@@ -75,8 +80,9 @@ public class TableDrivenSchedPolicyBuilder {
 		return sum;
 	}
 
-	public void addEntry(final TableEntryType entry) {
+	public TableEntryType addEntry(final TableEntryType entry) {
 		schedule.getEntries().add(entry);
+		return entry;
 	}
 
 	public void build() {

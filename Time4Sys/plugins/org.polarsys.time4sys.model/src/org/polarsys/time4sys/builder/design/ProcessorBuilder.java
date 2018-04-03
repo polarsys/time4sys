@@ -15,6 +15,7 @@ package org.polarsys.time4sys.builder.design;
 
 import java.util.function.Predicate;
 
+import org.eclipse.emf.ecore.EAnnotation;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -144,6 +145,10 @@ public class ProcessorBuilder {
 
 	public void addSchedulable(final SoftwareSchedulableResource task) {
 		proc.getMainScheduler().getSchedulableResource().add(task);
+	}
+
+	public EAnnotation annotate(final String url) {
+		return Annotations.annotate(proc, url);
 	}
 
 

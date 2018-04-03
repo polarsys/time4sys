@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -65,6 +64,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private String windowSize;
 	private String deadline;
 	protected EClass fpParamEClass;
+	private boolean isSporadic = false;
+	private String minInterarrival;
+	private String maxInterarrival;
+	private boolean isActivatedOnce = false;
 
 	
 	public TaskBuilder() {
@@ -94,6 +97,12 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		}
 		if (windowSize != null) {
 			firstStep().withSlidingWindow(nbEvents, windowSize);
+		}
+		if (isSporadic) {
+			firstStep().isSporadic(minInterarrival, maxInterarrival);
+		}
+		if (isActivatedOnce) {
+			firstStep().isActivatedOnce();
 		}
 		if (jitter != null) {
 			firstStep().hasJitter(jitter);
@@ -283,17 +292,25 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	public EAnnotation annotate(final String source) {
-		EAnnotation annot = task.getEAnnotation(source);
-		if (annot != null) {
-			return annot;
-		}
-		annot = EcoreFactory.eINSTANCE.createEAnnotation();
-		annot.setSource(source);
-		task.getEAnnotations().add(annot);
-		return annot;
+		return Annotations.annotate(task, source);
 	}
 
 	public boolean hasAnnotation(final String source) {
-		return task.getEAnnotation(source) != null;
+		return Annotations.hasAnnotation(task, source);
+	}
+
+	public TaskBuilder aperiodic() {
+		return sporadic(null, null);
+	}
+
+	private TaskBuilder sporadic(final String min, final String max) {
+		this.isSporadic = true;
+		this.minInterarrival = min;
+		this.maxInterarrival = max;
+		return this;
+	}
+	public TaskBuilder withSingleActivation() {
+		this.isActivatedOnce  = true;
+		return this;
 	}
 }
