@@ -141,7 +141,7 @@
           </style>
         </edgeMappings>
         <edgeMappings name="Event2Step" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteEvent2Step']" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" targetFinderExpression="aql:self.eInverse('pattern').effect" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectEvent']">
-          <style>
+          <style lineStyle="dash">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -901,11 +901,7 @@
               <sourceViewVariable name="sourceView"/>
               <targetViewVariable name="targetView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.eContainer()">
-                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::WorkloadEvent)">
-                    <subModelOperations xsi:type="tool:SetValue" featureName="effect" valueExpression="var:target"/>
-                  </subModelOperations>
-                </firstModelOperations>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.setEffect(target)"/>
               </initialOperation>
             </tools>
             <tools xsi:type="tool_1:EdgeCreationDescription" name="Mutex locked Step/Resource" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToResource']" iconPath="/org.polarsys.time4sys.odesign/images/Mutex2Step.gif">

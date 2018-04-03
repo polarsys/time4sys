@@ -29,6 +29,8 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.BurstPattern;
+import org.polarsys.time4sys.marte.gqam.ClosedPattern;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
@@ -38,6 +40,8 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.Pin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
+import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -567,6 +571,101 @@ public class MarteServices {
 	
 	public void removeInput(OutputPin output, EObject input){
 		output.getSuccessors().remove(input);
+	}
+	
+	public void addPeriodicEventOnStep(EObject bs) {
+		PeriodicPattern pp = GqamFactory.eINSTANCE.createPeriodicPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+
+	public void addSporadicEventOnStep(EObject bs) {
+		SporadicPattern pp = GqamFactory.eINSTANCE.createSporadicPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+
+	public void addClosedEventOnStep(EObject bs) {
+		ClosedPattern pp = GqamFactory.eINSTANCE.createClosedPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+
+	public void addSlidingWindowEventOnStep(EObject bs) {
+		SlidingWindowPattern pp = GqamFactory.eINSTANCE.createSlidingWindowPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+
+	public void addBurstEventOnStep(EObject bs) {
+		BurstPattern pp = GqamFactory.eINSTANCE.createBurstPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+
+	public void setEffect(EObject source, EObject target){
+		if (source instanceof ArrivalPattern && target instanceof Step){
+			ArrivalPattern ap = (ArrivalPattern) source;
+			if (ap.eContainer() instanceof WorkloadEvent){
+				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
+				we.setEffect((Step)target);
+			}
+		}
 	}
 
 }

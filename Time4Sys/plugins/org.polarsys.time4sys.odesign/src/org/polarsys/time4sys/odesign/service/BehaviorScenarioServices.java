@@ -354,8 +354,7 @@ public class BehaviorScenarioServices {
 						etef.getEndToEndStimuli().add(we);
 						step = (Step) we.getEffect();
 						etef.getInvolvedElement().add(step);
-					} 
-					else if (obj instanceof OutputPin) {
+					} else if (obj instanceof OutputPin) {
 						if ((obj.eContainer() instanceof BehaviorScenario)) {
 							OutputPin outputPin = (OutputPin) obj;
 							InputPin inputPin = getTargetInputPin((DEdge) aSelectedElement);
@@ -437,91 +436,6 @@ public class BehaviorScenarioServices {
 			last.add(succesors.eContainer());
 		}
 		return last;
-	}
-
-	public void addPeriodicEventOnStep(EObject bs) {
-		PeriodicPattern pp = GqamFactory.eINSTANCE.createPeriodicPattern();
-		if (bs instanceof BehaviorScenario) {
-			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
-			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
-			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
-			dm.getWorkloadBehavior().getDemand().add(we);
-			we.setPattern(arrivalPattern);
-			behaviorScenario.getCause().add(we);
-		}
-	}
-
-	public void addSporadicEventOnStep(EObject bs) {
-		SporadicPattern pp = GqamFactory.eINSTANCE.createSporadicPattern();
-		if (bs instanceof BehaviorScenario) {
-			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
-			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
-			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
-			dm.getWorkloadBehavior().getDemand().add(we);
-			we.setPattern(arrivalPattern);
-			behaviorScenario.getCause().add(we);
-		}
-	}
-
-	public void addClosedEventOnStep(EObject bs) {
-		ClosedPattern pp = GqamFactory.eINSTANCE.createClosedPattern();
-		if (bs instanceof BehaviorScenario) {
-			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
-			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
-			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
-			dm.getWorkloadBehavior().getDemand().add(we);
-			we.setPattern(arrivalPattern);
-			behaviorScenario.getCause().add(we);
-		}
-	}
-
-	public void addSlidingWindowEventOnStep(EObject bs) {
-		SlidingWindowPattern pp = GqamFactory.eINSTANCE.createSlidingWindowPattern();
-		if (bs instanceof BehaviorScenario) {
-			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
-			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
-			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
-			dm.getWorkloadBehavior().getDemand().add(we);
-			we.setPattern(arrivalPattern);
-			behaviorScenario.getCause().add(we);
-		}
-	}
-
-	public void addBurstEventOnStep(EObject bs) {
-		BurstPattern pp = GqamFactory.eINSTANCE.createBurstPattern();
-		if (bs instanceof BehaviorScenario) {
-			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
-			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
-			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
-			dm.getWorkloadBehavior().getDemand().add(we);
-			we.setPattern(arrivalPattern);
-			behaviorScenario.getCause().add(we);
-		}
 	}
 
 	public void updateBehaviorScenarioNodeColor(DNode fcNode, Collection<DNode> visibleBehaviorScenarios) {
@@ -761,6 +675,9 @@ public class BehaviorScenarioServices {
 		HashMap<EndToEndFlow, DEdge> displayedETEF = new HashMap<EndToEndFlow, DEdge>();
 		// displayed Precedence Relations
 		HashMap<PrecedenceRelation<OutputPin, InputPin>, Set<DEdge>> displayedPR = new HashMap<PrecedenceRelation<OutputPin, InputPin>, Set<DEdge>>();
+		// displayed Event to Step
+		HashMap<ArrivalPattern, DEdge> displayedE2S = new HashMap<ArrivalPattern, DEdge>();
+
 		// displayed Steps
 		HashMap<FlowInvolvedElement, Set<DDiagramElement>> displayedFIE = new HashMap<FlowInvolvedElement, Set<DDiagramElement>>();
 		// colored Steps
@@ -768,7 +685,7 @@ public class BehaviorScenarioServices {
 		// incomplete displayed behavior scenario steps
 		Set<EndToEndFlow> incompleteBS = new HashSet<EndToEndFlow>();
 		// colored precedence relations
-		HashMap<DEdge, Set<EndToEndFlow>> coloredPR = new HashMap<DEdge, Set<EndToEndFlow>>();
+		HashMap<DEdge, Set<EndToEndFlow>> coloredEdges = new HashMap<DEdge, Set<EndToEndFlow>>();
 
 		// find displayed ETEF and functions
 		for (DEdge aNode : diagram.getEdges()) {
@@ -822,6 +739,14 @@ public class BehaviorScenarioServices {
 			}
 		}
 
+		// find displayed Event to Step
+		for (DEdge anEdge : diagram.getEdges()) {
+			EObject edgeTarget = anEdge.getTarget();
+			if (edgeTarget instanceof ArrivalPattern) {
+				displayedE2S.put((ArrivalPattern) edgeTarget, anEdge);
+			}
+		}
+
 		// find nodes that must be colored
 		for (Entry<EndToEndFlow, DEdge> etef : displayedETEF.entrySet()) {
 			OutputPin op = null;
@@ -851,14 +776,28 @@ public class BehaviorScenarioServices {
 					if (displayedPR.containsKey(oiPR)) {
 						Set<DEdge> exchangeEdges = displayedPR.get(oiPR);
 						for (DEdge exchangeEdge : exchangeEdges) {
-							if (!coloredPR.containsKey(exchangeEdge)) {
+							if (!coloredEdges.containsKey(exchangeEdge)) {
 								Set<EndToEndFlow> newSet = new HashSet<EndToEndFlow>();
 								newSet.add(etef.getKey());
-								coloredPR.put(exchangeEdge, newSet);
+								coloredEdges.put(exchangeEdge, newSet);
 							} else {
-								coloredPR.get(exchangeEdge).add(etef.getKey());
+								coloredEdges.get(exchangeEdge).add(etef.getKey());
 							}
 						}
+					}
+				}
+			}
+			// Color Event to Step
+			for (WorkloadEvent event : etef.getKey().getEndToEndStimuli()) {
+				ArrivalPattern ap = event.getPattern();
+				if (displayedE2S.containsKey(ap)) {
+					DEdge exchangeEdge = displayedE2S.get(ap);
+					if (!coloredEdges.containsKey(exchangeEdge)) {
+						Set<EndToEndFlow> newSet = new HashSet<EndToEndFlow>();
+						newSet.add(etef.getKey());
+						coloredEdges.put(exchangeEdge, newSet);
+					} else {
+						coloredEdges.get(exchangeEdge).add(etef.getKey());
 					}
 				}
 			}
@@ -901,7 +840,7 @@ public class BehaviorScenarioServices {
 					}
 				}
 
-				// customize functional exchanges
+				// customize precedence relation
 				OutputPin op = null;
 				for (FlowInvolvedElement fie : me.getKey().getInvolvedElement()) {
 					if (fie instanceof OutputPin) {
@@ -914,7 +853,8 @@ public class BehaviorScenarioServices {
 						if (displayedPR.containsKey(oiPR)) {
 							Set<DEdge> currentEdges = displayedPR.get(oiPR);
 							for (DEdge currentEdge : currentEdges) {
-								if ((coloredPR.get(currentEdge) != null && coloredPR.get(currentEdge).size() == 1)) {
+								if ((coloredEdges.get(currentEdge) != null
+										&& coloredEdges.get(currentEdge).size() == 1)) {
 									customizePrecedenceRelationEdgeStyle(currentEdge, color);
 								} else {
 									customizePrecedenceRelationEdgeStyle(currentEdge, ShapeUtil.getBlackColor());
@@ -925,6 +865,20 @@ public class BehaviorScenarioServices {
 						}
 					}
 				}
+				// customize precedence relation
+				for (WorkloadEvent we : me.getKey().getEndToEndStimuli()) {
+					ArrivalPattern ap = we.getPattern();
+					if (displayedE2S.containsKey(ap)) {
+						DEdge currentEdges = displayedE2S.get(ap);
+						if ((coloredEdges.get(currentEdges) != null && coloredEdges.get(currentEdges).size() == 1)) {
+							customizePrecedenceRelationEdgeStyle(currentEdges, color);
+						} else {
+							customizePrecedenceRelationEdgeStyle(currentEdges, ShapeUtil.getBlackColor());
+						}
+					} else {
+						incompleteBS.add(me.getKey());
+					}
+				}
 				me.getValue().refresh();
 			}
 		}
@@ -932,7 +886,7 @@ public class BehaviorScenarioServices {
 		// reset functional exchanges with no behavior scenario
 		for (Set<DEdge> aFEs : displayedPR.values()) {
 			for (DEdge aFE : aFEs) {
-				if (!coloredPR.containsKey(aFE)) {
+				if (!coloredEdges.containsKey(aFE)) {
 					resetOutputPinStyle(aFE);
 				}
 			}
