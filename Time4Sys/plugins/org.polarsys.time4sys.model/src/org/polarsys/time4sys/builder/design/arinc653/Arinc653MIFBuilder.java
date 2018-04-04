@@ -13,9 +13,13 @@ package org.polarsys.time4sys.builder.design.arinc653;
 import java.util.function.Predicate;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.ProcessorBuilder;
+import org.polarsys.time4sys.builder.design.ReferenceBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
@@ -56,6 +60,7 @@ public class Arinc653MIFBuilder {
 	private TaskBuilder[] subTasks;
 	private SecondaryScheduler sched;
 	private String timeBudget;
+	private ReferenceBuilder ref;
 	
 	public Arinc653MIFBuilder() {
 		taskBuilder = new TaskBuilder();
@@ -187,6 +192,35 @@ public class Arinc653MIFBuilder {
 
 	public SecondaryScheduler getScheduler() {
 		return sched;
+	}
+
+	public EAnnotation annotate(final String source) {
+		return taskBuilder.annotate(source);
+	}
+
+	public synchronized ReferenceBuilder reference() {
+		if (ref == null) {
+			// Search from annotation
+			for(EObject obj: annotate(Arinc653Builder.ARINC653_URL).getReferences()) {
+				if (obj instanceof Reference) {
+					ref = new ReferenceBuilder((Reference)obj); 
+				}
+			}
+			// Then by name
+			final String refname = "Ref " + taskBuilder.getName();
+			if (ref == null) {
+				ref = designBuilder.reference(refname);
+				if (ref != null) {
+					annotate(Arinc653Builder.ARINC653_URL).getReferences().add(ref.build());
+				}
+			}
+			// Finally build it if not found
+			if (ref == null) {
+				ref =  designBuilder.hasAReference().called(refname);
+				annotate(Arinc653Builder.ARINC653_URL).getReferences().add(ref.build());
+			}
+		}
+		return ref;
 	}
 
 }
