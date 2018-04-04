@@ -18,6 +18,7 @@ import java.util.function.Predicate;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
+import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
@@ -58,6 +59,9 @@ public class ProcessorBuilder {
 			if (res instanceof SchedulableResource) {
 				sched.getSchedulableResource().add((SchedulableResource)res);
 			}
+		}
+		if (proc instanceof ComputingResource) {
+			sched.setHost((ComputingResource)proc);
 		}
 		return sched;
 	}
