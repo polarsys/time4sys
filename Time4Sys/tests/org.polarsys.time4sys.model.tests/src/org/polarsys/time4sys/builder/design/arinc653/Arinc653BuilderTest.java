@@ -141,5 +141,14 @@ public class Arinc653BuilderTest {
 			e.printStackTrace();
 		}
 		assertTrue(Arinc653MIFBuilder.isMIF(mif1.build()));
+		
+		assertEquals(1, mif1.build().getOwnedResource().stream().filter(new Predicate<Resource>() {
+
+			@Override
+			public boolean test(Resource arg) {
+				return arg instanceof SecondaryScheduler;
+			}
+			
+		}).count());
 	}
 }
