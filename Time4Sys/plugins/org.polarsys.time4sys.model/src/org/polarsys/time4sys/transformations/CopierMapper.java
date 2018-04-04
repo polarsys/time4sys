@@ -13,6 +13,7 @@
  */
 package org.polarsys.time4sys.transformations;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,16 +34,21 @@ import org.polarsys.time4sys.mapping.MappingFactory;
 public class CopierMapper extends Copier {
 
 	protected static final MappingFactory mappingFactory = MappingFactory.eINSTANCE;
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 7035636184301115392L;
+	
+	protected static interface Observer {
+
+		void copied(EObject source, Link lnk, EObject theCopy);
+		
+	}
 
 	protected final Context identityRule;
 	protected final Mapping mapping;
 	protected Stack<Link> stack;
 	protected final Map<EObject, List<Link>> maps;
+
+	private Collection<Observer> observers = new LinkedList<>();
 
 	/**
 	 * 
@@ -70,6 +76,7 @@ public class CopierMapper extends Copier {
 		stack.peek().getSubLinks().add(lnk);
 		addMapEntry(eObject, lnk);
 		addMapEntry(theCopy, lnk);
+		fireCopied(eObject, lnk, theCopy);
 		return theCopy;
 	}
 
@@ -103,4 +110,14 @@ public class CopierMapper extends Copier {
 		return t;
 	}
 
+
+	protected void fireCopied(final EObject source, final Link lnk, final EObject theCopy) {
+		for(Observer obs: observers) {
+			obs.copied(source, lnk, theCopy);
+		}
+	}
+	
+	public boolean addObserver(final Observer obs) {
+		return observers.add(obs);
+	}
 }

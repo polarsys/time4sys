@@ -20,6 +20,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	SimulationAnalyserTest.class,
 	ToPeriodicDerivationTest.class,
 	RemoveAndReplaceDeprecatedTest.class,
+	PriorityUrgencyInverterTest.class,
 	})
 public class AllTests {
 
