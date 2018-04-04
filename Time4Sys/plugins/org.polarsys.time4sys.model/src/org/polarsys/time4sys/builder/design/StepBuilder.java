@@ -375,4 +375,15 @@ public class StepBuilder {
 		return null;
 	}
 
+	public void withReference(final ReferenceBuilder ref) {
+		if (ref == null) {
+			return;
+		}
+		if (!step.getCause().isEmpty()) {
+			for(WorkloadEvent cause: step.getCause()) {
+				cause.getPattern().setReference(ref.build());
+			}
+		}
+	}
+
 }

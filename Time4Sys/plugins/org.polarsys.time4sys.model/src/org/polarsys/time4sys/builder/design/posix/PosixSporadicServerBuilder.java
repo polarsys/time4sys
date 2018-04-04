@@ -13,7 +13,6 @@ package org.polarsys.time4sys.builder.design.posix;
 import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
-import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
@@ -25,10 +24,18 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
  */
 public class PosixSporadicServerBuilder extends TaskBuilder {
 	
+	public static final String POSIX_URL = "http://www.polarsys.org/time4sys/org.polarsys.time4sys.builder.design.posix";
+	
 	private static final EClass PSS_PARAM_ECLASS = GrmPackage.eINSTANCE.getPeriodicServerParameters();
+
+	private static final String ORDER_ATTR = "pss_order";
 	
 	public static PosixSporadicServerBuilder aPSS() {
 		return new PosixSporadicServerBuilder();
+	}
+
+	public static PosixSporadicServerBuilder as(final TaskBuilder task) {
+		return new PosixSporadicServerBuilder(task);
 	}
 
 	public PosixSporadicServerBuilder() {
@@ -38,6 +45,11 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public PosixSporadicServerBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw) {
 		super(designBuilder, raw, PSS_PARAM_ECLASS);
 	}
+
+	public PosixSporadicServerBuilder(final TaskBuilder task) {
+		super(task.design(), task.build(), PSS_PARAM_ECLASS);
+	}
+
 
 	public PosixSporadicServerBuilder called(final String value) {
 		super.called(value);
@@ -79,5 +91,16 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public PosixSporadicServerBuilder withSingleActivation() {
 		super.withSingleActivation();
 		return this;
+	}
+	
+	public PosixSporadicServerBuilder withOrder(final int order) {
+		annotate(POSIX_URL).getDetails().put(ORDER_ATTR, Integer.toString(order));
+		return this;
+	}
+
+
+	public int getOrder() {
+		final String strVal = annotate(POSIX_URL).getDetails().get(ORDER_ATTR);
+		return Integer.parseInt(strVal);
 	}
 }

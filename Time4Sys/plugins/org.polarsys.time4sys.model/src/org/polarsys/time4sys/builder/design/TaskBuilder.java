@@ -68,6 +68,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private String minInterarrival;
 	private String maxInterarrival;
 	private boolean isActivatedOnce = false;
+	private ReferenceBuilder ref;
 
 	
 	public TaskBuilder() {
@@ -96,13 +97,13 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 			firstStep().isPeriodic(period);
 		}
 		if (windowSize != null) {
-			firstStep().withSlidingWindow(nbEvents, windowSize);
+			firstStep().withSlidingWindow(nbEvents, windowSize).withReference(ref);
 		}
 		if (isSporadic) {
-			firstStep().isSporadic(minInterarrival, maxInterarrival);
+			firstStep().isSporadic(minInterarrival, maxInterarrival).withReference(ref);
 		}
 		if (isActivatedOnce) {
-			firstStep().isActivatedOnce();
+			firstStep().isActivatedOnce().withReference(ref);
 		}
 		if (jitter != null) {
 			firstStep().hasJitter(jitter);
@@ -312,5 +313,16 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	public TaskBuilder withSingleActivation() {
 		this.isActivatedOnce  = true;
 		return this;
+	}
+
+	public void withReference(final ReferenceBuilder reference) {
+		ref = reference;
+		if (design != null && firstStep != null) {
+			firstStep().withReference(ref);
+		}
+	}
+
+	public DesignBuilder design() {
+		return design;
 	}
 }

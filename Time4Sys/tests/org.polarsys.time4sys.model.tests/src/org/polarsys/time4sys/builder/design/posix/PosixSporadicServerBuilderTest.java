@@ -51,6 +51,7 @@ public class PosixSporadicServerBuilderTest {
 					          .ofInitialBudget("10ms")
 							  .ofPriority(10)
 							  .ofBackgroundPriority(2)
+							  .withOrder(3)
 				)
 		).withMIFDuration("10ms");
 		design.build();
@@ -68,7 +69,7 @@ public class PosixSporadicServerBuilderTest {
 		assertEquals("MIF1", mif1.getName());
 		assertNotNull(mif1.getMIFDuration());
 		
-		final TaskBuilder pss1 = design.task("PSS1");
+		final PosixSporadicServerBuilder pss1 = PosixSporadicServerBuilder.as(design.task("PSS1"));
 		assertNotNull(pss1);
 		final SoftwareSchedulableResource pss1Raw = pss1.build();
 		assertEquals(1, pss1Raw.getSchedParams().size());
@@ -79,6 +80,7 @@ public class PosixSporadicServerBuilderTest {
 		assertEquals(2, pssParam.getBackgroundPriority());
 		assertNotNull(pssParam.getInitialBudget());
 		assertEquals("10ms", pssParam.getInitialBudget().toString());
+		assertEquals(3, pss1.getOrder());
 	}
 
 }

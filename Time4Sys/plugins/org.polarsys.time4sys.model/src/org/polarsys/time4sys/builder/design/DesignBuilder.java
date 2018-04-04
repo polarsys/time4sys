@@ -25,6 +25,7 @@ import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -353,6 +354,28 @@ public class DesignBuilder {
 	public EndToEndFlowConstraintBuilder firstEndToEndFlowsConstraints() {
 		final EndToEndFlow first = design.getEndToEndFlows().get(0);
 		return new EndToEndFlowConstraintBuilder(first);
+	}
+
+	public ReferenceBuilder hasAReference() {
+		return new ReferenceBuilder(this);
+	}
+
+	public boolean addReference(final Reference ref) {
+		return design.getWorkloadBehavior().getReferences().add(ref);
+	}
+
+	/**
+	 * Return the reference with given name or null.
+	 * @param refname
+	 * @return
+	 */
+	public ReferenceBuilder reference(final String refname) {
+		for(Reference ref: design.getWorkloadBehavior().getReferences()) {
+			if (refname.equals(ref.getReferenceName())) {
+				return new ReferenceBuilder(ref);
+			}
+		}
+		return null;
 	}
 
 }
