@@ -14,6 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
+import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
 
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
@@ -21,6 +22,7 @@ import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
@@ -93,4 +95,35 @@ public class PriorityUrgencyInverterTest {
 		assertEquals(1, t2Task.getPriority());
 	}
 
+	@Test
+	public void testTwoPSSTasks() {
+		// Given a two tasks model
+		DesignBuilder design = theProject.design();
+		design.hasAProcessor().called("mainproc").thatRuns(
+				aPSS().called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms").ofPriority(1).ofBackgroundPriority(5),
+				aPSS().called("T2").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms").ofPriority(2).ofBackgroundPriority(6)
+			).under(SchedPolicyKind.FIXED_PRIORITY);
+		// When inverting priority and urgency
+		final Transformation transfo = PriorityUrgencyInverter.transform(theProject.build(), design.build());
+		
+		// Then
+		final Mapping mapping = transfo.getMapping();
+		assertNotNull(mapping);
+		
+		
+		final EList<Link> subLinks = mapping.getSubLinks();
+		assertFalse(subLinks.isEmpty());
+		// The design model has been copied.
+		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
+		final DesignBuilder targetDesign = new DesignBuilder(copy);
+		final PosixSporadicServerBuilder t1Task = PosixSporadicServerBuilder.as(targetDesign.task("T1"));
+		assertNotNull(t1Task);
+		// Task with lower priority value become the one with maximum urgency 
+		assertEquals(6, t1Task.getPriority());
+		assertEquals(2, t1Task.getBackgroundPriority());
+		final PosixSporadicServerBuilder t2Task = PosixSporadicServerBuilder.as(targetDesign.task("T2"));
+		assertNotNull(t2Task);
+		assertEquals(5, t2Task.getPriority());
+		assertEquals(1, t2Task.getBackgroundPriority());
+	}
 }

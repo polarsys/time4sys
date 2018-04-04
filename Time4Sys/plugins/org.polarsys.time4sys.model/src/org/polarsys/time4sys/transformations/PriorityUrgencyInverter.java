@@ -19,6 +19,7 @@ import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
+import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.CopierMapper.Observer;
@@ -64,7 +65,15 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	protected void finalize(final DesignModel target) {
 		super.finalize(target);
 		for(FixedPriorityParameters fpParam: toBeUpdated) {
-			fpParam.setPriority(highestPriorityValue - fpParam.getPriority() + 1);
+			if (fpParam.eIsSet(GrmPackage.eINSTANCE.getFixedPriorityParameters_Priority())) {
+				fpParam.setPriority(highestPriorityValue - fpParam.getPriority() + 1);
+			}
+			if (fpParam instanceof PeriodicServerParameters) {
+				final PeriodicServerParameters pssParam = (PeriodicServerParameters)fpParam;
+				if (pssParam.eIsSet(GrmPackage.eINSTANCE.getPeriodicServerParameters_BackgroundPriority())) {
+					pssParam.setBackgroundPriority(highestPriorityValue - pssParam.getBackgroundPriority() + 1);
+				}
+			}
 		}
 	}
 
@@ -75,8 +84,19 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	public void copied(EObject source, Link lnk, EObject theCopy) {
 		if (source instanceof FixedPriorityParameters) {
 			final FixedPriorityParameters fpParam = (FixedPriorityParameters)source;
+			boolean needUpdate = false;
 			if (fpParam.eIsSet(GrmPackage.eINSTANCE.getFixedPriorityParameters_Priority())) {
 				highestPriorityValue = Integer.max(highestPriorityValue, fpParam.getPriority());
+				needUpdate = true;
+			}
+			if (source instanceof PeriodicServerParameters) {
+				final PeriodicServerParameters pssParam = (PeriodicServerParameters)source;
+				if (pssParam.eIsSet(GrmPackage.eINSTANCE.getPeriodicServerParameters_BackgroundPriority())) {
+					highestPriorityValue = Integer.max(highestPriorityValue, pssParam.getBackgroundPriority());
+					needUpdate = true;
+				}
+			}
+			if (needUpdate) {
 				toBeUpdated .add((FixedPriorityParameters)theCopy);
 			}
 		}

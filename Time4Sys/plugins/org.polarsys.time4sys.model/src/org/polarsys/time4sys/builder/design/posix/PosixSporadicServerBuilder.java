@@ -81,6 +81,11 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 		return this;
 	}
 	
+	public PosixSporadicServerBuilder ofPeriod(final String value) {
+		super.ofPeriod(value);
+		return this;
+	}
+	
 	public PosixSporadicServerBuilder ofDeadline(final String value) {
 		super.ofDeadline(value);
 		return this;
@@ -91,7 +96,12 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 		schedParam.setBackgroundPriority(urgency);
 		return this;
 	}
-
+	
+	public int getBackgroundPriority() {
+		final PeriodicServerParameters schedParam = (PeriodicServerParameters)getSchedParams(FP_POLICY_NAME, fpParamEClass);
+		return schedParam.getBackgroundPriority();
+	}
+	
 	public PosixSporadicServerBuilder withSingleActivation() {
 		super.withSingleActivation();
 		return this;
