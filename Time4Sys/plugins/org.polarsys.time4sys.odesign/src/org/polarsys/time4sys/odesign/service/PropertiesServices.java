@@ -50,11 +50,9 @@ public class PropertiesServices {
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE_USAGE__USED_RESOURCE);
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE_SERVICE__CONTEXT);
 	
-		toBeFiltered.remove(GqamPackage.Literals.ARRIVAL_PATTERN__REFERENCE);
 		toBeFiltered.remove(GqamPackage.Literals.BEHAVIOR_SCENARIO__PARENT_STEP);
 		toBeFiltered.remove(GqamPackage.Literals.PIN__PATTERN);
 		toBeFiltered.remove(GqamPackage.Literals.STEP__PROBABILITY);
-		toBeFiltered.remove(GqamPackage.Literals.WORKLOAD_BEHAVIOR__REFERENCES);
 	
 		toBeFiltered.remove(SrmPackage.Literals.DEVICE_BROKER__CLOSE_SERVICES);
 		toBeFiltered.remove(SrmPackage.Literals.DEVICE_BROKER__OPEN_SERVICES);
@@ -125,12 +123,6 @@ public class PropertiesServices {
 		toBeFiltered.remove(NfpPackage.Literals.GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MU);
 		toBeFiltered.remove(NfpPackage.Literals.GENERALIZED_EXTREME_VALUE_DISTRIBUTION__SIGMA);
 		toBeFiltered.remove(NfpPackage.Literals.GENERALIZED_EXTREME_VALUE_DISTRIBUTION__XI);
-
-//		if (ctx instanceof EReference) {
-//			toBeFilterd.remove(EcorePackage.Literals.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL);
-//		}
-//		toBeFilterd.remove(GenModelPackage.Literals.GEN_ENUM__ECORE_ENUM);
-//		toBeFilterd.remove(GenModelPackage.Literals.GEN_TYPE_PARAMETER__ECORE_TYPE_PARAMETER);
 
 		/*
 		 * reorder features

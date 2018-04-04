@@ -40,6 +40,7 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.Pin;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
 import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -319,7 +320,7 @@ public class MarteServices {
 	}
 
 	public Duration getPeriod(EObject context) {
-		WorkloadEvent we = (WorkloadEvent)context;
+		WorkloadEvent we = (WorkloadEvent) context;
 		if (we != null) {
 			if (we.getPattern() instanceof PeriodicPattern) {
 				return ((PeriodicPattern) we.getPattern()).getPeriod();
@@ -329,7 +330,7 @@ public class MarteServices {
 	}
 
 	public Duration getJitter(EObject context) {
-		WorkloadEvent we = (WorkloadEvent)context;
+		WorkloadEvent we = (WorkloadEvent) context;
 		if (we != null) {
 			if (we.getPattern() instanceof PeriodicPattern) {
 				return ((PeriodicPattern) we.getPattern()).getJitter();
@@ -348,17 +349,18 @@ public class MarteServices {
 					int insertionIndex = 0;
 					// WARNING First SchedulingParameter value considered as
 					// priority
-						Integer priority = Integer.valueOf(swSchedRes.getSchedParams().get(0).getValue());
-						for (SoftwareSchedulableResource sortedSwSched : sortedSwSchedRes) {
-							Integer sortedSwSchedPriority = Integer.parseInt(sortedSwSched.getSchedParams().get(0).getValue());
-							if (sortedSwSchedPriority < priority) {
-								insertionIndex++;
-							} else {
-								break;
-							}
+					Integer priority = Integer.valueOf(swSchedRes.getSchedParams().get(0).getValue());
+					for (SoftwareSchedulableResource sortedSwSched : sortedSwSchedRes) {
+						Integer sortedSwSchedPriority = Integer
+								.parseInt(sortedSwSched.getSchedParams().get(0).getValue());
+						if (sortedSwSchedPriority < priority) {
+							insertionIndex++;
+						} else {
+							break;
 						}
-						sortedSwSchedRes.add(insertionIndex, swSchedRes);
-				
+					}
+					sortedSwSchedRes.add(insertionIndex, swSchedRes);
+
 				}
 			}
 		}
@@ -385,20 +387,20 @@ public class MarteServices {
 	public void deleteConnection(DEdge views) {
 		EObject source = views.getSourceNode();
 		EObject target = views.getTargetNode();
-		if (source instanceof DNode && target instanceof DNode){
-			EObject sourcePin =((DNode) source).getTarget();
-			EObject targetPin =((DNode) target).getTarget();
+		if (source instanceof DNode && target instanceof DNode) {
+			EObject sourcePin = ((DNode) source).getTarget();
+			EObject targetPin = ((DNode) target).getTarget();
 			if (sourcePin instanceof OutputPin && targetPin instanceof InputPin) {
 				OutputPin outputPin = (OutputPin) sourcePin;
 				InputPin inputPin = (InputPin) targetPin;
-				boolean hasMultipleOutputs = outputPin.getSuccessors().size()>1;
-				boolean hasMultipleInputs = inputPin.getPredecessors().size()>1;
-				if (hasMultipleOutputs){
+				boolean hasMultipleOutputs = outputPin.getSuccessors().size() > 1;
+				boolean hasMultipleInputs = inputPin.getPredecessors().size() > 1;
+				if (hasMultipleOutputs) {
 					outputPin.getSuccessors().remove(inputPin);
 				} else {
 					EcoreUtil.delete(outputPin);
 				}
-				if (hasMultipleInputs){
+				if (hasMultipleInputs) {
 					inputPin.getPredecessors().remove(outputPin);
 				} else {
 					EcoreUtil.delete(inputPin);
@@ -406,32 +408,31 @@ public class MarteServices {
 			}
 		}
 	}
-	
+
 	public void createPrecedenceRelation(EObject sourceObj, EObject targetObj) {
 		OutputPin outputPin = null;
 		InputPin inputPin = null;
-		if (sourceObj instanceof Step){
+		if (sourceObj instanceof Step) {
 			Step sourceStep = (Step) sourceObj;
 			outputPin = GqamFactory.eINSTANCE.createOutputPin();
 			sourceStep.getOutputPin().add(outputPin);
 
-		} else if (sourceObj instanceof OutputPin){
+		} else if (sourceObj instanceof OutputPin) {
 			outputPin = (OutputPin) sourceObj;
 		}
-		if (targetObj instanceof Step){
+		if (targetObj instanceof Step) {
 			Step targetStep = (Step) targetObj;
 			inputPin = GqamFactory.eINSTANCE.createInputPin();
 			targetStep.getInputPin().add(inputPin);
 
-		}
-		else if (targetObj instanceof InputPin){
+		} else if (targetObj instanceof InputPin) {
 			inputPin = (InputPin) targetObj;
 		}
-		if (outputPin!=null && inputPin!=null){
-		outputPin.getSuccessors().add(inputPin);
+		if (outputPin != null && inputPin != null) {
+			outputPin.getSuccessors().add(inputPin);
 		}
 	}
-	
+
 	public List<ArrivalPattern> getAllPatternInDiagram(EObject obj, EObject diagram) {
 		List<ArrivalPattern> result = new ArrayList<ArrivalPattern>();
 		if (obj instanceof DesignModel) {
@@ -543,36 +544,36 @@ public class MarteServices {
 		}
 		return result;
 	}
-	
-	public static void removeOldStimuli(EndToEndFlow current, ArrivalPattern oldStimuli){
+
+	public static void removeOldStimuli(EndToEndFlow current, ArrivalPattern oldStimuli) {
 		current.getEndToEndStimuli().remove(oldStimuli.eContainer());
 	}
-	
-	public static Scheduler getMainScheduler(EObject obj){
-		if (obj instanceof SoftwareSchedulableResource){
-			while (!(obj instanceof ProcessingResource || obj instanceof DesignModel)){
-				obj=obj.eContainer();
+
+	public static Scheduler getMainScheduler(EObject obj) {
+		if (obj instanceof SoftwareSchedulableResource) {
+			while (!(obj instanceof ProcessingResource || obj instanceof DesignModel)) {
+				obj = obj.eContainer();
 			}
 		}
-		if (obj instanceof ProcessingResource){
-			return ((ProcessingResource)obj).getMainScheduler();
+		if (obj instanceof ProcessingResource) {
+			return ((ProcessingResource) obj).getMainScheduler();
 		}
 		return null;
 	}
-	
+
 	public String computePortLabel(EObject self, EObject diagram) {
 		MultiplicityElement mult = (MultiplicityElement) self;
 		DDiagram diag = (DDiagram) diagram;
-		if (DiagramServices.getDiagramServices().isFilterActivate("Hide Pins label",diag)){
+		if (DiagramServices.getDiagramServices().isFilterActivate("Hide Pins label", diag)) {
 			return "";
-		}	
-		return ("[" + mult.getLowerBound()+":"+mult.getUpperBound()+"]");
+		}
+		return ("[" + mult.getLowerBound() + ":" + mult.getUpperBound() + "]");
 	}
-	
-	public void removeInput(OutputPin output, EObject input){
+
+	public void removeInput(OutputPin output, EObject input) {
 		output.getSuccessors().remove(input);
 	}
-	
+
 	public void addPeriodicEventOnStep(EObject bs) {
 		PeriodicPattern pp = GqamFactory.eINSTANCE.createPeriodicPattern();
 		if (bs instanceof BehaviorScenario) {
@@ -658,13 +659,38 @@ public class MarteServices {
 		}
 	}
 
-	public void setEffect(EObject source, EObject target){
-		if (source instanceof ArrivalPattern && target instanceof Step){
+	public void setEffect(EObject source, EObject target) {
+		if (source instanceof ArrivalPattern && target instanceof Step) {
 			ArrivalPattern ap = (ArrivalPattern) source;
-			if (ap.eContainer() instanceof WorkloadEvent){
+			if (ap.eContainer() instanceof WorkloadEvent) {
 				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
-				we.setEffect((Step)target);
+				we.setEffect((Step) target);
 			}
+		}
+	}
+
+	public boolean isValidReferenceSelection(EObject context, List<EObject> views) {
+		for (EObject select : views) {
+			if (select instanceof DNode) {
+				EObject target = ((DNode) select).getTarget();
+				if (!(target instanceof ArrivalPattern)) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public void createReference(EObject context, List<EObject> views) {
+		Reference ref = GqamFactory.eINSTANCE.createReference();
+		if (context instanceof ArrivalPattern){
+			WorkloadBehavior wb = (WorkloadBehavior)((ArrivalPattern)context).getParent().eContainer();
+			wb.getReferences().add(ref);
+			ref.setReferenceName("Reference "+ wb.getReferences().size());
+		}
+		for (EObject select : views) {
+			EObject target = ((DNode) select).getTarget();
+			((ArrivalPattern) target).setReference(ref);
 		}
 	}
 

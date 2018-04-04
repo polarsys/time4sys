@@ -1172,6 +1172,14 @@
             </initialOperation>
           </menuItemDescription>
         </ownedTools>
+        <ownedTools xsi:type="tool:PopupMenu" name="Shared Reference">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new shared Reference" precondition="service:self.isValidReferenceSelection(views)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createReference(views)"/>
+            </initialOperation>
+          </menuItemDescription>
+        </ownedTools>
       </toolSection>
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="End To End Flow activity diagram" titleExpression="aql:'['+self.name+'] End To End Flow diagram'" domainClass="sam.EndToEndFlow">

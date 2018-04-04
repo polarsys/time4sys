@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.polarsys.time4sys.odesign.service;
 
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
