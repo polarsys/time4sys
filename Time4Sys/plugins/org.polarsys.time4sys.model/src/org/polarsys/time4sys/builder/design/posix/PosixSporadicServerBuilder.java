@@ -37,6 +37,10 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public static PosixSporadicServerBuilder as(final TaskBuilder task) {
 		return new PosixSporadicServerBuilder(task);
 	}
+	
+	public static PosixSporadicServerBuilder as(final SoftwareSchedulableResource task) {
+		return new PosixSporadicServerBuilder(null, task);
+	}
 
 	public PosixSporadicServerBuilder() {
 		super(PSS_PARAM_ECLASS);

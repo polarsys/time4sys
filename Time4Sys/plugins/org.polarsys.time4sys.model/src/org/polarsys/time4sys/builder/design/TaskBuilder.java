@@ -16,7 +16,9 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.design.DesignFactory;
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.EDFParameters;
@@ -86,7 +88,17 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	public TaskBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw, final EClass fpParamEClass) {
 		assert(raw != null);
 		task = raw;
-		design = designBuilder;
+		if (designBuilder == null) {
+			EObject container = raw;
+			do {
+				container = container.eContainer();
+			} while (container != null && !(container instanceof DesignModel));
+			if (container != null && container instanceof DesignModel) {
+				design = new DesignBuilder((DesignModel)container);
+			}
+		} else {
+			design = designBuilder;
+		}
 		this.fpParamEClass = fpParamEClass;
 	}
 
