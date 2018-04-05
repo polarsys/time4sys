@@ -164,7 +164,7 @@
             </centerLabelStyleDescription>
           </style>
           <conditionnalStyles predicateExpression="aql:not(self.isControl)">
-            <style lineStyle="dash" sourceArrow="InputArrow" sizeComputationExpression="2" endsCentering="Both">
+            <style lineStyle="dash" sourceArrow="OutputFillClosedArrow" sizeComputationExpression="2" endsCentering="Both">
               <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
               <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
