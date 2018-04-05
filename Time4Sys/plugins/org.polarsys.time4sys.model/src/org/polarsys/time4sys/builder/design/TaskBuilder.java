@@ -311,6 +311,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	public boolean hasAnnotation(final String source) {
 		return Annotations.hasAnnotation(task, source);
 	}
+	
+	public void unsetAnnotationAttr(final String source, final String attrname) {
+		Annotations.unsetAnnotationAttr(task, source, attrname);
+	}
 
 	public TaskBuilder aperiodic() {
 		return sporadic(null, null);

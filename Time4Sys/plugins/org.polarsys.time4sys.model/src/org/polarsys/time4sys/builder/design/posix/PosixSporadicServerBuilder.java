@@ -13,6 +13,7 @@ package org.polarsys.time4sys.builder.design.posix;
 import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
@@ -40,6 +41,15 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	
 	public static PosixSporadicServerBuilder as(final SoftwareSchedulableResource task) {
 		return new PosixSporadicServerBuilder(null, task);
+	}
+	
+	public static boolean hasPSSOrder(final SoftwareSchedulableResource aTask) {
+		final TaskBuilder taskBuilder = new TaskBuilder(null, aTask);
+		if (taskBuilder.hasAnnotation(POSIX_URL)) {
+			final String orderValue = taskBuilder.annotate(POSIX_URL).getDetails().get(ORDER_ATTR);
+			return (orderValue != null);
+		}
+		return false;
 	}
 
 	public PosixSporadicServerBuilder() {
@@ -116,5 +126,10 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public int getOrder() {
 		final String strVal = annotate(POSIX_URL).getDetails().get(ORDER_ATTR);
 		return Integer.parseInt(strVal);
+	}
+
+	public PosixSporadicServerBuilder unsetOrder() {
+		unsetAnnotationAttr(POSIX_URL, ORDER_ATTR);
+		return this;
 	}
 }

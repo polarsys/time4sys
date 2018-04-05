@@ -14,12 +14,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.CopierMapper.Observer;
@@ -38,7 +40,11 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	
 	private Context priorityInversion;
 	private int highestPriorityValue = Integer.MIN_VALUE;
-	private List<FixedPriorityParameters> toBeUpdated = new LinkedList<>();
+	private int highestOrderValue = Integer.MIN_VALUE;
+	private int lowestOrderValue = Integer.MAX_VALUE;
+	private List<FixedPriorityParameters> fpParamsToBeUpdated = new LinkedList<>();
+	private List<PeriodicServerParameters> pssParamsToBeUpdated = new LinkedList<>();
+	private List<SoftwareSchedulableResource> pssToBeUpdated = new LinkedList<>();
 	
 	public PriorityUrgencyInverter(final Project project, final DesignModel source) {
 		super(project, source);
@@ -64,16 +70,21 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	
 	protected void finalize(final DesignModel target) {
 		super.finalize(target);
-		for(FixedPriorityParameters fpParam: toBeUpdated) {
-			if (fpParam.eIsSet(GrmPackage.eINSTANCE.getFixedPriorityParameters_Priority())) {
-				fpParam.setPriority(highestPriorityValue - fpParam.getPriority() + 1);
-			}
-			if (fpParam instanceof PeriodicServerParameters) {
-				final PeriodicServerParameters pssParam = (PeriodicServerParameters)fpParam;
-				if (pssParam.eIsSet(GrmPackage.eINSTANCE.getPeriodicServerParameters_BackgroundPriority())) {
-					pssParam.setBackgroundPriority(highestPriorityValue - pssParam.getBackgroundPriority() + 1);
-				}
-			}
+		if (highestOrderValue != Integer.MIN_VALUE) {
+			highestPriorityValue = highestPriorityValue + highestOrderValue - lowestOrderValue;
+		}
+		for(FixedPriorityParameters fpParam: fpParamsToBeUpdated) {
+			fpParam.setPriority(highestPriorityValue - fpParam.getPriority());
+		}
+		for(PeriodicServerParameters pssParam: pssParamsToBeUpdated) {
+			pssParam.setBackgroundPriority(highestPriorityValue - pssParam.getBackgroundPriority());
+		}
+		for(SoftwareSchedulableResource pss: pssToBeUpdated) {
+			final PosixSporadicServerBuilder pssBuilder = PosixSporadicServerBuilder.as(pss);
+			final int updatedPriority = pssBuilder.getBackgroundPriority();
+			final int order = pssBuilder.getOrder();
+			pssBuilder.ofBackgroundPriority(updatedPriority - order + lowestOrderValue);
+			pssBuilder.unsetOrder();
 		}
 	}
 
@@ -84,20 +95,24 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	public void copied(EObject source, Link lnk, EObject theCopy) {
 		if (source instanceof FixedPriorityParameters) {
 			final FixedPriorityParameters fpParam = (FixedPriorityParameters)source;
-			boolean needUpdate = false;
 			if (fpParam.eIsSet(GrmPackage.eINSTANCE.getFixedPriorityParameters_Priority())) {
 				highestPriorityValue = Integer.max(highestPriorityValue, fpParam.getPriority());
-				needUpdate = true;
+				fpParamsToBeUpdated .add((FixedPriorityParameters)theCopy);
 			}
 			if (source instanceof PeriodicServerParameters) {
 				final PeriodicServerParameters pssParam = (PeriodicServerParameters)source;
 				if (pssParam.eIsSet(GrmPackage.eINSTANCE.getPeriodicServerParameters_BackgroundPriority())) {
 					highestPriorityValue = Integer.max(highestPriorityValue, pssParam.getBackgroundPriority());
-					needUpdate = true;
+					pssParamsToBeUpdated.add((PeriodicServerParameters)theCopy);
 				}
 			}
-			if (needUpdate) {
-				toBeUpdated .add((FixedPriorityParameters)theCopy);
+		}
+		if (source instanceof SoftwareSchedulableResource) {
+			if (PosixSporadicServerBuilder.hasPSSOrder((SoftwareSchedulableResource)source)) {
+				final int order = PosixSporadicServerBuilder.as((SoftwareSchedulableResource)source).getOrder();
+				highestOrderValue = Integer.max(highestOrderValue, order);
+				lowestOrderValue = Integer.min(lowestOrderValue, order);
+				pssToBeUpdated.add((SoftwareSchedulableResource)theCopy);
 			}
 		}
 	}

@@ -6,6 +6,7 @@ package org.polarsys.time4sys.builder.design;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
  * @author loic
@@ -28,6 +29,14 @@ class Annotations {
 		return obj.getEAnnotation(source) != null;
 	}
 
+
+	public static void unsetAnnotationAttr(final EModelElement obj, final String source, final String attrname) {
+		final EAnnotation annot = obj.getEAnnotation(source);
+		annot.getDetails().removeKey(attrname);
+		if (annot.getDetails().isEmpty() && annot.getReferences().isEmpty()) {
+			obj.getEAnnotations().remove(annot);
+		}
+	}
 
 	/**
 	 * This is an helper class.
