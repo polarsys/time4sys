@@ -10,8 +10,10 @@
  *******************************************************************************/
 package org.polarsys.time4sys.transformations;
 
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
@@ -45,6 +47,7 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	private List<FixedPriorityParameters> fpParamsToBeUpdated = new LinkedList<>();
 	private List<PeriodicServerParameters> pssParamsToBeUpdated = new LinkedList<>();
 	private List<SoftwareSchedulableResource> pssToBeUpdated = new LinkedList<>();
+	private Set<Link> linksToBeUpdated = new LinkedHashSet<>();
 	
 	public PriorityUrgencyInverter(final Project project, final DesignModel source) {
 		super(project, source);
@@ -86,6 +89,9 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 			pssBuilder.ofBackgroundPriority(updatedPriority - order + lowestOrderValue);
 			pssBuilder.unsetOrder();
 		}
+		for(Link lnk: linksToBeUpdated) {
+			lnk.setRationale(priorityInversion);
+		}
 	}
 
 	/**
@@ -98,12 +104,14 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 			if (fpParam.eIsSet(GrmPackage.eINSTANCE.getFixedPriorityParameters_Priority())) {
 				highestPriorityValue = Integer.max(highestPriorityValue, fpParam.getPriority());
 				fpParamsToBeUpdated .add((FixedPriorityParameters)theCopy);
+				linksToBeUpdated.add(lnk);
 			}
 			if (source instanceof PeriodicServerParameters) {
 				final PeriodicServerParameters pssParam = (PeriodicServerParameters)source;
 				if (pssParam.eIsSet(GrmPackage.eINSTANCE.getPeriodicServerParameters_BackgroundPriority())) {
 					highestPriorityValue = Integer.max(highestPriorityValue, pssParam.getBackgroundPriority());
 					pssParamsToBeUpdated.add((PeriodicServerParameters)theCopy);
+					linksToBeUpdated.add(lnk);
 				}
 			}
 		}
@@ -113,6 +121,7 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 				highestOrderValue = Integer.max(highestOrderValue, order);
 				lowestOrderValue = Integer.min(lowestOrderValue, order);
 				pssToBeUpdated.add((SoftwareSchedulableResource)theCopy);
+				linksToBeUpdated.add(lnk);
 			}
 		}
 	}

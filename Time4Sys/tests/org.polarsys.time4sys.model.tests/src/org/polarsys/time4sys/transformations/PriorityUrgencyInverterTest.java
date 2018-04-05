@@ -13,6 +13,7 @@ package org.polarsys.time4sys.transformations;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
 import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
 
@@ -26,6 +27,7 @@ import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 
@@ -63,6 +65,14 @@ public class PriorityUrgencyInverterTest {
 		final TaskBuilder t1Task = targetDesign.task("T1");
 		assertNotNull(t1Task);
 		assertEquals(0, t1Task.getPriority());
+		// Links for the FixedPriorityParameters is not identity rule but priority rule
+		final EList<Link> links = mapping.getLinksForSlice(t1Task.build().getSchedParams().get(0));
+		assertEquals(1, links.size());
+		for(Link lnk: links) {
+			System.out.println(lnk.getRationale().getName());
+			assertTrue(lnk.getRationale().getName().toLowerCase().contains("priority"));
+		}
+		assertTrue(mapping.getRationale().getName().toLowerCase().contains("priority"));
 	}
 	
 	@Test
