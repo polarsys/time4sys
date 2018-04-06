@@ -21,6 +21,7 @@ import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**
@@ -37,11 +38,11 @@ public class StepBuilder {
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 	
 	public static StepBuilder aStep(final DesignBuilder designBuilder) {
-		return new StepBuilder(designBuilder, null);
+		return new StepBuilder(designBuilder, (SchedulableResourceBuilder<?, ?>)null);
 	}
 	
 	public static StepBuilder aResourceServiceExcecution(final DesignBuilder designBuilder) {
-		return new StepBuilder(designBuilder, null).isResourceServiceExecution();
+		return new StepBuilder(designBuilder, (SchedulableResourceBuilder<?, ?>)null).isResourceServiceExecution();
 	}
 
 	private SchedulableResourceBuilder<?,?> task;
@@ -68,6 +69,14 @@ public class StepBuilder {
 		task = taskBuilder;
 		design = designBuilder;
 		step = raw;
+	}
+
+	public StepBuilder(final DesignBuilder designBuilder, final Step raw) {
+		assert(designBuilder != null);
+		assert(raw != null);
+		design = designBuilder;
+		step = raw;
+		task = new TaskBuilder(designBuilder, (SoftwareSchedulableResource)step.getConcurRes());
 	}
 
 	public Step build() {

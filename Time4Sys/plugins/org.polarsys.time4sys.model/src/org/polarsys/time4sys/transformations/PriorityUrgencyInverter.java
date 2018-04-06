@@ -29,6 +29,8 @@ import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.CopierMapper.Observer;
 
 /**
+ * Convert priority values to urgency values as expected by Time4Sys.
+ * Handles FixedPriorityParameters, PeriodicServerParameters, and Arinc-653 PSS order annotation attribute.
  * @author loic
  *
  */

@@ -21,6 +21,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	ToPeriodicDerivationTest.class,
 	RemoveAndReplaceDeprecatedTest.class,
 	PriorityUrgencyInverterTest.class,
+	TaskDuplicatorTest.class,
 	})
 public class AllTests {
 

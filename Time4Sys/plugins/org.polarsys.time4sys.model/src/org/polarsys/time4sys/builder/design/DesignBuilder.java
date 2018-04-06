@@ -284,7 +284,7 @@ public class DesignBuilder {
 	}
 
 	public StepBuilder aStep() {
-		return new StepBuilder(this, null);
+		return new StepBuilder(this, (SchedulableResourceBuilder<?, ?>)null);
 	}
 
 	public int countPrecedenceRelations() {
