@@ -21,6 +21,10 @@ public class Arinc653SpareTaskBuilder {
 		return taskBuilder;
 	}
 	
+	public static void asSpare(final SoftwareSchedulableResource task) {
+		asSpare(new TaskBuilder(null, task));
+	}
+	
 	public static void asSpare(final TaskBuilder taskBuilder) {
 		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
 		annot.getDetails().put(SPARE_ATTR, Boolean.TRUE.toString());
