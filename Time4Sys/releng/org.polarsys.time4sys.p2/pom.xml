@@ -17,12 +17,11 @@
  <relativePath>../org.polarsys.time4sys.parent/pom.xml</relativePath>
  </parent>
  <groupId>time4sys</groupId>
- <artifactId>org.polarsys.time4sys.product</artifactId>
+ <artifactId>org.polarsys.time4sys.p2</artifactId>
  <version>1.0.0-SNAPSHOT</version>
  <packaging>eclipse-repository</packaging>
    <properties>
     <product-id>org.polarsys.time4sys.launcher.product</product-id>
-    <preferenceCustomization>plugin_customization.ini</preferenceCustomization>
    </properties>
   <build>
  <plugins>
@@ -32,6 +31,9 @@
    <version>0.24.0</version>
     <executions>
      <execution>
+	   <configuration>
+         <productConfigurationFile>org.polarsys.time4sys.product</productConfigurationFile>
+       </configuration>
       <id>materialize-products</id>
       <goals>
        <goal>materialize-products</goal>

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Product
+Bundle-SymbolicName: org.polarsys.time4sys.p2;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.polarsys.time4sys.launcher
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

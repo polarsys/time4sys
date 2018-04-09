@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Time4Sys Product" uid="org.polarsys.time4sys.launcher.product" id="org.polarsys.time4sys.launcher.product" application="org.eclipse.ui.ide.workbench" version="0.0.1.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Time4Sys Product" uid="org.polarsys.time4sys.launcher.product" id="org.polarsys.time4sys.launcher" application="org.eclipse.ui.ide.workbench" version="0.0.1.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
+      <image path="/org.polarsys.time4sys.launcher/icons/Time4Sys.png"/>
       <text>
          Time4Sys
       </text>
@@ -26,7 +27,7 @@ org.polarsys.time4sys.ui.perspective
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
+   <windowImages i16="/org.polarsys.time4sys.launcher/icons/Time4Sys16x16.png" i32="/org.polarsys.time4sys.launcher/icons/Time4Sys32x32.png"/>
 
    <splash
       location="org.polarsys.time4sys.launcher"
