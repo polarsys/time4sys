@@ -71,6 +71,8 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	private String maxInterarrival;
 	private boolean isActivatedOnce = false;
 	private ReferenceBuilder ref;
+	private String offset;
+	private ReferenceBuilder reference;
 
 	
 	public TaskBuilder() {
@@ -107,6 +109,12 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		this.design = design;
 		if (period != null) {
 			firstStep().isPeriodic(period);
+		}
+		if (offset != null) {
+			firstStep().ofOffset(offset);
+		}
+		if (reference != null) {
+			firstStep().ofReference(reference);
 		}
 		if (windowSize != null) {
 			firstStep().withSlidingWindow(nbEvents, windowSize).withReference(ref);
@@ -145,6 +153,12 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public TaskBuilder ofPeriod(final String value) {
 		period = value;
+		return this;
+	}
+	
+
+	public TaskBuilder ofOffset(String value) {
+		offset = value;
 		return this;
 	}
 	
@@ -340,5 +354,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 
 	public DesignBuilder design() {
 		return design;
+	}
+
+	public TaskBuilder ofReference(final ReferenceBuilder value) {
+		reference = value;
+		return this;
 	}
 }

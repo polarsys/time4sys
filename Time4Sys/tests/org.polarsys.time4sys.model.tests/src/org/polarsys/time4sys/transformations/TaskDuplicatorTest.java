@@ -19,6 +19,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
+import org.polarsys.time4sys.builder.design.SamplesBuilder;
 import org.polarsys.time4sys.builder.design.StepBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.design.DesignModel;
@@ -225,4 +226,19 @@ public class TaskDuplicatorTest {
 		assertEquals(TaskDuplicator.TRANS_NAME, mapping.getRationale().getName());
 	}
 	
+	
+	@Test
+	public void testEmmanuelCourseSampleSETR96() {
+		// Given
+		final DesignBuilder design = SamplesBuilder.emmanuelCourseSampleSETR96(theProject);
+		// When
+		final Transformation transfo = TaskDuplicator.transform(theProject.build(), design.build());
+		// Then
+		
+		try {
+			theProject.saveAsEcore("../../runtime-EclipseApplication/test/TaskDuplicatorTest-testEmmanuelCourseSampleSETR96.time4sys");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

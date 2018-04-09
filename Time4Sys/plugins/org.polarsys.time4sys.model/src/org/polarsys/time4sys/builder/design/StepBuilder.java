@@ -395,4 +395,9 @@ public class StepBuilder {
 		}
 	}
 
+	public StepBuilder ofReference(final ReferenceBuilder reference) {
+		withReference(reference);
+		return this;
+	}
+
 }
