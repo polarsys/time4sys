@@ -32,9 +32,8 @@ public class SamplesBuilder {
 		);
 		final StepBuilder tau3 = design.task("T3").firstStep().called("tau_3").ofET("1ms");
 		final TaskBuilder t1 = design.task("T1");
-		final StepBuilder tau12 = t1
-			.firstStep().called("tau_1,1").ofET("1ms")
-			.isFollowedByAStep().called("tau_1,2").ofET("2ms");
+		final StepBuilder tau11 = t1.firstStep().called("tau_1,1").ofET("1ms");
+		final StepBuilder tau12 = t1.anotherStep().called("tau_1,2").ofET("2ms");
 		final StepBuilder tau13 = t1.anotherStep().called("tau_1,3").ofET("1ms");
 		final StepBuilder tau4 = design.task("T4").firstStep().called("tau_4").ofET("1ms");
 		final TaskBuilder t2 = design.task("T2");
@@ -46,18 +45,20 @@ public class SamplesBuilder {
 		tau21.hasAtLeastOneInputPin().called("tau21_input").withExactBound(1);
 		final OutputPinBuilder t23O = tau23.hasAtLeastOneOutputPin().called("tau3_output").withExactBound(1);
 		final OutputPinBuilder t21O = tau21.hasAtLeastOneOutputPin().called("tau21_output").withExactBound(1);
-		final OutputPinBuilder t12A = tau12.hasOneOutputPinNamed("t12_output_A").withExactBound(1);
-		final OutputPinBuilder t12B = tau12.hasOneOutputPinNamed("t12_output_B").withExactBound(1);
+		final OutputPinBuilder t11A = tau11.hasOneOutputPinNamed("t11_output_A").withExactBound(1);
+		final OutputPinBuilder t11B = tau11.hasOneOutputPinNamed("t11_output_B").withExactBound(1);
+		tau12.hasOneInputPinNamed("t12_input").withExactBound(1).activatedBy(t11A);
+		final OutputPinBuilder t12O = tau12.hasOneOutputPinNamed("t12_output").withExactBound(1);
 		
 		tau21.hasOneInputPinNamed("tau21_input").withExactBound(1).activatedBy(t3O);
 		
-		tau22.hasOneInputPinNamed("tau22_input_A").withExactBound(1).activatedBy(t12B);
+		tau22.hasOneInputPinNamed("tau22_input_A").withExactBound(1).activatedBy(t11B);
 		tau22.hasOneInputPinNamed("tau22_input_B").withExactBound(1).activatedBy(t21O);
 		final OutputPinBuilder t22A = tau22.hasOneOutputPinNamed("tau22_output_A").withExactBound(1);
 		final OutputPinBuilder t22B = tau22.hasOneOutputPinNamed("tau22_output_B").withExactBound(1);
 		tau23.hasOneInputPinNamed("tau23_input").withExactBound(1).activatedBy(t22B);
 		
-		tau13.hasOneInputPinNamed("tau13_input_A").withExactBound(1).activatedBy(t12A);
+		tau13.hasOneInputPinNamed("tau13_input_A").withExactBound(1).activatedBy(t12O);
 		tau13.hasOneInputPinNamed("tau13_input_B").withExactBound(1).activatedBy(t22A);
 		
 		tau4.hasAtLeastOneInputPin().called("tau4_input").activatedBy(t23O);

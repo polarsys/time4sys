@@ -156,10 +156,26 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 		return this;
 	}
 	
+	public Duration getPeriod() {
+		if (design != null) {
+			build();
+			return firstStep().getPeriod();
+		}
+		return null;
+	}
+	
 
 	public TaskBuilder ofOffset(String value) {
 		offset = value;
 		return this;
+	}
+	
+	public Duration getOffset() {
+		if (design != null) {
+			build();
+			return firstStep().getOffset();
+		}
+		return null;
 	}
 	
 	public TaskBuilder withSlidingWindow(final int nbEvents, final String windowSize) {
@@ -225,16 +241,35 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	public TaskBuilder ofDeadline(final String value) {
-		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, EDF_PARAM_ECLASS);
-		edfParam.setDeadline(NfpFactory.eINSTANCE.createDurationFromString(value));
+		
+		final Duration val = NfpFactory.eINSTANCE.createDurationFromString(value);
+		setDeadline(val);
 		/* NB: An EndToEndFlow will also be created later */
 		deadline = value;
 		return this;
 	}
 	
+	public void setDeadline(final Duration value) {
+		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, EDF_PARAM_ECLASS);
+		edfParam.setDeadline(value);
+	}
+	
+	public EDFParameters getEDFSchedParams(final boolean buildIfNone) {
+		return (EDFParameters)getSchedParams(EDF_POLICY_NAME, buildIfNone ? EDF_PARAM_ECLASS : null);
+	}
+	
+	public FixedPriorityParameters getFPSchedParams(final boolean buildIfNone) {
+		return (FixedPriorityParameters)getSchedParams(FP_POLICY_NAME, buildIfNone ? fpParamEClass : null);
+	}
 
 	public Duration getDeadline() {
 		final EDFParameters edfParam = (EDFParameters)getSchedParams(EDF_POLICY_NAME, null);
+		if (edfParam == null) {
+			if (firstStep != null) {
+				return firstStep.getPeriod();
+			}
+			return null;
+		}
 		return edfParam.getDeadline();
 	}
 	
