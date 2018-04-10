@@ -130,6 +130,16 @@
          </propertyCategory>
       </propertyContributor>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.polarsys.time4sys.model.time4sys.presentation.Time4sysEditor"
+            default="false"
+            icon="icons/NewTime4SysModel.png"
+            id="org.polarsys.time4sys.ui.Time4SysEditor"
+            name="Time4Sys Model Editor">
+      </editor>
+   </extension>
 
    
 </plugin>
