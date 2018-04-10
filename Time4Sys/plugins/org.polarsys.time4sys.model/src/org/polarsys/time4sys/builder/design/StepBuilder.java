@@ -11,15 +11,19 @@
 package org.polarsys.time4sys.builder.design;
 
 import org.polarsys.time4sys.design.DesignFactory;
+import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
@@ -219,6 +223,23 @@ public class StepBuilder {
 		return this;
 	}
 	
+
+	public Duration getPeriod() {
+		if (step == null) {
+			build();
+		}
+		if (step.getCause() == null || step.getCause().isEmpty()) {
+			throw new IllegalStateException("This task has no cause");
+		}
+		final WorkloadEvent evt = step.getCause().get(0);
+		final ArrivalPattern pattern = evt.getPattern();
+		if (pattern instanceof PeriodicPattern) {
+			return ((PeriodicPattern)pattern).getPeriod();
+		} else {
+			throw new IllegalStateException("This task is not periodic: " + pattern.getClass().getName());
+		}
+	}
+	
 	public StepBuilder withSlidingWindow(int nbEvents, final String windowSize) {
 		WorkloadEvent cause;
 		if (step.getCause().isEmpty()) {
@@ -266,6 +287,10 @@ public class StepBuilder {
 	public StepBuilder ofOffset(String value) {
 		getWorkloadEvent().ofOffset(value);
 		return this;
+	}
+
+	public Duration getOffset() {
+		return getWorkloadEvent().getOffset();
 	}
 	
 	public StepBuilder ofDeadline(final String value) {
@@ -388,7 +413,7 @@ public class StepBuilder {
 		if (ref == null) {
 			return;
 		}
-		if (!step.getCause().isEmpty()) {
+		if (step.getCause() != null && !step.getCause().isEmpty()) {
 			for(WorkloadEvent cause: step.getCause()) {
 				cause.getPattern().setReference(ref.build());
 			}
@@ -398,6 +423,21 @@ public class StepBuilder {
 	public StepBuilder ofReference(final ReferenceBuilder reference) {
 		withReference(reference);
 		return this;
+	}
+
+	public ReferenceBuilder getReference() {
+		if (step == null) {
+			build();
+		}
+		if (step.getCause() != null && !step.getCause().isEmpty()) {
+			for(WorkloadEvent cause: step.getCause()) {
+				final Reference ref = cause.getPattern().getReference();
+				if (ref != null) {
+					return new ReferenceBuilder(ref);
+				}
+			}
+		}
+		return null;
 	}
 
 }

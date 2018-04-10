@@ -28,6 +28,7 @@ import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingFactory;
 
 /**
+ * Utility Class that implements EcoreUtil.Copier but tracks copy.
  * @author loic
  * TODO: Try to create hierarchical links
  */

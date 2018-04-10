@@ -351,6 +351,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 			firstStep().withReference(ref);
 		}
 	}
+	
+	public ReferenceBuilder getReference() {
+		return firstStep().getReference();
+	}
 
 	public DesignBuilder design() {
 		return design;

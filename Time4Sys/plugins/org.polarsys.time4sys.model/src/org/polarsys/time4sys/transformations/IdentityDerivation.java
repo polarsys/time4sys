@@ -26,6 +26,7 @@ import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 
 /**
+ * The identity transformation.
  * @author loic
  *
  */
