@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.transformations;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,10 +50,11 @@ public class TaskDuplicator extends AbstractTransformation {
 	}
 
 	private List<Link> stepsToBeUpdated = new LinkedList<>();
-	private List<Link> tasksToBeRemoved = new LinkedList<>();
+	private List<Link> tasksToBeCopied = new LinkedList<>();
 	private Map<SchedulableResource, List<SchedulableResource>> tasksToBeLinked = new HashMap<>();
 	private Context stepNTaskRule;
 	private Context taskDuplicationRule;
+	private List<SchedulableResource> tasksToBeRemoved = new LinkedList<>();
 
 	/**
 	 * @param source
@@ -76,9 +78,13 @@ public class TaskDuplicator extends AbstractTransformation {
 	public void copied(final EObject source, final Link lnk, final EObject theCopy) {
 		if (source instanceof Step) {
 			stepsToBeUpdated.add(lnk);
+			final SchedulableResource concurRes = ((Step)source).getConcurRes();
+			if (concurRes != null) {
+				tasksToBeRemoved .add(concurRes);
+			}
 		}
 		if (source instanceof SoftwareSchedulableResource) {
-			tasksToBeRemoved.add(lnk);
+			tasksToBeCopied.add(lnk);
 		}
 	}
 
@@ -108,7 +114,11 @@ public class TaskDuplicator extends AbstractTransformation {
 			assert(lnk.getTargets().size() == 2);
 		}
 		copier.copyReferences();
-		for(Link lnk: tasksToBeRemoved) {
+		for(Link lnk: tasksToBeCopied) {
+			final SoftwareSchedulableResource source = (SoftwareSchedulableResource) lnk.getUniqueSourceValue(IdentityDerivation.ORIGINAL_ROLE);			
+			if (!tasksToBeRemoved.contains(source)) {
+				continue;
+			}
 			lnk.setRationale(taskDuplicationRule);
 			final SoftwareSchedulableResource copy = (SoftwareSchedulableResource) lnk.getUniqueTargetValue(IdentityDerivation.COPY_ROLE);
 			// Remove all current targets (actually only one copy)
@@ -118,12 +128,16 @@ public class TaskDuplicator extends AbstractTransformation {
 				lnk.getTargets().add(MappingFactory.eINSTANCE.createMappableArtefact(COPY_TASK_ROLE, targetDup));
 			}
 			// delete copy from model
-			EcoreUtil.delete(copy, true);
+			EcoreUtil.delete(copy, true); //TODO filter which ine
 		}
 	}
 
 	protected List<SchedulableResource> registeredCopiesOf(final SoftwareSchedulableResource copyTask) {
-		return tasksToBeLinked.get(copyTask);
+		final List<SchedulableResource> result = tasksToBeLinked.get(copyTask);
+		if (result == null) {
+			return Collections.emptyList();
+		}
+		return result;
 	}
 
 	protected void registerCopyOf(final SchedulableResource targetTask, final SchedulableResource copyTask) {

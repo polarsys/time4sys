@@ -10,6 +10,9 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
+import static org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder.aMIF;
+import static org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder.aSpareTask;
+import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
 
 import java.io.IOException;
 
@@ -22,6 +25,11 @@ import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.SamplesBuilder;
 import org.polarsys.time4sys.builder.design.StepBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653DesignBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
+import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.Mapping;
@@ -226,6 +234,50 @@ public class TaskDuplicatorTest {
 		assertEquals(TaskDuplicator.TRANS_NAME, mapping.getRationale().getName());
 	}
 	
+	@Test
+	public void testArinc653() {
+		// Given an Arinc653 configuration
+		final ProjectBuilder theProject = new ProjectBuilder();
+		final Arinc653DesignBuilder db = Arinc653Builder.newDesign(theProject).called("Arinc653 test");
+		final Arinc653PlatformBuilder ima = db.hasAPlatform().called("CPU").withMIFDuration("60ms");
+		final Arinc653MIFBuilder fms = aMIF().called("Partition_1").ofTimeBudget("44ms");
+		final Arinc653MIFBuilder utils = aMIF().called("Partition_2").ofTimeBudget("45ms");
+		ima.runs(fms, utils);
+		assertEquals(2, ima.countMIF());
+		final TaskBuilder initialisationTask = aTask().called("initialisationTask").aperiodic().ofPriority(1).ofDeadline("65000us").ofET("6s");
+		final TaskBuilder ttSecondaryTask = aTask().called("ttSecondaryTask").aperiodic().ofPriority(5).ofBCET("0.5ms").ofWCET("2ms");
+		final TaskBuilder lr2ServerTask = aPSS().called("lr2ServerTask").ofPriority(29).ofInitialBudget("1ms").ofBackgroundPriority(2).aperiodic();
+		final TaskBuilder periodicLowTask = aPSS().called("periodicLowTask")/*.withOrder(2)*/.ofPriority(32).ofDeadline("9600us").ofBackgroundPriority(4).ofPeriod("960ms").ofET("1ms");
+		final TaskBuilder lr3ServerTask = aPSS().called("lr3ServerTask").withOrder(1).ofPriority(30).ofInitialBudget("1ms").ofBackgroundPriority(2).withSingleActivation().ofET("1ms");
+		final TaskBuilder spareTask1 = aSpareTask().called("spareTask1").ofPriority(1);
+		fms.runs(initialisationTask, ttSecondaryTask, lr2ServerTask, periodicLowTask, lr3ServerTask, spareTask1).under(SchedPolicyKind.FIXED_PRIORITY);
+		lr2ServerTask.firstStep().called("LR2_Server");
+		periodicLowTask.firstStep().called("Periodic_Low");
+		spareTask1.firstStep().called("Periodic_Spare").ofET("11ms").ofPeriod("60ms");
+		periodicLowTask.withReference(fms.reference());
+		spareTask1.withReference(fms.reference());
+		theProject.build();
+		PosixSporadicServerBuilder.as(periodicLowTask.build()).withOrder(2);
+		
+		// When
+		final Transformation transfo = TaskDuplicator.transform(theProject.build(), theProject.design().build());
+		
+		// Debug
+		try {
+			theProject.saveAsEcore("../../runtime-EclipseApplication/test/TaskDuplicatorTest-testArinc653.time4sys");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// Then
+		final DesignModel design = (DesignModel)transfo.getMapping().getSubLinks().get(0).getTargets().get(0).getValue();
+		AbstractDerivationTest.removeEndToEndFlows(design);
+		
+		final DesignBuilder resultingDesign = new DesignBuilder((DesignModel)design);
+		for(Step aStep: resultingDesign.allSteps()) {
+			assertNotNull(aStep.getName() + " shall be allocated to a SoftwareSchedulableResource.", aStep.getConcurRes());
+		}
+		
+	}
 	
 	@Test
 	public void testEmmanuelCourseSampleSETR96() {

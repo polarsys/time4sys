@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -77,6 +78,28 @@ public class ProjectBuilder {
 		project.setDesign(design.build());
 		assert(design != null);
 		assert(project.getDesign() == design.build());
+	}
+
+	public ProjectBuilder(final String filepath) {
+		org.eclipse.emf.ecore.resource.Resource.Factory.Registry reg = org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("time4sys", new XMIResourceFactoryImpl());
+
+		final ResourceSet resSet = new ResourceSetImpl();
+		final URI uri = URI.createFileURI(filepath);
+		System.out.println(new File(uri.toFileString()).getAbsolutePath());
+		final org.eclipse.emf.ecore.resource.Resource resource = resSet.getResource(uri, true);
+		final EObject root = resource.getContents().get(0);
+		if (root instanceof Project) {
+			project = (Project)root;
+			design = new DesignBuilder(project.getDesign());
+		} else if (root instanceof DesignModel) {
+			design = new DesignBuilder((DesignModel)root);
+			project = Time4sysFactory.eINSTANCE.createProject();
+			project.setDesign((DesignModel)root);
+		} else {
+			throw new IllegalArgumentException("Cannot load " + root.getClass().getSimpleName() + " as a Project");
+		}
 	}
 
 	public DesignBuilder design() {
