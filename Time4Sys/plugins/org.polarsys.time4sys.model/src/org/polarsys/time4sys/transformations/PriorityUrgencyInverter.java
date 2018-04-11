@@ -18,7 +18,6 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
-import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
@@ -26,7 +25,6 @@ import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
-import org.polarsys.time4sys.transformations.CopierMapper.Observer;
 
 /**
  * Convert priority values to urgency values as expected by Time4Sys.
@@ -34,7 +32,7 @@ import org.polarsys.time4sys.transformations.CopierMapper.Observer;
  * @author loic
  *
  */
-public class PriorityUrgencyInverter extends IdentityDerivation implements Observer {
+public class PriorityUrgencyInverter extends AbstractTransformation {
 	
 	public static final String TRANS_NAME = "Priority to Urgency".intern();
 	
@@ -42,7 +40,6 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 		return new PriorityUrgencyInverter(project, source).transform();
 	}
 	
-	private Context priorityInversion;
 	private int highestPriorityValue = Integer.MIN_VALUE;
 	private int highestOrderValue = Integer.MIN_VALUE;
 	private int lowestOrderValue = Integer.MAX_VALUE;
@@ -52,29 +49,11 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 	private Set<Link> linksToBeUpdated = new LinkedHashSet<>();
 	
 	public PriorityUrgencyInverter(final Project project, final DesignModel source) {
-		super(project, source);
+		super(project, source, TRANS_NAME);
 	}
 	
-	public CopierMapper createCopierMapper() {
-		final CopierMapper result = super.createCopierMapper();
-		result.addObserver(this);
-		return result;
-	}
-	
-	public Transformation transform() {
-		final Transformation result = super.transform();
-		result.getMapping().setRationale(priorityInversion);
-		return result;
-	}
-	
-	public void createRules() {
-		super.createRules();
-		priorityInversion = mappingFactory.createContext(TRANS_NAME);
-		mapping.getRules().add(priorityInversion);
-	}
-	
+	@Override
 	protected void finalize(final DesignModel target) {
-		super.finalize(target);
 		if (highestOrderValue != Integer.MIN_VALUE) {
 			highestPriorityValue = highestPriorityValue + highestOrderValue - lowestOrderValue;
 		}
@@ -92,7 +71,7 @@ public class PriorityUrgencyInverter extends IdentityDerivation implements Obser
 			pssBuilder.unsetOrder();
 		}
 		for(Link lnk: linksToBeUpdated) {
-			lnk.setRationale(priorityInversion);
+			lnk.setRationale(mainCtx);
 		}
 	}
 

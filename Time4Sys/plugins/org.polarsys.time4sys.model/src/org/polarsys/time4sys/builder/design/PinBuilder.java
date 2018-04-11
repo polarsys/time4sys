@@ -57,4 +57,8 @@ public abstract class PinBuilder<P extends Pin, B extends PinBuilder<?,B>> {
 	public P build() {
 		return pin;
 	}
+	
+	public boolean isControl() {
+		return pin.isIsControl();
+	}
 }

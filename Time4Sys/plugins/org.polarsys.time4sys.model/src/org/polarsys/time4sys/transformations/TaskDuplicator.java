@@ -29,7 +29,6 @@ import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
-import org.polarsys.time4sys.transformations.CopierMapper.Observer;
 
 /**
  * Duplicate Task so that each step is in its own Task.
@@ -37,7 +36,7 @@ import org.polarsys.time4sys.transformations.CopierMapper.Observer;
  * @author loic
  *
  */
-public class TaskDuplicator extends IdentityDerivation implements Observer {
+public class TaskDuplicator extends AbstractTransformation {
 
 	public static final String COPY_TASK_ROLE = "copy-task";
 	public static final String ORIGINAL_TASK_ROLE = "original-task";
@@ -49,7 +48,6 @@ public class TaskDuplicator extends IdentityDerivation implements Observer {
 		return new TaskDuplicator(project, source).transform();
 	}
 
-	private Context taskDuplication;
 	private List<Link> stepsToBeUpdated = new LinkedList<>();
 	private List<Link> tasksToBeRemoved = new LinkedList<>();
 	private Map<SchedulableResource, List<SchedulableResource>> tasksToBeLinked = new HashMap<>();
@@ -62,29 +60,16 @@ public class TaskDuplicator extends IdentityDerivation implements Observer {
 	 * 
 	 */
 	public TaskDuplicator(Project project, DesignModel source) {
-		super(project, source);
+		super(project, source, TRANS_NAME);
 	}
 
-	public CopierMapper createCopierMapper() {
-		final CopierMapper result = super.createCopierMapper();
-		result.addObserver(this);
-		return result;
-	}
-
+	@Override
 	public void createRules() {
 		super.createRules();
-		taskDuplication = mappingFactory.createContext(TRANS_NAME);
 		stepNTaskRule = mappingFactory.createContext(STEPNTASK_TRANS_NAME);
 		taskDuplicationRule = mappingFactory.createContext(TASK_TRANS_NAME);
-		mapping.getRules().add(taskDuplication);
 		mapping.getRules().add(stepNTaskRule);
 		mapping.getRules().add(taskDuplicationRule);
-	}
-
-	public Transformation transform() {
-		final Transformation result = super.transform();
-		result.getMapping().setRationale(taskDuplication);
-		return result;
 	}
 
 	@Override
@@ -97,8 +82,8 @@ public class TaskDuplicator extends IdentityDerivation implements Observer {
 		}
 	}
 
+	@Override
 	protected void finalize(final DesignModel target) {
-		super.finalize(target);
 		final Copier copier = new Copier(true, true);
 		for (Link lnk : stepsToBeUpdated) {
 			final Step source = (Step) lnk.getUniqueSourceValue("original");

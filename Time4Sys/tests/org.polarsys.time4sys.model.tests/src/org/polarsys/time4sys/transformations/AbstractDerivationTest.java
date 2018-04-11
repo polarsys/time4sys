@@ -15,11 +15,14 @@ package org.polarsys.time4sys.transformations;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
@@ -27,6 +30,8 @@ import org.polarsys.time4sys.mapping.MappableArtefact;
 import org.polarsys.time4sys.mapping.ResourceArtefact;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 
@@ -35,6 +40,27 @@ import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
  *
  */
 public abstract class AbstractDerivationTest {
+	
+	public static void assertIsLessOrEquals(final Duration r_i, final Duration r_j) {
+		assertIsLessOrEquals("", r_i, r_j);
+	}
+	
+
+	public static void assertIsLessOrEquals(final String prefix, final Duration r_i, final Duration r_j) {
+		assertNotNull(r_i);
+		assertNotNull(r_j);
+		final int rComparison = r_i.compareTo(r_j);
+		assertTrue(prefix + r_i.toString() + " shall be less or equals than " + r_j.toString(), rComparison == 0 || rComparison == -1);
+
+	}
+	
+	public static void removeEndToEndFlows(DesignModel design) {
+		final List<EndToEndFlow> listCopy = new LinkedList<>(design.getEndToEndFlows());
+		for(EndToEndFlow flow: listCopy) {
+			EcoreUtil.delete(flow);
+		}
+		design.getEndToEndFlows().clear();
+	}
 	
 	protected static void assertArtefactEquals(final ResourceImpl expected, final MappableArtefact actualArtefact) {
 		assert(expected != null);
@@ -77,5 +103,6 @@ public abstract class AbstractDerivationTest {
 		project.setDesign(original);
 		res.getContents().add(project);
 	}
+
 
 }

@@ -55,7 +55,7 @@
               <groupId>time4sys</groupId>
               <artifactId>org.polarsys.time4sys.product</artifactId>
               <version>1.0.0-SNAPSHOT</version>
-              <classifier>../org.polarsys.time4sys.product/Time4Sys_Mars.target</classifier>
+              <classifier>../org.polarsys.time4sys.product/Time4Sys_Neon.target</classifier>
             </artifact>
           </target>
         </configuration>
