@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="org.polarsys.time4sys.asciidocgen">
-    <property name="ECLIPSE_HOME" value="../../../../../../Users/didier/Downloads/capella_studio-1.2Neon"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Downloads/capella_studio-1.2Neon/workspace2"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../Users/didier/Downloads/cs1.2Test"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Downloads/cs1.2Test/workspace"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.polarsys.time4sys.asciidocgen.libraryclasspath">
