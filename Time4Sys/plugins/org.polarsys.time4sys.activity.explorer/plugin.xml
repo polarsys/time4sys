@@ -49,7 +49,7 @@
 			</Description>
 			<Activity
          class="org.polarsys.time4sys.activity.explorer.activity.DesignActivity"
-         id="org.polarsys.time4sys.design.activity.diagram"
+         id="org.polarsys.time4sys.design.design.diagram"
          image="icons/DesignModel.png"
          index="1"
          name="Design Model">
@@ -61,59 +61,48 @@ Describes the link between them in one or several scenarios.
 			</Description>
 			</Activity>
    <Activity
-         class="org.polarsys.time4sys.activity.explorer.activity.BehaviorScenarioActivity"
-         id="org.polarsys.time4sys.design.activity.diagram"
-         image="icons/BehaviorScenario.png"
+         class="org.polarsys.time4sys.activity.explorer.activity.EndToEndFlowActivity"
+         id="org.polarsys.time4sys.design.etef.diagram"
+         image="icons/EndToEndFlowDiagram.png"
          index="2"
-         name="Behavior Scenario">
+         name="End To End Flow diagram">
       <Description>
          Behavior Scenario diagram
 Describe the sequence of steps of one the selected scenario and represents steps with a breakdown hierarchy.
       </Description>
    </Activity>
    <Activity
-         class="org.polarsys.time4sys.activity.explorer.activity.DesignOverview"
-         id="org.polarsys.time4sys.activity.explorer.design.Overview"
-         image="icons/Matrix.png"
+         class="org.polarsys.time4sys.activity.explorer.activity.BehaviorScenarioActivity"
+         id="org.polarsys.time4sys.design.behavior.scenario..diagram"
+         image="icons/BehaviorScenario.png"
          index="3"
-         name="Design Overview">
+         name="Behavior Scenario allocation">
       <Description>
-         
+         Behavior Scenario diagram
+Describe the sequence of steps of one the selected scenario and represents steps with a breakdown hierarchy.
       </Description>
    </Activity>
+		</Section>
+  <Section
+        expanded="false"
+        filtering="true"
+        id="org.polarsys.time4sys.simu.section"
+        index="2"
+        name="Simulation">
+     <Description>
+		<p>Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.</p>
+     </Description>
      <Activity
-           class="org.polarsys.time4sys.activity.explorer.activity.DesignResult"
-           id="org.polarsys.time4sys.activity.explorer.design.Result"
-           image="icons/Matrix.png"
-           index="4"
-           name="Design Result">
+           class="org.polarsys.time4sys.activity.explorer.activity.DesignSimpleReport"
+           id="org.polarsys.time4sys.activity.explorer.design.SimpleReport"
+           image="icons/Transformation.jpg"
+           index="5"
+           name="Generate a simple report based on Liu and Layland model">
         <Description>
-           Visualize result of the analysis mapped with the corresponding design elements.
+           Transform your design model into Liu and Layland model and Generate a simple report.
         </Description>
      </Activity>
-            <Activity
-             class="org.polarsys.time4sys.activity.explorer.activity.DesignSimpleReport"
-             id="org.polarsys.time4sys.activity.explorer.design.SimpleReport"
-             image="icons/Transformation.jpg"
-             index="5"
-             name="Generate a simple report based on Liu and Layland model">
-          <Description>
-             Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.
-          </Description>
-       </Activity>
-       <Activity
-             class="org.polarsys.time4sys.activity.explorer.activity.RemoveDeprecated"
-             id="org.polarsys.time4sys.activity.explorer.design.RemoveDeprecated"
-             image="icons/Transformation.jpg"
-             index="6"
-             name="Remove and replace all deprecated features used in the model.">
-          <Description>
-             Transform your design modelby removing all modeling features that are deprecated.
-             As of now:
-             * it replaces PrecedenceRelation by ControlPin.
-          </Description>
-       </Activity>       
-		</Section>
+  </Section>
   <Predicate
         class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
   </Predicate>
