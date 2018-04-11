@@ -131,6 +131,9 @@ public class ActivationPropagator extends AbstractTransformation {
 		final StepBuilder step_j = new StepBuilder(resultingDesign, target);
 		final Duration d_i = step_i.getDeadline();
 		final Duration d_j = step_j.getDeadline();
+		if (d_i == null || d_j == null) {
+			return false;
+		}
 		if (d_i.compareTo(d_j) > 0) {
 			step_i.getTask().setDeadline(d_j);
 			return true;
@@ -154,6 +157,7 @@ public class ActivationPropagator extends AbstractTransformation {
 			final Step copyStepWithCause,
 			final Step copyNextStep,
 			final Link outputPinsLink) {
+		assert(copyStepWithCause != null);
 		final EDFParameters edfSchedParam = propagateDeadline(copyDesign, originalOutputPin, originalInputPin, copyStepWithCause.getConcurRes(), copyNextStep.getConcurRes(), outputPinsLink);
 		final Duration delta = propagateWorkloadEvt(copyDesign, originalOutputPin, originalInputPin, copyStepWithCause, copyNextStep, outputPinsLink);
 		if (delta != null && edfSchedParam != null) {
@@ -168,7 +172,7 @@ public class ActivationPropagator extends AbstractTransformation {
 			final SchedulableResource copyTaskWithCause,
 			final SchedulableResource copyNextTask,
 			final Link outputPinsLink) {
-		
+		assert(copyTaskWithCause != null);
 		final EDFParameters originalSchedParam = new TaskBuilder(null, (SoftwareSchedulableResource) copyTaskWithCause).getEDFSchedParams(false);
 		EDFParameters nextSchedParam = new TaskBuilder(null, (SoftwareSchedulableResource) copyNextTask).getEDFSchedParams(false);
 		if (nextSchedParam == null) {

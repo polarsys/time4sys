@@ -12,7 +12,7 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
  * @author loic
  *
  */
-class Annotations {
+public class Annotations {
 
 	public static EAnnotation annotate(final EModelElement obj, final String source) {
 		EAnnotation annot = obj.getEAnnotation(source);
