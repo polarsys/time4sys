@@ -3,15 +3,19 @@
  */
 package org.polarsys.time4sys.builder.design.arinc653;
 
-import static org.junit.Assert.*;
-import static org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder.aSpareTask;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.polarsys.time4sys.builder.design.StepBuilder.aStep;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
+import static org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder.aSpareTask;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
@@ -59,5 +63,12 @@ public class Arinc653SpareTaskBuilderTest {
 		tb.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(Arinc653SpareTaskBuilder.SPARE_ATTR, "False");
 		final SoftwareSchedulableResource task = tb.build(designBuilder);
 		assertFalse(Arinc653SpareTaskBuilder.isSpare(task));
+	}
+	
+	@Test
+	public void testASpareStep() {
+		final Step step = aStep(designBuilder).called("S1").build();
+		Arinc653SpareTaskBuilder.asSpare(step);
+		assertTrue(Arinc653SpareTaskBuilder.isSpare(step));
 	}
 }

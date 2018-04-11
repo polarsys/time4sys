@@ -5,6 +5,8 @@ package org.polarsys.time4sys.builder.design.arinc653;
 
 import org.eclipse.emf.ecore.EAnnotation;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.builder.design.Annotations;
+import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
@@ -25,9 +27,22 @@ public class Arinc653SpareTaskBuilder {
 		asSpare(new TaskBuilder(null, task));
 	}
 	
+	public static void asSpare(final Step aStep) {
+		final EAnnotation annot = Annotations.annotate(aStep, Arinc653Builder.ARINC653_URL);
+		annot.getDetails().put(SPARE_ATTR, Boolean.TRUE.toString());
+	}
+	
 	public static void asSpare(final TaskBuilder taskBuilder) {
 		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
 		annot.getDetails().put(SPARE_ATTR, Boolean.TRUE.toString());
+	}
+	
+	public static boolean isSpare(final Step step) {
+		final EAnnotation annot = step.getEAnnotation(Arinc653Builder.ARINC653_URL);
+		if (annot == null) {
+			return false;
+		}
+		return annot.getDetails().get(SPARE_ATTR).equals(Boolean.TRUE.toString());
 	}
 	
 	public static boolean isSpare(final SoftwareSchedulableResource task) {
