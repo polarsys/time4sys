@@ -159,6 +159,7 @@ public class TaskSplitter extends AbstractTransformation {
 						}
 					}
 				}
+				waveFront.addAll(collectUnmigratedSuccessorsStep(copyStep, targetTasksToBeRemoved));
 			} else {
 				// Not yet ready to known what to do
 				waveFront.add(copyStep);
@@ -167,6 +168,18 @@ public class TaskSplitter extends AbstractTransformation {
 		copier.copyReferences();
 		tasksToBeCopied = collectLinkFor(targetTasksToBeRemoved);
 		TaskDuplicator.deleteCopiedTasks(targetTasksToBeRemoved, tasksToBeLinked, tasksToBeCopied, taskDuplicationRule);
+	}
+
+	private Collection<? extends Step> collectUnmigratedSuccessorsStep(
+			final Step copyStep,
+			final Collection<SchedulableResource> targetTasksToBeRemoved) {
+		final Collection<Step> result = new LinkedHashSet<>();
+		for(Step aStep: collectSuccessorsStep(copyStep)) {
+			if (targetTasksToBeRemoved.contains(aStep.getConcurRes())) {
+				result.add(aStep);
+			}
+		}
+		return result;
 	}
 
 	private Collection<Link> collectLinkFor(final Collection<SchedulableResource> targetTasks) {

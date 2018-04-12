@@ -205,7 +205,18 @@ public class TaskSplitterTest {
 		final TaskBuilder periodicLowTask = aPSS().called("periodicLowTask")/*.withOrder(2)*/.ofPriority(32).ofDeadline("9600us").ofBackgroundPriority(4).ofPeriod("960ms").ofET("1ms");
 		final TaskBuilder lr3ServerTask = aPSS().called("lr3ServerTask").withOrder(1).ofPriority(30).ofInitialBudget("1ms").ofBackgroundPriority(2).withSingleActivation().ofET("1ms");
 		final TaskBuilder spareTask1 = aSpareTask().called("spareTask1").ofPriority(1);
-		fms.runs(initialisationTask, ttSecondaryTask, lr2ServerTask, periodicLowTask, lr3ServerTask, spareTask1).under(SchedPolicyKind.FIXED_PRIORITY);
+		final TaskBuilder T1 = aTask().called("T1");
+		final TaskBuilder T2 = aTask().called("T2");
+		fms.runs(initialisationTask, ttSecondaryTask, lr2ServerTask, periodicLowTask, lr3ServerTask, spareTask1, T1, T2).under(SchedPolicyKind.FIXED_PRIORITY);
+		T1.anotherStep().called("t1_1b").ofPeriod("10ms").ofET("2ms");
+		T2.anotherStep().called("t2_1b").ofPeriod("10ms").ofET("2ms");
+		
+		final StepBuilder s6 = T1.anotherStep().called("s6").ofET("2ms");
+		final StepBuilder s5 = T1.anotherStep().called("s5").ofET("2ms").activates(s6);
+		final StepBuilder s4 = T1.anotherStep().called("s4").ofET("2ms").activates(s5);
+		final StepBuilder s3 = T2.anotherStep().called("s3").ofET("2ms").activates(s4);
+		final StepBuilder s2 = T2.anotherStep().called("s2").ofET("2ms").activates(s3);
+		final StepBuilder s1 = T1.anotherStep().called("s1").ofPeriod("10ms").ofET("2ms").activates(s2);
 		lr2ServerTask.firstStep().called("LR2_Server");
 		periodicLowTask.firstStep().called("Periodic_Low");
 		spareTask1.firstStep().called("Periodic_Spare").ofET("11ms").ofPeriod("60ms");
