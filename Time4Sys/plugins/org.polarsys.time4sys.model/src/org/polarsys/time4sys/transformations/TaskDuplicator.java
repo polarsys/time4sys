@@ -10,8 +10,10 @@
  *******************************************************************************/
 package org.polarsys.time4sys.transformations;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -49,12 +51,12 @@ public class TaskDuplicator extends AbstractTransformation {
 		return new TaskDuplicator(project, source).transform();
 	}
 
-	private List<Link> stepsToBeUpdated = new LinkedList<>();
-	private List<Link> tasksToBeCopied = new LinkedList<>();
-	private Map<SchedulableResource, List<SchedulableResource>> tasksToBeLinked = new HashMap<>();
+	private Collection<Link> stepsToBeUpdated = new LinkedHashSet<>();
+	private Collection<Link> tasksToBeCopied = new LinkedHashSet<>();
+	private Map<SchedulableResource, Collection<SchedulableResource>> tasksToBeLinked = new HashMap<>();
 	private Context stepNTaskRule;
 	private Context taskDuplicationRule;
-	private List<SchedulableResource> tasksToBeRemoved = new LinkedList<>();
+	private Collection<SchedulableResource> tasksToBeRemoved = new LinkedHashSet<>();
 
 	/**
 	 * @param source
@@ -92,39 +94,24 @@ public class TaskDuplicator extends AbstractTransformation {
 	protected void finalize(final DesignModel target) {
 		final Copier copier = new Copier(true, true);
 		for (Link lnk : stepsToBeUpdated) {
-			final Step source = (Step) lnk.getUniqueSourceValue("original");
-			final Step copy = (Step) lnk.getUniqueTargetValue("copy");
-			final SchedulableResource sourceTask = source.getConcurRes();
-			final SchedulableResource copyTask = copy.getConcurRes();
-			
-			final SchedulableResource targetTask = (SchedulableResource) copier.copy(copyTask);
-			registerCopyOf(targetTask, copyTask);
-			targetTask.setName(sourceTask.getName() + "_x_" + source.getName());
-			assert(copyTask.eContainer() != null);
-			((Resource)copyTask.eContainer()).getOwnedResource().add(targetTask);
-			assert(targetTask.eContainer() != null);
-			assert(copyTask.eContainer() == targetTask.eContainer());
-			copy.setConcurRes(targetTask);
-			final MappableArtefact origTaskMap = MappingFactory.eINSTANCE.createMappableArtefact(ORIGINAL_TASK_ROLE, sourceTask);
-			final MappableArtefact copyTaskMap = MappingFactory.eINSTANCE.createMappableArtefact(COPY_TASK_ROLE, targetTask);
-			lnk.getSources().add(origTaskMap);
-			lnk.getTargets().add(copyTaskMap);
-			lnk.setRationale(stepNTaskRule);
-			assert(lnk.getSources().size() == 2);
-			assert(lnk.getTargets().size() == 2);
+			moveStepToNewTask(tasksToBeLinked, copier, lnk, stepNTaskRule);
 		}
 		copier.copyReferences();
+		deleteCopiedTasks(tasksToBeRemoved, tasksToBeLinked, tasksToBeCopied, taskDuplicationRule);
+	}
+
+	public static void deleteCopiedTasks(final Collection<SchedulableResource> sourceOrTargetTasksToBeRemoved, final Map<SchedulableResource, Collection<SchedulableResource>> tasksToBeLinked, final Collection<Link> tasksToBeCopied, final Context taskDuplicationRule) {
 		for(Link lnk: tasksToBeCopied) {
-			final SoftwareSchedulableResource source = (SoftwareSchedulableResource) lnk.getUniqueSourceValue(IdentityDerivation.ORIGINAL_ROLE);			
-			if (!tasksToBeRemoved.contains(source)) {
+			final SoftwareSchedulableResource source = (SoftwareSchedulableResource) lnk.getUniqueSourceValue(IdentityDerivation.ORIGINAL_ROLE);
+			final SoftwareSchedulableResource copy = (SoftwareSchedulableResource) lnk.getUniqueTargetValue(IdentityDerivation.COPY_ROLE);
+			if (!sourceOrTargetTasksToBeRemoved.contains(source) && !sourceOrTargetTasksToBeRemoved.contains(copy)) {
 				continue;
 			}
 			lnk.setRationale(taskDuplicationRule);
-			final SoftwareSchedulableResource copy = (SoftwareSchedulableResource) lnk.getUniqueTargetValue(IdentityDerivation.COPY_ROLE);
 			// Remove all current targets (actually only one copy)
 			lnk.getTargets().clear();
 			// Add duplicates
-			for(SchedulableResource targetDup: registeredCopiesOf(copy)) {
+			for(SchedulableResource targetDup: registeredCopiesOf(tasksToBeLinked, copy)) {
 				lnk.getTargets().add(MappingFactory.eINSTANCE.createMappableArtefact(COPY_TASK_ROLE, targetDup));
 			}
 			// delete copy from model
@@ -132,18 +119,41 @@ public class TaskDuplicator extends AbstractTransformation {
 		}
 	}
 
-	protected List<SchedulableResource> registeredCopiesOf(final SoftwareSchedulableResource copyTask) {
-		final List<SchedulableResource> result = tasksToBeLinked.get(copyTask);
+	public static void moveStepToNewTask(final Map<SchedulableResource, Collection<SchedulableResource>> tasksToBeLinked, final Copier copier, final Link lnk, final Context rule) {
+		final Step source = (Step) lnk.getUniqueSourceValue("original");
+		final Step copy = (Step) lnk.getUniqueTargetValue("copy");
+		final SchedulableResource sourceTask = source.getConcurRes();
+		final SchedulableResource copyTask = copy.getConcurRes();
+		
+		final SchedulableResource targetTask = (SchedulableResource) copier.copy(copyTask);
+		registerCopyOf(tasksToBeLinked, targetTask, copyTask);
+		targetTask.setName(sourceTask.getName() + "_x_" + source.getName());
+		assert(copyTask.eContainer() != null);
+		((Resource)copyTask.eContainer()).getOwnedResource().add(targetTask);
+		assert(targetTask.eContainer() != null);
+		assert(copyTask.eContainer() == targetTask.eContainer());
+		copy.setConcurRes(targetTask);
+		final MappableArtefact origTaskMap = MappingFactory.eINSTANCE.createMappableArtefact(ORIGINAL_TASK_ROLE, sourceTask);
+		final MappableArtefact copyTaskMap = MappingFactory.eINSTANCE.createMappableArtefact(COPY_TASK_ROLE, targetTask);
+		lnk.getSources().add(origTaskMap);
+		lnk.getTargets().add(copyTaskMap);
+		lnk.setRationale(rule);
+		/*assert(lnk.getSources().size() == 2);
+		assert(lnk.getTargets().size() == 2);*/
+	}
+
+	protected static Collection<SchedulableResource> registeredCopiesOf(final Map<SchedulableResource, Collection<SchedulableResource>> tasksToBeLinked, final SoftwareSchedulableResource copyTask) {
+		final Collection<SchedulableResource> result = tasksToBeLinked.get(copyTask);
 		if (result == null) {
 			return Collections.emptyList();
 		}
 		return result;
 	}
 
-	protected void registerCopyOf(final SchedulableResource targetTask, final SchedulableResource copyTask) {
-		List<SchedulableResource> copies = tasksToBeLinked.get(copyTask);
+	protected static void registerCopyOf(final Map<SchedulableResource, Collection<SchedulableResource>> tasksToBeLinked, final SchedulableResource targetTask, final SchedulableResource copyTask) {
+		Collection<SchedulableResource> copies = tasksToBeLinked.get(copyTask);
 		if (copies == null) {
-			copies = new LinkedList<>();
+			copies = new LinkedHashSet<>();
 			tasksToBeLinked.put(copyTask, copies);
 		}
 		copies.add(targetTask);
