@@ -77,6 +77,7 @@ public class TaskDuplicatorTest {
 		}
 		
 		assertNotNull(transfo);
+		assertNotNull(transfo.getName());
 		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
 		

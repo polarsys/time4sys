@@ -56,7 +56,7 @@ public class PriorityUrgencyInverterTest {
 		final Transformation transfo = PriorityUrgencyInverter.transform(theProject.build(), design.build());
 		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
-		
+		assertNotNull(transfo.getName());
 		final EList<Link> subLinks = mapping.getSubLinks();
 		assertFalse(subLinks.isEmpty());
 		// The design model has been copied.

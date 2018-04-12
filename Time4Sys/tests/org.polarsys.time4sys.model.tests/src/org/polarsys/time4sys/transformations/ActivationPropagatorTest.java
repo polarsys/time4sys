@@ -166,6 +166,7 @@ public class ActivationPropagatorTest {
 		
 		final Mapping mapping = transfo.getMapping();
 		assertNotNull(mapping);
+		assertNotNull(transfo.getName());
 		
 		final DesignBuilder resultingDesign = new DesignBuilder((DesignModel)mapping.getSubLinks().get(0).getTargets().get(0).getValue());
 		final TaskBuilder resultingT1 = resultingDesign.task("T1");

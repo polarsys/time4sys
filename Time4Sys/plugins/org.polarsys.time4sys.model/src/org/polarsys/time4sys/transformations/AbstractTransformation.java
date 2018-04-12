@@ -45,6 +45,7 @@ public abstract class AbstractTransformation extends IdentityDerivation implemen
 	public Transformation transform() {
 		final Transformation result = super.transform();
 		result.getMapping().setRationale(mainCtx);
+		result.setName(mainCtx.getName());
 		return result;
 	}
 
