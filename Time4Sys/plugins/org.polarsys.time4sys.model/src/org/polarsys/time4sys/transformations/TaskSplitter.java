@@ -11,11 +11,9 @@
 package org.polarsys.time4sys.transformations;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -29,7 +27,6 @@ import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
-import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 
@@ -51,7 +48,34 @@ public class TaskSplitter extends AbstractTransformation {
 	public static final String TASK_TRANS_NAME = ("one duplicated task Rule " + TaskSplitter.class.getSimpleName()).intern();
 
 	public static Transformation transform(final Project project, final DesignModel source) {
-		return new TaskSplitter(project, source).transform();
+		return transform(defaultCfg(), project, source);
+	}
+	
+
+	public static Transformation transform(TaskSplitterConfiguration cfg, Project project, DesignModel source) {
+		return new TaskSplitter(cfg, project, source).transform();
+	}
+	
+	public static TaskSplitterConfiguration defaultCfg() {
+		return new TaskSplitterConfiguration();
+	}
+	
+	public static class TaskSplitterConfiguration {
+		protected boolean indexBasedName;
+		
+		public TaskSplitterConfiguration() {
+			indexBasedName = false;
+		}
+		
+		public TaskSplitterConfiguration(final TaskSplitterConfiguration original) {
+			indexBasedName = original.indexBasedName;
+		}
+
+		public TaskSplitterConfiguration namesAreIndexBased() {
+			final TaskSplitterConfiguration result = new TaskSplitterConfiguration(this);
+			result.indexBasedName = true;
+			return result;
+		}
 	}
 
 	private Collection<Step> sourceStepsStartOfTask = new LinkedHashSet<>();
@@ -60,14 +84,17 @@ public class TaskSplitter extends AbstractTransformation {
 	private Context stepNTaskRule;
 	private Context taskDuplicationRule;
 	private Collection<SchedulableResource> targetTasksToBeRemoved = new LinkedHashSet<>();
+	protected final TaskSplitterConfiguration config;
 
 	/**
+	 * @param cfg 
 	 * @param source
 	 * @param project
 	 * 
 	 */
-	public TaskSplitter(Project project, DesignModel source) {
+	public TaskSplitter(TaskSplitterConfiguration cfg, Project project, DesignModel source) {
 		super(project, source, TRANS_NAME);
+		config = cfg;
 	}
 
 	@Override
@@ -167,8 +194,33 @@ public class TaskSplitter extends AbstractTransformation {
 		}
 		copier.copyReferences();
 		tasksToBeCopied = collectLinkFor(targetTasksToBeRemoved);
+		if (config.indexBasedName) {
+			renameTasksWithIndex();
+		}
 		TaskDuplicator.deleteCopiedTasks(targetTasksToBeRemoved, tasksToBeLinked, tasksToBeCopied, taskDuplicationRule);
 	}
+
+	private void renameTasksWithIndex() {
+		final Collection<Link> tasksLnk = mapping.getLinks(stepNTaskRule);
+		final Map<SchedulableResource, Integer> perTaskCounter = new HashMap<>();
+		for(Link lnk: tasksLnk) {
+			if (lnk.getRationale() != stepNTaskRule) {
+				continue;
+			}
+			final EObject source = lnk.getUniqueSourceValue(ORIGINAL_TASK_ROLE);
+			assert(source instanceof SchedulableResource);
+			final SchedulableResource sourceTask = (SchedulableResource)source;
+			int counter = perTaskCounter.getOrDefault(sourceTask, 0);
+			final String prefix = sourceTask.getName(); 
+			for(EObject target: lnk.getTargets(COPY_TASK_ROLE)) {
+				assert(target instanceof SchedulableResource);
+				counter++;
+				((SchedulableResource)target).setName(prefix + "_" + Integer.toString(counter));
+			}
+			perTaskCounter.put(sourceTask, counter);
+		}
+	}
+
 
 	private Collection<? extends Step> collectUnmigratedSuccessorsStep(
 			final Step copyStep,

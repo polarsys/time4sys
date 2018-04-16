@@ -39,6 +39,7 @@ import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Transformation;
+import org.polarsys.time4sys.transformations.TaskSplitter.TaskSplitterConfiguration;
 
 /**
  * @author loic
@@ -645,6 +646,82 @@ public class TaskSplitterTest {
 		assertNotSame(((Step)s3Copy).getConcurRes(), ((Step)s2Copy).getConcurRes());
 		
 		
+		assertEquals(TaskSplitter.TRANS_NAME, mapping.getRationale().getName());
+	}
+	
+	
+	@Test
+	public void testSimpleOneTaskTwoStepsIndexBasedName() {
+		// Given
+		DesignBuilder design = theProject.design();
+		design.hasAProcessor().called("mainproc").thatRuns(
+				aTask().called("T1").ofPeriod("10ms").ofPriority(1)
+			).under(SchedPolicyKind.FIXED_PRIORITY);
+		final TaskBuilder t1 = design.task("T1");
+		final StepBuilder s1 = t1.firstStep().called("S1").ofBCET("1ms").ofWCET("2ms");
+		final StepBuilder s2 = s1.isFollowedByAStep().called("S2").ofBCET("4ms").ofWCET("6ms");
+		design.build();
+		assertEquals(s1.getTask().build(), s2.getTask().build());
+		// When
+		final TaskSplitterConfiguration cfg = TaskSplitter.defaultCfg().namesAreIndexBased();
+		final Transformation transfo = TaskSplitter.transform(cfg, theProject.build(), design.build());
+		// Then
+		
+		try {
+			theProject.saveAsEcore("../../runtime-EclipseApplication/test/TaskSplitterTest-testSimpleOneTaskTwoSteps.time4sys");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		assertNotNull(transfo);
+		assertNotNull(transfo.getName());
+		final Mapping mapping = transfo.getMapping();
+		assertNotNull(mapping);
+		
+		final EList<Link> subLinks = mapping.getSubLinks();
+		assertFalse(subLinks.isEmpty());
+		// The design model has been copied.
+		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
+		final DesignBuilder targetDesign = new DesignBuilder(copy);
+		final EList<Link> s1Links = mapping.getLinksForSource(s1.build());
+		assertEquals(1, s1Links.size());
+		final EObject s1Copy = s1Links.get(0).getUniqueTargetValue(IdentityDerivation.COPY_ROLE);
+		assertNotNull(s1Copy);
+		assertTrue(s1Copy  instanceof Step);
+		final StepBuilder s1Bis = new StepBuilder(targetDesign, (Step)s1Copy);
+		final EList<Link> s2Links = mapping.getLinksForSource(s2.build());
+		assertEquals(1, s2Links.size());
+		final EObject s2Copy = s2Links.get(0).getUniqueTargetValue(IdentityDerivation.COPY_ROLE);
+		assertTrue(s2Copy  instanceof Step);
+		final StepBuilder s2Bis = new StepBuilder(targetDesign, (Step)s2Copy);
+		assertEquals(s1Bis.getTask().build(), s2Bis.getTask().build());
+		assertEquals(1, targetDesign.countTasks());
+		
+		final EList<Link> t1Links = mapping.getLinksForSource(t1.build());
+		assertEquals(2, t1Links.size());
+		int stepntaskCounter = 0;
+		int duptaskCounter = 0;
+		for(Link lnk: t1Links) {
+			if (TaskSplitter.STEPNTASK_TRANS_NAME.equals(lnk.getRationale().getName())) {
+				stepntaskCounter++;
+				assertEquals(2, lnk.getSources().size()); // 1 step & 1 task
+				assertEquals(2, lnk.getTargets().size()); // 1 step & 1 task
+			} else if (TaskSplitter.TASK_TRANS_NAME.equals(lnk.getRationale().getName())) {
+				duptaskCounter++;
+				final SoftwareSchedulableResource originalTask = (SoftwareSchedulableResource)lnk.getUniqueSourceValue(IdentityDerivation.ORIGINAL_ROLE);
+				final EList<EObject> dupTasks = lnk.getTargets(TaskSplitter.COPY_TASK_ROLE);
+				assertEquals(1, dupTasks.size()); // as many as original task's steps
+				for(EObject current: dupTasks) {
+					assertTrue(current instanceof SoftwareSchedulableResource);
+					final SoftwareSchedulableResource aDupTask = (SoftwareSchedulableResource)current;
+					assertEquals(originalTask.getName() + "_1", aDupTask.getName());
+				}
+			} else {
+				fail("Invalid link's rationale: " + lnk.getRationale().getName());
+			}
+		}
+		assertEquals(1, stepntaskCounter);
+		assertEquals(1, duptaskCounter);
 		assertEquals(TaskSplitter.TRANS_NAME, mapping.getRationale().getName());
 	}
 }
