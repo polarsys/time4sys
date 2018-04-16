@@ -15,6 +15,9 @@ package org.polarsys.time4sys.mapping.impl;
 import java.io.StringWriter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -254,6 +257,27 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * Recursively return Links justified by the given rule.
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public EList<Link> getLinks(final Context rule) {
+		final Collection<Link> resultSet = new LinkedHashSet<>();
+		final Queue<Link> toExplore = new LinkedBlockingQueue<>();
+		toExplore.add(this);
+		while(!toExplore.isEmpty()) {
+			final Link current = toExplore.poll();
+			if (rule == current.getRationale()) {
+				resultSet.add(current);
+			}
+			toExplore.addAll(current.getSubLinks());
+		}
+		final BasicEList<Link> result = new BasicEList<>(resultSet);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -379,6 +403,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
 				return getSources((String)arguments.get(0));
 			case MappingPackage.LINK___GET_TARGETS__STRING:
 				return getTargets((String)arguments.get(0));
+			case MappingPackage.LINK___GET_LINKS__CONTEXT:
+				return getLinks((Context)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
