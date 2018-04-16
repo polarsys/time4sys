@@ -13,6 +13,7 @@ package org.polarsys.time4sys.transformations;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -36,6 +37,7 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 
+
 /**
  * @author loic
  *
@@ -44,24 +46,53 @@ public class ActivationPropagator extends AbstractTransformation {
 
 	public static final String TRANS_NAME = ActivationPropagator.class.getSimpleName();
 	public static final String CTRL2DATAFLOW_RULE = "control2data-flow rule";
-	private static final String DEP_SRC_ROLE = "dependency source";
-	private static final String DEP_TGT_ROLE = "dependency target";
-	private static final String DEP2ACTIVATION_RULE = "dependency activation propagation rule";
+	public static final String DEP_SRC_ROLE = "dependency source";
+	public static final String DEP_TGT_ROLE = "dependency target";
+	public static final String DEP2ACTIVATION_RULE = "dependency activation propagation rule";
 
 	public static Transformation transform(final Project project, final DesignModel source) {
-		return new ActivationPropagator(project, source).transform();
+		return transform(defaultCfg(), project, source);
+	}
+	
+	public static Transformation transform(final ActivationPropagatorConfiguration cfg, final Project project, final DesignModel source) {
+		return new ActivationPropagator(cfg, project, source).transform();
+	}
+	
+	public static ActivationPropagatorConfiguration defaultCfg() {
+		return new ActivationPropagatorConfiguration();
+	}
+	
+	public static class ActivationPropagatorConfiguration {
+		protected boolean forAllStep;
+		
+		public ActivationPropagatorConfiguration() {
+			forAllStep = false;
+		}
+		
+		public ActivationPropagatorConfiguration(final ActivationPropagatorConfiguration original) {
+			forAllStep = original.forAllStep;
+		}
+
+		public ActivationPropagatorConfiguration withPropagationOnEveryStep() {
+			final ActivationPropagatorConfiguration result = new ActivationPropagatorConfiguration(this);
+			result.forAllStep = true;
+			return result;
+		}
 	}
 	
 	protected Queue<Link> controlFlowOutputPinWithCauseLnks = new LinkedList<>();
 	private Context control2dataFlow;
 	private Context dep2activationRule;
+	private final ActivationPropagatorConfiguration config;
 	
 	/**
+	 * @param cfg 
 	 * @param project
 	 * @param source
 	 */
-	public ActivationPropagator(final Project project, final DesignModel source) {
+	public ActivationPropagator(final ActivationPropagatorConfiguration cfg, final Project project, final DesignModel source) {
 		super(project, source, TRANS_NAME);
+		config = cfg;
 	}
 
 	@Override
@@ -91,10 +122,12 @@ public class ActivationPropagator extends AbstractTransformation {
 			final OutputPin originalOutputPin = ((OutputPin)lnk.getUniqueSourceValue(IdentityDerivation.ORIGINAL_ROLE));
 			final OutputPin copyOutputPin = ((OutputPin)lnk.getUniqueTargetValue(IdentityDerivation.COPY_ROLE));
 			final Step copyStepWithCause = (Step)copyOutputPin.eContainer();
-			copyOutputPin.setIsControl(false);
 			lnk.setRationale(control2dataFlow);
 			for (InputPin copyInputPin: copyOutputPin.getSuccessors()) {
-				copyInputPin.setIsControl(false);
+				if (config.forAllStep || isCrossTasks(copyOutputPin, copyInputPin)) {
+					copyInputPin.setIsControl(false);
+					copyOutputPin.setIsControl(false);
+				}
 				for(Link lnkInput: mapping.getLinksForSlice(copyInputPin)) {
 					lnkInput.setRationale(control2dataFlow);
 					final InputPin originalInputPin = (InputPin) lnkInput.getUniqueSourceValue(COPY_ROLE);
@@ -124,6 +157,37 @@ public class ActivationPropagator extends AbstractTransformation {
 				}
 			}
 		}
+		
+		
+		if (!config.forAllStep) {
+			// Remove Cause if not first on task
+			removeUnnecessaryActivations(target);
+		}
+	}
+
+	private void removeUnnecessaryActivations(final DesignModel target) {
+		for(Step aStep: new DesignBuilder(target).allSteps()) {
+			if (hasControlFlowInput(aStep)) {
+				aStep.getCause().clear();
+			}
+		}
+	}
+
+	private boolean hasControlFlowInput(Step aStep) {
+		return aStep.getInputPin().stream().anyMatch(new Predicate<InputPin>() {
+
+			@Override
+			public boolean test(final InputPin t) {
+				return t.isIsControl();
+			}
+		});
+	}
+
+	protected void removeUnnecessaryActivations() {
+	}
+
+	protected boolean isCrossTasks(final OutputPin copyOutputPin, final InputPin copyInputPin) {
+		return ((Step)copyOutputPin.eContainer()).getConcurRes() != ((Step)copyInputPin.eContainer()).getConcurRes();
 	}
 
 	protected boolean checkOrUpdate(DesignBuilder resultingDesign, final Step target, Step source) {
@@ -240,6 +304,7 @@ public class ActivationPropagator extends AbstractTransformation {
 	protected WorkloadEvent findSimilar(final Step copyNextStep, final WorkloadEvent evt) {
 		for(WorkloadEvent existingEvt: copyNextStep.getCause()) {
 			if (evt.getPattern().getClass().isInstance(existingEvt.getPattern())) {
+				//TODO in case of Periodic Event, make sure it is the same exact period.
 				return existingEvt;
 			}
 		}
