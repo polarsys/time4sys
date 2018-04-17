@@ -141,4 +141,12 @@ public interface Link extends EObject {
 	 */
 	EList<EObject> getTargets(String role);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Link> getLinks(Context rule);
+
 } // Link

@@ -309,7 +309,7 @@ public class StepBuilder {
 		return ((TaskBuilder)task).getDeadline();
 	}
 
-	public void activates(final StepBuilder... successors) {
+	public StepBuilder activates(final StepBuilder... successors) {
 		final Step origin = build();
 		this.hasAtLeastOneOutputPin();
 		for(OutputPin outputPin: origin.getOutputPin()) {
@@ -322,6 +322,7 @@ public class StepBuilder {
 			outputPin.setLowerBound(nbSuccessors);
 			outputPin.setUpperBound(nbSuccessors);
 		}
+		return this;
 	}
 	
 	public InputPinBuilder hasOneInputPinNamed(final String pinName) {

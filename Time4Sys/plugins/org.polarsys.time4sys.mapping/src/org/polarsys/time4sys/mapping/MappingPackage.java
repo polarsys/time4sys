@@ -160,13 +160,22 @@ public interface MappingPackage extends EPackage {
 	int LINK___GET_TARGETS__STRING = 3;
 
 	/**
+	 * The operation id for the '<em>Get Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___GET_LINKS__CONTEXT = 4;
+
+	/**
 	 * The number of operations of the '<em>Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = 4;
+	int LINK_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.mapping.impl.MappableArtefactImpl <em>Mappable Artefact</em>}' class.
@@ -313,6 +322,15 @@ public interface MappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAPPING___GET_TARGETS__STRING = LINK___GET_TARGETS__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Links</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING___GET_LINKS__CONTEXT = LINK___GET_LINKS__CONTEXT;
 
 	/**
 	 * The operation id for the '<em>Get Links For Source</em>' operation.
@@ -550,6 +568,16 @@ public interface MappingPackage extends EPackage {
 	EOperation getLink__GetTargets__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.mapping.Link#getLinks(org.polarsys.time4sys.mapping.Context) <em>Get Links</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Links</em>' operation.
+	 * @see org.polarsys.time4sys.mapping.Link#getLinks(org.polarsys.time4sys.mapping.Context)
+	 * @generated
+	 */
+	EOperation getLink__GetLinks__Context();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.mapping.MappableArtefact <em>Mappable Artefact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -783,6 +811,14 @@ public interface MappingPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation LINK___GET_TARGETS__STRING = eINSTANCE.getLink__GetTargets__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Links</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation LINK___GET_LINKS__CONTEXT = eINSTANCE.getLink__GetLinks__Context();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.mapping.impl.MappableArtefactImpl <em>Mappable Artefact</em>}' class.
