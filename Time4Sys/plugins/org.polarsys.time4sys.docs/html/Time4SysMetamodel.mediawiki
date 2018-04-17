@@ -1,0 +1,26 @@
+= Time4Sys Metamodel =            
+
+== Design Model ==
+ 
+=== End To End Flow ===
+ 
+End to end flows represents a timing constraint between a stimuli and a step. To be consistent, the event starting the end to end flow and the step finishing it shall be connected by precedence relations.
+
+[[Image:../Images/EndToEndFlowCreation.png]]
+
+The path of the end to end flow is represented by its involved elements which can be defined in the End to End Flow diagram. Once the End To End Flow has been created with the previous method, a simple way to edit it is to created a specific diagram which allow you to define the path of your end to end flow by adding or removing involved elements.
+
+[[Image:../Images/EndToEndFlowEdition.png]]
+
+=== Precedence Relations ===
+
+=== Behavior Scenario ===
+
+Behavior scenario are used to store steps. They does not influence the behavior of your system. However, you can use them to show 
+
+=== Reference ===
+
+References are used to represent synchronization between event. If two event share the same reference, it means that they are synchronized.
+When two events does not share a reference, it means that there is an unknow offset between them.
+
+== Simulation result model ==

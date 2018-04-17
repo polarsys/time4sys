@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<h1 id="Time4Sys_Metamodel">Time4Sys Metamodel</h1>
+		<h2 id="Design_Model">Design Model</h2>
+		<h3 id="End_To_End_Flow">End To End Flow</h3>
+		<p>End to end flows represents a timing constraint between a stimuli and a step. To be consistent, the event starting the end to end flow and the step finishing it shall be connected by precedence relations.</p>
+		<p>
+			<img border="0" src="../Images/EndToEndFlowCreation.png"/>
+		</p>
+		<p>The path of the end to end flow is represented by its involved elements which can be defined in the End to End Flow diagram. Once the End To End Flow has been created with the previous method, a simple way to edit it is to created a specific diagram which allow you to define the path of your end to end flow by adding or removing involved elements.</p>
+		<p>
+			<img border="0" src="../Images/EndToEndFlowEdition.png"/>
+		</p>
+		<h3 id="Precedence_Relations">Precedence Relations</h3>
+		<h3 id="Behavior_Scenario">Behavior Scenario</h3>
+		<p>Behavior scenario are used to store steps. They does not influence the behavior of your system. However, you can use them to show </p>
+		<h3 id="Reference">Reference</h3>
+		<p>References are used to represent synchronization between event. If two event share the same reference, it means that they are synchronized.
+			When two events does not share a reference, it means that there is an unknow offset between them.</p>
+		<h2 id="Simulation_result_model">Simulation result model</h2>
+	</body>
+</html>

@@ -40,8 +40,7 @@
          Install plugins required by Time4Sys (Sirius, Acceleo, EEF)
       </description>
    </category-def>
-   <repository-reference location="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.8/R20161202101843" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.0/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" enabled="true" />
 </site>
