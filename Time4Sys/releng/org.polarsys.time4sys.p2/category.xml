@@ -27,8 +27,11 @@
    <feature id="org.eclipse.sirius.runtime.ide.eef" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
-   <feature url="features/org.polarsys.time4sys.feature_0.0.1.qualifier.jar" id="org.polarsys.time4sys.feature" version="0.0.1.qualifier">
+   <feature id="org.polarsys.time4sys.feature" version="0.0.0">
       <category name="Time4Sys"/>
+   </feature>
+   <feature id="org.eclipse.sirius.specifier" version="0.0.0">
+      <category name="Time4Sys Dependencies"/>
    </feature>
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
