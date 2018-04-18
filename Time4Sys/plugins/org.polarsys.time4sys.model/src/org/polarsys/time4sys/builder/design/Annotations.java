@@ -3,10 +3,13 @@
  */
 package org.polarsys.time4sys.builder.design;
 
+import java.util.Map.Entry;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
+import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * @author loic
@@ -32,9 +35,19 @@ public class Annotations {
 
 	public static void unsetAnnotationAttr(final EModelElement obj, final String source, final String attrname) {
 		final EAnnotation annot = obj.getEAnnotation(source);
-		annot.getDetails().removeKey(attrname);
+		//annot.getDetails().removeKey(attrname);
+		final int entryIndex = annot.getDetails().indexOfKey(attrname);
+		if (entryIndex != -1) {
+			final Entry<String, String> entry = annot.getDetails().get(entryIndex);
+			if (entry instanceof EStringToStringMapEntryImpl) {
+				EcoreUtil.delete((EStringToStringMapEntryImpl)entry);
+			} else {
+				annot.getDetails().remove(entryIndex);
+			}
+		}
 		if (annot.getDetails().isEmpty() && annot.getReferences().isEmpty()) {
-			obj.getEAnnotations().remove(annot);
+			//obj.getEAnnotations().remove(annot);
+			EcoreUtil.delete(annot);
 		}
 	}
 

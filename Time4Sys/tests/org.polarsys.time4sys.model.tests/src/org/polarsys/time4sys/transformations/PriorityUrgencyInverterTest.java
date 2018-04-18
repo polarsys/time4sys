@@ -30,6 +30,7 @@ import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.model.time4sys.Transformation;
+import org.polarsys.time4sys.transformations.PriorityUrgencyInverter.PriorityUrgencyInverterConfiguration;
 
 /**
  * @author loic
@@ -167,10 +168,12 @@ public class PriorityUrgencyInverterTest {
 		// Task with lower priority value become the one with maximum urgency 
 		assertEquals(5, t1Task.getPriority());
 		assertEquals(1, t1Task.getBackgroundPriority());
+		assertFalse(t1Task.hasOrder());
 		final PosixSporadicServerBuilder t2Task = PosixSporadicServerBuilder.as(targetDesign.task("T2"));
 		assertNotNull(t2Task);
 		assertEquals(4, t2Task.getPriority());
 		assertEquals(0, t2Task.getBackgroundPriority());
+		assertFalse(t2Task.hasOrder());
 	}
 	
 	@Test
@@ -210,5 +213,106 @@ public class PriorityUrgencyInverterTest {
 		// Annotation has been removed
 		assertFalse(t1Task.hasAnnotation(PosixSporadicServerBuilder.POSIX_URL));
 		assertFalse(t2Task.hasAnnotation(PosixSporadicServerBuilder.POSIX_URL));
+	}
+	
+	@Test
+	public void testOneTaskInverseOnly() {
+		DesignBuilder design = theProject.design();
+		design.hasAProcessor().called("mainproc").thatRuns(
+				aTask().called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms").ofPriority(1)
+			).under(SchedPolicyKind.FIXED_PRIORITY);
+		final PriorityUrgencyInverterConfiguration cfg = PriorityUrgencyInverter.defaultCfg().inverseOnly();
+		final Transformation transfo = PriorityUrgencyInverter.transform(cfg, theProject.build(), design.build());
+		final Mapping mapping = transfo.getMapping();
+		assertNotNull(mapping);
+		assertNotNull(transfo.getName());
+		final EList<Link> subLinks = mapping.getSubLinks();
+		assertFalse(subLinks.isEmpty());
+		// The design model has been copied.
+		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
+		final DesignBuilder targetDesign = new DesignBuilder(copy);
+		final TaskBuilder t1Task = targetDesign.task("T1");
+		assertNotNull(t1Task);
+		assertEquals(1, t1Task.getPriority());
+		// Links for the FixedPriorityParameters is not identity rule but priority rule
+		final EList<Link> links = mapping.getLinksForSlice(t1Task.build().getSchedParams().get(0));
+		assertEquals(1, links.size());
+		for(Link lnk: links) {
+			System.out.println(lnk.getRationale().getName());
+			assertTrue(lnk.getRationale().getName().toLowerCase().contains("priority"));
+		}
+		assertTrue(mapping.getRationale().getName().toLowerCase().contains("priority"));
+	}
+	
+	@Test
+	public void testTwoTasksInverseOnly() {
+		// Given a two tasks model
+		DesignBuilder design = theProject.design();
+		design.hasAProcessor().called("mainproc").thatRuns(
+				aTask().called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms").ofPriority(1),
+				aTask().called("T2").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms").ofPriority(2)
+			).under(SchedPolicyKind.FIXED_PRIORITY);
+		// When inverting priority and urgency
+		final PriorityUrgencyInverterConfiguration cfg = PriorityUrgencyInverter.defaultCfg().inverseOnly();
+		final Transformation transfo = PriorityUrgencyInverter.transform(cfg, theProject.build(), design.build());
+		
+		// Then
+		final Mapping mapping = transfo.getMapping();
+		assertNotNull(mapping);
+		
+		
+		final EList<Link> subLinks = mapping.getSubLinks();
+		assertFalse(subLinks.isEmpty());
+		// The design model has been copied.
+		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
+		final DesignBuilder targetDesign = new DesignBuilder(copy);
+		final TaskBuilder t1Task = targetDesign.task("T1");
+		assertNotNull(t1Task);
+		// Task with lower priority value become the one with maximum urgency 
+		assertEquals(2, t1Task.getPriority());
+		final TaskBuilder t2Task = targetDesign.task("T2");
+		assertNotNull(t2Task);
+		assertEquals(1, t2Task.getPriority());
+	}
+	
+	@Test
+	public void testTwoPSSTasksAndOrderFrom1to2InverseOnly() {
+		// Given a two tasks model
+		DesignBuilder design = theProject.design();
+		design.hasAProcessor().called("mainproc").thatRuns(
+				aPSS()
+					.called("T1").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms")
+					.ofPriority(1).ofBackgroundPriority(5).withOrder(1),
+				aPSS()
+					.called("T2").ofPeriod("10ms").ofWCET("3ms").ofBCET("1ms")
+					.ofPriority(2).ofBackgroundPriority(5).withOrder(2)
+			).under(SchedPolicyKind.FIXED_PRIORITY);
+		// When inverting priority and urgency
+		final PriorityUrgencyInverterConfiguration cfg = PriorityUrgencyInverter.defaultCfg().inverseOnly();
+		final Transformation transfo = PriorityUrgencyInverter.transform(cfg, theProject.build(), design.build());
+		
+		// Then
+		final Mapping mapping = transfo.getMapping();
+		assertNotNull(mapping);
+		
+		
+		final EList<Link> subLinks = mapping.getSubLinks();
+		assertFalse(subLinks.isEmpty());
+		// The design model has been copied.
+		final DesignModel copy = (DesignModel) subLinks.get(0).getTargets().get(0).getValue();
+		final DesignBuilder targetDesign = new DesignBuilder(copy);
+		final PosixSporadicServerBuilder t1Task = PosixSporadicServerBuilder.as(targetDesign.task("T1"));
+		assertNotNull(t1Task);
+		// Task with lower priority value become the one with maximum urgency 
+		assertEquals(5, t1Task.getPriority());
+		assertEquals(1, t1Task.getBackgroundPriority());
+		assertTrue(t1Task.hasOrder());
+		assertEquals(1, t1Task.getOrder());
+		final PosixSporadicServerBuilder t2Task = PosixSporadicServerBuilder.as(targetDesign.task("T2"));
+		assertNotNull(t2Task);
+		assertEquals(4, t2Task.getPriority());
+		assertEquals(1, t2Task.getBackgroundPriority());
+		assertTrue(t2Task.hasOrder());
+		assertEquals(2, t2Task.getOrder());
 	}
 }

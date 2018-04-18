@@ -25,6 +25,7 @@ import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
+import org.polarsys.time4sys.transformations.PriorityUrgencyInverter.PriorityUrgencyInverterConfiguration;
 
 /**
  * Convert priority values to urgency values as expected by Time4Sys.
@@ -36,8 +37,48 @@ public class PriorityUrgencyInverter extends AbstractTransformation {
 	
 	public static final String TRANS_NAME = "Priority to Urgency".intern();
 	
+	public static class PriorityUrgencyInverterConfiguration {
+		
+		protected final boolean withPSSOrder;
+		protected final boolean isZeroBased;
+		
+		public PriorityUrgencyInverterConfiguration() {
+			withPSSOrder = true;
+			isZeroBased = true;
+		}
+		
+		public PriorityUrgencyInverterConfiguration(final boolean withPSS, final boolean isZeroBased) {
+			this.withPSSOrder = withPSS;
+			this.isZeroBased = isZeroBased;
+		}
+		
+		public PriorityUrgencyInverterConfiguration withoutPSSOrder() {
+			return new PriorityUrgencyInverterConfiguration(false, isZeroBased);
+		}
+		
+		public PriorityUrgencyInverterConfiguration zeroBased() {
+			return new PriorityUrgencyInverterConfiguration(withPSSOrder, true);
+		}
+		
+		public PriorityUrgencyInverterConfiguration oneBased() {
+			return new PriorityUrgencyInverterConfiguration(withPSSOrder, false);
+		}
+
+		public PriorityUrgencyInverterConfiguration inverseOnly() {
+			return new PriorityUrgencyInverterConfiguration(false, false);
+		}
+	}
+	
+	public static PriorityUrgencyInverterConfiguration defaultCfg() {
+		return new PriorityUrgencyInverterConfiguration();
+	}
+	
 	public static Transformation transform(final Project project, final DesignModel source) {
-		return new PriorityUrgencyInverter(project, source).transform();
+		return transform(defaultCfg(), project, source);
+	}
+	
+	public static Transformation transform(final PriorityUrgencyInverterConfiguration cfg, final Project project, final DesignModel source) {
+		return new PriorityUrgencyInverter(cfg, project, source).transform();
 	}
 	
 	private int highestPriorityValue = Integer.MIN_VALUE;
@@ -47,14 +88,19 @@ public class PriorityUrgencyInverter extends AbstractTransformation {
 	private List<PeriodicServerParameters> pssParamsToBeUpdated = new LinkedList<>();
 	private List<SoftwareSchedulableResource> pssToBeUpdated = new LinkedList<>();
 	private Set<Link> linksToBeUpdated = new LinkedHashSet<>();
+	private final PriorityUrgencyInverterConfiguration config;
 	
-	public PriorityUrgencyInverter(final Project project, final DesignModel source) {
+	public PriorityUrgencyInverter(final PriorityUrgencyInverterConfiguration cfg, final Project project, final DesignModel source) {
 		super(project, source, TRANS_NAME);
+		config = cfg;
 	}
 	
 	@Override
 	protected void finalize(final DesignModel target) {
-		if (highestOrderValue != Integer.MIN_VALUE) {
+		if (!config.isZeroBased) {
+			highestPriorityValue++;
+		}
+		if (config.withPSSOrder && highestOrderValue != Integer.MIN_VALUE) {
 			highestPriorityValue = highestPriorityValue + highestOrderValue - lowestOrderValue;
 		}
 		for(FixedPriorityParameters fpParam: fpParamsToBeUpdated) {
@@ -66,9 +112,11 @@ public class PriorityUrgencyInverter extends AbstractTransformation {
 		for(SoftwareSchedulableResource pss: pssToBeUpdated) {
 			final PosixSporadicServerBuilder pssBuilder = PosixSporadicServerBuilder.as(pss);
 			final int updatedPriority = pssBuilder.getBackgroundPriority();
-			final int order = pssBuilder.getOrder();
-			pssBuilder.ofBackgroundPriority(updatedPriority - order + lowestOrderValue);
-			pssBuilder.unsetOrder();
+			if (config.withPSSOrder) {
+				final int order = pssBuilder.getOrder();
+				pssBuilder.ofBackgroundPriority(updatedPriority - order + lowestOrderValue);
+				pssBuilder.unsetOrder();
+			}
 		}
 		for(Link lnk: linksToBeUpdated) {
 			lnk.setRationale(mainCtx);
@@ -97,7 +145,7 @@ public class PriorityUrgencyInverter extends AbstractTransformation {
 			}
 		}
 		if (source instanceof SoftwareSchedulableResource) {
-			if (PosixSporadicServerBuilder.hasPSSOrder((SoftwareSchedulableResource)source)) {
+			if (config.withPSSOrder && PosixSporadicServerBuilder.hasPSSOrder((SoftwareSchedulableResource)source)) {
 				final int order = PosixSporadicServerBuilder.as((SoftwareSchedulableResource)source).getOrder();
 				highestOrderValue = Integer.max(highestOrderValue, order);
 				lowestOrderValue = Integer.min(lowestOrderValue, order);

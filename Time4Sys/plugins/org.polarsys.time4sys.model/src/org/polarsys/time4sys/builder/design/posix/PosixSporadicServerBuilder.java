@@ -127,6 +127,10 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 		final String strVal = annotate(POSIX_URL).getDetails().get(ORDER_ATTR);
 		return Integer.parseInt(strVal);
 	}
+	
+	public boolean hasOrder() {
+		return annotate(POSIX_URL).getDetails().get(ORDER_ATTR) != null;
+	}
 
 	public PosixSporadicServerBuilder unsetOrder() {
 		unsetAnnotationAttr(POSIX_URL, ORDER_ATTR);
