@@ -26,6 +26,8 @@ import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.design.DesignPackage;
+import org.polarsys.time4sys.design.impl.DesignPackageImpl;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
@@ -35,6 +37,8 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
+import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
+import org.polarsys.time4sys.model.time4sys.impl.Time4sysPackageImpl;
 
 public class ProjectBuilder {
 
@@ -85,9 +89,11 @@ public class ProjectBuilder {
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("time4sys", new XMIResourceFactoryImpl());
 
+		Time4sysPackage dp = Time4sysPackageImpl.init();
+		//System.out.println(dp.getNsURI());
 		final ResourceSet resSet = new ResourceSetImpl();
 		final URI uri = URI.createFileURI(filepath);
-		System.out.println(new File(uri.toFileString()).getAbsolutePath());
+		//System.out.println(new File(uri.toFileString()).getAbsolutePath());
 		final org.eclipse.emf.ecore.resource.Resource resource = resSet.getResource(uri, true);
 		final EObject root = resource.getContents().get(0);
 		if (root instanceof Project) {
