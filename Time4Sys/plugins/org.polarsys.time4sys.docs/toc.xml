@@ -18,4 +18,7 @@
    <topic label="FirstStep">
       <anchor id="fs"/>
    </topic>
+   <topic label="Metamodel">
+      <anchor id="m2"/>
+   </topic>
 </toc>

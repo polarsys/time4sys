@@ -27,8 +27,11 @@
    <feature id="org.eclipse.sirius.runtime.ide.eef" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
-   <feature url="features/org.polarsys.time4sys.feature_0.0.1.qualifier.jar" id="org.polarsys.time4sys.feature" version="0.0.1.qualifier">
+   <feature id="org.polarsys.time4sys.feature" version="0.0.0">
       <category name="Time4Sys"/>
+   </feature>
+   <feature id="org.eclipse.sirius.specifier" version="0.0.0">
+      <category name="Time4Sys Dependencies"/>
    </feature>
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
@@ -40,8 +43,7 @@
          Install plugins required by Time4Sys (Sirius, Acceleo, EEF)
       </description>
    </category-def>
-   <repository-reference location="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.8/R20161202101843" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.0/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" enabled="true" />
 </site>

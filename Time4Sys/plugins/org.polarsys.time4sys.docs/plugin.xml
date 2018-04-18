@@ -26,5 +26,9 @@
             file="html/Time4SysUserInterface-toc.xml"
             primary="false">
       </toc>
+      <toc
+            file="html/Time4SysMetamodel-toc.xml"
+            primary="false">
+      </toc>
    </extension>
 </plugin>

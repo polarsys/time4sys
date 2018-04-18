@@ -15,6 +15,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="org.polarsys.time4sys.ui.perspective.Time4SysPerspective"
+            icon="icons/Time4Sys16x16.png"
             id="org.polarsys.time4sys.ui.perspective"
             name="Time4Sys">
          <description>
