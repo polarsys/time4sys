@@ -276,6 +276,7 @@ public class TaskDuplicatorTest {
 		final DesignBuilder resultingDesign = new DesignBuilder((DesignModel)design);
 		for(Step aStep: resultingDesign.allSteps()) {
 			assertNotNull(aStep.getName() + " shall be allocated to a SoftwareSchedulableResource.", aStep.getConcurRes());
+			assertNotNull(aStep.getConcurRes().getHost());
 		}
 		
 	}

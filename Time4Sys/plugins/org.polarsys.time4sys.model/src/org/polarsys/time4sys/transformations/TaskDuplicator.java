@@ -126,6 +126,8 @@ public class TaskDuplicator extends AbstractTransformation {
 		final SchedulableResource copyTask = copy.getConcurRes();
 		
 		final SchedulableResource targetTask = (SchedulableResource) copier.copy(copyTask);
+		targetTask.setHost(copyTask.getHost());
+		targetTask.setDependentScheduler(copyTask.getDependentScheduler());
 		registerCopyOf(tasksToBeLinked, targetTask, copyTask);
 		targetTask.setName(sourceTask.getName() + "_x_" + source.getName());
 		assert(copyTask.eContainer() != null);
