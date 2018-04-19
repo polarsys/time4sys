@@ -25,5 +25,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.coreelements.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.nfp.annotation.edit;visibility:=reexport,
- org.polarsys.time4sys.marte.sam.edit;visibility:=reexport
+ org.polarsys.time4sys.marte.sam.edit;visibility:=reexport,
+ org.eclipse.emf.transaction
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.emf.transaction.util

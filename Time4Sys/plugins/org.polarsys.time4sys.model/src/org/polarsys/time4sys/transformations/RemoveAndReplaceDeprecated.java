@@ -93,14 +93,18 @@ public class RemoveAndReplaceDeprecated {
 			if ("FixedPriority".equals(param.getName()) && !(param instanceof FixedPriorityParameters)) {
 				current.getSchedParams().remove(param);
 				final FixedPriorityParameters fpParam = GrmFactory.eINSTANCE.createFixedPriorityParameters();
+				fpParam.setName(org.polarsys.time4sys.builder.design.TaskBuilder.FP_POLICY_NAME);
 				fpParam.setPriority(Integer.parseInt(param.getValue()));
 				current.getSchedParams().add(fpParam);
 			}
 			if ("Deadline".equals(param.getName()) && !(param instanceof EDFParameters)) {
 				current.getSchedParams().remove(param);
-				final EDFParameters edfParam = GrmFactory.eINSTANCE.createEDFParameters();
-				edfParam.setDeadline(NfpFactory.eINSTANCE.createDurationFromString(param.getValue()));
-				current.getSchedParams().add(edfParam);
+				if (param.getValue() != null && !param.getValue().isEmpty()) {
+					final EDFParameters edfParam = GrmFactory.eINSTANCE.createEDFParameters();
+					edfParam.setDeadline(NfpFactory.eINSTANCE.createDurationFromString(param.getValue()));
+					edfParam.setName(org.polarsys.time4sys.builder.design.TaskBuilder.EDF_POLICY_NAME);
+					current.getSchedParams().add(edfParam);
+				}
 			}
 		}
 	}

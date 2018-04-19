@@ -39,8 +39,8 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
  */
 public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulableResource, TaskBuilder> {
 
-	private static final String EDF_POLICY_NAME = "EDF";
-	protected static final String FP_POLICY_NAME = "FixedPriority";
+	public static final String EDF_POLICY_NAME = "EDF";
+	public static final String FP_POLICY_NAME = "FixedPriority";
 	private static final EClass FP_PARAM_ECLASS = GrmPackage.eINSTANCE.getFixedPriorityParameters();
 	private static final EClass EDF_PARAM_ECLASS = GrmPackage.eINSTANCE.getEDFParameters();
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
