@@ -4,23 +4,73 @@
  
 === End To End Flow ===
  
-End to end flows represents a timing constraint between a stimuli and a step. To be consistent, the event starting the end to end flow and the step finishing it shall be connected by precedence relations.
-
+End to end flows represents a timing constraint between a stimuli (event) and a step. To be consistent, the event starting the end to end flow and the step finishing it shall be connected by precedence relations.
+To create an End to End Flow, one shall select a valid path starting from an event to a step which follow a path of input-output relations as in the following case:
 [[Image:../Images/EndToEndFlowCreation.png]]
 
 The path of the end to end flow is represented by its involved elements which can be defined in the End to End Flow diagram. Once the End To End Flow has been created with the previous method, a simple way to edit it is to created a specific diagram which allow you to define the path of your end to end flow by adding or removing involved elements.
-
 [[Image:../Images/EndToEndFlowEdition.png]]
 
 === Precedence Relations ===
 
+
+The semantic is the same as per UML 2.5. It can be seen as tokens passing. The cardinality of the pin indicates how much tokens it needs for the task to be activable, and how much at maximum it will consume.
+
+All in all, it enables to express advance activation patterns. For instance, all pattern that can be expressed with logical expressions can easily be encoded.
+
+{| class="wikitable"
+! 
+! And 
+! Or
+|- 
+! Output
+| [[Image:../Images/precedence-activation-out-and-pattern.png]]
+|[[Image:../Images/precedence-activation-out-or-pattern.png]]
+|-
+! Input 
+|[[Image:../Images/precedence-activation-in-and-pattern.png]]
+|[[Image:../Images/precedence-activation-in-or-pattern.png]]
+|}
+
+Some examples can be found below:
+
+*e = (b and c) or d:
+[[Image:../Images/precedence-activation-pattern0.png]] 
+
+*Another way of describing activation pattern based on CNF:
+[[Image:../Images/precedence-activation-pattern1.png]] 
+
+*Complex pattern of activations of the task T_E
+[[Image:../Images/precedence-activation-pattern2.png]] 
+
 === Behavior Scenario ===
 
-Behavior scenario are used to store steps. They does not influence the behavior of your system. However, you can use them to show 
+Behavior scenario are used to store steps. They does not influence the behavior of your system. However, you can use them to show or hide a specific set of steps.
+
+[[Image:../Images/Reference.png]]
+
 
 === Reference ===
 
 References are used to represent synchronization between event. If two event share the same reference, it means that they are synchronized.
 When two events does not share a reference, it means that there is an unknow offset between them.
+[[Image:../Images/Reference.png]] 
 
 == Simulation result model ==
+
+=== Slice ===
+
+A slice can represent a Resource, a Step or Step execution depending on its kind. It allows to reference all kinds of events (or sublices) related to the represented element. Thanks to this representation, it 
+
+=== Mapping ===
+
+The mapping part allows to link elements of the design model to the slice which represent them.
+
+=== Event ===
+
+Event represents all the changes happening during the simulation. The event kind represent the state taken by the related element (Activated, Running, Suspended, Blocked, Terminated or Deadline).
+
+
+
+
+

@@ -13,21 +13,25 @@ package org.polarsys.time4sys.odesign.refresh.extension;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.business.api.refresh.IRefreshExtension;
 import org.polarsys.time4sys.odesign.service.BehaviorScenarioServices;
+import org.polarsys.time4sys.odesign.service.DiagramServices;
 
 public class DesignRefreshExtension implements IRefreshExtension {
 
 	@Override
 	public void beforeRefresh(DDiagram arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	  /**
-	   * @see org.eclipse.sirius.business.api.refresh.IRefreshExtension#postRefresh(org.eclipse.sirius.DDiagram)
-	   */
-	  public void postRefresh(DDiagram diagram_p) {
-	      BehaviorScenarioServices.getService().updateBehaviorScenarioStyles(diagram_p);
-	      BehaviorScenarioServices.getService().updateETEFStyles(diagram_p);
-	    }
+	/**
+	 * @see org.eclipse.sirius.business.api.refresh.IRefreshExtension#postRefresh(org.eclipse.sirius.DDiagram)
+	 */
+	public void postRefresh(DDiagram diagram_p) {
+		if (DiagramServices.getDiagramServices().isFilterActivate("Hide End To End Flow Path / Show Behavior Scenario", diagram_p)) {
+			BehaviorScenarioServices.getService().updateBehaviorScenarioStyles(diagram_p);
+		} else {
+			BehaviorScenarioServices.getService().updateETEFStyles(diagram_p);
+		}
+	}
 
 }
