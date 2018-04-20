@@ -14,10 +14,12 @@ import java.io.IOException;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
@@ -150,5 +152,57 @@ public class Arinc653BuilderTest {
 			}
 			
 		}).count());
+	}
+	
+	@Test
+	public void testArinc653BuilderIncremental() {
+		// Given a referecne model
+		final Arinc653DesignBuilder design = Arinc653Builder.newDesign(theProject);
+		final Arinc653PlatformBuilder platform = design.hasAPlatform().called("CPU").thatRuns(
+				aMIF().called("MIF1").withNoOffset(),
+				aMIF().called("MIF2").withOffset("0ms"),
+				aMIF().called("MIF3").withNoOffset(),
+				aMIF().called("MIF4").withNoOffset()
+		).withMIFDuration("10ms");
+		final Arinc653MIFBuilder mif1 = platform.getMIF(0);
+		final Arinc653MIFBuilder mif2 = platform.getMIF(1);
+		final Arinc653MIFBuilder mif3 = platform.getMIF(2);
+		final Arinc653MIFBuilder mif4 = platform.getMIF(3);
+		final DesignModel designRef = design.build();
+		// When building incrementally
+		final ProjectBuilder theProjectInc = new ProjectBuilder();
+		final Arinc653DesignBuilder designInc = Arinc653Builder.newDesign(theProjectInc);
+		final Arinc653PlatformBuilder platformInc = design.hasAPlatform().called("CPU");
+		platformInc.withMIFDuration("10ms");
+		final Arinc653MIFBuilder mif1Inc = aMIF().called("MIF1").withNoOffset();
+		platformInc.addPartition(mif1Inc);
+		final Arinc653MIFBuilder mif2Inc = aMIF().called("MIF2").withOffset("0ms");
+		platformInc.addPartition(mif2Inc);
+		final Arinc653MIFBuilder mif3Inc = aMIF().called("MIF3").withNoOffset();
+		platformInc.addPartition(mif3Inc);
+		final Arinc653MIFBuilder mif4Inc = aMIF().called("MIF4").withNoOffset();
+		platformInc.addPartition(mif4Inc);
+		final DesignModel designFinal = design.build();
+		
+		// Then we have same final models
+		assertEquals(4, platform.countMIF());
+		assertNotNull(mif1);
+		assertEquals("MIF1", mif1.getName());
+		assertNotNull(mif1.getMIFDuration());
+		assertEquals("10ms", mif1.getMIFDuration().toString());
+		assertEquals("10ms", mif2.getMIFDuration().toString());
+		assertEquals("40ms", platform.getMAFDuration().toString());
+		
+		assertEquals(platform.countMIF(), platformInc.countMIF());
+		assertNotNull(mif1Inc);
+		assertEquals(mif1.getName(), mif1Inc.getName());
+		assertNotNull(mif1Inc.getMIFDuration());
+		assertEquals(mif1.getMIFDuration(), mif1Inc.getMIFDuration());
+		assertEquals(mif2.getMIFDuration(), mif2Inc.getMIFDuration());
+		assertEquals(platform.getMAFDuration(), platformInc.getMAFDuration());
+		assertEquals(designRef, designFinal);
+		
+		// Check structural equality
+		assertTrue(new EcoreUtil.EqualityHelper().equals(designRef, designFinal));
 	}
 }

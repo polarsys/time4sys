@@ -762,33 +762,6 @@ public interface GrmPackage extends EPackage {
 	int CLOCK_RESOURCE_OPERATION_COUNT = TIMING_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_END_POINT__PACKET_SIZE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Communication End Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_END_POINT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Communication End Point</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_END_POINT_OPERATION_COUNT = 0;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -913,6 +886,141 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_RESOURCE_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__EANNOTATIONS = COMMUNICATION_RESOURCE__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__NAME = COMMUNICATION_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__OWNED_RESOURCE = COMMUNICATION_RESOURCE__OWNED_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__RES_MULT = COMMUNICATION_RESOURCE__RES_MULT;
+
+	/**
+	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__IS_PROTECTED = COMMUNICATION_RESOURCE__IS_PROTECTED;
+
+	/**
+	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__IS_ACTIVE = COMMUNICATION_RESOURCE__IS_ACTIVE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__OWNED_PORT = COMMUNICATION_RESOURCE__OWNED_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__OWNED_CONNECTOR = COMMUNICATION_RESOURCE__OWNED_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>RServices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__RSERVICES = COMMUNICATION_RESOURCE__RSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Used By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__USED_BY = COMMUNICATION_RESOURCE__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__PSERVICES = COMMUNICATION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT__PACKET_SIZE = COMMUNICATION_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Communication End Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT_FEATURE_COUNT = COMMUNICATION_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT___GET_EANNOTATION__STRING = COMMUNICATION_RESOURCE___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Communication End Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_END_POINT_OPERATION_COUNT = COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3266,6 +3374,105 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_PACKAGE_OPERATION_COUNT = CoreElementsPackage.PACKAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__EANNOTATIONS = COMMUNICATION_END_POINT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__NAME = COMMUNICATION_END_POINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__OWNED_RESOURCE = COMMUNICATION_END_POINT__OWNED_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__RES_MULT = COMMUNICATION_END_POINT__RES_MULT;
+
+	/**
+	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__IS_PROTECTED = COMMUNICATION_END_POINT__IS_PROTECTED;
+
+	/**
+	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__IS_ACTIVE = COMMUNICATION_END_POINT__IS_ACTIVE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__OWNED_PORT = COMMUNICATION_END_POINT__OWNED_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__OWNED_CONNECTOR = COMMUNICATION_END_POINT__OWNED_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>RServices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__RSERVICES = COMMUNICATION_END_POINT__RSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Used By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__USED_BY = COMMUNICATION_END_POINT__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_PORT__PSERVICES = COMMUNICATION_END_POINT__PSERVICES;
+
+	/**
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3275,31 +3482,13 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_PORT__PACKET_SIZE = COMMUNICATION_END_POINT__PACKET_SIZE;
 
 	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_PORT__EANNOTATIONS = COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_PORT__NAME = COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>PInterface</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT__PINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
+	int RESOURCE_PORT__PINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>RInterface</b></em>' reference list.
@@ -3308,7 +3497,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT__RINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 3;
+	int RESOURCE_PORT__RINTERFACE = COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Port</em>' class.
@@ -3317,7 +3506,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT_FEATURE_COUNT = COMMUNICATION_END_POINT_FEATURE_COUNT + 4;
+	int RESOURCE_PORT_FEATURE_COUNT = COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3326,7 +3515,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT___GET_EANNOTATION__STRING = COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
+	int RESOURCE_PORT___GET_EANNOTATION__STRING = COMMUNICATION_END_POINT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Port</em>' class.
@@ -3335,7 +3524,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_PORT_OPERATION_COUNT = COMMUNICATION_END_POINT_OPERATION_COUNT + 1;
+	int RESOURCE_PORT_OPERATION_COUNT = COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3725,13 +3914,31 @@ public interface GrmPackage extends EPackage {
 	int SCHEDULABLE_RESOURCE_OPERATION_COUNT = CONCURRENCY_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SPECIFICATION__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The number of structural features of the '<em>Schedule Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_SPECIFICATION_FEATURE_COUNT = 0;
+	int SCHEDULE_SPECIFICATION_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULE_SPECIFICATION___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Schedule Specification</em>' class.
@@ -3740,7 +3947,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE_SPECIFICATION_OPERATION_COUNT = 0;
+	int SCHEDULE_SPECIFICATION_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4194,6 +4401,15 @@ public interface GrmPackage extends EPackage {
 	int TABLE_DRIVEN_SCHEDULE = 38;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE__EANNOTATIONS = SCHEDULE_SPECIFICATION__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Frame Cycle Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4219,6 +4435,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_DRIVEN_SCHEDULE_FEATURE_COUNT = SCHEDULE_SPECIFICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_DRIVEN_SCHEDULE___GET_EANNOTATION__STRING = SCHEDULE_SPECIFICATION___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Table Driven Schedule</em>' class.
@@ -4519,13 +4744,22 @@ public interface GrmPackage extends EPackage {
 	int TIMER_RESOURCE_OPERATION_COUNT = TIMING_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_DEMAND__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Usage</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int USAGE_DEMAND__USAGE = 0;
+	int USAGE_DEMAND__USAGE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Event</b></em>' attribute.
@@ -4534,7 +4768,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USAGE_DEMAND__EVENT = 1;
+	int USAGE_DEMAND__EVENT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Usage Demand</em>' class.
@@ -4543,7 +4777,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USAGE_DEMAND_FEATURE_COUNT = 2;
+	int USAGE_DEMAND_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_DEMAND___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Usage Demand</em>' class.
@@ -4552,7 +4795,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USAGE_DEMAND_OPERATION_COUNT = 0;
+	int USAGE_DEMAND_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.

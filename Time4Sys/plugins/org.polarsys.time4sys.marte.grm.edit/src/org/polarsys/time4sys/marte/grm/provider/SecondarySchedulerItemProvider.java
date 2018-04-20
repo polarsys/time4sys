@@ -141,6 +141,8 @@ public class SecondarySchedulerItemProvider extends SchedulerItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT ||
 			childFeature == GrmPackage.Literals.RESOURCE_BROKER__ACC_CTRL_POLICY ||
 			childFeature == GrmPackage.Literals.SCHEDULER__POLICY;
 

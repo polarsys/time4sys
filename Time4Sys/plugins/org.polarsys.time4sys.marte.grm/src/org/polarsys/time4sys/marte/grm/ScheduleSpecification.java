@@ -2,7 +2,7 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface ScheduleSpecification extends EObject {
+public interface ScheduleSpecification extends ModelElement {
 } // ScheduleSpecification

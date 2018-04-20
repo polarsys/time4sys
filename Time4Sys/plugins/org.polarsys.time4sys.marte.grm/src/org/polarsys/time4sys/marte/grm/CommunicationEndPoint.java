@@ -12,8 +12,6 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Communication End Point</b></em>'.
@@ -30,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface CommunicationEndPoint extends EObject {
+public interface CommunicationEndPoint extends CommunicationResource {
 	/**
 	 * Returns the value of the '<em><b>Packet Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->

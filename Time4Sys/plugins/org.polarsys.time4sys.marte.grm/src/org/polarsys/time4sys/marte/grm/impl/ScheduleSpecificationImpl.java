@@ -3,11 +3,9 @@
 package org.polarsys.time4sys.marte.grm.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ScheduleSpecification;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +14,7 @@ import org.polarsys.time4sys.marte.grm.ScheduleSpecification;
  *
  * @generated
  */
-public abstract class ScheduleSpecificationImpl extends MinimalEObjectImpl.Container implements ScheduleSpecification {
+public abstract class ScheduleSpecificationImpl extends ModelElementImpl implements ScheduleSpecification {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

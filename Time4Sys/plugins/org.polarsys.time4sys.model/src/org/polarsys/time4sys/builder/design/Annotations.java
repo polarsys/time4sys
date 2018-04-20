@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
+import org.polarsys.time4sys.marte.grm.TableDrivenSchedule;
 
 /**
  * @author loic
@@ -49,6 +51,20 @@ public class Annotations {
 			//obj.getEAnnotations().remove(annot);
 			EcoreUtil.delete(annot);
 		}
+	}
+	
+	public static EAnnotation setAttr(final EModelElement obj, String sourceurl, final String attrname, final String value) {
+		final EAnnotation annot = Annotations.annotate(obj, sourceurl);
+		annot.getDetails().put(attrname, value);
+		return annot;
+	}
+	
+	public static String getAttr(final EModelElement obj, String sourceurl, final String attrname) {
+		if (hasAnnotation(obj, sourceurl)) {
+			final EAnnotation annot = Annotations.annotate(obj, sourceurl);
+			return annot.getDetails().get(attrname);
+		}
+		return null;
 	}
 
 	/**

@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
@@ -60,6 +61,19 @@ public class DesignBuilder {
 	protected static GrmFactory grmFactory = GrmFactory.eINSTANCE;
 	protected static HrmFactory hrmFactory = HrmFactory.eINSTANCE;
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
+	
+
+	public static DesignBuilder containing(EObject value) {
+		value = searchDesign(value);
+		return new DesignBuilder((DesignModel)value);
+	}
+
+	public static DesignModel searchDesign(EObject value) {
+		while (value != null && !(value instanceof DesignModel)) {
+			value = value.eContainer();
+		}
+		return (DesignModel)value;
+	}
 
 	private DesignModel design;
 	private ProjectBuilder prjBuidler;

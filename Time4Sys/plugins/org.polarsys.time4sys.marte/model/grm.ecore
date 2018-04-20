@@ -7,7 +7,8 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AccessControlPolicy" eSuperTypes="core_elements.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClockResource" eSuperTypes="#//TimingResource"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true"
+      eSuperTypes="#//CommunicationResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationMedia" eSuperTypes="#//CommunicationResource #//ProcessingResource">
@@ -208,7 +209,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="schedParams" upperBound="-1"
         eType="#//SchedulingParameter" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScheduleSpecification" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleSpecification" abstract="true"
+      eSuperTypes="core_elements.ecore#//ModelElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchedulingParameter" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -264,7 +266,7 @@
     <eLiterals name="half_duplex" value="1"/>
     <eLiterals name="full_duplex" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UsageDemand">
+  <eClassifiers xsi:type="ecore:EClass" name="UsageDemand" eSuperTypes="core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="usage" upperBound="-1"
         eType="#//ResourceUsage" eOpposite="#//ResourceUsage/workload"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

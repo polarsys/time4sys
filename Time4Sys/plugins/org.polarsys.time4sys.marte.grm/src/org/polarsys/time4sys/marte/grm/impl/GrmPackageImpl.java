@@ -1959,6 +1959,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		// Add supertypes to classes
 		accessControlPolicyEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		clockResourceEClass.getESuperTypes().add(this.getTimingResource());
+		communicationEndPointEClass.getESuperTypes().add(this.getCommunicationResource());
 		communicationMediaEClass.getESuperTypes().add(this.getCommunicationResource());
 		communicationMediaEClass.getESuperTypes().add(this.getProcessingResource());
 		computingResourceEClass.getESuperTypes().add(this.getProcessingResource());
@@ -1987,6 +1988,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		resourceServiceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulerEClass.getESuperTypes().add(this.getResourceBroker());
 		schedulableResourceEClass.getESuperTypes().add(this.getConcurrencyResource());
+		scheduleSpecificationEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		schedulingParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulingPolicyEClass.getESuperTypes().add(this.getAccessControlPolicy());
 		secondarySchedulerEClass.getESuperTypes().add(this.getScheduler());
@@ -1997,6 +1999,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		tableEntryTypeEClass.getESuperTypes().add(this.getSchedulingParameter());
 		timingResourceEClass.getESuperTypes().add(this.getResource());
 		timerResourceEClass.getESuperTypes().add(this.getTimingResource());
+		usageDemandEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		usageTypedAmountEClass.getESuperTypes().add(this.getResource());
 
 		// Initialize classes, features, and operations; add parameters

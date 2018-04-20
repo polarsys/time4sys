@@ -106,6 +106,14 @@ public class GrmSwitch<T> extends Switch<T> {
 			case GrmPackage.COMMUNICATION_END_POINT: {
 				CommunicationEndPoint communicationEndPoint = (CommunicationEndPoint)theEObject;
 				T result = caseCommunicationEndPoint(communicationEndPoint);
+				if (result == null) result = caseCommunicationResource(communicationEndPoint);
+				if (result == null) result = caseResource(communicationEndPoint);
+				if (result == null) result = caseResourcePackageableElement(communicationEndPoint);
+				if (result == null) result = casePackageableElement(communicationEndPoint);
+				if (result == null) result = caseNamedElement(communicationEndPoint);
+				if (result == null) result = caseENamedElement(communicationEndPoint);
+				if (result == null) result = caseModelElement(communicationEndPoint);
+				if (result == null) result = caseEModelElement(communicationEndPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -384,6 +392,10 @@ public class GrmSwitch<T> extends Switch<T> {
 				ResourcePort resourcePort = (ResourcePort)theEObject;
 				T result = caseResourcePort(resourcePort);
 				if (result == null) result = caseCommunicationEndPoint(resourcePort);
+				if (result == null) result = caseCommunicationResource(resourcePort);
+				if (result == null) result = caseResource(resourcePort);
+				if (result == null) result = caseResourcePackageableElement(resourcePort);
+				if (result == null) result = casePackageableElement(resourcePort);
 				if (result == null) result = caseNamedElement(resourcePort);
 				if (result == null) result = caseENamedElement(resourcePort);
 				if (result == null) result = caseModelElement(resourcePort);
@@ -438,6 +450,8 @@ public class GrmSwitch<T> extends Switch<T> {
 			case GrmPackage.SCHEDULE_SPECIFICATION: {
 				ScheduleSpecification scheduleSpecification = (ScheduleSpecification)theEObject;
 				T result = caseScheduleSpecification(scheduleSpecification);
+				if (result == null) result = caseModelElement(scheduleSpecification);
+				if (result == null) result = caseEModelElement(scheduleSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -514,6 +528,8 @@ public class GrmSwitch<T> extends Switch<T> {
 				TableDrivenSchedule tableDrivenSchedule = (TableDrivenSchedule)theEObject;
 				T result = caseTableDrivenSchedule(tableDrivenSchedule);
 				if (result == null) result = caseScheduleSpecification(tableDrivenSchedule);
+				if (result == null) result = caseModelElement(tableDrivenSchedule);
+				if (result == null) result = caseEModelElement(tableDrivenSchedule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -558,6 +574,8 @@ public class GrmSwitch<T> extends Switch<T> {
 			case GrmPackage.USAGE_DEMAND: {
 				UsageDemand usageDemand = (UsageDemand)theEObject;
 				T result = caseUsageDemand(usageDemand);
+				if (result == null) result = caseModelElement(usageDemand);
+				if (result == null) result = caseEModelElement(usageDemand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
