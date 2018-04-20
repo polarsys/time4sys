@@ -264,7 +264,17 @@ public class GrmValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCommunicationEndPoint(CommunicationEndPoint communicationEndPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(communicationEndPoint, diagnostics, context);
+		if (!validate_NoCircularContainment(communicationEndPoint, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(communicationEndPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(communicationEndPoint, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -13,7 +13,7 @@
 package org.polarsys.time4sys.marte.grm;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface UsageDemand extends EObject {
+public interface UsageDemand extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Usage</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.grm.ResourceUsage}.

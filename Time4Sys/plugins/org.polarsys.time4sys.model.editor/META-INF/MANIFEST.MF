@@ -8,7 +8,8 @@ Bundle-Activator: org.polarsys.time4sys.model.time4sys.presentation.Time4sysEdit
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: org.polarsys.time4sys.model.time4sys.presentation
+Export-Package: org.polarsys.time4sys.model.time4sys.presentation,
+ org.polarsys.time4sys.simulation.commands
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model;visibility:=reexport,
  org.eclipse.core.resources;visibility:=reexport,

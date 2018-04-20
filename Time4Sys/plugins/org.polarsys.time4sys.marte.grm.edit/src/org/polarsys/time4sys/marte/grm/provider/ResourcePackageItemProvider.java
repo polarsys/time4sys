@@ -169,6 +169,11 @@ public class ResourcePackageItemProvider extends PackageItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+				 GrmFactory.eINSTANCE.createResourcePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 				 GrmFactory.eINSTANCE.createScheduler()));
 
 		newChildDescriptors.add
