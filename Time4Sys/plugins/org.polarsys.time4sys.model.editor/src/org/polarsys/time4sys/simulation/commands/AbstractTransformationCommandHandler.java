@@ -9,7 +9,6 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.ISelection;
@@ -68,12 +67,11 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 	private void execute(final ITreeSelection selection) {
 		final Iterator<?> it = selection.iterator();
 		while(it.hasNext()) {
-			final Object obj = it.next();
-			if (clazz.isInstance(obj)) {
+			final T obj = adapt(it.next());
+			if (obj != null) {
 				final TransactionalEditingDomain theDomain = TransactionUtil.getEditingDomain(obj);
-				final TransfoRunnable<T, R> aCmd = createRecordingCommand(theDomain, (T)obj);
+				final TransfoRunnable<T, R> aCmd = createRecordingCommand(theDomain, obj);
 				aCmd.project = getProject((EObject)obj);
-				final RunnableWithResult<?> privileged;
 				if (theDomain == null) {
 					aCmd.doExecute();
 				} else {
@@ -81,6 +79,13 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 				}
 			}
 		}
+	}
+
+	protected T adapt(final Object obj) {
+		if (clazz.isInstance(obj)) {
+			return (T)obj;
+		}
+		return null;
 	}
 
 	protected abstract TransfoRunnable<T, R> createRecordingCommand(final TransactionalEditingDomain domain, final T simu);
