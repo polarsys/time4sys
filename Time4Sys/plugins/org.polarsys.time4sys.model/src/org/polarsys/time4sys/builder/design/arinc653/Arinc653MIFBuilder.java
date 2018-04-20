@@ -88,6 +88,7 @@ public class Arinc653MIFBuilder {
 
 	public Arinc653MIFBuilder withOffset(final String offset) {
 		// TODO Auto-generated method stub
+		// throw new UnsupportedOperationException("Not yet implemented");
 		return this;
 	}
 
@@ -118,6 +119,9 @@ public class Arinc653MIFBuilder {
 	public Duration getMIFDuration() {
 		
 		final EList<Duration> timeSlots = getOrCreateTableEntry().getTimeSlot();
+		if (timeSlots == null || timeSlots.isEmpty()) {
+			return null;
+		}
 		return timeSlots.get(0);
 	}
 

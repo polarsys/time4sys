@@ -20,6 +20,7 @@ import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
@@ -31,7 +32,6 @@ import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareConcurrentResource;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
-import org.polarsys.time4sys.marte.srm.SoftwareScheduler;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**
@@ -53,8 +53,13 @@ public class ProcessorBuilder {
 			 final SchedPolicyKind polKind) {
 		
 		proc.getOwnedResource().add(sched);
-		final SchedulingPolicy pol = grmFactory.createSchedulingPolicy(polKind);
-		sched.setPolicy(pol);
+		final SchedulingPolicy pol;
+		if (sched.eIsSet(GrmPackage.eINSTANCE.getScheduler_Policy())) {
+			pol = sched.getPolicy();
+		} else {
+			pol = grmFactory.createSchedulingPolicy(polKind);
+			sched.setPolicy(pol);
+		}
 		for(Resource res: proc.getOwnedResource()) {
 			if (res instanceof SchedulableResource) {
 				sched.getSchedulableResource().add((SchedulableResource)res);
@@ -66,11 +71,18 @@ public class ProcessorBuilder {
 		return sched;
 	}
 	
-	public static SoftwareScheduler setSchedulerPolicy(final ProcessingResource proc, final SchedPolicyKind polKind) {
-		final SoftwareScheduler sched = srmFactory.createSoftwareScheduler();
+	public static Scheduler setSchedulerPolicy(final ProcessingResource proc, final SchedPolicyKind polKind) {
+		final Scheduler sched;
+		if (proc.eIsSet(GrmPackage.eINSTANCE.getProcessingResource_MainScheduler())) {
+			sched = proc.getMainScheduler();
+		} else {
+			sched = srmFactory.createSoftwareScheduler();
+			proc.setMainScheduler(sched);
+		}
 		initSchedulerPolicy(sched, proc, polKind);
-		sched.getProcessingUnits().add(proc);
-		proc.setMainScheduler(sched);
+		if (!sched.getProcessingUnits().contains(proc)) {
+			sched.getProcessingUnits().add(proc);
+		}
 		return sched;
 	}
 

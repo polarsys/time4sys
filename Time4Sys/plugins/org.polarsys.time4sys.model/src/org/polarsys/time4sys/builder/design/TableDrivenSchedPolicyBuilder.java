@@ -13,6 +13,8 @@ package org.polarsys.time4sys.builder.design;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.eclipse.emf.ecore.EAnnotation;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
@@ -29,6 +31,8 @@ import org.polarsys.time4sys.marte.nfp.NfpFactory;
  */
 public class TableDrivenSchedPolicyBuilder {
 
+	public static final String MIF_ATTR = "mif_duration";
+
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 	
 	private Scheduler scheduler;
@@ -44,6 +48,11 @@ public class TableDrivenSchedPolicyBuilder {
 	}
 
 	public void withMIFDuration(final Duration mif) {
+		Annotations.setAttr(schedule, Arinc653Builder.ARINC653_URL, MIF_ATTR, mif.toString());
+		updateScheduleEntries(mif);
+	}
+
+	public void updateScheduleEntries(final Duration mif) {
 		Duration currentOffset = NfpFactory.eINSTANCE.createDurationFromString("0ms");
 		for(TableEntryType entry: schedule.getEntries()) {
 			entry.getTimeSlot().clear();
@@ -62,6 +71,9 @@ public class TableDrivenSchedPolicyBuilder {
 		}
 		if (allMIFs.size() == 1) {
 			return allMIFs.iterator().next();
+		} else if (allMIFs.isEmpty()) {
+			final String mifValue = Annotations.getAttr(schedule, Arinc653Builder.ARINC653_URL, MIF_ATTR);
+			return NfpFactory.eINSTANCE.createDurationFromString(mifValue); 
 		} else {
 			throw new IllegalStateException("MIFs' duration are not all the same.");
 		}

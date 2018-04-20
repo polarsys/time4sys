@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design.arinc653;
 
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.design.DesignModel;
@@ -20,6 +21,11 @@ import org.polarsys.time4sys.design.DesignModel;
  */
 public class Arinc653DesignBuilder extends DesignBuilder {
 
+	public static Arinc653DesignBuilder containing(EObject value) {
+		value = searchDesign(value);
+		return new Arinc653DesignBuilder((DesignModel)value);
+	}
+	
 	/**
 	 * @param model
 	 */

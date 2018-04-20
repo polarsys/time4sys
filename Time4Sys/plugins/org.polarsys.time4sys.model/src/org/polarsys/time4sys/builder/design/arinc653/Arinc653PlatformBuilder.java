@@ -27,18 +27,33 @@ import org.polarsys.time4sys.marte.nfp.NfpFactory;
 public class Arinc653PlatformBuilder {
 
 	private static final String PLATFORM_ATTR = "platform";
+	
+
+	public static Arinc653PlatformBuilder as(final HardwareProcessor value) {
+		final Arinc653DesignBuilder db = Arinc653DesignBuilder.containing(value);
+		return new Arinc653PlatformBuilder(db, value);
+	}
+	
 	private ProcessorBuilder processorBuilder;
 	private TableDrivenSchedPolicyBuilder schedBuilder;
 	private Arinc653DesignBuilder designBuilder;
 	private Arinc653MIFBuilder[] mifsArray;
 	private Duration mifDuration;
 
-	public Arinc653PlatformBuilder(final Arinc653DesignBuilder builder) {
+	public Arinc653PlatformBuilder(final Arinc653DesignBuilder designBuilder) {
+		this(designBuilder, designBuilder.hasAProcessor());
+	}
+	
+	public Arinc653PlatformBuilder(final Arinc653DesignBuilder builder, final ProcessorBuilder procBuilder) {
 		designBuilder = builder;
-		processorBuilder = designBuilder.hasAProcessor();
+		processorBuilder = procBuilder;
 		final EAnnotation annot = processorBuilder.annotate(Arinc653Builder.ARINC653_URL);
 		annot.getDetails().put(PLATFORM_ATTR, Boolean.TRUE.toString());
 		schedBuilder = processorBuilder.underTableDrivenSchedPolicy();
+	}
+
+	public Arinc653PlatformBuilder(final Arinc653DesignBuilder db, final HardwareProcessor proc) {
+		this(db, new ProcessorBuilder(db, proc));
 	}
 
 	public Arinc653PlatformBuilder called(final String name) {
@@ -52,10 +67,7 @@ public class Arinc653PlatformBuilder {
 		assert(processorBuilder != null);
 		mifsArray = mifs;
 		for(Arinc653MIFBuilder aMIF: mifs) {
-			processorBuilder.addOwnedResource(aMIF.build(designBuilder));
-			processorBuilder.addSchedulable(aMIF.build(designBuilder));
-			schedBuilder.addEntry(aMIF.getOrCreateTableEntry());
-			aMIF.build(designBuilder);
+			addPartition(aMIF);
 		}
 		if (mifDuration != null) {
 			schedBuilder.withMIFDuration(mifDuration);
@@ -97,6 +109,23 @@ public class Arinc653PlatformBuilder {
 		}
 		schedBuilder.build();
 		return result;
+	}
+
+	public Arinc653PlatformBuilder addPartition(final Arinc653MIFBuilder aMIF) {
+		Duration mif = null;
+		try {
+			mif = schedBuilder.getMIFDuration();
+		} catch (Exception e) {
+			
+		}
+		processorBuilder.addOwnedResource(aMIF.build(designBuilder));
+		processorBuilder.addSchedulable(aMIF.build(designBuilder));
+		schedBuilder.addEntry(aMIF.getOrCreateTableEntry());
+		aMIF.build(designBuilder);
+		if (mif != null) {
+			schedBuilder.updateScheduleEntries(mif);
+		}
+		return this;
 	}
 
 }
