@@ -1,0 +1,35 @@
+= Time4Sys Extensions =            
+ 
+== Bridge with other modeling tools==
+
+Time4Sys can be used as an intermediate platform to simulate the behavior of your model with the analysis tools provided within Time4Sys.
+However, specific viewpoints are needed to be able to represent the real time information.
+
+=== Capella ===
+
+Tideal is the viewpoint to design the real time information on your Capella models.
+
+*PAB Diagram
+[[Image:../Images/PABDiagram.png]]
+
+* End To End Flow Diagram:
+[[Image:../Images/ScenarioDiagram.png]]
+
+For more information, please go to: http://capella.artal-group.com/tideal/
+
+== Simulation tools==
+
+=== Pegase ===
+
+A basic version of Pegase is available at the following update site: http://eclipse.realtimeatwotk.com. 
+
+For more information, please go to: http://www.realtimeatwork.com/software/rtaw-pegase/
+
+== Result visualization ==
+
+=== Timing Graphics ===
+
+Simulation results can be exported and visualized with Timing Graphics.
+[[Image:../Images/TimingGraphics.png]]
+
+For more information, please go to: http://www.linkconet.com/TimingGraphics.html

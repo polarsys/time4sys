@@ -33,6 +33,18 @@
    <feature id="org.eclipse.sirius.specifier" version="0.0.0">
       <category name="Time4Sys Dependencies"/>
    </feature>
+   <feature url="features/org.eclipse.amalgam.explorer.activity_2.0.0.201709230612.jar" id="org.eclipse.amalgam.explorer.activity" version="2.0.0.201709230612">
+      <category name="Time4Sys Dependencies"/>
+   </feature>
+   <feature url="features/org.eclipse.amalgam.explorer.contextual_2.0.0.201709230612.jar" id="org.eclipse.amalgam.explorer.contextual" version="2.0.0.201709230612">
+      <category name="Time4Sys Dependencies"/>
+   </feature>
+   <feature url="features/org.eclipse.amalgam.explorer.contextual.core_2.0.0.201709230612.jar" id="org.eclipse.amalgam.explorer.contextual.core" version="2.0.0.201709230612">
+      <category name="Time4Sys Dependencies"/>
+   </feature>
+   <feature url="features/org.eclipse.amalgam.explorer.contextual.sirius_2.0.0.201709230612.jar" id="org.eclipse.amalgam.explorer.contextual.sirius" version="2.0.0.201709230612">
+      <category name="Time4Sys Dependencies"/>
+   </feature>
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
          Install Time4Sys plugins.

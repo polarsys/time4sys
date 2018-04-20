@@ -1,0 +1,13 @@
+= Time4Sys Results =            
+ 
+== Simulation==
+
+Simulation results can be exported to html:
+[[Image:../Images/ExportAsHTML.png]]
+
+And visualized in a browser:
+[[Image:../Images/ResultsVisualization.png]]
+
+== Analysis ==
+
+During analysis, a transformed design is created. Depending on the tool used for analysis, End to End flows of the derived model can have an End To End Time which is the estimated (calculated or simulated) time taken to go through the End To End Flow.
