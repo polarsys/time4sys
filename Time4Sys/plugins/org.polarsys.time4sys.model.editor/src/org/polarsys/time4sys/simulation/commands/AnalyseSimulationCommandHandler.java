@@ -11,7 +11,7 @@ public class AnalyseSimulationCommandHandler extends AbstractTransformationComma
 	public static class AnalyseSimulationRunnable extends TransfoRunnable<Simulation, Transformation> {
 		
 		public AnalyseSimulationRunnable(final TransactionalEditingDomain domain, final Simulation value) {
-			super(domain, value);
+			super(domain, value, "Analyse Simulation");
 		}
 
 		public void doExecute() {

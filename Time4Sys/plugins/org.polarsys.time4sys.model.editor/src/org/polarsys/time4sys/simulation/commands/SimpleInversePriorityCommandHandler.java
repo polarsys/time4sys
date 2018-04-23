@@ -10,7 +10,7 @@ public class SimpleInversePriorityCommandHandler extends AbstractTransformationC
 	public static class SimpleInversePriorityRunnable extends TransfoRunnable<DesignModel, Transformation> {
 
 		public SimpleInversePriorityRunnable(final TransactionalEditingDomain domain, final DesignModel value) {
-			super(domain, value);
+			super(domain, value, "Simple Priority Inversion");
 		}
 
 		@Override

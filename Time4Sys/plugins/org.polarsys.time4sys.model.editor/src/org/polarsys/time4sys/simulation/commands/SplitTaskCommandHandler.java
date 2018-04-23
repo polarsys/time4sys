@@ -10,7 +10,7 @@ public class SplitTaskCommandHandler extends AbstractTransformationCommandHandle
 	public static class TransfoCommand extends TransfoRunnable<DesignModel, Transformation> {
 
 		public TransfoCommand(final TransactionalEditingDomain domain, final DesignModel value) {
-			super(domain, value);
+			super(domain, value, "Split Tasks");
 		}
 
 		@Override

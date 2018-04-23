@@ -9,7 +9,7 @@ public class UpgradeModelCommandHandler extends AbstractTransformationCommandHan
 	public static class UpgradeModelRunnable extends TransfoRunnable<Project, Project> {
 
 		public UpgradeModelRunnable(final TransactionalEditingDomain domain, final Project value) {
-			super(domain, value);
+			super(domain, value, "Remove deprecated");
 		}
 
 		@Override

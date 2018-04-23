@@ -17,7 +17,7 @@ public class AddPartitionHandler  extends AbstractTransformationCommandHandler<H
 	public static class TransfoCommand extends TransfoRunnable<HardwareProcessor, SoftwareSchedulableResource> {
 
 		public TransfoCommand(final TransactionalEditingDomain domain, final HardwareProcessor value) {
-			super(domain, value);
+			super(domain, value, "Arinc653 partition creation");
 		}
 
 		@Override
