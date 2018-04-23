@@ -41,7 +41,6 @@ org.polarsys.time4sys.ui.perspective
       </win>
    </launcher>
 
-
    <vm>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</windows>
    </vm>
@@ -164,7 +163,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <feature id="org.eclipse.amalgam.explorer.activity"/>
       <feature id="org.eclipse.amalgam.explorer.contextual"/>
       <feature id="org.eclipse.amalgam.explorer.contextual.core"/>
-      <feature id="org.eclipse.emf.eef.runtime-feature"/>
       <feature id="org.eclipse.pde"/>
       <feature id="org.eclipse.emf.edit.ui"/>
       <feature id="org.polarsys.time4sys.feature"/>
