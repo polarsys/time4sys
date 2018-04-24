@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.emf.ecore.EAnnotation;
+import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.design.TableDrivenSchedPolicyBuilder;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
@@ -34,6 +35,17 @@ public class Arinc653PlatformBuilder {
 		return new Arinc653PlatformBuilder(db, value);
 	}
 	
+	public static boolean isInstance(final HardwareProcessor proc) {
+		final String platAttr = Annotations.getAttr(proc, Arinc653Builder.ARINC653_URL, PLATFORM_ATTR);
+		if (platAttr != null) {
+			try {
+				return Boolean.parseBoolean(platAttr);
+			} catch (Exception e) {
+			}
+		}
+		return false;
+	}
+	
 	private ProcessorBuilder processorBuilder;
 	private TableDrivenSchedPolicyBuilder schedBuilder;
 	private Arinc653DesignBuilder designBuilder;
@@ -48,8 +60,14 @@ public class Arinc653PlatformBuilder {
 		designBuilder = builder;
 		processorBuilder = procBuilder;
 		final EAnnotation annot = processorBuilder.annotate(Arinc653Builder.ARINC653_URL);
-		annot.getDetails().put(PLATFORM_ATTR, Boolean.TRUE.toString());
+		if (!Boolean.TRUE.toString().equals(annot.getDetails().get(PLATFORM_ATTR))) {
+			annot.getDetails().put(PLATFORM_ATTR, Boolean.TRUE.toString());
+		}
 		schedBuilder = processorBuilder.underTableDrivenSchedPolicy();
+	}
+	
+	public TableDrivenSchedPolicyBuilder getSchedBuilder() {
+		return schedBuilder;
 	}
 
 	public Arinc653PlatformBuilder(final Arinc653DesignBuilder db, final HardwareProcessor proc) {
@@ -126,6 +144,13 @@ public class Arinc653PlatformBuilder {
 			schedBuilder.updateScheduleEntries(mif);
 		}
 		return this;
+	}
+
+	/**
+	 * Mark the underlying processor as not an Arinc653 platform.
+	 */
+	public void setNotAPlatform() {
+		Annotations.setAttr(processorBuilder.build(), Arinc653Builder.ARINC653_URL, PLATFORM_ATTR, Boolean.FALSE.toString());
 	}
 
 }

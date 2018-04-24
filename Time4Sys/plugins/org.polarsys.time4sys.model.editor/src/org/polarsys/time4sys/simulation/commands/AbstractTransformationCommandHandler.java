@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2018 RealTime-at-Work and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Loïc Fejoz - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.time4sys.simulation.commands;
 
 import java.lang.reflect.InvocationTargetException;
@@ -9,14 +19,11 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ITreeSelection;
@@ -28,79 +35,7 @@ import org.polarsys.time4sys.model.time4sys.Project;
 
 public abstract class AbstractTransformationCommandHandler<T extends EObject, R> extends AbstractHandler {
 	
-	/**
-	 * A simple wrapper to avoid the fact that a RecordingCommand expect a domain
-	 * to get the current transaction.
-	 * Indeed a recording command does not work on EMF Editor like the Time4SysEditor.
-	 * @author loic
-	 *
-	 */
-	public static class TransfoCmdWrapper implements Command {
-		
-		protected TransfoRunnable<?, ?> underlying;
-
-		public TransfoCmdWrapper(final TransfoRunnable<?, ?> value) {
-			underlying = value;
-		}
-
-		@Override
-		public boolean canExecute() {
-			return underlying.canExecute();
-		}
-
-		@Override
-		public void execute() {
-			underlying.doExecute();
-		}
-
-		@Override
-		public boolean canUndo() {
-			return underlying.canUndo();
-		}
-
-		@Override
-		public void undo() {
-			underlying.undo();
-		}
-
-		@Override
-		public void redo() {
-			underlying.redo();
-		}
-
-		@Override
-		public Collection<?> getResult() {
-			return underlying.getResult();
-		}
-
-		@Override
-		public Collection<?> getAffectedObjects() {
-			return underlying.getAffectedObjects();
-		}
-
-		@Override
-		public String getLabel() {
-			return underlying.getLabel();
-		}
-
-		@Override
-		public String getDescription() {
-			return underlying.getDescription();
-		}
-
-		@Override
-		public void dispose() {
-			underlying.dispose();
-		}
-
-		@Override
-		public Command chain(Command command) {
-			return underlying.chain(command);
-		}
-		
-	}
-	
-	public static abstract class TransfoRunnable<T, R> extends RecordingCommand {
+	public static abstract class TransfoRunnable<T, R> extends AutoRecordingCommand {
 
 		protected final T obj;
 		protected Project project;
@@ -112,9 +47,6 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 			obj = value;
 			theDomain = domain;
 		}
-		
-		@Override
-		protected abstract void doExecute();
 		
 		protected void setResult(final R value) {
 			result = value;
@@ -175,22 +107,10 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 				final T obj = adapt(it.next());
 				if (obj != null) {
 					final Project project = getProject((EObject) obj);
-					final TransactionalEditingDomain theDomain = TransactionUtil.getEditingDomain(project.eResource());
-					final CommandStack commandStack = getCommandStack(window, theDomain);
-					final TransfoRunnable<T, R> aCmd = createRecordingCommand(theDomain, obj);
+					final CommandRunner cmdRunner = new CommandRunner(window, project);
+					final TransfoRunnable<T, R> aCmd = createRecordingCommand(cmdRunner.getDomain(), obj);
 					aCmd.project = project;
-					if (commandStack == null) {
-						aCmd.doExecute();
-					} else {
-						final Command theCmd;
-						// Do we need to wrap RecordingCommand that expect a transaction (thus a domain)?
-						if (theDomain == null) {
-							theCmd = new TransfoCmdWrapper(aCmd);
-						} else {
-							theCmd = aCmd;
-						}
-						commandStack.execute(theCmd);
-					}
+					cmdRunner.execute(aCmd);
 				}
 				monitor.worked(1);
 			}
