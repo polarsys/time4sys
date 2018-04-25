@@ -96,7 +96,11 @@ public class PlatformPropertySource implements IPropertySource {
 		if (id == IS_PLATFORM_ATTR) {
 			return (procBuilder == null) ? "False" : "True";
 		} else if (id == MIF_ATTR) {
-			return procBuilder.getSchedBuilder().getMIFDuration().toString();
+			try {
+				return procBuilder.getSchedBuilder().getMIFDuration().toString();
+			} catch (IllegalStateException e) {
+				return null;
+			}
 		} else if (id == MAF_ATTR) {
 			return procBuilder.getMAFDuration().toString();
 		} else if (id == MIF_COUNT_ATTR) {
@@ -166,6 +170,7 @@ public class PlatformPropertySource implements IPropertySource {
 			@Override
 			public void doExecute() {
 				procBuilder.withMIFDuration(value.toString());
+				procBuilder.build();
 			}
 		};
 		return aCmd;

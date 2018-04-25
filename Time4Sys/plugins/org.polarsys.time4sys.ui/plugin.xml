@@ -117,8 +117,7 @@
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
-            contributorId="org.eclipse.sirius.diagram.ui"
-            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+            contributorId="org.eclipse.sirius.diagram.ui">
          <propertyCategory
                category="default">
          </propertyCategory>

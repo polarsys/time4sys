@@ -26,17 +26,24 @@ import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
- * @author Utilisateur
+ * @author Loïc Fejoz
  *
  */
 public class Arinc653MIFBuilder {
 	
 	public static final String PARTITION_ATTR = "partition";
+	
+
+	public static Arinc653MIFBuilder as(final SoftwareSchedulableResource value) {
+		final Arinc653DesignBuilder db = Arinc653DesignBuilder.containing(value);
+		return new Arinc653MIFBuilder(db, value);
+	}
 
 	public static Arinc653MIFBuilder aMIF() {
 		return new Arinc653MIFBuilder();
@@ -61,10 +68,20 @@ public class Arinc653MIFBuilder {
 	private SecondaryScheduler sched;
 	private String timeBudget;
 	private ReferenceBuilder ref;
+	private ReferenceBuilder startRef;
 	
 	public Arinc653MIFBuilder() {
 		taskBuilder = new TaskBuilder();
 		taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
+	}
+
+	public Arinc653MIFBuilder(Arinc653DesignBuilder db, SoftwareSchedulableResource value) {
+		taskBuilder = new TaskBuilder(db, value);
+		designBuilder = db;
+		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
+		if (!Boolean.TRUE.toString().equals(annot.getDetails().get(PARTITION_ATTR))) {
+			annot.getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
+		}
 	}
 
 	public Arinc653MIFBuilder called(String value) {
@@ -141,6 +158,9 @@ public class Arinc653MIFBuilder {
 			}
 		}
 		getOrCreateTableEntry().setName(getName() + " Slot");
+		if (startRef != null) {
+			startRef.called(getName() + "_start");
+		}
 		return result;
 	}
 
@@ -225,6 +245,21 @@ public class Arinc653MIFBuilder {
 			}
 		}
 		return ref;
+	}
+
+	public Arinc653PlatformBuilder getPlatform() {
+		final EObject container = taskBuilder.build().eContainer();
+		if (container instanceof HardwareProcessor) {
+			final Arinc653PlatformBuilder platform = Arinc653PlatformBuilder.as((HardwareProcessor)container);
+			platform.addPartition(this);
+			return platform;
+		}
+		return null;
+	}
+
+	public ReferenceBuilder hasAReference() {
+		startRef = designBuilder.hasAReference();
+		return startRef;
 	}
 
 }

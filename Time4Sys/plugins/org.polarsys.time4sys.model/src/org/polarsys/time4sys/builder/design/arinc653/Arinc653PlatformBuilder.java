@@ -122,8 +122,10 @@ public class Arinc653PlatformBuilder {
 
 	public HardwareProcessor build() {
 		final HardwareProcessor result = processorBuilder.build();
-		for(Arinc653MIFBuilder mifB: mifsArray) {
-			mifB.build(designBuilder);
+		if (mifsArray != null) {
+			for(Arinc653MIFBuilder mifB: mifsArray) {
+				mifB.build(designBuilder);
+			}
 		}
 		schedBuilder.build();
 		return result;
