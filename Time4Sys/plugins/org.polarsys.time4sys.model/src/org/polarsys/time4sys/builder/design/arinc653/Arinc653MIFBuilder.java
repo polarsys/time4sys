@@ -40,6 +40,7 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 public class Arinc653MIFBuilder {
 	
 	public static final String PARTITION_ATTR = "partition";
+	public static final String REF_ATTR = "reference";
 	
 	public static boolean hasASecondaryScheduler(final SoftwareSchedulableResource result) {
 		return result.getOwnedResource().stream().anyMatch(new Predicate<Resource>() {
@@ -303,7 +304,17 @@ public class Arinc653MIFBuilder {
 	}
 
 	public ReferenceBuilder hasAReference() {
-		startRef = designBuilder.hasAReference();
+		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
+		for(EObject obj: annot.getReferences()) {
+			if (obj instanceof Reference) {
+				startRef = new ReferenceBuilder((Reference)obj);
+				break;
+			}
+		}
+		if (startRef == null) {
+			startRef = designBuilder.hasAReference();
+			annot.getReferences().add(startRef.build());
+		}
 		return startRef;
 	}
 
