@@ -11,6 +11,7 @@
 package org.polarsys.time4sys.odesign.actions.extensions;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
@@ -33,7 +34,7 @@ public class Arinc653PlatformCreation implements IExternalJavaAction {
 		final Object obj = parameters.get("proc");
 		final HardwareProcessor proc = BehaviorScenarioServices.unwrap(obj, HardwareProcessor.class);
 		if (proc != null) {
-			Arinc653PlatformBuilder.as(proc).build();
+			BehaviorScenarioServices.transformAsArinc653Platform(null, Collections.singletonList((EObject)proc));
 		}
 	}
 

@@ -11,6 +11,7 @@
 package org.polarsys.time4sys.odesign.actions.extensions;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
@@ -33,9 +34,7 @@ public class Arinc653PartitionCreation implements IExternalJavaAction {
 		final Object obj = parameters.get("task");
 		final SoftwareSchedulableResource proc = BehaviorScenarioServices.unwrap(obj, SoftwareSchedulableResource.class);
 		if (proc != null) {
-			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(proc);
-			partition.hasAReference();
-			partition.getPlatform().build();
+			BehaviorScenarioServices.transformAsArinc653Partition(null, Collections.singletonList((EObject)proc));
 		}
 	}
 

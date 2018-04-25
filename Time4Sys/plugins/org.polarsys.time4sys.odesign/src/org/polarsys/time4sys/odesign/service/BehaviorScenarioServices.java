@@ -986,7 +986,7 @@ public class BehaviorScenarioServices {
 		for(EObject obj: views) {
 			final HardwareProcessor proc = unwrap(obj, HardwareProcessor.class);
 			assert(proc != null);
-			Arinc653PlatformBuilder.as(proc);
+			Arinc653PlatformBuilder.as(proc).build();
 		}
 	}
 	
@@ -1004,9 +1004,11 @@ public class BehaviorScenarioServices {
 
 	public static void transformAsArinc653Partition(final EObject context, final List<EObject> views) {
 		for(EObject obj: views) {
-			final SoftwareSchedulableResource proc = unwrap(obj, SoftwareSchedulableResource.class);
-			assert(proc != null);
-			Arinc653MIFBuilder.as(proc);
+			final SoftwareSchedulableResource task = unwrap(obj, SoftwareSchedulableResource.class);
+			assert(task != null);
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(task);
+			partition.hasAReference();
+			partition.getPlatform().build();
 		}
 	}
 	
