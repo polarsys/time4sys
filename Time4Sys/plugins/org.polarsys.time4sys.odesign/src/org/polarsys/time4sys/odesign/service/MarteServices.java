@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.common.tools.api.interpreter.IInterpreterSiriusVariables;
@@ -27,6 +28,7 @@ import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.design.DesignPackage;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.BurstPattern;
@@ -57,7 +59,9 @@ import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
+import org.polarsys.time4sys.odesign.helper.EcoreUtil2;
 
 @SuppressWarnings("restriction")
 public class MarteServices {
@@ -373,16 +377,9 @@ public class MarteServices {
 	}
 
 	public static DesignModel getDesign(EObject context) {
-		org.eclipse.emf.ecore.resource.Resource res = context.eResource();
-		EList<EObject> contents = res.getContents();
-		for (EObject content : contents) {
-			if (content instanceof Project) {
-				Project proj = (Project) content;
-				DesignModel design = proj.getDesign();
-				return design;
-			}
-		}
-		return null;
+		final EClass designModelEClass = DesignPackage.eINSTANCE.getDesignModel();
+		final EObject fContainer = EcoreUtil2.getFirstContainer(context,  designModelEClass);
+		return DesignModel.class.cast(fContainer);
 	}
 
 	public void deleteConnection(DEdge views) {
@@ -580,11 +577,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
@@ -597,11 +590,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
@@ -614,11 +603,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
@@ -631,11 +616,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
@@ -648,11 +629,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
@@ -665,11 +642,7 @@ public class MarteServices {
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
-			EObject container = bs.eContainer();
-			while (!(container instanceof DesignModel)) {
-				container = container.eContainer();
-			}
-			DesignModel dm = (DesignModel) container;
+			final DesignModel dm = getDesign(bs);
 			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
 			dm.getWorkloadBehavior().getDemand().add(we);
 			we.setPattern(arrivalPattern);
