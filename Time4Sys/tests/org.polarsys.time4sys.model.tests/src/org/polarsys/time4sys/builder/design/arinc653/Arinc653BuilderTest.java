@@ -70,6 +70,7 @@ public class Arinc653BuilderTest {
 		assertEquals("10ms", mif1.getMIFDuration().toString());
 		assertEquals("10ms", mif2.getMIFDuration().toString());
 		assertEquals("40ms", platform.getMAFDuration().toString());
+		assertTrue(Arinc653MIFBuilder.hasASecondaryScheduler(mif1.build()));
 	}
 
 	/**

@@ -23,6 +23,7 @@ import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
@@ -38,6 +39,18 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 public class Arinc653MIFBuilder {
 	
 	public static final String PARTITION_ATTR = "partition";
+	
+	public static boolean hasASecondaryScheduler(final SoftwareSchedulableResource result) {
+		return result.getOwnedResource().stream().anyMatch(new Predicate<Resource>() {
+			@Override
+			public boolean test(Resource value) {
+				if (value instanceof SecondaryScheduler) {
+					return ((SecondaryScheduler)value).getVirtualProcessingUnit().contains(result);
+				}
+				return false;
+			}
+		});
+	}
 	
 
 	public static Arinc653MIFBuilder as(final SoftwareSchedulableResource value) {
@@ -161,6 +174,9 @@ public class Arinc653MIFBuilder {
 		if (startRef != null) {
 			startRef.called(getName() + "_start");
 		}
+		if (!hasASecondaryScheduler(result)) {
+			under(SchedPolicyKind.FIXED_PRIORITY);
+		}
 		return result;
 	}
 
@@ -205,11 +221,27 @@ public class Arinc653MIFBuilder {
 	}
 
 	public Arinc653MIFBuilder under(SchedPolicyKind kind) {
-		sched = GrmFactory.eINSTANCE.createSecondaryScheduler();
-		addOwnedResource(sched);
 		final SoftwareSchedulableResource mifTask = taskBuilder.build();
-		sched.getVirtualProcessingUnit().add(mifTask);
-		sched.setName(mifTask.getName() + " Scheduler");
+		if (sched == null) {
+			for(Resource res: taskBuilder.getOwnedResource()) {
+				if (res instanceof SecondaryScheduler) {
+					final SecondaryScheduler secSched = (SecondaryScheduler)res;
+					final EList<SchedulableResource> virtualProcs = secSched.getVirtualProcessingUnit();
+					if (virtualProcs.isEmpty() || virtualProcs.contains(mifTask)) {
+						sched = secSched;
+						break;
+					}
+				}
+			}
+		}
+		if (sched == null) {
+			sched = GrmFactory.eINSTANCE.createSecondaryScheduler();
+		}
+		addOwnedResource(sched);
+		if (!sched.getVirtualProcessingUnit().contains(mifTask)) {
+			sched.getVirtualProcessingUnit().add(mifTask);
+			sched.setName(mifTask.getName() + " Scheduler");
+		}
 		ProcessorBuilder.initSchedulerPolicy(sched, mifTask, kind);
 		return this;
 	}
