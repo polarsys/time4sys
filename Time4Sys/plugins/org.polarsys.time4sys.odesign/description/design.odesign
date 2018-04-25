@@ -1133,7 +1133,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Arinc 653 Partition" label="Arinc 653 Partition" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Arinc 653 Partition" label="Arinc 653 Partition" precondition="aql:self.isArinc653Platform(container)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1144,6 +1144,26 @@
                     <subModelOperations xsi:type="tool:ExternalJavaAction" name="Arinc653PartitionCreation" label="Arinc653PartitionCreation" forceRefresh="true" elementsToSelect="var:hw" id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation">
                       <parameters name="task" value="var:sw"/>
                     </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SpareStep" precondition="aql:not self.isArinc653Partition(container)" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>

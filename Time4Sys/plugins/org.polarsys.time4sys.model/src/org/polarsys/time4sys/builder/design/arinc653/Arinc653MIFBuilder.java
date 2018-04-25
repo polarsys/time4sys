@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.design.ReferenceBuilder;
@@ -50,6 +51,18 @@ public class Arinc653MIFBuilder {
 				return false;
 			}
 		});
+	}
+	
+
+	public static boolean isInstance(final SoftwareSchedulableResource task) {
+		final String partAttr = Annotations.getAttr(task, Arinc653Builder.ARINC653_URL, PARTITION_ATTR);
+		if (partAttr != null) {
+			try {
+				return Boolean.parseBoolean(partAttr);
+			} catch (Exception e) {
+			}
+		}
+		return false;
 	}
 	
 

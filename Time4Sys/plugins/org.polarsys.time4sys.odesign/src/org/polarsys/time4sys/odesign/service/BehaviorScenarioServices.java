@@ -42,6 +42,7 @@ import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.swt.graphics.RGB;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -973,6 +974,14 @@ public class BehaviorScenarioServices {
 		return areAllWrappedOfType(context, views, HardwareProcessor.class);
 	}
 	
+	public static boolean isArinc653Platform(final EObject context, final EObject value) {
+		final HardwareProcessor proc = unwrap(value, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.isInstance(proc);
+		}
+		return false;
+	}
+	
 	public static void transformAsArinc653Platform(final EObject context, final List<EObject> views) {
 		for(EObject obj: views) {
 			final HardwareProcessor proc = unwrap(obj, HardwareProcessor.class);
@@ -984,12 +993,26 @@ public class BehaviorScenarioServices {
 	public static boolean isValidArinc653PartitionToBe(EObject context, List<EObject> views) {
 		return areAllWrappedOfType(context, views, SoftwareSchedulableResource.class);
 	}
+	
+	public static boolean isArinc653Partition(EObject context, final EObject value) {
+		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Arinc653MIFBuilder.isInstance(task);
+		}
+		return false;
+	}
 
 	public static void transformAsArinc653Partition(final EObject context, final List<EObject> views) {
 		for(EObject obj: views) {
 			final SoftwareSchedulableResource proc = unwrap(obj, SoftwareSchedulableResource.class);
 			assert(proc != null);
 			Arinc653MIFBuilder.as(proc);
+		}
+	}
+	
+	public static void setAsSpareStep(final EObject context, final EObject value) {
+		if (value instanceof Step) {
+			Arinc653SpareTaskBuilder.asSpare((Step)value);
 		}
 	}
 }
