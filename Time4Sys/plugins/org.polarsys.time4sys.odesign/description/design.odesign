@@ -72,6 +72,12 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::Once)">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Sliding Window Event\n' + 'Jitter: '+ self.jitter + '\nWindow Size: ' + self.windowSize + '\nNb Events: ' + self.nbEvents" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/once.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="SwMutualExclusionResource" label="Mutual Exclusion" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="srm.SoftwareMutualExclusionResource">
           <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:self.name" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomPurple']">
@@ -750,6 +756,28 @@
                   </subModelOperations>
                   <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addSlidingWindowEventOnStep()"/>
+                  </subModelOperations>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool_1:NodeCreationDescription" name="OnceEvent" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" iconPath="/org.polarsys.time4sys.odesign/images/smallonce.png" extraMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="periodicPattern"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addOnceEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>

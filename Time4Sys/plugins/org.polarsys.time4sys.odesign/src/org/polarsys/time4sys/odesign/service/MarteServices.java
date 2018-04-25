@@ -36,6 +36,7 @@ import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
+import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.Pin;
@@ -576,6 +577,23 @@ public class MarteServices {
 
 	public void addPeriodicEventOnStep(EObject bs) {
 		PeriodicPattern pp = GqamFactory.eINSTANCE.createPeriodicPattern();
+		if (bs instanceof BehaviorScenario) {
+			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
+			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
+			EObject container = bs.eContainer();
+			while (!(container instanceof DesignModel)) {
+				container = container.eContainer();
+			}
+			DesignModel dm = (DesignModel) container;
+			WorkloadEvent we = GqamFactory.eINSTANCE.createWorkloadEvent();
+			dm.getWorkloadBehavior().getDemand().add(we);
+			we.setPattern(arrivalPattern);
+			behaviorScenario.getCause().add(we);
+		}
+	}
+	
+	public void addOnceEventOnStep(EObject bs) {
+		Once pp = GqamFactory.eINSTANCE.createOnce();
 		if (bs instanceof BehaviorScenario) {
 			BehaviorScenario behaviorScenario = (BehaviorScenario) bs;
 			ArrivalPattern arrivalPattern = (ArrivalPattern) pp;
