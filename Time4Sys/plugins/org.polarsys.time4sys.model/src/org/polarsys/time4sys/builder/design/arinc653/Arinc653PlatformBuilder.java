@@ -119,6 +119,10 @@ public class Arinc653PlatformBuilder {
 	public Duration getMAFDuration() {
 		return schedBuilder.getMAFDuration();
 	}
+	
+	public Duration getMIFDuration() {
+		return schedBuilder.getMIFDuration();
+	}
 
 	public HardwareProcessor build() {
 		final HardwareProcessor result = processorBuilder.build();

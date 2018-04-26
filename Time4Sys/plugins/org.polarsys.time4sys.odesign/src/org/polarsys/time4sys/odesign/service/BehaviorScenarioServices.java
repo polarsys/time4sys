@@ -991,6 +991,29 @@ public class BehaviorScenarioServices {
 		}
 	}
 	
+	public static String getMAF(final EObject context) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.as(proc).getMAFDuration().toString();
+		}
+		return null;
+	}
+	
+	public static String getMIF(final EObject context) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.as(proc).getMIFDuration().toString();
+		}
+		return null;
+	}
+	
+	public static void setMIF(final EObject context, final Object newValue) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null && newValue != null && newValue instanceof String) {
+			Arinc653PlatformBuilder.as(proc).withMIFDuration((String)newValue);
+		}
+	}
+	
 	public static boolean isValidArinc653PartitionToBe(EObject context, List<EObject> views) {
 		return areAllWrappedOfType(context, views, SoftwareSchedulableResource.class);
 	}
