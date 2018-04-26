@@ -18,9 +18,6 @@
    <feature id="org.eclipse.sirius.interpreter.feature">
       <category name="T4S Dependencies"/>
    </feature>
-   <feature id="org.eclipse.sirius.properties.feature">
-      <category name="T4S Dependencies"/>
-   </feature>
    <feature id="org.eclipse.sirius.runtime">
       <category name="T4S Dependencies"/>
    </feature>
@@ -33,10 +30,25 @@
    <feature id="org.eclipse.sirius.runtime.ide.eef">
       <category name="T4S Dependencies"/>
    </feature>
+   <feature id="org.eclipse.eef.sdk.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.eef.ext.widgets.reference.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <bundle id="org.eclipse.sirius.editor">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.eef.runtime">
+      <category name="T4S Dependencies"/>
+   </bundle>
    <bundle id="org.eclipse.draw2d">
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.emf">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.editor.properties">
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.emf.ecore">
@@ -61,6 +73,36 @@
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.gmf.runtime.notation">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.editor.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.interpreter">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.core">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.defaultrules">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.edit">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference.edit">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.ui.properties">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
    <category-def name="Time4Sys" label="Time4Sys">

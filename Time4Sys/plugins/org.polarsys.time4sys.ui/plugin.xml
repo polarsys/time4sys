@@ -113,22 +113,6 @@
        </perspectiveExtension>
     </extension>
 
-  <!-- Tabbed properties views extension -->
-   <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
-      <propertyContributor
-            contributorId="org.eclipse.sirius.diagram.ui">
-         <propertyCategory
-               category="default">
-         </propertyCategory>
-         <propertyCategory
-               category="extended">
-         </propertyCategory>
-         <propertyCategory
-               category="advanced">
-         </propertyCategory>
-      </propertyContributor>
-   </extension>
    <extension
          point="org.eclipse.ui.editors">
       <editor
