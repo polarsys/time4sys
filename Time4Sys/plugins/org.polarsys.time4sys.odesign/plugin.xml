@@ -40,6 +40,14 @@
            actionClass="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli"
            id="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli">
      </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PlatformCreation"
+           id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PlatformCreation">
+     </javaActions>
+     <javaActions
+           actionClass="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation"
+           id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation">
+     </javaActions> 
   </extension>
   <extension
         point="org.eclipse.sirius.refreshExtensionProvider">

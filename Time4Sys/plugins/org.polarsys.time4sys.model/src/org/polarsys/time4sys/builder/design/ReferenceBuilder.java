@@ -38,4 +38,8 @@ public class ReferenceBuilder {
 	public Reference build() {
 		return rawRef;
 	}
+
+	public String getName() {
+		return rawRef.getReferenceName();
+	}
 }

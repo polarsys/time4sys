@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
+import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
@@ -40,7 +42,8 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	}
 	
 	public static PosixSporadicServerBuilder as(final SoftwareSchedulableResource task) {
-		return new PosixSporadicServerBuilder(null, task);
+		final DesignBuilder db = DesignBuilder.containing(task);
+		return new PosixSporadicServerBuilder(db, task);
 	}
 	
 	public static boolean hasPSSOrder(final SoftwareSchedulableResource aTask) {
@@ -135,5 +138,21 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public PosixSporadicServerBuilder unsetOrder() {
 		unsetAnnotationAttr(POSIX_URL, ORDER_ATTR);
 		return this;
+	}
+	
+	public PeriodicServerParameters getPSSSchedParams(final boolean buildIfNone) {
+		return (PeriodicServerParameters)getSchedParams(FP_POLICY_NAME, buildIfNone ? fpParamEClass : null);
+	}
+	
+	@Override
+	public SoftwareSchedulableResource build() {
+		
+		final FixedPriorityParameters schedParam = getFPSchedParams(false);
+		if (!(schedParam instanceof PeriodicServerParameters)) {
+			final PeriodicServerParameters migratedParams = GrmFactory.eINSTANCE.createPeriodicServerParameters((FixedPriorityParameters)schedParam);
+			task.getSchedParams().remove(schedParam);
+			task.getSchedParams().add(migratedParams);
+		}
+		return super.build();
 	}
 }

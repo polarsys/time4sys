@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2018 RealTime-at-Work and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Loïc Fejoz - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.time4sys.simulation.commands;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -9,7 +19,7 @@ public class UpgradeModelCommandHandler extends AbstractTransformationCommandHan
 	public static class UpgradeModelRunnable extends TransfoRunnable<Project, Project> {
 
 		public UpgradeModelRunnable(final TransactionalEditingDomain domain, final Project value) {
-			super(domain, value);
+			super(domain, value, "Remove deprecated");
 		}
 
 		@Override

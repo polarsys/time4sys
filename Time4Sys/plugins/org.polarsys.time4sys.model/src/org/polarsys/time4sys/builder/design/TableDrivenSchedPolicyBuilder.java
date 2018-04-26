@@ -42,9 +42,15 @@ public class TableDrivenSchedPolicyBuilder {
 	public TableDrivenSchedPolicyBuilder(final Scheduler mainScheduler) {
 		scheduler = mainScheduler;
 		policy = scheduler.getPolicy();
-		policy.setPolicy(SchedPolicyKind.TIME_TABLE_DRIVEN);
-		schedule = GrmFactory.eINSTANCE.createTableDrivenSchedule();
-		policy.setSchedule(schedule);
+		if (policy.getPolicy() != SchedPolicyKind.TIME_TABLE_DRIVEN) {
+			policy.setPolicy(SchedPolicyKind.TIME_TABLE_DRIVEN);
+		}
+		if (policy.getSchedule() instanceof TableDrivenSchedule) {
+			schedule = (TableDrivenSchedule) policy.getSchedule();
+		} else {
+			schedule = GrmFactory.eINSTANCE.createTableDrivenSchedule();
+			policy.setSchedule(schedule);
+		}
 	}
 
 	public void withMIFDuration(final Duration mif) {

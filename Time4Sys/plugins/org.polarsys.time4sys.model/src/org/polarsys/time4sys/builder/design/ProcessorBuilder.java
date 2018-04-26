@@ -65,7 +65,7 @@ public class ProcessorBuilder {
 				sched.getSchedulableResource().add((SchedulableResource)res);
 			}
 		}
-		if (proc instanceof ComputingResource) {
+		if (proc instanceof ComputingResource && sched.getHost() != proc) {
 			sched.setHost((ComputingResource)proc);
 		}
 		return sched;
@@ -138,7 +138,9 @@ public class ProcessorBuilder {
 
 	public TableDrivenSchedPolicyBuilder underTableDrivenSchedPolicy() {
 		under(SchedPolicyKind.TIME_TABLE_DRIVEN);
-		proc.getMainScheduler().setHost(proc);
+		if (proc.getMainScheduler().getHost() != proc) {
+			proc.getMainScheduler().setHost(proc);
+		}
 		return new TableDrivenSchedPolicyBuilder(proc.getMainScheduler());
 	}
 

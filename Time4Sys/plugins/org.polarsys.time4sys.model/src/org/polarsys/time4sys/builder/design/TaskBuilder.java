@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -55,7 +56,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	private String period;
-	private SoftwareSchedulableResource task;
+	protected SoftwareSchedulableResource task;
 	private StepBuilder firstStep;
 	private List<StepBuilder> ownedSteps = new LinkedList<>();
 	private DesignBuilder design;
@@ -141,7 +142,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 			design.has(EndToEndFlowConstraintBuilder.anEndToEndConstraint().from(firstStep()).to(this).withDeadline(deadline));
 			deadline = null;
 		}
-		return task;
+		return build();
 	}
 	
 	public SoftwareSchedulableResource build() {
@@ -342,7 +343,10 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	public void addOwnedResource(final Resource value) {
-		task.getOwnedResource().add(value);
+		final EList<Resource> ownedResources = task.getOwnedResource();
+		if (!ownedResources.contains(value)) {
+			ownedResources.add(value);
+		}
 	}
 	
 	public void addOwnedResource(final TaskBuilder value) {

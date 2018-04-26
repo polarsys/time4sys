@@ -113,7 +113,6 @@
        </perspectiveExtension>
     </extension>
 
-  <!-- Tabbed properties views extension -->
    <extension
          point="org.eclipse.ui.editors">
       <editor

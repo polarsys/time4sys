@@ -70,6 +70,7 @@ public class Arinc653BuilderTest {
 		assertEquals("10ms", mif1.getMIFDuration().toString());
 		assertEquals("10ms", mif2.getMIFDuration().toString());
 		assertEquals("40ms", platform.getMAFDuration().toString());
+		assertTrue(Arinc653MIFBuilder.hasASecondaryScheduler(mif1.build()));
 	}
 
 	/**
@@ -168,6 +169,7 @@ public class Arinc653BuilderTest {
 		final Arinc653MIFBuilder mif2 = platform.getMIF(1);
 		final Arinc653MIFBuilder mif3 = platform.getMIF(2);
 		final Arinc653MIFBuilder mif4 = platform.getMIF(3);
+		mif1.hasAReference().called("mif1_start");
 		final DesignModel designRef = design.build();
 		// When building incrementally
 		final ProjectBuilder theProjectInc = new ProjectBuilder();
@@ -182,6 +184,7 @@ public class Arinc653BuilderTest {
 		platformInc.addPartition(mif3Inc);
 		final Arinc653MIFBuilder mif4Inc = aMIF().called("MIF4").withNoOffset();
 		platformInc.addPartition(mif4Inc);
+		mif1Inc.hasAReference().called("mif1_start");
 		final DesignModel designFinal = design.build();
 		
 		// Then we have same final models
@@ -201,6 +204,8 @@ public class Arinc653BuilderTest {
 		assertEquals(mif2.getMIFDuration(), mif2Inc.getMIFDuration());
 		assertEquals(platform.getMAFDuration(), platformInc.getMAFDuration());
 		assertEquals(designRef, designFinal);
+		
+		assertEquals("mif1_start", mif1Inc.hasAReference().getName());
 		
 		// Check structural equality
 		assertTrue(new EcoreUtil.EqualityHelper().equals(designRef, designFinal));

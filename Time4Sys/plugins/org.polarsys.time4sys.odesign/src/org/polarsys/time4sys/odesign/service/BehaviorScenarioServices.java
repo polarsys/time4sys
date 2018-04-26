@@ -7,6 +7,7 @@
  *
  * Contributors:
  *     Aurelien Didier - initial API and implementation
+ *     Loïc Fejoz      - Arinc653 related implemenetation 
  *******************************************************************************/
 package org.polarsys.time4sys.odesign.service;
 
@@ -16,7 +17,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -27,12 +27,11 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
+import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.EdgeTarget;
-import org.eclipse.sirius.diagram.Ellipse;
-import org.eclipse.sirius.diagram.NodeStyle;
-import org.eclipse.sirius.diagram.Square;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeContainerSpec;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.style.BorderedStyleDescription;
@@ -41,23 +40,24 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.swt.graphics.RGB;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder;
+import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.BurstPattern;
-import org.polarsys.time4sys.marte.gqam.ClosedPattern;
 import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
-import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
-import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
-import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
 import org.polarsys.time4sys.odesign.helper.ShapeUtil;
 
@@ -938,5 +938,125 @@ public class BehaviorScenarioServices {
 	public static RGBValues getEdgeColorStyle(DEdge edge) {
 		EdgeStyle shape = edge.getOwnedStyle();
 		return shape.getStrokeColor();
+	}
+	
+	public static <T extends EObject> T unwrap(Object obj, final Class<T> clazz) {
+		if (obj instanceof DNode) {
+			obj = ((DNode)obj).getTarget();
+		} 
+		if (obj instanceof DNodeContainerSpec) {
+			obj = ((DNodeContainerSpec)obj).getTarget();
+		}
+		if (obj == null) {
+			return null;
+		}
+		if (clazz.isInstance(obj)) {
+			return clazz.cast(obj);
+		}
+		return null;
+	}
+	
+	public static <T extends EObject> boolean isWrappedInstanceOf(final EObject obj, final Class<T> clazz) {
+		return unwrap(obj, clazz) != null;
+	}
+	
+	public static <T extends EObject> boolean areAllWrappedOfType(EObject context, List<EObject> views, final Class<T> clazz) {
+		if (!views.isEmpty()) {
+			for (EObject select : views) {
+				if (!isWrappedInstanceOf(select, clazz)) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
+	public static boolean isValidArinc653PlatformToBe(EObject context, List<EObject> views) {
+		return areAllWrappedOfType(context, views, HardwareProcessor.class);
+	}
+	
+	public static boolean isArinc653Platform(final EObject context, final EObject value) {
+		final HardwareProcessor proc = unwrap(value, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.isInstance(proc);
+		}
+		return false;
+	}
+	
+	public static void transformAsArinc653Platform(final EObject context, final List<EObject> views) {
+		for(EObject obj: views) {
+			final HardwareProcessor proc = unwrap(obj, HardwareProcessor.class);
+			assert(proc != null);
+			Arinc653PlatformBuilder.as(proc).build();
+		}
+	}
+	
+	public static String getMAF(final EObject context) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.as(proc).getMAFDuration().toString();
+		}
+		return null;
+	}
+	
+	public static String getMIF(final EObject context) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null) {
+			return Arinc653PlatformBuilder.as(proc).getMIFDuration().toString();
+		}
+		return null;
+	}
+	
+	public static void setMIF(final EObject context, final Object newValue) {
+		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
+		if (proc != null && newValue != null && newValue instanceof String) {
+			Arinc653PlatformBuilder.as(proc).withMIFDuration((String)newValue);
+		}
+	}
+	
+	public static boolean isValidArinc653PartitionToBe(EObject context, List<EObject> views) {
+		return areAllWrappedOfType(context, views, SoftwareSchedulableResource.class);
+	}
+	
+	public static boolean isArinc653Partition(EObject context, final EObject value) {
+		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Arinc653MIFBuilder.isInstance(task);
+		}
+		return false;
+	}
+
+	public static void transformAsArinc653Partition(final EObject context, final List<EObject> views) {
+		for(EObject obj: views) {
+			final SoftwareSchedulableResource task = unwrap(obj, SoftwareSchedulableResource.class);
+			assert(task != null);
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(task);
+			partition.hasAReference();
+			partition.getPlatform().build();
+		}
+	}
+	
+	public static void setAsSpareStep(final EObject context, final EObject value) {
+		final Step step = unwrap(value, Step.class);
+		if (step != null) {
+			Arinc653SpareTaskBuilder.asSpare(step);
+		}
+	}
+	
+	public static boolean isSpareStep(final EObject context) {
+		final Step step = unwrap(context, Step.class);
+		if (step != null) {
+			return Arinc653SpareTaskBuilder.isSpare(step);
+		}
+		return false;
+	}
+	
+	public static void setAsPSS(final EObject context, final EObject value) {
+		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
+		if (task != null) {
+			final PosixSporadicServerBuilder pssTask = PosixSporadicServerBuilder.as(task);
+			pssTask.getPSSSchedParams(true);
+			pssTask.build();
+		}
 	}
 }

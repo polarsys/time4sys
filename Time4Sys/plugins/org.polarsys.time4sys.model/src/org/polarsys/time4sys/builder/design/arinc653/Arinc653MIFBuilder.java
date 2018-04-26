@@ -15,6 +15,7 @@ import java.util.function.Predicate;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.design.ReferenceBuilder;
@@ -23,20 +24,53 @@ import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
- * @author Utilisateur
+ * @author Loïc Fejoz
  *
  */
 public class Arinc653MIFBuilder {
 	
 	public static final String PARTITION_ATTR = "partition";
+	public static final String REF_ATTR = "reference";
+	
+	public static boolean hasASecondaryScheduler(final SoftwareSchedulableResource result) {
+		return result.getOwnedResource().stream().anyMatch(new Predicate<Resource>() {
+			@Override
+			public boolean test(Resource value) {
+				if (value instanceof SecondaryScheduler) {
+					return ((SecondaryScheduler)value).getVirtualProcessingUnit().contains(result);
+				}
+				return false;
+			}
+		});
+	}
+	
+
+	public static boolean isInstance(final SoftwareSchedulableResource task) {
+		final String partAttr = Annotations.getAttr(task, Arinc653Builder.ARINC653_URL, PARTITION_ATTR);
+		if (partAttr != null) {
+			try {
+				return Boolean.parseBoolean(partAttr);
+			} catch (Exception e) {
+			}
+		}
+		return false;
+	}
+	
+
+	public static Arinc653MIFBuilder as(final SoftwareSchedulableResource value) {
+		final Arinc653DesignBuilder db = Arinc653DesignBuilder.containing(value);
+		return new Arinc653MIFBuilder(db, value);
+	}
 
 	public static Arinc653MIFBuilder aMIF() {
 		return new Arinc653MIFBuilder();
@@ -61,10 +95,20 @@ public class Arinc653MIFBuilder {
 	private SecondaryScheduler sched;
 	private String timeBudget;
 	private ReferenceBuilder ref;
+	private ReferenceBuilder startRef;
 	
 	public Arinc653MIFBuilder() {
 		taskBuilder = new TaskBuilder();
 		taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
+	}
+
+	public Arinc653MIFBuilder(Arinc653DesignBuilder db, SoftwareSchedulableResource value) {
+		taskBuilder = new TaskBuilder(db, value);
+		designBuilder = db;
+		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
+		if (!Boolean.TRUE.toString().equals(annot.getDetails().get(PARTITION_ATTR))) {
+			annot.getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
+		}
 	}
 
 	public Arinc653MIFBuilder called(String value) {
@@ -141,6 +185,12 @@ public class Arinc653MIFBuilder {
 			}
 		}
 		getOrCreateTableEntry().setName(getName() + " Slot");
+		if (startRef != null) {
+			startRef.called(getName() + "_start");
+		}
+		if (!hasASecondaryScheduler(result)) {
+			under(SchedPolicyKind.FIXED_PRIORITY);
+		}
 		return result;
 	}
 
@@ -185,11 +235,27 @@ public class Arinc653MIFBuilder {
 	}
 
 	public Arinc653MIFBuilder under(SchedPolicyKind kind) {
-		sched = GrmFactory.eINSTANCE.createSecondaryScheduler();
-		addOwnedResource(sched);
 		final SoftwareSchedulableResource mifTask = taskBuilder.build();
-		sched.getVirtualProcessingUnit().add(mifTask);
-		sched.setName(mifTask.getName() + " Scheduler");
+		if (sched == null) {
+			for(Resource res: taskBuilder.getOwnedResource()) {
+				if (res instanceof SecondaryScheduler) {
+					final SecondaryScheduler secSched = (SecondaryScheduler)res;
+					final EList<SchedulableResource> virtualProcs = secSched.getVirtualProcessingUnit();
+					if (virtualProcs.isEmpty() || virtualProcs.contains(mifTask)) {
+						sched = secSched;
+						break;
+					}
+				}
+			}
+		}
+		if (sched == null) {
+			sched = GrmFactory.eINSTANCE.createSecondaryScheduler();
+		}
+		addOwnedResource(sched);
+		if (!sched.getVirtualProcessingUnit().contains(mifTask)) {
+			sched.getVirtualProcessingUnit().add(mifTask);
+			sched.setName(mifTask.getName() + " Scheduler");
+		}
 		ProcessorBuilder.initSchedulerPolicy(sched, mifTask, kind);
 		return this;
 	}
@@ -225,6 +291,31 @@ public class Arinc653MIFBuilder {
 			}
 		}
 		return ref;
+	}
+
+	public Arinc653PlatformBuilder getPlatform() {
+		final EObject container = taskBuilder.build().eContainer();
+		if (container instanceof HardwareProcessor) {
+			final Arinc653PlatformBuilder platform = Arinc653PlatformBuilder.as((HardwareProcessor)container);
+			platform.addPartition(this);
+			return platform;
+		}
+		return null;
+	}
+
+	public ReferenceBuilder hasAReference() {
+		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
+		for(EObject obj: annot.getReferences()) {
+			if (obj instanceof Reference) {
+				startRef = new ReferenceBuilder((Reference)obj);
+				break;
+			}
+		}
+		if (startRef == null) {
+			startRef = designBuilder.hasAReference();
+			annot.getReferences().add(startRef.build());
+		}
+		return startRef;
 	}
 
 }

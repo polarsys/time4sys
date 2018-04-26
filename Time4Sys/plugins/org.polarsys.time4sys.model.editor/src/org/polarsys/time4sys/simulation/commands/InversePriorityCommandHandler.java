@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2018 RealTime-at-Work and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Loïc Fejoz - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.time4sys.simulation.commands;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -10,7 +20,7 @@ public class InversePriorityCommandHandler extends AbstractTransformationCommand
 	public static class InversePriorityRunnable extends TransfoRunnable<DesignModel, Transformation> {
 
 		public InversePriorityRunnable(final TransactionalEditingDomain domain, final DesignModel value) {
-			super(domain, value);
+			super(domain, value, "Inverse Priority");
 		}
 
 		@Override

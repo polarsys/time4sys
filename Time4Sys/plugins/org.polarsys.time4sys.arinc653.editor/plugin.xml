@@ -79,5 +79,67 @@
          </menu>
       </menuContribution>
    </extension>
+   
+  <!-- EEF extensions -->
+  <!--
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.eclipse.org/emf/2002/Ecore"
+            class="org.polarsys.time4sys.arinc653.editor.properties.ecore.providers.EcoreEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.polarsys.time4sys.arinc653.editor.properties.providers.EcorePropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>-->
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.eclipse.sirius.diagram"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.eclipse.sirius.diagram">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+         <propertyTab
+               afterTab="Base"
+               category="default"
+               id="Arinc653"
+               label="Arinc653">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.eclipse.sirius.diagram">
+         <propertySection
+               class="org.polarsys.time4sys.arinc653.editor.properties.parts.forms.HWProcessorPropertiesEditionPartForm"
+               filter="org.polarsys.time4sys.arinc653.editor.properties.filters.HardwareProcessorFilter"
+               id="org.polarsys.time4sys.arinc653.editor.design.properties.hwprocessor"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
 
 </plugin>

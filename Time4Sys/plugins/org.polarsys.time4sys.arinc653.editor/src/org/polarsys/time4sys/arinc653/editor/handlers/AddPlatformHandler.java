@@ -17,7 +17,7 @@ public class AddPlatformHandler  extends AbstractTransformationCommandHandler<De
 	public static class TransfoCommand extends TransfoRunnable<DesignModel, HardwareProcessor> {
 
 		public TransfoCommand(final TransactionalEditingDomain domain, final DesignModel ima) {
-			super(domain, ima);
+			super(domain, ima, "Arinc653 platform creation");
 		}
 
 		@Override
