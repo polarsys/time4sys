@@ -115,22 +115,6 @@
 
   <!-- Tabbed properties views extension -->
    <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
-      <propertyContributor
-            contributorId="org.eclipse.sirius.diagram.ui"
-            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
-         <propertyCategory
-               category="default">
-         </propertyCategory>
-         <propertyCategory
-               category="extended">
-         </propertyCategory>
-         <propertyCategory
-               category="advanced">
-         </propertyCategory>
-      </propertyContributor>
-   </extension>
-   <extension
          point="org.eclipse.ui.editors">
       <editor
             class="org.polarsys.time4sys.model.time4sys.presentation.Time4sysEditor"
