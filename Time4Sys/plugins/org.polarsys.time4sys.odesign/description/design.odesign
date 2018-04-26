@@ -459,7 +459,6 @@
                       <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SoftwareResource' + (self.eContainer().ownedResource->size()-1).toString()"/>
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
                         <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
-                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduler" valueExpression="aql:self.eContainer().mainScheduler"/>
                         <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
                           <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
                           <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="aql:0.toString()"/>
@@ -469,13 +468,12 @@
                         </subModelOperations>
                       </subModelOperations>
                       <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
-                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().scheduler"/>
-                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduler" valueExpression="aql:self.eContainer().scheduler"/>
-                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.FixedPriorityParameters" referenceName="schedParams" variableName="schedParam">
                           <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
-                          <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="aql:0.toString()"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="priority" valueExpression="aql:0"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().scheduler">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
                           <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                         </subModelOperations>
                       </subModelOperations>
@@ -1184,6 +1182,26 @@
                   <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
                     <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'PSS_' + (self.eContainer().ownedResource->size()-1).toString()"/>
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsPSS(sw)"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="aql:0.toString()"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.FixedPriorityParameters" referenceName="schedParams" variableName="schedParam">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="priority" valueExpression="aql:0"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+                      </subModelOperations>
+                    </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1191,8 +1209,9 @@
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="NORTH_EAST" preconditionExpression="aql:self.mainScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="SOUTH_EAST" preconditionExpression="aql:self.mainScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']"/>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" preconditionExpression="aql:self.hasDeadline2()" imageExpression="/org.polarsys.time4sys.odesign/images/redflag16.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="swHasScheduler" position="SOUTH_EAST" preconditionExpression="aql:self.dependentScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']"/>
         </decorationDescriptionsSet>
       </defaultLayer>
       <toolSection name="Behaviours">
