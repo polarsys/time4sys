@@ -270,6 +270,14 @@ public interface GrmFactory extends EFactory {
 	 * @generated
 	 */
 	PeriodicServerParameters createPeriodicServerParameters();
+	
+	
+	/**
+	 * Create and initialise a PSS Scheduling Parameter
+	 * @param schedParam
+	 * @return an initialized object of class '<em>Periodic Server Parameters</em>'.
+	 */
+	PeriodicServerParameters createPeriodicServerParameters(FixedPriorityParameters schedParam);
 
 	/**
 	 * Returns a new object of class '<em>Pooling Parameters</em>'.

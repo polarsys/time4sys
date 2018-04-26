@@ -56,7 +56,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 
 	private String period;
-	private SoftwareSchedulableResource task;
+	protected SoftwareSchedulableResource task;
 	private StepBuilder firstStep;
 	private List<StepBuilder> ownedSteps = new LinkedList<>();
 	private DesignBuilder design;
@@ -142,7 +142,7 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 			design.has(EndToEndFlowConstraintBuilder.anEndToEndConstraint().from(firstStep()).to(this).withDeadline(deadline));
 			deadline = null;
 		}
-		return task;
+		return build();
 	}
 	
 	public SoftwareSchedulableResource build() {

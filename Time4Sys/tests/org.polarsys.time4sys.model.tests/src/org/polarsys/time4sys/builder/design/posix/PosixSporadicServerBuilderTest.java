@@ -3,15 +3,22 @@
  */
 package org.polarsys.time4sys.builder.design.posix;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
 import static org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder.aMIF;
 import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
+import static org.hamcrest.core.IsInstanceOf.instanceOf;
 
 import java.io.IOException;
 
+import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
+import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653DesignBuilder;
@@ -83,4 +90,22 @@ public class PosixSporadicServerBuilderTest {
 		assertEquals(3, pss1.getOrder());
 	}
 
+	@Test
+	public void testPSSConversion() {
+		// Given a plain task
+		final DesignBuilder design = theProject.design();
+		final TaskBuilder pssToBe = aTask().called("PSSToBe").ofPriority(41);
+		design.hasAProcessor().called("CPU").thatRuns(pssToBe);
+		design.build();
+		// When we transformed it into PSS
+		final PosixSporadicServerBuilder asPss = PosixSporadicServerBuilder.as(pssToBe.build());
+		final SoftwareSchedulableResource task = asPss.build();
+		// Then
+		// The sched parameters has been migrated
+		assertEquals(1, task.getSchedParams().size());
+		final SchedulingParameter schedParam = task.getSchedParams().get(0);
+		assertThat(schedParam, instanceOf(PeriodicServerParameters.class));
+		final PeriodicServerParameters pssSchedParam = (PeriodicServerParameters)schedParam;
+		assertEquals(41, pssSchedParam.getPriority());
+	}
 }

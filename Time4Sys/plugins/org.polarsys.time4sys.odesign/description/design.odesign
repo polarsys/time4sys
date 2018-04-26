@@ -262,6 +262,12 @@
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
                 </style>
               </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
+                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
             </subNodeMappings>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/computingResource.png" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomYellow']">
@@ -1164,6 +1170,20 @@
                     <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
                     <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Posix Sporadic Server" precondition="aql:not self.isArinc653Platform(container)" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'PSS_' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsPSS(sw)"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>

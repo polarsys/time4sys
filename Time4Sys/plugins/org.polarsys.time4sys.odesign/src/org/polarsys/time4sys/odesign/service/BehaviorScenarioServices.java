@@ -43,6 +43,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder;
+import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -1013,8 +1014,26 @@ public class BehaviorScenarioServices {
 	}
 	
 	public static void setAsSpareStep(final EObject context, final EObject value) {
-		if (value instanceof Step) {
-			Arinc653SpareTaskBuilder.asSpare((Step)value);
+		final Step step = unwrap(value, Step.class);
+		if (step != null) {
+			Arinc653SpareTaskBuilder.asSpare(step);
+		}
+	}
+	
+	public static boolean isSpareStep(final EObject context) {
+		final Step step = unwrap(context, Step.class);
+		if (step != null) {
+			return Arinc653SpareTaskBuilder.isSpare(step);
+		}
+		return false;
+	}
+	
+	public static void setAsPSS(final EObject context, final EObject value) {
+		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
+		if (task != null) {
+			final PosixSporadicServerBuilder pssTask = PosixSporadicServerBuilder.as(task);
+			pssTask.getPSSSchedParams(true);
+			pssTask.build();
 		}
 	}
 }

@@ -12,15 +12,13 @@
  */
 package org.polarsys.time4sys.marte.grm.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.time4sys.marte.grm.*;
-import org.polarsys.time4sys.marte.nfp.DataSize;
-import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.ClockResource;
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
@@ -28,10 +26,15 @@ import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.DeviceResource;
 import org.polarsys.time4sys.marte.grm.DynamicUsage;
+import org.polarsys.time4sys.marte.grm.EDFParameters;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
+import org.polarsys.time4sys.marte.grm.PeriodicServerKind;
+import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
+import org.polarsys.time4sys.marte.grm.PoolingParameters;
 import org.polarsys.time4sys.marte.grm.ProtectProtocolKind;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
 import org.polarsys.time4sys.marte.grm.ResourceBroker;
@@ -53,10 +56,14 @@ import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.StaticUsage;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.SynchResource;
+import org.polarsys.time4sys.marte.grm.TableDrivenSchedule;
+import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TransmModeKind;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
@@ -466,6 +473,15 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	public PeriodicServerParameters createPeriodicServerParameters() {
 		PeriodicServerParametersImpl periodicServerParameters = new PeriodicServerParametersImpl();
 		return periodicServerParameters;
+	}
+	
+	@Override
+	public PeriodicServerParameters createPeriodicServerParameters(final FixedPriorityParameters schedParam) {
+		final PeriodicServerParameters copy = createPeriodicServerParameters();
+		for(EAttribute feature: GrmPackage.eINSTANCE.getFixedPriorityParameters().getEAllAttributes()) {
+			copy.eSet(feature, schedParam.eGet(feature));
+		}
+		return copy;
 	}
 
 	/**
