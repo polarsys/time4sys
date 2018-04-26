@@ -13,6 +13,7 @@ package org.polarsys.time4sys.transformations;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
 import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 import org.polarsys.time4sys.builder.ProjectBuilder;
+import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder;
@@ -210,9 +212,9 @@ public class PriorityUrgencyInverterTest {
 		assertNotNull(t2Task);
 		assertEquals(4, t2Task.getPriority());
 		assertEquals(0, t2Task.getBackgroundPriority());
-		// Annotation has been removed
-		assertFalse(t1Task.hasAnnotation(PosixSporadicServerBuilder.POSIX_URL));
-		assertFalse(t2Task.hasAnnotation(PosixSporadicServerBuilder.POSIX_URL));
+		// Annotation Order has been removed
+		assertNull(Annotations.getAttr(t1Task.build(), PosixSporadicServerBuilder.POSIX_URL, PosixSporadicServerBuilder.ORDER_ATTR));
+		assertNull(Annotations.getAttr(t2Task.build(), PosixSporadicServerBuilder.POSIX_URL, PosixSporadicServerBuilder.ORDER_ATTR));
 	}
 	
 	@Test

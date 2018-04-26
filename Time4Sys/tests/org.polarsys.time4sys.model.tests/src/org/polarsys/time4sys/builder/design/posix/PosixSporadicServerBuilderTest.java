@@ -107,5 +107,19 @@ public class PosixSporadicServerBuilderTest {
 		assertThat(schedParam, instanceOf(PeriodicServerParameters.class));
 		final PeriodicServerParameters pssSchedParam = (PeriodicServerParameters)schedParam;
 		assertEquals(41, pssSchedParam.getPriority());
+		assertTrue(PosixSporadicServerBuilder.isInstance(task));
+	}
+	
+	@Test
+	public void testConstructor() {
+		final DesignBuilder design = theProject.design();
+		assertTrue(PosixSporadicServerBuilder.isInstance(PosixSporadicServerBuilder.aPSS().build(design)));
+	}
+	
+	@Test
+	public void testConverter() {
+		final DesignBuilder design = theProject.design();
+		final SoftwareSchedulableResource task = PosixSporadicServerBuilder.aPSS().build(design);
+		assertTrue(PosixSporadicServerBuilder.isInstance(PosixSporadicServerBuilder.as(task).build()));
 	}
 }

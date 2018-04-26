@@ -1896,7 +1896,8 @@
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
     <categories name="Default">
-      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4" indented="true"/>
+      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5" indented="true"/>
+      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition(self) or self.isPSS()" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2"/>
       <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
@@ -2029,11 +2030,18 @@
           </ifs>
         </controls>
       </groups>
-      <groups name="org.eclipse.sirius.ui.properties.arinc653platform" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self)">
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.platformgroup" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self)">
         <controls xsi:type="properties:LabelDescription" name="MAF" labelExpression="MAF" helpExpression="aql:'Sum of MIFs'" valueExpression="aql:self.getMAF()"/>
         <controls xsi:type="properties:TextDescription" name="MIF" labelExpression="MIF" helpExpression="aql:'MIF duration (if all same)'" valueExpression="aql:self.getMIF()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setMIF(newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.posix.pssgroup" labelExpression="Posix" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isPSS()">
+        <controls xsi:type="properties:TextDescription" name="PSSOrder" label="PSS Order" labelExpression="Order" valueExpression="aql:self.getPSSOrder()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
           </initialOperation>
         </controls>
       </groups>
