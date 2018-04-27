@@ -11,6 +11,7 @@
 package org.polarsys.time4sys.builder.design.posix;
 
 import org.eclipse.emf.ecore.EClass;
+import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
@@ -18,6 +19,7 @@ import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
+import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
@@ -31,7 +33,7 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	
 	private static final EClass PSS_PARAM_ECLASS = GrmPackage.eINSTANCE.getPeriodicServerParameters();
 
-	private static final String ORDER_ATTR = "pss_order";
+	public static final String ORDER_ATTR = "pss_order";
 	
 	public static PosixSporadicServerBuilder aPSS() {
 		return new PosixSporadicServerBuilder();
@@ -54,17 +56,29 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 		}
 		return false;
 	}
+	
+	public static boolean isInstance(final SoftwareSchedulableResource task) {
+		return Annotations.hasAnnotation(task, POSIX_URL);
+	}
 
 	public PosixSporadicServerBuilder() {
-		super(PSS_PARAM_ECLASS);
+		this(null, null,  PSS_PARAM_ECLASS);
 	}
 	
 	public PosixSporadicServerBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw) {
-		super(designBuilder, raw, PSS_PARAM_ECLASS);
+		this(designBuilder, raw, PSS_PARAM_ECLASS);
+	}
+	
+	protected PosixSporadicServerBuilder(
+			final DesignBuilder designBuilder,
+			final SoftwareSchedulableResource raw,
+			final EClass clazz) {
+		super(designBuilder, raw, clazz);
+		annotate(POSIX_URL);
 	}
 
 	public PosixSporadicServerBuilder(final TaskBuilder task) {
-		super(task.design(), task.build(), PSS_PARAM_ECLASS);
+		this(task.design(), task.build(), PSS_PARAM_ECLASS);
 	}
 
 
@@ -148,7 +162,7 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	public SoftwareSchedulableResource build() {
 		
 		final FixedPriorityParameters schedParam = getFPSchedParams(false);
-		if (!(schedParam instanceof PeriodicServerParameters)) {
+		if (schedParam != null && !(schedParam instanceof PeriodicServerParameters)) {
 			final PeriodicServerParameters migratedParams = GrmFactory.eINSTANCE.createPeriodicServerParameters((FixedPriorityParameters)schedParam);
 			task.getSchedParams().remove(schedParam);
 			task.getSchedParams().add(migratedParams);

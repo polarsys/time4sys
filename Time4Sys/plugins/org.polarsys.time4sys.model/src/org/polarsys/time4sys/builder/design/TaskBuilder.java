@@ -89,10 +89,14 @@ public class TaskBuilder implements SchedulableResourceBuilder<SoftwareSchedulab
 	}
 	
 	public TaskBuilder(final DesignBuilder designBuilder, final SoftwareSchedulableResource raw, final EClass fpParamEClass) {
-		assert(raw != null);
-		task = raw;
+		if (raw == null) {
+			task =  srmFactory.createSoftwareSchedulableResource();
+		} else {
+			task = raw;
+		}
+		assert(task != null);
 		if (designBuilder == null) {
-			EObject container = raw;
+			EObject container = task;
 			do {
 				container = container.eContainer();
 			} while (container != null && !(container instanceof DesignModel));

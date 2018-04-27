@@ -1055,8 +1055,37 @@ public class BehaviorScenarioServices {
 		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
 		if (task != null) {
 			final PosixSporadicServerBuilder pssTask = PosixSporadicServerBuilder.as(task);
-			pssTask.getPSSSchedParams(true);
+			pssTask.withOrder(1).getPSSSchedParams(true);
 			pssTask.build();
+		}
+	}
+	
+	public static boolean isPSS(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return PosixSporadicServerBuilder.isInstance(task);
+		}
+		return false;
+	}
+	
+	public static String getPSSOrder(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Integer.toString(PosixSporadicServerBuilder.as(task).getOrder());
+		}
+		return null;
+	}
+	
+	public static void setPSSOrder(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && newValue instanceof String) {
+			int order = 0;
+			try {
+				order = Integer.parseInt((String)newValue);
+			} catch (Exception e) {
+				
+			}
+			PosixSporadicServerBuilder.as(task).withOrder(order);
 		}
 	}
 }
