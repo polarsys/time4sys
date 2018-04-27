@@ -27,4 +27,13 @@
    <topic href="html/Time4SysResults.html" label="Results">
       <anchor id="res"/>
    </topic>
+   <topic label="Developper">
+      <link toc="dvpt"/>
+      <topic href="html/Time4SysBuildEnv.html" label="Environment">
+         <anchor id="buildenv"/>
+      </topic>
+      <topic href="html/Time4SysTransfoDev.html" label="Transformations">
+         <anchor id="transfodev"/>
+      </topic>  
+   </topic>   
 </toc>

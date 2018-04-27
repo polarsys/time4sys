@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<h1 id="Time4Sys_Build_Environment">Time4Sys Build Environment</h1>
+		<p>As of 27th April 2018, Time4Sys is based on Eclipse Neon and Sirius 5.1.
+			For more details on the specific requirements, it is best to look at the m2e target file <code>./Time4Sys/releng/org.polarsys.time4sys.p2/Time4Sys_Neon.target</code>.</p>
+		<h2 id="Source">Source</h2>
+		<p>The source code is available on github under the polarsys repository: 
+			<a href="https://github.com/polarsys/time4sys/">https://github.com/polarsys/time4sys/</a>
+		</p>
+		<p>The <code>master</code> branch is the one validated by the Eclipse IP team, while the <code>develop</code> branch
+			is the one you should push your request against.</p>
+		<p>In a nutshell, you shall run following command to retrieve the source code:</p>
+		<p><code>
+			git clone --branch develop git@github.com:polarsys/time4sys.git
+</code></p>
+		<h2 id="Local_build">Local build</h2>
+		<p>The build update-site and product build has been automated. It requires 
+			<a href="https://maven.apache.org/">Maven 3</a>.
+		</p>
+		<pre><code>
+cd ./Time4Sys/releng/org.polarsys.time4sys.aggregator/
+mvn3 install
+</code>
+</pre>
+		<p>The artifacts will then be available at following path:
+<code>./Time4Sys/releng/org.polarsys.time4sys.product/target/</code></p>
+		<h2 id="CI.2FCD">CI/CD</h2>
+		<p>Once push to the master repository, a continuous-build integration is ran under a Jenkins system.
+			It is accessible at 
+			<a href="https://hudson.polarsys.org/time4sys/">https://hudson.polarsys.org/time4sys/</a>
+		</p>
+		<p>Moreover, the 
+			<a href="https://hudson.polarsys.org/time4sys/job/Time4Sys%20develop/lastSuccessfulBuild/artifact/Time4Sys/releng/org.polarsys.time4sys.update.site/target/repository/">latest update site</a> can be downloaded 
+			<a href="https://hudson.polarsys.org/time4sys/job/Time4Sys%20develop/lastSuccessfulBuild/artifact/Time4Sys/releng/org.polarsys.time4sys.update.site/target/*zip*/target.zip">there</a>.
+		</p>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+= Time4Sys transformation developpement =            
+
+== Background ==
+
+Transformations are an important part of Time4Sys. They enable the derivation of model into a (usually) simpler analysable model.
+A transformation is thus a resulting transformed model ''but also'' a Mapping linking the elements of the original model to the elements of the resulting model. Transformation are not limited of Design to Design, but from any model to any model, eg from a Simulation to a Design.
+
+Some examples of transformations are:
+
+;Priority and Urgency inversion
+: The priority values used in Scheduling Parameters are reversed.
+: In Time4Sys the higher the priority the  higher the urgency. It is not the case for some embedded OS,
+: the lower the value, the more urgent the task.
+: See <code>org.polarsys.time4sys.transformations.PriorityUrgencyInverter</code>.
+;Normal Form Task splitting
+: Split tasks so that data- and control-flow reception happens only on  the first step of a task,
+: while data- and control-flow emission happens only on the last step of a task.
+: See <code>org.polarsys.time4sys.transformations.TaskSplitter</code>.
+; Activation Propagation
+: Usually applied after the previous transformation, it removes all control-flow dependency
+: by propagating the original activations.
+;Periodic Derivations
+: Sliding Windows Activation events are transformed into a periodic similar events.
+: See <code>org.polarsys.time4sys.transformations.ToPeriodicDerivation</code>.
+;Simulation Analysis
+: This transforms a Simulation (=Slice + Mapping) back into a DesignModel.
+: It thus analyses a simulation trace so as to populate a copied of the original model with
+: information found during the simulation.
+: For instance, it keeps tracks of the WCET of Step really simulated, or the worst-latency of an End-to-End flow.
+ 
+
+Another related model transformation is the <code>org.polarsys.time4sys.transformations.RemoveAndReplaceDeprecated</code>.
+It is not really a Time4Sys Transformation because it modify '''in-place''' the model by removing deprecated model elements.
+
+== Programming ==
+
+The <code>org.polarsys.time4sys.transformations.IdentityDerivation</code> is based on a modified version of the <code>org.eclipse.emf.ecore.util.EcoreUtil.Copier</code>.
+It does indeed copy the original model but it also create a mapping model from original to copied elements. This identity transformation has been derived in an <code>AbstractTransformation</code> class so as to make it easy to track Link from an original element to a copied element that would require further processing.
+You thus shall derived your transformation from the <code>org.polarsys.time4sys.transformations.AbstractTransformation</code> class.
+
+For instance, the <code>PriorityUrgencyInverter</code> works in two-phases. In the first phase, it uses the <code>void copied(EObject source, Link lnk, EObject theCopy)</code> hook to keep the list of Links that will need to be further modified but also track the minimum and maximum values used. In the second phase, the transformation iterates over the tracked links and modified the target as expected. It is done in the <code>void finalize(final DesignModel target)</code> hook.
+
+While it is possible to modified the target model during the first phase, it might be easier to do it in the second one, especially when creating new Links. For instance, the TaskDuplicator (that duplicate the task configuration for each original steps) is the easier non-trivial transformation to study.
+
+# During initialization, it create its own rules (ie rationale for Links).
+# During the first phase it only track Steps and Tasks.
+# In the second phase, it move each step into a newly created task (by using the original <code>EcoreUtil.Copier</code>), update rationale of the link and its targets, and finally deletes the first copied Task (because it shall be orphan now, ie contains no step).
+
+
