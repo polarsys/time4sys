@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
-import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Scheduler;
@@ -487,11 +486,6 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommunicationResource.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ProcessingResource.class) {
 			switch (derivedFeatureID) {
 				case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__SPEED_FACTOR: return GrmPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
@@ -519,11 +513,6 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommunicationResource.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ProcessingResource.class) {
 			switch (baseFeatureID) {
 				case GrmPackage.PROCESSING_RESOURCE__SPEED_FACTOR: return SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__SPEED_FACTOR;

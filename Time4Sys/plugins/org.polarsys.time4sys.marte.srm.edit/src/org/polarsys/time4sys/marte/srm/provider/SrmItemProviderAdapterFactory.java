@@ -839,6 +839,11 @@ public class SrmItemProviderAdapterFactory extends SrmAdapterFactory implements 
 				newChildDescriptors.add
 					(createChildParameter
 						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+						 SrmFactory.eINSTANCE.createSoftwarePort()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 						 SrmFactory.eINSTANCE.createSoftwareSchedulableResource()));
 
 				newChildDescriptors.add
@@ -1037,6 +1042,11 @@ public class SrmItemProviderAdapterFactory extends SrmAdapterFactory implements 
 					(createChildParameter
 						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 SrmFactory.eINSTANCE.createSoftwareMutualExclusionResource()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 SrmFactory.eINSTANCE.createSoftwarePort()));
 
 				newChildDescriptors.add
 					(createChildParameter

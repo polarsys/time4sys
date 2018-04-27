@@ -265,12 +265,12 @@ public class SrmAdapterFactory extends AdapterFactoryImpl {
 				return createResourceBrokerAdapter();
 			}
 			@Override
-			public Adapter caseCommunicationEndPoint(CommunicationEndPoint object) {
-				return createCommunicationEndPointAdapter();
-			}
-			@Override
 			public Adapter caseCommunicationResource(CommunicationResource object) {
 				return createCommunicationResourceAdapter();
+			}
+			@Override
+			public Adapter caseCommunicationEndPoint(CommunicationEndPoint object) {
+				return createCommunicationEndPointAdapter();
 			}
 			@Override
 			public Adapter caseProcessingResource(ProcessingResource object) {

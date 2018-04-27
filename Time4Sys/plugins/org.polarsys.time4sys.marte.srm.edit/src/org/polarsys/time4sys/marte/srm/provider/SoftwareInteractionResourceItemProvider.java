@@ -60,12 +60,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addResMultPropertyDescriptor(object);
-			addIsProtectedPropertyDescriptor(object);
-			addIsActivePropertyDescriptor(object);
-			addRServicesPropertyDescriptor(object);
-			addUsedByPropertyDescriptor(object);
 			addManagedResourcePropertyDescriptor(object);
 			addCreateServicesPropertyDescriptor(object);
 			addDeleteServicesPropertyDescriptor(object);
@@ -79,138 +73,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 			addWaitingPolicyElementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ENamedElement_name_feature"),
-				 getString("_UI_ENamedElement_name_description"),
-				 EcorePackage.Literals.ENAMED_ELEMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Res Mult feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResMultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_resMult_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_resMult_feature", "_UI_Resource_type"),
-				 GrmPackage.Literals.RESOURCE__RES_MULT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Protected feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsProtectedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_isProtected_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_isProtected_feature", "_UI_Resource_type"),
-				 GrmPackage.Literals.RESOURCE__IS_PROTECTED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Active feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsActivePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_isActive_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_isActive_feature", "_UI_Resource_type"),
-				 GrmPackage.Literals.RESOURCE__IS_ACTIVE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the RServices feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRServicesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_rServices_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_rServices_feature", "_UI_Resource_type"),
-				 GrmPackage.Literals.RESOURCE__RSERVICES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Used By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUsedByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Resource_usedBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_usedBy_feature", "_UI_Resource_type"),
-				 GrmPackage.Literals.RESOURCE__USED_BY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -467,11 +329,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EcorePackage.Literals.EMODEL_ELEMENT__EANNOTATIONS);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_PORT);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR);
-			childrenFeatures.add(GrmPackage.Literals.RESOURCE__PSERVICES);
 			childrenFeatures.add(GrmPackage.Literals.RESOURCE_MANAGER__RES_CTRL_POLICY);
 		}
 		return childrenFeatures;
@@ -517,10 +374,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SoftwareInteractionResource.class)) {
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__NAME:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_MULT:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_PROTECTED:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__MEMORY_SIZE_FOOTPRINT:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__STATE_ELEMENTS:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__IDENTIFIER_ELEMENTS:
@@ -530,11 +383,6 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR:
-			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__PSERVICES:
 			case SrmPackage.SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -616,6 +464,11 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 		newChildDescriptors.add
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 SrmFactory.eINSTANCE.createSoftwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 				 SrmFactory.eINSTANCE.createSoftwareSchedulableResource()));
 
 		newChildDescriptors.add
@@ -630,98 +483,13 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createClockResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createCommunicationMedia()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createComputingResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createConcurrencyResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createDeviceResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createSynchResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createMutualExclusionResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createResourceBroker()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createResourceManager()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createScheduler()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createSchedulableResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createSecondaryScheduler()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createStorageResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createTimerResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
-				 GrmFactory.eINSTANCE.createUsageTypedAmount()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
 				 SrmFactory.eINSTANCE.createSoftwarePort()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
-				 GrmFactory.eINSTANCE.createResourcePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
 				 SrmFactory.eINSTANCE.createSoftwareConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
-				 GrmFactory.eINSTANCE.createResourceConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -735,13 +503,31 @@ public class SoftwareInteractionResourceItemProvider extends CommunicationEndPoi
 
 		newChildDescriptors.add
 			(createChildParameter
-				(GrmPackage.Literals.RESOURCE__PSERVICES,
-				 GrmFactory.eINSTANCE.createResourceService()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(GrmPackage.Literals.RESOURCE_MANAGER__RES_CTRL_POLICY,
 				 GrmFactory.eINSTANCE.createResourceControlPolicy()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

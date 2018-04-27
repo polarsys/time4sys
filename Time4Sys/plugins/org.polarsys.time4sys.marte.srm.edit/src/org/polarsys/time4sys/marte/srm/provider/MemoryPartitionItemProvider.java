@@ -243,7 +243,8 @@ public class MemoryPartitionItemProvider extends SoftwareResourceItemProvider {
 
 		boolean qualify =
 			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
-			childFeature == SrmPackage.Literals.MEMORY_PARTITION__CONCURRENT_RESOURCES;
+			childFeature == SrmPackage.Literals.MEMORY_PARTITION__CONCURRENT_RESOURCES ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT;
 
 		if (qualify) {
 			return getString

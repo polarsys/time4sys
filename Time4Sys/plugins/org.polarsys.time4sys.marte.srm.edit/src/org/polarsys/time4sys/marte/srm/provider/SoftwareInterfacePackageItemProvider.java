@@ -181,6 +181,11 @@ public class SoftwareInterfacePackageItemProvider extends ResourcePackageItemPro
 		newChildDescriptors.add
 			(createChildParameter
 				(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+				 SrmFactory.eINSTANCE.createSoftwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 				 SrmFactory.eINSTANCE.createSoftwareResourcePackage()));
 
 		newChildDescriptors.add
