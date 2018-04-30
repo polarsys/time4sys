@@ -38,5 +38,9 @@
             file="html/Time4SysExtensions-toc.xml"
             primary="false">
       </toc>
+      <toc
+            file="html/Time4SysInstall-toc.xml"
+            primary="false">
+      </toc>
    </extension>
 </plugin>

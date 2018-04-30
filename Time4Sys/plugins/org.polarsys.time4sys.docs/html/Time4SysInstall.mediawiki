@@ -1,0 +1,28 @@
+= Time4Sys Install =            
+
+== Time4Sys Product ==
+
+Time4Sys is available for different platform (Mac, Linux and Windows), and for 32 or 64 bits machine, so you have to carefully chose the one compatible with your platform.
+Once the product is downloaded, you need to extract the zip where you want it to be installed.
+Time4Sys product requires a Java 1.8 version installed. If it is not your default your default java version, you also have to specify the path of your java 1.8 version in the Time4Sys -> Eclipse -> eclipse.ini file as follow:
+ -vm
+ C:\Java\JDK\1.8\bin\javaw.exe
+
+== Update Site ==
+
+Time4Sys can also be installed as an update site. It requires an eclipse based environement with a sirius 5 installed. For example, you can install it on a Eclipse Oxygen (https://www.eclipse.org/downloads/packages/eclipse-modeling-tools/oxygen3a), on a Capella 1.2.0 (https://www.polarsys.org/capella/download.html), or on a Capella Studio 1.2.0.
+
+For older version, it is also possible to install it but you will surely need to reinstall a sirius 5 environment before.
+It is possible that some features can not be installed or raise warning, but sometimes, it is only because of sirius/acceleo minor version changes, so you can still install the rest and test if your installation is valid. However, in those case, I recommand you to keep a copy of your current environment if you are afraid to lose it.
+
+To test your installation:
+
+* Create a new Time4sys project (the activity explorer shall appear):
+
+[[Image:../Images/ActivityExplorer.png]] 
+
+* Create a new diagram, add any element.
+
+* Select an element in the diagram and see if your Properties view look like that:
+
+[[Image:../Images/PropertiesView.png]] 

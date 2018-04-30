@@ -35,5 +35,8 @@
       <topic href="html/Time4SysTransfoDev.html" label="Transformations">
          <anchor id="transfodev"/>
       </topic>  
+   </topic>
+   <topic href="html/Time4SysInstall.html" label="Install">
+      <anchor id="install"/>
    </topic>   
 </toc>
