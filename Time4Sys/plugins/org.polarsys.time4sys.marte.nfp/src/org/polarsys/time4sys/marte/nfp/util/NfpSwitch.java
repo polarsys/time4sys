@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.nfp.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -84,15 +85,18 @@ public class NfpSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case NfpPackage.DURATION: {
-				Duration duration = (Duration)theEObject;
-				T result = caseDuration(duration);
+			case NfpPackage.BUCKET: {
+				Bucket bucket = (Bucket)theEObject;
+				T result = caseBucket(bucket);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.TIME_INTERVAL: {
-				TimeInterval timeInterval = (TimeInterval)theEObject;
-				T result = caseTimeInterval(timeInterval);
+			case NfpPackage.COMPOSITE_DISTRIBUTION: {
+				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
+				T result = caseCompositeDistribution(compositeDistribution);
+				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
+				if (result == null) result = caseTimeInterval(compositeDistribution);
+				if (result == null) result = caseDuration(compositeDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,11 +106,9 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.PROBABILISTIC_DURATION: {
-				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
-				T result = caseProbabilisticDuration(probabilisticDuration);
-				if (result == null) result = caseTimeInterval(probabilisticDuration);
-				if (result == null) result = caseDuration(probabilisticDuration);
+			case NfpPackage.DATA_TX_RATE: {
+				DataTxRate dataTxRate = (DataTxRate)theEObject;
+				T result = caseDataTxRate(dataTxRate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,18 +121,9 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NfpPackage.BUCKET: {
-				Bucket bucket = (Bucket)theEObject;
-				T result = caseBucket(bucket);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NfpPackage.NORMAL_DISTRIBUTION: {
-				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
-				T result = caseNormalDistribution(normalDistribution);
-				if (result == null) result = caseProbabilisticDuration(normalDistribution);
-				if (result == null) result = caseTimeInterval(normalDistribution);
-				if (result == null) result = caseDuration(normalDistribution);
+			case NfpPackage.DURATION: {
+				Duration duration = (Duration)theEObject;
+				T result = caseDuration(duration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,21 +136,35 @@ public class NfpSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case NfpPackage.NORMAL_DISTRIBUTION: {
+				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
+				T result = caseNormalDistribution(normalDistribution);
+				if (result == null) result = caseProbabilisticDuration(normalDistribution);
+				if (result == null) result = caseTimeInterval(normalDistribution);
+				if (result == null) result = caseDuration(normalDistribution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.PROBABILISTIC_DURATION: {
+				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
+				T result = caseProbabilisticDuration(probabilisticDuration);
+				if (result == null) result = caseTimeInterval(probabilisticDuration);
+				if (result == null) result = caseDuration(probabilisticDuration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case NfpPackage.TIME_INTERVAL: {
+				TimeInterval timeInterval = (TimeInterval)theEObject;
+				T result = caseTimeInterval(timeInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case NfpPackage.UNIFORM_DISTRIBUTION: {
 				UniformDistribution uniformDistribution = (UniformDistribution)theEObject;
 				T result = caseUniformDistribution(uniformDistribution);
 				if (result == null) result = caseProbabilisticDuration(uniformDistribution);
 				if (result == null) result = caseTimeInterval(uniformDistribution);
 				if (result == null) result = caseDuration(uniformDistribution);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NfpPackage.COMPOSITE_DISTRIBUTION: {
-				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
-				T result = caseCompositeDistribution(compositeDistribution);
-				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
-				if (result == null) result = caseTimeInterval(compositeDistribution);
-				if (result == null) result = caseDuration(compositeDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -312,6 +319,21 @@ public class NfpSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCompositeDistribution(CompositeDistribution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Tx Rate</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Tx Rate</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataTxRate(DataTxRate object) {
 		return null;
 	}
 

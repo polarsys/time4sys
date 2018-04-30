@@ -37,8 +37,9 @@ import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SynchResource;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
-import org.polarsys.time4sys.marte.srm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.DeviceBroker;
 import org.polarsys.time4sys.marte.srm.InterruptResource;
@@ -213,8 +214,8 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCommunicationMedia(messageComResource);
 				if (result == null) result = caseCommunicationEndPoint(messageComResource);
 				if (result == null) result = caseSoftwareResource(messageComResource);
-				if (result == null) result = caseCommunicationResource(messageComResource);
 				if (result == null) result = caseProcessingResource(messageComResource);
+				if (result == null) result = caseCommunicationResource(messageComResource);
 				if (result == null) result = caseResourceManager(messageComResource);
 				if (result == null) result = caseResource(messageComResource);
 				if (result == null) result = caseResourcePackageableElement(messageComResource);
@@ -234,6 +235,7 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSynchResource(notificationResource);
 				if (result == null) result = caseCommunicationEndPoint(notificationResource);
 				if (result == null) result = caseSoftwareResource(notificationResource);
+				if (result == null) result = caseCommunicationResource(notificationResource);
 				if (result == null) result = caseResourceManager(notificationResource);
 				if (result == null) result = caseResource(notificationResource);
 				if (result == null) result = caseResourcePackageableElement(notificationResource);
@@ -253,8 +255,8 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCommunicationMedia(sharedDataComResource);
 				if (result == null) result = caseCommunicationEndPoint(sharedDataComResource);
 				if (result == null) result = caseSoftwareResource(sharedDataComResource);
-				if (result == null) result = caseCommunicationResource(sharedDataComResource);
 				if (result == null) result = caseProcessingResource(sharedDataComResource);
+				if (result == null) result = caseCommunicationResource(sharedDataComResource);
 				if (result == null) result = caseResourceManager(sharedDataComResource);
 				if (result == null) result = caseResource(sharedDataComResource);
 				if (result == null) result = caseResourcePackageableElement(sharedDataComResource);
@@ -299,8 +301,8 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCommunicationMedia(softwareCommunicationResource);
 				if (result == null) result = caseCommunicationEndPoint(softwareCommunicationResource);
 				if (result == null) result = caseSoftwareResource(softwareCommunicationResource);
-				if (result == null) result = caseCommunicationResource(softwareCommunicationResource);
 				if (result == null) result = caseProcessingResource(softwareCommunicationResource);
+				if (result == null) result = caseCommunicationResource(softwareCommunicationResource);
 				if (result == null) result = caseResourceManager(softwareCommunicationResource);
 				if (result == null) result = caseResource(softwareCommunicationResource);
 				if (result == null) result = caseResourcePackageableElement(softwareCommunicationResource);
@@ -340,6 +342,7 @@ public class SrmSwitch<T> extends Switch<T> {
 				T result = caseSoftwareInteractionResource(softwareInteractionResource);
 				if (result == null) result = caseCommunicationEndPoint(softwareInteractionResource);
 				if (result == null) result = caseSoftwareResource(softwareInteractionResource);
+				if (result == null) result = caseCommunicationResource(softwareInteractionResource);
 				if (result == null) result = caseResourceManager(softwareInteractionResource);
 				if (result == null) result = caseResource(softwareInteractionResource);
 				if (result == null) result = caseResourcePackageableElement(softwareInteractionResource);
@@ -386,6 +389,7 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSynchResource(softwareMutualExclusionResource);
 				if (result == null) result = caseCommunicationEndPoint(softwareMutualExclusionResource);
 				if (result == null) result = caseSoftwareResource(softwareMutualExclusionResource);
+				if (result == null) result = caseCommunicationResource(softwareMutualExclusionResource);
 				if (result == null) result = caseResourceManager(softwareMutualExclusionResource);
 				if (result == null) result = caseResource(softwareMutualExclusionResource);
 				if (result == null) result = caseResourcePackageableElement(softwareMutualExclusionResource);
@@ -402,6 +406,10 @@ public class SrmSwitch<T> extends Switch<T> {
 				T result = caseSoftwarePort(softwarePort);
 				if (result == null) result = caseResourcePort(softwarePort);
 				if (result == null) result = caseCommunicationEndPoint(softwarePort);
+				if (result == null) result = caseCommunicationResource(softwarePort);
+				if (result == null) result = caseResource(softwarePort);
+				if (result == null) result = caseResourcePackageableElement(softwarePort);
+				if (result == null) result = casePackageableElement(softwarePort);
 				if (result == null) result = caseNamedElement(softwarePort);
 				if (result == null) result = caseENamedElement(softwarePort);
 				if (result == null) result = caseModelElement(softwarePort);
@@ -487,6 +495,7 @@ public class SrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSynchResource(softwareSynchronizationResource);
 				if (result == null) result = caseCommunicationEndPoint(softwareSynchronizationResource);
 				if (result == null) result = caseSoftwareResource(softwareSynchronizationResource);
+				if (result == null) result = caseCommunicationResource(softwareSynchronizationResource);
 				if (result == null) result = caseResourceManager(softwareSynchronizationResource);
 				if (result == null) result = caseResource(softwareSynchronizationResource);
 				if (result == null) result = caseResourcePackageableElement(softwareSynchronizationResource);
@@ -678,7 +687,7 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
+	public T caseModelElement(ModelElement object) {
 		return null;
 	}
 
@@ -708,7 +717,7 @@ public class SrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 

@@ -31,15 +31,16 @@ public class NfpTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new NfpTests("nfp Tests");
-		suite.addTestSuite(DurationTest.class);
-		suite.addTestSuite(TimeIntervalTest.class);
-		suite.addTestSuite(DataSizeTest.class);
-		suite.addTestSuite(ProbabilisticDurationTest.class);
-		suite.addTestSuite(DiscreteDistributionTest.class);
-		suite.addTestSuite(NormalDistributionTest.class);
-		suite.addTestSuite(GeneralizedExtremeValueDistributionTest.class);
-		suite.addTestSuite(UniformDistributionTest.class);
 		suite.addTestSuite(CompositeDistributionTest.class);
+		suite.addTestSuite(DataSizeTest.class);
+		suite.addTestSuite(DataTxRateTest.class);
+		suite.addTestSuite(DiscreteDistributionTest.class);
+		suite.addTestSuite(DurationTest.class);
+		suite.addTestSuite(GeneralizedExtremeValueDistributionTest.class);
+		suite.addTestSuite(NormalDistributionTest.class);
+		suite.addTestSuite(ProbabilisticDurationTest.class);
+		suite.addTestSuite(TimeIntervalTest.class);
+		suite.addTestSuite(UniformDistributionTest.class);
 		return suite;
 	}
 

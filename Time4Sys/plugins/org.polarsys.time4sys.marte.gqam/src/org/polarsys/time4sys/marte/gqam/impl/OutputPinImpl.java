@@ -37,7 +37,7 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
  *
  * @generated
  */
-public class OutputPinImpl extends ControlPinImpl implements OutputPin {
+public class OutputPinImpl extends PinImpl implements OutputPin {
 	/**
 	 * The cached value of the '{@link #getSuccessors() <em>Successors</em>}' reference list.
 	 * <!-- begin-user-doc -->

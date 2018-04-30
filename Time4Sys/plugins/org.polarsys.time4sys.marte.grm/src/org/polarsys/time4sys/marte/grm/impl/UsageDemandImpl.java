@@ -20,12 +20,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ import org.polarsys.time4sys.marte.grm.UsageDemand;
  *
  * @generated
  */
-public class UsageDemandImpl extends MinimalEObjectImpl.Container implements UsageDemand {
+public class UsageDemandImpl extends ModelElementImpl implements UsageDemand {
 	/**
 	 * The cached value of the '{@link #getUsage() <em>Usage</em>}' reference list.
 	 * <!-- begin-user-doc -->

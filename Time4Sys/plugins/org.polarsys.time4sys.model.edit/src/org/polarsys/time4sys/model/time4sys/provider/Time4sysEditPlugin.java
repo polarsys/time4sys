@@ -17,8 +17,12 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.design.provider.DesignEditPlugin;
 import org.polarsys.time4sys.mapping.provider.MappingEditPlugin;
+import org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
+import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
+import org.polarsys.time4sys.marte.sam.provider.SamEditPlugin;
 import org.polarsys.time4sys.trace.provider.TraceEditPlugin;
 
 /**
@@ -53,12 +57,16 @@ public final class Time4sysEditPlugin extends EMFPlugin {
 	public Time4sysEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     AllocEditPlugin.INSTANCE,
 		     DesignEditPlugin.INSTANCE,
 		     GqamEditPlugin.INSTANCE,
 		     GrmEditPlugin.INSTANCE,
 		     MappingEditPlugin.INSTANCE,
 		     TraceEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
+		     CoreElementsEditPlugin.INSTANCE,
+		     Nfp_AnnotationEditPlugin.INSTANCE,
+		     SamEditPlugin.INSTANCE,
 		   });
 	}
 

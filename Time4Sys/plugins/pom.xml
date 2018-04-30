@@ -14,7 +14,7 @@
  
 <modules>
 <module>org.polarsys.time4sys.activity.explorer</module>
-<module>org.polarsys.time4sys.common</module>
+<module>org.polarsys.time4sys.analysis.tools</module>
 <module>org.polarsys.time4sys.design</module>
 <module>org.polarsys.time4sys.design.contextual.explorer</module>
 <module>org.polarsys.time4sys.design.edit</module>
@@ -37,7 +37,6 @@
 <module>org.polarsys.time4sys.marte.coreelements</module>
 <module>org.polarsys.time4sys.marte.coreelements.edit</module>
 <module>org.polarsys.time4sys.marte.coreelements.editor</module>
-<module>org.polarsys.time4sys.trace.graphviz</module>
 <module>org.polarsys.time4sys.marte.gqam</module>
 <module>org.polarsys.time4sys.marte.gqam.edit</module>
 <module>org.polarsys.time4sys.marte.gqam.editor</module>
@@ -62,12 +61,15 @@
 <module>org.polarsys.time4sys.model</module>
 <module>org.polarsys.time4sys.model.edit</module>
 <module>org.polarsys.time4sys.model.editor</module>
+<module>org.polarsys.time4sys.navigator</module>
 <module>org.polarsys.time4sys.odesign</module>
 <module>org.polarsys.time4sys.srm.contextual.explorer</module>
 <module>org.polarsys.time4sys.trace</module>
-<module>org.polarsys.time4sys.trace.html</module>
 <module>org.polarsys.time4sys.trace.edit</module>
 <module>org.polarsys.time4sys.trace.editor</module>
+<module>org.polarsys.time4sys.trace.exectime.csv</module>
+<module>org.polarsys.time4sys.trace.html</module>
+<module>org.polarsys.time4sys.trace.graphviz</module>
 <module>org.polarsys.time4sys.trace.timinggraphics</module>
 <module>org.polarsys.time4sys.ui</module>
 <module>org.polarsys.time4sys.ui.perspective</module>

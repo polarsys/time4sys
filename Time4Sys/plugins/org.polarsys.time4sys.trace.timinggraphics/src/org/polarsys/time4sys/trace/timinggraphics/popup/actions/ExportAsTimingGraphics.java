@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.math.MathContext;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,6 +36,13 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.internal.resources.TestingSupport;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
+import org.osgi.service.prefs.Preferences;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -48,37 +56,50 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.preferences.ScopedPreferenceStore;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.impl.LongDurationImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.Slice;
 import org.polarsys.time4sys.trace.SliceKind;
 import org.polarsys.time4sys.trace.Trace;
-import org.polarsys.time4sys.trace.util.SubSlicesIterator;
+import org.polarsys.time4sys.trace.timinggraphics.Activator;
+import org.polarsys.time4sys.trace.util.SliceDurationStatistics;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Text;
 
 public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
-	public static void export(final Slice slice, final File output)
+	public static void exportGanttXml(final Slice slice, final File output)
 			throws IOException, ParserConfigurationException, TransformerException {
-		new ExportAsTimingGraphics().run(slice, output);
+		new ExportAsTimingGraphics(slice).writeGanttXml(output);
+	}
+	
+	public static void exportGraphicsXml(final Slice slice, final File output)
+			throws IOException, ParserConfigurationException, TransformerException {
+		new ExportAsTimingGraphics(slice).writeGraphicsXml(output);
 	}
 
 	protected Shell shell;
 	protected Slice slice = null;
 	protected Trace trace = null;
 	private File output;
-	private FileOutputStream os;
-	private OutputStreamWriter w;
 
 	/**
 	 * Constructor for Action1.
 	 */
 	public ExportAsTimingGraphics() {
+		this(null);
+	}
+	
+	public ExportAsTimingGraphics(final Slice toBeExported) {
 		super();
+		slice = toBeExported;
 	}
 
 	/**
@@ -95,43 +116,101 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		if (slice == null && trace == null) {
 			return;
 		}
-		output = new File("timingGraphics/gantt.xml");
+		final File folder = getTimingGraphicsFolder();
+		final Exception errGantt = writeGanttXml(new File(folder, "gantt.xml"));
+		final Exception errGraphics = writeGraphicsXml(new File(folder, "graphics.xml"));
+		if ((errGantt == null || errGraphics == null) && 
+			MessageDialog.openQuestion(shell, "Trace Timing Graphics(tm) exporter",
+				"Gantt chart(s) exported in " + output.getAbsolutePath() + ".\n" + "Would you view it?")) {
+			/* If no errors raised during the export */
+			if (output.exists() && output.isFile()) {
+				final Bundle plugin = Platform.getBundle("org.polarsys.time4sys.trace.timinggraphics");
+				if (plugin == null) {
+					/* And no Timing Graphics plugin */
+					final IFileStore fileStore = EFS.getLocalFileSystem().getStore(output.toURI());
+					final IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+
+					try {
+						IDE.openEditorOnFileStore(page, fileStore);
+					} catch (PartInitException e) {
+						// Put your exception handler here if you wish to
+						e.printStackTrace();
+					}
+				} else {
+					/* And the Timing graphics plugin is installed */
+					try {
+						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView("com.linkconet.e3.dashboard.realtimecharts.ui.views.GanttChartsView");
+					} catch (PartInitException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
+	
+	private File getTimingGraphicsFolder() {
+		final ScopedPreferenceStore preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, "com.linkconet.e3.dashboard.RealTimeCharts.ui");
+		final String path = preferenceStore.getString("xmlFilesLocation");
+		final File folder;
+		if (path == null || path.trim().isEmpty()) {
+			folder = new File(ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile(), "timingGraphics");
+		} else {
+			folder = new File(path);
+		}
+		return folder;
+	}
+
+	private Exception writeGanttXml(final File outputFile) {
+		output = outputFile;
+		final FileOutputStream os;
 		try {
 			os = new FileOutputStream(output);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return;
+			return e;
 		}
-		w = new OutputStreamWriter(os);
+		final OutputStreamWriter w = new OutputStreamWriter(os);
 		try {
-			export();
+			exportGanttXml(w);
 			w.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return;
+			return e;
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return;
+			return e;
 		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return;
+			return e;
 		}
-		if (MessageDialog.openQuestion(shell, "Trace Timing Graphics(tm) exporter",
-				"Gantt chart(s) exported in " + output.getAbsolutePath() + ".\n" + "Would you view it?")) {
-			if (output.exists() && output.isFile()) {
-				final IFileStore fileStore = EFS.getLocalFileSystem().getStore(output.toURI());
-				final IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-
-				try {
-					IDE.openEditorOnFileStore(page, fileStore);
-				} catch (PartInitException e) {
-					// Put your exception handler here if you wish to
-				}
-			}
+		return null;
+	}
+	
+	private Exception writeGraphicsXml(final File outputFile) {
+		output = outputFile;
+		final FileOutputStream os;
+		try {
+			os = new FileOutputStream(output);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return e;
 		}
+		final OutputStreamWriter w = new OutputStreamWriter(os);
+		try {
+			exportGraphicsXml(w);
+			w.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return e;
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+			return e;
+		} catch (TransformerException e) {
+			e.printStackTrace();
+			return e;
+		}
+		return null;
 	}
 
 	/**
@@ -154,51 +233,32 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		}
 	}
 
-	public void run(final Slice slc, final File output)
-			throws IOException, ParserConfigurationException, TransformerException {
-		assert (output != null);
-		this.output = output;
-		slice = slc;
-		trace = null;
-		run(new FileOutputStream(output));
-	}
-
-	public void run(Trace trc, File output) throws IOException, ParserConfigurationException, TransformerException {
-		assert (output != null);
-		trace = trc;
-		slice = null;
-		this.output = output;
-		run(new FileOutputStream(output));
-	}
-
-	public void run(final FileOutputStream fileOutputStream)
-			throws IOException, ParserConfigurationException, TransformerException {
-		assert (fileOutputStream != null);
-		os = fileOutputStream;
-		run(new OutputStreamWriter(os));
-		w.close();
-	}
-
-	public void run(final OutputStreamWriter outputStreamWriter)
-			throws IOException, TransformerException, ParserConfigurationException {
-		assert (outputStreamWriter != null);
-		w = outputStreamWriter;
-		export();
-		w.flush();
-	}
-
-	static private void setTextPropery(final Element parent, final String eltName, final String value) {
+	static private Text setTextProperty(final Element parent, final String eltName, final String value) {
 		final Document doc = parent.getOwnerDocument();
 		final Element prop = doc.createElement(eltName);
-		prop.appendChild(doc.createTextNode(value));
+		final Text textNode = doc.createTextNode(value);
+		prop.appendChild(textNode);
 		parent.appendChild(prop);
+		return textNode;
 	}
 
 	static private void setTimePropery(final Element parent, final String eltName, final Duration value) {
-		final Document doc = parent.getOwnerDocument();
-		final Element prop = doc.createElement(eltName);
-		prop.appendChild(doc.createTextNode(Double.toString(value.convertToUnit(TimeUnitKind.MS).getValue())));
-		parent.appendChild(prop);
+		final Duration durInPS = value.convertToUnit(TimeUnitKind.PS);
+		final long picoseconds;
+		if (durInPS instanceof LongDurationImpl) {
+			picoseconds = ((LongDurationImpl)durInPS).getValueInPicoSeconds();
+		} else {
+			picoseconds = (long) durInPS.getValue();
+		}
+		setTextProperty(parent, eltName, Long.toString(picoseconds));
+	}
+	
+	private static String percentageFormat(int value) {
+		return String.format("%d.%02d", value / 100, value % 100);
+	}
+	
+	private static void setPercentagePropertyTwoDigits(final Element parent, final String eltName, final int value) {
+		setTextProperty(parent, eltName, percentageFormat(value));
 	}
 
 	static private Element createChildElement(final Element parent, final String eltName) {
@@ -206,8 +266,96 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		parent.appendChild(child);
 		return child;
 	}
+	
+	protected void exportGraphicsXml(final OutputStreamWriter w) throws IOException, ParserConfigurationException, TransformerException {
+		final DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+		final DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+		final Document graphicsDoc = docBuilder.newDocument();
+		final Element tabsFileElt = graphicsDoc.createElement("Tabs");
+		graphicsDoc.appendChild(tabsFileElt);
+		final Element tabSimulationLoad = createChildElement(tabsFileElt, "Tab");
+		String label = null;
+		String descr = null;
+		final Queue<Slice> toBeDone = new LinkedBlockingQueue<>();
+		if (slice != null) {
+			toBeDone.add(slice);
+			label = slice.getName();
+			descr = getSimulationName(slice);
+		}
+		if (trace != null) {
+			toBeDone.addAll(trace.getSlices());
+			label = "Trace";
+			descr = getSimulationName(trace);
+		}
+		if (label == null) {
+			label = "";
+		}
+		if (descr == null) {
+			descr = "";
+		}
+		setTextProperty(tabSimulationLoad, "Title", "Load of " + label);
+		final Element dataSetsElt = createChildElement(tabSimulationLoad, "DataSets");
 
-	protected void export() throws IOException, ParserConfigurationException, TransformerException {
+		for (Slice tab : toBeDone) {
+			createLoadSelector(dataSetsElt, tab);
+		}
+
+		// write the content into xml file
+		final TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		final Transformer transformer = transformerFactory.newTransformer();
+		final DOMSource source = new DOMSource(graphicsDoc);
+		final StreamResult result = new StreamResult(w);
+		transformer.transform(source, result);
+	}
+	
+	static private void createLoadSelector(final Element dataSetsElt, final Slice root) {
+		final Element pieDatasetElt = createChildElement(dataSetsElt, "PieDataset");
+		setTextProperty(pieDatasetElt, "Selector", root.getName());
+		final Text titleElt = setTextProperty(pieDatasetElt, "Title", root.getName());
+		final Duration simDuration = root.getLatestTimestamp();
+		// two-digits fixed-point percentage, ie 123 = 1.23%, 100% = 10000
+		int accumulator = 0;
+		
+		for (Slice sub : root.getSubSlices()) {
+			accumulator += addLoadItem(pieDatasetElt, sub, simDuration);
+			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+				createLoadSelector(dataSetsElt, sub);
+			}
+		}
+		for (Slice sub : root.getOwnedSubSlices()) {
+			accumulator += addLoadItem(pieDatasetElt, sub, simDuration);
+			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+				createLoadSelector(dataSetsElt, sub);
+			}
+		}
+		if (pieDatasetElt.hasChildNodes() && accumulator <= 10000) {
+			if (accumulator <= 10000) {
+				final Element idlePieItemElt = createChildElement(pieDatasetElt, "PieItem");
+				setTextProperty(idlePieItemElt, "Color", "FFFFFF");
+				setTextProperty(idlePieItemElt, "Key", "Idle");
+				setPercentagePropertyTwoDigits(idlePieItemElt, "Value", 10000 - accumulator);
+			}
+			// Update title with total load
+			titleElt.setTextContent(titleElt.getTextContent() + " -- " + percentageFormat(accumulator));
+		} else {
+			dataSetsElt.removeChild(pieDatasetElt);
+		}
+	}
+
+	private static int addLoadItem(final Element pieDatasetElt, final Slice sub, final Duration simDuration) {
+		final Duration sliceDuration = SliceDurationStatistics.computeExecutionTimeDuration(sub);
+		if (sliceDuration.notZero()) {
+			final int percentage = (int) (sliceDuration.div(simDuration, MathContext.DECIMAL32) * 10000.0);
+			final Element pieItemElt = createChildElement(pieDatasetElt, "PieItem");
+			setTextProperty(pieItemElt, "Key", sub.getName());
+			setPercentagePropertyTwoDigits(pieItemElt, "Value", percentage);
+			return percentage;
+		} else {
+			return 0;
+		}
+	}
+
+	protected void exportGanttXml(final OutputStreamWriter w) throws IOException, ParserConfigurationException, TransformerException {
 		final DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		final Document ganttDoc = docBuilder.newDocument();
@@ -234,18 +382,18 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			descr = "";
 		}
 
-		setTextPropery(ganttFileElt, "Date", new Date().toString());
-		setTextPropery(ganttFileElt, "Description", descr);
-		setTextPropery(ganttFileElt, "Name", label);
-		setTextPropery(ganttFileElt, "Uuid", UUID.randomUUID().toString());
+		setTextProperty(ganttFileElt, "Date", new Date().toString());
+		setTextProperty(ganttFileElt, "Description", descr);
+		setTextProperty(ganttFileElt, "Name", label);
+		setTextProperty(ganttFileElt, "Uuid", UUID.randomUUID().toString());
 
 		final Element tabsElt = createChildElement(ganttFileElt, "Tabs");
 
 		final Element tabElt = createChildElement(tabsElt, "Tab");
-		setTextPropery(tabElt, "Name", "Gantts");
+		setTextProperty(tabElt, "Name", "Gantts");
 
 		final Element configElt = createChildElement(tabElt, "Config");
-		setTextPropery(configElt, "Unit", "ms");
+		setTextProperty(configElt, "Unit", "ms");
 
 		final Element ganttsElt = createChildElement(tabElt, "Gantts");
 
@@ -260,13 +408,15 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final StreamResult result = new StreamResult(w);
 		transformer.transform(source, result);
 	}
+	
+	
 
 	static private void createGanttSelector(final Element ganttsElt, final Slice root) {
 		final Element ganttElt = createChildElement(ganttsElt, "Gantt");
-		setTextPropery(ganttElt, "Selector", root.getName());
-		setTextPropery(ganttElt, "Title", root.getName());
-		setTextPropery(ganttElt, "Date", "01/01/2017 10:00:00");
-		setTextPropery(ganttElt, "Description", root.getName());
+		setTextProperty(ganttElt, "Selector", root.getName());
+		setTextProperty(ganttElt, "Title", root.getName());
+		setTextProperty(ganttElt, "Date", "01/01/2017 10:00:00");
+		setTextProperty(ganttElt, "Description", root.getName());
 		setTimePropery(ganttElt, "Length", root.getLatestTimestamp());
 
 		final Element ganttLinesElt = createChildElement(ganttElt, "GanttLines");
@@ -291,10 +441,10 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 	static private void addGanttLine(Element ganttGanttLinesElt, String name, Slice sub, String label) {
 
 		final Element ganttLineElt = createChildElement(ganttGanttLinesElt, "GanttLine");
-		setTextPropery(ganttLineElt, "Name", sub.getName());
-		setTextPropery(ganttLineElt, "TextLine1", sub.getKindLabel());
-		setTextPropery(ganttLineElt, "TextLine2", " ");
-		setTextPropery(ganttLineElt, "Description", sub.getName());
+		setTextProperty(ganttLineElt, "Name", sub.getName());
+		setTextProperty(ganttLineElt, "TextLine1", sub.getKindLabel());
+		setTextProperty(ganttLineElt, "TextLine2", " ");
+		setTextProperty(ganttLineElt, "Description", sub.getName());
 		final Element ganttElementsElt = createChildElement(ganttLineElt, "GanttElements");
 		List<Slice> slices = getSlicesOfSlices(sub);
 //			for (Slice job : new SubSlicesIterator(sub, SliceKind.JOB)) {//Iterator don't work for me, let's try with list.
@@ -313,9 +463,9 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		return filteredSlices;
 	}
 
-	private static List<Slice> getSlicesOfSlices(Slice sub) {
+	private static List<Slice> getSlicesOfSlices(final Slice sub) {
 		List<Slice> slices = new ArrayList<Slice>();
-		if (sub.getOwnedSubSlices().size()>0){
+		/*if (sub.getOwnedSubSlices().size()>0){
 			slices.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getOwnedSubSlices()){
 				slices = getSlicesOfSlices(slices, owned);
@@ -326,36 +476,36 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			for (Slice owned : sub.getSubSlices()){
 				slices = getSlicesOfSlices(slices, owned);
 			}
-		}
-		return slices;
+		}*/
+		return getSlicesOfSlices(slices, sub);
 	}
 	
-	private static List<Slice> getSlicesOfSlices(List<Slice> slices, Slice sub) {
+	private static List<Slice> getSlicesOfSlices(final List<Slice> accumulator, final Slice sub) {
 		if (sub.getOwnedSubSlices().size()>0){
-			slices.addAll(sub.getOwnedSubSlices());
+			accumulator.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getOwnedSubSlices()){
-				slices = getSlicesOfSlices(slices, sub);
+				getSlicesOfSlices(accumulator, owned);
 			}
 		}
 		if (sub.getSubSlices().size()>0){
-			slices.addAll(sub.getOwnedSubSlices());
+			accumulator.addAll(sub.getOwnedSubSlices());
 			for (Slice owned : sub.getSubSlices()){
-				slices = getSlicesOfSlices(slices, sub);
+				getSlicesOfSlices(accumulator, owned);
 			}
 		}
 
-		return slices;
+		return accumulator;
 	}
 
 	static private void createGanttElement(final Element parent, final Slice job) {
 		final Element ganttElementElt = createChildElement(parent, "GanttElement");
-		setTextPropery(ganttElementElt, "Name", job.getName());
+		setTextProperty(ganttElementElt, "Name", job.getName());
 		NumberFormat nf = NumberFormat.getNumberInstance(Locale.ROOT);
 		nf.setMaximumFractionDigits(0);
 		nf.setGroupingUsed(false);
 //		setTextPropery(ganttElementElt, "Id", nf.format(job.get.convertToUnit(TimeUnitKind.MS).getValue()));
 
-		setTextPropery(ganttElementElt, "Id", nf.format(job.getAggregatedEvents().get(0).getTimestamp().convertToUnit(TimeUnitKind.MS).getValue()));//TODOTODO
+		setTextProperty(ganttElementElt, "Id", nf.format(job.getAggregatedEvents().get(0).getTimestamp().convertToUnit(TimeUnitKind.MS).getValue()));//TODOTODO
 		final Element statusesElt = createChildElement(ganttElementElt, "Statuses");
 		Element elementEventsElt = null;
 		for (Event evt : job.getAggregatedEvents()) {
@@ -392,7 +542,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
 	static private void createEvent(Element parent, SchedulingEvent evt, String type) {
 		final Element elementEventElt = createTypedTimedElt(parent, "ElementEvent", evt, null);
-		setTextPropery(elementEventElt, "Label", "");
+		setTextProperty(elementEventElt, "Label", "");
 	}
 
 	static private Element createTypedTimedElt(final Element parent, final String eltName, final SchedulingEvent evt,
@@ -401,7 +551,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			type = evt.getKind().getName().toUpperCase();
 		}
 		final Element childElt = createChildElement(parent, eltName);
-		setTextPropery(childElt, "Type", type);
+		setTextProperty(childElt, "Type", type);
 		setTimePropery(childElt, "Instant", evt.getTimestamp());
 		return childElt;
 	}

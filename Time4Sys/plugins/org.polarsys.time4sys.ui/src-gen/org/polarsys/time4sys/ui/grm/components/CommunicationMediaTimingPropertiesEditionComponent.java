@@ -128,15 +128,6 @@ public class CommunicationMediaTimingPropertiesEditionComponent extends SinglePa
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		CommunicationMedia communicationMedia = (CommunicationMedia)semanticObject;
-		if (GrmViewsRepository.Timing.TimingProperties.capacity == event.getAffectedEditor()) {
-			communicationMedia.setCapacity((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (GrmViewsRepository.Timing.TimingProperties.packetTime == event.getAffectedEditor()) {
-			communicationMedia.setPacketTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (GrmViewsRepository.Timing.TimingProperties.blockingTime == event.getAffectedEditor()) {
-			communicationMedia.setBlockingTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
 	}
 
 	/**

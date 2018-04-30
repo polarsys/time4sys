@@ -120,6 +120,15 @@ public interface NfpFactory extends EFactory {
 	CompositeDistribution createCompositeDistribution();
 
 	/**
+	 * Returns a new object of class '<em>Data Tx Rate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Data Tx Rate</em>'.
+	 * @generated
+	 */
+	DataTxRate createDataTxRate();
+
+	/**
 	 * 
 	 * @return
 	 * @generated NOT

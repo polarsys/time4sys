@@ -496,9 +496,6 @@ public class MessageComResourceGeneralPropertiesEditionComponent extends SingleP
 				mainSchedulerSettings.setToReference(eObject);
 			}
 		}
-		if (SrmViewsRepository.General.Properties.elementSize == event.getAffectedEditor()) {
-			messageComResource.setElementSize((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
-		}
 	}
 
 	/**

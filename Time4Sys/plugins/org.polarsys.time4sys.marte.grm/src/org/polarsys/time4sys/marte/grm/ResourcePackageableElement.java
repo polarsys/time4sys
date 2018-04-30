@@ -12,6 +12,8 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Resource Packageable Element</b></em>'.
@@ -26,5 +28,5 @@ package org.polarsys.time4sys.marte.grm;
  * @model abstract="true"
  * @generated
  */
-public interface ResourcePackageableElement extends org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement {
+public interface ResourcePackageableElement extends PackageableElement {
 } // ResourcePackageableElement

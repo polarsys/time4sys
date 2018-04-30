@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2016, 2017 Artal Technologies and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Aurelien Didier (Artal Technologies) - initial API and implementation
- *******************************************************************************/
 /**
  * Generated with Acceleo
  */
@@ -248,6 +238,16 @@ public class DurationPropertiesEditionComponent extends SinglePartPropertiesEdit
 	 */
 	public boolean mustBeComposed(Object key, int kind) {
 		return key == NfpViewsRepository.General.Properties.value || key == NfpViewsRepository.General.Properties.unit || key == NfpViewsRepository.General.Properties.best || key == NfpViewsRepository.General.Properties.worst || key == NfpViewsRepository.General.Properties.clock || key == NfpViewsRepository.General.Properties.precision || key == NfpViewsRepository.General.Properties.class;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#isRequired(java.lang.Object, int)
+	 * 
+	 */
+	public boolean isRequired(Object key, int kind) {
+		return key == NfpViewsRepository.General.Properties.unit;
 	}
 
 	/**

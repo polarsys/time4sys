@@ -2,16 +2,20 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grm" nsURI="http://www.polarsys.org/time4sys/marte/grm/1.0"
     nsPrefix="grm">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Generic Resource Modeling"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AccessControlPolicy" eSuperTypes="core_elements.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClockResource" eSuperTypes="#//TimingResource"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationEndPoint" abstract="true"
+      eSuperTypes="#//CommunicationResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationMedia" eSuperTypes="#//CommunicationResource #//ProcessingResource">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementSize" eType="#//NFP_DataSize"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" eType="#//NFP_DataTxRate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packetTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transmMode" eType="#//TransmModeKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComputingResource" eSuperTypes="#//ProcessingResource"/>
@@ -20,6 +24,18 @@
       eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="DeviceResource" eSuperTypes="#//ProcessingResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="DynamicUsage" eSuperTypes="#//ResourceUsage"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EDFParameters" eSuperTypes="#//SchedulingParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deadline" lowerBound="1"
+        eType="#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FixedPriorityParameters" eSuperTypes="#//SchedulingParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="priority is the urgency of the SchedulableResource, ie the higher the priority, the higher the urgency (higher numerical value).&#xD;&#xA;NB:  This is the opposite of the posix priority where highest priority have lowest numerical value. In Time4Sys, the highest priority have the highest numerical value."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MutualExclusionProtocol" eSuperTypes="#//AccessControlPolicy">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="protocol" eType="#//ProtectProtocolKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherProtocol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -30,6 +46,44 @@
         eType="#//MutualExclusionProtocol" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="protectParams" upperBound="-1"
         eType="#//ProtectionParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PeriodicServerKind">
+    <eLiterals name="Undef"/>
+    <eLiterals name="Sporadic" value="1"/>
+    <eLiterals name="Deferrable" value="2"/>
+    <eLiterals name="Other" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PeriodicServerParameters" eSuperTypes="#//FixedPriorityParameters">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PeriodicServerKind"
+        defaultValueLiteral="Undef">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="indicates the type of periodic server."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundPriority" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="is the priority used to run the server when it is in the background."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialBudget" eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="is the full ammount of execution time available for a cycle of the server."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replenishPeriod" eType="#//NFP_Duration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="is the replenishment period defined for the server."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxPendingReplenish" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="is the maximum number of replenishments that can be stored in the queue of pending replenishments, it limits the number of times a schedulable resource may block itself in the time frame of a cycle period."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoolingParameters" eSuperTypes="#//FixedPriorityParameters">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="overhead" eType="#//NFP_Duration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessingResource" abstract="true"
       eSuperTypes="#//Resource">
@@ -155,6 +209,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="schedParams" upperBound="-1"
         eType="#//SchedulingParameter" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduleSpecification" abstract="true"
+      eSuperTypes="core_elements.ecore#//ModelElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SchedulingParameter" eSuperTypes="core_elements.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -171,6 +227,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="policy" eType="#//SchedPolicyKind"
         defaultValueLiteral="Undef"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherSchedPolicy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="#//ScheduleSpecification"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecondaryScheduler" eSuperTypes="#//Scheduler">
     <eStructuralFeatures xsi:type="ecore:EReference" name="virtualProcessingUnit"
@@ -179,6 +237,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="StaticUsage" eSuperTypes="#//ResourceUsage"/>
   <eClassifiers xsi:type="ecore:EClass" name="StorageResource" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="SynchResource" eSuperTypes="#//Resource"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TableDrivenSchedule" eSuperTypes="#//ScheduleSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frameCycleTime" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+        eType="#//TableEntryType" eOpposite="#//TableEntryType/schedule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableEntryType" eSuperTypes="#//SchedulingParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="#//TableDrivenSchedule"
+        eOpposite="#//TableDrivenSchedule/entries"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeSlot" lowerBound="1"
+        upperBound="-1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" unique="false"
+        upperBound="-1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialBudget" eType="#//NFP_Duration"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimingResource" abstract="true" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimerResource" eSuperTypes="#//TimingResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="#//NFP_Duration"/>
@@ -194,7 +266,7 @@
     <eLiterals name="half_duplex" value="1"/>
     <eLiterals name="full_duplex" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UsageDemand">
+  <eClassifiers xsi:type="ecore:EClass" name="UsageDemand" eSuperTypes="core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="usage" upperBound="-1"
         eType="#//ResourceUsage" eOpposite="#//ResourceUsage/workload"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="event" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -208,4 +280,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="energy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataTxRate" instanceClassName="org.polarsys.time4sys.marte.nfp.DataTxRate"/>
 </ecore:EPackage>

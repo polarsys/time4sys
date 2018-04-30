@@ -496,9 +496,6 @@ public class SharedDataComResourceGeneralPropertiesEditionComponent extends Sing
 				mainSchedulerSettings.setToReference(eObject);
 			}
 		}
-		if (SrmViewsRepository.General.Properties.elementSize == event.getAffectedEditor()) {
-			sharedDataComResource.setElementSize((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
-		}
 	}
 
 	/**

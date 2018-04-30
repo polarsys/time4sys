@@ -37,7 +37,7 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
  *
  * @generated
  */
-public class InputPinImpl extends ControlPinImpl implements InputPin {
+public class InputPinImpl extends PinImpl implements InputPin {
 	/**
 	 * The cached value of the '{@link #getPredecessors() <em>Predecessors</em>}' reference list.
 	 * <!-- begin-user-doc -->

@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
@@ -30,12 +31,22 @@ public class EndToEndFlowConstraintBuilder {
 	private StepBuilder stimuli;
 	private StepBuilder response;
 	private Duration deadline;
+	private EndToEndFlow endToEndFlow;
 	
 	public EndToEndFlowConstraintBuilder() {
 	}
 
+	public EndToEndFlowConstraintBuilder(final EndToEndFlow value) {
+		endToEndFlow = value;
+	}
+
 	public EndToEndFlowConstraintBuilder from(final TaskBuilder task) {
 		stimuli = task.firstStep();
+		return this;
+	}
+	
+	public EndToEndFlowConstraintBuilder from(final StepBuilder step) {
+		stimuli = step;
 		return this;
 	}
 
@@ -50,15 +61,30 @@ public class EndToEndFlowConstraintBuilder {
 	}
 
 	public void build(final DesignBuilder designBuilder) {
-		final EndToEndFlow endToEndFlow = SamFactory.eINSTANCE.createEndToEndFlow();
-		final Step initiator = stimuli.build();
-		for(WorkloadEvent cause: initiator.getCause()) {
-			endToEndFlow.getEndToEndStimuli().add(cause);
+		if (endToEndFlow == null) {
+			endToEndFlow = SamFactory.eINSTANCE.createEndToEndFlow();
+			designBuilder.build().getEndToEndFlows().add(endToEndFlow);
 		}
-		final Step endor = response.build();
-		endToEndFlow.setEndToEndScenario(endor);
-		endToEndFlow.setEndToEndDeadline(deadline);
-		designBuilder.build().getEndToEndFlows().add(endToEndFlow);
+		if (stimuli != null) {
+			final Step initiator = stimuli.build();
+			for(WorkloadEvent cause: initiator.getCause()) {
+				endToEndFlow.getEndToEndStimuli().add(cause);
+			}
+		}
+		if (response != null) {
+			final Step endor = response.build();
+			endToEndFlow.setEndToEndScenario(endor);
+		}
+		if (deadline != null) {
+			endToEndFlow.setEndToEndDeadline(deadline);
+		}
+	}
+
+	public EndToEndFlow build() {
+		if (endToEndFlow == null) {
+			throw new IllegalStateException("Illegal API order of calls.");
+		}
+		return endToEndFlow;
 	}
 
 }

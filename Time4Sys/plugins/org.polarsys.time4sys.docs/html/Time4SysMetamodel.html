@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<h1 id="Time4Sys_Metamodel">Time4Sys Metamodel</h1>
+		<h2 id="Design_Model">Design Model</h2>
+		<h3 id="End_To_End_Flow">End To End Flow</h3>
+		<p>End to end flows represents a timing constraint between a stimuli (event) and a step. To be consistent, the event starting the end to end flow and the step finishing it shall be connected by precedence relations.
+			To create an End to End Flow, one shall select a valid path starting from an event to a step which follow a path of input-output relations as in the following case:
+
+			<img border="0" src="../Images/EndToEndFlowCreation.png"/>
+		</p>
+		<p>The path of the end to end flow is represented by its involved elements which can be defined in the End to End Flow diagram. Once the End To End Flow has been created with the previous method, a simple way to edit it is to created a specific diagram which allow you to define the path of your end to end flow by adding or removing involved elements.
+
+			<img border="0" src="../Images/EndToEndFlowEdition.png"/>
+		</p>
+		<h3 id="Precedence_Relations">Precedence Relations</h3>
+		<p>The semantic is the same as per UML 2.5. It can be seen as tokens passing. The cardinality of the pin indicates how much tokens it needs for the task to be activable, and how much at maximum it will consume.</p>
+		<p>All in all, it enables to express advance activation patterns. For instance, all pattern that can be expressed with logical expressions can easily be encoded.</p>
+		<table class="wikitable">
+			<tr>
+				<th></th>
+				<th>And </th>
+				<th>Or</th>
+			</tr>
+			<tr>
+				<th>Output</th>
+				<td>
+					<img border="0" src="../Images/precedence-activation-out-and-pattern.png"/>
+				</td>
+				<td>
+					<img border="0" src="../Images/precedence-activation-out-or-pattern.png"/>
+				</td>
+			</tr>
+			<tr>
+				<th>Input </th>
+				<td>
+					<img border="0" src="../Images/precedence-activation-in-and-pattern.png"/>
+				</td>
+				<td>
+					<img border="0" src="../Images/precedence-activation-in-or-pattern.png"/>
+				</td>
+			</tr>
+		</table>
+		<p>Some examples can be found below:</p>
+		<ul>
+			<li>e = (b and c) or d:</li>
+		</ul>
+		<p>
+			<img border="0" src="../Images/precedence-activation-pattern0.png"/> 
+		</p>
+		<ul>
+			<li>Another way of describing activation pattern based on CNF:</li>
+		</ul>
+		<p>
+			<img border="0" src="../Images/precedence-activation-pattern1.png"/> 
+		</p>
+		<ul>
+			<li>Complex pattern of activations of the task T_E</li>
+		</ul>
+		<p>
+			<img border="0" src="../Images/precedence-activation-pattern2.png"/> 
+		</p>
+		<h3 id="Behavior_Scenario">Behavior Scenario</h3>
+		<p>Behavior scenario are used to store steps. They does not influence the behavior of your system. However, you can use them to show or hide a specific set of steps.</p>
+		<p>
+			<img border="0" src="../Images/Reference.png"/>
+		</p>
+		<h3 id="Reference">Reference</h3>
+		<p>References are used to represent synchronization between event. If two event share the same reference, it means that they are synchronized.
+			When two events does not share a reference, it means that there is an unknow offset between them.
+
+			<img border="0" src="../Images/Reference.png"/> 
+		</p>
+		<h2 id="Simulation_result_model">Simulation result model</h2>
+		<h3 id="Slice">Slice</h3>
+		<p>A slice can represent a Resource, a Step or Step execution depending on its kind. It allows to reference all kinds of events (or sublices) related to the represented element. Thanks to this representation, it </p>
+		<h3 id="Mapping">Mapping</h3>
+		<p>The mapping part allows to link elements of the design model to the slice which represent them.</p>
+		<h3 id="Event">Event</h3>
+		<p>Event represents all the changes happening during the simulation. The event kind represent the state taken by the related element (Activated, Running, Suspended, Blocked, Terminated or Deadline).</p>
+	</body>
+</html>

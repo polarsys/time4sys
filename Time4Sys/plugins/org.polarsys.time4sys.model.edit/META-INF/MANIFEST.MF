@@ -12,6 +12,8 @@ Export-Package: org.polarsys.time4sys.model.time4sys.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.alloc;visibility:=reexport,
+ org.polarsys.time4sys.marte.alloc.edit;visibility:=reexport,
  org.polarsys.time4sys.design;visibility:=reexport,
  org.polarsys.time4sys.design.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.gqam;visibility:=reexport,
@@ -23,5 +25,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.trace;visibility:=reexport,
  org.polarsys.time4sys.trace.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.ecore.edit;visibility:=reexport
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements;visibility:=reexport,
+ org.polarsys.time4sys.marte.coreelements.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.annotation;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.annotation.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.sam;visibility:=reexport,
+ org.polarsys.time4sys.marte.sam.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

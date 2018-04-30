@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.marte.nfp.impl;
 
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,6 +222,10 @@ public abstract class AbstractRealWithUnitValueImpl<U extends Enumerator, T exte
 		final T v1 = this.convertToUnit(targetUnit);
 		final T v2 = convertToUnit(v, targetUnit);
 		return v1.getValue() / v2.getValue();
+	}
+	
+	public double div(final T v, final MathContext mc) {
+		return div(v);
 	}
 
 	public long divide(final T v) {

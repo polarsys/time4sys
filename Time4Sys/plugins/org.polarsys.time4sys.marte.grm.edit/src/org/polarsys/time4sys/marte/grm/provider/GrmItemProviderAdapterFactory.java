@@ -39,6 +39,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.util.GrmAdapterFactory;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -186,6 +188,52 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		}
 
 		return synchResourceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TableDrivenScheduleItemProvider tableDrivenScheduleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.TableDrivenSchedule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTableDrivenScheduleAdapter() {
+		if (tableDrivenScheduleItemProvider == null) {
+			tableDrivenScheduleItemProvider = new TableDrivenScheduleItemProvider(this);
+		}
+
+		return tableDrivenScheduleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.TableEntryType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TableEntryTypeItemProvider tableEntryTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.TableEntryType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTableEntryTypeAdapter() {
+		if (tableEntryTypeItemProvider == null) {
+			tableEntryTypeItemProvider = new TableEntryTypeItemProvider(this);
+		}
+
+		return tableEntryTypeItemProvider;
 	}
 
 	/**
@@ -626,6 +674,52 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PeriodicServerParametersItemProvider periodicServerParametersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.PeriodicServerParameters}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPeriodicServerParametersAdapter() {
+		if (periodicServerParametersItemProvider == null) {
+			periodicServerParametersItemProvider = new PeriodicServerParametersItemProvider(this);
+		}
+
+		return periodicServerParametersItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.PoolingParameters} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PoolingParametersItemProvider poolingParametersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.PoolingParameters}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPoolingParametersAdapter() {
+		if (poolingParametersItemProvider == null) {
+			poolingParametersItemProvider = new PoolingParametersItemProvider(this);
+		}
+
+		return poolingParametersItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.MutualExclusionProtocol} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -761,6 +855,52 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		}
 
 		return dynamicUsageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.EDFParameters} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EDFParametersItemProvider edfParametersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.EDFParameters}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEDFParametersAdapter() {
+		if (edfParametersItemProvider == null) {
+			edfParametersItemProvider = new EDFParametersItemProvider(this);
+		}
+
+		return edfParametersItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.grm.FixedPriorityParameters} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FixedPriorityParametersItemProvider fixedPriorityParametersItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.grm.FixedPriorityParameters}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFixedPriorityParametersAdapter() {
+		if (fixedPriorityParametersItemProvider == null) {
+			fixedPriorityParametersItemProvider = new FixedPriorityParametersItemProvider(this);
+		}
+
+		return fixedPriorityParametersItemProvider;
 	}
 
 	/**
@@ -942,8 +1082,12 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		if (concurrencyResourceItemProvider != null) concurrencyResourceItemProvider.dispose();
 		if (deviceResourceItemProvider != null) deviceResourceItemProvider.dispose();
 		if (dynamicUsageItemProvider != null) dynamicUsageItemProvider.dispose();
+		if (edfParametersItemProvider != null) edfParametersItemProvider.dispose();
+		if (fixedPriorityParametersItemProvider != null) fixedPriorityParametersItemProvider.dispose();
 		if (mutualExclusionProtocolItemProvider != null) mutualExclusionProtocolItemProvider.dispose();
 		if (mutualExclusionResourceItemProvider != null) mutualExclusionResourceItemProvider.dispose();
+		if (periodicServerParametersItemProvider != null) periodicServerParametersItemProvider.dispose();
+		if (poolingParametersItemProvider != null) poolingParametersItemProvider.dispose();
 		if (protectionParameterItemProvider != null) protectionParameterItemProvider.dispose();
 		if (resourceBrokerItemProvider != null) resourceBrokerItemProvider.dispose();
 		if (resourceConnectorItemProvider != null) resourceConnectorItemProvider.dispose();
@@ -963,13 +1107,15 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		if (staticUsageItemProvider != null) staticUsageItemProvider.dispose();
 		if (storageResourceItemProvider != null) storageResourceItemProvider.dispose();
 		if (synchResourceItemProvider != null) synchResourceItemProvider.dispose();
+		if (tableDrivenScheduleItemProvider != null) tableDrivenScheduleItemProvider.dispose();
+		if (tableEntryTypeItemProvider != null) tableEntryTypeItemProvider.dispose();
 		if (timerResourceItemProvider != null) timerResourceItemProvider.dispose();
 		if (usageDemandItemProvider != null) usageDemandItemProvider.dispose();
 		if (usageTypedAmountItemProvider != null) usageTypedAmountItemProvider.dispose();
 	}
 
 	/**
-	 * A child creation extender for the {@link org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage}.
+	 * A child creation extender for the {@link CoreElementsPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -981,7 +1127,7 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected static class CreationSwitch extends org.polarsys.time4sys.marte.nfp.coreelements.util.CoreElementsSwitch<Object> {
+		protected static class CreationSwitch extends CoreElementsSwitch<Object> {
 			/**
 			 * The child descriptors being populated.
 			 * <!-- begin-user-doc -->
@@ -1017,92 +1163,97 @@ public class GrmItemProviderAdapterFactory extends GrmAdapterFactory implements 
 			public Object casePackage(org.polarsys.time4sys.marte.nfp.coreelements.Package object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createClockResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createCommunicationMedia()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createComputingResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createConcurrencyResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createDeviceResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSynchResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createMutualExclusionResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceBroker()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceInstance()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceInterface()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourceManager()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createResourcePackage()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						 GrmFactory.eINSTANCE.createResourcePort()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createScheduler()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSchedulableResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createSecondaryScheduler()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createStorageResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createTimerResource()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
+						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
 						 GrmFactory.eINSTANCE.createUsageTypedAmount()));
 
 				return null;

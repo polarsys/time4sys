@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.grm.AccessControlPolicy;
 import org.polarsys.time4sys.marte.grm.ClockResource;
@@ -33,10 +34,15 @@ import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.ConcurrencyResource;
 import org.polarsys.time4sys.marte.grm.DeviceResource;
 import org.polarsys.time4sys.marte.grm.DynamicUsage;
+import org.polarsys.time4sys.marte.grm.EDFParameters;
+import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.MutualExclusionProtocol;
 import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
+import org.polarsys.time4sys.marte.grm.PeriodicServerKind;
+import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
+import org.polarsys.time4sys.marte.grm.PoolingParameters;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.ProtectProtocolKind;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
@@ -54,6 +60,7 @@ import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
 import org.polarsys.time4sys.marte.grm.SchedPolicyKind;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
+import org.polarsys.time4sys.marte.grm.ScheduleSpecification;
 import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.grm.SchedulingPolicy;
@@ -61,13 +68,18 @@ import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.StaticUsage;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.SynchResource;
+import org.polarsys.time4sys.marte.grm.TableDrivenSchedule;
+import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.grm.TimerResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
 import org.polarsys.time4sys.marte.grm.TransmModeKind;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
 import org.polarsys.time4sys.marte.grm.util.GrmValidator;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,6 +143,20 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	private EClass synchResourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tableDrivenScheduleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tableEntryTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,6 +289,13 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass scheduleSpecificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass schedulingParameterEClass = null;
 
 	/**
@@ -278,6 +311,20 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	private EClass mutualExclusionResourceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass periodicServerParametersEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass poolingParametersEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,7 +366,28 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum periodicServerKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass dynamicUsageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass edfParametersEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fixedPriorityParametersEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -348,6 +416,20 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * @generated
 	 */
 	private EDataType nfP_DurationEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DataSizeEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType nfP_DataTxRateEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -410,7 +492,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eINSTANCE.eClass();
+		CoreElementsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGrmPackage.createPackageContents();
@@ -605,6 +687,78 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EClass getSynchResource() {
 		return synchResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTableDrivenSchedule() {
+		return tableDrivenScheduleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTableDrivenSchedule_FrameCycleTime() {
+		return (EAttribute)tableDrivenScheduleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTableDrivenSchedule_Entries() {
+		return (EReference)tableDrivenScheduleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTableEntryType() {
+		return tableEntryTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTableEntryType_Schedule() {
+		return (EReference)tableEntryTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTableEntryType_TimeSlot() {
+		return (EAttribute)tableEntryTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTableEntryType_Offset() {
+		return (EAttribute)tableEntryTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTableEntryType_InitialBudget() {
+		return (EAttribute)tableEntryTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1062,6 +1216,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getScheduleSpecification() {
+		return scheduleSpecificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSchedulingParameter() {
 		return schedulingParameterEClass;
 	}
@@ -1107,6 +1270,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSchedulingPolicy_Schedule() {
+		return (EReference)schedulingPolicyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getSchedulingPolicy__HasValidPolicy__DiagnosticChain_Map() {
 		return schedulingPolicyEClass.getEOperations().get(0);
 	}
@@ -1145,6 +1317,87 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EReference getMutualExclusionResource_ProtectParams() {
 		return (EReference)mutualExclusionResourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPeriodicServerParameters() {
+		return periodicServerParametersEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPeriodicServerParameters_Kind() {
+		return (EAttribute)periodicServerParametersEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPeriodicServerParameters_BackgroundPriority() {
+		return (EAttribute)periodicServerParametersEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPeriodicServerParameters_InitialBudget() {
+		return (EAttribute)periodicServerParametersEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPeriodicServerParameters_ReplenishPeriod() {
+		return (EAttribute)periodicServerParametersEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPeriodicServerParameters_MaxPendingReplenish() {
+		return (EAttribute)periodicServerParametersEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPoolingParameters() {
+		return poolingParametersEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPoolingParameters_Period() {
+		return (EAttribute)poolingParametersEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPoolingParameters_Overhead() {
+		return (EAttribute)poolingParametersEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1332,8 +1585,53 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getPeriodicServerKind() {
+		return periodicServerKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDynamicUsage() {
 		return dynamicUsageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEDFParameters() {
+		return edfParametersEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDFParameters_Deadline() {
+		return (EAttribute)edfParametersEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFixedPriorityParameters() {
+		return fixedPriorityParametersEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFixedPriorityParameters_Priority() {
+		return (EAttribute)fixedPriorityParametersEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1379,6 +1677,24 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EDataType getNFP_Duration() {
 		return nfP_DurationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_DataSize() {
+		return nfP_DataSizeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_DataTxRate() {
+		return nfP_DataTxRateEDataType;
 	}
 
 	/**
@@ -1451,6 +1767,12 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		dynamicUsageEClass = createEClass(DYNAMIC_USAGE);
 
+		edfParametersEClass = createEClass(EDF_PARAMETERS);
+		createEAttribute(edfParametersEClass, EDF_PARAMETERS__DEADLINE);
+
+		fixedPriorityParametersEClass = createEClass(FIXED_PRIORITY_PARAMETERS);
+		createEAttribute(fixedPriorityParametersEClass, FIXED_PRIORITY_PARAMETERS__PRIORITY);
+
 		mutualExclusionProtocolEClass = createEClass(MUTUAL_EXCLUSION_PROTOCOL);
 		createEAttribute(mutualExclusionProtocolEClass, MUTUAL_EXCLUSION_PROTOCOL__PROTOCOL);
 		createEAttribute(mutualExclusionProtocolEClass, MUTUAL_EXCLUSION_PROTOCOL__OTHER_PROTOCOL);
@@ -1459,6 +1781,17 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEReference(mutualExclusionResourceEClass, MUTUAL_EXCLUSION_RESOURCE__SCHEDULER);
 		createEReference(mutualExclusionResourceEClass, MUTUAL_EXCLUSION_RESOURCE__PROTOCOL);
 		createEReference(mutualExclusionResourceEClass, MUTUAL_EXCLUSION_RESOURCE__PROTECT_PARAMS);
+
+		periodicServerParametersEClass = createEClass(PERIODIC_SERVER_PARAMETERS);
+		createEAttribute(periodicServerParametersEClass, PERIODIC_SERVER_PARAMETERS__KIND);
+		createEAttribute(periodicServerParametersEClass, PERIODIC_SERVER_PARAMETERS__BACKGROUND_PRIORITY);
+		createEAttribute(periodicServerParametersEClass, PERIODIC_SERVER_PARAMETERS__INITIAL_BUDGET);
+		createEAttribute(periodicServerParametersEClass, PERIODIC_SERVER_PARAMETERS__REPLENISH_PERIOD);
+		createEAttribute(periodicServerParametersEClass, PERIODIC_SERVER_PARAMETERS__MAX_PENDING_REPLENISH);
+
+		poolingParametersEClass = createEClass(POOLING_PARAMETERS);
+		createEAttribute(poolingParametersEClass, POOLING_PARAMETERS__PERIOD);
+		createEAttribute(poolingParametersEClass, POOLING_PARAMETERS__OVERHEAD);
 
 		processingResourceEClass = createEClass(PROCESSING_RESOURCE);
 		createEAttribute(processingResourceEClass, PROCESSING_RESOURCE__SPEED_FACTOR);
@@ -1527,12 +1860,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEReference(schedulableResourceEClass, SCHEDULABLE_RESOURCE__HOST);
 		createEReference(schedulableResourceEClass, SCHEDULABLE_RESOURCE__SCHED_PARAMS);
 
+		scheduleSpecificationEClass = createEClass(SCHEDULE_SPECIFICATION);
+
 		schedulingParameterEClass = createEClass(SCHEDULING_PARAMETER);
 		createEAttribute(schedulingParameterEClass, SCHEDULING_PARAMETER__VALUE);
 
 		schedulingPolicyEClass = createEClass(SCHEDULING_POLICY);
 		createEAttribute(schedulingPolicyEClass, SCHEDULING_POLICY__POLICY);
 		createEAttribute(schedulingPolicyEClass, SCHEDULING_POLICY__OTHER_SCHED_POLICY);
+		createEReference(schedulingPolicyEClass, SCHEDULING_POLICY__SCHEDULE);
 		createEOperation(schedulingPolicyEClass, SCHEDULING_POLICY___HAS_VALID_POLICY__DIAGNOSTICCHAIN_MAP);
 
 		secondarySchedulerEClass = createEClass(SECONDARY_SCHEDULER);
@@ -1543,6 +1879,16 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		storageResourceEClass = createEClass(STORAGE_RESOURCE);
 
 		synchResourceEClass = createEClass(SYNCH_RESOURCE);
+
+		tableDrivenScheduleEClass = createEClass(TABLE_DRIVEN_SCHEDULE);
+		createEAttribute(tableDrivenScheduleEClass, TABLE_DRIVEN_SCHEDULE__FRAME_CYCLE_TIME);
+		createEReference(tableDrivenScheduleEClass, TABLE_DRIVEN_SCHEDULE__ENTRIES);
+
+		tableEntryTypeEClass = createEClass(TABLE_ENTRY_TYPE);
+		createEReference(tableEntryTypeEClass, TABLE_ENTRY_TYPE__SCHEDULE);
+		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__TIME_SLOT);
+		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__OFFSET);
+		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__INITIAL_BUDGET);
 
 		timingResourceEClass = createEClass(TIMING_RESOURCE);
 
@@ -1568,12 +1914,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEAttribute(usageTypedAmountEClass, USAGE_TYPED_AMOUNT__ENERGY);
 
 		// Create enums
+		periodicServerKindEEnum = createEEnum(PERIODIC_SERVER_KIND);
 		protectProtocolKindEEnum = createEEnum(PROTECT_PROTOCOL_KIND);
 		schedPolicyKindEEnum = createEEnum(SCHED_POLICY_KIND);
 		transmModeKindEEnum = createEEnum(TRANSM_MODE_KIND);
 
 		// Create data types
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
+		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
+		nfP_DataTxRateEDataType = createEDataType(NFP_DATA_TX_RATE);
 	}
 
 	/**
@@ -1600,7 +1949,8 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1609,6 +1959,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		// Add supertypes to classes
 		accessControlPolicyEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		clockResourceEClass.getESuperTypes().add(this.getTimingResource());
+		communicationEndPointEClass.getESuperTypes().add(this.getCommunicationResource());
 		communicationMediaEClass.getESuperTypes().add(this.getCommunicationResource());
 		communicationMediaEClass.getESuperTypes().add(this.getProcessingResource());
 		computingResourceEClass.getESuperTypes().add(this.getProcessingResource());
@@ -1616,8 +1967,12 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		communicationResourceEClass.getESuperTypes().add(this.getResource());
 		deviceResourceEClass.getESuperTypes().add(this.getProcessingResource());
 		dynamicUsageEClass.getESuperTypes().add(this.getResourceUsage());
+		edfParametersEClass.getESuperTypes().add(this.getSchedulingParameter());
+		fixedPriorityParametersEClass.getESuperTypes().add(this.getSchedulingParameter());
 		mutualExclusionProtocolEClass.getESuperTypes().add(this.getAccessControlPolicy());
 		mutualExclusionResourceEClass.getESuperTypes().add(this.getSynchResource());
+		periodicServerParametersEClass.getESuperTypes().add(this.getFixedPriorityParameters());
+		poolingParametersEClass.getESuperTypes().add(this.getFixedPriorityParameters());
 		processingResourceEClass.getESuperTypes().add(this.getResource());
 		protectionParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceEClass.getESuperTypes().add(this.getResourcePackageableElement());
@@ -1633,14 +1988,18 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		resourceServiceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulerEClass.getESuperTypes().add(this.getResourceBroker());
 		schedulableResourceEClass.getESuperTypes().add(this.getConcurrencyResource());
+		scheduleSpecificationEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		schedulingParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		schedulingPolicyEClass.getESuperTypes().add(this.getAccessControlPolicy());
 		secondarySchedulerEClass.getESuperTypes().add(this.getScheduler());
 		staticUsageEClass.getESuperTypes().add(this.getResourceUsage());
 		storageResourceEClass.getESuperTypes().add(this.getResource());
 		synchResourceEClass.getESuperTypes().add(this.getResource());
+		tableDrivenScheduleEClass.getESuperTypes().add(this.getScheduleSpecification());
+		tableEntryTypeEClass.getESuperTypes().add(this.getSchedulingParameter());
 		timingResourceEClass.getESuperTypes().add(this.getResource());
 		timerResourceEClass.getESuperTypes().add(this.getTimingResource());
+		usageDemandEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		usageTypedAmountEClass.getESuperTypes().add(this.getResource());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1652,10 +2011,10 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEAttribute(getCommunicationEndPoint_PacketSize(), ecorePackage.getEInt(), "packetSize", null, 0, 1, CommunicationEndPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationMediaEClass, CommunicationMedia.class, "CommunicationMedia", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationMedia_ElementSize(), ecorePackage.getEInt(), "elementSize", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_Capacity(), ecorePackage.getEFloat(), "capacity", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_PacketTime(), ecorePackage.getEFloat(), "packetTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_BlockingTime(), ecorePackage.getEFloat(), "blockingTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_ElementSize(), this.getNFP_DataSize(), "elementSize", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_Capacity(), this.getNFP_DataTxRate(), "capacity", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_PacketTime(), this.getNFP_Duration(), "packetTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_BlockingTime(), this.getNFP_Duration(), "blockingTime", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommunicationMedia_TransmMode(), this.getTransmModeKind(), "transmMode", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(computingResourceEClass, ComputingResource.class, "ComputingResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1668,6 +2027,12 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		initEClass(dynamicUsageEClass, DynamicUsage.class, "DynamicUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(edfParametersEClass, EDFParameters.class, "EDFParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEDFParameters_Deadline(), this.getNFP_Duration(), "deadline", null, 1, 1, EDFParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fixedPriorityParametersEClass, FixedPriorityParameters.class, "FixedPriorityParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFixedPriorityParameters_Priority(), theEcorePackage.getEInt(), "priority", null, 1, 1, FixedPriorityParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(mutualExclusionProtocolEClass, MutualExclusionProtocol.class, "MutualExclusionProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMutualExclusionProtocol_Protocol(), this.getProtectProtocolKind(), "protocol", null, 0, 1, MutualExclusionProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMutualExclusionProtocol_OtherProtocol(), ecorePackage.getEString(), "otherProtocol", null, 0, 1, MutualExclusionProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1676,6 +2041,17 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEReference(getMutualExclusionResource_Scheduler(), this.getResourceBroker(), null, "scheduler", null, 0, 1, MutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMutualExclusionResource_Protocol(), this.getMutualExclusionProtocol(), null, "protocol", null, 1, 1, MutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMutualExclusionResource_ProtectParams(), this.getProtectionParameter(), null, "protectParams", null, 0, -1, MutualExclusionResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(periodicServerParametersEClass, PeriodicServerParameters.class, "PeriodicServerParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPeriodicServerParameters_Kind(), this.getPeriodicServerKind(), "kind", "Undef", 0, 1, PeriodicServerParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPeriodicServerParameters_BackgroundPriority(), theEcorePackage.getEInt(), "backgroundPriority", null, 0, 1, PeriodicServerParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPeriodicServerParameters_InitialBudget(), this.getNFP_Duration(), "initialBudget", null, 0, 1, PeriodicServerParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPeriodicServerParameters_ReplenishPeriod(), this.getNFP_Duration(), "replenishPeriod", null, 0, 1, PeriodicServerParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPeriodicServerParameters_MaxPendingReplenish(), theEcorePackage.getEInt(), "maxPendingReplenish", null, 0, 1, PeriodicServerParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(poolingParametersEClass, PoolingParameters.class, "PoolingParameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPoolingParameters_Period(), this.getNFP_Duration(), "period", null, 0, 1, PoolingParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPoolingParameters_Overhead(), this.getNFP_Duration(), "overhead", null, 0, 1, PoolingParameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(processingResourceEClass, ProcessingResource.class, "ProcessingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProcessingResource_SpeedFactor(), ecorePackage.getEFloat(), "speedFactor", null, 0, 1, ProcessingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1744,12 +2120,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEReference(getSchedulableResource_Host(), this.getScheduler(), this.getScheduler_SchedulableResource(), "host", null, 1, 1, SchedulableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchedulableResource_SchedParams(), this.getSchedulingParameter(), null, "schedParams", null, 0, -1, SchedulableResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(scheduleSpecificationEClass, ScheduleSpecification.class, "ScheduleSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(schedulingParameterEClass, SchedulingParameter.class, "SchedulingParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSchedulingParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, SchedulingParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(schedulingPolicyEClass, SchedulingPolicy.class, "SchedulingPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSchedulingPolicy_Policy(), this.getSchedPolicyKind(), "policy", "Undef", 0, 1, SchedulingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchedulingPolicy_OtherSchedPolicy(), ecorePackage.getEString(), "otherSchedPolicy", null, 0, 1, SchedulingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedulingPolicy_Schedule(), this.getScheduleSpecification(), null, "schedule", null, 0, 1, SchedulingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getSchedulingPolicy__HasValidPolicy__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "hasValidPolicy", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1768,6 +2147,16 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEClass(storageResourceEClass, StorageResource.class, "StorageResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(synchResourceEClass, SynchResource.class, "SynchResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tableDrivenScheduleEClass, TableDrivenSchedule.class, "TableDrivenSchedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTableDrivenSchedule_FrameCycleTime(), this.getNFP_Duration(), "frameCycleTime", null, 0, 1, TableDrivenSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableDrivenSchedule_Entries(), this.getTableEntryType(), this.getTableEntryType_Schedule(), "entries", null, 0, -1, TableDrivenSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tableEntryTypeEClass, TableEntryType.class, "TableEntryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTableEntryType_Schedule(), this.getTableDrivenSchedule(), this.getTableDrivenSchedule_Entries(), "schedule", null, 0, 1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_TimeSlot(), this.getNFP_Duration(), "timeSlot", null, 1, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_Offset(), this.getNFP_Duration(), "offset", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_InitialBudget(), this.getNFP_Duration(), "initialBudget", null, 0, 1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timingResourceEClass, TimingResource.class, "TimingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1793,6 +2182,12 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEAttribute(getUsageTypedAmount_Energy(), ecorePackage.getEInt(), "energy", null, 0, 1, UsageTypedAmount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(periodicServerKindEEnum, PeriodicServerKind.class, "PeriodicServerKind");
+		addEEnumLiteral(periodicServerKindEEnum, PeriodicServerKind.UNDEF);
+		addEEnumLiteral(periodicServerKindEEnum, PeriodicServerKind.SPORADIC);
+		addEEnumLiteral(periodicServerKindEEnum, PeriodicServerKind.DEFERRABLE);
+		addEEnumLiteral(periodicServerKindEEnum, PeriodicServerKind.OTHER);
+
 		initEEnum(protectProtocolKindEEnum, ProtectProtocolKind.class, "ProtectProtocolKind");
 		addEEnumLiteral(protectProtocolKindEEnum, ProtectProtocolKind.FIFO);
 		addEEnumLiteral(protectProtocolKindEEnum, ProtectProtocolKind.NO_PREEMPTION);
@@ -1819,6 +2214,8 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		// Initialize data types
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_DataTxRateEDataType, DataTxRate.class, "NFP_DataTxRate", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

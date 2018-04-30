@@ -45,7 +45,7 @@ public class SubSlicesIterator implements Iterator<Slice>, Iterable<Slice> {
 
 	@Override
 	public boolean hasNext() {
-		if (toExplore.isEmpty()) {
+		if (toExplore.isEmpty() && nextSlices.isEmpty()) {
 			return false;
 		}
 		while(nextSlices.isEmpty() && !toExplore.isEmpty()) {

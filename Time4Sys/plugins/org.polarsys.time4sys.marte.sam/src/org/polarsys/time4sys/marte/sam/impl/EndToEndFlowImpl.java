@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
+import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -50,6 +51,7 @@ import org.polarsys.time4sys.marte.sam.SamPackage;
  *   <li>{@link org.polarsys.time4sys.marte.sam.impl.EndToEndFlowImpl#getEndToEndTime <em>End To End Time</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.sam.impl.EndToEndFlowImpl#getEndToEndDeadline <em>End To End Deadline</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.sam.impl.EndToEndFlowImpl#getTiming <em>Timing</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.sam.impl.EndToEndFlowImpl#getInvolvedElement <em>Involved Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -165,6 +167,16 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 	 */
 	protected EList<TimedObserver> timing;
 	
+	/**
+	 * The cached value of the '{@link #getInvolvedElement() <em>Involved Element</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInvolvedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FlowInvolvedElement> involvedElement;
+
 	private BasicEList<BehaviorScenario> stepsOnPath = null;
 
 
@@ -377,6 +389,18 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<FlowInvolvedElement> getInvolvedElement() {
+		if (involvedElement == null) {
+			involvedElement = new EObjectNotUniqueEList<FlowInvolvedElement>(FlowInvolvedElement.class, this, SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT);
+		}
+		return involvedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList<BehaviorScenario> findStepsOnPath() {
@@ -505,6 +529,8 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 				return getEndToEndDeadline();
 			case SamPackage.END_TO_END_FLOW__TIMING:
 				return getTiming();
+			case SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT:
+				return getInvolvedElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -544,6 +570,10 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 				getTiming().clear();
 				getTiming().addAll((Collection<? extends TimedObserver>)newValue);
 				return;
+			case SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT:
+				getInvolvedElement().clear();
+				getInvolvedElement().addAll((Collection<? extends FlowInvolvedElement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -580,6 +610,9 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 			case SamPackage.END_TO_END_FLOW__TIMING:
 				getTiming().clear();
 				return;
+			case SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT:
+				getInvolvedElement().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -608,6 +641,8 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 				return END_TO_END_DEADLINE_EDEFAULT == null ? endToEndDeadline != null : !END_TO_END_DEADLINE_EDEFAULT.equals(endToEndDeadline);
 			case SamPackage.END_TO_END_FLOW__TIMING:
 				return timing != null && !timing.isEmpty();
+			case SamPackage.END_TO_END_FLOW__INVOLVED_ELEMENT:
+				return involvedElement != null && !involvedElement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

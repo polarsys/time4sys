@@ -13,7 +13,7 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OutputPinTest extends ControlPinTest {
+public class OutputPinTest extends PinTest {
 
 	/**
 	 * <!-- begin-user-doc -->

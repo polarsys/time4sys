@@ -1,0 +1,5 @@
+= Time4Sys User Manual =            
+
+[[Image:../images/splash.bmp]]
+
+For a generic presentation of Time4Sys please go to: https://www.polarsys.org/time4sys/ 

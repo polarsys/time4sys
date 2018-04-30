@@ -49,13 +49,88 @@
     <command
       commandId="org.polarsys.time4sys.simulation.commands.analyse"
       id="org.polarsys.time4sys.simulation.contrib.analyse"
-      label="Analyse simmulation trace"
+      label="Analyse simulation trace"
       mnemonic="A">
       <visibleWhen>
         <with
           variable="activeMenuSelection">
           <iterate>
             <adapt type="org.polarsys.time4sys.model.time4sys.Simulation"></adapt>
+          </iterate>
+        </with>
+      </visibleWhen>      
+    </command>
+  </menuContribution>
+  <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    <command
+      commandId="org.polarsys.time4sys.model.commands.transformations.simpleInversePriorityCmdId"
+      id="org.polarsys.time4sys.simulation.contrib.transformation.simpleInversePriorityMenuId"
+      mnemonic="P">
+      <visibleWhen>
+        <with
+          variable="activeMenuSelection">
+          <iterate>
+            <adapt type="org.polarsys.time4sys.design.DesignModel"></adapt>
+          </iterate>
+        </with>
+      </visibleWhen>      
+    </command>
+  </menuContribution>
+  <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    <command
+      commandId="org.polarsys.time4sys.model.commands.transformations.inversePriorityCmdId"
+      id="org.polarsys.time4sys.simulation.contrib.transformation.inversePriorityMenuId"
+      mnemonic="I">
+      <visibleWhen>
+        <with
+          variable="activeMenuSelection">
+          <iterate>
+            <adapt type="org.polarsys.time4sys.design.DesignModel"></adapt>
+          </iterate>
+        </with>
+      </visibleWhen>      
+    </command>
+  </menuContribution>
+  <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    <command
+      commandId="org.polarsys.time4sys.model.commands.transformations.upgradeModelCmdId"
+      id="org.polarsys.time4sys.simulation.contrib.transformation.upgradeMenuId"
+      mnemonic="U">
+      <visibleWhen>
+        <with
+          variable="activeMenuSelection">
+          <iterate>
+            <adapt type="org.polarsys.time4sys.model.time4sys.Project"></adapt>
+          </iterate>
+        </with>
+      </visibleWhen>      
+    </command>
+  </menuContribution>
+  <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    <command
+      commandId="org.polarsys.time4sys.model.commands.transformations.splitTaskCmdId"
+      id="org.polarsys.time4sys.simulation.contrib.transformation.splitTaskMenuId"
+      mnemonic="I">
+      <visibleWhen>
+        <with
+          variable="activeMenuSelection">
+          <iterate>
+            <adapt type="org.polarsys.time4sys.design.DesignModel"></adapt>
+          </iterate>
+        </with>
+      </visibleWhen>      
+    </command>
+  </menuContribution>
+  <menuContribution locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+    <command
+      commandId="org.polarsys.time4sys.model.commands.transformations.propagateActivationsCmdId"
+      id="org.polarsys.time4sys.simulation.contrib.transformation.propagateActivationsMenuId"
+      mnemonic="I">
+      <visibleWhen>
+        <with
+          variable="activeMenuSelection">
+          <iterate>
+            <adapt type="org.polarsys.time4sys.design.DesignModel"></adapt>
           </iterate>
         </with>
       </visibleWhen>      
@@ -68,12 +143,52 @@
          commandId="org.polarsys.time4sys.simulation.commands.analyse"
          class="org.polarsys.time4sys.simulation.commands.AnalyseSimulationCommandHandler">
    </handler>
+   <handler
+         commandId="org.polarsys.time4sys.model.commands.transformations.simpleInversePriorityCmdId"
+         class="org.polarsys.time4sys.simulation.commands.SimpleInversePriorityCommandHandler">
+   </handler>
+   <handler
+         commandId="org.polarsys.time4sys.model.commands.transformations.inversePriorityCmdId"
+         class="org.polarsys.time4sys.simulation.commands.InversePriorityCommandHandler">
+   </handler>
+   <handler
+         commandId="org.polarsys.time4sys.model.commands.transformations.upgradeModelCmdId"
+         class="org.polarsys.time4sys.simulation.commands.UpgradeModelCommandHandler">
+   </handler>
+   <handler
+         commandId="org.polarsys.time4sys.model.commands.transformations.splitTaskCmdId"
+         class="org.polarsys.time4sys.simulation.commands.SplitTaskCommandHandler">
+   </handler>
+   <handler
+         commandId="org.polarsys.time4sys.model.commands.transformations.propagateActivationsCmdId"
+         class="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler">
+   </handler>
 </extension>
 <extension
       point="org.eclipse.ui.commands">
       <command
             id="org.polarsys.time4sys.simulation.commands.analyse"
-            name="Simulate">
+            name="Analyse Simulate Trace">
+      </command>
+       <command
+            id="org.polarsys.time4sys.model.commands.transformations.simpleInversePriorityCmdId"
+            name="Inverse Priority">
+      </command>
+       <command
+            id="org.polarsys.time4sys.model.commands.transformations.inversePriorityCmdId"
+            name="Inverse Priority and remove PSS Order">
+      </command>
+       <command
+            id="org.polarsys.time4sys.model.commands.transformations.upgradeModelCmdId"
+            name="Upgrade Model">
+      </command>
+      <command
+            id="org.polarsys.time4sys.model.commands.transformations.splitTaskCmdId"
+            name="Split Tasks in normal form">
+      </command>      
+      <command
+            id="org.polarsys.time4sys.model.commands.transformations.propagateActivationsCmdId"
+            name="Propagate activations">
       </command>
 </extension>
 </plugin>

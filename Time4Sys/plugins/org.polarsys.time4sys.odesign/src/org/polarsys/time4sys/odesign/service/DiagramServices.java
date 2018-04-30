@@ -142,7 +142,6 @@ public class DiagramServices {
 		if ((targetMapping != null) && !sourceView.equals(targetView)) {
 			mappingsToEdgeTargets.get(targetMapping).add(targetView);
 		}
-
 		diagramSync.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration,
 				edgeToMappingBasedDecoration);
 		return elementSync.createNewEdge(getMappingManager((DSemanticDiagram) diagram), edgeCandidate,

@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2016, 2017 Artal Technologies and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Aurelien Didier (Artal Technologies) - initial API and implementation
- *******************************************************************************/
 /**
  * Generated with Acceleo
  */
@@ -16,14 +6,22 @@ package org.polarsys.time4sys.ui.nfp.providers;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+
 import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
+
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+
 import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
+
 import org.eclipse.jface.viewers.IFilter;
+
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+
 import org.polarsys.time4sys.ui.nfp.components.DurationPropertiesEditionComponent;
 
 /**

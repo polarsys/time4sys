@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface InputPin extends ControlPin {
+public interface InputPin extends Pin {
 	/**
 	 * Returns the value of the '<em><b>Predecessors</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.OutputPin}.
@@ -45,6 +45,9 @@ public interface InputPin extends ControlPin {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * In UML 2.5, this would be an ActivityEdge.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Predecessors</em>' reference list.
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getInputPin_Predecessors()
 	 * @see org.polarsys.time4sys.marte.gqam.OutputPin#getSuccessors

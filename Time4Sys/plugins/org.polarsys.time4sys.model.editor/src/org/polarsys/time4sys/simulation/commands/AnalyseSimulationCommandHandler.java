@@ -1,38 +1,42 @@
+/*******************************************************************************
+ * Copyright (c) 2018 RealTime-at-Work and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Loïc Fejoz - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.time4sys.simulation.commands;
 
-import java.util.Iterator;
-
-import org.eclipse.core.commands.AbstractHandler;
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ITreeSelection;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.SimulationAnalyser;
 
-public class AnalyseSimulationCommandHandler extends AbstractHandler {
+public class AnalyseSimulationCommandHandler extends AbstractTransformationCommandHandler<Simulation, Transformation> {
+
+	public static class AnalyseSimulationRunnable extends TransfoRunnable<Simulation, Transformation> {
+		
+		public AnalyseSimulationRunnable(final TransactionalEditingDomain domain, final Simulation value) {
+			super(domain, value, "Analyse Simulation");
+		}
+
+		public void doExecute() {
+			setResult(SimulationAnalyser.analyse(obj));
+		}
+		
+	}
+
+	public AnalyseSimulationCommandHandler() {
+		super(Simulation.class);
+	}
 
 	@Override
-	public Object execute(final ExecutionEvent event) throws ExecutionException {
-		final ISelection selection = org.eclipse.ui.handlers.HandlerUtil.getCurrentSelection(event);
-		if (selection instanceof ITreeSelection) {
-			execute((ITreeSelection)selection);
-		}
-		return null;
-	}
-
-	private void execute(final ITreeSelection selection) {
-		final Iterator<?> it = selection.iterator();
-		while(it.hasNext()) {
-			final Object obj = it.next();
-			if (obj instanceof Simulation) {
-				execute((Simulation)obj);
-			}
-		}
-	}
-
-	private void execute(final Simulation simu) {
-		SimulationAnalyser.analyse(simu);
+	protected TransfoRunnable<Simulation, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final Simulation simu) {
+		return new AnalyseSimulationRunnable(domain, simu);
 	}
 
 }

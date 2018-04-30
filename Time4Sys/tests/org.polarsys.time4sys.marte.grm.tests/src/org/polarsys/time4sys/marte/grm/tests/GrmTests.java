@@ -47,8 +47,12 @@ public class GrmTests extends TestSuite {
 		suite.addTestSuite(ComputingResourceTest.class);
 		suite.addTestSuite(ConcurrencyResourceTest.class);
 		suite.addTestSuite(DeviceResourceTest.class);
+		suite.addTestSuite(EDFParametersTest.class);
+		suite.addTestSuite(FixedPriorityParametersTest.class);
 		suite.addTestSuite(MutualExclusionProtocolTest.class);
 		suite.addTestSuite(MutualExclusionResourceTest.class);
+		suite.addTestSuite(PeriodicServerParametersTest.class);
+		suite.addTestSuite(PoolingParametersTest.class);
 		suite.addTestSuite(ProtectionParameterTest.class);
 		suite.addTestSuite(ResourceBrokerTest.class);
 		suite.addTestSuite(ResourceControlPolicyTest.class);
@@ -65,6 +69,7 @@ public class GrmTests extends TestSuite {
 		suite.addTestSuite(SecondarySchedulerTest.class);
 		suite.addTestSuite(StorageResourceTest.class);
 		suite.addTestSuite(SynchResourceTest.class);
+		suite.addTestSuite(TableEntryTypeTest.class);
 		suite.addTestSuite(TimerResourceTest.class);
 		suite.addTestSuite(UsageTypedAmountTest.class);
 		return suite;

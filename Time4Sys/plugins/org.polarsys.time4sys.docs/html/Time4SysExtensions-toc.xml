@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+    Copyright (c) 2016, 2017 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+    	Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+
+<toc label="Time4SysExtensions" link_to="PLUGINS_ROOT/org.polarsys.time4sys.docs/toc.xml#ext" topic="html/Time4SysExtensions.html">
+   <topic href="html/Time4SysExtensions.html#Bridge_with_other_modeling_tools" label="Bridge with other modeling tools">
+      <topic href="html/Time4SysExtensions.html#Capella" label="Capella">
+      </topic>
+   </topic>
+		<topic href="html/Time4SysExtensions.html#Simulation_tools" label="Simulation Tools">
+     <topic href="html/Time4SysExtensions.html#Pegase" label="Pegase">
+     </topic></topic>
+		<topic href="html/Time4SysExtensions.html#Result_visualization" label="Result visualization">
+     <topic href="html/Time4SysExtensions.html#TIming_Graphics" label="Timing Graphics">
+     </topic></topic>
+</toc>

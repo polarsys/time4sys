@@ -22,7 +22,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  * <!-- begin-model-doc -->
  * This is a TupleType that contains the parameters that are necessary to specify a closed pattern. It is characterized by a
  * fixed number of active or potential users or jobs that cycle between executing the scenario, and spending an external
- * delay period (sometimes called ‚Äúthink time‚Äù) outside the system, between the end of one response and the next request.
+ * delay period (sometimes called ìthink timeî) outside the system, between the end of one response and the next request.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="analysisTools" name="AnalysisTools" schema="schema/analysisTools.exsd"/>
+   <extension-point id="analysisContexts" name="AnalysisContexts" schema="schema/analysisContexts.exsd"/>
+   <extension
+         point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+      <Page
+            class="org.polarsys.time4sys.analysis.tools.AnalysisPage"
+            id="org.polarsys.time4sys.analysis.tools.page"
+            imageOff="icons/AnalysisOff.png"
+            imageOn="icons/AnalysisOn.png"
+            index="2"
+            tabName="Analysis"
+            title="Analysis Description"
+            viewer="false">
+         <Description>
+            Description body text
+         </Description>
+         <Overview
+               imageOff="icons/AnalysisOff.png"
+               imageOn="icons/AnalysisOn.png">
+            <Description>
+               Description body text
+            </Description>
+         </Overview>
+         <Section
+               expanded="true"
+               filtering="true"
+               id="org.polarsys.time4sys.analysis.tools.validation.section"
+               index="1"
+               name="Context Validation">
+            <Description>
+               Description body text
+            </Description>
+         </Section>
+         <Section
+               expanded="true"
+               filtering="true"
+               id="org.polarsys.time4sys.analysis.tools.analysis.section"
+               index="2"
+               name="Analysis ">
+            <Description>
+               Description body text
+            </Description>
+         </Section>
+         <Predicate
+               class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
+         </Predicate>
+      </Page>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            id="Time4SysAnalysisContext">
+         <selector
+               class="org.polarsys.time4sys.analysis.tools.Time4SysValidationDelegateClientSelector">
+         </selector>
+      </clientContext>
+      <binding
+            category="time4sys.analysis"
+            context="Time4SysAnalysisContext">
+      </binding>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="time4sys.analysis"
+            name="Time4Sys Context">
+      </category>
+   </extension>
+
+</plugin>

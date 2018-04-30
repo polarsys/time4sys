@@ -70,11 +70,11 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	 * @generated
 	 */
 	public DesignModelPropertiesEditionComponent(PropertiesEditingContext editingContext, EObject designModel, String editing_mode) {
-		super(editingContext, designModel, editing_mode);
-		parts = new String[] { BASE_PART };
-		repositoryKey = DesignViewsRepository.class;
-		partKey = DesignViewsRepository.DesignModel.class;
-	}
+    super(editingContext, designModel, editing_mode);
+    parts = new String[] { BASE_PART };
+    repositoryKey = DesignViewsRepository.class;
+    partKey = DesignViewsRepository.DesignModel.class;
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -84,42 +84,42 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	 * @generated
 	 */
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
-		setInitializing(true);
-		if (editingPart != null && key == partKey) {
-			editingPart.setContext(elt, allResource);
-			
-			final DesignModel designModel = (DesignModel)elt;
-			final DesignModelPropertiesEditionPart basePart = (DesignModelPropertiesEditionPart)editingPart;
-			// init values
-			if (isAccessible(DesignViewsRepository.DesignModel.Properties.name))
-				basePart.setName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, designModel.getName()));
-			
-			if (isAccessible(DesignViewsRepository.DesignModel.Properties.endToEndFlows)) {
-				endToEndFlowsSettings = new ReferencesTableSettings(designModel, DesignPackage.eINSTANCE.getDesignModel_EndToEndFlows());
-				basePart.initEndToEndFlows(endToEndFlowsSettings);
-			}
-			// init filters
-			
-			if (isAccessible(DesignViewsRepository.DesignModel.Properties.endToEndFlows)) {
-				basePart.addFilterToEndToEndFlows(new ViewerFilter() {
-					/**
-					 * {@inheritDoc}
-					 * 
-					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-					 */
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return (element instanceof String && element.equals("")) || (element instanceof EndToEndFlow); //$NON-NLS-1$ 
-					}
-			
-				});
-			}
-			// init values for referenced views
-			
-			// init filters for referenced views
-			
-		}
-		setInitializing(false);
-	}
+    setInitializing(true);
+    if (editingPart != null && key == partKey) {
+      editingPart.setContext(elt, allResource);
+      
+      final DesignModel designModel = (DesignModel)elt;
+      final DesignModelPropertiesEditionPart basePart = (DesignModelPropertiesEditionPart)editingPart;
+      // init values
+      if (isAccessible(DesignViewsRepository.DesignModel.Properties.name))
+        basePart.setName(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, designModel.getName()));
+      
+      if (isAccessible(DesignViewsRepository.DesignModel.Properties.endToEndFlows)) {
+        endToEndFlowsSettings = new ReferencesTableSettings(designModel, DesignPackage.eINSTANCE.getDesignModel_EndToEndFlows());
+        basePart.initEndToEndFlows(endToEndFlowsSettings);
+      }
+      // init filters
+      
+      if (isAccessible(DesignViewsRepository.DesignModel.Properties.endToEndFlows)) {
+        basePart.addFilterToEndToEndFlows(new ViewerFilter() {
+          /**
+           * {@inheritDoc}
+           * 
+           * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+           */
+          public boolean select(Viewer viewer, Object parentElement, Object element) {
+            return (element instanceof String && element.equals("")) || (element instanceof EndToEndFlow); //$NON-NLS-1$ 
+          }
+      
+        });
+      }
+      // init values for referenced views
+      
+      // init filters for referenced views
+      
+    }
+    setInitializing(false);
+  }
 
 
 
@@ -145,36 +145,36 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	 * @generated
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
-		DesignModel designModel = (DesignModel)semanticObject;
-		if (DesignViewsRepository.DesignModel.Properties.name == event.getAffectedEditor()) {
-			designModel.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
-		}
-		if (DesignViewsRepository.DesignModel.Properties.endToEndFlows == event.getAffectedEditor()) {
-			if (event.getKind() == PropertiesEditionEvent.ADD) {
-				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, endToEndFlowsSettings, editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy policy = provider.getPolicy(context);
-					if (policy instanceof CreateEditingPolicy) {
-						policy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
-				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
-				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
-				if (provider != null) {
-					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
-					if (editionPolicy != null) {
-						editionPolicy.execute();
-					}
-				}
-			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
-				endToEndFlowsSettings.removeFromReference((EObject) event.getNewValue());
-			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
-				endToEndFlowsSettings.move(event.getNewIndex(), (EndToEndFlow) event.getNewValue());
-			}
-		}
-	}
+    DesignModel designModel = (DesignModel)semanticObject;
+    if (DesignViewsRepository.DesignModel.Properties.name == event.getAffectedEditor()) {
+      designModel.setName((java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue()));
+    }
+    if (DesignViewsRepository.DesignModel.Properties.endToEndFlows == event.getAffectedEditor()) {
+      if (event.getKind() == PropertiesEditionEvent.ADD) {
+        EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, endToEndFlowsSettings, editingContext.getAdapterFactory());
+        PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+        if (provider != null) {
+          PropertiesEditingPolicy policy = provider.getPolicy(context);
+          if (policy instanceof CreateEditingPolicy) {
+            policy.execute();
+          }
+        }
+      } else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+        EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+        PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+        if (provider != null) {
+          PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+          if (editionPolicy != null) {
+            editionPolicy.execute();
+          }
+        }
+      } else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+        endToEndFlowsSettings.removeFromReference((EObject) event.getNewValue());
+      } else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+        endToEndFlowsSettings.move(event.getNewIndex(), (EndToEndFlow) event.getNewValue());
+      }
+    }
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -218,24 +218,24 @@ public class DesignModelPropertiesEditionComponent extends SinglePartPropertiesE
 	 * @generated
 	 */
 	public Diagnostic validateValue(IPropertiesEditionEvent event) {
-		Diagnostic ret = Diagnostic.OK_INSTANCE;
-		if (event.getNewValue() != null) {
-			try {
-				if (DesignViewsRepository.DesignModel.Properties.name == event.getAffectedEditor()) {
-					Object newValue = event.getNewValue();
-					if (newValue instanceof String) {
-						newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
-					}
-					ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
-				}
-			} catch (IllegalArgumentException iae) {
-				ret = BasicDiagnostic.toDiagnostic(iae);
-			} catch (WrappedException we) {
-				ret = BasicDiagnostic.toDiagnostic(we);
-			}
-		}
-		return ret;
-	}
+    Diagnostic ret = Diagnostic.OK_INSTANCE;
+    if (event.getNewValue() != null) {
+      try {
+        if (DesignViewsRepository.DesignModel.Properties.name == event.getAffectedEditor()) {
+          Object newValue = event.getNewValue();
+          if (newValue instanceof String) {
+            newValue = EEFConverterUtil.createFromString(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), (String)newValue);
+          }
+          ret = Diagnostician.INSTANCE.validate(EcorePackage.eINSTANCE.getENamedElement_Name().getEAttributeType(), newValue);
+        }
+      } catch (IllegalArgumentException iae) {
+        ret = BasicDiagnostic.toDiagnostic(iae);
+      } catch (WrappedException we) {
+        ret = BasicDiagnostic.toDiagnostic(we);
+      }
+    }
+    return ret;
+  }
 
 
 	

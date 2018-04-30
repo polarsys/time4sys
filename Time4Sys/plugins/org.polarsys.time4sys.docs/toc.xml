@@ -12,10 +12,28 @@
  -->
 <toc label="Time4Sys" sort="true" topic="html/toc.html">
    <anchor id="Time4SysAnchor"/>
-   <topic label="UserInterface">
+   <topic href="html/Time4SysUserInterface.html" label="UserInterface">
       <anchor id="ui"/>
    </topic>
-   <topic label="FirstStep">
+   <topic href="html/Time4SysFirstStep.html" label="FirstStep">
       <anchor id="fs"/>
    </topic>
+   <topic href="html/Time4SysMetamodel.html" label="Metamodel">
+      <anchor id="m2"/>
+   </topic>
+   <topic href="html/Time4SysExtensions.html" label="Extensions">
+      <anchor id="ext"/>
+   </topic>
+   <topic href="html/Time4SysResults.html" label="Results">
+      <anchor id="res"/>
+   </topic>
+   <topic label="Developper">
+      <link toc="dvpt"/>
+      <topic href="html/Time4SysBuildEnv.html" label="Environment">
+         <anchor id="buildenv"/>
+      </topic>
+      <topic href="html/Time4SysTransfoDev.html" label="Transformations">
+         <anchor id="transfodev"/>
+      </topic>  
+   </topic>   
 </toc>

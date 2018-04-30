@@ -29,6 +29,7 @@ import org.polarsys.time4sys.marte.grm.MutualExclusionResource;
 import org.polarsys.time4sys.marte.grm.ProtectionParameter;
 import org.polarsys.time4sys.marte.grm.ResourceBroker;
 import org.polarsys.time4sys.marte.grm.ResourceService;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.srm.ConcurrentAccesProtocolKind;
 import org.polarsys.time4sys.marte.srm.MutualExclusionResourceKind;
 import org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource;
@@ -153,7 +154,7 @@ public class SoftwareMutualExclusionResourceImpl extends SoftwareSynchronization
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<org.polarsys.time4sys.marte.nfp.coreelements.ModelElement> accessTokenElements;
+	protected EList<ModelElement> accessTokenElements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -338,9 +339,9 @@ public class SoftwareMutualExclusionResourceImpl extends SoftwareSynchronization
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<org.polarsys.time4sys.marte.nfp.coreelements.ModelElement> getAccessTokenElements() {
+	public EList<ModelElement> getAccessTokenElements() {
 		if (accessTokenElements == null) {
-			accessTokenElements = new EObjectResolvingEList<org.polarsys.time4sys.marte.nfp.coreelements.ModelElement>(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement.class, this, SrmPackage.SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__ACCESS_TOKEN_ELEMENTS);
+			accessTokenElements = new EObjectResolvingEList<ModelElement>(ModelElement.class, this, SrmPackage.SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__ACCESS_TOKEN_ELEMENTS);
 		}
 		return accessTokenElements;
 	}
@@ -425,7 +426,7 @@ public class SoftwareMutualExclusionResourceImpl extends SoftwareSynchronization
 				return;
 			case SrmPackage.SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__ACCESS_TOKEN_ELEMENTS:
 				getAccessTokenElements().clear();
-				getAccessTokenElements().addAll((Collection<? extends org.polarsys.time4sys.marte.nfp.coreelements.ModelElement>)newValue);
+				getAccessTokenElements().addAll((Collection<? extends ModelElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

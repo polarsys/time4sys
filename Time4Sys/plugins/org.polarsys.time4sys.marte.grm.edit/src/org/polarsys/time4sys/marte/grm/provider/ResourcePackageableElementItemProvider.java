@@ -20,6 +20,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.PackageableElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link org.polarsys.time4sys.marte.grm.ResourcePackageableElement} object.
@@ -27,7 +28,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ResourcePackageableElementItemProvider extends org.polarsys.time4sys.marte.nfp.coreelements.provider.PackageableElementItemProvider {
+public class ResourcePackageableElementItemProvider extends PackageableElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

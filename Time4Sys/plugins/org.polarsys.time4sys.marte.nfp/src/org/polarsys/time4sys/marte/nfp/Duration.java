@@ -12,6 +12,7 @@
  */
 package org.polarsys.time4sys.marte.nfp;
 
+import java.math.MathContext;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -76,7 +77,7 @@ public interface Duration extends EObject, ValueWithUnit<TimeUnitKind> {
 	 * @see org.polarsys.time4sys.marte.nfp.TimeUnitKind
 	 * @see #setUnit(TimeUnitKind)
 	 * @see org.polarsys.time4sys.marte.nfp.NfpPackage#getDuration_Unit()
-	 * @model default="millisecond"
+	 * @model default="millisecond" required="true"
 	 * @generated
 	 */
 	TimeUnitKind getUnit();
@@ -291,6 +292,14 @@ public interface Duration extends EObject, ValueWithUnit<TimeUnitKind> {
 	 * @generated
 	 */
 	double div(Duration v);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model vRequired="true" mcDataType="org.polarsys.time4sys.marte.nfp.MathContext"
+	 * @generated
+	 */
+	double div(Duration v, MathContext mc);
 
 	/**
 	 * <!-- begin-user-doc -->

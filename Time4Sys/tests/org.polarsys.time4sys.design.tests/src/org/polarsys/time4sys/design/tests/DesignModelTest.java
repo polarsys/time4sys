@@ -27,6 +27,7 @@ import org.polarsys.time4sys.design.DesignModel;
  */
 public class DesignModelTest extends TestCase {
 
+	private static final String A_NAME = "design model name";
 	/**
 	 * The fixture for this Model test case.
 	 * <!-- begin-user-doc -->
@@ -96,4 +97,12 @@ public class DesignModelTest extends TestCase {
 		setFixture(null);
 	}
 
+	
+	/**
+	 * Tests that designmodel comes with a worklaod behavior and a resource package.
+	 */
+	public void testDesignIsInitialized() {
+		assertNotNull(fixture.getWorkloadBehavior());
+		assertNotNull(fixture.getResourcePackage());
+	}
 } //DesignModelTest

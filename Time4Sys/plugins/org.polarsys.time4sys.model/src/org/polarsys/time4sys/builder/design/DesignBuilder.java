@@ -15,15 +15,20 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.builder.ProjectBuilder;
+import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.CommunicationChannel;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
+import org.polarsys.time4sys.marte.gqam.Once;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.SlidingWindowPattern;
+import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -37,9 +42,12 @@ import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.srm.Alarm;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
+import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 
 /**
  * @author loic
@@ -53,6 +61,19 @@ public class DesignBuilder {
 	protected static GrmFactory grmFactory = GrmFactory.eINSTANCE;
 	protected static HrmFactory hrmFactory = HrmFactory.eINSTANCE;
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
+	
+
+	public static DesignBuilder containing(EObject value) {
+		value = searchDesign(value);
+		return new DesignBuilder((DesignModel)value);
+	}
+
+	public static DesignModel searchDesign(EObject value) {
+		while (value != null && !(value instanceof DesignModel)) {
+			value = value.eContainer();
+		}
+		return (DesignModel)value;
+	}
 
 	private DesignModel design;
 	private ProjectBuilder prjBuidler;
@@ -69,6 +90,11 @@ public class DesignBuilder {
 			ResourcePackage resPkg = grmFactory.createResourcePackage();
 			design.setResourcePackage(resPkg);
 		}
+	}
+
+	public DesignBuilder(final ProjectBuilder projectBuilder, final DesignModel designModel) {
+		this(designModel);
+		prjBuidler = projectBuilder;
 	}
 
 	public ProcessorBuilder hasAProcessor() {
@@ -111,6 +137,30 @@ public class DesignBuilder {
 		final SlidingWindowPattern pattern = gqamFactory.createSlidingWindowPattern();
 		pattern.setWindowSize(windowSize);
 		pattern.setNbEvents(nbEvents);
+		taskActivation.setPattern(pattern);
+		return new WorkloadEventBuilder(this, taskActivation);
+	}
+	
+	public WorkloadEventBuilder hasSporadicEvent(final String minInterarrivalStr, final String maxInterarrivalStr) {
+		final WorkloadEvent taskActivation = gqamFactory.createWorkloadEvent();
+		design.getWorkloadBehavior().getDemand().add(taskActivation);
+		final SporadicPattern pattern = gqamFactory.createSporadicPattern();
+		if (minInterarrivalStr != null) {
+			final Duration value = nfpFactory.createDurationFromString(minInterarrivalStr);
+			pattern.setMinInterarrival(value);
+		}
+		if (maxInterarrivalStr != null) {
+			final Duration value = nfpFactory.createDurationFromString(maxInterarrivalStr);
+			pattern.setMaxInterarrival(value);
+		}
+		taskActivation.setPattern(pattern);
+		return new WorkloadEventBuilder(this, taskActivation);
+	}
+	
+	public WorkloadEventBuilder hasActivationOnce() {
+		final WorkloadEvent taskActivation = gqamFactory.createWorkloadEvent();
+		design.getWorkloadBehavior().getDemand().add(taskActivation);
+		final Once pattern = gqamFactory.createOnce();
 		taskActivation.setPattern(pattern);
 		return new WorkloadEventBuilder(this, taskActivation);
 	}
@@ -248,7 +298,7 @@ public class DesignBuilder {
 	}
 
 	public StepBuilder aStep() {
-		return new StepBuilder(this, null);
+		return new StepBuilder(this, (SchedulableResourceBuilder<?, ?>)null);
 	}
 
 	public int countPrecedenceRelations() {
@@ -304,5 +354,42 @@ public class DesignBuilder {
 		return this;
 	}
 
+	public SimulationBuilder hasASimulation() {
+		if (prjBuidler == null) {
+			final Simulation simu = Time4sysFactory.eINSTANCE.createSimulation();
+			return new SimulationBuilder(prjBuidler, simu).of(this);
+		} else {
+			final SimulationBuilder result = prjBuidler.hasASimulation().of(this);
+			return result;
+		}
+		
+	}
+
+	public EndToEndFlowConstraintBuilder firstEndToEndFlowsConstraints() {
+		final EndToEndFlow first = design.getEndToEndFlows().get(0);
+		return new EndToEndFlowConstraintBuilder(first);
+	}
+
+	public ReferenceBuilder hasAReference() {
+		return new ReferenceBuilder(this);
+	}
+
+	public boolean addReference(final Reference ref) {
+		return design.getWorkloadBehavior().getReferences().add(ref);
+	}
+
+	/**
+	 * Return the reference with given name or null.
+	 * @param refname
+	 * @return
+	 */
+	public ReferenceBuilder reference(final String refname) {
+		for(Reference ref: design.getWorkloadBehavior().getReferences()) {
+			if (refname.equals(ref.getReferenceName())) {
+				return new ReferenceBuilder(ref);
+			}
+		}
+		return null;
+	}
 
 }

@@ -26,12 +26,15 @@ import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 
 /**
+ * The identity transformation.
  * @author loic
  *
  */
 public class IdentityDerivation {
 
 
+	public static final String ORIGINAL_ROLE = "original".intern();
+	public static final String COPY_ROLE = "copy".intern();
 	public static final String IDENTITY_RULE_NAME = "Identity Rule".intern();
 
 	public static Transformation duplicate(final Project project, final DesignModel source) {
@@ -53,15 +56,17 @@ public class IdentityDerivation {
  
 	public Transformation transform() {
 		mapping = mappingFactory.createMapping();
-		mapping.getSources().add(mappingFactory.createResourceArtefact("original", source.eResource()));
+		mapping.getSources().add(mappingFactory.createResourceArtefact(ORIGINAL_ROLE, source.eResource()));
 		createRules();
 		final DesignModel target = copy();
 		
 		final Transformation transformation = Time4sysFactory.eINSTANCE.createTransformation();
-		project.getTransformations().add(transformation);
+		if (project != null) {
+			project.getTransformations().add(transformation);
+		}
 		transformation.setMapping(mapping);
 		transformation.setResult(target);
-		mapping.getTargets().add(mappingFactory.createResourceArtefact("copy", target.eResource()));
+		mapping.getTargets().add(mappingFactory.createResourceArtefact(COPY_ROLE, target.eResource()));
 		finalize(target);
 		return transformation;
 	}

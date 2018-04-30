@@ -10,7 +10,9 @@
  *******************************************************************************/
 package org.polarsys.time4sys.transformations;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import org.eclipse.emf.common.util.EList;
@@ -40,13 +42,16 @@ import org.polarsys.time4sys.trace.Slice;
 public class SimulationAnalyser {
 	
 	public static Transformation analyse(final Simulation simu) {
+		if (simu == null) {
+			return null;
+		}
 		Project project = null;
 		EObject container = simu.eContainer();
 		if (container instanceof Project) {
 			project = (Project)container;
 		}
 		final Transformation transfo = analyse(project, simu);
-		if (project != null) {
+		if (project != null && transfo != null) {
 			project.getTransformations().add(transfo);
 		}
 		return transfo;
@@ -69,7 +74,7 @@ public class SimulationAnalyser {
 		this.project = project;
 		this.simu = simu;
 		assert(simu != null);
-		assert(project != null);
+		//assert(project != null);
 	}
 
 	private Transformation transform() {
@@ -137,10 +142,33 @@ public class SimulationAnalyser {
 	}
 
 	private SchedulingEvent searchTerminationEvent(final EList<Event> events) {
-		return (SchedulingEvent)events.get(events.size() - 1);
+		final ArrayList<Event> reversedEvents = new ArrayList<Event>(events);
+		Collections.reverse(reversedEvents);
+		for(Event evt: reversedEvents) {
+			if (evt instanceof SchedulingEvent) {
+				final SchedulingEvent schedEvt = (SchedulingEvent) evt;
+				switch(schedEvt.getKind()) {
+				case TERMINATED:
+					return schedEvt;
+				default:
+				}
+			}
+		}
+		return null;
 	}
 
 	private SchedulingEvent searchActivationEvent(final EList<Event> events) {
-		return (SchedulingEvent)events.get(0);
+		for(Event evt: events) {
+			if (evt instanceof SchedulingEvent) {
+				final SchedulingEvent schedEvt = (SchedulingEvent) evt;
+				switch(schedEvt.getKind()) {
+				case RUNNING: //in case of malformed trace having direct running and no activated
+				case ACTIVATED:
+					return schedEvt;
+				default:
+				}
+			}
+		}
+		return null;
 	}
 }

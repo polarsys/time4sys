@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.grm.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,7 @@ import org.polarsys.time4sys.marte.grm.ResourcePackageableElement;
  *
  * @generated
  */
-public abstract class ResourcePackageableElementImpl extends org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageableElementImpl implements ResourcePackageableElement {
+public abstract class ResourcePackageableElementImpl extends PackageableElementImpl implements ResourcePackageableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

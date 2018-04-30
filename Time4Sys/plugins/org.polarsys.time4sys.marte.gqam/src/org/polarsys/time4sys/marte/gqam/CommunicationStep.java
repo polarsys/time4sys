@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.marte.gqam;
 
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,12 +42,12 @@ public interface CommunicationStep extends Step {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Msg Size</em>' attribute.
-	 * @see #setMsgSize(int)
+	 * @see #setMsgSize(DataSize)
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getCommunicationStep_MsgSize()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.gqam.NFP_DataSize"
 	 * @generated
 	 */
-	int getMsgSize();
+	DataSize getMsgSize();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.CommunicationStep#getMsgSize <em>Msg Size</em>}' attribute.
@@ -56,7 +57,7 @@ public interface CommunicationStep extends Step {
 	 * @see #getMsgSize()
 	 * @generated
 	 */
-	void setMsgSize(int value);
+	void setMsgSize(DataSize value);
 
 	/**
 	 * Returns the value of the '<em><b>Com Res</b></em>' reference.

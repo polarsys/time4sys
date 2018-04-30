@@ -17,6 +17,7 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
 import org.polarsys.time4sys.marte.nfp.provider.NfpEditPlugin;
 
 /**
@@ -54,7 +55,7 @@ public final class SrmEditorPlugin extends EMFPlugin {
 				GrmEditPlugin.INSTANCE,
 				NfpEditPlugin.INSTANCE,
 				EcoreEditPlugin.INSTANCE,
-				org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin.INSTANCE,
+				CoreElementsEditPlugin.INSTANCE,
 			});
 	}
 

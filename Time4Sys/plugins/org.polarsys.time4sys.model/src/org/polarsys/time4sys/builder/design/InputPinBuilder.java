@@ -23,7 +23,7 @@ import org.polarsys.time4sys.marte.srm.SrmFactory;
  * @author loic
  *
  */
-public class InputPinBuilder extends ControlPinBuilder<InputPin,InputPinBuilder> {
+public class InputPinBuilder extends PinBuilder<InputPin,InputPinBuilder> {
 	
 	protected static DesignFactory df = DesignFactory.eINSTANCE;
 	protected static GqamFactory gqamFactory = GqamFactory.eINSTANCE;

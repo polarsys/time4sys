@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.polarsys.time4sys.feature">
+      <category name="Time4Sys"/>
+   </feature>
+   <feature id="org.eclipse.amalgam.explorer.activity">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.amalgam.explorer.contextual">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.amalgam.explorer.contextual.core">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.amalgam.explorer.contextual.sirius">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.interpreter.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime.acceleo">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime.aql">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime.ide.eef">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.eef.sdk.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.eef.ext.widgets.reference.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <bundle id="org.eclipse.sirius.editor">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.eef.runtime">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.draw2d">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.editor.properties">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.ecore">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.ecore.edit">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.transaction">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.validation">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.emf.workspace">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.gef">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.gmf">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.gmf.runtime.notation">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.editor.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.interpreter">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.core">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.defaultrules">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.edit">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference.edit">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.ui.properties">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <category-def name="Time4Sys" label="Time4Sys">
+      <description>
+         Install Time4Sys plugins.
+      </description>
+   </category-def>
+   <category-def name="T4S Dependencies" label="T4S Dependencies">
+      <description>
+         Install plugins required by Time4Sys (Sirius, Acceleo, EEF)
+      </description>
+   </category-def>
+   <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
+</site>

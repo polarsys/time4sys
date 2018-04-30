@@ -223,6 +223,15 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getLink__GetLinks__Context() {
+		return linkEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMappableArtefact() {
 		return mappableArtefactEClass;
 	}
@@ -372,6 +381,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		createEOperation(linkEClass, LINK___GET_UNIQUE_TARGET_VALUE__STRING);
 		createEOperation(linkEClass, LINK___GET_SOURCES__STRING);
 		createEOperation(linkEClass, LINK___GET_TARGETS__STRING);
+		createEOperation(linkEClass, LINK___GET_LINKS__CONTEXT);
 
 		mappableArtefactEClass = createEClass(MAPPABLE_ARTEFACT);
 		createEAttribute(mappableArtefactEClass, MAPPABLE_ARTEFACT__NAME);
@@ -442,6 +452,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		op = initEOperation(getLink__GetTargets__String(), ecorePackage.getEObject(), "getTargets", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "role", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getLink__GetLinks__Context(), this.getLink(), "getLinks", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getContext(), "rule", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(mappableArtefactEClass, MappableArtefact.class, "MappableArtefact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMappableArtefact_Name(), ecorePackage.getEString(), "name", null, 0, 1, MappableArtefact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

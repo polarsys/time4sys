@@ -32,8 +32,8 @@ public class DesignPropertiesEditionPartProvider implements IPropertiesEditionPa
 	 * @generated
 	 */
 	public boolean provides(Object key) {
-		return key == DesignViewsRepository.class;
-	}
+    return key == DesignViewsRepository.class;
+  }
 
 	/** 
 	 * {@inheritDoc}
@@ -41,13 +41,13 @@ public class DesignPropertiesEditionPartProvider implements IPropertiesEditionPa
 	 * @generated
 	 */
 	public IPropertiesEditionPart getPropertiesEditionPart(Object key, int kind, IPropertiesEditionComponent component) {
-		if (key == DesignViewsRepository.DesignModel.class) {
-			if (kind == DesignViewsRepository.SWT_KIND)
-				return new DesignModelPropertiesEditionPartImpl(component);
-			if (kind == DesignViewsRepository.FORM_KIND)
-				return new DesignModelPropertiesEditionPartForm(component);
-		}
-		return null;
-	}
+    if (key == DesignViewsRepository.DesignModel.class) {
+      if (kind == DesignViewsRepository.SWT_KIND)
+        return new DesignModelPropertiesEditionPartImpl(component);
+      if (kind == DesignViewsRepository.FORM_KIND)
+        return new DesignModelPropertiesEditionPartForm(component);
+    }
+    return null;
+  }
 
 }

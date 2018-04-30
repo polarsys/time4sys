@@ -165,6 +165,6 @@ public class DesignMessages extends NLS {
 	 */
 	
 	private DesignMessages() {
-		//protect instanciation
-	}
+    //protect instanciation
+  }
 }

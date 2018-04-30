@@ -17,6 +17,7 @@ import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 
 /**
@@ -57,6 +58,15 @@ public class WorkloadEventBuilder {
 			final PeriodicPattern p = (PeriodicPattern)ptrn;
 			p.setPhase(NfpFactory.eINSTANCE.createDurationFromString(value));
 		}
+	}
+	
+	public Duration getOffset() {
+		final ArrivalPattern ptrn = evt.getPattern();
+		if (ptrn instanceof PeriodicPattern) {
+			final PeriodicPattern p = (PeriodicPattern)ptrn;
+			return p.getPhase();
+		}
+		throw new IllegalStateException("Pattern is not period: " + ptrn.getClass().getName());
 	}
 
 	public void ofJitter(String value) {

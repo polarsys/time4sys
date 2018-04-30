@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Mars" sequenceNumber="6">
+<?pde version="3.8"?><target name="Time4Sys-Mars" sequenceNumber="21">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.edit.feature.group" version="2.11.1.v20160208-0841"/>
@@ -29,6 +29,21 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/"/>
+</location>
+<location path="C:\Users\didier\Downloads\capella-1.1.4\capella\eclipse" type="Profile"/>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.eef.runtime-feature.feature.group" version="1.5.1.201601041621"/>
+<unit id="org.eclipse.emf.eef.codegen.ecore-feature.feature.group" version="1.5.1.201601041621"/>
+<unit id="org.eclipse.emf.eef.edt-feature.feature.group" version="1.5.1.201601041621"/>
+<unit id="org.eclipse.emf.eef.collab.runtime-feature.feature.group" version="1.5.1.201601041621"/>
+<unit id="org.eclipse.emf.eef.sdk-feature.feature.group" version="1.5.1.201601041621"/>
+<unit id="org.eclipse.emf.eef.extended-feature.feature.group" version="1.5.1.201601041621"/>
+<repository location="http://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601041621/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.eef.sdk.feature.feature.group" version="2.0.1.201801311257"/>
+<unit id="org.eclipse.eef.ext.widgets.reference.feature.feature.group" version="2.0.1.201801311257"/>
+<repository location="http://download.eclipse.org/modeling/emft/eef/updates/releases/2.0/R201801311257/"/>
 </location>
 </locations>
 </target>

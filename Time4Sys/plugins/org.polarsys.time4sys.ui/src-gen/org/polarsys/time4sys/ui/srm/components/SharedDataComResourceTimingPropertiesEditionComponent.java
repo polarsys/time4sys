@@ -245,15 +245,6 @@ public class SharedDataComResourceTimingPropertiesEditionComponent extends Singl
 				sharedDataComResource.getWaitingPolicyElements().addAll(((EList) event.getNewValue()));
 			}
 		}
-		if (SrmViewsRepository.Timing.Properties.capacity == event.getAffectedEditor()) {
-			sharedDataComResource.setCapacity((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (SrmViewsRepository.Timing.Properties.packetTime == event.getAffectedEditor()) {
-			sharedDataComResource.setPacketTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (SrmViewsRepository.Timing.Properties.blockingTime == event.getAffectedEditor()) {
-			sharedDataComResource.setBlockingTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
 		if (SrmViewsRepository.Timing.Properties.transmMode == event.getAffectedEditor()) {
 			sharedDataComResource.setTransmMode((TransmModeKind)event.getNewValue());
 		}

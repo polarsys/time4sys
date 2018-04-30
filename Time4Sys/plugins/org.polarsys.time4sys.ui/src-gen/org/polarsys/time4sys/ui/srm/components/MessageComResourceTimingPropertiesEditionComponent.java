@@ -286,15 +286,6 @@ public class MessageComResourceTimingPropertiesEditionComponent extends SinglePa
 				messageComResource.getWaitingPolicyElements().addAll(((EList) event.getNewValue()));
 			}
 		}
-		if (SrmViewsRepository.Timing.Properties.capacity == event.getAffectedEditor()) {
-			messageComResource.setCapacity((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (SrmViewsRepository.Timing.Properties.packetTime == event.getAffectedEditor()) {
-			messageComResource.setPacketTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
-		if (SrmViewsRepository.Timing.Properties.blockingTime == event.getAffectedEditor()) {
-			messageComResource.setBlockingTime((EEFConverterUtil.createFloatFromString(EcorePackage.Literals.EFLOAT, (String)event.getNewValue())));
-		}
 		if (SrmViewsRepository.Timing.Properties.transmMode == event.getAffectedEditor()) {
 			messageComResource.setTransmMode((TransmModeKind)event.getNewValue());
 		}

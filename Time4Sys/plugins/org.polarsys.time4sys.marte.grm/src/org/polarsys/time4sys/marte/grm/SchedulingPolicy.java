@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#getPolicy <em>Policy</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#getOtherSchedPolicy <em>Other Sched Policy</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#getSchedule <em>Schedule</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.grm.GrmPackage#getSchedulingPolicy()
@@ -90,6 +91,32 @@ public interface SchedulingPolicy extends AccessControlPolicy {
 	 * @generated
 	 */
 	void setOtherSchedPolicy(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Schedule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Schedule</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Schedule</em>' containment reference.
+	 * @see #setSchedule(ScheduleSpecification)
+	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getSchedulingPolicy_Schedule()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ScheduleSpecification getSchedule();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.SchedulingPolicy#getSchedule <em>Schedule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Schedule</em>' containment reference.
+	 * @see #getSchedule()
+	 * @generated
+	 */
+	void setSchedule(ScheduleSpecification value);
 
 	/**
 	 * <!-- begin-user-doc -->

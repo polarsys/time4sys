@@ -2,73 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nfp" nsURI="http://www.polarsys.org/time4sys/marte/nfp/1.0"
     nsPrefix="nfp">
-  <eClassifiers xsi:type="ecore:EClass" name="Duration">
-    <eOperations name="add" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-      <eParameters name="anotherDuration" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="convertToUnit" lowerBound="1" eType="#//Duration">
-      <eParameters name="unit" lowerBound="1" eType="#//TimeUnitKind"/>
-    </eOperations>
-    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="lcm" lowerBound="1" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="max" lowerBound="1" eType="#//Duration">
-      <eParameters name="other" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="min" lowerBound="1" eType="#//Duration">
-      <eParameters name="other" eType="#//Duration"/>
-    </eOperations>
-    <eOperations name="multiply" lowerBound="1" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    </eOperations>
-    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="simplify" lowerBound="1" eType="#//Duration"/>
-    <eOperations name="sub" lowerBound="1" eType="#//Duration">
-      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//TimeUnitKind"
-        defaultValueLiteral="millisecond"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="best" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bucket">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//NFP_Duration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnitKind">
-    <eLiterals name="ps" value="1" literal="picosecond"/>
-    <eLiterals name="ns" value="2" literal="nanosecond"/>
-    <eLiterals name="us" value="3" literal="microsecond"/>
-    <eLiterals name="ms" value="4" literal="millisecond"/>
-    <eLiterals name="s" value="5" literal="second"/>
-    <eLiterals name="mn" value="6" literal="minute"/>
-    <eLiterals name="h" value="7" literal="hour"/>
-    <eLiterals name="d" value="8" literal="days"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TimeInterval">
-    <eOperations name="computeLength" lowerBound="1" eType="#//Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="#//Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="#//Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOpen" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOpen" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnitKind">
-    <eLiterals name="BIT"/>
-    <eLiterals name="BYTE" value="1"/>
-    <eLiterals name="KB" value="2" literal=""/>
-    <eLiterals name="MB" value="3"/>
-    <eLiterals name="GB" value="4"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" lowerBound="1" upperBound="-1"
+        eType="#//ProbabilisticDuration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataSize">
     <eOperations name="add" eType="#//DataSize">
@@ -108,30 +49,144 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataSizeUnitKind"
         defaultValueLiteral="BYTE"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//TimeInterval #//Duration"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnitKind">
+    <eLiterals name="BIT"/>
+    <eLiterals name="BYTE" value="1"/>
+    <eLiterals name="KB" value="2" literal=""/>
+    <eLiterals name="MB" value="3"/>
+    <eLiterals name="GB" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTxRate">
+    <eOperations name="add" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="anotherDuration" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="unit" lowerBound="1" eType="#//DataTxRateUnitKind"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="lcm" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="max" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="other" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="min" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="other" eType="#//DataTxRate"/>
+    </eOperations>
+    <eOperations name="multiply" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="simplify" lowerBound="1" eType="#//DataTxRate"/>
+    <eOperations name="sub" lowerBound="1" eType="#//DataTxRate">
+      <eParameters name="v" lowerBound="1" eType="#//DataTxRate"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataTxRateUnitKind"
+        defaultValueLiteral="B_PER_S"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataTxRateUnitKind">
+    <eLiterals name="B_PER_S"/>
+    <eLiterals name="KB_PER_S" value="1" literal="kb/s"/>
+    <eLiterals name="MB_PER_S" value="2" literal="mb/s"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteDistribution" eSuperTypes="#//ProbabilisticDuration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="buckets" lowerBound="1"
         upperBound="-1" eType="#//Bucket" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//DiscreteDistributionKind"
+        defaultValueLiteral="Undef"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bucket">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//NFP_Duration"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DiscreteDistributionKind">
+    <eLiterals name="Undef"/>
+    <eLiterals name="Random" value="1"/>
+    <eLiterals name="Cyclic" value="2" literal="cyclic"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//ProbabilisticDuration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mu" lowerBound="1" eType="#//NFP_Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Duration">
+    <eOperations name="add" eType="#//Duration">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="compareTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="anotherDuration" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//Duration">
+      <eParameters name="unit" lowerBound="1" eType="#//TimeUnitKind"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="div" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+      <eParameters name="mc" eType="#//MathContext"/>
+    </eOperations>
+    <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="lcm" lowerBound="1" eType="#//Duration">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="max" lowerBound="1" eType="#//Duration">
+      <eParameters name="other" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="min" lowerBound="1" eType="#//Duration">
+      <eParameters name="other" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="multiply" lowerBound="1" eType="#//Duration">
+      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="notZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="simplify" lowerBound="1" eType="#//Duration"/>
+    <eOperations name="sub" lowerBound="1" eType="#//Duration">
+      <eParameters name="v" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//TimeUnitKind"
+        defaultValueLiteral="millisecond"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="best" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="worst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralizedExtremeValueDistribution"
       eSuperTypes="#//ProbabilisticDuration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mu" lowerBound="1" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xi" lowerBound="1" eType="#//NFP_Duration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeDistribution" eSuperTypes="#//ProbabilisticDuration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" lowerBound="1" upperBound="-1"
-        eType="#//ProbabilisticDuration" containment="true"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="MathContext" instanceClassName="java.math.MathContext"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NormalDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mu" lowerBound="1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//TimeInterval #//Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeInterval">
+    <eOperations name="computeLength" lowerBound="1" eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOpen" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOpen" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnitKind">
+    <eLiterals name="ps" value="1" literal="picosecond"/>
+    <eLiterals name="ns" value="2" literal="nanosecond"/>
+    <eLiterals name="us" value="3" literal="microsecond"/>
+    <eLiterals name="ms" value="4" literal="millisecond"/>
+    <eLiterals name="s" value="5" literal="second"/>
+    <eLiterals name="mn" value="6" literal="minute"/>
+    <eLiterals name="h" value="7" literal="hour"/>
+    <eLiterals name="d" value="8" literal="days"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration"/>
 </ecore:EPackage>

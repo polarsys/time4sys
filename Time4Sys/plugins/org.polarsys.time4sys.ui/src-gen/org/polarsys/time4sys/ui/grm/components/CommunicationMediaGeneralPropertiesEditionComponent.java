@@ -431,9 +431,6 @@ public class CommunicationMediaGeneralPropertiesEditionComponent extends SingleP
 				mainSchedulerSettings.setToReference(eObject);
 			}
 		}
-		if (GrmViewsRepository.General.Properties.elementSize == event.getAffectedEditor()) {
-			communicationMedia.setElementSize((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
-		}
 		if (GrmViewsRepository.General.Properties.transmMode == event.getAffectedEditor()) {
 			communicationMedia.setTransmMode((TransmModeKind)event.getNewValue());
 		}

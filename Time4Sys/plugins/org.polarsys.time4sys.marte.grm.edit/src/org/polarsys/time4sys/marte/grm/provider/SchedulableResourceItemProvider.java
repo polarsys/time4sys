@@ -194,6 +194,54 @@ public class SchedulableResourceItemProvider extends ConcurrencyResourceItemProv
 			(createChildParameter
 				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
 				 GrmFactory.eINSTANCE.createSchedulingParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createEDFParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createFixedPriorityParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createPeriodicServerParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createPoolingParameters()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.SCHEDULABLE_RESOURCE__SCHED_PARAMS,
+				 GrmFactory.eINSTANCE.createTableEntryType()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

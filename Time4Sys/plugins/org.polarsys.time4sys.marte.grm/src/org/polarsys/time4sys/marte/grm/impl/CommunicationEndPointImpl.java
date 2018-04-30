@@ -15,7 +15,6 @@ package org.polarsys.time4sys.marte.grm.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 
@@ -32,7 +31,7 @@ import org.polarsys.time4sys.marte.grm.GrmPackage;
  *
  * @generated
  */
-public abstract class CommunicationEndPointImpl extends MinimalEObjectImpl.Container implements CommunicationEndPoint {
+public abstract class CommunicationEndPointImpl extends CommunicationResourceImpl implements CommunicationEndPoint {
 	/**
 	 * The default value of the '{@link #getPacketSize() <em>Packet Size</em>}' attribute.
 	 * <!-- begin-user-doc -->

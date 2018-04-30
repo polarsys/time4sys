@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
 import org.polarsys.time4sys.marte.gqam.*;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
@@ -118,24 +119,28 @@ public class GqamValidator extends EObjectValidator {
 				return validateCommunicationChannel((CommunicationChannel)value, diagnostics, context);
 			case GqamPackage.COMMUNICATION_STEP:
 				return validateCommunicationStep((CommunicationStep)value, diagnostics, context);
-			case GqamPackage.CONTROL_PIN:
-				return validateControlPin((ControlPin)value, diagnostics, context);
 			case GqamPackage.DELAY:
 				return validateDelay((Delay)value, diagnostics, context);
 			case GqamPackage.EXECUTION_STEP:
 				return validateExecutionStep((ExecutionStep)value, diagnostics, context);
+			case GqamPackage.FLOW_INVOLVED_ELEMENT:
+				return validateFlowInvolvedElement((FlowInvolvedElement)value, diagnostics, context);
 			case GqamPackage.INPUT_PIN:
 				return validateInputPin((InputPin)value, diagnostics, context);
 			case GqamPackage.LATENCY_OBSERVER:
 				return validateLatencyObserver((LatencyObserver)value, diagnostics, context);
 			case GqamPackage.MULTIPLICITY_ELEMENT:
 				return validateMultiplicityElement((MultiplicityElement)value, diagnostics, context);
+			case GqamPackage.OBJECT_NODE:
+				return validateObjectNode((ObjectNode)value, diagnostics, context);
 			case GqamPackage.ONCE:
 				return validateOnce((Once)value, diagnostics, context);
 			case GqamPackage.OUTPUT_PIN:
 				return validateOutputPin((OutputPin)value, diagnostics, context);
 			case GqamPackage.PERIODIC_PATTERN:
 				return validatePeriodicPattern((PeriodicPattern)value, diagnostics, context);
+			case GqamPackage.PIN:
+				return validatePin((Pin)value, diagnostics, context);
 			case GqamPackage.PRECEDENCE_RELATION:
 				return validatePrecedenceRelation((PrecedenceRelation)value, diagnostics, context);
 			case GqamPackage.REFERENCE:
@@ -162,6 +167,10 @@ public class GqamValidator extends EObjectValidator {
 				return validateConnectorKind((ConnectorKind)value, diagnostics, context);
 			case GqamPackage.LAXITY_KIND:
 				return validateLaxityKind((LaxityKind)value, diagnostics, context);
+			case GqamPackage.OBJECT_NODE_ORDERING_KIND:
+				return validateObjectNodeOrderingKind((ObjectNodeOrderingKind)value, diagnostics, context);
+			case GqamPackage.NFP_DATA_SIZE:
+				return validateNFP_DataSize((DataSize)value, diagnostics, context);
 			case GqamPackage.NFP_DURATION:
 				return validateNFP_Duration((Duration)value, diagnostics, context);
 			default:
@@ -258,6 +267,25 @@ public class GqamValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validatePin(Pin pin, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(pin, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(pin, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(pin, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateExecutionStep(ExecutionStep executionStep, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(executionStep, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(executionStep, diagnostics, context);
@@ -270,6 +298,15 @@ public class GqamValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(executionStep, diagnostics, context);
 		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(executionStep, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlowInvolvedElement(FlowInvolvedElement flowInvolvedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(flowInvolvedElement, diagnostics, context);
 	}
 
 	/**
@@ -436,6 +473,15 @@ public class GqamValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateObjectNode(ObjectNode objectNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(objectNode, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateWorkloadBehavior(WorkloadBehavior workloadBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(workloadBehavior, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(workloadBehavior, diagnostics, context);
@@ -505,25 +551,6 @@ public class GqamValidator extends EObjectValidator {
 	 */
 	public boolean validateMultiplicityElement(MultiplicityElement multiplicityElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(multiplicityElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateControlPin(ControlPin controlPin, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(controlPin, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controlPin, diagnostics, context);
-		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(controlPin, diagnostics, context);
-		return result;
 	}
 
 	/**
@@ -626,6 +653,24 @@ public class GqamValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateLaxityKind(LaxityKind laxityKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateObjectNodeOrderingKind(ObjectNodeOrderingKind objectNodeOrderingKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_DataSize(DataSize nfP_DataSize, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

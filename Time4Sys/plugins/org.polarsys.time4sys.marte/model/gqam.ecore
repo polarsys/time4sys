@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gqam" nsURI="http://www.polarsys.org/time4sys/marte/gqam/1.0"
     nsPrefix="gqam">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="Same as the UML 2.5 Pin with isControl=true."/>
+    <details key="documentation" value="Generic Quantitative Analysis Modeling"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="AcquireStep" eSuperTypes="#//Step">
     <eStructuralFeatures xsi:type="ecore:EReference" name="acqRes" eType="ecore:EClass grm.ecore#//Resource"/>
@@ -16,7 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Reference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="core_elements.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="core_elements.ecore#//NamedElement #//FlowInvolvedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"
         eType="#//Step" containment="true" eOpposite="#//Step/scenario"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cause" upperBound="-1"
@@ -88,7 +88,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationChannel" eSuperTypes="grm.ecore#//SchedulableResource"/>
   <eClassifiers xsi:type="ecore:EClass" name="CommunicationStep" eSuperTypes="#//Step">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="msgSize" eType="#//NFP_DataSize"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comRes" eType="ecore:EClass grm.ecore#//CommunicationResource"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ConnectorKind">
@@ -97,13 +97,6 @@
     <eLiterals name="Merge" value="2"/>
     <eLiterals name="Fork" value="3"/>
     <eLiterals name="Join" value="4"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlPin" abstract="true" eSuperTypes="#//MultiplicityElement core_elements.ecore#//NamedElement">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The concept is from UML 2.5 Pin, where isControlPin=true."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Delay" eSuperTypes="#//Step">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -119,12 +112,21 @@
         eType="#//NFP_Duration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutionStep" eSuperTypes="#//Step"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//ControlPin">
+  <eClassifiers xsi:type="ecore:EClass" name="FlowInvolvedElement" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An Flow Involved Element is a model element that is part of a functional chain, data-flow, or control-flow of interest."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//Pin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="from UML 2.5"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
-        eType="#//OutputPin" eOpposite="#//OutputPin/successors"/>
+        eType="#//OutputPin" eOpposite="#//OutputPin/successors">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="In UML 2.5, this would be an ActivityEdge."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LatencyObserver" eSuperTypes="#//TimedObserver">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latency" eType="#//NFP_Duration"/>
@@ -146,9 +148,50 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="from UML 2.5"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordering" eType="#//ObjectNodeOrderingKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates how the tokens held by the ObjectNode are ordered for selection to traverse ActivityEdges outgoing from the ObjectNode.&#xD;&#xA;from UML 2.5"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typename" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the type of the tokens that the ObjectNode hold.&#xD;&#xA;Same as UML 2.5 OCL expression: self.type.name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ObjectNodeOrderingKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="ObjectNodeOrderingKind is an enumeration indicating queuing order for offering the tokens held by an ObjectNode.&#xD;&#xA;from UML 2.5"/>
+    </eAnnotations>
+    <eLiterals name="UNORDERED">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are unordered."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LIFO" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are queued in a last in, first out manner."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FIFO" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are queued in a first in, first out manner."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ORDERED" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates that tokens are ordered.&#xD;&#xA;ORDERED means that an algorithm exists on how to choose the order but is not LIFO nor FIFO.&#xD;&#xA;For example, it could FIFO within a priority level.&#xD;&#xA;The ObjectNode.selection attribute shall point out a procedure for that."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Once" eSuperTypes="#//ArrivalPattern"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//ControlPin">
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//Pin">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="from UML 2.5"/>
     </eAnnotations>
@@ -162,6 +205,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="#//NFP_Duration"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurences" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="#//MultiplicityElement core_elements.ecore#//NamedElement #//ObjectNode #//FlowInvolvedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The concept is from UML 2.5 Pin"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControl" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contrary to UML specification, default is true."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrecedenceRelation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

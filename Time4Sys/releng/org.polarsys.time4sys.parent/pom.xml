@@ -33,9 +33,14 @@
    <url>http://download.eclipse.org/sirius/updates/releases/4.1.6/mars/</url>
  </repository>
   <repository>
-   <id>EEF</id>
+   <id>Legacy-EEF</id>
    <layout>p2</layout>
    <url>http://download.eclipse.org/modeling/emft/eef/updates/releases/1.5/R201601041621/</url>
+ </repository>
+   <repository>
+   <id>New-EEF</id>
+   <layout>p2</layout>
+   <url>http://download.eclipse.org/modeling/emft/eef/updates/releases/2.0/R201801311257/</url>
  </repository>
    <repository>
    <id>amalgamMars</id>

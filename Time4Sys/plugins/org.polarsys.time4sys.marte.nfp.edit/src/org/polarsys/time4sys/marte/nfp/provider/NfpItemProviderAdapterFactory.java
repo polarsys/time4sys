@@ -324,6 +324,29 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.DataTxRate} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataTxRateItemProvider dataTxRateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.DataTxRate}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDataTxRateAdapter() {
+		if (dataTxRateItemProvider == null) {
+			dataTxRateItemProvider = new DataTxRateItemProvider(this);
+		}
+
+		return dataTxRateItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -449,16 +472,17 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	 * @generated
 	 */
 	public void dispose() {
-		if (durationItemProvider != null) durationItemProvider.dispose();
-		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
-		if (dataSizeItemProvider != null) dataSizeItemProvider.dispose();
-		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
-		if (discreteDistributionItemProvider != null) discreteDistributionItemProvider.dispose();
 		if (bucketItemProvider != null) bucketItemProvider.dispose();
-		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
-		if (generalizedExtremeValueDistributionItemProvider != null) generalizedExtremeValueDistributionItemProvider.dispose();
-		if (uniformDistributionItemProvider != null) uniformDistributionItemProvider.dispose();
 		if (compositeDistributionItemProvider != null) compositeDistributionItemProvider.dispose();
+		if (dataSizeItemProvider != null) dataSizeItemProvider.dispose();
+		if (dataTxRateItemProvider != null) dataTxRateItemProvider.dispose();
+		if (discreteDistributionItemProvider != null) discreteDistributionItemProvider.dispose();
+		if (durationItemProvider != null) durationItemProvider.dispose();
+		if (generalizedExtremeValueDistributionItemProvider != null) generalizedExtremeValueDistributionItemProvider.dispose();
+		if (normalDistributionItemProvider != null) normalDistributionItemProvider.dispose();
+		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
+		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
+		if (uniformDistributionItemProvider != null) uniformDistributionItemProvider.dispose();
 	}
 
 }

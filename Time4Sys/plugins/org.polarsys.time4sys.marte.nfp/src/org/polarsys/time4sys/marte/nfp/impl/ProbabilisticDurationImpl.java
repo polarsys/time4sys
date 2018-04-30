@@ -4,6 +4,7 @@ package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.math.MathContext;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -346,6 +347,17 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double div(Duration v, MathContext mc) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public long divide(Duration v) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -603,6 +615,7 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 				case NfpPackage.DURATION___COMPARE_TO__DURATION: return NfpPackage.PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
 				case NfpPackage.DURATION___CONVERT_TO_UNIT__TIMEUNITKIND: return NfpPackage.PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
 				case NfpPackage.DURATION___DIV__DURATION: return NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION;
+				case NfpPackage.DURATION___DIV__DURATION_MATHCONTEXT: return NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
 				case NfpPackage.DURATION___DIVIDE__DURATION: return NfpPackage.PROBABILISTIC_DURATION___DIVIDE__DURATION;
 				case NfpPackage.DURATION___IS_ZERO: return NfpPackage.PROBABILISTIC_DURATION___IS_ZERO;
 				case NfpPackage.DURATION___LCM__DURATION: return NfpPackage.PROBABILISTIC_DURATION___LCM__DURATION;
@@ -634,6 +647,8 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 				return convertToUnit((TimeUnitKind)arguments.get(0));
 			case NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION:
 				return div((Duration)arguments.get(0));
+			case NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT:
+				return div((Duration)arguments.get(0), (MathContext)arguments.get(1));
 			case NfpPackage.PROBABILISTIC_DURATION___DIVIDE__DURATION:
 				return divide((Duration)arguments.get(0));
 			case NfpPackage.PROBABILISTIC_DURATION___IS_ZERO:

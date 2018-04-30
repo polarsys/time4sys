@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.time4sys.model.time4sys;
 
+import java.math.BigInteger;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
@@ -27,6 +28,7 @@ import org.polarsys.time4sys.trace.Trace;
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Simulation#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Simulation#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Simulation#getTrace <em>Trace</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.Simulation#getSeed <em>Seed</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getSimulation()
@@ -111,6 +113,32 @@ public interface Simulation extends EObject {
 	 * @generated
 	 */
 	void setTrace(Trace value);
+
+	/**
+	 * Returns the value of the '<em><b>Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Seed</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Seed</em>' attribute.
+	 * @see #setSeed(BigInteger)
+	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getSimulation_Seed()
+	 * @model
+	 * @generated
+	 */
+	BigInteger getSeed();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.model.time4sys.Simulation#getSeed <em>Seed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Seed</em>' attribute.
+	 * @see #getSeed()
+	 * @generated
+	 */
+	void setSeed(BigInteger value);
 
 	/**
 	 * <!-- begin-user-doc -->

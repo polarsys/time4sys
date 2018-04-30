@@ -2472,6 +2472,105 @@ public interface SrmPackage extends EPackage {
 	int MEMORY_PARTITION_OPERATION_COUNT = SOFTWARE_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS = GrmPackage.COMMUNICATION_END_POINT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__NAME = GrmPackage.COMMUNICATION_END_POINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE = GrmPackage.COMMUNICATION_END_POINT__OWNED_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__RES_MULT = GrmPackage.COMMUNICATION_END_POINT__RES_MULT;
+
+	/**
+	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__IS_PROTECTED = GrmPackage.COMMUNICATION_END_POINT__IS_PROTECTED;
+
+	/**
+	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE = GrmPackage.COMMUNICATION_END_POINT__IS_ACTIVE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT = GrmPackage.COMMUNICATION_END_POINT__OWNED_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR = GrmPackage.COMMUNICATION_END_POINT__OWNED_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>RServices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__RSERVICES = GrmPackage.COMMUNICATION_END_POINT__RSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Used By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__USED_BY = GrmPackage.COMMUNICATION_END_POINT__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_INTERACTION_RESOURCE__PSERVICES = GrmPackage.COMMUNICATION_END_POINT__PSERVICES;
+
+	/**
 	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2481,112 +2580,13 @@ public interface SrmPackage extends EPackage {
 	int SOFTWARE_INTERACTION_RESOURCE__PACKET_SIZE = GrmPackage.COMMUNICATION_END_POINT__PACKET_SIZE;
 
 	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__EANNOTATIONS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__NAME = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__OWNED_RESOURCE = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__RES_MULT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__IS_PROTECTED = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__IS_ACTIVE = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__OWNED_PORT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__OWNED_CONNECTOR = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>RServices</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__RSERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Used By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__USED_BY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_INTERACTION_RESOURCE__PSERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 10;
-
-	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 11;
+	int SOFTWARE_INTERACTION_RESOURCE__MANAGED_RESOURCE = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Res Ctrl Policy</b></em>' containment reference list.
@@ -2595,7 +2595,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 12;
+	int SOFTWARE_INTERACTION_RESOURCE__RES_CTRL_POLICY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Create Services</b></em>' reference list.
@@ -2604,7 +2604,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__CREATE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 13;
+	int SOFTWARE_INTERACTION_RESOURCE__CREATE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Delete Services</b></em>' reference list.
@@ -2613,7 +2613,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__DELETE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 14;
+	int SOFTWARE_INTERACTION_RESOURCE__DELETE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Initialize Services</b></em>' reference list.
@@ -2622,7 +2622,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__INITIALIZE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 15;
+	int SOFTWARE_INTERACTION_RESOURCE__INITIALIZE_SERVICES = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Memory Size Footprint</b></em>' attribute.
@@ -2631,7 +2631,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__MEMORY_SIZE_FOOTPRINT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 16;
+	int SOFTWARE_INTERACTION_RESOURCE__MEMORY_SIZE_FOOTPRINT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>State Elements</b></em>' attribute list.
@@ -2640,7 +2640,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__STATE_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 17;
+	int SOFTWARE_INTERACTION_RESOURCE__STATE_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Identifier Elements</b></em>' attribute list.
@@ -2649,7 +2649,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__IDENTIFIER_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 18;
+	int SOFTWARE_INTERACTION_RESOURCE__IDENTIFIER_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Is Intra Memory Partition Interaction</b></em>' attribute.
@@ -2658,7 +2658,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 19;
+	int SOFTWARE_INTERACTION_RESOURCE__IS_INTRA_MEMORY_PARTITION_INTERACTION = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Waiting Queue Policy</b></em>' attribute.
@@ -2667,7 +2667,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 20;
+	int SOFTWARE_INTERACTION_RESOURCE__WAITING_QUEUE_POLICY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Waiting Queue Capacity</b></em>' attribute.
@@ -2676,7 +2676,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 21;
+	int SOFTWARE_INTERACTION_RESOURCE__WAITING_QUEUE_CAPACITY = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Waiting Policy Elements</b></em>' attribute list.
@@ -2685,7 +2685,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 22;
+	int SOFTWARE_INTERACTION_RESOURCE__WAITING_POLICY_ELEMENTS = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Software Interaction Resource</em>' class.
@@ -2694,7 +2694,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE_FEATURE_COUNT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 23;
+	int SOFTWARE_INTERACTION_RESOURCE_FEATURE_COUNT = GrmPackage.COMMUNICATION_END_POINT_FEATURE_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2703,7 +2703,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE___GET_EANNOTATION__STRING = GrmPackage.COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
+	int SOFTWARE_INTERACTION_RESOURCE___GET_EANNOTATION__STRING = GrmPackage.COMMUNICATION_END_POINT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Software Interaction Resource</em>' class.
@@ -2712,16 +2712,7 @@ public interface SrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOFTWARE_INTERACTION_RESOURCE_OPERATION_COUNT = GrmPackage.COMMUNICATION_END_POINT_OPERATION_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE = SOFTWARE_INTERACTION_RESOURCE__PACKET_SIZE;
+	int SOFTWARE_INTERACTION_RESOURCE_OPERATION_COUNT = GrmPackage.COMMUNICATION_END_POINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2821,6 +2812,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE_COMMUNICATION_RESOURCE__PSERVICES = SOFTWARE_INTERACTION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE = SOFTWARE_INTERACTION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -3021,15 +3021,6 @@ public interface SrmPackage extends EPackage {
 	int SOFTWARE_COMMUNICATION_RESOURCE_OPERATION_COUNT = SOFTWARE_INTERACTION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_COM_RESOURCE__PACKET_SIZE = SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3127,6 +3118,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGE_COM_RESOURCE__PSERVICES = SOFTWARE_COMMUNICATION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_COM_RESOURCE__PACKET_SIZE = SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -3390,15 +3390,6 @@ public interface SrmPackage extends EPackage {
 	int MESSAGE_COM_RESOURCE_OPERATION_COUNT = SOFTWARE_COMMUNICATION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE = SOFTWARE_INTERACTION_RESOURCE__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3496,6 +3487,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE_SYNCHRONIZATION_RESOURCE__PSERVICES = SOFTWARE_INTERACTION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE = SOFTWARE_INTERACTION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -3633,15 +3633,6 @@ public interface SrmPackage extends EPackage {
 	int SOFTWARE_SYNCHRONIZATION_RESOURCE_OPERATION_COUNT = SOFTWARE_INTERACTION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOTIFICATION_RESOURCE__PACKET_SIZE = SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3739,6 +3730,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int NOTIFICATION_RESOURCE__PSERVICES = SOFTWARE_SYNCHRONIZATION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTIFICATION_RESOURCE__PACKET_SIZE = SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -3948,15 +3948,6 @@ public interface SrmPackage extends EPackage {
 	int NOTIFICATION_RESOURCE_OPERATION_COUNT = SOFTWARE_SYNCHRONIZATION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHARED_DATA_COM_RESOURCE__PACKET_SIZE = SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4054,6 +4045,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SHARED_DATA_COM_RESOURCE__PSERVICES = SOFTWARE_COMMUNICATION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHARED_DATA_COM_RESOURCE__PACKET_SIZE = SOFTWARE_COMMUNICATION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -4766,15 +4766,6 @@ public interface SrmPackage extends EPackage {
 	int SOFTWARE_INTERFACE_PACKAGE_OPERATION_COUNT = GrmPackage.RESOURCE_PACKAGE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__PACKET_SIZE = SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4872,6 +4863,15 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__PSERVICES = SOFTWARE_SYNCHRONIZATION_RESOURCE__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_MUTUAL_EXCLUSION_RESOURCE__PACKET_SIZE = SOFTWARE_SYNCHRONIZATION_RESOURCE__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>Managed Resource</b></em>' reference list.
@@ -5081,15 +5081,6 @@ public interface SrmPackage extends EPackage {
 	int SOFTWARE_MUTUAL_EXCLUSION_RESOURCE_OPERATION_COUNT = SOFTWARE_SYNCHRONIZATION_RESOURCE_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SOFTWARE_PORT__PACKET_SIZE = GrmPackage.RESOURCE_PORT__PACKET_SIZE;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5106,6 +5097,96 @@ public interface SrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOFTWARE_PORT__NAME = GrmPackage.RESOURCE_PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Owned Resource</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__OWNED_RESOURCE = GrmPackage.RESOURCE_PORT__OWNED_RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Res Mult</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__RES_MULT = GrmPackage.RESOURCE_PORT__RES_MULT;
+
+	/**
+	 * The feature id for the '<em><b>Is Protected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__IS_PROTECTED = GrmPackage.RESOURCE_PORT__IS_PROTECTED;
+
+	/**
+	 * The feature id for the '<em><b>Is Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__IS_ACTIVE = GrmPackage.RESOURCE_PORT__IS_ACTIVE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Port</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__OWNED_PORT = GrmPackage.RESOURCE_PORT__OWNED_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Connector</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__OWNED_CONNECTOR = GrmPackage.RESOURCE_PORT__OWNED_CONNECTOR;
+
+	/**
+	 * The feature id for the '<em><b>RServices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__RSERVICES = GrmPackage.RESOURCE_PORT__RSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Used By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__USED_BY = GrmPackage.RESOURCE_PORT__USED_BY;
+
+	/**
+	 * The feature id for the '<em><b>PServices</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__PSERVICES = GrmPackage.RESOURCE_PORT__PSERVICES;
+
+	/**
+	 * The feature id for the '<em><b>Packet Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_PORT__PACKET_SIZE = GrmPackage.RESOURCE_PORT__PACKET_SIZE;
 
 	/**
 	 * The feature id for the '<em><b>PInterface</b></em>' reference list.

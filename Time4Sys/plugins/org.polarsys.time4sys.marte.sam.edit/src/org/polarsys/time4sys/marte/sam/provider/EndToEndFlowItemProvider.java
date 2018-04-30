@@ -58,6 +58,7 @@ public class EndToEndFlowItemProvider extends NamedElementItemProvider {
 			addSchedulabilitySlackPropertyDescriptor(object);
 			addEndToEndTimePropertyDescriptor(object);
 			addEndToEndDeadlinePropertyDescriptor(object);
+			addInvolvedElementPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -190,6 +191,28 @@ public class EndToEndFlowItemProvider extends NamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Involved Element feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInvolvedElementPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EndToEndFlow_involvedElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EndToEndFlow_involvedElement_feature", "_UI_EndToEndFlow_type"),
+				 SamPackage.Literals.END_TO_END_FLOW__INVOLVED_ELEMENT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

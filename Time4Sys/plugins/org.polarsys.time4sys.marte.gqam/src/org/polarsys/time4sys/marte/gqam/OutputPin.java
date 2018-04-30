@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface OutputPin extends ControlPin {
+public interface OutputPin extends Pin {
 	/**
 	 * Returns the value of the '<em><b>Successors</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.InputPin}.

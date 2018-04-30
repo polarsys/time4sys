@@ -21,6 +21,9 @@ import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.TransmModeKind;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
+import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,7 +83,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ELEMENT_SIZE_EDEFAULT = 0;
+	protected static final DataSize ELEMENT_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
@@ -90,7 +93,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected int elementSize = ELEMENT_SIZE_EDEFAULT;
+	protected DataSize elementSize = ELEMENT_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
@@ -100,7 +103,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float CAPACITY_EDEFAULT = 0.0F;
+	protected static final DataTxRate CAPACITY_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
@@ -110,7 +113,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected float capacity = CAPACITY_EDEFAULT;
+	protected DataTxRate capacity = CAPACITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPacketTime() <em>Packet Time</em>}' attribute.
@@ -120,7 +123,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float PACKET_TIME_EDEFAULT = 0.0F;
+	protected static final Duration PACKET_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPacketTime() <em>Packet Time</em>}' attribute.
@@ -130,7 +133,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected float packetTime = PACKET_TIME_EDEFAULT;
+	protected Duration packetTime = PACKET_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBlockingTime() <em>Blocking Time</em>}' attribute.
@@ -140,7 +143,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float BLOCKING_TIME_EDEFAULT = 0.0F;
+	protected static final Duration BLOCKING_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBlockingTime() <em>Blocking Time</em>}' attribute.
@@ -150,7 +153,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected float blockingTime = BLOCKING_TIME_EDEFAULT;
+	protected Duration blockingTime = BLOCKING_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
@@ -255,7 +258,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getElementSize() {
+	public DataSize getElementSize() {
 		return elementSize;
 	}
 
@@ -264,8 +267,8 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setElementSize(int newElementSize) {
-		int oldElementSize = elementSize;
+	public void setElementSize(DataSize newElementSize) {
+		DataSize oldElementSize = elementSize;
 		elementSize = newElementSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.COMMUNICATION_MEDIA__ELEMENT_SIZE, oldElementSize, elementSize));
@@ -276,7 +279,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getCapacity() {
+	public DataTxRate getCapacity() {
 		return capacity;
 	}
 
@@ -285,8 +288,8 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCapacity(float newCapacity) {
-		float oldCapacity = capacity;
+	public void setCapacity(DataTxRate newCapacity) {
+		DataTxRate oldCapacity = capacity;
 		capacity = newCapacity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.COMMUNICATION_MEDIA__CAPACITY, oldCapacity, capacity));
@@ -297,7 +300,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getPacketTime() {
+	public Duration getPacketTime() {
 		return packetTime;
 	}
 
@@ -306,8 +309,8 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPacketTime(float newPacketTime) {
-		float oldPacketTime = packetTime;
+	public void setPacketTime(Duration newPacketTime) {
+		Duration oldPacketTime = packetTime;
 		packetTime = newPacketTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.COMMUNICATION_MEDIA__PACKET_TIME, oldPacketTime, packetTime));
@@ -318,7 +321,7 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getBlockingTime() {
+	public Duration getBlockingTime() {
 		return blockingTime;
 	}
 
@@ -327,8 +330,8 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBlockingTime(float newBlockingTime) {
-		float oldBlockingTime = blockingTime;
+	public void setBlockingTime(Duration newBlockingTime) {
+		Duration oldBlockingTime = blockingTime;
 		blockingTime = newBlockingTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GrmPackage.COMMUNICATION_MEDIA__BLOCKING_TIME, oldBlockingTime, blockingTime));
@@ -397,16 +400,16 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 				setMainScheduler((Scheduler)newValue);
 				return;
 			case GrmPackage.COMMUNICATION_MEDIA__ELEMENT_SIZE:
-				setElementSize((Integer)newValue);
+				setElementSize((DataSize)newValue);
 				return;
 			case GrmPackage.COMMUNICATION_MEDIA__CAPACITY:
-				setCapacity((Float)newValue);
+				setCapacity((DataTxRate)newValue);
 				return;
 			case GrmPackage.COMMUNICATION_MEDIA__PACKET_TIME:
-				setPacketTime((Float)newValue);
+				setPacketTime((Duration)newValue);
 				return;
 			case GrmPackage.COMMUNICATION_MEDIA__BLOCKING_TIME:
-				setBlockingTime((Float)newValue);
+				setBlockingTime((Duration)newValue);
 				return;
 			case GrmPackage.COMMUNICATION_MEDIA__TRANSM_MODE:
 				setTransmMode((TransmModeKind)newValue);
@@ -461,13 +464,13 @@ public class CommunicationMediaImpl extends CommunicationResourceImpl implements
 			case GrmPackage.COMMUNICATION_MEDIA__MAIN_SCHEDULER:
 				return mainScheduler != null;
 			case GrmPackage.COMMUNICATION_MEDIA__ELEMENT_SIZE:
-				return elementSize != ELEMENT_SIZE_EDEFAULT;
+				return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
 			case GrmPackage.COMMUNICATION_MEDIA__CAPACITY:
-				return capacity != CAPACITY_EDEFAULT;
+				return CAPACITY_EDEFAULT == null ? capacity != null : !CAPACITY_EDEFAULT.equals(capacity);
 			case GrmPackage.COMMUNICATION_MEDIA__PACKET_TIME:
-				return packetTime != PACKET_TIME_EDEFAULT;
+				return PACKET_TIME_EDEFAULT == null ? packetTime != null : !PACKET_TIME_EDEFAULT.equals(packetTime);
 			case GrmPackage.COMMUNICATION_MEDIA__BLOCKING_TIME:
-				return blockingTime != BLOCKING_TIME_EDEFAULT;
+				return BLOCKING_TIME_EDEFAULT == null ? blockingTime != null : !BLOCKING_TIME_EDEFAULT.equals(blockingTime);
 			case GrmPackage.COMMUNICATION_MEDIA__TRANSM_MODE:
 				return transmMode != TRANSM_MODE_EDEFAULT;
 		}

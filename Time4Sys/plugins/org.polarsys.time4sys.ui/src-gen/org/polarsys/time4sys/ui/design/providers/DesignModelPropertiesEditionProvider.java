@@ -53,9 +53,9 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 * @generated
 	 */
 	public boolean provides(PropertiesEditingContext editingContext) {
-		return (editingContext.getEObject() instanceof DesignModel) 
-					&& (DesignPackage.Literals.DESIGN_MODEL == editingContext.getEObject().eClass());
-	}
+    return (editingContext.getEObject() instanceof DesignModel) 
+          && (DesignPackage.Literals.DESIGN_MODEL == editingContext.getEObject().eClass());
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -63,8 +63,8 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 * @generated
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof DesignModel) && (DesignModelPropertiesEditionComponent.BASE_PART.equals(part));
-	}
+    return (editingContext.getEObject() instanceof DesignModel) && (DesignModelPropertiesEditionComponent.BASE_PART.equals(part));
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -73,8 +73,8 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof DesignModel) && (refinement == DesignModelPropertiesEditionComponent.class);
-	}
+    return (editingContext.getEObject() instanceof DesignModel) && (refinement == DesignModelPropertiesEditionComponent.class);
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -83,8 +83,8 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof DesignModel) && ((DesignModelPropertiesEditionComponent.BASE_PART.equals(part) && refinement == DesignModelPropertiesEditionComponent.class));
-	}
+    return (editingContext.getEObject() instanceof DesignModel) && ((DesignModelPropertiesEditionComponent.BASE_PART.equals(part) && refinement == DesignModelPropertiesEditionComponent.class));
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -92,11 +92,11 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 * @generated
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
-		if (editingContext.getEObject() instanceof DesignModel) {
-			return new DesignModelPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
-		}
-		return super.getPropertiesEditingComponent(editingContext, mode);
-	}
+    if (editingContext.getEObject() instanceof DesignModel) {
+      return new DesignModelPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+    }
+    return super.getPropertiesEditingComponent(editingContext, mode);
+  }
 
 	/**
 	 * {@inheritDoc}
@@ -104,12 +104,12 @@ public class DesignModelPropertiesEditionProvider extends PropertiesEditingProvi
 	 * @generated
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
-		if (editingContext.getEObject() instanceof DesignModel) {
-			if (DesignModelPropertiesEditionComponent.BASE_PART.equals(part))
-				return new DesignModelPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
-		}
-		return super.getPropertiesEditingComponent(editingContext, mode, part);
-	}
+    if (editingContext.getEObject() instanceof DesignModel) {
+      if (DesignModelPropertiesEditionComponent.BASE_PART.equals(part))
+        return new DesignModelPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+    }
+    return super.getPropertiesEditingComponent(editingContext, mode, part);
+  }
 
 	/**
 	 * {@inheritDoc}

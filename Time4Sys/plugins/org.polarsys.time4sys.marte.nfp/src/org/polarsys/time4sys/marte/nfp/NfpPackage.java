@@ -77,196 +77,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDuration()
 	 * @generated
 	 */
-	int DURATION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__VALUE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__UNIT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Best</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__BEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Worst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__WORST = 3;
-
-	/**
-	 * The feature id for the '<em><b>Clock</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__CLOCK = 4;
-
-	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__PRECISION = 5;
-
-	/**
-	 * The number of structural features of the '<em>Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION_FEATURE_COUNT = 6;
-
-	/**
-	 * The operation id for the '<em>Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___ADD__DURATION = 0;
-
-	/**
-	 * The operation id for the '<em>Compare To</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___COMPARE_TO__DURATION = 1;
-
-	/**
-	 * The operation id for the '<em>Convert To Unit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = 2;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIV__DURATION = 3;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIVIDE__DURATION = 4;
-
-	/**
-	 * The operation id for the '<em>Is Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___IS_ZERO = 5;
-
-	/**
-	 * The operation id for the '<em>Lcm</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___LCM__DURATION = 6;
-
-	/**
-	 * The operation id for the '<em>Max</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MAX__DURATION = 7;
-
-	/**
-	 * The operation id for the '<em>Min</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MIN__DURATION = 8;
-
-	/**
-	 * The operation id for the '<em>Multiply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MULTIPLY__LONG = 9;
-
-	/**
-	 * The operation id for the '<em>Not Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___NOT_ZERO = 10;
-
-	/**
-	 * The operation id for the '<em>Simplify</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___SIMPLIFY = 11;
-
-	/**
-	 * The operation id for the '<em>Sub</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___SUB__DURATION = 12;
-
-	/**
-	 * The number of operations of the '<em>Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION_OPERATION_COUNT = 13;
+	int DURATION = 5;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
@@ -276,7 +87,93 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getTimeInterval()
 	 * @generated
 	 */
-	int TIME_INTERVAL = 1;
+	int TIME_INTERVAL = 9;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl <em>Data Size</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataSize()
+	 * @generated
+	 */
+	int DATA_SIZE = 2;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl <em>Data Tx Rate</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRate()
+	 * @generated
+	 */
+	int DATA_TX_RATE = 3;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getProbabilisticDuration()
+	 * @generated
+	 */
+	int PROBABILISTIC_DURATION = 8;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl <em>Discrete Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistribution()
+	 * @generated
+	 */
+	int DISCRETE_DISTRIBUTION = 4;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.BucketImpl <em>Bucket</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.BucketImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getBucket()
+	 * @generated
+	 */
+	int BUCKET = 0;
+
+	/**
+	 * The feature id for the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET__PROBABILITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Bucket</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Bucket</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUCKET_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -342,14 +239,539 @@ public interface NfpPackage extends EPackage {
 	int TIME_INTERVAL_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl <em>Data Size</em>}' class.
+	 * The feature id for the '<em><b>Min</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataSize()
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MIN = TIME_INTERVAL__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MAX = TIME_INTERVAL__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MIN_OPEN = TIME_INTERVAL__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__MAX_OPEN = TIME_INTERVAL__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__VALUE = TIME_INTERVAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__UNIT = TIME_INTERVAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__BEST = TIME_INTERVAL_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__WORST = TIME_INTERVAL_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__CLOCK = TIME_INTERVAL_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__PRECISION = TIME_INTERVAL_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_FEATURE_COUNT = TIME_INTERVAL_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___COMPUTE_LENGTH = TIME_INTERVAL___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___ADD__DURATION = TIME_INTERVAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___COMPARE_TO__DURATION = TIME_INTERVAL_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = TIME_INTERVAL_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION = TIME_INTERVAL_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT = TIME_INTERVAL_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 11;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 12;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 13;
+
+	/**
+	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 14;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNormalDistribution()
 	 * @generated
 	 */
-	int DATA_SIZE = 2;
+	int NORMAL_DISTRIBUTION = 7;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl <em>Generalized Extreme Value Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getGeneralizedExtremeValueDistribution()
+	 * @generated
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION = 6;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl <em>Uniform Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getUniformDistribution()
+	 * @generated
+	 */
+	int UNIFORM_DISTRIBUTION = 10;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCompositeDistribution()
+	 * @generated
+	 */
+	int COMPOSITE_DISTRIBUTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION__PARTS = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Composite Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -505,59 +927,13 @@ public interface NfpPackage extends EPackage {
 	int DATA_SIZE_OPERATION_COUNT = 13;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getProbabilisticDuration()
-	 * @generated
-	 */
-	int PROBABILISTIC_DURATION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MIN = TIME_INTERVAL__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MAX = TIME_INTERVAL__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MIN_OPEN = TIME_INTERVAL__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MAX_OPEN = TIME_INTERVAL__MAX_OPEN;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION__VALUE = TIME_INTERVAL_FEATURE_COUNT + 0;
+	int DATA_TX_RATE__VALUE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -566,61 +942,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION__UNIT = TIME_INTERVAL_FEATURE_COUNT + 1;
+	int DATA_TX_RATE__UNIT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * The number of structural features of the '<em>Data Tx Rate</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION__BEST = TIME_INTERVAL_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Worst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__WORST = TIME_INTERVAL_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Clock</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__CLOCK = TIME_INTERVAL_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__PRECISION = TIME_INTERVAL_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Probabilistic Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION_FEATURE_COUNT = TIME_INTERVAL_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___COMPUTE_LENGTH = TIME_INTERVAL___COMPUTE_LENGTH;
+	int DATA_TX_RATE_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -629,7 +960,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___ADD__DURATION = TIME_INTERVAL_OPERATION_COUNT + 0;
+	int DATA_TX_RATE___ADD__DATATXRATE = 0;
 
 	/**
 	 * The operation id for the '<em>Compare To</em>' operation.
@@ -638,7 +969,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___COMPARE_TO__DURATION = TIME_INTERVAL_OPERATION_COUNT + 1;
+	int DATA_TX_RATE___COMPARE_TO__DATATXRATE = 1;
 
 	/**
 	 * The operation id for the '<em>Convert To Unit</em>' operation.
@@ -647,7 +978,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = TIME_INTERVAL_OPERATION_COUNT + 2;
+	int DATA_TX_RATE___CONVERT_TO_UNIT__DATATXRATEUNITKIND = 2;
 
 	/**
 	 * The operation id for the '<em>Div</em>' operation.
@@ -656,7 +987,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___DIV__DURATION = TIME_INTERVAL_OPERATION_COUNT + 3;
+	int DATA_TX_RATE___DIV__DATATXRATE = 3;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -665,7 +996,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 4;
+	int DATA_TX_RATE___DIVIDE__DATATXRATE = 4;
 
 	/**
 	 * The operation id for the '<em>Is Zero</em>' operation.
@@ -674,7 +1005,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 5;
+	int DATA_TX_RATE___IS_ZERO = 5;
 
 	/**
 	 * The operation id for the '<em>Lcm</em>' operation.
@@ -683,7 +1014,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 6;
+	int DATA_TX_RATE___LCM__DATATXRATE = 6;
 
 	/**
 	 * The operation id for the '<em>Max</em>' operation.
@@ -692,7 +1023,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 7;
+	int DATA_TX_RATE___MAX__DATATXRATE = 7;
 
 	/**
 	 * The operation id for the '<em>Min</em>' operation.
@@ -701,7 +1032,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
+	int DATA_TX_RATE___MIN__DATATXRATE = 8;
 
 	/**
 	 * The operation id for the '<em>Multiply</em>' operation.
@@ -710,7 +1041,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 9;
+	int DATA_TX_RATE___MULTIPLY__LONG = 9;
 
 	/**
 	 * The operation id for the '<em>Not Zero</em>' operation.
@@ -719,7 +1050,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 10;
+	int DATA_TX_RATE___NOT_ZERO = 10;
 
 	/**
 	 * The operation id for the '<em>Simplify</em>' operation.
@@ -728,7 +1059,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 11;
+	int DATA_TX_RATE___SIMPLIFY = 11;
 
 	/**
 	 * The operation id for the '<em>Sub</em>' operation.
@@ -737,26 +1068,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 12;
+	int DATA_TX_RATE___SUB__DATATXRATE = 12;
 
 	/**
-	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
+	 * The number of operations of the '<em>Data Tx Rate</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 13;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl <em>Discrete Distribution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.DiscreteDistributionImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistribution()
-	 * @generated
-	 */
-	int DISCRETE_DISTRIBUTION = 4;
+	int DATA_TX_RATE_OPERATION_COUNT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -858,13 +1179,22 @@ public interface NfpPackage extends EPackage {
 	int DISCRETE_DISTRIBUTION__BUCKETS = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION__KIND = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Distribution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+	int DISCRETE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Compute Length</em>' operation.
@@ -910,6 +1240,15 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -1002,105 +1341,13 @@ public interface NfpPackage extends EPackage {
 	int DISCRETE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.BucketImpl <em>Bucket</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.BucketImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getBucket()
-	 * @generated
-	 */
-	int BUCKET = 5;
-
-	/**
-	 * The feature id for the '<em><b>Probability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUCKET__PROBABILITY = 0;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUCKET__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Bucket</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUCKET_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Bucket</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUCKET_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNormalDistribution()
-	 * @generated
-	 */
-	int NORMAL_DISTRIBUTION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+	int DURATION__VALUE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -1109,7 +1356,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+	int DURATION__UNIT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Best</b></em>' attribute.
@@ -1118,7 +1365,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+	int DURATION__BEST = 2;
 
 	/**
 	 * The feature id for the '<em><b>Worst</b></em>' attribute.
@@ -1127,7 +1374,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+	int DURATION__WORST = 3;
 
 	/**
 	 * The feature id for the '<em><b>Clock</b></em>' attribute.
@@ -1136,7 +1383,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+	int DURATION__CLOCK = 4;
 
 	/**
 	 * The feature id for the '<em><b>Precision</b></em>' attribute.
@@ -1145,43 +1392,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+	int DURATION__PRECISION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Mu</b></em>' attribute.
+	 * The number of structural features of the '<em>Duration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION__MU = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Sigma</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__SIGMA = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Normal Distribution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+	int DURATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -1190,7 +1410,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+	int DURATION___ADD__DURATION = 0;
 
 	/**
 	 * The operation id for the '<em>Compare To</em>' operation.
@@ -1199,7 +1419,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+	int DURATION___COMPARE_TO__DURATION = 1;
 
 	/**
 	 * The operation id for the '<em>Convert To Unit</em>' operation.
@@ -1208,7 +1428,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+	int DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = 2;
 
 	/**
 	 * The operation id for the '<em>Div</em>' operation.
@@ -1217,7 +1437,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+	int DURATION___DIV__DURATION = 3;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIV__DURATION_MATHCONTEXT = 4;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -1226,7 +1455,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+	int DURATION___DIVIDE__DURATION = 5;
 
 	/**
 	 * The operation id for the '<em>Is Zero</em>' operation.
@@ -1235,7 +1464,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+	int DURATION___IS_ZERO = 6;
 
 	/**
 	 * The operation id for the '<em>Lcm</em>' operation.
@@ -1244,7 +1473,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+	int DURATION___LCM__DURATION = 7;
 
 	/**
 	 * The operation id for the '<em>Max</em>' operation.
@@ -1253,7 +1482,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+	int DURATION___MAX__DURATION = 8;
 
 	/**
 	 * The operation id for the '<em>Min</em>' operation.
@@ -1262,7 +1491,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+	int DURATION___MIN__DURATION = 9;
 
 	/**
 	 * The operation id for the '<em>Multiply</em>' operation.
@@ -1271,7 +1500,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+	int DURATION___MULTIPLY__LONG = 10;
 
 	/**
 	 * The operation id for the '<em>Not Zero</em>' operation.
@@ -1280,7 +1509,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+	int DURATION___NOT_ZERO = 11;
 
 	/**
 	 * The operation id for the '<em>Simplify</em>' operation.
@@ -1289,7 +1518,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+	int DURATION___SIMPLIFY = 12;
 
 	/**
 	 * The operation id for the '<em>Sub</em>' operation.
@@ -1298,26 +1527,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+	int DURATION___SUB__DURATION = 13;
 
 	/**
-	 * The number of operations of the '<em>Normal Distribution</em>' class.
+	 * The number of operations of the '<em>Duration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NORMAL_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl <em>Generalized Extreme Value Distribution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.GeneralizedExtremeValueDistributionImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getGeneralizedExtremeValueDistribution()
-	 * @generated
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION = 7;
+	int DURATION_OPERATION_COUNT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1491,6 +1710,15 @@ public interface NfpPackage extends EPackage {
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1581,14 +1809,265 @@ public interface NfpPackage extends EPackage {
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl <em>Uniform Distribution</em>}' class.
+	 * The feature id for the '<em><b>Min</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getUniformDistribution()
 	 * @generated
+	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION = 8;
+	int NORMAL_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+
+	/**
+	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+
+	/**
+	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Mu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__MU = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sigma</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION__SIGMA = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Normal Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Normal Distribution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NORMAL_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' reference.
@@ -1735,6 +2214,15 @@ public interface NfpPackage extends EPackage {
 	int UNIFORM_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
 
 	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION___DIV__DURATION_MATHCONTEXT = PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
 	 * The operation id for the '<em>Divide</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1825,259 +2313,6 @@ public interface NfpPackage extends EPackage {
 	int UNIFORM_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl
-	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCompositeDistribution()
-	 * @generated
-	 */
-	int COMPOSITE_DISTRIBUTION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__UNIT = PROBABILISTIC_DURATION__UNIT;
-
-	/**
-	 * The feature id for the '<em><b>Best</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__BEST = PROBABILISTIC_DURATION__BEST;
-
-	/**
-	 * The feature id for the '<em><b>Worst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__WORST = PROBABILISTIC_DURATION__WORST;
-
-	/**
-	 * The feature id for the '<em><b>Clock</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__CLOCK = PROBABILISTIC_DURATION__CLOCK;
-
-	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
-
-	/**
-	 * The feature id for the '<em><b>Parts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION__PARTS = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Composite Distribution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
-
-	/**
-	 * The operation id for the '<em>Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___ADD__DURATION = PROBABILISTIC_DURATION___ADD__DURATION;
-
-	/**
-	 * The operation id for the '<em>Compare To</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___COMPARE_TO__DURATION = PROBABILISTIC_DURATION___COMPARE_TO__DURATION;
-
-	/**
-	 * The operation id for the '<em>Convert To Unit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___CONVERT_TO_UNIT__TIMEUNITKIND = PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___DIV__DURATION = PROBABILISTIC_DURATION___DIV__DURATION;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___DIVIDE__DURATION = PROBABILISTIC_DURATION___DIVIDE__DURATION;
-
-	/**
-	 * The operation id for the '<em>Is Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___IS_ZERO = PROBABILISTIC_DURATION___IS_ZERO;
-
-	/**
-	 * The operation id for the '<em>Lcm</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___LCM__DURATION = PROBABILISTIC_DURATION___LCM__DURATION;
-
-	/**
-	 * The operation id for the '<em>Max</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___MAX__DURATION = PROBABILISTIC_DURATION___MAX__DURATION;
-
-	/**
-	 * The operation id for the '<em>Min</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___MIN__DURATION = PROBABILISTIC_DURATION___MIN__DURATION;
-
-	/**
-	 * The operation id for the '<em>Multiply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___MULTIPLY__LONG = PROBABILISTIC_DURATION___MULTIPLY__LONG;
-
-	/**
-	 * The operation id for the '<em>Not Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___NOT_ZERO = PROBABILISTIC_DURATION___NOT_ZERO;
-
-	/**
-	 * The operation id for the '<em>Simplify</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___SIMPLIFY = PROBABILISTIC_DURATION___SIMPLIFY;
-
-	/**
-	 * The operation id for the '<em>Sub</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___SUB__DURATION = PROBABILISTIC_DURATION___SUB__DURATION;
-
-	/**
-	 * The number of operations of the '<em>Composite Distribution</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2085,7 +2320,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getTimeUnitKind()
 	 * @generated
 	 */
-	int TIME_UNIT_KIND = 10;
+	int TIME_UNIT_KIND = 14;
 
 
 	/**
@@ -2100,6 +2335,26 @@ public interface NfpPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRateUnitKind()
+	 * @generated
+	 */
+	int DATA_TX_RATE_UNIT_KIND = 12;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind <em>Discrete Distribution Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistributionKind()
+	 * @generated
+	 */
+	int DISCRETE_DISTRIBUTION_KIND = 13;
+
+	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2107,7 +2362,18 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 12;
+	int NFP_DURATION = 16;
+
+
+	/**
+	 * The meta object id for the '<em>Math Context</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.math.MathContext
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
+	 * @generated
+	 */
+	int MATH_CONTEXT = 15;
 
 
 	/**
@@ -2305,6 +2571,16 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDuration__Div__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext) <em>Div</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Div</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext)
+	 * @generated
+	 */
+	EOperation getDuration__Div__Duration_MathContext();
 
 	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration) <em>Divide</em>}' operation.
@@ -2543,6 +2819,168 @@ public interface NfpPackage extends EPackage {
 	EOperation getDataSize__Sub__DataSize();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.DataTxRate <em>Data Tx Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Data Tx Rate</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @generated
+	 */
+	EClass getDataTxRate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#getValue()
+	 * @see #getDataTxRate()
+	 * @generated
+	 */
+	EAttribute getDataTxRate_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#getUnit()
+	 * @see #getDataTxRate()
+	 * @generated
+	 */
+	EAttribute getDataTxRate_Unit();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#add(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#add(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Add__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#compareTo(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Compare To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Compare To</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#compareTo(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__CompareTo__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#convertToUnit(org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind) <em>Convert To Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Convert To Unit</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#convertToUnit(org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind)
+	 * @generated
+	 */
+	EOperation getDataTxRate__ConvertToUnit__DataTxRateUnitKind();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#div(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Div</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Div</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#div(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Div__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#divide(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Divide</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#divide(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Divide__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#isZero() <em>Is Zero</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Zero</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#isZero()
+	 * @generated
+	 */
+	EOperation getDataTxRate__IsZero();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#lcm(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Lcm</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Lcm</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#lcm(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Lcm__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#max(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Max</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Max</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#max(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Max__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#min(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Min</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Min</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#min(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Min__DataTxRate();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#multiply(long) <em>Multiply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Multiply</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#multiply(long)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Multiply__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#notZero() <em>Not Zero</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Not Zero</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#notZero()
+	 * @generated
+	 */
+	EOperation getDataTxRate__NotZero();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#simplify() <em>Simplify</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Simplify</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#simplify()
+	 * @generated
+	 */
+	EOperation getDataTxRate__Simplify();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRate#sub(org.polarsys.time4sys.marte.nfp.DataTxRate) <em>Sub</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Sub</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate#sub(org.polarsys.time4sys.marte.nfp.DataTxRate)
+	 * @generated
+	 */
+	EOperation getDataTxRate__Sub__DataTxRate();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.ProbabilisticDuration <em>Probabilistic Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2572,6 +3010,17 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscreteDistribution_Buckets();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistribution#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistribution#getKind()
+	 * @see #getDiscreteDistribution()
+	 * @generated
+	 */
+	EAttribute getDiscreteDistribution_Kind();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.Bucket <em>Bucket</em>}'.
@@ -2732,6 +3181,26 @@ public interface NfpPackage extends EPackage {
 	EEnum getDataSizeUnitKind();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Data Tx Rate Unit Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+	 * @generated
+	 */
+	EEnum getDataTxRateUnitKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind <em>Discrete Distribution Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Discrete Distribution Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind
+	 * @generated
+	 */
+	EEnum getDiscreteDistributionKind();
+
+	/**
 	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.Duration <em>NFP Duration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2741,6 +3210,17 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getNFP_Duration();
+
+	/**
+	 * Returns the meta object for data type '{@link java.math.MathContext <em>Math Context</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Math Context</em>'.
+	 * @see java.math.MathContext
+	 * @model instanceClass="java.math.MathContext"
+	 * @generated
+	 */
+	EDataType getMathContext();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2918,6 +3398,14 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DURATION___DIV__DURATION = eINSTANCE.getDuration__Div__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Div</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DURATION___DIV__DURATION_MATHCONTEXT = eINSTANCE.getDuration__Div__Duration_MathContext();
 
 		/**
 		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
@@ -3108,6 +3596,136 @@ public interface NfpPackage extends EPackage {
 		EOperation DATA_SIZE___SUB__DATASIZE = eINSTANCE.getDataSize__Sub__DataSize();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl <em>Data Tx Rate</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.DataTxRateImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRate()
+		 * @generated
+		 */
+		EClass DATA_TX_RATE = eINSTANCE.getDataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TX_RATE__VALUE = eINSTANCE.getDataTxRate_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_TX_RATE__UNIT = eINSTANCE.getDataTxRate_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Add</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___ADD__DATATXRATE = eINSTANCE.getDataTxRate__Add__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Compare To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___COMPARE_TO__DATATXRATE = eINSTANCE.getDataTxRate__CompareTo__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Convert To Unit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___CONVERT_TO_UNIT__DATATXRATEUNITKIND = eINSTANCE.getDataTxRate__ConvertToUnit__DataTxRateUnitKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Div</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___DIV__DATATXRATE = eINSTANCE.getDataTxRate__Div__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___DIVIDE__DATATXRATE = eINSTANCE.getDataTxRate__Divide__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Zero</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___IS_ZERO = eINSTANCE.getDataTxRate__IsZero();
+
+		/**
+		 * The meta object literal for the '<em><b>Lcm</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___LCM__DATATXRATE = eINSTANCE.getDataTxRate__Lcm__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MAX__DATATXRATE = eINSTANCE.getDataTxRate__Max__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Min</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MIN__DATATXRATE = eINSTANCE.getDataTxRate__Min__DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiply</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___MULTIPLY__LONG = eINSTANCE.getDataTxRate__Multiply__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Not Zero</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___NOT_ZERO = eINSTANCE.getDataTxRate__NotZero();
+
+		/**
+		 * The meta object literal for the '<em><b>Simplify</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___SIMPLIFY = eINSTANCE.getDataTxRate__Simplify();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_TX_RATE___SUB__DATATXRATE = eINSTANCE.getDataTxRate__Sub__DataTxRate();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.ProbabilisticDurationImpl <em>Probabilistic Duration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3134,6 +3752,14 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_DISTRIBUTION__BUCKETS = eINSTANCE.getDiscreteDistribution_Buckets();
+
+		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISCRETE_DISTRIBUTION__KIND = eINSTANCE.getDiscreteDistribution_Kind();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.BucketImpl <em>Bucket</em>}' class.
@@ -3270,6 +3896,26 @@ public interface NfpPackage extends EPackage {
 		EEnum DATA_SIZE_UNIT_KIND = eINSTANCE.getDataSizeUnitKind();
 
 		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind <em>Data Tx Rate Unit Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRateUnitKind()
+		 * @generated
+		 */
+		EEnum DATA_TX_RATE_UNIT_KIND = eINSTANCE.getDataTxRateUnitKind();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind <em>Discrete Distribution Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistributionKind()
+		 * @generated
+		 */
+		EEnum DISCRETE_DISTRIBUTION_KIND = eINSTANCE.getDiscreteDistributionKind();
+
+		/**
 		 * The meta object literal for the '<em>NFP Duration</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3278,6 +3924,16 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
+
+		/**
+		 * The meta object literal for the '<em>Math Context</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.math.MathContext
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
+		 * @generated
+		 */
+		EDataType MATH_CONTEXT = eINSTANCE.getMathContext();
 
 	}
 

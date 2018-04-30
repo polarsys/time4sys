@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -85,44 +86,48 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	protected NfpSwitch<Adapter> modelSwitch =
 		new NfpSwitch<Adapter>() {
 			@Override
-			public Adapter caseDuration(Duration object) {
-				return createDurationAdapter();
+			public Adapter caseBucket(Bucket object) {
+				return createBucketAdapter();
 			}
 			@Override
-			public Adapter caseTimeInterval(TimeInterval object) {
-				return createTimeIntervalAdapter();
+			public Adapter caseCompositeDistribution(CompositeDistribution object) {
+				return createCompositeDistributionAdapter();
 			}
 			@Override
 			public Adapter caseDataSize(DataSize object) {
 				return createDataSizeAdapter();
 			}
 			@Override
-			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
-				return createProbabilisticDurationAdapter();
+			public Adapter caseDataTxRate(DataTxRate object) {
+				return createDataTxRateAdapter();
 			}
 			@Override
 			public Adapter caseDiscreteDistribution(DiscreteDistribution object) {
 				return createDiscreteDistributionAdapter();
 			}
 			@Override
-			public Adapter caseBucket(Bucket object) {
-				return createBucketAdapter();
-			}
-			@Override
-			public Adapter caseNormalDistribution(NormalDistribution object) {
-				return createNormalDistributionAdapter();
+			public Adapter caseDuration(Duration object) {
+				return createDurationAdapter();
 			}
 			@Override
 			public Adapter caseGeneralizedExtremeValueDistribution(GeneralizedExtremeValueDistribution object) {
 				return createGeneralizedExtremeValueDistributionAdapter();
 			}
 			@Override
-			public Adapter caseUniformDistribution(UniformDistribution object) {
-				return createUniformDistributionAdapter();
+			public Adapter caseNormalDistribution(NormalDistribution object) {
+				return createNormalDistributionAdapter();
 			}
 			@Override
-			public Adapter caseCompositeDistribution(CompositeDistribution object) {
-				return createCompositeDistributionAdapter();
+			public Adapter caseProbabilisticDuration(ProbabilisticDuration object) {
+				return createProbabilisticDurationAdapter();
+			}
+			@Override
+			public Adapter caseTimeInterval(TimeInterval object) {
+				return createTimeIntervalAdapter();
+			}
+			@Override
+			public Adapter caseUniformDistribution(UniformDistribution object) {
+				return createUniformDistributionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -281,6 +286,20 @@ public class NfpAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompositeDistributionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.nfp.DataTxRate <em>Data Tx Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.nfp.DataTxRate
+	 * @generated
+	 */
+	public Adapter createDataTxRateAdapter() {
 		return null;
 	}
 

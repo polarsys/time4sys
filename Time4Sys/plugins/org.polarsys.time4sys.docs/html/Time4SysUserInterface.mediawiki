@@ -53,6 +53,8 @@ The tool action is linked to the selected element on the diagram. Hence, some to
 Diagrams can be synchronize or unsynchronized.
 In unsynchronized mode, elements created are not automatically added to the diagram. In this mode, new tools are available on the palette to Insert/Remove elements from the diagrams.
  
+[[Image:../Images/Insert-RemoveTools.png]]
+ 
  == Model Explorer ==
 
 [[Image:../Images/ModelExplorer.png]]

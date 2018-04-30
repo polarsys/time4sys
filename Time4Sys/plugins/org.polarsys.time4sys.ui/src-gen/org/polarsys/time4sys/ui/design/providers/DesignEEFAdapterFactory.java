@@ -28,7 +28,7 @@ public class DesignEEFAdapterFactory extends DesignAdapterFactory {
 	 * @generated
 	 */
 	public Adapter createDesignModelAdapter() {
-		return new DesignModelPropertiesEditionProvider();
-	}
+    return new DesignModelPropertiesEditionProvider();
+  }
 
 }

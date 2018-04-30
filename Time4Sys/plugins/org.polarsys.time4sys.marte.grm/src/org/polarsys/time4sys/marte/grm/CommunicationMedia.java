@@ -12,6 +12,10 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
+import org.polarsys.time4sys.marte.nfp.Duration;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -43,12 +47,12 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Element Size</em>' attribute.
-	 * @see #setElementSize(int)
+	 * @see #setElementSize(DataSize)
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getCommunicationMedia_ElementSize()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_DataSize"
 	 * @generated
 	 */
-	int getElementSize();
+	DataSize getElementSize();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.CommunicationMedia#getElementSize <em>Element Size</em>}' attribute.
@@ -58,7 +62,7 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * @see #getElementSize()
 	 * @generated
 	 */
-	void setElementSize(int value);
+	void setElementSize(DataSize value);
 
 	/**
 	 * Returns the value of the '<em><b>Capacity</b></em>' attribute.
@@ -69,12 +73,12 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Capacity</em>' attribute.
-	 * @see #setCapacity(float)
+	 * @see #setCapacity(DataTxRate)
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getCommunicationMedia_Capacity()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_DataTxRate"
 	 * @generated
 	 */
-	float getCapacity();
+	DataTxRate getCapacity();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.CommunicationMedia#getCapacity <em>Capacity</em>}' attribute.
@@ -84,7 +88,7 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * @see #getCapacity()
 	 * @generated
 	 */
-	void setCapacity(float value);
+	void setCapacity(DataTxRate value);
 
 	/**
 	 * Returns the value of the '<em><b>Packet Time</b></em>' attribute.
@@ -95,12 +99,12 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Packet Time</em>' attribute.
-	 * @see #setPacketTime(float)
+	 * @see #setPacketTime(Duration)
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getCommunicationMedia_PacketTime()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_Duration"
 	 * @generated
 	 */
-	float getPacketTime();
+	Duration getPacketTime();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.CommunicationMedia#getPacketTime <em>Packet Time</em>}' attribute.
@@ -110,7 +114,7 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * @see #getPacketTime()
 	 * @generated
 	 */
-	void setPacketTime(float value);
+	void setPacketTime(Duration value);
 
 	/**
 	 * Returns the value of the '<em><b>Blocking Time</b></em>' attribute.
@@ -121,12 +125,12 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Blocking Time</em>' attribute.
-	 * @see #setBlockingTime(float)
+	 * @see #setBlockingTime(Duration)
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getCommunicationMedia_BlockingTime()
-	 * @model
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_Duration"
 	 * @generated
 	 */
-	float getBlockingTime();
+	Duration getBlockingTime();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.grm.CommunicationMedia#getBlockingTime <em>Blocking Time</em>}' attribute.
@@ -136,7 +140,7 @@ public interface CommunicationMedia extends CommunicationResource, ProcessingRes
 	 * @see #getBlockingTime()
 	 * @generated
 	 */
-	void setBlockingTime(float value);
+	void setBlockingTime(Duration value);
 
 	/**
 	 * Returns the value of the '<em><b>Transm Mode</b></em>' attribute.

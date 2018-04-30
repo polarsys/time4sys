@@ -17,11 +17,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.grm.CommunicationMedia;
-import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Scheduler;
 import org.polarsys.time4sys.marte.grm.TransmModeKind;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.srm.SoftwareCommunicationResource;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 
@@ -83,7 +85,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ELEMENT_SIZE_EDEFAULT = 0;
+	protected static final DataSize ELEMENT_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getElementSize() <em>Element Size</em>}' attribute.
@@ -93,7 +95,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected int elementSize = ELEMENT_SIZE_EDEFAULT;
+	protected DataSize elementSize = ELEMENT_SIZE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
@@ -103,7 +105,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float CAPACITY_EDEFAULT = 0.0F;
+	protected static final DataTxRate CAPACITY_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
@@ -113,7 +115,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected float capacity = CAPACITY_EDEFAULT;
+	protected DataTxRate capacity = CAPACITY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPacketTime() <em>Packet Time</em>}' attribute.
@@ -123,7 +125,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float PACKET_TIME_EDEFAULT = 0.0F;
+	protected static final Duration PACKET_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getPacketTime() <em>Packet Time</em>}' attribute.
@@ -133,7 +135,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected float packetTime = PACKET_TIME_EDEFAULT;
+	protected Duration packetTime = PACKET_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBlockingTime() <em>Blocking Time</em>}' attribute.
@@ -143,7 +145,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float BLOCKING_TIME_EDEFAULT = 0.0F;
+	protected static final Duration BLOCKING_TIME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBlockingTime() <em>Blocking Time</em>}' attribute.
@@ -153,7 +155,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * @generated
 	 * @ordered
 	 */
-	protected float blockingTime = BLOCKING_TIME_EDEFAULT;
+	protected Duration blockingTime = BLOCKING_TIME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTransmMode() <em>Transm Mode</em>}' attribute.
@@ -258,7 +260,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getElementSize() {
+	public DataSize getElementSize() {
 		return elementSize;
 	}
 
@@ -267,8 +269,8 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setElementSize(int newElementSize) {
-		int oldElementSize = elementSize;
+	public void setElementSize(DataSize newElementSize) {
+		DataSize oldElementSize = elementSize;
 		elementSize = newElementSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__ELEMENT_SIZE, oldElementSize, elementSize));
@@ -279,7 +281,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getCapacity() {
+	public DataTxRate getCapacity() {
 		return capacity;
 	}
 
@@ -288,8 +290,8 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCapacity(float newCapacity) {
-		float oldCapacity = capacity;
+	public void setCapacity(DataTxRate newCapacity) {
+		DataTxRate oldCapacity = capacity;
 		capacity = newCapacity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__CAPACITY, oldCapacity, capacity));
@@ -300,7 +302,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getPacketTime() {
+	public Duration getPacketTime() {
 		return packetTime;
 	}
 
@@ -309,8 +311,8 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPacketTime(float newPacketTime) {
-		float oldPacketTime = packetTime;
+	public void setPacketTime(Duration newPacketTime) {
+		Duration oldPacketTime = packetTime;
 		packetTime = newPacketTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__PACKET_TIME, oldPacketTime, packetTime));
@@ -321,7 +323,7 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getBlockingTime() {
+	public Duration getBlockingTime() {
 		return blockingTime;
 	}
 
@@ -330,8 +332,8 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBlockingTime(float newBlockingTime) {
-		float oldBlockingTime = blockingTime;
+	public void setBlockingTime(Duration newBlockingTime) {
+		Duration oldBlockingTime = blockingTime;
 		blockingTime = newBlockingTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__BLOCKING_TIME, oldBlockingTime, blockingTime));
@@ -400,16 +402,16 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 				setMainScheduler((Scheduler)newValue);
 				return;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__ELEMENT_SIZE:
-				setElementSize((Integer)newValue);
+				setElementSize((DataSize)newValue);
 				return;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__CAPACITY:
-				setCapacity((Float)newValue);
+				setCapacity((DataTxRate)newValue);
 				return;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__PACKET_TIME:
-				setPacketTime((Float)newValue);
+				setPacketTime((Duration)newValue);
 				return;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__BLOCKING_TIME:
-				setBlockingTime((Float)newValue);
+				setBlockingTime((Duration)newValue);
 				return;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__TRANSM_MODE:
 				setTransmMode((TransmModeKind)newValue);
@@ -464,13 +466,13 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__MAIN_SCHEDULER:
 				return mainScheduler != null;
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__ELEMENT_SIZE:
-				return elementSize != ELEMENT_SIZE_EDEFAULT;
+				return ELEMENT_SIZE_EDEFAULT == null ? elementSize != null : !ELEMENT_SIZE_EDEFAULT.equals(elementSize);
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__CAPACITY:
-				return capacity != CAPACITY_EDEFAULT;
+				return CAPACITY_EDEFAULT == null ? capacity != null : !CAPACITY_EDEFAULT.equals(capacity);
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__PACKET_TIME:
-				return packetTime != PACKET_TIME_EDEFAULT;
+				return PACKET_TIME_EDEFAULT == null ? packetTime != null : !PACKET_TIME_EDEFAULT.equals(packetTime);
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__BLOCKING_TIME:
-				return blockingTime != BLOCKING_TIME_EDEFAULT;
+				return BLOCKING_TIME_EDEFAULT == null ? blockingTime != null : !BLOCKING_TIME_EDEFAULT.equals(blockingTime);
 			case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__TRANSM_MODE:
 				return transmMode != TRANSM_MODE_EDEFAULT;
 		}
@@ -484,11 +486,6 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommunicationResource.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ProcessingResource.class) {
 			switch (derivedFeatureID) {
 				case SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__SPEED_FACTOR: return GrmPackage.PROCESSING_RESOURCE__SPEED_FACTOR;
@@ -516,11 +513,6 @@ public abstract class SoftwareCommunicationResourceImpl extends SoftwareInteract
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommunicationResource.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
 		if (baseClass == ProcessingResource.class) {
 			switch (baseFeatureID) {
 				case GrmPackage.PROCESSING_RESOURCE__SPEED_FACTOR: return SrmPackage.SOFTWARE_COMMUNICATION_RESOURCE__SPEED_FACTOR;

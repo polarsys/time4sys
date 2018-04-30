@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc label="Time4SysMetamodel" link_to="PLUGINS_ROOT/org.polarsys.time4sys.docs/toc.xml#m2" topic="html/Time4SysMetamodel.html">
+		<topic href="html/Time4SysMetamodel.html#Design_Model" label="Design Model">
+			<topic href="html/Time4SysMetamodel.html#End_To_End_Flow" label="End To End Flow"></topic>
+			<topic href="html/Time4SysMetamodel.html#Precedence_Relations" label="Precedence Relations"></topic>
+			<topic href="html/Time4SysMetamodel.html#Behavior_Scenario" label="Behavior Scenario"></topic>
+			<topic href="html/Time4SysMetamodel.html#Reference" label="Reference"></topic>
+		</topic>
+		<topic href="html/Time4SysMetamodel.html#Simulation_result_model" label="Simulation result model"></topic>
+</toc>

@@ -68,6 +68,24 @@ public interface GrmFactory extends EFactory {
 	SynchResource createSynchResource();
 
 	/**
+	 * Returns a new object of class '<em>Table Driven Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table Driven Schedule</em>'.
+	 * @generated
+	 */
+	TableDrivenSchedule createTableDrivenSchedule();
+
+	/**
+	 * Returns a new object of class '<em>Table Entry Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table Entry Type</em>'.
+	 * @generated
+	 */
+	TableEntryType createTableEntryType();
+
+	/**
 	 * Returns a new object of class '<em>Concurrency Resource</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +263,32 @@ public interface GrmFactory extends EFactory {
 	MutualExclusionResource createMutualExclusionResource();
 
 	/**
+	 * Returns a new object of class '<em>Periodic Server Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Periodic Server Parameters</em>'.
+	 * @generated
+	 */
+	PeriodicServerParameters createPeriodicServerParameters();
+	
+	
+	/**
+	 * Create and initialise a PSS Scheduling Parameter
+	 * @param schedParam
+	 * @return an initialized object of class '<em>Periodic Server Parameters</em>'.
+	 */
+	PeriodicServerParameters createPeriodicServerParameters(FixedPriorityParameters schedParam);
+
+	/**
+	 * Returns a new object of class '<em>Pooling Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pooling Parameters</em>'.
+	 * @generated
+	 */
+	PoolingParameters createPoolingParameters();
+
+	/**
 	 * Returns a new object of class '<em>Mutual Exclusion Protocol</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -297,6 +341,24 @@ public interface GrmFactory extends EFactory {
 	 * @generated
 	 */
 	DynamicUsage createDynamicUsage();
+
+	/**
+	 * Returns a new object of class '<em>EDF Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EDF Parameters</em>'.
+	 * @generated
+	 */
+	EDFParameters createEDFParameters();
+
+	/**
+	 * Returns a new object of class '<em>Fixed Priority Parameters</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fixed Priority Parameters</em>'.
+	 * @generated
+	 */
+	FixedPriorityParameters createFixedPriorityParameters();
 
 	/**
 	 * Returns a new object of class '<em>Static Usage</em>'.

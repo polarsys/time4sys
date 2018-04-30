@@ -10,17 +10,25 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
+import java.util.List;
+
 import org.polarsys.time4sys.design.DesignFactory;
+import org.polarsys.time4sys.mapping.Link;
+import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.ResourceServiceExcecution;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.marte.srm.SrmFactory;
 
 /**
@@ -37,11 +45,11 @@ public class StepBuilder {
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
 	
 	public static StepBuilder aStep(final DesignBuilder designBuilder) {
-		return new StepBuilder(designBuilder, null);
+		return new StepBuilder(designBuilder, (SchedulableResourceBuilder<?, ?>)null);
 	}
 	
 	public static StepBuilder aResourceServiceExcecution(final DesignBuilder designBuilder) {
-		return new StepBuilder(designBuilder, null).isResourceServiceExecution();
+		return new StepBuilder(designBuilder, (SchedulableResourceBuilder<?, ?>)null).isResourceServiceExecution();
 	}
 
 	private SchedulableResourceBuilder<?,?> task;
@@ -68,6 +76,14 @@ public class StepBuilder {
 		task = taskBuilder;
 		design = designBuilder;
 		step = raw;
+	}
+
+	public StepBuilder(final DesignBuilder designBuilder, final Step raw) {
+		assert(designBuilder != null);
+		assert(raw != null);
+		design = designBuilder;
+		step = raw;
+		task = new TaskBuilder(designBuilder, (SoftwareSchedulableResource)step.getConcurRes());
 	}
 
 	public Step build() {
@@ -172,6 +188,16 @@ public class StepBuilder {
 		name = value;
 		return this;
 	}
+
+	public String name() {
+		if (name != null) {
+			return name;
+		}
+		if (step != null) {
+			return step.getName();
+		}
+		return name;
+	}
 	
 	protected WorkloadEventBuilder getWorkloadEvent() {
 		WorkloadEventBuilder cause;
@@ -200,10 +226,48 @@ public class StepBuilder {
 		return this;
 	}
 	
+
+	public Duration getPeriod() {
+		if (step == null) {
+			build();
+		}
+		if (step.getCause() == null || step.getCause().isEmpty()) {
+			throw new IllegalStateException("This task has no cause");
+		}
+		final WorkloadEvent evt = step.getCause().get(0);
+		final ArrivalPattern pattern = evt.getPattern();
+		if (pattern instanceof PeriodicPattern) {
+			return ((PeriodicPattern)pattern).getPeriod();
+		} else {
+			throw new IllegalStateException("This task is not periodic: " + pattern.getClass().getName());
+		}
+	}
+	
 	public StepBuilder withSlidingWindow(int nbEvents, final String windowSize) {
 		WorkloadEvent cause;
 		if (step.getCause().isEmpty()) {
 			cause = design.hasASlidingWindowEvent(nbEvents, windowSize).forStep(step).build();
+		} else {
+			cause = step.getCause().get(0);
+		}
+		return this;
+	}
+	
+	public StepBuilder isSporadic(final String minInterarrival, final String maxInterarrival) {
+		WorkloadEvent cause;
+		if (step.getCause().isEmpty()) {
+			cause = design.hasSporadicEvent(minInterarrival, maxInterarrival).forStep(step).build();
+		} else {
+			cause = step.getCause().get(0);
+		}
+		return this;
+	}
+	
+
+	public StepBuilder isActivatedOnce() {
+		WorkloadEvent cause;
+		if (step.getCause().isEmpty()) {
+			cause = design.hasActivationOnce().forStep(step).build();
 		} else {
 			cause = step.getCause().get(0);
 		}
@@ -227,6 +291,10 @@ public class StepBuilder {
 		getWorkloadEvent().ofOffset(value);
 		return this;
 	}
+
+	public Duration getOffset() {
+		return getWorkloadEvent().getOffset();
+	}
 	
 	public StepBuilder ofDeadline(final String value) {
 		deadline = value;
@@ -235,8 +303,13 @@ public class StepBuilder {
 		}
 		return this;
 	}
+	
 
-	public void activates(final StepBuilder... successors) {
+	public Duration getDeadline() {
+		return ((TaskBuilder)task).getDeadline();
+	}
+
+	public StepBuilder activates(final StepBuilder... successors) {
 		final Step origin = build();
 		this.hasAtLeastOneOutputPin();
 		for(OutputPin outputPin: origin.getOutputPin()) {
@@ -249,6 +322,7 @@ public class StepBuilder {
 			outputPin.setLowerBound(nbSuccessors);
 			outputPin.setUpperBound(nbSuccessors);
 		}
+		return this;
 	}
 	
 	public InputPinBuilder hasOneInputPinNamed(final String pinName) {
@@ -337,6 +411,49 @@ public class StepBuilder {
 	public StepBuilder isAtomic(boolean value) {
 		isAtomic  = value;
 		return this;
+	}
+
+	public AlarmBuilder activation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void withReference(final ReferenceBuilder ref) {
+		if (ref == null) {
+			return;
+		}
+		if (step.getCause() != null && !step.getCause().isEmpty()) {
+			for(WorkloadEvent cause: step.getCause()) {
+				cause.getPattern().setReference(ref.build());
+			}
+		}
+	}
+
+	public StepBuilder ofReference(final ReferenceBuilder reference) {
+		withReference(reference);
+		return this;
+	}
+
+	public ReferenceBuilder getReference() {
+		if (step == null) {
+			build();
+		}
+		if (step.getCause() != null && !step.getCause().isEmpty()) {
+			for(WorkloadEvent cause: step.getCause()) {
+				final Reference ref = cause.getPattern().getReference();
+				if (ref != null) {
+					return new ReferenceBuilder(ref);
+				}
+			}
+		}
+		return null;
+	}
+
+	public List<WorkloadEvent> getCauses() {
+		if (step == null) {
+			build();
+		}
+		return step.getCause();
 	}
 
 }

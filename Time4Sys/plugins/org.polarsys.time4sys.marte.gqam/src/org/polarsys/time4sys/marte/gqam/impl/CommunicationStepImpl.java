@@ -21,6 +21,7 @@ import org.polarsys.time4sys.marte.gqam.CommunicationStep;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.SchedulableResource;
+import org.polarsys.time4sys.marte.nfp.DataSize;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +46,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MSG_SIZE_EDEFAULT = 0;
+	protected static final DataSize MSG_SIZE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getMsgSize() <em>Msg Size</em>}' attribute.
@@ -55,7 +56,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * @generated
 	 * @ordered
 	 */
-	protected int msgSize = MSG_SIZE_EDEFAULT;
+	protected DataSize msgSize = MSG_SIZE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getComRes() <em>Com Res</em>}' reference.
@@ -91,7 +92,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getMsgSize() {
+	public DataSize getMsgSize() {
 		return msgSize;
 	}
 
@@ -100,8 +101,8 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMsgSize(int newMsgSize) {
-		int oldMsgSize = msgSize;
+	public void setMsgSize(DataSize newMsgSize) {
+		DataSize oldMsgSize = msgSize;
 		msgSize = newMsgSize;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.COMMUNICATION_STEP__MSG_SIZE, oldMsgSize, msgSize));
@@ -111,6 +112,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @deprecated Use getConcurRes instead
 	 */
 	@Deprecated
 	public CommunicationResource getComRes() {
@@ -138,6 +140,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
+	 * @deprecated Use setConcurRes instead
 	 */
 	@Deprecated
 	public void setComRes(CommunicationResource newComRes) {
@@ -173,7 +176,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GqamPackage.COMMUNICATION_STEP__MSG_SIZE:
-				setMsgSize((Integer)newValue);
+				setMsgSize((DataSize)newValue);
 				return;
 			case GqamPackage.COMMUNICATION_STEP__COM_RES:
 				setComRes((CommunicationResource)newValue);
@@ -209,7 +212,7 @@ public class CommunicationStepImpl extends StepImpl implements CommunicationStep
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GqamPackage.COMMUNICATION_STEP__MSG_SIZE:
-				return msgSize != MSG_SIZE_EDEFAULT;
+				return MSG_SIZE_EDEFAULT == null ? msgSize != null : !MSG_SIZE_EDEFAULT.equals(msgSize);
 			case GqamPackage.COMMUNICATION_STEP__COM_RES:
 				return comRes != null;
 		}

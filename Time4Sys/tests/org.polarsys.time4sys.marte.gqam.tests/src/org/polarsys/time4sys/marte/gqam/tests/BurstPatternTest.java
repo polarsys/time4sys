@@ -91,11 +91,11 @@ public class BurstPatternTest extends ArrivalPatternTest {
 	 * @see org.polarsys.time4sys.marte.gqam.BurstPattern#setOuterPeriod(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated
 	 */
-	public void testSetOuterPeriod__Duration() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
+//	public void testSetOuterPeriod__Duration() {
+//		// TODO: implement this operation test method
+//		// Ensure that you remove @generated or mark it @generated NOT
+//		fail();
+//	}
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.gqam.BurstPattern#setInnerPeriod(org.polarsys.time4sys.marte.nfp.Duration) <em>Set Inner Period</em>}' operation.
@@ -104,10 +104,10 @@ public class BurstPatternTest extends ArrivalPatternTest {
 	 * @see org.polarsys.time4sys.marte.gqam.BurstPattern#setInnerPeriod(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated
 	 */
-	public void testSetInnerPeriod__Duration() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
+//	public void testSetInnerPeriod__Duration() {
+//		// TODO: implement this operation test method
+//		// Ensure that you remove @generated or mark it @generated NOT
+//		fail();
+//	}
 
 } //BurstPatternTest

@@ -519,9 +519,6 @@ public class CommunicationStepGeneralPropertiesEditionComponent extends SinglePa
 		if (GqamViewsRepository.General.Properties.isAtomic == event.getAffectedEditor()) {
 			communicationStep.setIsAtomic((Boolean)event.getNewValue());
 		}
-		if (GqamViewsRepository.General.Properties.msgSize == event.getAffectedEditor()) {
-			communicationStep.setMsgSize((EEFConverterUtil.createIntFromString(EcorePackage.Literals.EINT, (String)event.getNewValue())));
-		}
 		if (GqamViewsRepository.General.Properties.repetitions == event.getAffectedEditor()) {
 			communicationStep.setRepetitions((EEFConverterUtil.createDoubleFromString(EcorePackage.Literals.EDOUBLE, (String)event.getNewValue())));
 		}

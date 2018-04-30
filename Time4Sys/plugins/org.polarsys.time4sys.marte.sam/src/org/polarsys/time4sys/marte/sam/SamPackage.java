@@ -161,13 +161,22 @@ public interface SamPackage extends EPackage {
 	int END_TO_END_FLOW__TIMING = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Involved Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_TO_END_FLOW__INVOLVED_ELEMENT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>End To End Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int END_TO_END_FLOW_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int END_TO_END_FLOW_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -413,6 +422,17 @@ public interface SamPackage extends EPackage {
 	EReference getEndToEndFlow_Timing();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#getInvolvedElement <em>Involved Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Involved Element</em>'.
+	 * @see org.polarsys.time4sys.marte.sam.EndToEndFlow#getInvolvedElement()
+	 * @see #getEndToEndFlow()
+	 * @generated
+	 */
+	EReference getEndToEndFlow_InvolvedElement();
+
+	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.sam.EndToEndFlow#findStepsOnPath() <em>Find Steps On Path</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -564,6 +584,14 @@ public interface SamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference END_TO_END_FLOW__TIMING = eINSTANCE.getEndToEndFlow_Timing();
+
+		/**
+		 * The meta object literal for the '<em><b>Involved Element</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference END_TO_END_FLOW__INVOLVED_ELEMENT = eINSTANCE.getEndToEndFlow_InvolvedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Find Steps On Path</b></em>' operation.
