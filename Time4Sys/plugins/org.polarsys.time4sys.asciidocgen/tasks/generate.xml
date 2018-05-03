@@ -6,6 +6,9 @@
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.polarsys.time4sys.asciidocgen.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/org.polarsys.time4sys.asciidocgen/bin"/>
+        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore_2.13.0.v20170609-0707.jar"/>
+        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.common_2.13.0.v20170609-0707.jar"/>
+        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore.xmi_2.13.0.v20170609-0707.jar"/>
     </path>
 
     <path id="org.polarsys.time4sys.asciidocgen.classpath">

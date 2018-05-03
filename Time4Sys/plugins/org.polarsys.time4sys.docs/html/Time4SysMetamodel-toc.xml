@@ -1,4 +1,15 @@
 <?xml version='1.0' encoding='utf-8' ?>
+<!--
+    Copyright (c) 2017, 2018 Artal Technologies and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        Aurelien Didier (Artal Technologies) - initial API and implementation
+ -->
+
 <toc label="Time4SysMetamodel" link_to="PLUGINS_ROOT/org.polarsys.time4sys.docs/toc.xml#m2" topic="html/Time4SysMetamodel.html">
 		<topic href="html/Time4SysMetamodel.html#Design_Model" label="Design Model">
 			<topic href="html/Time4SysMetamodel.html#End_To_End_Flow" label="End To End Flow"></topic>
