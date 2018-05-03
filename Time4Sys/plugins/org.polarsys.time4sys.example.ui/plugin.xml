@@ -17,34 +17,15 @@
       <category id="org.polarsys.time4sys.examples.category"
             name="Time4sys Examples"
             parentCategory="org.eclipse.ui.Examples"/>
-      <wizard id="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
-            category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
-            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
-            project="true"
-            name="%SimplePeriodicMonoCoreNPFP_name"
-            icon="icons/NewTime4SysModel.gif">
-         <description>%SimplePeriodicMonoCoreNPFP_description</description>
-      </wizard>
       <wizard
             category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
             class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
             icon="icons/NewTime4SysModel.gif"
-            id="org.polarsys.time4sys.examples.SampleModel"
-            name="%SampleModel_name"
+            id="org.polarsys.time4sys.examples.ChallengeAnalysis"
+            name="%ChallengeAnalysis_name"
             project="true">
          <description>
-            %SimplePeriodicMonoCoreNPFP_description
-         </description>
-      </wizard>
-      <wizard
-            category="org.eclipse.ui.Examples/org.polarsys.time4sys.examples.category"
-            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
-            icon="icons/NewTime4SysModel.gif"
-            id="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
-            name="%EmmanuelCourseSampleSETR96_name"
-            project="true">
-         <description>
-            %EmmanuelCourseSampleSETR96_description
+            %ChallengeAnalysis_description
          </description>
       </wizard>      
    </extension>
