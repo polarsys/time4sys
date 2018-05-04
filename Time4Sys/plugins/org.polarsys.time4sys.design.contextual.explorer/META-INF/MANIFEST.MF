@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Design Contextual Explorer contribution
-Bundle-Vendor: http://www.time4sys-projet.fr/
+Bundle-Vendor: Time4Sys Project
 Bundle-SymbolicName: org.polarsys.time4sys.design.contextual.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

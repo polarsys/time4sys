@@ -8,4 +8,4 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.hrm.edit,
  org.polarsys.time4sys.marte.hrm
-Bundle-Vendor: http://www.time4sys-projet.fr/
+Bundle-Vendor: Time4Sys Project

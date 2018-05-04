@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Timinggraphics
+Bundle-Vendor: Time4Sys Project
 Bundle-SymbolicName: org.polarsys.time4sys.trace.timinggraphics;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.polarsys.time4sys.trace.timinggraphics.Activator

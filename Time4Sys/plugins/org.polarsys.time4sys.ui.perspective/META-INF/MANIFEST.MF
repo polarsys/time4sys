@@ -7,6 +7,7 @@ Bundle-Activator: org.polarsys.time4sys.ui.perspective.PerspectivePlugin
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.time4sys.ui.perspective
 Bundle-Localization: plugin
+Bundle-Vendor: Time4Sys Project
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.ide.application;visibility:=reexport,

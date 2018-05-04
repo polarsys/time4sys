@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Time4Sys Activity Explorer
-Bundle-Vendor: http://www.time4sys-projet.fr/
+Bundle-Vendor: Time4Sys Project
 Bundle-SymbolicName: org.polarsys.time4sys.activity.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

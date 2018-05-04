@@ -4,7 +4,7 @@ Bundle-Name: Time4Sys Navigator
 Bundle-SymbolicName: org.polarsys.time4sys.navigator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.polarsys.time4sys.navigator.Activator
-Bundle-Vendor: Artal Technologies
+Bundle-Vendor: Time4Sys Project
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.navigator,

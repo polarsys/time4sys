@@ -32,6 +32,6 @@ Export-Package: org.polarsys.time4sys.ui.commands,
  org.polarsys.time4sys.ui.wizards.model,
  org.polarsys.time4sys.ui.wizards.project
 Import-Package: org.eclipse.core.expressions
-Bundle-Vendor: http://www.time4sys-projet.fr/
+Bundle-Vendor: Time4Sys Project
 
 

@@ -13,7 +13,7 @@
       id="org.polarsys.time4sys.feature"
       label="Time4Sys Feature"
       version="0.0.1.qualifier"
-      provider-name="http://www.time4sys-projet.fr/">
+      provider-name="Time4Sys Project">
 
    <description>
       Main Time4Sys feature.
