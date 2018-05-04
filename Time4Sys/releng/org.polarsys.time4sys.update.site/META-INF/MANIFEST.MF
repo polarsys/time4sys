@@ -5,3 +5,4 @@ Bundle-SymbolicName: org.polarsys.time4sys.update.site;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Time4Sys Product

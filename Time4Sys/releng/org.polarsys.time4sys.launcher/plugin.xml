@@ -52,44 +52,4 @@
          </property>
       </product>
    </extension>
-   <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.ui.ide.workbench"
-            name="Time4Sys Product">
-         <property
-               name="windowImages"
-               value="icons/Time4Sys16x16.png,icons/Time4Sys32x32.png">
-         </property>
-         <property
-               name="aboutText"
-               value="Time4Sys">
-         </property>
-         <property
-               name="aboutImage"
-               value="icons/Time4Sys.png">
-         </property>
-         <property
-               name="startupForegroundColor"
-               value="000000">
-         </property>
-         <property
-               name="startupProgressRect"
-               value="5,275,445,15">
-         </property>
-         <property
-               name="startupMessageRect"
-               value="7,252,445,20">
-         </property>
-         <property
-               name="appName"
-               value="Time4Sys Product">
-         </property>
-         <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-      </product>
-   </extension>
 </plugin>
