@@ -11,7 +11,7 @@
     Contributors:
         Loïc Fejoz - initial API and implementation
  -->
-
+ 
 <plugin>
    <extension point="org.eclipse.ui.newWizards">
       <category id="org.polarsys.time4sys.examples.category"
@@ -31,35 +31,14 @@
    </extension>
 	<extension point="org.eclipse.emf.common.ui.examples">
     <example
-          id="org.polarsys.time4sys.examples.project.SampleModel"
+          id="org.polarsys.time4sys.examples.ChallengeAnalysis"
           pageImage="icons/NewTime4SysModel.gif"
-          wizardID="org.polarsys.time4sys.examples.SampleModel">
+          wizardID="org.polarsys.time4sys.examples.ChallengeAnalysis">
        <projectDescriptor
-             contentURI="zips/SampleModel.zip"
-             description="%SampleModel_description"
-             name="org.polarsys.time4sys.examples.SampleModel">
+             contentURI="zips/ChallengeAnalysis.zip"
+             description="%ChallengeAnalysis_description"
+             name="org.polarsys.time4sys.examples.ChallengeAnalysis">
        </projectDescriptor>
-       <fileToOpen
-             editorID="org.polarsys.time4sys.design.presentation.DesignEditorID"
-             location="org.polarsys.time4sys.examples.SampleModel/SampleModel/representations.aird">
-       </fileToOpen>
     </example>
-      <example id="org.polarsys.time4sys.examples.project.SimplePeriodicMonoCoreNPFP"
-            wizardID="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
-            pageImage="icons/NewTime4SysModel.gif">
-         <projectDescriptor name="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP"
-               contentURI="zips/SimplePeriodicMonoCoreNPFP.zip"
-               description="%SimplePeriodicMonoCoreNPFP_description"/>
-         <fileToOpen location="org.polarsys.time4sys.examples.SimplePeriodicMonoCoreNPFP/models/models/case1_1-rt.design"
-                     editorID="org.polarsys.time4sys.design.presentation.DesignEditorID"/>
-      </example>
-      <example id="org.polarsys.time4sys.examples.project.EmmanuelCourseSampleSETR96"
-            wizardID="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
-            pageImage="icons/NewTime4SysModel.gif">
-         <projectDescriptor name="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96"
-               contentURI="zips/EmmanuelCourseSampleSETR96.zip"
-               description="%EmmanuelCourseSampleSETR96_description"/>
-         <fileToOpen location="org.polarsys.time4sys.examples.EmmanuelCourseSampleSETR96/representations.aird"/>
-      </example>
 </extension>
 </plugin>
