@@ -33,6 +33,19 @@ public class DesignNameAndTimeEditor implements IExternalJavaAction {
 		return true;
 	}
 
+	public String upperCaseFirst(String value) {
+			if (value == null) {
+				return null;
+			}
+			if (value.length() == 0) {
+				return value;
+			}
+			StringBuilder result = new StringBuilder(value);
+			result.replace(0, 1, result.substring(0, 1).toUpperCase());
+
+			return result.toString();
+	}
+
 	@Override
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		NfpFactory nfpFactory = NfpFactory.eINSTANCE;

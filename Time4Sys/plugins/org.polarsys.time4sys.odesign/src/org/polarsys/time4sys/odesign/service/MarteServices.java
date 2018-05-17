@@ -49,6 +49,7 @@ import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.grm.CommunicationResource;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.Scheduler;
@@ -88,6 +89,18 @@ public class MarteServices {
 		}
 
 		return parent;
+	}
+	
+	public CommunicationResource getContainingComunicationResource(EObject element) {
+		CommunicationResource result = null;
+		EObject container = element;
+		while (!(container instanceof CommunicationResource || container instanceof DesignModel)) {
+			container=container.eContainer();
+		}
+		if (container instanceof CommunicationResource) {
+			result = (CommunicationResource) container;
+		}
+		return result;
 	}
 
 	public List<EObject> getBranchPrecedenceRelations(EObject context, EObject view) {
