@@ -21,6 +21,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.BorderedStyle;
 import org.eclipse.sirius.diagram.DDiagram;
@@ -50,6 +51,7 @@ import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
@@ -60,6 +62,7 @@ import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
+import org.polarsys.time4sys.odesign.helper.EcoreUtil2;
 import org.polarsys.time4sys.odesign.helper.ShapeUtil;
 
 @SuppressWarnings("restriction")
@@ -1158,6 +1161,65 @@ public class BehaviorScenarioServices {
 				budget = NfpFactory.eINSTANCE.createDurationFromString(newValue.toString());
 			}
 			PosixSporadicServerBuilder.as(task).ofInitialBudget(budget);
+		}
+	}
+	
+	public static boolean isArinc653Synchronizable(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task == null) {
+			return false;
+		}
+		if (Arinc653MIFBuilder.isInstance(task)) {
+			return false;
+		}
+		final EObject parent = task.eContainer(); 
+		if (parent instanceof SoftwareSchedulableResource) {
+			return Arinc653MIFBuilder.isInstance((SoftwareSchedulableResource)parent);
+		}
+		return false;
+	}
+	
+	public static boolean isSynchronisedWithArinc653Partition(final EObject context, final Object eInverse) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		final SoftwareSchedulableResource parent = unwrap(task.eContainer(), SoftwareSchedulableResource.class);
+		if (Arinc653MIFBuilder.isInstance(parent)) {
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(parent);
+			final Reference reference = partition.reference().build();
+			if (eInverse instanceof Collection) {
+				for(Object maybeStep: (Collection<?>)eInverse) {
+					if (maybeStep instanceof Step) {
+						for(WorkloadEvent cause: ((Step)maybeStep).getCause()) {
+							final ArrivalPattern pattern = cause.getPattern();
+							if(pattern == null || pattern.getReference() != reference) {
+								return false;
+							}
+						}
+					}
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void setSynchronisedWithArinc653Partition(final EObject context, final Object newValue, final Object eInverse) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		final SoftwareSchedulableResource parent = unwrap(task.eContainer(), SoftwareSchedulableResource.class);
+		if (Arinc653MIFBuilder.isInstance(parent)) {
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(parent);
+			final Reference reference = partition.reference().build();
+			if (eInverse instanceof Collection) {
+				for(Object maybeStep: (Collection<?>)eInverse) {
+					if (maybeStep instanceof Step) {
+						for(WorkloadEvent cause: ((Step)maybeStep).getCause()) {
+							final ArrivalPattern pattern = cause.getPattern();
+							if (pattern != null) {
+								pattern.setReference(reference);
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

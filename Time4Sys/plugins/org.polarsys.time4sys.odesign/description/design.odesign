@@ -1897,7 +1897,7 @@
   <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
     <categories name="Default">
       <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5" indented="true"/>
-      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition(self) or self.isPSS()" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2"/>
+      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition(self) or self.isPSS() or self.oclIsKindOf(srm::SoftwareSchedulableResource)" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.6"/>
       <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
@@ -2057,6 +2057,13 @@
         <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:getPSSInitialTimeBudget()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSInitialTimeBudget(newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.synchronizable" label="org.eclipse.sirius.ui.properties.arinc653.synchronizable" labelExpression="Synchronization" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Synchronizable()">
+        <controls xsi:type="properties:CheckboxDescription" name="Arinc653TaskIsSynch" labelExpression="Is Synchronized?" helpExpression="Shall all activations pattern be synchronized with the start of the partition?" valueExpression="aql:self.isSynchronisedWithArinc653Partition(self.eInverse(gqam::Step))">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setSynchronisedWithArinc653Partition(newValue, self.eInverse(gqam::Step))"/>
           </initialOperation>
         </controls>
       </groups>
