@@ -2044,6 +2044,21 @@
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
           </initialOperation>
         </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSPriority" label="Priority" labelExpression="Priority" valueExpression="aql:getPSSPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSBackgroundPriority" labelExpression="Background Priority" valueExpression="aql:getPSSBackgroundPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSBackgroundPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:getPSSInitialTimeBudget()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSInitialTimeBudget(newValue)"/>
+          </initialOperation>
+        </controls>
       </groups>
     </categories>
   </extensions>

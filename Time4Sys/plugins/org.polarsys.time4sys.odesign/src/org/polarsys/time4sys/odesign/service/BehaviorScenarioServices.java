@@ -27,7 +27,6 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
-import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
@@ -55,6 +54,8 @@ import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
@@ -1086,6 +1087,77 @@ public class BehaviorScenarioServices {
 				
 			}
 			PosixSporadicServerBuilder.as(task).withOrder(order);
+		}
+	}
+	
+	public static String getPSSPriority(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Integer.toString(PosixSporadicServerBuilder.as(task).getPriority());
+		}
+		return null;
+	}
+	
+	public static void setPSSPriority(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Number)) {
+			int priority = 0;
+			if (newValue instanceof Number) {
+				priority = ((Number)newValue).intValue();
+			} else {
+				try {
+					priority = Integer.parseInt(newValue.toString());
+				} catch (Exception e) {
+					
+				}
+			}
+			PosixSporadicServerBuilder.as(task).ofPriority(priority);
+		}
+	}
+	
+	public static String getPSSBackgroundPriority(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Integer.toString(PosixSporadicServerBuilder.as(task).getBackgroundPriority());
+		}
+		return null;
+	}
+	
+	public static void setPSSBackgroundPriority(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Number)) {
+			int priority = 0;
+			if (newValue instanceof Number) {
+				priority = ((Number)newValue).intValue();
+			} else {
+				try {
+					priority = Integer.parseInt(newValue.toString());
+				} catch (Exception e) {
+					
+				}
+			}
+			PosixSporadicServerBuilder.as(task).ofBackgroundPriority(priority);
+		}
+	}
+	
+	public static String getPSSInitialTimeBudget(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return PosixSporadicServerBuilder.as(task).getInitialBudget().toString();
+		}
+		return null;
+	}
+	
+	public static void setPSSInitialTimeBudget(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Duration)) {
+			Duration budget;
+			if (newValue instanceof Duration) {
+				budget = ((Duration)newValue);
+			} else {
+				budget = NfpFactory.eINSTANCE.createDurationFromString(newValue.toString());
+			}
+			PosixSporadicServerBuilder.as(task).ofInitialBudget(budget);
 		}
 	}
 }
