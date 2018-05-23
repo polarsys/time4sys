@@ -14,6 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.sirius.ui,
- org.polarsys.time4sys.marte.hrm
+ org.polarsys.time4sys.marte.hrm,
+ org.eclipse.emf.eef.runtime;bundle-version="1.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
