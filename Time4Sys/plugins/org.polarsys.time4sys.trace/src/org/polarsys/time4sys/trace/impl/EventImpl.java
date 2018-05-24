@@ -19,6 +19,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -45,7 +46,7 @@ import org.polarsys.time4sys.trace.TracePackage;
  *
  * @generated NOT
  */
-public class EventImpl extends MinimalEObjectImpl.Container implements Event, Comparable<Event> {
+public class EventImpl extends EModelElementImpl implements Event, Comparable<Event> {
 	/**
 	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
 	 * <!-- begin-user-doc -->

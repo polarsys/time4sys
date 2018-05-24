@@ -82,6 +82,14 @@ public class Annotations {
 		}
 		return null;
 	}
+	
+	public static boolean hasAttr(final EModelElement obj, final String sourceurl, final String attrname) {
+		if (hasAnnotation(obj, sourceurl)) {
+			final EAnnotation annot = Annotations.annotate(obj, sourceurl);
+			return annot.getDetails().containsKey(attrname);
+		}
+		return false;
+	}
 
 	/**
 	 * This is an helper class.
