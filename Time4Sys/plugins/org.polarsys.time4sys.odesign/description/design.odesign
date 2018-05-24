@@ -1878,6 +1878,20 @@
         </directEdit>
       </ownedColumnMappings>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="org.polarsys.time4sys.odesign.table.arinc653.partitions" label="Arinc653 Partitions" domainClass="design.DesignModel">
+      <metamodel href="../../org.polarsys.time4sys.marte/model/nfp.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/hrm.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/srm.ecore#/"/>
+      <ownedLineMappings name="HardwareComputingResource" label="HW" domainClass="hrm::HardwareComputingResource" semanticCandidatesExpression="aql:root.resourcePackage.ownedElement" headerLabelExpression="feature:name">
+        <ownedSubLines name="Partition" domainClass="srm::SoftwareSchedulableResource" semanticCandidatesExpression="aql:self.ownedResource->select(p | p.isArinc653Partition(p))" headerLabelExpression="feature:name">
+          <ownedSubLines name="Activation" domainClass="nfp::TimeInterval" semanticCandidatesExpression="aql:self.getArinc653IntervalActivations()" headerLabelExpression="Activation"/>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="start" label="Start" headerLabelExpression="Start" featureName="min" labelExpression="aql:self.min.toString()"/>
+      <ownedColumnMappings name="End" label="End" headerLabelExpression="End" featureName="max" labelExpression="aql:self.max.toString()"/>
+      <ownedColumnMappings name="my.Length" headerLabelExpression="Length" labelExpression="aql:self.timeIntervalLength()"/>
+      <ownedColumnMappings name="Label" headerLabelExpression="Label" featureName="label" labelExpression="aql:self.toString()"/>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.PropertiesServices"/>
