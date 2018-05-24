@@ -55,9 +55,12 @@ import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
@@ -1221,5 +1224,41 @@ public class BehaviorScenarioServices {
 				}
 			}
 		}
+	}
+	
+	public static Collection<TimeInterval> getArinc653IntervalActivations(final EObject context) {
+		final List<TimeInterval> activations = new ArrayList<>(2);
+		final SoftwareSchedulableResource partition = unwrap(context, SoftwareSchedulableResource.class);
+		for(SchedulingParameter param: partition.getSchedParams()) {
+			if (param instanceof TableEntryType) {
+				final TableEntryType tb = (TableEntryType)param;
+				if (!tb.getTimeSlot().isEmpty() && tb.getOffset().isEmpty()) {
+					tb.getOffset().add(NfpFactory.eINSTANCE.createDurationFromString("0ps"));
+				}
+				assert(tb.getTimeSlot().isEmpty() || !tb.getOffset().isEmpty());
+				final int nbSlots = tb.getTimeSlot().size();
+				final int nbOffsets = tb.getOffset().size();
+				for(int i=0; i < nbSlots; ++i) {
+					final TimeInterval slotTime = NfpFactory.eINSTANCE.createTimeInterval();
+					final Duration startTime = tb.getOffset().get(i % nbOffsets);
+					final Duration lengthTime = tb.getTimeSlot().get(i % nbSlots);
+					final Duration endTime = startTime.add(lengthTime);
+					slotTime.setMin(startTime);
+					slotTime.setMinOpen(false);
+					slotTime.setMax(endTime);
+					slotTime.setMaxOpen(true);
+					activations.add(slotTime);
+				}
+			}
+		}
+		return activations;
+	}
+	
+	public static Collection<String> getArinc653Activations(final EObject context) {
+		final List<String> activations = new ArrayList<>(2);
+		for(TimeInterval ti: getArinc653IntervalActivations(context)) {
+			activations.add(ti.toString() + " (" + ti.computeLength().toString() + ")");
+		}
+		return activations;
 	}
 }
