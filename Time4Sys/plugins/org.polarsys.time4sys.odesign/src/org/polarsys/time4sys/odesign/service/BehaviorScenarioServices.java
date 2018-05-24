@@ -1025,7 +1025,7 @@ public class BehaviorScenarioServices {
 		return areAllWrappedOfType(context, views, SoftwareSchedulableResource.class);
 	}
 	
-	public static boolean isArinc653Partition(EObject context, final EObject value) {
+	public static boolean isArinc653Partition(final EObject value) {
 		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
 		if (task != null) {
 			return Arinc653MIFBuilder.isInstance(task);
@@ -1054,6 +1054,14 @@ public class BehaviorScenarioServices {
 		final Step step = unwrap(context, Step.class);
 		if (step != null) {
 			return Arinc653SpareTaskBuilder.isSpare(step);
+		}
+		return false;
+	}
+	
+	public static boolean isSpareTask(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Arinc653SpareTaskBuilder.isSpare(task);
 		}
 		return false;
 	}
@@ -1260,5 +1268,12 @@ public class BehaviorScenarioServices {
 			activations.add(ti.toString() + " (" + ti.computeLength().toString() + ")");
 		}
 		return activations;
+	}
+	
+	public static void setAsSpareTask(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			Arinc653SpareTaskBuilder.asSpare(task);
+		}
 	}
 }
