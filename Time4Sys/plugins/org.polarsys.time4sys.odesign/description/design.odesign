@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties_1.0.0="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
   <ownedViewpoints name="Design" modelFileExtension="time4sys design">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" name="Design Architecture" titleExpression="aql:'['+self.eContainer().name+'] Design Architecture diagram'" domainClass="design.DesignModel">
       <metamodel href="../../org.polarsys.time4sys.marte/model/design.ecore#/"/>
@@ -73,7 +73,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::Once)">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Sliding Window Event\n' + 'Jitter: '+ self.jitter + '\nWindow Size: ' + self.windowSize + '\nNb Events: ' + self.nbEvents" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/once.png">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Once Event\n' + 'Jitter: '+ self.jitter" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/once.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -263,7 +263,7 @@
                 </style>
               </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
-                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
+                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
@@ -331,17 +331,27 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.isArinc653Partition()">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="7" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.isSpareTask()">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="7" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::CommunicationChannel)">
             <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/ComChannel.gif" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomPurple']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
-            </style>
-          </conditionnalStyles>
-          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::SoftwareSchedulableResource)">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']" foregroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomLightGreen']">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::Alarm)">
@@ -350,6 +360,12 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::SoftwareSchedulableResource)">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']" foregroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomLightGreen']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
         </containerMappings>
@@ -806,7 +822,7 @@
             </tools>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ToolGroup" name="Steps">
-            <tools xsi:type="tool_1:NodeCreationDescription" name="ExecutionStep" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="ExecutionStep" precondition="aql:not self.isArinc653Platform(container) and not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -825,7 +841,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:NodeCreationDescription" name="Delay" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Delay.gif">
+            <tools xsi:type="tool_1:NodeCreationDescription" name="Delay" precondition="aql:not self.isArinc653Platform(container) and not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Delay.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
@@ -1179,7 +1195,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SpareStep" precondition="aql:not self.isArinc653Partition(container)" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="SpareStep" precondition="aql:not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -1199,12 +1215,47 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:ContainerCreationDescription" name="Spare Task Creation" label="Spare Task Resource" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareTask' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:sw.setAsSpareTask()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="aql:sw"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasScheduler" position="SOUTH_EAST" preconditionExpression="aql:self.mainScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']"/>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" preconditionExpression="aql:self.hasDeadline2()" imageExpression="/org.polarsys.time4sys.odesign/images/redflag16.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']"/>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="swHasScheduler" position="SOUTH_EAST" preconditionExpression="aql:self.dependentScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']"/>
         </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:container.hasBackgroundColor()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization"/>
+          </vsmElementCustomizations>
+        </customization>
       </defaultLayer>
       <toolSection name="Behaviours">
         <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Name">
@@ -1237,7 +1288,7 @@
           <element name="element"/>
           <elementView name="elementView"/>
           <initialOperation>
-            <firstModelOperations xsi:type="properties_1.0.0:DialogModelOperation" titleExpression="Edition Wizard">
+            <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Edition Wizard">
               <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
                 <initialOperation/>
               </buttons>
@@ -1878,6 +1929,20 @@
         </directEdit>
       </ownedColumnMappings>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="org.polarsys.time4sys.odesign.table.arinc653.partitions" label="Arinc653 Partitions" domainClass="design.DesignModel">
+      <metamodel href="../../org.polarsys.time4sys.marte/model/nfp.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/hrm.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/srm.ecore#/"/>
+      <ownedLineMappings name="HardwareComputingResource" label="HW" domainClass="hrm::HardwareComputingResource" semanticCandidatesExpression="aql:root.resourcePackage.ownedElement" headerLabelExpression="feature:name">
+        <ownedSubLines name="Partition" domainClass="srm::SoftwareSchedulableResource" semanticCandidatesExpression="aql:self.ownedResource->select(p | p.isArinc653Partition())" headerLabelExpression="feature:name">
+          <ownedSubLines name="Activation" domainClass="nfp::TimeInterval" semanticCandidatesExpression="aql:self.getArinc653IntervalActivations()" headerLabelExpression="Activation"/>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="start" label="Start" headerLabelExpression="Start" featureName="min" labelExpression="aql:self.min.toString()"/>
+      <ownedColumnMappings name="End" label="End" headerLabelExpression="End" featureName="max" labelExpression="aql:self.max.toString()"/>
+      <ownedColumnMappings name="my.Length" headerLabelExpression="Length" labelExpression="aql:self.timeIntervalLength()"/>
+      <ownedColumnMappings name="Label" headerLabelExpression="Label" featureName="label" labelExpression="aql:self.toString()"/>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.PropertiesServices"/>
@@ -1894,14 +1959,14 @@
     <entries xsi:type="description:UserFixedColor" red="208" green="226" blue="238" name="CustomGrayedBlue"/>
     <entries xsi:type="description:UserFixedColor" red="159" green="126" blue="226" name="CustomPurple"/>
   </userColorsPalettes>
-  <extensions xsi:type="properties_1.0.0:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
+  <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
     <categories name="Default">
       <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5" indented="true"/>
-      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition(self) or self.isPSS()" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2"/>
+      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition() or self.isPSS() or self.oclIsKindOf(srm::SoftwareSchedulableResource)" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.6 //@extensions.0/@categories.0/@groups.7"/>
       <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
-        <controls xsi:type="properties_1.0.0:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-            <widget xsi:type="properties_1.0.0:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:if eStructuralFeature.name = 'upperBound' and self.oclIsKindOf(ecore::ETypedElement) then self.upperBoundDisplay() else self.eGet(eStructuralFeature.name) endif">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:if eStructuralFeature.name = 'upperBound' and self.oclIsKindOf(ecore::ETypedElement) then self.upperBoundDisplay() else self.eGet(eStructuralFeature.name) endif">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
                   <subModelOperations xsi:type="tool:Switch">
@@ -1922,7 +1987,7 @@
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_duration_if" predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
-            <widget xsi:type="properties_1.0.0:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
@@ -1934,7 +1999,7 @@
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_time_interval_if" predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
-            <widget xsi:type="properties_1.0.0:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
@@ -1946,7 +2011,7 @@
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
-            <widget xsi:type="properties_1.0.0:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+            <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
@@ -1958,7 +2023,7 @@
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
-            <widget xsi:type="properties_1.0.0:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+            <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
@@ -1970,7 +2035,7 @@
             </widget>
           </ifs>
           <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-            <widget xsi:type="properties_1.0.0:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
               </initialOperation>
@@ -1984,9 +2049,9 @@
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.schedulingparamgroup" labelExpression="Scheduling Parameter" domainClass="grm.SchedulingParameter" semanticCandidateExpression="aql:self.schedParams">
-        <controls xsi:type="properties_1.0.0:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
           <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
-            <widget xsi:type="properties_1.0.0:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
+            <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
@@ -2000,9 +2065,9 @@
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.scheduler" labelExpression="Sheduler" domainClass="grm.SchedulingPolicy" semanticCandidateExpression="aql:self.policy">
-        <controls xsi:type="properties_1.0.0:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
           <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
-            <widget xsi:type="properties_1.0.0:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
+            <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
               </initialOperation>
@@ -2016,33 +2081,62 @@
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.referencegroup" labelExpression="Reference">
-        <controls xsi:type="properties_1.0.0:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(self.eClass().eAllStructuralFeatures->select(f|f.containment))">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(self.eClass().eAllStructuralFeatures->select(f|f.containment))">
           <ifs predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
-            <widget xsi:type="reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
           </ifs>
         </controls>
-        <controls xsi:type="properties_1.0.0:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
+        <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_eattribute_many_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EAttribute) and eStructuralFeature.many">
-            <widget xsi:type="properties_1.0.0:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
+            <widget xsi:type="properties:ListDescription" name="sirius_default_rules_eattribute_many" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)" displayExpression="var:value"/>
           </ifs>
           <ifs name="sirius_default_rules_ereference_if" predicateExpression="aql:eStructuralFeature.oclIsKindOf(ecore::EReference)">
-            <widget xsi:type="reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
+            <widget xsi:type="properties-ext-widgets-reference:ExtReferenceDescription" name="sirius_default_rules_ereference" labelExpression="aql:input.emfEditServices(self).getText(eStructuralFeature)+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" referenceNameExpression="aql:eStructuralFeature.name"/>
           </ifs>
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.arinc653.platformgroup" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self)">
-        <controls xsi:type="properties_1.0.0:LabelDescription" name="MAF" labelExpression="MAF" helpExpression="aql:'Sum of MIFs'" valueExpression="aql:self.getMAF()"/>
-        <controls xsi:type="properties_1.0.0:TextDescription" name="MIF" labelExpression="MIF" helpExpression="aql:'MIF duration (if all same)'" valueExpression="aql:self.getMIF()">
+        <controls xsi:type="properties:LabelDescription" name="MAF" labelExpression="MAF" helpExpression="aql:'Sum of MIFs'" valueExpression="aql:self.getMAF()"/>
+        <controls xsi:type="properties:TextDescription" name="MIF" labelExpression="MIF" helpExpression="aql:'MIF duration (if all same)'" valueExpression="aql:self.getMIF()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setMIF(newValue)"/>
           </initialOperation>
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.posix.pssgroup" labelExpression="Posix" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isPSS()">
-        <controls xsi:type="properties_1.0.0:TextDescription" name="PSSOrder" label="PSS Order" labelExpression="Order" valueExpression="aql:self.getPSSOrder()">
+        <controls xsi:type="properties:TextDescription" name="PSSOrder" label="PSS Order" labelExpression="Order" valueExpression="aql:self.getPSSOrder()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
           </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSPriority" label="Priority" labelExpression="Priority" valueExpression="aql:getPSSPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSBackgroundPriority" labelExpression="Background Priority" valueExpression="aql:getPSSBackgroundPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSBackgroundPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:getPSSInitialTimeBudget()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSInitialTimeBudget(newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.synchronizable" label="org.eclipse.sirius.ui.properties.arinc653.synchronizable" labelExpression="Synchronization" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Synchronizable()">
+        <controls xsi:type="properties:CheckboxDescription" name="Arinc653TaskIsSynch" labelExpression="Is Synchronized?" helpExpression="Shall all activations pattern be synchronized with the start of the partition?" valueExpression="aql:self.isSynchronisedWithArinc653Partition(self.eInverse(gqam::Step))">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setSynchronisedWithArinc653Partition(newValue, self.eInverse(gqam::Step))"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.partitiongroup" labelExpression="Partition" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Partition()">
+        <controls xsi:type="properties:ListDescription" labelExpression="Activations" helpExpression="Times and durations of activations of this partition" valueExpression="aql:self.getArinc653Activations()" displayExpression="aql:value">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
         </controls>
       </groups>
     </categories>

@@ -21,13 +21,13 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.BorderedStyle;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
-import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
@@ -51,14 +51,21 @@ import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
+import org.polarsys.time4sys.odesign.helper.EcoreUtil2;
 import org.polarsys.time4sys.odesign.helper.ShapeUtil;
 
 @SuppressWarnings("restriction")
@@ -1018,7 +1025,7 @@ public class BehaviorScenarioServices {
 		return areAllWrappedOfType(context, views, SoftwareSchedulableResource.class);
 	}
 	
-	public static boolean isArinc653Partition(EObject context, final EObject value) {
+	public static boolean isArinc653Partition(final EObject value) {
 		final SoftwareSchedulableResource task = unwrap(value, SoftwareSchedulableResource.class);
 		if (task != null) {
 			return Arinc653MIFBuilder.isInstance(task);
@@ -1047,6 +1054,14 @@ public class BehaviorScenarioServices {
 		final Step step = unwrap(context, Step.class);
 		if (step != null) {
 			return Arinc653SpareTaskBuilder.isSpare(step);
+		}
+		return false;
+	}
+	
+	public static boolean isSpareTask(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Arinc653SpareTaskBuilder.isSpare(task);
 		}
 		return false;
 	}
@@ -1086,6 +1101,179 @@ public class BehaviorScenarioServices {
 				
 			}
 			PosixSporadicServerBuilder.as(task).withOrder(order);
+		}
+	}
+	
+	public static String getPSSPriority(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Integer.toString(PosixSporadicServerBuilder.as(task).getPriority());
+		}
+		return null;
+	}
+	
+	public static void setPSSPriority(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Number)) {
+			int priority = 0;
+			if (newValue instanceof Number) {
+				priority = ((Number)newValue).intValue();
+			} else {
+				try {
+					priority = Integer.parseInt(newValue.toString());
+				} catch (Exception e) {
+					
+				}
+			}
+			PosixSporadicServerBuilder.as(task).ofPriority(priority);
+		}
+	}
+	
+	public static String getPSSBackgroundPriority(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return Integer.toString(PosixSporadicServerBuilder.as(task).getBackgroundPriority());
+		}
+		return null;
+	}
+	
+	public static void setPSSBackgroundPriority(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Number)) {
+			int priority = 0;
+			if (newValue instanceof Number) {
+				priority = ((Number)newValue).intValue();
+			} else {
+				try {
+					priority = Integer.parseInt(newValue.toString());
+				} catch (Exception e) {
+					
+				}
+			}
+			PosixSporadicServerBuilder.as(task).ofBackgroundPriority(priority);
+		}
+	}
+	
+	public static String getPSSInitialTimeBudget(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			return PosixSporadicServerBuilder.as(task).getInitialBudget().toString();
+		}
+		return null;
+	}
+	
+	public static void setPSSInitialTimeBudget(final EObject context, final Object newValue) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null && newValue != null && (newValue instanceof String || newValue instanceof Duration)) {
+			Duration budget;
+			if (newValue instanceof Duration) {
+				budget = ((Duration)newValue);
+			} else {
+				budget = NfpFactory.eINSTANCE.createDurationFromString(newValue.toString());
+			}
+			PosixSporadicServerBuilder.as(task).ofInitialBudget(budget);
+		}
+	}
+	
+	public static boolean isArinc653Synchronizable(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task == null) {
+			return false;
+		}
+		if (Arinc653MIFBuilder.isInstance(task)) {
+			return false;
+		}
+		final EObject parent = task.eContainer(); 
+		if (parent instanceof SoftwareSchedulableResource) {
+			return Arinc653MIFBuilder.isInstance((SoftwareSchedulableResource)parent);
+		}
+		return false;
+	}
+	
+	public static boolean isSynchronisedWithArinc653Partition(final EObject context, final Object eInverse) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		final SoftwareSchedulableResource parent = unwrap(task.eContainer(), SoftwareSchedulableResource.class);
+		if (Arinc653MIFBuilder.isInstance(parent)) {
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(parent);
+			final Reference reference = partition.reference().build();
+			if (eInverse instanceof Collection) {
+				for(Object maybeStep: (Collection<?>)eInverse) {
+					if (maybeStep instanceof Step) {
+						for(WorkloadEvent cause: ((Step)maybeStep).getCause()) {
+							final ArrivalPattern pattern = cause.getPattern();
+							if(pattern == null || pattern.getReference() != reference) {
+								return false;
+							}
+						}
+					}
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void setSynchronisedWithArinc653Partition(final EObject context, final Object newValue, final Object eInverse) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		final SoftwareSchedulableResource parent = unwrap(task.eContainer(), SoftwareSchedulableResource.class);
+		if (Arinc653MIFBuilder.isInstance(parent)) {
+			final Arinc653MIFBuilder partition = Arinc653MIFBuilder.as(parent);
+			final Reference reference = partition.reference().build();
+			if (eInverse instanceof Collection) {
+				for(Object maybeStep: (Collection<?>)eInverse) {
+					if (maybeStep instanceof Step) {
+						for(WorkloadEvent cause: ((Step)maybeStep).getCause()) {
+							final ArrivalPattern pattern = cause.getPattern();
+							if (pattern != null) {
+								pattern.setReference(reference);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public static Collection<TimeInterval> getArinc653IntervalActivations(final EObject context) {
+		final List<TimeInterval> activations = new ArrayList<>(2);
+		final SoftwareSchedulableResource partition = unwrap(context, SoftwareSchedulableResource.class);
+		for(SchedulingParameter param: partition.getSchedParams()) {
+			if (param instanceof TableEntryType) {
+				final TableEntryType tb = (TableEntryType)param;
+				if (!tb.getTimeSlot().isEmpty() && tb.getOffset().isEmpty()) {
+					tb.getOffset().add(NfpFactory.eINSTANCE.createDurationFromString("0ps"));
+				}
+				assert(tb.getTimeSlot().isEmpty() || !tb.getOffset().isEmpty());
+				final int nbSlots = tb.getTimeSlot().size();
+				final int nbOffsets = tb.getOffset().size();
+				for(int i=0; i < nbSlots; ++i) {
+					final TimeInterval slotTime = NfpFactory.eINSTANCE.createTimeInterval();
+					final Duration startTime = tb.getOffset().get(i % nbOffsets);
+					final Duration lengthTime = tb.getTimeSlot().get(i % nbSlots);
+					final Duration endTime = startTime.add(lengthTime);
+					slotTime.setMin(startTime);
+					slotTime.setMinOpen(false);
+					slotTime.setMax(endTime);
+					slotTime.setMaxOpen(true);
+					activations.add(slotTime);
+				}
+			}
+		}
+		return activations;
+	}
+	
+	public static Collection<String> getArinc653Activations(final EObject context) {
+		final List<String> activations = new ArrayList<>(2);
+		for(TimeInterval ti: getArinc653IntervalActivations(context)) {
+			activations.add(ti.toString() + " (" + ti.computeLength().toString() + ")");
+		}
+		return activations;
+	}
+	
+	public static void setAsSpareTask(final EObject context) {
+		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
+		if (task != null) {
+			Arinc653SpareTaskBuilder.asSpare(task);
 		}
 	}
 }

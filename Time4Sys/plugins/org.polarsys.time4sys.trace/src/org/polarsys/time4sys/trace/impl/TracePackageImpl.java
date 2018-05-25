@@ -880,9 +880,13 @@ public class TracePackageImpl extends EPackageImpl implements TracePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		traceEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
+		eventEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
 		resourceEventEClass.getESuperTypes().add(this.getEvent());
 		schedulingEventEClass.getESuperTypes().add(this.getEvent());
 		messageEventEClass.getESuperTypes().add(this.getEvent());
+		sliceEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
+		propertiesEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
 		valueChangeEventEClass.getESuperTypes().add(this.getEvent());
 		objectValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());
 		durationValueChangeEventEClass.getESuperTypes().add(this.getValueChangeEvent());

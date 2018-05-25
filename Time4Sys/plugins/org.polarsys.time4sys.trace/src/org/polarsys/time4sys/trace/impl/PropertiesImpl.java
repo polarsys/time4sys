@@ -14,8 +14,8 @@ package org.polarsys.time4sys.trace.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.EModelElementImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.trace.Properties;
@@ -40,7 +40,7 @@ import org.polarsys.time4sys.trace.TracePackage;
  *
  * @generated
  */
-public class PropertiesImpl extends MinimalEObjectImpl.Container implements Properties {
+public class PropertiesImpl extends EModelElementImpl implements Properties {
 	/**
 	 * The default value of the '{@link #getRange() <em>Range</em>}' attribute.
 	 * <!-- begin-user-doc -->
