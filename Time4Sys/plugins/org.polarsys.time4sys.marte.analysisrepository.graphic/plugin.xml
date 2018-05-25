@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphmodel -->
+      <package
+            uri="org.polarsys.time4sys.marte.analysisrepository.ui.graphmodel"
+            class="eclipseview.polarsys.ui.components.GraphModelPackage"
+            genModel="model/graphmodel.genmodel"/>
+   </extension>
+
+</plugin>

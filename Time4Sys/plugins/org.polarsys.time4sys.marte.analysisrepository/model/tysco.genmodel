@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.analysisrepository/src"
+    modelPluginID="org.polarsys.time4sys.marte.analysisrepository" modelName="Tysco"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>tysco.ecore</foreignModel>
+  <genPackages prefix="Tysco" basePackage="org.polarsys.time4sys.marte.analysisrepository"
+      disposableProviderFactory="true" ecorePackage="tysco.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tysco.ecore#//EvaluationResultType">
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//EvaluationResultType/True"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//EvaluationResultType/False"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//EvaluationResultType/Undefined"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tysco.ecore#//JunctionType">
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//JunctionType/and"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//JunctionType/or"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//JunctionType/xor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tysco.ecore#//TruthType">
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//TruthType/true"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//TruthType/false"/>
+      <genEnumLiterals ecoreEnumLiteral="tysco.ecore#//TruthType/neutral"/>
+    </genEnums>
+    <genClasses ecoreClass="tysco.ecore#//AnalysisRepository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//AnalysisRepository/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//AnalysisRepository/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allContextModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allRules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allTests"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//ContextModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ContextModel/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ContextModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ContextModel/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ContextModel/references"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//ContextModel/refinedContexts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//ContextModel/analysisTests"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//ContextModel/rootGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//ContextModel/truthValues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//ContextModel/ruleGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//Test">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Test/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Test/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Test/references"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Test/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//Test/characteristics"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//Test/implementations"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//IdentificationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//IdentificationRule/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//IdentificationRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//IdentificationRule/content"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/requiredRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/equivalentRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/conflictualRules"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//TestImplementation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//TestImplementation/transformation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/analysisExecPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/toolName"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tysco.ecore#//TestCharacteristicType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestCharacteristicType/comment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//TestCharacteristicType/referencedContexts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tysco.ecore#//SustainabilityType"/>
+    <genClasses ecoreClass="tysco.ecore#//Deadline_Sustainability"/>
+    <genClasses ecoreClass="tysco.ecore#//Jitter_Sustainability"/>
+    <genClasses ecoreClass="tysco.ecore#//Period_Sustainability"/>
+    <genClasses ecoreClass="tysco.ecore#//ExecutionTime_Sustainability"/>
+    <genClasses image="false" ecoreClass="tysco.ecore#//FeasibilityType"/>
+    <genClasses ecoreClass="tysco.ecore#//SufficientCondition"/>
+    <genClasses ecoreClass="tysco.ecore#//NecessaryCondition"/>
+    <genClasses ecoreClass="tysco.ecore#//Transformation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//Transformation/contextModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Transformation/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tysco.ecore#//Transformation/testImplementation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Transformation/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//Transformation/transfoExecPath"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//RuleGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//RuleGroup/subGroups"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//RuleGroup/expectedRuleValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//RuleGroup/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//RuleGroup/junctionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//RuleGroup/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tysco.ecore#//RuleGroup/contextmodel"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//ExpectedEvaluationValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ExpectedEvaluationValue/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//ExpectedEvaluationValue/associatedRule"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

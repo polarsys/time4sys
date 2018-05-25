@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated tysco -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.marte.analysisrepository.tysco.presentation.TyscoModelWizardID"
+            name="%_UI_TyscoModelWizard_label"
+            class="org.polarsys.time4sys.marte.analysisrepository.tysco.presentation.TyscoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TyscoModelFile.gif">
+         <description>%_UI_TyscoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated tysco -->
+      <editor
+            id="org.polarsys.time4sys.marte.analysisrepository.tysco.presentation.TyscoEditorID"
+            name="%_UI_TyscoEditor_label"
+            icon="icons/full/obj16/TyscoModelFile.gif"
+            extensions="tysco"
+            class="org.polarsys.time4sys.marte.analysisrepository.tysco.presentation.TyscoEditor"
+            contributorClass="org.polarsys.time4sys.marte.analysisrepository.tysco.presentation.TyscoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

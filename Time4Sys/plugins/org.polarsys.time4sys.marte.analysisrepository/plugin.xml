@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated tysco -->
+      <package
+            uri="http://org.polarsys.time4sys.marte.analysisrepository"
+            class="org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage"
+            genModel="model/tysco.genmodel"/>
+   </extension>
+
+</plugin>
