@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="145">
+<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="150">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
@@ -48,6 +48,6 @@
 <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="1.8.0.201706011309"/>
 <repository location="http://download.eclipse.org/releases/oxygen"/>
 </location>
-<location path="C:\Users\didier\Downloads\eclipseNeon-Sirius5\eclipse" type="Profile"/>
+<location path="${eclipse_home}" type="Profile"/>
 </locations>
 </target>
