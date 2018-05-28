@@ -242,6 +242,12 @@
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
+              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
+                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql:self.eInverse('accessTokenElements')->size()>0">
                 <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" showIcon="false" labelExpression="service:formatStepLabel(view)" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
@@ -260,12 +266,6 @@
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-                </style>
-              </conditionnalStyles>
-              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
-                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
               </conditionnalStyles>
             </subNodeMappings>
