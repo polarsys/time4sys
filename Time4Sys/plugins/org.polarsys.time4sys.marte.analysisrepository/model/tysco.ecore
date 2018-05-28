@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tysco" nsURI="http://org.polarsys.time4sys.marte.analysisrepository"
+    nsPrefix="tysco">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisRepository">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="IdCompliance_inv1 IdCompliance_inv2 IdCompliance_inv3"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="IdCompliance_inv1" value="Tuple {&#xA;&#x9;message : String = 'Ids conflicts: there are at least 2 context models whose id is the same',&#xA;&#x9;status : Boolean = allContextModels->forAll(ct1,ct2|ct1 &lt;> ct2 implies ct1.id &lt;> ct2.id)&#xA;}.status"/>
+      <details key="IdCompliance_inv2" value="Tuple {&#xA;&#x9;message : String = 'Ids conflicts: there are at least 2 identification rules whose id is the same',&#xA;&#x9;status : Boolean = allRules->forAll(ir1,ir2|ir1 &lt;> ir2 implies ir1.id &lt;> ir2.id)&#xA;}.status"/>
+      <details key="IdCompliance_inv3" value="Tuple {&#xA;&#x9;message : String = 'Ids conflicts: there are at least 2 tests whose id is the same',&#xA;&#x9;status : Boolean = allTests->forAll(t1,t2|t1 &lt;> t2 implies t1.id &lt;> t2.id)&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allContextModels" upperBound="-1"
+        eType="#//ContextModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allRules" upperBound="-1"
+        eType="#//IdentificationRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allTests" upperBound="-1"
+        eType="#//Test" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="references" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedContexts" upperBound="-1"
+        eType="#//ContextModel" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysisTests" upperBound="-1"
+        eType="#//Test"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootGroup" lowerBound="1"
+        eType="#//RuleGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="truthValues" upperBound="-1"
+        eType="#//ExpectedEvaluationValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruleGroups" upperBound="-1"
+        eType="#//RuleGroup" containment="true" eOpposite="#//RuleGroup/contextmodel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Test">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="IdCompliance_inv4 Characteristic_inv1 Characteristic_inv2"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="IdCompliance_inv4" value="Tuple {&#xA;&#x9;message : String = 'Error: Ids conflicts: there are at least 2 test implementations whose id is the same',&#xA;&#x9;status : Boolean = self.implementations->forAll(impl1,impl2|impl1&lt;>impl2 implies impl1.id&lt;>impl2.id)&#xA;}.status"/>
+      <details key="Characteristic_inv1" value="Tuple {&#xA;&#x9;message : String = 'Error: There are at least 1 sufficient conditions in a test',&#xA;&#x9;status : Boolean = self.characteristics->selectByKind(SufficientCondition)->size()&lt;2&#xA;}.status"/>
+      <details key="Characteristic_inv2" value="Tuple {&#xA;&#x9;message : String = 'Error: There are at least 1 necessary conditions in a test',&#xA;&#x9;status : Boolean = self.characteristics->selectByKind(NecessaryCondition)->size()&lt;2&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="references" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" upperBound="-1"
+        eType="#//TestCharacteristicType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementations" upperBound="-1"
+        eType="#//TestImplementation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentificationRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRules" upperBound="-1"
+        eType="#//IdentificationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equivalentRules" upperBound="-1"
+        eType="#//IdentificationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflictualRules" upperBound="-1"
+        eType="#//IdentificationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formalExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestImplementation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TransformationUnique"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TransformationUnique" value="self.transformation->size()&lt;2"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformation" eType="#//Transformation"
+        containment="true" eOpposite="#//Transformation/testImplementation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="analysisExecPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationResultType">
+    <eLiterals name="True" value="1"/>
+    <eLiterals name="False" value="2"/>
+    <eLiterals name="Undefined"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestCharacteristicType" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TestCharacteristicType_inv1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TestCharacteristicType_inv1" value="Tuple {&#xA;&#x9;message : String = 'Please re-check the related contexts',&#xA;&#x9;status : Boolean = self.referencedContexts->forAll(ct:ContextModel|ct.analysisTests.characteristics->includes(self))&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedContexts" lowerBound="1"
+        upperBound="-1" eType="#//ContextModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SustainabilityType" abstract="true"
+      eSuperTypes="#//TestCharacteristicType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Deadline_Sustainability" eSuperTypes="#//SustainabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Jitter_Sustainability" eSuperTypes="#//SustainabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Period_Sustainability" eSuperTypes="#//SustainabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionTime_Sustainability" eSuperTypes="#//SustainabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeasibilityType" abstract="true" eSuperTypes="#//TestCharacteristicType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SufficientCondition" eSuperTypes="#//FeasibilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NecessaryCondition" eSuperTypes="#//FeasibilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Transformation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="contextRelatedCompliance"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="contextRelatedCompliance" value="Tuple {&#xA;&#x9;message : String = 'The context model specified is irrelevant',&#xA;&#x9;status : Boolean = self.contextModel.analysisTests.implementations.transformation->includes(self)&#xA;}.status"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextModel" lowerBound="1"
+        eType="#//ContextModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testImplementation" eType="#//TestImplementation"
+        derived="true" eOpposite="#//TestImplementation/transformation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transfoExecPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleGroup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subGroups" upperBound="-1"
+        eType="#//RuleGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedRuleValues" upperBound="-1"
+        eType="#//ExpectedEvaluationValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="junctionType" eType="#//JunctionType"
+        defaultValueLiteral="and"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextmodel" lowerBound="1"
+        eType="#//ContextModel" eOpposite="#//ContextModel/ruleGroups"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JunctionType">
+    <eLiterals name="and"/>
+    <eLiterals name="or" value="1"/>
+    <eLiterals name="xor" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TruthType">
+    <eLiterals name="true"/>
+    <eLiterals name="false" value="1"/>
+    <eLiterals name="neutral" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpectedEvaluationValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//TruthType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedRule" lowerBound="1"
+        eType="#//IdentificationRule"/>
+  </eClassifiers>
+</ecore:EPackage>
