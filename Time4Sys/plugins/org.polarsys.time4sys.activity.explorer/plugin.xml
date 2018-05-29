@@ -93,6 +93,16 @@ Describe the sequence of steps of one the selected scenario and represents steps
 		<p>Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.</p>
      </Description>
      <Activity
+           class="org.polarsys.time4sys.activity.explorer.activity.CheckProjectWithAnalysisRepository"
+           id="org.polarsys.time4sys.activity.explorer.design.SimpleReport"
+           image="icons/Transformation.jpg"
+           index="1"
+           name="Analyse model and propose available tools">
+        <Description>
+           Transform your design model into Liu and Layland model and Generate a simple report.
+        </Description>
+     </Activity>
+     <Activity
            class="org.polarsys.time4sys.activity.explorer.activity.DesignSimpleReport"
            id="org.polarsys.time4sys.activity.explorer.design.SimpleReport"
            image="icons/Transformation.jpg"

@@ -34,6 +34,11 @@
 <module>org.polarsys.time4sys.marte.alloc</module>
 <module>org.polarsys.time4sys.marte.alloc.edit</module>
 <module>org.polarsys.time4sys.marte.alloc.editor</module>
+<module>org.polarsys.time4sys.marte.analysisrepository</module>
+<module>org.polarsys.time4sys.marte.analysisrepository.edit</module>
+<module>org.polarsys.time4sys.marte.analysisrepository.editor</module>
+<module>org.polarsys.time4sys.marte.analysisrepository.graphic</module>
+<module>org.polarsys.time4sys.marte.analysisrepository.ui</module>
 <module>org.polarsys.time4sys.marte.coreelements</module>
 <module>org.polarsys.time4sys.marte.coreelements.edit</module>
 <module>org.polarsys.time4sys.marte.coreelements.editor</module>

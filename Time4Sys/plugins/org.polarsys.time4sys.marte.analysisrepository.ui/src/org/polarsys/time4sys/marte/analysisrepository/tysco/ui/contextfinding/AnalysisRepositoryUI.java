@@ -15,6 +15,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
+import org.polarsys.time4sys.model.time4sys.Project;
 
 public class AnalysisRepositoryUI extends TitleAreaDialog {
 
@@ -37,7 +39,7 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 	public AnalysisRepositoryUI(Shell parentShell) {
 		super(parentShell);
 		parent = parentShell;
-		ctrl = new AnalysisRepositoryControler(this);
+		ctrl = new AnalysisRepositoryControler();
 		//image = new Image(Display.getDefault(),"/icons/logolias.jpg");
 	}
 
@@ -80,7 +82,7 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 		browseSystem4Repository.addSelectionListener(new SelectionAdapter() {			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				loadRepositoryInSystem();
+//				loadRepositoryInSystem();
 			}			
 			@Override
 			public void widgetDefaultSelected(SelectionEvent arg0) {	
@@ -95,7 +97,7 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 		browseWorkspace4Repository.addSelectionListener(new SelectionAdapter() {			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				loadRepositoryInWorkspace();
+//				loadRepositoryInWorkspace();
 			}			
 			@Override
 			public void widgetDefaultSelected(SelectionEvent arg0) {	
@@ -126,7 +128,9 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 	    check.addSelectionListener(new SelectionAdapter() {			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				check();
+				Project time4SysModel = WorkspaceUtils.getTime4sysProject();
+
+				check(time4SysModel);
 			}			
 			@Override
 			public void widgetDefaultSelected(SelectionEvent arg0) {	
@@ -137,17 +141,17 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 		return super.createDialogArea(parent);
 	}
 	
-	public void check() {
-		ctrl.check();
+	public void check(Project proj) {
+		ctrl.check(proj);
 	}
 	
-	public void loadRepositoryInSystem(){
-		ctrl.loadRepositoryInSystem();
-	}
-	
-	public void loadRepositoryInWorkspace(){
-		ctrl.loadRepositoryInWorkspace();
-	}
+//	public void loadRepositoryInSystem(){
+//		ctrl.loadRepositoryInSystem();
+//	}
+//	
+//	public void loadRepositoryInWorkspace(){
+//		ctrl.loadRepositoryInWorkspace();
+//	}
 	
 	/*
 	public void loadAaxl() {

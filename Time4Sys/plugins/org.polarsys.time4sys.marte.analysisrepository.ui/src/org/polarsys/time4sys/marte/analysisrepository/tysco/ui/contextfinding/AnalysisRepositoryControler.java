@@ -8,17 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
-
-import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType;
@@ -29,6 +26,10 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Transformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.ArFunctionalUtils;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.GraphModelUtils;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.Result;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.LanguageValidatorUtils;
 import org.polarsys.time4sys.model.time4sys.Project;
 
@@ -41,15 +42,10 @@ import eclipseview.polarsys.ui.components.GraphModelPackage;
 import eclipseview.polarsys.ui.components.Node;
 import eclipseview.polarsys.ui.graphmodel.PolarsysGraphView;
 
-import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.ArFunctionalUtils;
-import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.GraphModelUtils;
-import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.Result;
-import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
-
 public class AnalysisRepositoryControler {
 	
 	/** Controler of User Interface **/
-	private AnalysisRepositoryUI ui;
+//	private AnalysisRepositoryUI ui;
 	private AnalysisRepository analysisRepository;
 	private Project time4SysModel;
 	private AnalysisRepositoryResultUI resultUI;
@@ -58,6 +54,8 @@ public class AnalysisRepositoryControler {
 	private List<Result> results;
 	
 	private GraphModelFactory factory;
+	
+	private Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 	
 	private static final String[] AnalysisRepository_Name = {
 		      					"Analysis Repository (*.tysco)",
@@ -68,8 +66,7 @@ public class AnalysisRepositoryControler {
 	 * Constructeur avec param
 	 * @param ui
 	 */
-	public AnalysisRepositoryControler(AnalysisRepositoryUI ui) {
-		this.ui = ui;
+	public AnalysisRepositoryControler() {
 		results = new ArrayList<Result>();
 		appropriateContexts = new ArrayList<ContextModel>();
 		violatedGroupIdLists = new ArrayList<List<Integer>>();
@@ -80,19 +77,14 @@ public class AnalysisRepositoryControler {
 	/**
 	 * check
 	 */
-	public void check() {
+	public void check(Project time4SysModel) {
 		
-		// Vérifier la conformité
-		//TODO: Remplacer par une préférence
-		String repositoryLocation = ui.getRepositoryLocation();
+		final String repositoryLocation = AnalysisRepositoryPlugin.getDefault().getPreferenceStore().getString("AnalysisRepositoryPath");
+
 		if (repositoryLocation==null||repositoryLocation.trim().compareTo("")==0) {
-		//	ui.setNotification("Please choose Analysis Repository file (*.mosartbackend_analysisrepository)");
 			return;
 		}
-	
-		time4SysModel = WorkspaceUtils.getTime4sysProject();
-			
-		if (time4SysModel==null) ui.setNotification("Cannot get System Instance in selected resource");
+				
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> map = reg.getExtensionToFactoryMap();
 		map.put("tysco", new XMIResourceFactoryImpl());
@@ -111,7 +103,6 @@ public class AnalysisRepositoryControler {
 		
 		if (analysisRepository!=null&&time4SysModel!=null) {
 			// Fermer la fenetre courante
-			ui.close();
 			Result result;
 			
 			if(analysisRepository.getAllRules()!=null) {
@@ -134,9 +125,9 @@ public class AnalysisRepositoryControler {
 			// Afficher les résultats
 			//appropriateContexts = ParadUtils.findAppropriateContexts(analysisRepository,results);
 			appropriateContexts = ArFunctionalUtils.findAppropriateContexts(analysisRepository,results,violatedGroupIdLists);
-			resultUI = new AnalysisRepositoryResultUI(ui.getShell(),this);
+			resultUI = new AnalysisRepositoryResultUI(shell, this);
 			resultUI.open();
-		}	
+		}
 	}
 		
 	
@@ -267,45 +258,6 @@ public class AnalysisRepositoryControler {
 	}
 	
 	
-	/**
-	 * find file *.tysco
-	 */
-	public void loadRepositoryInWorkspace() {
-		//String repositoryLocation = getFileLocation("mosartbackend_analysisrepository");
-		//ui.setRepositoryLocation(repositoryLocation);
-	
-	    FileDialog dlg = new FileDialog(ui.getShell(), SWT.OPEN);
-	    dlg.setFilterNames(AnalysisRepository_Name);
-	    dlg.setFilterExtensions(AnalysisRepository_Extension); 
-	    dlg.setFilterPath(ResourcesPlugin.getWorkspace().getRoot().getLocation().toString());
-	    String repositoryLocation = dlg.open();
-	    if (repositoryLocation != null) {
-	        ui.setRepositoryLocation(repositoryLocation);
-	    } else {
-	    	ui.setNotification("Cannot get Analysis Repository, please check the location");
-	    }
-	}
-	
-	
-	/**
-	 * find file *.tysco
-	 */
-	public void loadRepositoryInSystem() {
-		//String repositoryLocation = getFileLocation("mosartbackend_analysisrepository");
-		//ui.setRepositoryLocation(repositoryLocation);
-	
-	    FileDialog dlg = new FileDialog(ui.getShell(), SWT.OPEN);
-	    dlg.setFilterNames(AnalysisRepository_Name);
-	    dlg.setFilterExtensions(AnalysisRepository_Extension);
-	    dlg.setFilterPath(System.getProperty("user.home"));
-	    String repositoryLocation = dlg.open();
-	    if (repositoryLocation != null) {
-	        ui.setRepositoryLocation(repositoryLocation);
-	    } else {
-	    	ui.setNotification("Cannot get Analysis Repository, please check the location");
-	    }
-	}
-
 	public AnalysisRepository getAnalysisRepository() {
 		return analysisRepository;
 	}
@@ -542,7 +494,7 @@ public class AnalysisRepositoryControler {
 		fillGraph(rootGroup,graphModel,rootNode, violatedGroupIdList);	
 		
 		// Visualize graph model
-		PolarsysGraphView view = new PolarsysGraphView(ui.getShell());
+		PolarsysGraphView view = new PolarsysGraphView(shell);
 		view.visualize(graphModel);
 	}
 	

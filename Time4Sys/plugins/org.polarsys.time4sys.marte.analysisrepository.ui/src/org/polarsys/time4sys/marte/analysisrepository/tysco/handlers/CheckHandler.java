@@ -11,11 +11,16 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.AnalysisRepositoryControler;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.AnalysisRepositoryUI;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
 import org.polarsys.time4sys.model.time4sys.Project;
 
 
 public class CheckHandler extends AbstractHandler {
+	
+	private AnalysisRepositoryControler ctrl;
+
 	/**
 	 * @generated NOT
 	 */	
@@ -26,16 +31,9 @@ public class CheckHandler extends AbstractHandler {
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		if (window==null||window.getShell()==null) return null;
-		Shell shell = window.getShell();
-		AnalysisRepositoryUI ui = new AnalysisRepositoryUI(shell);
-		ui.setBlockOnOpen(true);
-		
-		   // Open the main window
-		int returnCode = ui.open();
-		if (returnCode==Window.CANCEL||returnCode==Window.OK) return null;
-
+		ctrl = new AnalysisRepositoryControler();
+		Project time4SysModel = WorkspaceUtils.getTime4sysProject();
+		ctrl.check(time4SysModel);
 		return null;
 	}
 	

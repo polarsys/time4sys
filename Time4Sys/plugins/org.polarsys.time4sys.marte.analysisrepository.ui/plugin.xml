@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.polarsys.time4sys.marte.analysisrepository.tysco.handlers.CheckHandler"
+            id="org.polarsys.time4sys.marte.analysisrepository.check_available_test"
+            name="Check Available Tests">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="org.polarsys.time4sys.marte.analysisrepository.menu"
+               label="Tysco">
+            <command
+                  commandId="org.polarsys.time4sys.marte.analysisrepository.check_available_test"
+                  icon="icons/time4sys.png"
+                  label="Check Available Tests"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.AnalysisRepositoryPreferencePage"
+            id="org.polarsys.time4sys.marte.analysisrepository.edit.page1"
+            name="Analysis Repository">
+      </page>
+   </extension>
+
+</plugin>
