@@ -49,6 +49,7 @@ import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
+import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.Reference;
@@ -1214,6 +1215,12 @@ public class BehaviorScenarioServices {
 	}
 	
 	public static void setSynchronisedWithArinc653Partition(final EObject context, final Object newValue, final Object eInverse) {
+		Boolean toBeSynchronised = (newValue != null);
+		if (newValue instanceof Boolean) {
+			toBeSynchronised = (Boolean)newValue;
+		} else if (newValue != null) {
+			toBeSynchronised = Boolean.parseBoolean(newValue.toString());
+		}
 		final SoftwareSchedulableResource task = unwrap(context, SoftwareSchedulableResource.class);
 		final SoftwareSchedulableResource parent = unwrap(task.eContainer(), SoftwareSchedulableResource.class);
 		if (Arinc653MIFBuilder.isInstance(parent)) {
@@ -1225,7 +1232,15 @@ public class BehaviorScenarioServices {
 						for(WorkloadEvent cause: ((Step)maybeStep).getCause()) {
 							final ArrivalPattern pattern = cause.getPattern();
 							if (pattern != null) {
-								pattern.setReference(reference);
+								if (toBeSynchronised) {
+									if (!pattern.eIsSet(GqamPackage.eINSTANCE.getArrivalPattern_Reference())) {
+										pattern.setReference(reference);
+									}
+								} else {
+									if (pattern.getReference() == reference) {
+										pattern.setReference(null);
+									}
+								}
 							}
 						}
 					}

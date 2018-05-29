@@ -242,6 +242,12 @@
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
+              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
+                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql:self.eInverse('accessTokenElements')->size()>0">
                 <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" showIcon="false" labelExpression="service:formatStepLabel(view)" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
@@ -260,12 +266,6 @@
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-                </style>
-              </conditionnalStyles>
-              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
-                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
               </conditionnalStyles>
             </subNodeMappings>
@@ -2109,17 +2109,17 @@
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="PSSPriority" label="Priority" labelExpression="Priority" valueExpression="aql:getPSSPriority()">
+        <controls xsi:type="properties:TextDescription" name="PSSPriority" label="Priority" labelExpression="Priority" valueExpression="aql:self.getPSSPriority()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSPriority(newValue)"/>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="PSSBackgroundPriority" labelExpression="Background Priority" valueExpression="aql:getPSSBackgroundPriority()">
+        <controls xsi:type="properties:TextDescription" name="PSSBackgroundPriority" labelExpression="Background Priority" valueExpression="aql:self.getPSSBackgroundPriority()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSBackgroundPriority(newValue)"/>
           </initialOperation>
         </controls>
-        <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:getPSSInitialTimeBudget()">
+        <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:self.getPSSInitialTimeBudget()">
           <initialOperation>
             <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSInitialTimeBudget(newValue)"/>
           </initialOperation>
