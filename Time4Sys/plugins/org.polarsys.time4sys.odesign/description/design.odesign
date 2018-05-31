@@ -93,7 +93,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="Constraint" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="annotation.Constraint">
-          <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="aql:'['+self.kind+']'+self.name" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+          <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="aql:'['+self.kind+']\n'+self.name" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW" width="10" height="7">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -1102,7 +1102,7 @@
               <viewVariable name="containerView"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
-                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SchedulingObserver" referenceName="ownedRule"/>
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sam.SchedulingObserver" referenceName="ownedRule"/>
                 </firstModelOperations>
               </initialOperation>
             </tools>
