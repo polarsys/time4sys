@@ -983,7 +983,7 @@ public class BehaviorScenarioServices {
 		return areAllWrappedOfType(context, views, HardwareProcessor.class);
 	}
 	
-	public static boolean isArinc653Platform(final EObject context, final EObject value) {
+	public static boolean isArinc653Platform(final EObject value) {
 		final HardwareProcessor proc = unwrap(value, HardwareProcessor.class);
 		if (proc != null) {
 			return Arinc653PlatformBuilder.isInstance(proc);
