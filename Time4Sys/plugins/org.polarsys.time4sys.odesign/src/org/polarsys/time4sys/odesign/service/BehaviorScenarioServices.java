@@ -7,10 +7,11 @@
  *
  * Contributors:
  *     Aurelien Didier - initial API and implementation
- *     Loïc Fejoz      - Arinc653 related implemenetation 
+ *     Loïc Fejoz      - Arinc653 related implemenetation , Liu & Layland related
  *******************************************************************************/
 package org.polarsys.time4sys.odesign.service;
 
+import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,7 +22,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.BorderedStyle;
 import org.eclipse.sirius.diagram.DDiagram;
@@ -40,6 +40,7 @@ import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.swt.graphics.RGB;
+import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653SpareTaskBuilder;
@@ -52,11 +53,15 @@ import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
+import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
+import org.polarsys.time4sys.marte.grm.ComputingResource;
+import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
+import org.polarsys.time4sys.marte.grm.SecondaryScheduler;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.nfp.Duration;
@@ -65,8 +70,9 @@ import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
+import org.polarsys.time4sys.odesign.OdesignFactory;
+import org.polarsys.time4sys.odesign.UtilizationStat;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
-import org.polarsys.time4sys.odesign.helper.EcoreUtil2;
 import org.polarsys.time4sys.odesign.helper.ShapeUtil;
 
 @SuppressWarnings("restriction")
@@ -1290,5 +1296,104 @@ public class BehaviorScenarioServices {
 		if (task != null) {
 			Arinc653SpareTaskBuilder.asSpare(task);
 		}
+	}
+
+	/**
+	 * Get the utilization on period.
+	 * Either for a Step, or for an Hardware
+	 * @param value
+	 * @return
+	 */
+	public static UtilizationStat getUtilizationStat(final EObject value) {
+		// context aql:container.eInverse('concurRes')->first()
+		// aql:self.worstCET.div(self.cause.pattern->filter(gqam::PeriodicPattern)->first().period).toString()
+		final Step aStep = unwrap(value, Step.class);
+		if (aStep != null) {
+			final Duration period = getPeriod(aStep);
+			double u = aStep.getWorstCET().div(period, MathContext.DECIMAL64);
+			UtilizationStat result = OdesignFactory.eINSTANCE.createUtilizationStat();
+			result.setUtilization(u);
+			result.setNotSchedulable(u > 1.0);
+			result.setMaybeSchedulable(false);
+			result.setIsSchedulable(false);
+			return result;
+			//return new UtilizationStat(u, u > 1.0, false);
+		}
+		final ComputingResource aProc = unwrap(value, ComputingResource.class);
+		if (aProc != null) {
+			return getContainerUtilizationStat(aProc);
+		}
+		final SoftwareSchedulableResource aPartition = unwrap(value, SoftwareSchedulableResource.class);
+		if (aPartition != null && isArinc653Partition(aPartition)) {
+			return getContainerUtilizationStat(aPartition);
+		}
+		return null;
+	}
+
+	protected static UtilizationStat getContainerUtilizationStat(final EObject aProc) {
+		// Get all steps having only one step periodicaly activations
+		double utilization = 0.0;
+		final Collection<Step> allPeriodicSteps = getAllPeriodicSteps(aProc);
+		final int n = allPeriodicSteps.size();
+		double hyperbolicBound = 1.0;
+		for(Step anotherStep: allPeriodicSteps) {
+			final Duration period = getPeriod(anotherStep);
+			double u = anotherStep.getWorstCET().div(period, MathContext.DECIMAL64);
+			utilization += u;
+			hyperbolicBound = hyperbolicBound * (u + 1.0);
+		}
+		//final double liuLaylandLimit =  n * (Math.pow(2, 1.0 / n) - 1);
+		UtilizationStat result = OdesignFactory.eINSTANCE.createUtilizationStat();
+		result.setUtilization(utilization);
+		result.setNotSchedulable(utilization > 1.0);
+		result.setMaybeSchedulable(hyperbolicBound > 2.0);
+		result.setIsSchedulable(hyperbolicBound <= 2.0);
+		return result;
+	}
+	
+	/**
+	 * Get all periodic steps of the ComputingResource container
+	 * @param container
+	 * @return
+	 */
+	public static Collection<Step> getAllPeriodicSteps(final EObject container) {
+		final LinkedList<Step> steps = new LinkedList<>();
+		final ComputingResource aProc = unwrap(container, ComputingResource.class);
+		SoftwareSchedulableResource aPartition = unwrap(container, SoftwareSchedulableResource.class);
+		if (!isArinc653Partition(aPartition)) {
+			aPartition = null;
+		}
+		final DesignModel design = DesignBuilder.searchDesign(aProc);
+		for(WorkloadEvent evt: design.getWorkloadBehavior().getDemand()) {
+			if (evt.getPattern() instanceof PeriodicPattern) {
+				final PeriodicPattern pattern = (PeriodicPattern)evt.getPattern();
+				if (evt.getEffect() instanceof Step) {
+					final Step aStep = (Step)evt.getEffect();
+					final SchedulableResource schedRes = aStep.getConcurRes();
+					if (schedRes instanceof SoftwareSchedulableResource) {
+						if (schedRes.getHost().getHost() == aProc) {
+							steps.add(aStep);
+						}
+						if (schedRes.getHost() instanceof SecondaryScheduler) {
+							if (((SecondaryScheduler)schedRes.getHost()).getVirtualProcessingUnit().contains(aPartition)) {
+								steps.add(aStep);
+							}
+						}
+					}
+				}
+			}
+		}
+		return steps;
+	}
+
+	public static Duration getPeriod(final EObject value) {
+		final Step aStep = unwrap(value, Step.class);
+		for(WorkloadEvent evt: aStep.getCause()) {
+			final ArrivalPattern pattern = evt.getPattern();
+			if (pattern instanceof PeriodicPattern) {
+					return ((PeriodicPattern)pattern).getPeriod();
+			}
+		}
+		return null;
 	}
 }

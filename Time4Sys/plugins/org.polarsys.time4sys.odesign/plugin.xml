@@ -74,4 +74,12 @@
         </Priority>
      </editpartProvider>
   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated odesign -->
+      <package
+            uri="http://www.polarsys.org/time4sys/siriusdesign/1.0"
+            class="org.polarsys.time4sys.odesign.OdesignPackage"
+            genModel="model/odesign.genmodel"/>
+   </extension>
+
 </plugin>

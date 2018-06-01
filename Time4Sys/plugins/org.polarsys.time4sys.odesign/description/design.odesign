@@ -2002,6 +2002,7 @@
                   <subModelOperations xsi:type="tool:SetValue" featureName="involvedElement" valueExpression="var:execStep"/>
                 </subModelOperations>
               </subModelOperations>
+              <subModelOperations xsi:type="tool:SetValue" featureName="isPreemptable" valueExpression="true"/>
             </subModelOperations>
           </firstModelOperation>
         </create>
@@ -2024,6 +2025,7 @@
                   <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="FixedPriority"/>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="var:policy"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Preemptive FP"/>
               </subModelOperations>
               <subModelOperations xsi:type="tool:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
             </subModelOperations>
@@ -2037,7 +2039,25 @@
       <ownedColumnMappings name="WCET" label="WCET" headerLabelExpression="WCET" featureName="worstCET" labelExpression="aql:self.worstCET.toString()" featureParentExpression="aql:container.eInverse('concurRes')->first()"/>
       <ownedColumnMappings name="Period" label="Period" headerLabelExpression="Period" featureName="period" labelExpression="aql:self.period.toString()" featureParentExpression="aql:container.eInverse('concurRes').cause.pattern->filter(gqam::PeriodicPattern)->first()"/>
       <ownedColumnMappings name="Deadline" label="Relative Deadline" headerLabelExpression="Relative Deadline" featureName="endToEndDeadline" labelExpression="aql:self.endToEndDeadline.toString()" featureParentExpression="aql:container.eInverse('concurRes').eInverse('involvedElement')->union(container.eInverse('concurRes').eInverse('endToEndScenario'))->filter(sam::EndToEndFlow)->first()"/>
-      <ownedColumnMappings name="Priority" label="Priority" headerLabelExpression="Priority" featureName="priority" featureParentExpression="aql:container.schedParams->filter(grm::FixedPriorityParameters)->first()"/>
+      <ownedColumnMappings name="Priority" label="Priority" headerLabelExpression="Priority" featureName="priority" labelExpression="aql:self.period" featureParentExpression="aql:container.schedParams->filter(grm::FixedPriorityParameters)->first()"/>
+      <ownedColumnMappings name="u_period" headerLabelExpression="u_period" canEdit="false" featureName="*" labelExpression="aql:self.utilization" featureParentExpression="aql:container.eInverse('concurRes')->union(OrderedSet{container})->first().getUtilizationStat()">
+        <backgroundConditionalStyle predicateExpression="aql:self.notSchedulable">
+          <style>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </backgroundConditionalStyle>
+        <backgroundConditionalStyle predicateExpression="aql:self.maybeSchedulable">
+          <style>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </backgroundConditionalStyle>
+        <backgroundConditionalStyle predicateExpression="aql:self.isSchedulable">
+          <style>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </backgroundConditionalStyle>
+      </ownedColumnMappings>
+      <ownedColumnMappings name="u_deadline" headerLabelExpression="u_deadline" canEdit="false" featureName="*" labelExpression="aql:self.worstCET.div(self.eInverse('involvedElement')->union(container.eInverse('concurRes').eInverse('endToEndScenario'))->filter(sam::EndToEndFlow)->first().endToEndDeadline)" featureParentExpression="aql:container.eInverse('concurRes')->first()"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
