@@ -15,7 +15,7 @@ package org.polarsys.time4sys.trace;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EModelElement;
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**
@@ -51,7 +51,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  * @model
  * @generated
  */
-public interface Slice extends EObject {
+public interface Slice extends EModelElement {
 	/**
 	 * Returns the value of the '<em><b>Events</b></em>' reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.trace.Event}.

@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="Return the Events of this slice ordered by timestamp."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Trace">
+  <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
         eType="#//Event" containment="true" eOpposite="#//Event/trace"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" lowerBound="1" eType="#//NFP_TimeInterval"/>
@@ -18,7 +18,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="#//NFP_Duration"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Event">
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" lowerBound="1"
         eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="#//Trace"
@@ -56,7 +56,7 @@
     <eLiterals name="RECEIVED" value="2"/>
     <eLiterals name="ERROR" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Slice">
+  <eClassifiers xsi:type="ecore:EClass" name="Slice" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A slice is an aggregation of Events so as to group them together in a logical way.&#xA;For instance, it could be:&#xA;&#xA;* the Gantt line view of a processor usage,&#xA;* an end-to-end dataflow,&#xA;* an end-to-end network packet travel,&#xA;* etc."/>
     </eAnnotations>
@@ -99,7 +99,7 @@
     <eLiterals name="TEMPORAL_CHAIN" value="11"/>
     <eLiterals name="OS" value="12"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Properties">
+  <eClassifiers xsi:type="ecore:EClass" name="Properties" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="#//NFP_TimeInterval"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockingTime" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionTime" eType="#//NFP_Duration"/>

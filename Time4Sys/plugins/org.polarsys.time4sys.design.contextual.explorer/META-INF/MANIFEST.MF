@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Design Contextual Explorer contribution
 Bundle-Vendor: Time4Sys Project
 Bundle-SymbolicName: org.polarsys.time4sys.design.contextual.explorer;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,

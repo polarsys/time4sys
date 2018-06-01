@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,13 +84,22 @@ public interface TracePackage extends EPackage {
 	int TRACE = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__EVENTS = 0;
+	int TRACE__EVENTS = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Range</b></em>' attribute.
@@ -98,7 +108,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__RANGE = 1;
+	int TRACE__RANGE = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Slices</b></em>' containment reference list.
@@ -107,7 +117,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__SLICES = 2;
+	int TRACE__SLICES = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Host Id</b></em>' attribute.
@@ -116,7 +126,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__HOST_ID = 3;
+	int TRACE__HOST_ID = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Precision</b></em>' attribute.
@@ -125,7 +135,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE__PRECISION = 4;
+	int TRACE__PRECISION = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Trace</em>' class.
@@ -134,7 +144,16 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_FEATURE_COUNT = 5;
+	int TRACE_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Trace</em>' class.
@@ -143,7 +162,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_OPERATION_COUNT = 0;
+	int TRACE_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.EventImpl <em>Event</em>}' class.
@@ -156,13 +175,22 @@ public interface TracePackage extends EPackage {
 	int EVENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__TIMESTAMP = 0;
+	int EVENT__TIMESTAMP = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Trace</b></em>' container reference.
@@ -171,7 +199,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__TRACE = 1;
+	int EVENT__TRACE = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>About</b></em>' reference list.
@@ -180,7 +208,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT__ABOUT = 2;
+	int EVENT__ABOUT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Event</em>' class.
@@ -189,7 +217,16 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = 3;
+	int EVENT_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Event</em>' class.
@@ -198,7 +235,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_OPERATION_COUNT = 0;
+	int EVENT_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.ResourceEventImpl <em>Resource Event</em>}' class.
@@ -209,6 +246,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_EVENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_EVENT__EANNOTATIONS = EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -256,6 +302,15 @@ public interface TracePackage extends EPackage {
 	int RESOURCE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_EVENT___GET_EANNOTATION__STRING = EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Resource Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -273,6 +328,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int SCHEDULING_EVENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_EVENT__EANNOTATIONS = EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -320,6 +384,15 @@ public interface TracePackage extends EPackage {
 	int SCHEDULING_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCHEDULING_EVENT___GET_EANNOTATION__STRING = EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Scheduling Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -337,6 +410,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int MESSAGE_EVENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_EVENT__EANNOTATIONS = EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -384,6 +466,15 @@ public interface TracePackage extends EPackage {
 	int MESSAGE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_EVENT___GET_EANNOTATION__STRING = EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Message Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -403,13 +494,22 @@ public interface TracePackage extends EPackage {
 	int SLICE = 5;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLICE__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Events</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__EVENTS = 0;
+	int SLICE__EVENTS = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owned Sub Slices</b></em>' containment reference list.
@@ -418,7 +518,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__OWNED_SUB_SLICES = 1;
+	int SLICE__OWNED_SUB_SLICES = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -427,7 +527,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__PARENT = 2;
+	int SLICE__PARENT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -436,7 +536,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__NAME = 3;
+	int SLICE__NAME = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -445,7 +545,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__KIND = 4;
+	int SLICE__KIND = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference.
@@ -454,7 +554,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__PROPERTIES = 5;
+	int SLICE__PROPERTIES = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Sub Slices</b></em>' reference list.
@@ -463,7 +563,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__SUB_SLICES = 6;
+	int SLICE__SUB_SLICES = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Kind Label</b></em>' attribute.
@@ -472,7 +572,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE__KIND_LABEL = 7;
+	int SLICE__KIND_LABEL = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Slice</em>' class.
@@ -481,7 +581,16 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE_FEATURE_COUNT = 8;
+	int SLICE_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLICE___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Hierarchical Name</em>' operation.
@@ -490,7 +599,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE___GET_HIERARCHICAL_NAME__STRING = 0;
+	int SLICE___GET_HIERARCHICAL_NAME__STRING = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Aggregated Events</em>' operation.
@@ -499,7 +608,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE___GET_AGGREGATED_EVENTS = 1;
+	int SLICE___GET_AGGREGATED_EVENTS = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Latest Timestamp</em>' operation.
@@ -508,7 +617,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE___GET_LATEST_TIMESTAMP = 2;
+	int SLICE___GET_LATEST_TIMESTAMP = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Slice</em>' class.
@@ -517,7 +626,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLICE_OPERATION_COUNT = 3;
+	int SLICE_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.PropertiesImpl <em>Properties</em>}' class.
@@ -530,13 +639,22 @@ public interface TracePackage extends EPackage {
 	int PROPERTIES = 6;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTIES__EANNOTATIONS = EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Range</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__RANGE = 0;
+	int PROPERTIES__RANGE = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -545,7 +663,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__BLOCKING_TIME = 1;
+	int PROPERTIES__BLOCKING_TIME = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Execution Time</b></em>' attribute.
@@ -554,7 +672,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__EXECUTION_TIME = 2;
+	int PROPERTIES__EXECUTION_TIME = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Remaining Time</b></em>' attribute.
@@ -563,7 +681,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__REMAINING_TIME = 3;
+	int PROPERTIES__REMAINING_TIME = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Response Time</b></em>' attribute.
@@ -572,7 +690,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__RESPONSE_TIME = 4;
+	int PROPERTIES__RESPONSE_TIME = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadline</b></em>' attribute.
@@ -581,7 +699,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__ABSOLUTE_DEADLINE = 5;
+	int PROPERTIES__ABSOLUTE_DEADLINE = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
@@ -590,7 +708,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES__INDEX = 6;
+	int PROPERTIES__INDEX = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
@@ -599,7 +717,16 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES_FEATURE_COUNT = 7;
+	int PROPERTIES_FEATURE_COUNT = EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTIES___GET_EANNOTATION__STRING = EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Properties</em>' class.
@@ -608,7 +735,7 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES_OPERATION_COUNT = 0;
+	int PROPERTIES_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.trace.impl.ValueChangeEventImpl <em>Value Change Event</em>}' class.
@@ -619,6 +746,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int VALUE_CHANGE_EVENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_CHANGE_EVENT__EANNOTATIONS = EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -675,6 +811,15 @@ public interface TracePackage extends EPackage {
 	int VALUE_CHANGE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING = EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Value Change Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -692,6 +837,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int OBJECT_VALUE_CHANGE_EVENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT__EANNOTATIONS = VALUE_CHANGE_EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -757,6 +911,15 @@ public interface TracePackage extends EPackage {
 	int OBJECT_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING = VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Object Value Change Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -774,6 +937,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int DURATION_VALUE_CHANGE_EVENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT__EANNOTATIONS = VALUE_CHANGE_EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -839,6 +1011,15 @@ public interface TracePackage extends EPackage {
 	int DURATION_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING = VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Duration Value Change Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -856,6 +1037,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int DATA_SIZE_VALUE_CHANGE_EVENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT__EANNOTATIONS = VALUE_CHANGE_EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -921,6 +1111,15 @@ public interface TracePackage extends EPackage {
 	int DATA_SIZE_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING = VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Data Size Value Change Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -938,6 +1137,15 @@ public interface TracePackage extends EPackage {
 	 * @generated
 	 */
 	int NUMBER_VALUE_CHANGE_EVENT = 11;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT__EANNOTATIONS = VALUE_CHANGE_EVENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
@@ -1001,6 +1209,15 @@ public interface TracePackage extends EPackage {
 	 * @ordered
 	 */
 	int NUMBER_VALUE_CHANGE_EVENT_FEATURE_COUNT = VALUE_CHANGE_EVENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING = VALUE_CHANGE_EVENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Number Value Change Event</em>' class.

@@ -318,4 +318,11 @@ public class Arinc653MIFBuilder {
 		return startRef;
 	}
 
+	/**
+	 * Mark the underlying SoftwareSchedulableResource as not an Arinc 653 partition
+	 */
+	public void setNotAPartition() {
+		Annotations.setAttr(taskBuilder.build(), Arinc653Builder.ARINC653_URL, PARTITION_ATTR, Boolean.FALSE.toString());
+	}
+
 }

@@ -12,9 +12,11 @@
  */
 package org.polarsys.time4sys.trace.util;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.trace.*;
 import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
 import org.polarsys.time4sys.trace.DurationValueChangeEvent;
 import org.polarsys.time4sys.trace.Event;
@@ -89,12 +91,14 @@ public class TraceSwitch<T> extends Switch<T> {
 			case TracePackage.TRACE: {
 				Trace trace = (Trace)theEObject;
 				T result = caseTrace(trace);
+				if (result == null) result = caseEModelElement(trace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TracePackage.EVENT: {
 				Event event = (Event)theEObject;
 				T result = caseEvent(event);
+				if (result == null) result = caseEModelElement(event);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,6 +106,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				ResourceEvent resourceEvent = (ResourceEvent)theEObject;
 				T result = caseResourceEvent(resourceEvent);
 				if (result == null) result = caseEvent(resourceEvent);
+				if (result == null) result = caseEModelElement(resourceEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,6 +114,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				SchedulingEvent schedulingEvent = (SchedulingEvent)theEObject;
 				T result = caseSchedulingEvent(schedulingEvent);
 				if (result == null) result = caseEvent(schedulingEvent);
+				if (result == null) result = caseEModelElement(schedulingEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,18 +122,21 @@ public class TraceSwitch<T> extends Switch<T> {
 				MessageEvent messageEvent = (MessageEvent)theEObject;
 				T result = caseMessageEvent(messageEvent);
 				if (result == null) result = caseEvent(messageEvent);
+				if (result == null) result = caseEModelElement(messageEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TracePackage.SLICE: {
 				Slice slice = (Slice)theEObject;
 				T result = caseSlice(slice);
+				if (result == null) result = caseEModelElement(slice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TracePackage.PROPERTIES: {
 				Properties properties = (Properties)theEObject;
 				T result = caseProperties(properties);
+				if (result == null) result = caseEModelElement(properties);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +144,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				ValueChangeEvent valueChangeEvent = (ValueChangeEvent)theEObject;
 				T result = caseValueChangeEvent(valueChangeEvent);
 				if (result == null) result = caseEvent(valueChangeEvent);
+				if (result == null) result = caseEModelElement(valueChangeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,6 +153,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				T result = caseObjectValueChangeEvent(objectValueChangeEvent);
 				if (result == null) result = caseValueChangeEvent(objectValueChangeEvent);
 				if (result == null) result = caseEvent(objectValueChangeEvent);
+				if (result == null) result = caseEModelElement(objectValueChangeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -151,6 +162,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				T result = caseDurationValueChangeEvent(durationValueChangeEvent);
 				if (result == null) result = caseValueChangeEvent(durationValueChangeEvent);
 				if (result == null) result = caseEvent(durationValueChangeEvent);
+				if (result == null) result = caseEModelElement(durationValueChangeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -159,6 +171,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				T result = caseDataSizeValueChangeEvent(dataSizeValueChangeEvent);
 				if (result == null) result = caseValueChangeEvent(dataSizeValueChangeEvent);
 				if (result == null) result = caseEvent(dataSizeValueChangeEvent);
+				if (result == null) result = caseEModelElement(dataSizeValueChangeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,6 +180,7 @@ public class TraceSwitch<T> extends Switch<T> {
 				T result = caseNumberValueChangeEvent(numberValueChangeEvent);
 				if (result == null) result = caseValueChangeEvent(numberValueChangeEvent);
 				if (result == null) result = caseEvent(numberValueChangeEvent);
+				if (result == null) result = caseEModelElement(numberValueChangeEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -351,6 +365,21 @@ public class TraceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNumberValueChangeEvent(NumberValueChangeEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
 		return null;
 	}
 

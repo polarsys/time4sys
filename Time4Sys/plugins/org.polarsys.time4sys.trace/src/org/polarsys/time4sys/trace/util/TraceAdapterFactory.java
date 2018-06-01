@@ -15,6 +15,7 @@ package org.polarsys.time4sys.trace.util;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
 import org.polarsys.time4sys.trace.DurationValueChangeEvent;
@@ -133,6 +134,10 @@ public class TraceAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNumberValueChangeEvent(NumberValueChangeEvent object) {
 				return createNumberValueChangeEventAdapter();
+			}
+			@Override
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -319,6 +324,20 @@ public class TraceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNumberValueChangeEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.emf.ecore.EModelElement
+	 * @generated
+	 */
+	public Adapter createEModelElementAdapter() {
 		return null;
 	}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:properties-ext-widgets-reference="http://www.eclipse.org/sirius/properties/1.0.0/ext/widgets/reference" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="design" version="12.0.0.2017041100">
   <ownedViewpoints name="Design" modelFileExtension="time4sys design">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Drop%20Element'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.0/@ownedTools[name='HwResource2HwResource']" name="Design Architecture" titleExpression="aql:'['+self.eContainer().name+'] Design Architecture diagram'" domainClass="design.DesignModel">
       <metamodel href="../../org.polarsys.time4sys.marte/model/design.ecore#/"/>
@@ -52,7 +52,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::Once)">
-            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Sliding Window Event\n' + 'Jitter: '+ self.jitter + '\nWindow Size: ' + self.windowSize + '\nNb Events: ' + self.nbEvents" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/once.png">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Once Event\n' + 'Jitter: '+ self.jitter" resizeKind="NSEW" arcWidth="1" arcHeight="1" workspacePath="/org.polarsys.time4sys.odesign/images/once.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -72,7 +72,7 @@
           </style>
         </nodeMappings>
         <nodeMappings name="Constraint" doubleClickDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Open%20Design%20properties%20wizard']" domainClass="annotation.Constraint">
-          <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="aql:'['+self.kind+']'+self.name" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW" width="10" height="7">
+          <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="aql:'['+self.kind+']\n'+self.name" sizeComputationExpression="7" labelPosition="node" resizeKind="NSEW" width="10" height="7">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_yellow']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -221,6 +221,12 @@
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
+              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
+                <style xsi:type="style:SquareDescription" borderLineStyle="dash" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql:self.eInverse('accessTokenElements')->size()>0">
                 <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" showIcon="false" labelExpression="service:formatStepLabel(view)" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomBlue']">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
@@ -239,19 +245,6 @@
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-                </style>
-              </conditionnalStyles>
-              <conditionnalStyles predicateExpression="aql:self.isSpareStep()">
-                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:formatStepLabel(view)" sizeComputationExpression="2" resizeKind="NSEW" color="//@userColorsPalettes[name=null]/@entries[name='CustomGrayedBlue']">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                </style>
-              </conditionnalStyles>
-              <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(gqam::CommunicationStep)">
-                <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
                 </style>
               </conditionnalStyles>
             </subNodeMappings>
@@ -317,17 +310,27 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="aql:self.isArinc653Partition()">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="7" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.isSpareTask()">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" borderLineStyle="dash" labelSize="7" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(gqam::CommunicationChannel)">
             <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/ComChannel.gif" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomPurple']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
-            </style>
-          </conditionnalStyles>
-          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::SoftwareSchedulableResource)">
-            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']" foregroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomLightGreen']">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::Alarm)">
@@ -338,6 +341,12 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(srm::SoftwareSchedulableResource)">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png" tooltipExpression="aql:'Priority: ' + self.schedParams->first().value" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomGreen']" foregroundColor="//@userColorsPalettes[name=null]/@entries[name='CustomLightGreen']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
         </containerMappings>
         <toolSections name="Resources" label="Resources">
           <ownedTools xsi:type="tool:ToolGroup" name="Hardware Resource Group">
@@ -345,52 +354,52 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="hrm.HardwareComputingResource" referenceName="ownedElement" variableName="hw">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareComputingResource" referenceName="ownedElement" variableName="hw">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:hw">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="var:hw"/>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="FixedPriority"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:hw">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="var:hw"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="FixedPriority"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="var:policy"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="var:policy"/>
                       </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareComputingResource)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="hrm.HardwareComputingResource" referenceName="ownedResource" variableName="hw">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareComputingResource)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareComputingResource" referenceName="ownedResource" variableName="hw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:hw">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="var:hw"/>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="FixedPriority"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:hw">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="var:hw"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="FixedPriority"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="var:policy"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="var:policy"/>
                       </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" documentation="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" name="Show Hide Hardware Resource" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" documentation="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" name="Show Hide Hardware Resource" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'">
-                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                       <parameters name="context" value="var:elementView"/>
                       <parameters name="wizardMessage" value="aql:'Select Resources to show in '+ element.name"/>
                       <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(grm::ProcessingResource)"/>
@@ -398,8 +407,8 @@
                       <parameters name="elementToCreateMapping" value="aql:'Hardware Resource'"/>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
-                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                       <parameters name="context" value="var:elementView"/>
                       <parameters name="wizardMessage" value="aql:'Select Resources to show in '+ element.name"/>
                       <parameters name="choiceSelection" value="aql:element.ownedResource->filter(grm::ProcessingResource)"/>
@@ -414,19 +423,19 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="var:container"/>
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="FixedPriority"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareScheduler" referenceName="ownedResource" variableName="scheduler">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="var:container"/>
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingPolicy" referenceName="policy" variableName="policy">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="FixedPriority"/>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="policy" valueExpression="var:policy"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="policy" valueExpression="var:policy"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:For" expression="aql:self.ownedResource" iteratorName="res">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:res.oclIsKindOf(grm::SchedulableResource)">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="var:scheduler"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="mainScheduler" valueExpression="var:scheduler"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool:For" expression="aql:self.ownedResource" iteratorName="res">
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:res.oclIsKindOf(grm::SchedulableResource)">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="var:scheduler"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -439,28 +448,28 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.container">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'SoftwareResource' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="FixedPriority"/>
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:0.toString()"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SoftwareResource' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.SchedulingParameter" referenceName="schedParams" variableName="schedParam">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="aql:0.toString()"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                         </subModelOperations>
                       </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.FixedPriorityParameters" referenceName="schedParams" variableName="schedParam">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="FixedPriority"/>
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="aql:0"/>
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.FixedPriorityParameters" referenceName="schedParams" variableName="schedParam">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="FixedPriority"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="priority" valueExpression="aql:0"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
@@ -468,15 +477,15 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show Hide Software Resource" precondition="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Software Resource" precondition="aql:self.oclIsKindOf(grm::Resource) or (self.oclIsKindOf(design::DesignModel))" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Resources to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.ownedResource->select(p|p.oclIsKindOf(grm::ConcurrencyResource) or p.oclIsKindOf(srm::SoftwareResource))"/>
@@ -492,16 +501,16 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareMutualExclusionResource" referenceName="ownedElement" variableName="mutex">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Mutual Exclusion"/>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.MutualExclusionProtocol" referenceName="protocol">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="protocol" valueExpression="PriorityCeiling"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareMutualExclusionResource" referenceName="ownedElement" variableName="mutex">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Mutual Exclusion"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.MutualExclusionProtocol" referenceName="protocol">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="protocol" valueExpression="PriorityCeiling"/>
                         </subModelOperations>
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.ProtectionParameter" referenceName="protectParams" variableName="params">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Protection Parameter"/>
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.ProtectionParameter" referenceName="protectParams" variableName="params">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="Protection Parameter"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
@@ -509,15 +518,15 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show Hide Mutual Exclusion" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Mutual Exclusion" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Mutual Exclusion Resources to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(srm::SoftwareMutualExclusionResource)"/>
@@ -531,9 +540,9 @@
           <ownedTools xsi:type="tool:DirectEditLabel" name="Event Label Edit">
             <mask mask="{0}period:{0}jitter:{1}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.pattern">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="period" valueExpression="aql:0.trim()"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="jitter" valueExpression="aql:1.trim()"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.pattern">
+                <subModelOperations xsi:type="tool:SetValue" featureName="period" valueExpression="aql:0.trim()"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="jitter" valueExpression="aql:1.trim()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -543,33 +552,33 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedResource" valueExpression="aql:element">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.mainScheduler"/>
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.mainScheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="scheduledResource" valueExpression="var:element"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool:SetValue" featureName="ownedResource" valueExpression="aql:element">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.mainScheduler"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:newSemanticContainer.mainScheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduledResource" valueExpression="var:element"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(srm::SoftwareResource)">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.scheduler"/>
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.scheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="scheduledResource" valueExpression="var:element"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(srm::SoftwareResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.scheduler"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:newSemanticContainer.scheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="scheduledResource" valueExpression="var:element"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:oldSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:oldSemanticContainer.mainScheduler">
-                        <subModelOperations xsi:type="tool_1:Unset" featureName="schedulableResource" elementExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:Unset" featureName="scheduledResource" elementExpression="var:element"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:oldSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:oldSemanticContainer.mainScheduler">
+                        <subModelOperations xsi:type="tool:Unset" featureName="schedulableResource" elementExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:Unset" featureName="scheduledResource" elementExpression="var:element"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:oldSemanticContainer.oclIsKindOf(srm::SoftwareResource)">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:oldSemanticContainer.scheduler">
-                        <subModelOperations xsi:type="tool_1:Unset" featureName="schedulableResource" elementExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:Unset" featureName="scheduledResource" elementExpression="var:element"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:oldSemanticContainer.oclIsKindOf(srm::SoftwareResource)">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:oldSemanticContainer.scheduler">
+                        <subModelOperations xsi:type="tool:Unset" featureName="schedulableResource" elementExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:Unset" featureName="scheduledResource" elementExpression="var:element"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -583,13 +592,13 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:oldSemanticContainer">
-                  <subModelOperations xsi:type="tool_1:Unset" featureName="ownedElement" elementExpression="var:element"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:oldSemanticContainer">
+                  <subModelOperations xsi:type="tool:Unset" featureName="ownedElement" elementExpression="var:element"/>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedResource" valueExpression="var:element"/>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.mainScheduler"/>
+                <subModelOperations xsi:type="tool:SetValue" featureName="ownedResource" valueExpression="var:element"/>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:newSemanticContainer.mainScheduler"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -600,15 +609,15 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedResource" valueExpression="var:element"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(grm::ProcessingResource)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="ownedResource" valueExpression="var:element"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(design::DesignModel)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.resourcePackage">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedElement" valueExpression="var:element"/>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:newSemanticContainer.oclIsKindOf(design::DesignModel)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:newSemanticContainer.resourcePackage">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="ownedElement" valueExpression="var:element"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -619,8 +628,8 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="&lt;%$element%>">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="accessTokenElements" elementExpression="&lt;%$elementView.targetNode.target%>"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%$element%>">
+                <subModelOperations xsi:type="tool:Unset" featureName="accessTokenElements" elementExpression="&lt;%$elementView.targetNode.target%>"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -629,10 +638,10 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element.policy">
-                <subModelOperations xsi:type="tool_1:RemoveElement"/>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:element.policy">
+                <subModelOperations xsi:type="tool:RemoveElement"/>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:RemoveElement"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -644,20 +653,20 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.PeriodicPattern" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.PeriodicPattern" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.PeriodicPattern" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.PeriodicPattern" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addPeriodicEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addPeriodicEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -666,20 +675,20 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.SporadicPattern" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SporadicPattern" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.SporadicPattern" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SporadicPattern" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addSporadicEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addSporadicEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -688,20 +697,20 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BurstPattern" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BurstPattern" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BurstPattern" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BurstPattern" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addBurstEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addBurstEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -710,20 +719,20 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.ClosedPattern" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ClosedPattern" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.ClosedPattern" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ClosedPattern" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addClosedEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addClosedEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -732,20 +741,20 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.SlidingWindowPattern" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SlidingWindowPattern" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.SlidingWindowPattern" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.SlidingWindowPattern" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addSlidingWindowEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addSlidingWindowEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -754,33 +763,33 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="pattern"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="pattern" valueExpression="var:pattern"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Pin)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="pattern"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="pattern" valueExpression="var:pattern"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.workloadBehavior">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
-                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="periodicPattern"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:container.workloadBehavior">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadEvent" referenceName="demand">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Once" referenceName="pattern" variableName="periodicPattern"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:addOnceEventOnStep()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:container.oclIsKindOf(gqam::BehaviorScenario)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:addOnceEventOnStep()"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show Hide Workload Event" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Workload Event" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Patterns to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="service:getArrivalPattern()"/>
@@ -792,53 +801,53 @@
             </tools>
           </ownedTools>
           <ownedTools xsi:type="tool:ToolGroup" name="Steps">
-            <tools xsi:type="tool:NodeCreationDescription" name="ExecutionStep" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="ExecutionStep" precondition="aql:not self.isArinc653Platform(container) and not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior->size()=0">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior->first()">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="var:container"/>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Step ' + (execStep.eContainer().steps->size()).toString()"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step ' + (execStep.eContainer().steps->size()).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool:NodeCreationDescription" name="Delay" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Delay.gif">
+            <tools xsi:type="tool:NodeCreationDescription" name="Delay" precondition="aql:not self.isArinc653Platform(container) and not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Delay.gif">
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior->size()=0">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior->first()">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.Delay" referenceName="steps" variableName="delay">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="var:container"/>
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Delay ' + (delay.eContainer().steps->filter(gqam::Delay)->size()).toString()"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.Delay" referenceName="steps" variableName="delay">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Delay ' + (delay.eContainer().steps->filter(gqam::Delay)->size()).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show/Hide Behavior Scenario" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenario" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectBehaviorScenario" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectBehaviorScenario" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Behavior Scenarios to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.workloadBehavior.behavior"/>
@@ -848,15 +857,15 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show/Hide Steps" precondition="aql:self.oclIsKindOf(grm::SchedulableResource)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Steps" precondition="aql:self.oclIsKindOf(grm::SchedulableResource)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Steps to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.eInverse('concurRes')"/>
@@ -866,15 +875,15 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_1:ToolDescription" name="Show/Hide Behavior Scenarios with their steps" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show/Hide Behavior Scenarios with their steps" precondition="aql:self.oclIsKindOf(design::DesignModel)" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectBehaviorScenario" id="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectBehaviorScenario" id="org.polarsys.time4sys.odesign.wizard.ShowHideBSAndSteps">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Behavior Scenarios to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.workloadBehavior.behavior"/>
@@ -892,7 +901,7 @@
               <sourceViewVariable name="sourceView"/>
               <targetViewVariable name="targetView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.createPrecedenceRelation(target)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.createPrecedenceRelation(target)"/>
               </initialOperation>
             </tools>
             <tools xsi:type="tool:EdgeCreationDescription" name="Event to Step" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='Event2Step']" iconPath="/org.polarsys.time4sys.odesign/images/Event2Step.gif">
@@ -901,7 +910,7 @@
               <sourceViewVariable name="sourceView"/>
               <targetViewVariable name="targetView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.setEffect(target)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.setEffect(target)"/>
               </initialOperation>
             </tools>
             <tools xsi:type="tool:EdgeCreationDescription" name="Mutex locked Step/Resource" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='MutualExclusionToResource']" iconPath="/org.polarsys.time4sys.odesign/images/Mutex2Step.gif">
@@ -910,9 +919,9 @@
               <sourceViewVariable name="sourceView"/>
               <targetViewVariable name="targetView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:source.oclIsKindOf(srm::SoftwareMutualExclusionResource)">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="accessTokenElements" valueExpression="var:target"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:source.oclIsKindOf(srm::SoftwareMutualExclusionResource)">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="accessTokenElements" valueExpression="var:target"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -924,8 +933,8 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="aql:newContainerView.target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="aql:newContainerView.target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -935,8 +944,8 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="aql:newContainerView.target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="aql:newContainerView.target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -945,13 +954,13 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:elementView.deleteStep()"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:elementView.deleteStep()"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="ExecutionStep Edit">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
                 <parameters name="nameAndTime" value="var:0"/>
               </firstModelOperations>
             </initialOperation>
@@ -961,8 +970,8 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="accessTokenElements" elementExpression="aql:elementView.targetNode.target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Unset" featureName="accessTokenElements" elementExpression="aql:elementView.targetNode.target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -971,7 +980,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:elementView.deleteConnection()"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.deleteConnection()"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteEvent">
@@ -979,7 +988,7 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+              <firstModelOperations xsi:type="tool:RemoveElement"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteEvent2Step">
@@ -987,8 +996,8 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="effect" elementExpression="aql:self.effect"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:Unset" featureName="effect" elementExpression="aql:self.effect"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -999,8 +1008,8 @@
             <targetView name="targetView"/>
             <element name="element"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="effect" valueExpression="var:target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:SetValue" featureName="effect" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
@@ -1012,10 +1021,10 @@
             <targetView name="targetView"/>
             <element name="element"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="inputRel" elementExpression="var:element"/>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="inputRel" valueExpression="var:element"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:Unset" featureName="inputRel" elementExpression="var:element"/>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="inputRel" valueExpression="var:element"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1036,13 +1045,13 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:element.eContainer().oclIsKindOf(gqam::WorkloadEvent)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:element.eContainer()">
-                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.eContainer().oclIsKindOf(gqam::WorkloadEvent)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:element.eContainer()">
+                    <subModelOperations xsi:type="tool:RemoveElement"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                <subModelOperations xsi:type="tool:RemoveElement"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1053,8 +1062,8 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign()">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.TimedObserver" referenceName="ownedRule"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.TimedObserver" referenceName="ownedRule"/>
                 </firstModelOperations>
               </initialOperation>
             </tools>
@@ -1062,8 +1071,8 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign()">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.LatencyObserver" referenceName="ownedRule"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.LatencyObserver" referenceName="ownedRule"/>
                 </firstModelOperations>
               </initialOperation>
             </tools>
@@ -1071,8 +1080,8 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign()">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.SchedulingObserver" referenceName="ownedRule"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="sam.SchedulingObserver" referenceName="ownedRule"/>
                 </firstModelOperations>
               </initialOperation>
             </tools>
@@ -1083,8 +1092,8 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="constrainedElement" valueExpression="aql:target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool:SetValue" featureName="constrainedElement" valueExpression="aql:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1094,10 +1103,10 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="sam.EndToEndFlow" referenceName="endToEndFlows" variableName="endToEndFlow">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="endToEndStimuli" valueExpression="aql:source.eContainer()"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="endToEndScenario" valueExpression="var:target"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign()">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="sam.EndToEndFlow" referenceName="endToEndFlows" variableName="endToEndFlow">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="endToEndStimuli" valueExpression="aql:source.eContainer()"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="endToEndScenario" valueExpression="var:target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1108,16 +1117,16 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="hrm.HardwareProcessor" referenceName="ownedElement" variableName="hw">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Platform_' + (self.eContainer().ownedElement->size()-1).toString()"/>
-                      <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Arinc653PlatformCreation" label="Arinc653PlatformCreation" forceRefresh="true" elementsToSelect="var:hw" id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PlatformCreation">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareProcessor" referenceName="ownedElement" variableName="hw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Platform_' + (self.eContainer().ownedElement->size()-1).toString()"/>
+                      <subModelOperations xsi:type="tool:ExternalJavaAction" name="Arinc653PlatformCreation" label="Arinc653PlatformCreation" forceRefresh="true" elementsToSelect="var:hw" id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PlatformCreation">
                         <parameters name="proc" value="var:hw"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:hw"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:hw"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1127,11 +1136,11 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.container">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Partition_' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                    <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Arinc653PartitionCreation" label="Arinc653PartitionCreation" forceRefresh="true" elementsToSelect="var:hw" id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Partition_' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="Arinc653PartitionCreation" label="Arinc653PartitionCreation" forceRefresh="true" elementsToSelect="var:hw" id="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation">
                       <parameters name="task" value="var:sw"/>
                     </subModelOperations>
                   </subModelOperations>
@@ -1143,21 +1152,21 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.container">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'PSS_' + (self.eContainer().ownedResource->size()-1).toString()"/>
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setAsPSS(sw)"/>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'PSS_' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsPSS(sw)"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(grm::ProcessingResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().mainScheduler"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().mainScheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eContainer().oclIsKindOf(srm::SoftwareResource)">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="host" valueExpression="aql:self.eContainer().dependentScheduler"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.eContainer().dependentScheduler">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="schedulableResource" valueExpression="var:sw"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -1165,21 +1174,50 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpareStep" precondition="aql:not self.isArinc653Partition(container)" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="SpareStep" precondition="aql:not container.isArinc653Partition()" nodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" iconPath="/org.polarsys.time4sys.odesign/images/Step.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior->size()=0">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior->first()">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="var:container"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Spare Task Creation" label="Spare Task Resource" forceRefresh="true" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']" iconPath="/org.polarsys.time4sys.odesign/images/SwResource.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                  <subModelOperations xsi:type="tool:CreateInstance" typeName="srm.SoftwareSchedulableResource" referenceName="ownedResource" variableName="sw">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareTask' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:sw.setAsSpareTask()"/>
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                        <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps" variableName="execStep">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:container"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'SpareStep ' + (execStep.eContainer().steps->size()).toString()"/>
+                          <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setAsSpareStep(execStep)"/>
+                          <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="aql:sw"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1191,20 +1229,26 @@
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="hasDeadline" position="NORTH_EAST" preconditionExpression="aql:self.hasDeadline2()" imageExpression="/org.polarsys.time4sys.odesign/images/redflag16.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']"/>
           <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="swHasScheduler" position="SOUTH_EAST" preconditionExpression="aql:self.dependentScheduler != null" imageExpression="/org.polarsys.time4sys.odesign/images/schedulersmall.png" mappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Software%20Resource']"/>
         </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:container.hasBackgroundColor()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" applyOnAll="true"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization"/>
+          </vsmElementCustomizations>
+        </customization>
       </defaultLayer>
       <additionalLayers name="Communication">
         <toolSections name="Resources">
           <ownedTools xsi:type="tool:ToolGroup" name="Bus Group">
-            <tools xsi:type="tool_1:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+            <tools xsi:type="tool:ToolDescription" name="Show Hide Bus" precondition="aql:self.oclIsKindOf(design::DesignModel)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
               <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
                 <listeners domainClass="DDiagram" featureName="synchronized"/>
               </filters>
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'"/>
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'"/>
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Bus to show in '+ element.name"/>
                     <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareBus)"/>
@@ -1218,18 +1262,18 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="BUS"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedElement" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="BUS"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(hrm::HardwareBus)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="hrm.HardwareBus" referenceName="ownedResource" variableName="bus">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="BUS"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -1242,17 +1286,17 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedElement" variableName="hw">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+                    <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedElement" variableName="hw">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedElement->size()-1).toString()"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(grm::CommunicationMedia)">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedResource" variableName="hw">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(grm::CommunicationMedia)">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.CommunicationMedia" referenceName="ownedResource" variableName="hw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'HardwareResource ' + (self.eContainer().ownedResource->size()-1).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1264,10 +1308,10 @@
               <variable name="container"/>
               <viewVariable name="containerView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.container">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.CommunicationChannel" referenceName="ownedResource" variableName="sw">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'CommunicationChannel' + (self.eContainer().ownedResource->size()-1).toString()"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.container">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(design::DesignModel))">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.CommunicationChannel" referenceName="ownedResource" variableName="sw">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'CommunicationChannel' + (self.eContainer().ownedResource->size()-1).toString()"/>
                     </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1275,27 +1319,27 @@
             </tools>
           </groupExtensions>
           <groupExtensions group="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='Steps']">
-            <tools xsi:type="tool_1:ToolDescription" name="CommunicationStep" iconPath="/org.polarsys.time4sys.odesign/images/CommunicationStep.gif">
+            <tools xsi:type="tool:ToolDescription" name="CommunicationStep" iconPath="/org.polarsys.time4sys.odesign/images/CommunicationStep.gif">
               <element name="element"/>
               <elementView name="elementView"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
-                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.behavior->size()=0">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.getDesign().workloadBehavior">
+                  <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.behavior->size()=0">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.BehaviorScenario" referenceName="behavior" variableName="behavior">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Behavior Scenario'"/>
                     </subModelOperations>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.behavior->first()">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.CommunicationStep" referenceName="steps" variableName="comStep">
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:element.oclIsKindOf(hrm::HardwareBus)">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="comRes" valueExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Step' + self.scenario.steps->size()"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.behavior->first()">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.CommunicationStep" referenceName="steps" variableName="comStep">
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.oclIsKindOf(hrm::HardwareBus)">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="comRes" valueExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step' + self.scenario.steps->size()"/>
                         <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='HwBus']/@subNodeMappings[name='ComStep']" containerViewExpression="elementView"/>
                       </subModelOperations>
-                      <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:element.oclIsKindOf(gqam::CommunicationChannel)">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="concurRes" valueExpression="var:element"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Step' + self.scenario.steps->size()"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="comRes" valueExpression="aql:element.getContainingComunicationResource()"/>
+                      <subModelOperations xsi:type="tool:If" conditionExpression="aql:element.oclIsKindOf(gqam::CommunicationChannel)">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="concurRes" valueExpression="var:element"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step' + self.scenario.steps->size()"/>
+                        <subModelOperations xsi:type="tool:SetValue" featureName="comRes" valueExpression="aql:element.getContainingComunicationResource()"/>
                         <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']" containerViewExpression="elementView"/>
                       </subModelOperations>
                     </subModelOperations>
@@ -1310,8 +1354,8 @@
         <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Name">
           <mask mask="{0}"/>
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-              <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
             </firstModelOperations>
           </initialOperation>
         </ownedTools>
@@ -1321,13 +1365,13 @@
           <element name="element"/>
           <newViewContainer name="newContainerView"/>
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-              <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(grm::Resource)">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedResource" valueExpression="var:element"/>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+              <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(grm::Resource)">
+                <subModelOperations xsi:type="tool:SetValue" featureName="ownedResource" valueExpression="var:element"/>
               </subModelOperations>
-              <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.oclIsKindOf(grm::Resource))">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.resourcePackage">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="ownedElement" valueExpression="var:element"/>
+              <subModelOperations xsi:type="tool:If" conditionExpression="aql:not(self.oclIsKindOf(grm::Resource))">
+                <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.resourcePackage">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="ownedElement" valueExpression="var:element"/>
                 </subModelOperations>
               </subModelOperations>
             </firstModelOperations>
@@ -1348,47 +1392,47 @@
             </firstModelOperations>
           </initialOperation>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:PopupMenu" name="Behavior Scenario">
-          <menuItemDescription xsi:type="tool_1:OperationAction" name="Create a new Behavior Scenario" precondition="service:self.isValidBehaviorScenarioSelection(views)">
+        <ownedTools xsi:type="tool:PopupMenu" name="Behavior Scenario">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new Behavior Scenario" precondition="service:self.isValidBehaviorScenarioSelection(views)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:self.createBehaviorScenario(views)">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="service:self.createBehaviorScenario(views)">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsTypeOf(gqam::BehaviorScenario)">
                   <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" containerViewExpression="aql:views->first().getDiagramContainer()"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </menuItemDescription>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:PopupMenu" name="End To End Flow">
-          <menuItemDescription xsi:type="tool_1:OperationAction" name="Create a new End To End Flow" precondition="service:self.isValidETEFSelection(views)">
+        <ownedTools xsi:type="tool:PopupMenu" name="End To End Flow">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new End To End Flow" precondition="service:self.isValidETEFSelection(views)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.createETEF(views)">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createETEF(views)">
                 <subModelOperations xsi:type="tool:CreateEdgeView" mapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@edgeMappings[name='EndToEndFlow']" containerViewExpression="aql:views->first().getDiagramContainer()" sourceExpression="aql:self.endToEndStimuli" targetExpression="aql:self.endToEndScenario"/>
               </firstModelOperations>
             </initialOperation>
           </menuItemDescription>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:PopupMenu" name="Shared Reference">
-          <menuItemDescription xsi:type="tool_1:OperationAction" name="Create a new shared Reference" precondition="service:self.isValidReferenceSelection(views)">
+        <ownedTools xsi:type="tool:PopupMenu" name="Shared Reference">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Create a new shared Reference" precondition="service:self.isValidReferenceSelection(views)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.createReference(views)"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.createReference(views)"/>
             </initialOperation>
           </menuItemDescription>
         </ownedTools>
-        <ownedTools xsi:type="tool_1:PopupMenu" name="Arinc 653" label="Arinc 653">
-          <menuItemDescription xsi:type="tool_1:OperationAction" name="Transform as an Arinc 653 Platform" precondition="service:self.isValidArinc653PlatformToBe(views)">
+        <ownedTools xsi:type="tool:PopupMenu" name="Arinc 653" label="Arinc 653">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Transform as an Arinc 653 Platform" precondition="service:self.isValidArinc653PlatformToBe(views)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.transformAsArinc653Platform(views)"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.transformAsArinc653Platform(views)"/>
             </initialOperation>
           </menuItemDescription>
-          <menuItemDescription xsi:type="tool_1:OperationAction" name="Transform as an Arinc 653 Partition" precondition="service:self.isValidArinc653PartitionToBe(views)">
+          <menuItemDescription xsi:type="tool:OperationAction" name="Transform as an Arinc 653 Partition" precondition="service:self.isValidArinc653PartitionToBe(views)">
             <view name="views"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.transformAsArinc653Partition(views)"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.transformAsArinc653Partition(views)"/>
             </initialOperation>
           </menuItemDescription>
         </ownedTools>
@@ -1396,13 +1440,13 @@
     </ownedRepresentations>
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Transformed Design" domainClass="design.DesignModel">
       <diagramInitialisation>
-        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
-            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.workloadBehavior->size()==0">
-              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.WorkloadBehavior" referenceName="workloadBehavior"/>
+        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+          <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(design::DesignModel)">
+            <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.workloadBehavior->size()==0">
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.WorkloadBehavior" referenceName="workloadBehavior"/>
             </subModelOperations>
-            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.resourcePackage->size()==0">
-              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grm.ResourcePackage" referenceName="resourcePackage"/>
+            <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.resourcePackage->size()==0">
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="grm.ResourcePackage" referenceName="resourcePackage"/>
             </subModelOperations>
           </subModelOperations>
         </firstModelOperations>
@@ -1531,14 +1575,14 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Name">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1548,25 +1592,25 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Step)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario" valueExpression="var:newSemanticContainer"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Step)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="scenario" valueExpression="var:newSemanticContainer"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::BehaviorScenario)">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="steps" valueExpression="var:element"/>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::BehaviorScenario)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="steps" valueExpression="var:element"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolDescription" name="Add/Remove Involved Elements" precondition="aql:self.oclIsKindOf(gqam::Step)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+          <ownedTools xsi:type="tool:ToolDescription" name="Add/Remove Involved Elements" precondition="aql:self.oclIsKindOf(gqam::Step)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.AddRemoveInvolvedElement">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.AddRemoveInvolvedElement">
                     <parameters name="elementToCreateMapping" value="aql:'Step'"/>
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
@@ -1582,15 +1626,15 @@
             <elementView name="elementView"/>
             <containerView name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.removeInvolvement(elementView)"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.removeInvolvement(elementView)"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolDescription" name="Add/Remove Stimuli" precondition="aql:self.oclIsKindOf(sam::EndToEndFlow)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
+          <ownedTools xsi:type="tool:ToolDescription" name="Add/Remove Stimuli" precondition="aql:self.oclIsKindOf(sam::EndToEndFlow)" forceRefresh="true" iconPath="/org.polarsys.time4sys.odesign/images/ShowHide.gif">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectStimuli" id="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectStimuli" id="org.polarsys.time4sys.odesign.wizard.AddRemoveStimuli">
                   <parameters name="elementToCreateMapping" value="aql:'ArrivalPattern'"/>
                   <parameters name="context" value="var:elementView"/>
                   <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
@@ -1666,8 +1710,8 @@
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Step' + container.steps->size()"/>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="gqam.ExecutionStep" referenceName="steps">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql:'Step' + container.steps->size()"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1677,38 +1721,38 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.OutputPin" referenceName="outputPin" variableName="outputPin"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:source">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.OutputPin" referenceName="outputPin" variableName="outputPin"/>
                   </subModelOperations>
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
-                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:inputPin">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:inputPin">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.inputPin">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="var:outputPin"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::OutputPin))">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
-                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.inputPin">
-                          <subModelOperations xsi:type="tool_1:SetValue" featureName="predecessors" valueExpression="aql:source"/>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::OutputPin))">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:target">
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::Step)) or (self.oclIsKindOf(gqam::CommunicationStep))">
+                      <subModelOperations xsi:type="tool:CreateInstance" typeName="gqam.InputPin" referenceName="inputPin" variableName="inputPin">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:source.inputPin">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
                         </subModelOperations>
                       </subModelOperations>
                     </subModelOperations>
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.inputPin">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="predecessors" valueExpression="aql:source"/>
+                    <subModelOperations xsi:type="tool:If" conditionExpression="aql:(self.oclIsKindOf(gqam::InputPin))">
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.inputPin">
+                        <subModelOperations xsi:type="tool:SetValue" featureName="predecessors" valueExpression="aql:source"/>
                       </subModelOperations>
                     </subModelOperations>
                   </subModelOperations>
@@ -1720,14 +1764,14 @@
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
+              <firstModelOperations xsi:type="tool:ExternalJavaAction" name="openDesignPropertiesWizard" id="org.eclipse.sirius.eef.actions.openPropertiesWizard"/>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Name">
             <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -1737,28 +1781,28 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::Step)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="scenario" valueExpression="var:newSemanticContainer"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:newSemanticContainer">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::Step)">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="scenario" valueExpression="var:newSemanticContainer"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(gqam::BehaviorScenario)">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="steps" valueExpression="var:element"/>
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.oclIsKindOf(gqam::BehaviorScenario)">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="steps" valueExpression="var:element"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolDescription" name="Show Hide Steps" precondition="aql:self.oclIsKindOf(gqam::BehaviorScenario)" forceRefresh="true">
+          <ownedTools xsi:type="tool:ToolDescription" name="Show Hide Steps" precondition="aql:self.oclIsKindOf(gqam::BehaviorScenario)" forceRefresh="true">
             <filters precondition="aql:self.synchronized" elementsToListen="aql:self">
               <listeners domainClass="DDiagram" featureName="synchronized"/>
             </filters>
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DSemanticDiagram'">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="elementToCreateMapping" value="aql:'Step'"/>
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
@@ -1766,8 +1810,8 @@
                     <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(gqam::Step)"/>
                   </subModelOperations>
                 </subModelOperations>
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
-                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                <subModelOperations xsi:type="tool:If" conditionExpression="aql:self.eClass().name = 'DNodeContainer'">
+                  <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectSteps" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="elementToCreateMapping" value="aql:'SubStep'"/>
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select steps to show in '+ element.name"/>
@@ -1825,8 +1869,8 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="aql:schedParams->first()">
-            <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="var:0"/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="aql:schedParams->first()">
+            <subModelOperations xsi:type="tool:SetValue" featureName="value" valueExpression="var:0"/>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
@@ -1838,9 +1882,9 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="aql:lineSemantic">
-            <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
-              <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="aql:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+              <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
                 <parameters name="periodDuration" value="var:0"/>
               </subModelOperations>
               <parameters name="periodDuration" value="var:0"/>
@@ -1856,8 +1900,8 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
-            <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
               <parameters name="offsetDuration" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
@@ -1871,8 +1915,8 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
-            <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
               <parameters name="jitterDuration" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
@@ -1886,14 +1930,28 @@
           <variables name="element" documentation="The currently edited element."/>
           <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
           <variables name="root" documentation="The semantic element of the table."/>
-          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
-            <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool:ExternalJavaAction" name="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor" id="org.polarsys.time4sys.odesign.actions.extensions.DesignNameAndTimeEditor">
               <parameters name="nameAndTime" value="var:0"/>
             </subModelOperations>
           </firstModelOperation>
           <mask mask="{0}"/>
         </directEdit>
       </ownedColumnMappings>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="org.polarsys.time4sys.odesign.table.arinc653.partitions" label="Arinc653 Partitions" domainClass="design.DesignModel">
+      <metamodel href="../../org.polarsys.time4sys.marte/model/nfp.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/hrm.ecore#/"/>
+      <metamodel href="../../org.polarsys.time4sys.marte/model/srm.ecore#/"/>
+      <ownedLineMappings name="HardwareComputingResource" label="HW" domainClass="hrm::HardwareComputingResource" semanticCandidatesExpression="aql:root.resourcePackage.ownedElement" headerLabelExpression="feature:name">
+        <ownedSubLines name="Partition" domainClass="srm::SoftwareSchedulableResource" semanticCandidatesExpression="aql:self.ownedResource->select(p | p.isArinc653Partition())" headerLabelExpression="feature:name">
+          <ownedSubLines name="Activation" domainClass="nfp::TimeInterval" semanticCandidatesExpression="aql:self.getArinc653IntervalActivations()" headerLabelExpression="Activation"/>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="start" label="Start" headerLabelExpression="Start" featureName="min" labelExpression="aql:self.min.toString()"/>
+      <ownedColumnMappings name="End" label="End" headerLabelExpression="End" featureName="max" labelExpression="aql:self.max.toString()"/>
+      <ownedColumnMappings name="my.Length" headerLabelExpression="Length" labelExpression="aql:self.timeIntervalLength()"/>
+      <ownedColumnMappings name="Label" headerLabelExpression="Label" featureName="label" labelExpression="aql:self.toString()"/>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.MarteServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.BehaviorScenarioServices"/>
@@ -1914,20 +1972,20 @@
   </userColorsPalettes>
   <extensions xsi:type="properties:ViewExtensionDescription" name="org.eclipse.sirius.ui.properties">
     <categories name="Default">
-      <pages name="Time4Sys" labelExpression="Time4Sys" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5" indented="true"/>
-      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition(self) or self.isPSS()" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2"/>
+      <pages name="org.eclipse.sirius.ui.properties.defaultpage" labelExpression="aql:'Time4Sys'" semanticCandidateExpression="aql:self" groups="//@extensions.0/@categories.0/@groups.0 //@extensions.0/@categories.0/@groups.1 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.3 //@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5" indented="true"/>
+      <pages name="Arinc653" label="Arinc 653" labelExpression="Arinc 653" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Platform(self) or self.isArinc653Partition() or self.isPSS() or self.oclIsKindOf(srm::SoftwareSchedulableResource)" groups="//@extensions.0/@categories.0/@groups.4 //@extensions.0/@categories.0/@groups.5 //@extensions.0/@categories.0/@groups.2 //@extensions.0/@categories.0/@groups.6 //@extensions.0/@categories.0/@groups.7"/>
       <groups name="org.eclipse.sirius.ui.properties.defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" iterator="eStructuralFeature" iterableExpression="aql:self.removeFeaturesToHide(input.emfEditServices(self).getEStructuralFeatures())">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:if eStructuralFeature.name = 'upperBound' and self.oclIsKindOf(ecore::ETypedElement) then self.upperBoundDisplay() else self.eGet(eStructuralFeature.name) endif">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
-                  <subModelOperations xsi:type="tool_1:Switch">
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:Switch">
                     <cases conditionExpression="aql:eStructuralFeature.name = 'upperBound' and self.oclIsKindOf(ecore::ETypedElement)">
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setUpperBound(newValue)"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setUpperBound(newValue)"/>
                     </cases>
                     <default>
-                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
                     </default>
                   </subModelOperations>
                 </firstModelOperations>
@@ -1942,7 +2000,7 @@
           <ifs name="sirius_default_rules_duration_if" predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.Duration'">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -1954,7 +2012,7 @@
           <ifs name="sirius_default_rules_time_interval_if" predicateExpression="aql:eStructuralFeature.eType.instanceTypeName='org.polarsys.time4sys.marte.nfp.TimeInterval'">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -1966,7 +2024,7 @@
           <ifs name="sirius_default_rules_multi_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and input.emfEditServices(self).isMultiline(eStructuralFeature)">
             <widget xsi:type="properties:TextAreaDescription" name="sirius_default_rules_multi_string" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -1978,7 +2036,7 @@
           <ifs name="sirius_default_rules_mono_boolean" predicateExpression="aql:input.emfEditServices(self).needsCheckboxWidget(eStructuralFeature)">
             <widget xsi:type="properties:CheckboxDescription" name="sirius_default_rules_mono_boolean" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -1990,7 +2048,7 @@
           <ifs name="sirius_default_rules_enum_if" predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
             <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.oclAsType(ecore::EEnum).eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -2006,7 +2064,7 @@
           <ifs predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
             <widget xsi:type="properties:TextDescription" name="sirius_default_rules_mono_string" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:self.eGet(eStructuralFeature.name)">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -2022,7 +2080,7 @@
           <ifs predicateExpression="aql:eStructuralFeature.eType.oclIsKindOf(ecore::EEnum) and not(eStructuralFeature.many)">
             <widget xsi:type="properties:RadioDescription" name="sirius_default_rules_enum" labelExpression="aql:eStructuralFeature.name.upperCaseFirst()+':'" helpExpression="aql:input.emfEditServices(self).getDescription(eStructuralFeature)" isEnabledExpression="aql:eStructuralFeature.changeable" valueExpression="aql:eStructuralFeature.eType.getEEnumLiteralByLiteral(self.eGet(eStructuralFeature.name).toString())" candidatesExpression="aql:eStructuralFeature.eType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="5">
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:input.emfEditServices(self).setValue(eStructuralFeature, newValue.instance)"/>
               </initialOperation>
               <conditionalStyles preconditionExpression="aql:eStructuralFeature.lowerBound==1">
                 <style>
@@ -2052,15 +2110,44 @@
         <controls xsi:type="properties:LabelDescription" name="MAF" labelExpression="MAF" helpExpression="aql:'Sum of MIFs'" valueExpression="aql:self.getMAF()"/>
         <controls xsi:type="properties:TextDescription" name="MIF" labelExpression="MIF" helpExpression="aql:'MIF duration (if all same)'" valueExpression="aql:self.getMIF()">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setMIF(newValue)"/>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setMIF(newValue)"/>
           </initialOperation>
         </controls>
       </groups>
       <groups name="org.eclipse.sirius.ui.properties.posix.pssgroup" labelExpression="Posix" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isPSS()">
         <controls xsi:type="properties:TextDescription" name="PSSOrder" label="PSS Order" labelExpression="Order" valueExpression="aql:self.getPSSOrder()">
           <initialOperation>
-            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSOrder(newValue)"/>
           </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSPriority" label="Priority" labelExpression="Priority" valueExpression="aql:self.getPSSPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSBackgroundPriority" labelExpression="Background Priority" valueExpression="aql:self.getPSSBackgroundPriority()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSBackgroundPriority(newValue)"/>
+          </initialOperation>
+        </controls>
+        <controls xsi:type="properties:TextDescription" name="PSSInitialBudget" labelExpression="Initial Time Budget" valueExpression="aql:self.getPSSInitialTimeBudget()">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setPSSInitialTimeBudget(newValue)"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.synchronizable" label="org.eclipse.sirius.ui.properties.arinc653.synchronizable" labelExpression="Synchronization" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Synchronizable()">
+        <controls xsi:type="properties:CheckboxDescription" name="Arinc653TaskIsSynch" labelExpression="Is Synchronized?" helpExpression="Shall all activations pattern be synchronized with the start of the partition?" valueExpression="aql:self.isSynchronisedWithArinc653Partition(self.eInverse(gqam::Step))">
+          <initialOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.setSynchronisedWithArinc653Partition(newValue, self.eInverse(gqam::Step))"/>
+          </initialOperation>
+        </controls>
+      </groups>
+      <groups name="org.eclipse.sirius.ui.properties.arinc653.partitiongroup" labelExpression="Partition" semanticCandidateExpression="var:self" preconditionExpression="aql:self.isArinc653Partition()">
+        <controls xsi:type="properties:ListDescription" labelExpression="Activations" helpExpression="Times and durations of activations of this partition" valueExpression="aql:self.getArinc653Activations()" displayExpression="aql:value">
+          <onClickOperation>
+            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self"/>
+          </onClickOperation>
         </controls>
       </groups>
     </categories>

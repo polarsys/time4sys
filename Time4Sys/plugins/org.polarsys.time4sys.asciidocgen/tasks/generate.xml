@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="org.polarsys.time4sys.asciidocgen">
     <property name="ECLIPSE_HOME" value="../../../../../../Users/didier/Desktop/CAPELLA_STUDIO_/capella_studio-1.2.0"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Desktop/CAPELLA_STUDIO_/workspaceCapella"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Desktop/CAPELLA_STUDIO_/workspaceCapella2"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.polarsys.time4sys.asciidocgen.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/org.polarsys.time4sys.asciidocgen/bin"/>
-        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore_2.13.0.v20170609-0707.jar"/>
-        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.common_2.13.0.v20170609-0707.jar"/>
-        <pathelement location="${ECLIPSE_WORKSPACE}//.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.emf.ecore.xmi_2.13.0.v20170609-0707.jar"/>
     </path>
 
     <path id="org.polarsys.time4sys.asciidocgen.classpath">

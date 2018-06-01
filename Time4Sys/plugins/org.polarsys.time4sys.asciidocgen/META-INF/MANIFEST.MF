@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Mdgen Module Runtime Plug-in
 Bundle-SymbolicName: org.polarsys.time4sys.asciidocgen
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-Activator: org.polarsys.time4sys.mdgen.Activator
 Bundle-Vendor: Time4Sys Project
 Require-Bundle: org.eclipse.core.runtime, 

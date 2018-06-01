@@ -13,12 +13,12 @@
  <parent>
  <groupId>time4sys</groupId>
  <artifactId>org.polarsys.time4sys.parent</artifactId>
- <version>1.0.0-SNAPSHOT</version>
+ <version>0.8.0-SNAPSHOT</version>
  <relativePath>../org.polarsys.time4sys.parent/pom.xml</relativePath>
  </parent>
  <groupId>time4sys</groupId>
  <artifactId>org.polarsys.time4sys.p2</artifactId>
- <version>1.0.0-SNAPSHOT</version>
+ <version>0.8.0-SNAPSHOT</version>
  <packaging>eclipse-repository</packaging>
    <properties>
     <product-id>org.polarsys.time4sys.launcher.product</product-id>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.time4sys.marte.srm;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.8.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -14,6 +14,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.polarsys.time4sys.marte.grm;visibility:=reexport,
- org.polarsys.time4sys.marte.nfp;bundle-version="1.0.0";visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp;visibility:=reexport,
  org.polarsys.time4sys.marte.coreelements;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -19,7 +19,7 @@ import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
-import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
@@ -98,8 +98,12 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 	}
 
 	public PosixSporadicServerBuilder ofInitialBudget(final String timeBudget) {
-		final PeriodicServerParameters schedParam = (PeriodicServerParameters)getSchedParams(FP_POLICY_NAME, fpParamEClass);
-		schedParam.setInitialBudget(NfpFactory.eINSTANCE.createDurationFromString(timeBudget));
+		return ofInitialBudget(NfpFactory.eINSTANCE.createDurationFromString(timeBudget));
+	}
+	
+	public PosixSporadicServerBuilder ofInitialBudget(final Duration timeBudget) {
+		final PeriodicServerParameters schedParam = getPSSSchedParams(true);
+		schedParam.setInitialBudget(timeBudget);
 		return this;
 	}
 	
@@ -168,5 +172,14 @@ public class PosixSporadicServerBuilder extends TaskBuilder {
 			task.getSchedParams().add(migratedParams);
 		}
 		return super.build();
+	}
+
+	public Duration getInitialBudget() {
+		final PeriodicServerParameters schedParam = getPSSSchedParams(true);
+		return schedParam.getInitialBudget();
+	}
+
+	public void setNotAPSS() {
+		Annotations.removeAnnotation(build(), POSIX_URL);
 	}
 }
