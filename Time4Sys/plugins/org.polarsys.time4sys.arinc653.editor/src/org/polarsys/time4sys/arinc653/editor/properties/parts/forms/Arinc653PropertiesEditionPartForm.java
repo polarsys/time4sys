@@ -16,7 +16,7 @@ import org.polarsys.time4sys.arinc653.editor.properties.filters.HardwareProcesso
 import org.polarsys.time4sys.arinc653.editor.properties.sources.PlatformPropertySource;
 import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 
-public class HWProcessorPropertiesEditionPartForm extends AbstractPropertySection {
+public class Arinc653PropertiesEditionPartForm extends AbstractPropertySection {
 
 	private Text labelText;
 	private ModifyListener listener;
@@ -24,7 +24,7 @@ public class HWProcessorPropertiesEditionPartForm extends AbstractPropertySectio
 	private PropertySheetPage page;
 	private IWorkbenchPage workbenchPage;
 
-	public HWProcessorPropertiesEditionPartForm() {
+	public Arinc653PropertiesEditionPartForm() {
 		super();
 		page = new PropertySheetPage();
 		page.setPropertySourceProvider(new IPropertySourceProvider() {
