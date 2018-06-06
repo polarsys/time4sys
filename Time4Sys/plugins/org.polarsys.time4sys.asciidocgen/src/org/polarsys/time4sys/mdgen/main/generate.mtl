@@ -11,6 +11,12 @@
 [query public eSubClasses(anEClass: EClass) : OrderedSet(EClass) = self.eInverse(EClass)->select(ref | ref.eAllSuperTypes->includes(self)) /]
 
 
+[query public asciidocReference(elt: ENamedElement) : String =  (if elt.oclIsUndefined() then '' else if elt.name.oclIsUndefined() then '' else elt.name.toLower() endif endif).concat(
+	if elt.eContainer().oclIsUndefined() then '' 
+	else if elt.eContainer().oclIsKindOf(ENamedElement) then elt.eContainer().oclAsType(ENamedElement).asciidocReference()
+ 	else ''
+	endif endif) /]
+
 [**
  * The documentation of the template generateElement.
  * @param anEPackage
@@ -39,7 +45,7 @@
 [/template]
 
 [template public generatePackage(anEPackage : EPackage)]
-['[['/][anEPackage.name.toLower()/]_package[']]'/]
+['[['/][anEPackage.asciidocReference()/]_package[']]'/]
 == [anEPackage.name.toUpperFirst()/] package
 
 === Overview
@@ -70,7 +76,7 @@ image::[anEPackage.name/]-class-diagram-overview.png['[]'/]
 [/template]
 
 [template public generateClassifier(aClassifier : EClassifier)]
-['[['/][aClassifier.name.toLower()/]_classifier[']]'/]
+['[['/][aClassifier.asciidocReference()/]_classifier[']]'/]
 === [aClassifier.name/] classifier
 
 [aClassifier.generateGenModelDoc()/]
@@ -92,7 +98,7 @@ TODO: write an overview
 ==== Generalizations
 
 [for (parent : EClass | aClass.eSuperTypes)]
-* <<[parent.name.toLower()/]_classifier,[parent.name/]>> from <<[parent.ePackage.name.toLower()/]_package,[parent.ePackage.name/]>>
+* <<[parent.asciidocReference()/]_classifier,[parent.name/]>> from <<[parent.ePackage.asciidocReference()/]_package,[parent.ePackage.name/]>>
 [/for]
 [/if]
 
@@ -101,7 +107,7 @@ TODO: write an overview
 ==== Specializations
 
 [for (child : EClass | subClasses)]
-* <<[child.name.toLower()/]_classifier,[child.name/]>> from <<[child.ePackage.name.toLower()/]_package,[child.ePackage.name/]>>
+* <<[child.asciidocReference()/]_classifier,[child.name/]>> from <<[child.ePackage.asciidocReference()/]_package,[child.ePackage.name/]>>
 [/for]
 [/if][/let]
 
