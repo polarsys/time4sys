@@ -47,6 +47,7 @@ public class GrmTests extends TestSuite {
 		suite.addTestSuite(ComputingResourceTest.class);
 		suite.addTestSuite(ConcurrencyResourceTest.class);
 		suite.addTestSuite(DeviceResourceTest.class);
+		suite.addTestSuite(DynamicUsageTest.class);
 		suite.addTestSuite(EDFParametersTest.class);
 		suite.addTestSuite(FixedPriorityParametersTest.class);
 		suite.addTestSuite(MutualExclusionProtocolTest.class);
@@ -55,6 +56,7 @@ public class GrmTests extends TestSuite {
 		suite.addTestSuite(PoolingParametersTest.class);
 		suite.addTestSuite(ProtectionParameterTest.class);
 		suite.addTestSuite(ResourceBrokerTest.class);
+		suite.addTestSuite(ResourceConnectorTest.class);
 		suite.addTestSuite(ResourceControlPolicyTest.class);
 		suite.addTestSuite(ResourceInstanceTest.class);
 		suite.addTestSuite(ResourceInterfaceTest.class);
@@ -62,15 +64,19 @@ public class GrmTests extends TestSuite {
 		suite.addTestSuite(ResourcePackageTest.class);
 		suite.addTestSuite(ResourcePortTest.class);
 		suite.addTestSuite(ResourceServiceTest.class);
+		suite.addTestSuite(ResourceUsageTest.class);
 		suite.addTestSuite(SchedulerTest.class);
 		suite.addTestSuite(SchedulableResourceTest.class);
 		suite.addTestSuite(SchedulingParameterTest.class);
 		suite.addTestSuite(SchedulingPolicyTest.class);
 		suite.addTestSuite(SecondarySchedulerTest.class);
+		suite.addTestSuite(StaticUsageTest.class);
 		suite.addTestSuite(StorageResourceTest.class);
 		suite.addTestSuite(SynchResourceTest.class);
+		suite.addTestSuite(TableDrivenScheduleTest.class);
 		suite.addTestSuite(TableEntryTypeTest.class);
 		suite.addTestSuite(TimerResourceTest.class);
+		suite.addTestSuite(UsageDemandTest.class);
 		suite.addTestSuite(UsageTypedAmountTest.class);
 		return suite;
 	}

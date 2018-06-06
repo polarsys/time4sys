@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.trace.Trace;
@@ -43,7 +43,7 @@ import org.polarsys.time4sys.trace.Trace;
  *
  * @generated
  */
-public class SimulationImpl extends MinimalEObjectImpl.Container implements Simulation {
+public class SimulationImpl extends ModelElementImpl implements Simulation {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

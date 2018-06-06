@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.hrm;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EnvCondition extends EObject {
+public interface EnvCondition extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.time4sys.marte.hrm.ConditionType}.

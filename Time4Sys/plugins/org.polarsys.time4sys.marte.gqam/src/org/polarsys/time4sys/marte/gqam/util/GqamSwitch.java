@@ -102,6 +102,8 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.ARRIVAL_PATTERN: {
 				ArrivalPattern arrivalPattern = (ArrivalPattern)theEObject;
 				T result = caseArrivalPattern(arrivalPattern);
+				if (result == null) result = caseModelElement(arrivalPattern);
+				if (result == null) result = caseEModelElement(arrivalPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,6 +122,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				BurstPattern burstPattern = (BurstPattern)theEObject;
 				T result = caseBurstPattern(burstPattern);
 				if (result == null) result = caseArrivalPattern(burstPattern);
+				if (result == null) result = caseModelElement(burstPattern);
+				if (result == null) result = caseEModelElement(burstPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +131,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				ClosedPattern closedPattern = (ClosedPattern)theEObject;
 				T result = caseClosedPattern(closedPattern);
 				if (result == null) result = caseArrivalPattern(closedPattern);
+				if (result == null) result = caseModelElement(closedPattern);
+				if (result == null) result = caseEModelElement(closedPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,6 +236,8 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.OBJECT_NODE: {
 				ObjectNode objectNode = (ObjectNode)theEObject;
 				T result = caseObjectNode(objectNode);
+				if (result == null) result = caseModelElement(objectNode);
+				if (result == null) result = caseEModelElement(objectNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,6 +245,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				Once once = (Once)theEObject;
 				T result = caseOnce(once);
 				if (result == null) result = caseArrivalPattern(once);
+				if (result == null) result = caseModelElement(once);
+				if (result == null) result = caseEModelElement(once);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -258,6 +268,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				PeriodicPattern periodicPattern = (PeriodicPattern)theEObject;
 				T result = casePeriodicPattern(periodicPattern);
 				if (result == null) result = caseArrivalPattern(periodicPattern);
+				if (result == null) result = caseModelElement(periodicPattern);
+				if (result == null) result = caseEModelElement(periodicPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,6 +295,10 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.REFERENCE: {
 				Reference reference = (Reference)theEObject;
 				T result = caseReference(reference);
+				if (result == null) result = caseNamedElement(reference);
+				if (result == null) result = caseENamedElement(reference);
+				if (result == null) result = caseModelElement(reference);
+				if (result == null) result = caseEModelElement(reference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -332,6 +348,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				SlidingWindowPattern slidingWindowPattern = (SlidingWindowPattern)theEObject;
 				T result = caseSlidingWindowPattern(slidingWindowPattern);
 				if (result == null) result = caseArrivalPattern(slidingWindowPattern);
+				if (result == null) result = caseModelElement(slidingWindowPattern);
+				if (result == null) result = caseEModelElement(slidingWindowPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -339,6 +357,8 @@ public class GqamSwitch<T> extends Switch<T> {
 				SporadicPattern sporadicPattern = (SporadicPattern)theEObject;
 				T result = caseSporadicPattern(sporadicPattern);
 				if (result == null) result = caseArrivalPattern(sporadicPattern);
+				if (result == null) result = caseModelElement(sporadicPattern);
+				if (result == null) result = caseEModelElement(sporadicPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

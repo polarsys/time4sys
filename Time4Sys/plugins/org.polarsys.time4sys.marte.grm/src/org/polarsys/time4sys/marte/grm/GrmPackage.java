@@ -1880,13 +1880,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_USAGE = 28;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_USAGE__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_USAGE__WORKLOAD = 0;
+	int RESOURCE_USAGE__WORKLOAD = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Required Amount</b></em>' containment reference list.
@@ -1895,7 +1904,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_USAGE__REQUIRED_AMOUNT = 1;
+	int RESOURCE_USAGE__REQUIRED_AMOUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Used Resource</b></em>' reference list.
@@ -1904,7 +1913,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_USAGE__USED_RESOURCE = 2;
+	int RESOURCE_USAGE__USED_RESOURCE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource Usage</em>' class.
@@ -1913,7 +1922,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_USAGE_FEATURE_COUNT = 3;
+	int RESOURCE_USAGE_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_USAGE___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Usage</em>' class.
@@ -1922,7 +1940,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_USAGE_OPERATION_COUNT = 0;
+	int RESOURCE_USAGE_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.impl.UsageTypedAmountImpl <em>Usage Typed Amount</em>}' class.
@@ -1943,6 +1961,15 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	int DYNAMIC_USAGE = 8;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_USAGE__EANNOTATIONS = RESOURCE_USAGE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
@@ -1979,6 +2006,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int DYNAMIC_USAGE_FEATURE_COUNT = RESOURCE_USAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DYNAMIC_USAGE___GET_EANNOTATION__STRING = RESOURCE_USAGE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Dynamic Usage</em>' class.
@@ -2978,13 +3014,22 @@ public interface GrmPackage extends EPackage {
 	int RESOURCE_BROKER_OPERATION_COUNT = RESOURCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CONNECTOR__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Source Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONNECTOR__SOURCE_PORT = 0;
+	int RESOURCE_CONNECTOR__SOURCE_PORT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target Port</b></em>' reference.
@@ -2993,7 +3038,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONNECTOR__TARGET_PORT = 1;
+	int RESOURCE_CONNECTOR__TARGET_PORT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Connector</em>' class.
@@ -3002,7 +3047,16 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONNECTOR_FEATURE_COUNT = 2;
+	int RESOURCE_CONNECTOR_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_CONNECTOR___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Connector</em>' class.
@@ -3011,7 +3065,7 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_CONNECTOR_OPERATION_COUNT = 0;
+	int RESOURCE_CONNECTOR_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4220,6 +4274,15 @@ public interface GrmPackage extends EPackage {
 	int SECONDARY_SCHEDULER_OPERATION_COUNT = SCHEDULER_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_USAGE__EANNOTATIONS = RESOURCE_USAGE__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Workload</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4254,6 +4317,15 @@ public interface GrmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_USAGE_FEATURE_COUNT = RESOURCE_USAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_USAGE___GET_EANNOTATION__STRING = RESOURCE_USAGE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Static Usage</em>' class.

@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.mapping;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Context extends EObject {
+public interface Context extends org.eclipse.emf.ecore.EModelElement {
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

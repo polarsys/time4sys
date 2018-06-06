@@ -41,7 +41,8 @@ public class Time4sysTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new Time4sysTests("time4sys Tests");
-		//suite.addTestSuite(SimulationTest.class);
+		suite.addTestSuite(TransformationTest.class);
+		suite.addTestSuite(SimulationTest.class);
 		return suite;
 	}
 

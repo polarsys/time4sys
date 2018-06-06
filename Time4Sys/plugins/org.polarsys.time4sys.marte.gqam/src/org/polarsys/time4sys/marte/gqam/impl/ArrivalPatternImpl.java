@@ -17,13 +17,13 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.Reference;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  *
  * @generated
  */
-public abstract class ArrivalPatternImpl extends MinimalEObjectImpl.Container implements ArrivalPattern {
+public abstract class ArrivalPatternImpl extends ModelElementImpl implements ArrivalPattern {
 	/**
 	 * The default value of the '{@link #getJitter() <em>Jitter</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -12,7 +12,6 @@
  */
 package org.polarsys.time4sys.marte.grm.tests;
 
-import junit.framework.TestCase;
 import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
 
 /**
@@ -21,15 +20,7 @@ import org.polarsys.time4sys.marte.grm.CommunicationEndPoint;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class CommunicationEndPointTest extends TestCase {
-
-	/**
-	 * The fixture for this Communication End Point test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommunicationEndPoint fixture = null;
+public abstract class CommunicationEndPointTest extends CommunicationResourceTest {
 
 	/**
 	 * Constructs a new Communication End Point test case with the given name.
@@ -42,23 +33,14 @@ public abstract class CommunicationEndPointTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Communication End Point test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CommunicationEndPoint fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Communication End Point test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CommunicationEndPoint getFixture() {
-		return fixture;
+		return (CommunicationEndPoint)fixture;
 	}
 
 } //CommunicationEndPointTest

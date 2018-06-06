@@ -14,6 +14,7 @@ package org.polarsys.time4sys.mapping.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 
 /**
  * This is the central singleton for the Mapping edit plugin.
@@ -47,6 +48,7 @@ public final class MappingEditPlugin extends EMFPlugin {
 	public MappingEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

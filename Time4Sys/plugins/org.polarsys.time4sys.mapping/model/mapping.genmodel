@@ -3,23 +3,50 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.mapping/src" modelPluginID="org.polarsys.time4sys.mapping"
     modelName="Mapping" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>mapping.ecore</foreignModel>
   <genPackages prefix="Mapping" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
       ecorePackage="mapping.ecore#/">
+    <genDataTypes ecoreDataType="mapping.ecore#//URI"/>
     <genClasses ecoreClass="mapping.ecore#//Link">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//Link/subLinks"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mapping.ecore#//Link/rationale"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//Link/sources"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//Link/targets"/>
+      <genOperations ecoreOperation="mapping.ecore#//Link/getUniqueSourceValue">
+        <genParameters ecoreParameter="mapping.ecore#//Link/getUniqueSourceValue/role"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//Link/getUniqueTargetValue">
+        <genParameters ecoreParameter="mapping.ecore#//Link/getUniqueTargetValue/role"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//Link/getSources">
+        <genParameters ecoreParameter="mapping.ecore#//Link/getSources/role"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//Link/getTargets">
+        <genParameters ecoreParameter="mapping.ecore#//Link/getTargets/role"/>
+      </genOperations>
+      <genOperations ecoreOperation="mapping.ecore#//Link/getLinks">
+        <genParameters ecoreParameter="mapping.ecore#//Link/getLinks/rule"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="mapping.ecore#//MappeableArtefact">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//MappeableArtefact/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mapping.ecore#//MappeableArtefact/value"/>
+    <genClasses ecoreClass="mapping.ecore#//MappableArtefact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//MappableArtefact/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mapping.ecore#//MappableArtefact/value"/>
     </genClasses>
     <genClasses ecoreClass="mapping.ecore#//Mapping">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//Mapping/rules"/>
+      <genOperations ecoreOperation="mapping.ecore#//Mapping/getLinksForSource">
+        <genParameters ecoreParameter="mapping.ecore#//Mapping/getLinksForSource/source"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="mapping.ecore#//Context"/>
+    <genClasses ecoreClass="mapping.ecore#//Context">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//Context/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mapping.ecore#//Context/subRules"/>
+    </genClasses>
+    <genClasses ecoreClass="mapping.ecore#//ResourceArtefact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//ResourceArtefact/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mapping.ecore#//ResourceArtefact/uri"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

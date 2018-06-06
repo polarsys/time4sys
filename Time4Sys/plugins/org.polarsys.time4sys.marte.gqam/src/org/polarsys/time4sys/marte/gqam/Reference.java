@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Reference extends EObject {
+public interface Reference extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Reference Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public interface Reference extends EObject {
 	 * @return the value of the '<em>Reference Name</em>' attribute.
 	 * @see #setReferenceName(String)
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getReference_ReferenceName()
-	 * @model
+	 * @model derived="true"
 	 * @generated
 	 */
 	String getReferenceName();

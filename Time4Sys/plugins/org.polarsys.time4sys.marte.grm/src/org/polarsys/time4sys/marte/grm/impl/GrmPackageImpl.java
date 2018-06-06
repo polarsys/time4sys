@@ -1977,6 +1977,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		protectionParameterEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceEClass.getESuperTypes().add(this.getResourcePackageableElement());
 		resourceBrokerEClass.getESuperTypes().add(this.getResource());
+		resourceConnectorEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		resourceControlPolicyEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceInstanceEClass.getESuperTypes().add(this.getResourcePackageableElement());
 		resourceInterfaceEClass.getESuperTypes().add(this.getResourcePackageableElement());
@@ -1986,6 +1987,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		resourcePortEClass.getESuperTypes().add(this.getCommunicationEndPoint());
 		resourcePortEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		resourceServiceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
+		resourceUsageEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		schedulerEClass.getESuperTypes().add(this.getResourceBroker());
 		schedulableResourceEClass.getESuperTypes().add(this.getConcurrencyResource());
 		scheduleSpecificationEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());

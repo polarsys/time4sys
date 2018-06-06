@@ -25,6 +25,9 @@
               <instanceof
                     value="org.polarsys.time4sys.model.time4sys.Project">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
            </or>
         </enablement>
      </actionProvider>
@@ -152,9 +155,14 @@
               <iterate
                     ifEmpty="false"
                     operator="and">
-                 <instanceof
+                 <or>
+                 	<instanceof
                        value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
-                 </instanceof>
+                 	</instanceof>
+                 	<instanceof
+	                    value="org.eclipse.emf.ecore.EModelElement">
+              		</instanceof>
+    	         </or>
               </iterate>
            </visibleWhen>
         </command>
@@ -169,9 +177,14 @@
               <iterate
                     ifEmpty="false"
                     operator="and">
+               <or>
                  <instanceof
                        value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
                  </instanceof>
+                 <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+                 </instanceof>
+               </or>
               </iterate>
            </visibleWhen>
         </command>
@@ -189,9 +202,14 @@
                  </count>
                  <iterate
                        operator="and">
+                   <or>
                     <instanceof
                           value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
                     </instanceof>
+                    <instanceof
+                      value="org.eclipse.emf.ecore.EModelElement">
+             		</instanceof>
+             </or>
                  </iterate>
               </and>
            </visibleWhen>
@@ -207,9 +225,14 @@
               <iterate
                     ifEmpty="false"
                     operator="and">
+               <or>
                  <instanceof
                        value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
                  </instanceof>
+                 <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+                 </instanceof>
+               </or>
               </iterate>
            </visibleWhen>
         </command>
@@ -279,9 +302,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+              <or>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              </or>
               <and>
                  <with
                        variable="activePartId">
@@ -296,9 +324,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+                 <or>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
            </iterate>
         </enabledWhen>
      </handler>
@@ -312,9 +345,14 @@
               </count>
               <iterate
                     operator="and">
+                    <or>
                  <instanceof
                        value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
                  </instanceof>
+                 <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
                  <and>
                     <with
                           variable="activePartId">
@@ -333,9 +371,14 @@
               </count>
               <iterate
                     operator="and">
+                    <or>
                  <instanceof
                        value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
                  </instanceof>
+                 <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
               </iterate>
            </and>
         </enabledWhen>
@@ -347,9 +390,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+                 <or>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
               <and>
                  <with
                        variable="activePartId">
@@ -364,9 +412,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+                 <or>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
            </iterate>
         </enabledWhen>
      </handler>
@@ -377,9 +430,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+                 <or>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
               <and>
                  <with
                        variable="activePartId">
@@ -394,9 +452,14 @@
            <iterate
                  ifEmpty="false"
                  operator="and">
+                 <or>
               <instanceof
                     value="org.polarsys.time4sys.marte.nfp.coreelements.ModelElement">
               </instanceof>
+              <instanceof
+                    value="org.eclipse.emf.ecore.EModelElement">
+              </instanceof>
+              </or>
            </iterate>
         </enabledWhen>
      </handler>

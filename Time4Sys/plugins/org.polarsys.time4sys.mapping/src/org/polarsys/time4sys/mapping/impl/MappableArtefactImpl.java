@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.mapping.MappableArtefact;
 import org.polarsys.time4sys.mapping.MappingPackage;
 
@@ -35,7 +34,7 @@ import org.polarsys.time4sys.mapping.MappingPackage;
  *
  * @generated
  */
-public class MappableArtefactImpl extends MinimalEObjectImpl.Container implements MappableArtefact {
+public class MappableArtefactImpl extends org.eclipse.emf.ecore.impl.EModelElementImpl implements MappableArtefact {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

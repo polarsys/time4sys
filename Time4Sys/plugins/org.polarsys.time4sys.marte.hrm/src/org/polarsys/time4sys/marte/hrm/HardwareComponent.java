@@ -13,7 +13,7 @@
 package org.polarsys.time4sys.marte.hrm;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface HardwareComponent extends EObject {
+public interface HardwareComponent extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Dimension</b></em>' attribute.
 	 * <!-- begin-user-doc -->

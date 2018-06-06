@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.hrm;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface HardwareWire extends EObject {
+public interface HardwareWire extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Source Pin</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -11,9 +11,9 @@
 package org.polarsys.time4sys.model.time4sys;
 
 import java.math.BigInteger;
-import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.trace.Trace;
 
 /**
@@ -35,7 +35,7 @@ import org.polarsys.time4sys.trace.Trace;
  * @model
  * @generated
  */
-public interface Simulation extends EObject {
+public interface Simulation extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

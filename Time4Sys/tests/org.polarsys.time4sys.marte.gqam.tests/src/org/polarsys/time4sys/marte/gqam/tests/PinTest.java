@@ -2,8 +2,6 @@
  */
 package org.polarsys.time4sys.marte.gqam.tests;
 
-import org.eclipse.emf.ecore.EAnnotation;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.polarsys.time4sys.marte.gqam.Pin;
 
 /**
@@ -49,12 +47,9 @@ public abstract class PinTest extends MultiplicityElementTest {
 	 * @generated
 	 */
 	public void testGetEAnnotation__String() {
-		final Pin pin = getFixture();
-		assertNotNull(pin.getEAnnotations());
-		final EAnnotation myAnnot = EcoreFactory.eINSTANCE.createEAnnotation();
-		myAnnot.setSource("test");
-		pin.getEAnnotations().add(myAnnot);
-		assertSame(myAnnot, pin.getEAnnotation("test"));
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //PinTest

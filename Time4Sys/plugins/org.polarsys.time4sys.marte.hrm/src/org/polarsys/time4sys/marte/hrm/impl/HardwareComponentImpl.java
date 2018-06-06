@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.hrm.EnvCondition;
@@ -28,6 +27,7 @@ import org.polarsys.time4sys.marte.hrm.HardwareComponent;
 import org.polarsys.time4sys.marte.hrm.HardwarePin;
 import org.polarsys.time4sys.marte.hrm.HardwareWire;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ import org.polarsys.time4sys.marte.hrm.HrmPackage;
  *
  * @generated
  */
-public abstract class HardwareComponentImpl extends MinimalEObjectImpl.Container implements HardwareComponent {
+public abstract class HardwareComponentImpl extends ModelElementImpl implements HardwareComponent {
 	/**
 	 * The default value of the '{@link #getDimension() <em>Dimension</em>}' attribute.
 	 * <!-- begin-user-doc -->

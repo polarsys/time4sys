@@ -33,8 +33,9 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
-import org.polarsys.time4sys.marte.hrm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.hrm.EnvCondition;
 import org.polarsys.time4sys.marte.hrm.FirmwareArchitecture;
 import org.polarsys.time4sys.marte.hrm.HardwareActuator;
@@ -333,19 +334,19 @@ public class HrmAdapterFactory extends AdapterFactoryImpl {
 				return createEModelElementAdapter();
 			}
 			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
+			public Adapter caseModelElement(ModelElement object) {
+				return createModelElementAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
-				return createModelElementAdapter();
+			public Adapter caseENamedElement(ENamedElement object) {
+				return createENamedElementAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+			public Adapter casePackageableElement(PackageableElement object) {
 				return createPackageableElementAdapter();
 			}
 			@Override

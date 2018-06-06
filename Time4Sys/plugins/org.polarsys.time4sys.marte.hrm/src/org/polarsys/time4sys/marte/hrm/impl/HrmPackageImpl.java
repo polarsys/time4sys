@@ -79,6 +79,7 @@ import org.polarsys.time4sys.marte.hrm.PortType;
 import org.polarsys.time4sys.marte.hrm.ReplPolicy;
 import org.polarsys.time4sys.marte.hrm.RomType;
 import org.polarsys.time4sys.marte.hrm.WritePolicy;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -2199,14 +2200,15 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
-		org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage theCoreElementsPackage = (org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		envConditionEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		firmwareArchitectureEClass.getESuperTypes().add(this.getHardwareResource());
 		hardwareActuatorEClass.getESuperTypes().add(this.getHardwareIo());
 		hardwareArbiterEClass.getESuperTypes().add(this.getHardwareCommunicationResource());
@@ -2223,6 +2225,7 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 		hardwareCommunicationResourceEClass.getESuperTypes().add(theGrmPackage.getCommunicationResource());
 		hardwareCommunicationResourceEClass.getESuperTypes().add(this.getHardwareResource());
 		hardwareCommunicationResourceEClass.getESuperTypes().add(this.getHardwareChannel());
+		hardwareComponentEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		hardwareComputingResourceEClass.getESuperTypes().add(theGrmPackage.getComputingResource());
 		hardwareComputingResourceEClass.getESuperTypes().add(this.getHardwareResource());
 		hardwareComputingResourceEClass.getESuperTypes().add(this.getHardwareChip());
@@ -2266,6 +2269,7 @@ public class HrmPackageImpl extends EPackageImpl implements HrmPackage {
 		hardwareTimingResourceEClass.getESuperTypes().add(this.getHardwareChip());
 		hardwareTimerEClass.getESuperTypes().add(this.getHardwareTimingResource());
 		hardwareWatchdogEClass.getESuperTypes().add(this.getHardwareTimer());
+		hardwareWireEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(envConditionEClass, EnvCondition.class, "EnvCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -29,7 +29,7 @@
     <eLiterals name="out" value="1"/>
     <eLiterals name="inout" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnvCondition">
+  <eClassifiers xsi:type="ecore:EClass" name="EnvCondition" eSuperTypes="core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ConditionType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//ComponentState"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -87,7 +87,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HardwareCommunicationResource" eSuperTypes="grm.ecore#//CommunicationResource #//HardwareResource #//HardwareChannel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HardwareComponent" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareComponent" abstract="true" eSuperTypes="core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimension" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="area" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" derived="true"/>
@@ -234,7 +234,7 @@
         eType="#//HardwareClock"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HardwareWatchdog" eSuperTypes="#//HardwareTimer"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HardwareWire">
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareWire" eSuperTypes="core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePin" lowerBound="1"
         eType="#//HardwarePin"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetPin" lowerBound="1"

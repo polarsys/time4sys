@@ -18,7 +18,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +26,7 @@ import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourceUsage;
 import org.polarsys.time4sys.marte.grm.UsageDemand;
 import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ import org.polarsys.time4sys.marte.grm.UsageTypedAmount;
  *
  * @generated
  */
-public class ResourceUsageImpl extends MinimalEObjectImpl.Container implements ResourceUsage {
+public class ResourceUsageImpl extends ModelElementImpl implements ResourceUsage {
 	/**
 	 * The cached value of the '{@link #getWorkload() <em>Workload</em>}' reference list.
 	 * <!-- begin-user-doc -->

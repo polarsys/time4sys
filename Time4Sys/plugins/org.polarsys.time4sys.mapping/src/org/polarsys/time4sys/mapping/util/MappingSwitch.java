@@ -15,6 +15,7 @@ package org.polarsys.time4sys.mapping.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.mapping.*;
 import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.MappableArtefact;
@@ -82,12 +83,14 @@ public class MappingSwitch<T> extends Switch<T> {
 			case MappingPackage.LINK: {
 				Link link = (Link)theEObject;
 				T result = caseLink(link);
+				if (result == null) result = caseEModelElement(link);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MappingPackage.MAPPABLE_ARTEFACT: {
 				MappableArtefact mappableArtefact = (MappableArtefact)theEObject;
 				T result = caseMappableArtefact(mappableArtefact);
+				if (result == null) result = caseEModelElement(mappableArtefact);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -95,12 +98,14 @@ public class MappingSwitch<T> extends Switch<T> {
 				Mapping mapping = (Mapping)theEObject;
 				T result = caseMapping(mapping);
 				if (result == null) result = caseLink(mapping);
+				if (result == null) result = caseEModelElement(mapping);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MappingPackage.CONTEXT: {
 				Context context = (Context)theEObject;
 				T result = caseContext(context);
+				if (result == null) result = caseEModelElement(context);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,6 +113,7 @@ public class MappingSwitch<T> extends Switch<T> {
 				ResourceArtefact resourceArtefact = (ResourceArtefact)theEObject;
 				T result = caseResourceArtefact(resourceArtefact);
 				if (result == null) result = caseMappableArtefact(resourceArtefact);
+				if (result == null) result = caseEModelElement(resourceArtefact);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -187,6 +193,21 @@ public class MappingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseResourceArtefact(ResourceArtefact object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(org.eclipse.emf.ecore.EModelElement object) {
 		return null;
 	}
 

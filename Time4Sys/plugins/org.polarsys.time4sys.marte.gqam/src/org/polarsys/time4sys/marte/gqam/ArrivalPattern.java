@@ -12,8 +12,8 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
-import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +34,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  * @model abstract="true"
  * @generated
  */
-public interface ArrivalPattern extends EObject {
+public interface ArrivalPattern extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getPattern <em>Pattern</em>}'.

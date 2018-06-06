@@ -122,6 +122,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		org.eclipse.emf.ecore.EcorePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theMappingPackage.createPackageContents();
 
@@ -426,12 +429,18 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		org.eclipse.emf.ecore.EcorePackage theEcorePackage = (org.eclipse.emf.ecore.EcorePackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.emf.ecore.EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		linkEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
+		mappableArtefactEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
 		mappingEClass.getESuperTypes().add(this.getLink());
+		contextEClass.getESuperTypes().add(theEcorePackage.getEModelElement());
 		resourceArtefactEClass.getESuperTypes().add(this.getMappableArtefact());
 
 		// Initialize classes, features, and operations; add parameters

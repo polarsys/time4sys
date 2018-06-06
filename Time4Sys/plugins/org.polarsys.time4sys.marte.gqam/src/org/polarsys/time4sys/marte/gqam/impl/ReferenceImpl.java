@@ -14,10 +14,11 @@ package org.polarsys.time4sys.marte.gqam.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.Reference;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,26 +33,7 @@ import org.polarsys.time4sys.marte.gqam.Reference;
  *
  * @generated
  */
-public class ReferenceImpl extends MinimalEObjectImpl.Container implements Reference {
-	/**
-	 * The default value of the '{@link #getReferenceName() <em>Reference Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferenceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String REFERENCE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReferenceName() <em>Reference Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferenceName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String referenceName = REFERENCE_NAME_EDEFAULT;
+public class ReferenceImpl extends NamedElementImpl implements Reference {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,28 +57,30 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 * @deprecated
 	 */
 	public String getReferenceName() {
-		return referenceName;
+		return getName();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
+	 * @deprecated
 	 */
 	public void setReferenceName(String newReferenceName) {
-		String oldReferenceName = referenceName;
-		referenceName = newReferenceName;
+		String oldReferenceName = getName();
+		setName(newReferenceName);
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.REFERENCE__REFERENCE_NAME, oldReferenceName, referenceName));
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.REFERENCE__REFERENCE_NAME, oldReferenceName, newReferenceName));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
@@ -110,13 +94,13 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GqamPackage.REFERENCE__REFERENCE_NAME:
-				setReferenceName((String)newValue);
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,13 +109,13 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GqamPackage.REFERENCE__REFERENCE_NAME:
-				setReferenceName(REFERENCE_NAME_EDEFAULT);
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,13 +124,13 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GqamPackage.REFERENCE__REFERENCE_NAME:
-				return REFERENCE_NAME_EDEFAULT == null ? referenceName != null : !REFERENCE_NAME_EDEFAULT.equals(referenceName);
+				return super.eIsSet(EcorePackage.ENAMED_ELEMENT__NAME);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,15 +138,15 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (referenceName: ");
-		result.append(referenceName);
+		result.append(" (name: ");
+		result.append(getName());
 		result.append(')');
 		return result.toString();
 	}

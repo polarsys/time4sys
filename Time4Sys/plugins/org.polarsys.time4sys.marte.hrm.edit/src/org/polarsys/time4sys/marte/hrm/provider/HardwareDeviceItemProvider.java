@@ -522,6 +522,11 @@ public class HardwareDeviceItemProvider extends DeviceResourceItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 				 HrmFactory.eINSTANCE.createHardwareProcessor()));
 
 		newChildDescriptors.add
@@ -583,6 +588,29 @@ public class HardwareDeviceItemProvider extends DeviceResourceItemProvider {
 			(createChildParameter
 				(HrmPackage.Literals.HARDWARE_COMPONENT__OWNED_WIRE,
 				 HrmFactory.eINSTANCE.createHardwareWire()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

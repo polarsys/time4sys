@@ -6,12 +6,13 @@
  * http://www.eclipse.org/legal/epl-v20.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Loï¿½c Fejoz - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.model.time4sys;
 
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.polarsys.time4sys.mapping.Mapping;
  * @model
  * @generated
  */
-public interface Transformation extends EObject {
+public interface Transformation extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Result</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

@@ -1511,6 +1511,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		// Add supertypes to classes
 		acquireStepEClass.getESuperTypes().add(this.getStep());
+		arrivalPatternEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		behaviorScenarioEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		behaviorScenarioEClass.getESuperTypes().add(this.getFlowInvolvedElement());
 		burstPatternEClass.getESuperTypes().add(this.getArrivalPattern());
@@ -1521,6 +1522,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		executionStepEClass.getESuperTypes().add(this.getStep());
 		inputPinEClass.getESuperTypes().add(this.getPin());
 		latencyObserverEClass.getESuperTypes().add(this.getTimedObserver());
+		objectNodeEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		onceEClass.getESuperTypes().add(this.getArrivalPattern());
 		outputPinEClass.getESuperTypes().add(this.getPin());
 		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
@@ -1528,6 +1530,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		pinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		pinEClass.getESuperTypes().add(this.getObjectNode());
 		pinEClass.getESuperTypes().add(this.getFlowInvolvedElement());
+		referenceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
 		releaseStepEClass.getESuperTypes().add(this.getStep());
 		requestedServiceEClass.getESuperTypes().add(this.getStep());
 		resourceServiceExcecutionEClass.getESuperTypes().add(this.getStep());
@@ -1625,7 +1628,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getPrecedenceRelation_ConnectorKind(), this.getConnectorKind(), "connectorKind", null, 0, 1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getReference_ReferenceName(), ecorePackage.getEString(), "referenceName", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_ReferenceName(), ecorePackage.getEString(), "referenceName", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(releaseStepEClass, ReleaseStep.class, "ReleaseStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReleaseStep_RelRes(), theGrmPackage.getResource(), null, "relRes", null, 0, 1, ReleaseStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

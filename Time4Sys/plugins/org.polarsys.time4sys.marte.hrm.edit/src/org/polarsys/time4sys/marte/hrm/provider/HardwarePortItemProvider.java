@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.grm.provider.ResourcePortItemProvider;
 import org.polarsys.time4sys.marte.hrm.HardwarePort;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
@@ -400,6 +401,181 @@ public class HardwarePortItemProvider extends ResourcePortItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createFirmwareArchitecture()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareDevice()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareIo()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareActuator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareCommunicationResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareArbiter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareComputingResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareAsic()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareBranchPredictor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareMedia()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareBridge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareBus()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareMemory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareCache()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareTimingResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareClock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareStorageManager()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareDma()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareDrive()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareIpBlock()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareIsa()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareMmu()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwarePlatform()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwarePld()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareProcessor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareRam()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareRom()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareSensor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareSupport()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareTimer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 HrmFactory.eINSTANCE.createHardwareWatchdog()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_PORT,
+				 HrmFactory.eINSTANCE.createHardwarePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_CONNECTOR,
+				 HrmFactory.eINSTANCE.createHardwareConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__PSERVICES,
+				 HrmFactory.eINSTANCE.createHardwareService()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(HrmPackage.Literals.HARDWARE_COMPONENT__RCONDITIONS,
 				 HrmFactory.eINSTANCE.createEnvCondition()));
 
@@ -412,6 +588,29 @@ public class HardwarePortItemProvider extends ResourcePortItemProvider {
 			(createChildParameter
 				(HrmPackage.Literals.HARDWARE_COMPONENT__OWNED_WIRE,
 				 HrmFactory.eINSTANCE.createHardwareWire()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_RESOURCE ||
+			childFeature == GrmPackage.Literals.RESOURCE__OWNED_PORT;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface ObjectNode extends EObject {
+public interface ObjectNode extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Ordering</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind}.

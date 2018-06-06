@@ -190,6 +190,8 @@ public class GrmSwitch<T> extends Switch<T> {
 				DynamicUsage dynamicUsage = (DynamicUsage)theEObject;
 				T result = caseDynamicUsage(dynamicUsage);
 				if (result == null) result = caseResourceUsage(dynamicUsage);
+				if (result == null) result = caseModelElement(dynamicUsage);
+				if (result == null) result = caseEModelElement(dynamicUsage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -315,6 +317,8 @@ public class GrmSwitch<T> extends Switch<T> {
 			case GrmPackage.RESOURCE_CONNECTOR: {
 				ResourceConnector resourceConnector = (ResourceConnector)theEObject;
 				T result = caseResourceConnector(resourceConnector);
+				if (result == null) result = caseModelElement(resourceConnector);
+				if (result == null) result = caseEModelElement(resourceConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -416,6 +420,8 @@ public class GrmSwitch<T> extends Switch<T> {
 			case GrmPackage.RESOURCE_USAGE: {
 				ResourceUsage resourceUsage = (ResourceUsage)theEObject;
 				T result = caseResourceUsage(resourceUsage);
+				if (result == null) result = caseModelElement(resourceUsage);
+				if (result == null) result = caseEModelElement(resourceUsage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -495,6 +501,8 @@ public class GrmSwitch<T> extends Switch<T> {
 				StaticUsage staticUsage = (StaticUsage)theEObject;
 				T result = caseStaticUsage(staticUsage);
 				if (result == null) result = caseResourceUsage(staticUsage);
+				if (result == null) result = caseModelElement(staticUsage);
+				if (result == null) result = caseEModelElement(staticUsage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

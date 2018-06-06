@@ -79,13 +79,22 @@ public interface MappingPackage extends EPackage {
 	int LINK = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__EANNOTATIONS = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Sub Links</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__SUB_LINKS = 0;
+	int LINK__SUB_LINKS = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Rationale</b></em>' reference.
@@ -94,7 +103,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__RATIONALE = 1;
+	int LINK__RATIONALE = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sources</b></em>' containment reference list.
@@ -103,7 +112,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__SOURCES = 2;
+	int LINK__SOURCES = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Targets</b></em>' containment reference list.
@@ -112,7 +121,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__TARGETS = 3;
+	int LINK__TARGETS = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -121,7 +130,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = 4;
+	int LINK_FEATURE_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK___GET_EANNOTATION__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Unique Source Value</em>' operation.
@@ -130,7 +148,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___GET_UNIQUE_SOURCE_VALUE__STRING = 0;
+	int LINK___GET_UNIQUE_SOURCE_VALUE__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get Unique Target Value</em>' operation.
@@ -139,7 +157,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___GET_UNIQUE_TARGET_VALUE__STRING = 1;
+	int LINK___GET_UNIQUE_TARGET_VALUE__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Sources</em>' operation.
@@ -148,7 +166,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___GET_SOURCES__STRING = 2;
+	int LINK___GET_SOURCES__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get Targets</em>' operation.
@@ -157,7 +175,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___GET_TARGETS__STRING = 3;
+	int LINK___GET_TARGETS__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get Links</em>' operation.
@@ -166,7 +184,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK___GET_LINKS__CONTEXT = 4;
+	int LINK___GET_LINKS__CONTEXT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -175,7 +193,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = 5;
+	int LINK_OPERATION_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.mapping.impl.MappableArtefactImpl <em>Mappable Artefact</em>}' class.
@@ -188,13 +206,22 @@ public interface MappingPackage extends EPackage {
 	int MAPPABLE_ARTEFACT = 1;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPABLE_ARTEFACT__EANNOTATIONS = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPABLE_ARTEFACT__NAME = 0;
+	int MAPPABLE_ARTEFACT__NAME = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' reference.
@@ -203,7 +230,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPABLE_ARTEFACT__VALUE = 1;
+	int MAPPABLE_ARTEFACT__VALUE = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Mappable Artefact</em>' class.
@@ -212,7 +239,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPABLE_ARTEFACT_FEATURE_COUNT = 2;
+	int MAPPABLE_ARTEFACT_FEATURE_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPABLE_ARTEFACT___GET_EANNOTATION__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Mappable Artefact</em>' class.
@@ -221,7 +257,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPABLE_ARTEFACT_OPERATION_COUNT = 0;
+	int MAPPABLE_ARTEFACT_OPERATION_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.mapping.impl.MappingImpl <em>Mapping</em>}' class.
@@ -232,6 +268,15 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	int MAPPING = 2;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__EANNOTATIONS = LINK__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Sub Links</b></em>' containment reference list.
@@ -286,6 +331,15 @@ public interface MappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int MAPPING_FEATURE_COUNT = LINK_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING___GET_EANNOTATION__STRING = LINK___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Unique Source Value</em>' operation.
@@ -361,13 +415,22 @@ public interface MappingPackage extends EPackage {
 	int CONTEXT = 3;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__EANNOTATIONS = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__NAME = 0;
+	int CONTEXT__NAME = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sub Rules</b></em>' containment reference list.
@@ -376,7 +439,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__SUB_RULES = 1;
+	int CONTEXT__SUB_RULES = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -385,7 +448,16 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 2;
+	int CONTEXT_FEATURE_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT___GET_EANNOTATION__STRING = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -394,7 +466,7 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_OPERATION_COUNT = 0;
+	int CONTEXT_OPERATION_COUNT = org.eclipse.emf.ecore.EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -406,6 +478,15 @@ public interface MappingPackage extends EPackage {
 	 * @generated
 	 */
 	int RESOURCE_ARTEFACT = 4;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ARTEFACT__EANNOTATIONS = MAPPABLE_ARTEFACT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -451,6 +532,15 @@ public interface MappingPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_ARTEFACT_FEATURE_COUNT = MAPPABLE_ARTEFACT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_ARTEFACT___GET_EANNOTATION__STRING = MAPPABLE_ARTEFACT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Artefact</em>' class.

@@ -807,13 +807,22 @@ public interface GqamPackage extends EPackage {
 	int ARRIVAL_PATTERN = 1;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL_PATTERN__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN__PARENT = 0;
+	int ARRIVAL_PATTERN__PARENT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -822,7 +831,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN__JITTER = 1;
+	int ARRIVAL_PATTERN__JITTER = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -831,7 +840,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN__PHASE = 2;
+	int ARRIVAL_PATTERN__PHASE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -840,7 +849,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN__REFERENCE = 3;
+	int ARRIVAL_PATTERN__REFERENCE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Arrival Pattern</em>' class.
@@ -849,7 +858,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN_FEATURE_COUNT = 4;
+	int ARRIVAL_PATTERN_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL_PATTERN___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Arrival Pattern</em>' class.
@@ -858,7 +876,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN_OPERATION_COUNT = 0;
+	int ARRIVAL_PATTERN_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl <em>Burst Pattern</em>}' class.
@@ -869,6 +887,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int BURST_PATTERN = 3;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BURST_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -961,6 +988,15 @@ public interface GqamPackage extends EPackage {
 	int BURST_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 5;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BURST_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+
+	/**
 	 * The operation id for the '<em>Set Outer Period</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -996,6 +1032,15 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int CLOSED_PATTERN = 4;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOSED_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -1059,6 +1104,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOSED_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOSED_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Closed Pattern</em>' class.
@@ -2589,13 +2643,22 @@ public interface GqamPackage extends EPackage {
 	int OBJECT_NODE = 13;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_NODE__ORDERING = 0;
+	int OBJECT_NODE__ORDERING = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Typename</b></em>' attribute.
@@ -2604,7 +2667,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_NODE__TYPENAME = 1;
+	int OBJECT_NODE__TYPENAME = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Object Node</em>' class.
@@ -2613,7 +2676,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_NODE_FEATURE_COUNT = 2;
+	int OBJECT_NODE_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_NODE___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Object Node</em>' class.
@@ -2622,7 +2694,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_NODE_OPERATION_COUNT = 0;
+	int OBJECT_NODE_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2668,6 +2749,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int ONCE_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Once</em>' class.
@@ -2787,6 +2877,15 @@ public interface GqamPackage extends EPackage {
 	int OUTPUT_PIN_OPERATION_COUNT = PIN_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2850,6 +2949,15 @@ public interface GqamPackage extends EPackage {
 	int PERIODIC_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Periodic Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2904,13 +3012,31 @@ public interface GqamPackage extends EPackage {
 	int PRECEDENCE_RELATION_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Reference Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__REFERENCE_NAME = 0;
+	int REFERENCE__REFERENCE_NAME = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -2919,7 +3045,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = 1;
+	int REFERENCE_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Reference</em>' class.
@@ -2928,7 +3063,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_OPERATION_COUNT = 0;
+	int REFERENCE_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3687,6 +3822,15 @@ public interface GqamPackage extends EPackage {
 	int RESOURCE_SERVICE_EXCECUTION_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDING_WINDOW_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3750,6 +3894,15 @@ public interface GqamPackage extends EPackage {
 	int SLIDING_WINDOW_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDING_WINDOW_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+
+	/**
 	 * The number of operations of the '<em>Sliding Window Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3757,6 +3910,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int SLIDING_WINDOW_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPORADIC_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -3820,6 +3982,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPORADIC_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPORADIC_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Sporadic Pattern</em>' class.

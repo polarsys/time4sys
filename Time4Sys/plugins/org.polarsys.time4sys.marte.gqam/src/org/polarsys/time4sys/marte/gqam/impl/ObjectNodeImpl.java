@@ -17,11 +17,10 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.ObjectNode;
 import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +36,7 @@ import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
  *
  * @generated
  */
-public abstract class ObjectNodeImpl extends MinimalEObjectImpl.Container implements ObjectNode {
+public abstract class ObjectNodeImpl extends ModelElementImpl implements ObjectNode {
 	/**
 	 * The default value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->

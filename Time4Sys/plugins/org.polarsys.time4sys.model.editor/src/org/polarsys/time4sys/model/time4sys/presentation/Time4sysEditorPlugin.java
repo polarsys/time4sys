@@ -64,8 +64,8 @@ public final class Time4sysEditorPlugin extends EMFPlugin {
 				GrmEditPlugin.INSTANCE,
 				MappingEditPlugin.INSTANCE,
 				TraceEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE,
 				CoreElementsEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
 				Nfp_AnnotationEditPlugin.INSTANCE,
 				SamEditPlugin.INSTANCE,
 			});

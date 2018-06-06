@@ -333,7 +333,17 @@ public class GqamValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReference(Reference reference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reference, diagnostics, context);
+		if (!validate_NoCircularContainment(reference, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reference, diagnostics, context);
+		if (result || diagnostics != null) result &= ecoreValidator.validateENamedElement_WellFormedName(reference, diagnostics, context);
+		return result;
 	}
 
 	/**

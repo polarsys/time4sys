@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,13 +171,22 @@ public interface Time4sysPackage extends EPackage {
 	int TRANSFORMATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMATION__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Result</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMATION__RESULT = 0;
+	int TRANSFORMATION__RESULT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mapping</b></em>' containment reference.
@@ -185,7 +195,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMATION__MAPPING = 1;
+	int TRANSFORMATION__MAPPING = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,7 +204,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMATION__NAME = 2;
+	int TRANSFORMATION__NAME = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Transformation</em>' class.
@@ -203,7 +213,16 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMATION_FEATURE_COUNT = 3;
+	int TRANSFORMATION_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSFORMATION___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Transformation</em>' class.
@@ -212,7 +231,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSFORMATION_OPERATION_COUNT = 0;
+	int TRANSFORMATION_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.model.time4sys.impl.SimulationImpl <em>Simulation</em>}' class.
@@ -225,13 +244,22 @@ public interface Time4sysPackage extends EPackage {
 	int SIMULATION = 2;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION__NAME = 0;
+	int SIMULATION__NAME = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Mapping</b></em>' containment reference.
@@ -240,7 +268,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION__MAPPING = 1;
+	int SIMULATION__MAPPING = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Trace</b></em>' containment reference.
@@ -249,7 +277,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION__TRACE = 2;
+	int SIMULATION__TRACE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Seed</b></em>' attribute.
@@ -258,7 +286,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION__SEED = 3;
+	int SIMULATION__SEED = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Simulation</em>' class.
@@ -267,7 +295,16 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_FEATURE_COUNT = 4;
+	int SIMULATION_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMULATION___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Design Model</em>' operation.
@@ -276,7 +313,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION___GET_DESIGN_MODEL = 0;
+	int SIMULATION___GET_DESIGN_MODEL = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Simulation</em>' class.
@@ -285,7 +322,7 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMULATION_OPERATION_COUNT = 1;
+	int SIMULATION_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 1;
 
 
 	/**

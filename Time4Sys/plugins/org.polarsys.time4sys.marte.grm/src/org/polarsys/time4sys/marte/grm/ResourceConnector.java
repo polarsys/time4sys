@@ -12,7 +12,7 @@
  */
 package org.polarsys.time4sys.marte.grm;
 
-import org.eclipse.emf.ecore.EObject;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ResourceConnector extends EObject {
+public interface ResourceConnector extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Source Port</b></em>' reference.
 	 * <!-- begin-user-doc -->

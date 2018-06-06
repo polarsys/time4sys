@@ -12,9 +12,12 @@
  */
 package org.polarsys.time4sys.model.time4sys.util;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.model.time4sys.*;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
@@ -86,12 +89,16 @@ public class Time4sysSwitch<T> extends Switch<T> {
 			case Time4sysPackage.TRANSFORMATION: {
 				Transformation transformation = (Transformation)theEObject;
 				T result = caseTransformation(transformation);
+				if (result == null) result = caseModelElement(transformation);
+				if (result == null) result = caseEModelElement(transformation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case Time4sysPackage.SIMULATION: {
 				Simulation simulation = (Simulation)theEObject;
 				T result = caseSimulation(simulation);
+				if (result == null) result = caseModelElement(simulation);
+				if (result == null) result = caseEModelElement(simulation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,6 +148,36 @@ public class Time4sysSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSimulation(Simulation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEModelElement(EModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(ModelElement object) {
 		return null;
 	}
 

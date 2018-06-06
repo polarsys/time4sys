@@ -15,11 +15,11 @@ package org.polarsys.time4sys.marte.hrm.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.hrm.ComponentState;
 import org.polarsys.time4sys.marte.hrm.ConditionType;
 import org.polarsys.time4sys.marte.hrm.EnvCondition;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +37,7 @@ import org.polarsys.time4sys.marte.hrm.HrmPackage;
  *
  * @generated
  */
-public class EnvConditionImpl extends MinimalEObjectImpl.Container implements EnvCondition {
+public class EnvConditionImpl extends ModelElementImpl implements EnvCondition {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

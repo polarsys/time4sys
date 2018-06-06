@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.mapping.Context;
@@ -51,7 +50,7 @@ import org.polarsys.time4sys.mapping.MappingPackage;
  *
  * @generated
  */
-public class LinkImpl extends MinimalEObjectImpl.Container implements Link {
+public class LinkImpl extends org.eclipse.emf.ecore.impl.EModelElementImpl implements Link {
 	/**
 	 * The cached value of the '{@link #getSubLinks() <em>Sub Links</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

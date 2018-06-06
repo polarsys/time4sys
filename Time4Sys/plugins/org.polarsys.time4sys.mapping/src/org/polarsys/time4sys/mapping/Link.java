@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Link extends EObject {
+public interface Link extends org.eclipse.emf.ecore.EModelElement {
 	/**
 	 * Returns the value of the '<em><b>Sub Links</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.time4sys.mapping.Link}.

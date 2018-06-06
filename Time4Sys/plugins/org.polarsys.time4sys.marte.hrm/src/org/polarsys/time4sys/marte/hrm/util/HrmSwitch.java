@@ -33,7 +33,9 @@ import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
 import org.polarsys.time4sys.marte.hrm.*;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.hrm.EnvCondition;
 import org.polarsys.time4sys.marte.hrm.FirmwareArchitecture;
 import org.polarsys.time4sys.marte.hrm.HardwareActuator;
@@ -143,6 +145,8 @@ public class HrmSwitch<T> extends Switch<T> {
 			case HrmPackage.ENV_CONDITION: {
 				EnvCondition envCondition = (EnvCondition)theEObject;
 				T result = caseEnvCondition(envCondition);
+				if (result == null) result = caseModelElement(envCondition);
+				if (result == null) result = caseEModelElement(envCondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -293,6 +297,8 @@ public class HrmSwitch<T> extends Switch<T> {
 				HardwareCard hardwareCard = (HardwareCard)theEObject;
 				T result = caseHardwareCard(hardwareCard);
 				if (result == null) result = caseHardwareComponent(hardwareCard);
+				if (result == null) result = caseModelElement(hardwareCard);
+				if (result == null) result = caseEModelElement(hardwareCard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -300,6 +306,8 @@ public class HrmSwitch<T> extends Switch<T> {
 				HardwareChannel hardwareChannel = (HardwareChannel)theEObject;
 				T result = caseHardwareChannel(hardwareChannel);
 				if (result == null) result = caseHardwareComponent(hardwareChannel);
+				if (result == null) result = caseModelElement(hardwareChannel);
+				if (result == null) result = caseEModelElement(hardwareChannel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -307,6 +315,8 @@ public class HrmSwitch<T> extends Switch<T> {
 				HardwareChip hardwareChip = (HardwareChip)theEObject;
 				T result = caseHardwareChip(hardwareChip);
 				if (result == null) result = caseHardwareComponent(hardwareChip);
+				if (result == null) result = caseModelElement(hardwareChip);
+				if (result == null) result = caseEModelElement(hardwareChip);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -348,6 +358,8 @@ public class HrmSwitch<T> extends Switch<T> {
 			case HrmPackage.HARDWARE_COMPONENT: {
 				HardwareComponent hardwareComponent = (HardwareComponent)theEObject;
 				T result = caseHardwareComponent(hardwareComponent);
+				if (result == null) result = caseModelElement(hardwareComponent);
+				if (result == null) result = caseEModelElement(hardwareComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -373,6 +385,8 @@ public class HrmSwitch<T> extends Switch<T> {
 				HardwareConnector hardwareConnector = (HardwareConnector)theEObject;
 				T result = caseHardwareConnector(hardwareConnector);
 				if (result == null) result = caseResourceConnector(hardwareConnector);
+				if (result == null) result = caseModelElement(hardwareConnector);
+				if (result == null) result = caseEModelElement(hardwareConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -611,6 +625,10 @@ public class HrmSwitch<T> extends Switch<T> {
 				if (result == null) result = caseResourcePort(hardwarePort);
 				if (result == null) result = caseHardwareComponent(hardwarePort);
 				if (result == null) result = caseCommunicationEndPoint(hardwarePort);
+				if (result == null) result = caseCommunicationResource(hardwarePort);
+				if (result == null) result = caseResource(hardwarePort);
+				if (result == null) result = caseResourcePackageableElement(hardwarePort);
+				if (result == null) result = casePackageableElement(hardwarePort);
 				if (result == null) result = caseNamedElement(hardwarePort);
 				if (result == null) result = caseENamedElement(hardwarePort);
 				if (result == null) result = caseModelElement(hardwarePort);
@@ -860,6 +878,8 @@ public class HrmSwitch<T> extends Switch<T> {
 			case HrmPackage.HARDWARE_WIRE: {
 				HardwareWire hardwareWire = (HardwareWire)theEObject;
 				T result = caseHardwareWire(hardwareWire);
+				if (result == null) result = caseModelElement(hardwareWire);
+				if (result == null) result = caseEModelElement(hardwareWire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1558,6 +1578,21 @@ public class HrmSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(ModelElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>ENamed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1569,21 +1604,6 @@ public class HrmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseENamedElement(ENamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelElement(org.polarsys.time4sys.marte.nfp.coreelements.ModelElement object) {
 		return null;
 	}
 
@@ -1613,7 +1633,7 @@ public class HrmSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackageableElement(org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement object) {
+	public T casePackageableElement(PackageableElement object) {
 		return null;
 	}
 
