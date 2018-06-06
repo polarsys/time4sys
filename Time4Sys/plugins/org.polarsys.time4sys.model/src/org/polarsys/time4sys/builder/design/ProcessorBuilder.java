@@ -78,6 +78,13 @@ public class ProcessorBuilder {
 		} else {
 			sched = srmFactory.createSoftwareScheduler();
 			proc.setMainScheduler(sched);
+			final String schedName;
+			if (proc.getName() != null) {
+				schedName = "Scheduler for " + proc.getName();
+			} else {
+				schedName = "scheduler for " + Integer.toString(proc.hashCode());
+			}
+			sched.setName(schedName);
 		}
 		initSchedulerPolicy(sched, proc, polKind);
 		if (!sched.getProcessingUnits().contains(proc)) {
