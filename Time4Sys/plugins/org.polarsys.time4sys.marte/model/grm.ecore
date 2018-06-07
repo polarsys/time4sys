@@ -30,7 +30,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FixedPriorityParameters" eSuperTypes="#//SchedulingParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" lowerBound="1"
-        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="priority is the urgency of the SchedulableResource, ie the higher the priority, the higher the urgency (higher numerical value).&#xD;&#xA;NB:  This is the opposite of the posix priority where highest priority have lowest numerical value. In Time4Sys, the highest priority have the highest numerical value."/>
       </eAnnotations>
@@ -60,7 +60,7 @@
         <details key="documentation" value="indicates the type of periodic server."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundPriority" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="is the priority used to run the server when it is in the background."/>
       </eAnnotations>
@@ -75,7 +75,7 @@
         <details key="documentation" value="is the replenishment period defined for the server."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxPendingReplenish" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxPendingReplenish" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="is the maximum number of replenishments that can be stored in the queue of pending replenishments, it limits the number of times a schedulable resource may block itself in the time frame of a cycle period."/>
       </eAnnotations>
@@ -250,6 +250,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" unique="false"
         upperBound="-1" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialBudget" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activation" upperBound="-1"
+        eType="#//NFP_TimeInterval" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimingResource" abstract="true" eSuperTypes="#//Resource"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimerResource" eSuperTypes="#//TimingResource">
@@ -282,4 +284,5 @@
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataSize" instanceClassName="org.polarsys.time4sys.marte.nfp.DataSize"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_DataTxRate" instanceClassName="org.polarsys.time4sys.marte.nfp.DataTxRate"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_TimeInterval" instanceClassName="org.polarsys.time4sys.marte.nfp.TimeInterval"/>
 </ecore:EPackage>

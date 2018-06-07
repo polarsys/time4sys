@@ -79,6 +79,7 @@ import org.polarsys.time4sys.marte.grm.util.GrmValidator;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**
@@ -436,6 +437,13 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType nfP_TimeIntervalEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum schedPolicyKindEEnum = null;
 
 	/**
@@ -759,6 +767,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 */
 	public EAttribute getTableEntryType_InitialBudget() {
 		return (EAttribute)tableEntryTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTableEntryType_Activation() {
+		return (EAttribute)tableEntryTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1702,6 +1719,15 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getNFP_TimeInterval() {
+		return nfP_TimeIntervalEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getSchedPolicyKind() {
 		return schedPolicyKindEEnum;
 	}
@@ -1889,6 +1915,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__TIME_SLOT);
 		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__OFFSET);
 		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__INITIAL_BUDGET);
+		createEAttribute(tableEntryTypeEClass, TABLE_ENTRY_TYPE__ACTIVATION);
 
 		timingResourceEClass = createEClass(TIMING_RESOURCE);
 
@@ -1923,6 +1950,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
 		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
 		nfP_DataTxRateEDataType = createEDataType(NFP_DATA_TX_RATE);
+		nfP_TimeIntervalEDataType = createEDataType(NFP_TIME_INTERVAL);
 	}
 
 	/**
@@ -2159,6 +2187,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEAttribute(getTableEntryType_TimeSlot(), this.getNFP_Duration(), "timeSlot", null, 1, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTableEntryType_Offset(), this.getNFP_Duration(), "offset", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTableEntryType_InitialBudget(), this.getNFP_Duration(), "initialBudget", null, 0, 1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_Activation(), this.getNFP_TimeInterval(), "activation", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(timingResourceEClass, TimingResource.class, "TimingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2218,6 +2247,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_DataTxRateEDataType, DataTxRate.class, "NFP_DataTxRate", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_TimeIntervalEDataType, TimeInterval.class, "NFP_TimeInterval", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

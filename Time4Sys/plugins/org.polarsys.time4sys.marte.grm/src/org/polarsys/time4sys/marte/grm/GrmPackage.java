@@ -4600,13 +4600,22 @@ public interface GrmPackage extends EPackage {
 	int TABLE_ENTRY_TYPE__INITIAL_BUDGET = SCHEDULING_PARAMETER_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Activation</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_ENTRY_TYPE__ACTIVATION = SCHEDULING_PARAMETER_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Table Entry Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_ENTRY_TYPE_FEATURE_COUNT = SCHEDULING_PARAMETER_FEATURE_COUNT + 4;
+	int TABLE_ENTRY_TYPE_FEATURE_COUNT = SCHEDULING_PARAMETER_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -5100,6 +5109,16 @@ public interface GrmPackage extends EPackage {
 	int NFP_DATA_TX_RATE = 50;
 
 	/**
+	 * The meta object id for the '<em>NFP Time Interval</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+	 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_TimeInterval()
+	 * @generated
+	 */
+	int NFP_TIME_INTERVAL = 51;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5406,6 +5425,17 @@ public interface GrmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTableEntryType_InitialBudget();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.polarsys.time4sys.marte.grm.TableEntryType#getActivation <em>Activation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Activation</em>'.
+	 * @see org.polarsys.time4sys.marte.grm.TableEntryType#getActivation()
+	 * @see #getTableEntryType()
+	 * @generated
+	 */
+	EAttribute getTableEntryType_Activation();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.grm.ConcurrencyResource <em>Concurrency Resource</em>}'.
@@ -6515,6 +6545,17 @@ public interface GrmPackage extends EPackage {
 	EDataType getNFP_DataTxRate();
 
 	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.TimeInterval <em>NFP Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Time Interval</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.TimeInterval"
+	 * @generated
+	 */
+	EDataType getNFP_TimeInterval();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6792,6 +6833,14 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TABLE_ENTRY_TYPE__INITIAL_BUDGET = eINSTANCE.getTableEntryType_InitialBudget();
+
+		/**
+		 * The meta object literal for the '<em><b>Activation</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE_ENTRY_TYPE__ACTIVATION = eINSTANCE.getTableEntryType_Activation();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.impl.ConcurrencyResourceImpl <em>Concurrency Resource</em>}' class.
@@ -7702,6 +7751,16 @@ public interface GrmPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_DATA_TX_RATE = eINSTANCE.getNFP_DataTxRate();
+
+		/**
+		 * The meta object literal for the '<em>NFP Time Interval</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+		 * @see org.polarsys.time4sys.marte.grm.impl.GrmPackageImpl#getNFP_TimeInterval()
+		 * @generated
+		 */
+		EDataType NFP_TIME_INTERVAL = eINSTANCE.getNFP_TimeInterval();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.grm.SchedPolicyKind <em>Sched Policy Kind</em>}' enum.

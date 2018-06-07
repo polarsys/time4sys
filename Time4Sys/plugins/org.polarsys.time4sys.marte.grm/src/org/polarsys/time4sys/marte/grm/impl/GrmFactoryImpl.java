@@ -66,6 +66,7 @@ import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
 /**
  * <!-- begin-user-doc -->
@@ -175,6 +176,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return createNFP_DataSizeFromString(eDataType, initialValue);
 			case GrmPackage.NFP_DATA_TX_RATE:
 				return createNFP_DataTxRateFromString(eDataType, initialValue);
+			case GrmPackage.NFP_TIME_INTERVAL:
+				return createNFP_TimeIntervalFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -202,6 +205,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 				return convertNFP_DataSizeToString(eDataType, instanceValue);
 			case GrmPackage.NFP_DATA_TX_RATE:
 				return convertNFP_DataTxRateToString(eDataType, instanceValue);
+			case GrmPackage.NFP_TIME_INTERVAL:
+				return convertNFP_TimeIntervalToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -656,10 +661,10 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
-		return (DataSize)super.createFromString(eDataType, initialValue);
+		throw new UnsupportedOperationException("Not yet implemtented");
 	}
 
 	/**
@@ -674,10 +679,10 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public DataTxRate createNFP_DataTxRateFromString(EDataType eDataType, String initialValue) {
-		return (DataTxRate)super.createFromString(eDataType, initialValue);
+		throw new UnsupportedOperationException("Not yet implemtented");
 	}
 
 	/**
@@ -687,6 +692,25 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 */
 	public String convertNFP_DataTxRateToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimeInterval createNFP_TimeIntervalFromString(EDataType eDataType, String initialValue) {
+		return NfpFactory.eINSTANCE.createTimeIntervalFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertNFP_TimeIntervalToString(EDataType eDataType, Object instanceValue) {
+		assert(instanceValue == null || instanceValue instanceof TimeInterval);
+		return NfpFactory.eINSTANCE.convertTimeIntervalToString((TimeInterval)instanceValue);
 	}
 
 	/**

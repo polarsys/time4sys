@@ -15,6 +15,7 @@ package org.polarsys.time4sys.marte.grm;
 import org.eclipse.emf.common.util.EList;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
  *   <li>{@link org.polarsys.time4sys.marte.grm.TableEntryType#getTimeSlot <em>Time Slot</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.TableEntryType#getOffset <em>Offset</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.grm.TableEntryType#getInitialBudget <em>Initial Budget</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.grm.TableEntryType#getActivation <em>Activation</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.grm.GrmPackage#getTableEntryType()
@@ -121,5 +123,21 @@ public interface TableEntryType extends SchedulingParameter {
 	 * @generated
 	 */
 	void setInitialBudget(Duration value);
+
+	/**
+	 * Returns the value of the '<em><b>Activation</b></em>' attribute list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.nfp.TimeInterval}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Activation</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Activation</em>' attribute list.
+	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getTableEntryType_Activation()
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_TimeInterval" derived="true"
+	 * @generated
+	 */
+	EList<TimeInterval> getActivation();
 
 } // TableEntryType

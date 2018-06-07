@@ -23,6 +23,7 @@ import org.polarsys.time4sys.marte.grm.*;
 import org.polarsys.time4sys.marte.nfp.DataSize;
 import org.polarsys.time4sys.marte.nfp.DataTxRate;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,6 +216,8 @@ public class GrmValidator extends EObjectValidator {
 				return validateNFP_DataSize((DataSize)value, diagnostics, context);
 			case GrmPackage.NFP_DATA_TX_RATE:
 				return validateNFP_DataTxRate((DataTxRate)value, diagnostics, context);
+			case GrmPackage.NFP_TIME_INTERVAL:
+				return validateNFP_TimeInterval((TimeInterval)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -1057,6 +1060,15 @@ public class GrmValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateNFP_DataTxRate(DataTxRate nfP_DataTxRate, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNFP_TimeInterval(TimeInterval nfP_TimeInterval, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

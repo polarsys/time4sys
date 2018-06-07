@@ -59,6 +59,7 @@ public class TableEntryTypeItemProvider extends SchedulingParameterItemProvider 
 			addTimeSlotPropertyDescriptor(object);
 			addOffsetPropertyDescriptor(object);
 			addInitialBudgetPropertyDescriptor(object);
+			addActivationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -152,6 +153,28 @@ public class TableEntryTypeItemProvider extends SchedulingParameterItemProvider 
 	}
 
 	/**
+	 * This adds a property descriptor for the Activation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActivationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TableEntryType_activation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TableEntryType_activation_feature", "_UI_TableEntryType_type"),
+				 GrmPackage.Literals.TABLE_ENTRY_TYPE__ACTIVATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns TableEntryType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +215,7 @@ public class TableEntryTypeItemProvider extends SchedulingParameterItemProvider 
 			case GrmPackage.TABLE_ENTRY_TYPE__TIME_SLOT:
 			case GrmPackage.TABLE_ENTRY_TYPE__OFFSET:
 			case GrmPackage.TABLE_ENTRY_TYPE__INITIAL_BUDGET:
+			case GrmPackage.TABLE_ENTRY_TYPE__ACTIVATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
