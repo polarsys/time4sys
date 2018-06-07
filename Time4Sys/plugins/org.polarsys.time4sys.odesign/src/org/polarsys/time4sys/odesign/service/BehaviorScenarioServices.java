@@ -1261,23 +1261,7 @@ public class BehaviorScenarioServices {
 		for(SchedulingParameter param: partition.getSchedParams()) {
 			if (param instanceof TableEntryType) {
 				final TableEntryType tb = (TableEntryType)param;
-				if (!tb.getTimeSlot().isEmpty() && tb.getOffset().isEmpty()) {
-					tb.getOffset().add(NfpFactory.eINSTANCE.createDurationFromString("0ps"));
-				}
-				assert(tb.getTimeSlot().isEmpty() || !tb.getOffset().isEmpty());
-				final int nbSlots = tb.getTimeSlot().size();
-				final int nbOffsets = tb.getOffset().size();
-				for(int i=0; i < nbSlots; ++i) {
-					final TimeInterval slotTime = NfpFactory.eINSTANCE.createTimeInterval();
-					final Duration startTime = tb.getOffset().get(i % nbOffsets);
-					final Duration lengthTime = tb.getTimeSlot().get(i % nbSlots);
-					final Duration endTime = startTime.add(lengthTime);
-					slotTime.setMin(startTime);
-					slotTime.setMinOpen(false);
-					slotTime.setMax(endTime);
-					slotTime.setMaxOpen(true);
-					activations.add(slotTime);
-				}
+				activations.addAll(tb.getActivation());
 			}
 		}
 		return activations;

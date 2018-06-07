@@ -194,7 +194,7 @@ public class Arinc653PlatformBuilder {
 		processorBuilder.addSchedulable(aPartition.build(designBuilder));
 		schedBuilder.addEntry(aPartition.getOrCreateTableEntry());
 		aPartition.build(designBuilder);
-		if (mif != null) {
+		if (mif != null && aPartition.getOrCreateTableEntry().getTimeSlot().isEmpty()) {
 			schedBuilder.updateScheduleEntries(mif);
 		}
 		return this;

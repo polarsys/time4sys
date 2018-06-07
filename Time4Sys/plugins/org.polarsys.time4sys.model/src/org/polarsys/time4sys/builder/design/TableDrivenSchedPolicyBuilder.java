@@ -10,10 +10,11 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 
-import org.eclipse.emf.ecore.EAnnotation;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
@@ -24,6 +25,7 @@ import org.polarsys.time4sys.marte.grm.TableDrivenSchedule;
 import org.polarsys.time4sys.marte.grm.TableEntryType;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
 /**
  * @author Utilisateur
@@ -34,7 +36,7 @@ public class TableDrivenSchedPolicyBuilder {
 	public static final String MIF_ATTR = "mif_duration";
 
 	protected static NfpFactory nfpFactory = NfpFactory.eINSTANCE;
-	
+
 	private Scheduler scheduler;
 	private SchedulingPolicy policy;
 	private TableDrivenSchedule schedule;
@@ -60,28 +62,50 @@ public class TableDrivenSchedPolicyBuilder {
 
 	public void updateScheduleEntries(final Duration mif) {
 		Duration currentOffset = NfpFactory.eINSTANCE.createDurationFromString("0ms");
-		for(TableEntryType entry: schedule.getEntries()) {
+		final Duration partitionDuration = mif.divide((long)schedule.getEntries().size());
+		for (TableEntryType entry : schedule.getEntries()) {
 			entry.getTimeSlot().clear();
-			entry.getTimeSlot().add(mif);
+			entry.getTimeSlot().add(partitionDuration);
 			entry.getOffset().clear();
 			entry.getOffset().add(currentOffset);
-			currentOffset = currentOffset.add(mif);
+			currentOffset = currentOffset.add(partitionDuration);
 		}
 		schedule.setFrameCycleTime(currentOffset);
 	}
 
 	public Duration getMIFDuration() {
-		final Set<Duration> allMIFs = new HashSet<Duration>();
-		for(TableEntryType entry: schedule.getEntries()) {
-			allMIFs.addAll(entry.getTimeSlot());
+		final String mifValue = Annotations.getAttr(schedule, Arinc653Builder.ARINC653_URL, MIF_ATTR);
+		if (mifValue != null) {
+			return NfpFactory.eINSTANCE.createDurationFromString(mifValue);
 		}
-		if (allMIFs.size() == 1) {
-			return allMIFs.iterator().next();
-		} else if (allMIFs.isEmpty()) {
-			final String mifValue = Annotations.getAttr(schedule, Arinc653Builder.ARINC653_URL, MIF_ATTR);
-			return NfpFactory.eINSTANCE.createDurationFromString(mifValue); 
+		final Duration zero = NfpFactory.eINSTANCE.createDurationFromString("0ms");
+		final Map<Integer, Duration> mifDurations = new HashMap<>();
+		for (TableEntryType entry : schedule.getEntries()) {
+			int i = 0;
+			for (TimeInterval slot : entry.getActivation()) {
+				final Duration currentMifSum = mifDurations.getOrDefault(i, zero).add(slot.computeLength());
+				mifDurations.put(i, currentMifSum);
+				++i;
+			}
+		}
+		if (mifDurations.isEmpty()) {
+			return null;
 		} else {
-			throw new IllegalStateException("MIFs' duration are not all the same.");
+			boolean allSameMifDuration = false;
+			final Duration firstDuration = mifDurations.values().iterator().next();
+			allSameMifDuration = mifDurations.values().stream().allMatch(new Predicate<Duration>() {
+
+				@Override
+				public boolean test(final Duration t) {
+					return firstDuration.equals(t);
+				}
+
+			});
+			if (allSameMifDuration) {
+				return mifDurations.values().iterator().next();
+			} else {
+				throw new IllegalStateException("MIFs' duration are not all the same.");
+			}
 		}
 	}
 
@@ -89,9 +113,9 @@ public class TableDrivenSchedPolicyBuilder {
 		if (schedule.eIsSet(GrmPackage.eINSTANCE.getTableDrivenSchedule_FrameCycleTime())) {
 			return schedule.getFrameCycleTime();
 		}
-		Duration sum = nfpFactory.createDurationFromString("0ms"); 
-		for(TableEntryType entry: schedule.getEntries()) {
-			for(Duration t: entry.getTimeSlot()) {
+		Duration sum = nfpFactory.createDurationFromString("0ms");
+		for (TableEntryType entry : schedule.getEntries()) {
+			for (Duration t : entry.getTimeSlot()) {
 				sum = sum.add(t);
 			}
 		}

@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design.arinc653;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Predicate;
 
 import org.eclipse.emf.common.util.EList;
@@ -106,6 +108,8 @@ public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
 	private String timeBudget;
 	private ReferenceBuilder ref;
 	private ReferenceBuilder startRef;
+	private List<Duration> offsets;
+	private List<Duration> durations;
 	
 	public Arinc653PartitionBuilder() {
 		taskBuilder = new TaskBuilder();
@@ -139,19 +143,58 @@ public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
 	public Duration getTimeBudget() {
 		return getOrCreateTableEntry().getInitialBudget();
 	}
-
+	
 	public Arinc653PartitionBuilder withOffset(final String offset) {
-		// TODO Auto-generated method stub
-		//throw new UnsupportedOperationException("Not yet implemented");
+		final Duration t = NfpFactory.eINSTANCE.createDurationFromString(offset);
+		withOffset(t);
+		return this;
+	}
+
+	public Arinc653PartitionBuilder withOffset(final Duration value) {
+		if (designBuilder == null) {
+			if (offsets == null) {
+				offsets = new LinkedList<>();
+			}
+			if (value != null) {
+				offsets.add(value);
+			}
+			return this;
+		}
+		if (offsets != null) {
+			getOrCreateTableEntry().getOffset().addAll(offsets);
+			offsets = null;
+		}
+		if (value != null) {
+			getOrCreateTableEntry().getOffset().add(value);
+		}
 		return this;
 	}
 
 	public Arinc653PartitionBuilder withNoOffset() {
 		return withOffset("0ms");
 	}
+	
+	public Arinc653PartitionBuilder withMIFDuration(final String value) {
+		return withMIFDuration(NfpFactory.eINSTANCE.createDurationFromString(value));
+	}
 
 	public Arinc653PartitionBuilder withMIFDuration(final Duration t) {
-		getOrCreateTableEntry().getTimeSlot().add(t);
+		if (designBuilder == null) {
+			if (durations == null) {
+				durations = new LinkedList<>();
+			}
+			if (t != null) {
+				durations.add(t);
+			}
+			return this;
+		}
+		if (durations != null) {
+			getOrCreateTableEntry().getTimeSlot().addAll(durations);
+			durations = null;
+		}
+		if (t != null) {
+			getOrCreateTableEntry().getTimeSlot().add(t);
+		}
 		return this;
 	}
 	
@@ -211,6 +254,12 @@ public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
 		}
 		if (!hasASecondaryScheduler(result)) {
 			under(SchedPolicyKind.FIXED_PRIORITY);
+		}
+		if (offsets != null) {
+			withOffset((Duration)null);
+		}
+		if (durations != null) {
+			withMIFDuration((Duration)null);
 		}
 		return result;
 	}
