@@ -20,6 +20,7 @@ import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration) <em>Div</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext) <em>Div</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration) <em>Divide</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#divide(long) <em>Divide</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#isZero() <em>Is Zero</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#lcm(org.polarsys.time4sys.marte.nfp.Duration) <em>Lcm</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}</li>
@@ -159,6 +160,19 @@ public class ProbabilisticDurationTest extends TimeIntervalTest {
 	 * @generated
 	 */
 	public void testDivide__Duration() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(long) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.Duration#divide(long)
+	 * @generated
+	 */
+	public void testDivide__long() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -17,6 +17,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.nfp.Dimension;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.ValueWithUnit;
 
 /**
@@ -231,4 +232,9 @@ public abstract class AbstractRealWithUnitValueImpl<U extends Enumerator, T exte
 	public long divide(final T v) {
 		return (long)div(v);
 	}
+	
+	public T divide(long v) {
+		return create(getValue() / v, getUnit());
+	}
+	
 }

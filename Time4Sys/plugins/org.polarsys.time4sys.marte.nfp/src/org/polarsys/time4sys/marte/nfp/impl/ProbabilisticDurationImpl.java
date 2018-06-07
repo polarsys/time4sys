@@ -379,6 +379,17 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Duration divide(long value) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isZero() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -627,6 +638,7 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 				case NfpPackage.DURATION___DIV__DURATION: return NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION;
 				case NfpPackage.DURATION___DIV__DURATION_MATHCONTEXT: return NfpPackage.PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT;
 				case NfpPackage.DURATION___DIVIDE__DURATION: return NfpPackage.PROBABILISTIC_DURATION___DIVIDE__DURATION;
+				case NfpPackage.DURATION___DIVIDE__LONG: return NfpPackage.PROBABILISTIC_DURATION___DIVIDE__LONG;
 				case NfpPackage.DURATION___IS_ZERO: return NfpPackage.PROBABILISTIC_DURATION___IS_ZERO;
 				case NfpPackage.DURATION___LCM__DURATION: return NfpPackage.PROBABILISTIC_DURATION___LCM__DURATION;
 				case NfpPackage.DURATION___MAX__DURATION: return NfpPackage.PROBABILISTIC_DURATION___MAX__DURATION;
@@ -661,6 +673,8 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 				return div((Duration)arguments.get(0), (MathContext)arguments.get(1));
 			case NfpPackage.PROBABILISTIC_DURATION___DIVIDE__DURATION:
 				return divide((Duration)arguments.get(0));
+			case NfpPackage.PROBABILISTIC_DURATION___DIVIDE__LONG:
+				return divide((Long)arguments.get(0));
 			case NfpPackage.PROBABILISTIC_DURATION___IS_ZERO:
 				return isZero();
 			case NfpPackage.PROBABILISTIC_DURATION___LCM__DURATION:

@@ -313,7 +313,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Simplify() {
-		return durationEClass.getEOperations().get(12);
+		return durationEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -322,7 +322,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Sub__Duration() {
-		return durationEClass.getEOperations().get(13);
+		return durationEClass.getEOperations().get(14);
 	}
 
 	/**
@@ -340,7 +340,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__IsZero() {
-		return durationEClass.getEOperations().get(6);
+		return durationEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -349,7 +349,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__NotZero() {
-		return durationEClass.getEOperations().get(11);
+		return durationEClass.getEOperations().get(12);
 	}
 
 	/**
@@ -358,15 +358,6 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * @generated
 	 */
 	public EOperation getDuration__Max__Duration() {
-		return durationEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getDuration__Min__Duration() {
 		return durationEClass.getEOperations().get(9);
 	}
 
@@ -375,7 +366,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDuration__Multiply__long() {
+	public EOperation getDuration__Min__Duration() {
 		return durationEClass.getEOperations().get(10);
 	}
 
@@ -384,8 +375,17 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDuration__Multiply__long() {
+		return durationEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getDuration__Lcm__Duration() {
-		return durationEClass.getEOperations().get(7);
+		return durationEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -413,6 +413,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 */
 	public EOperation getDuration__Divide__Duration() {
 		return durationEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDuration__Divide__long() {
+		return durationEClass.getEOperations().get(6);
 	}
 
 	/**
@@ -1050,6 +1059,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEOperation(durationEClass, DURATION___DIV__DURATION);
 		createEOperation(durationEClass, DURATION___DIV__DURATION_MATHCONTEXT);
 		createEOperation(durationEClass, DURATION___DIVIDE__DURATION);
+		createEOperation(durationEClass, DURATION___DIVIDE__LONG);
 		createEOperation(durationEClass, DURATION___IS_ZERO);
 		createEOperation(durationEClass, DURATION___LCM__DURATION);
 		createEOperation(durationEClass, DURATION___MAX__DURATION);
@@ -1244,6 +1254,9 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 
 		op = initEOperation(getDuration__Divide__Duration(), ecorePackage.getELong(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getDuration(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDuration__Divide__long(), this.getDuration(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getDuration__IsZero(), ecorePackage.getEBoolean(), "isZero", 1, 1, IS_UNIQUE, IS_ORDERED);
 

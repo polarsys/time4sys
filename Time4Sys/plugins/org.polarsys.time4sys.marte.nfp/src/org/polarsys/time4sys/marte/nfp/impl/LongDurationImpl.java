@@ -102,6 +102,14 @@ public class LongDurationImpl extends DurationImpl {
 	public Duration multiply(long v) {
 		return new LongDurationImpl(picoseconds * v, unit);			
 	}
+	
+	@Override
+	public Duration divide(long v) {
+		if (v == 0) {
+			return null;
+		}
+		return new LongDurationImpl(picoseconds / v, unit);			
+	}
 
 	@Override
 	public double div(final Duration v) {

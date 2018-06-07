@@ -309,4 +309,12 @@ public interface Duration extends EObject, ValueWithUnit<TimeUnitKind> {
 	 */
 	long divide(Duration v);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model valueRequired="true"
+	 * @generated
+	 */
+	Duration divide(long value);
+
 } // Duration

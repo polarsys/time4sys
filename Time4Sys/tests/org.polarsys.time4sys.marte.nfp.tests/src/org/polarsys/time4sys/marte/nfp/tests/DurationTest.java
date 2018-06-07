@@ -34,6 +34,7 @@ import junit.textui.TestRunner;
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration) <em>Div</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext) <em>Div</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration) <em>Divide</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#divide(long) <em>Divide</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#isZero() <em>Is Zero</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#lcm(org.polarsys.time4sys.marte.nfp.Duration) <em>Lcm</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}</li>
@@ -241,6 +242,16 @@ public class DurationTest extends TestCase {
 				NfpFactory.eINSTANCE.createDurationFromString(v1).multiply(v2));
 	}
 	
+	protected void assertDivideOfEquals(final String v1, final long v2, final String expected) {
+		Duration expectedDuration = null;
+		if (expected != null) {
+			expectedDuration = NfpFactory.eINSTANCE.createDurationFromString(expected);
+		}
+		assertEquals(
+				expectedDuration,
+				NfpFactory.eINSTANCE.createDurationFromString(v1).divide(v2));
+	}
+	
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
 	 * <!-- begin-user-doc -->
@@ -312,6 +323,19 @@ public class DurationTest extends TestCase {
 	 */
 	public void testDivide__Duration() {
 		assertEquals(1L, NfpFactory.eINSTANCE.createDurationFromString("32ms").divide(NfpFactory.eINSTANCE.createDurationFromString("32ms")));
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(long) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.Duration#divide(long)
+	 * @generated
+	 */
+	public void testDivide__long() {
+		assertDivideOfEquals("9ms", 3, "3ms");
+		assertDivideOfEquals("3ms", 0, null);
+		assertDivideOfEquals("0ms", 3, "0ms");
 	}
 
 	public void testConvertSimpleDuration200msStringToDuration() {

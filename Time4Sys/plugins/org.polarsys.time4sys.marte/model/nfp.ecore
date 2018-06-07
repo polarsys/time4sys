@@ -130,6 +130,9 @@
     <eOperations name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
       <eParameters name="v" lowerBound="1" eType="#//Duration"/>
     </eOperations>
+    <eOperations name="divide" eType="#//Duration">
+      <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
     <eOperations name="isZero" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="lcm" lowerBound="1" eType="#//Duration">
       <eParameters name="v" lowerBound="1" eType="#//Duration"/>
