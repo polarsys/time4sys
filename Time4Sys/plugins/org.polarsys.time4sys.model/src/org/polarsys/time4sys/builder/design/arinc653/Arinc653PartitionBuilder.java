@@ -36,26 +36,39 @@ import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 /**
  * A Partition builder.
  * @author Loïc Fejoz
- * @deprecated One shall use Arinc653PartitionBuilder as this class name is misleading.
+ *
  */
-public abstract class Arinc653MIFBuilder {
+public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
+
 	
-	public static final String PARTITION_ATTR = "partition";
-	public static final String REF_ATTR = "reference";
-	
-	@Deprecated
 	public static boolean hasASecondaryScheduler(final SoftwareSchedulableResource result) {
-		return Arinc653PartitionBuilder.hasASecondaryScheduler(result);
+		return result.getOwnedResource().stream().anyMatch(new Predicate<Resource>() {
+			@Override
+			public boolean test(Resource value) {
+				if (value instanceof SecondaryScheduler) {
+					return ((SecondaryScheduler)value).getVirtualProcessingUnit().contains(result);
+				}
+				return false;
+			}
+		});
 	}
 	
-	@Deprecated
+
 	public static boolean isInstance(final SoftwareSchedulableResource task) {
-		return Arinc653PartitionBuilder.isInstance(task);
+		final String partAttr = Annotations.getAttr(task, Arinc653Builder.ARINC653_URL, PARTITION_ATTR);
+		if (partAttr != null) {
+			try {
+				return Boolean.parseBoolean(partAttr);
+			} catch (Exception e) {
+			}
+		}
+		return false;
 	}
 	
-	@Deprecated
-	public static Arinc653MIFBuilder as(final SoftwareSchedulableResource value) {
-		return Arinc653PartitionBuilder.as(value);
+
+	public static Arinc653PartitionBuilder as(final SoftwareSchedulableResource value) {
+		final Arinc653DesignBuilder db = Arinc653DesignBuilder.containing(value);
+		return new Arinc653PartitionBuilder(db, value);
 	}
 
 	/**
@@ -63,18 +76,27 @@ public abstract class Arinc653MIFBuilder {
 	 * @return
 	 */
 	@Deprecated
-	public static Arinc653MIFBuilder aMIF() {
-		return Arinc653PartitionBuilder.aPartition();
+	public static Arinc653PartitionBuilder aMIF() {
+		return aPartition();
 	}
 	
-	@Deprecated
-	public static Arinc653MIFBuilder aPartition() {
-		return Arinc653PartitionBuilder.aPartition();
+	public static Arinc653PartitionBuilder aPartition() {
+		return new Arinc653PartitionBuilder();
 	}
 	
 	@Deprecated
 	public static boolean isMIF(final SoftwareSchedulableResource aTask) {
-		return Arinc653PartitionBuilder.isMIF(aTask);
+		return isPartition(aTask);
+	}
+	
+
+	public static boolean isPartition(SoftwareSchedulableResource aTask) {
+		final TaskBuilder taskBuilder = new TaskBuilder(null, aTask);
+		if (taskBuilder.hasAnnotation(Arinc653Builder.ARINC653_URL)) {
+			final String partitionVal = taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().get(PARTITION_ATTR);
+			return (partitionVal != null) && Boolean.parseBoolean(partitionVal);
+		}
+		return false;
 	}
 
 	private TaskBuilder taskBuilder;
@@ -85,14 +107,12 @@ public abstract class Arinc653MIFBuilder {
 	private ReferenceBuilder ref;
 	private ReferenceBuilder startRef;
 	
-	@Deprecated
-	public Arinc653MIFBuilder() {
+	public Arinc653PartitionBuilder() {
 		taskBuilder = new TaskBuilder();
 		taskBuilder.annotate(Arinc653Builder.ARINC653_URL).getDetails().put(PARTITION_ATTR, Boolean.TRUE.toString());
 	}
 
-	@Deprecated
-	public Arinc653MIFBuilder(Arinc653DesignBuilder db, SoftwareSchedulableResource value) {
+	public Arinc653PartitionBuilder(Arinc653DesignBuilder db, SoftwareSchedulableResource value) {
 		taskBuilder = new TaskBuilder(db, value);
 		designBuilder = db;
 		final EAnnotation annot = taskBuilder.annotate(Arinc653Builder.ARINC653_URL);
@@ -101,12 +121,12 @@ public abstract class Arinc653MIFBuilder {
 		}
 	}
 
-	public Arinc653MIFBuilder called(String value) {
+	public Arinc653PartitionBuilder called(String value) {
 		taskBuilder.called(value);
 		return this;
 	}
 
-	public Arinc653MIFBuilder ofTimeBudget(final String value) {
+	public Arinc653PartitionBuilder ofTimeBudget(final String value) {
 		timeBudget = value;
 		if (designBuilder != null) {
 			final Duration d = NfpFactory.eINSTANCE.createDurationFromString(value);
@@ -120,17 +140,17 @@ public abstract class Arinc653MIFBuilder {
 		return getOrCreateTableEntry().getInitialBudget();
 	}
 
-	public Arinc653MIFBuilder withOffset(final String offset) {
+	public Arinc653PartitionBuilder withOffset(final String offset) {
 		// TODO Auto-generated method stub
 		// throw new UnsupportedOperationException("Not yet implemented");
 		return this;
 	}
 
-	public Arinc653MIFBuilder withNoOffset() {
+	public Arinc653PartitionBuilder withNoOffset() {
 		return withOffset("0ms");
 	}
 
-	public Arinc653MIFBuilder withMIFDuration(final Duration t) {
+	public Arinc653PartitionBuilder withMIFDuration(final Duration t) {
 		getOrCreateTableEntry().getTimeSlot().add(t);
 		return this;
 	}
@@ -209,11 +229,11 @@ public abstract class Arinc653MIFBuilder {
 		}).count();
 	}
 	
-	public Arinc653MIFBuilder runs(final TaskBuilder... tasks) {
+	public Arinc653PartitionBuilder runs(final TaskBuilder... tasks) {
 		return thatRuns(tasks);
 	}
 	
-	public Arinc653MIFBuilder thatRuns(final TaskBuilder... tasks) {
+	public Arinc653PartitionBuilder thatRuns(final TaskBuilder... tasks) {
 		subTasks = tasks;
 		for(TaskBuilder tb: tasks) {
 			addOwnedResource(tb);
@@ -224,7 +244,7 @@ public abstract class Arinc653MIFBuilder {
 		return this;
 	}
 
-	public Arinc653MIFBuilder under(SchedPolicyKind kind) {
+	public Arinc653PartitionBuilder under(SchedPolicyKind kind) {
 		final SoftwareSchedulableResource mifTask = taskBuilder.build();
 		if (sched == null) {
 			for(Resource res: taskBuilder.getOwnedResource()) {
@@ -314,5 +334,7 @@ public abstract class Arinc653MIFBuilder {
 	public void setNotAPartition() {
 		Annotations.setAttr(taskBuilder.build(), Arinc653Builder.ARINC653_URL, PARTITION_ATTR, Boolean.FALSE.toString());
 	}
+
+
 
 }

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
-import static org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder.aMIF;
+import static org.polarsys.time4sys.builder.design.arinc653.Arinc653PartitionBuilder.aPartition;
 
 import java.io.IOException;
 import java.util.function.Predicate;
@@ -52,25 +52,25 @@ public class Arinc653BuilderTest {
 	public void testArinc653Builder() {
 		final Arinc653DesignBuilder design = Arinc653Builder.newDesign(theProject);
 		final Arinc653PlatformBuilder platform = design.hasAPlatform().called("CPU").thatRuns(
-				aMIF().called("MIF1").withNoOffset(),
-				aMIF().called("MIF2").withOffset("0ms"),
-				aMIF().called("MIF3").withNoOffset(),
-				aMIF().called("MIF4").withNoOffset()
+				aPartition().called("part_1").withNoOffset(),
+				aPartition().called("part_2").withOffset("0ms"),
+				aPartition().called("part_3").withNoOffset(),
+				aPartition().called("part_4").withNoOffset()
 		).withMIFDuration("10ms");
-		final Arinc653MIFBuilder mif1 = platform.getMIF(0);
-		final Arinc653MIFBuilder mif2 = platform.getMIF(1);
-		final Arinc653MIFBuilder mif3 = platform.getMIF(2);
-		final Arinc653MIFBuilder mif4 = platform.getMIF(3);
+		final Arinc653PartitionBuilder part1 = platform.getPartition(0);
+		final Arinc653PartitionBuilder part2 = platform.getPartition(1);
+		final Arinc653PartitionBuilder part3 = platform.getPartition(2);
+		final Arinc653PartitionBuilder part4 = platform.getPartition(3);
 		design.build();
 		
-		assertEquals(4, platform.countMIF());
-		assertNotNull(mif1);
-		assertEquals("MIF1", mif1.getName());
-		assertNotNull(mif1.getMIFDuration());
-		assertEquals("10ms", mif1.getMIFDuration().toString());
-		assertEquals("10ms", mif2.getMIFDuration().toString());
+		assertEquals(4, platform.countPartition());
+		assertNotNull(part1);
+		assertEquals("part_1", part1.getName());
+		assertNotNull(part1.getMIFDuration());
+		assertEquals("10ms", part1.getMIFDuration().toString());
+		assertEquals("10ms", part2.getMIFDuration().toString());
 		assertEquals("40ms", platform.getMAFDuration().toString());
-		assertTrue(Arinc653MIFBuilder.hasASecondaryScheduler(mif1.build()));
+		assertTrue(Arinc653PartitionBuilder.hasASecondaryScheduler(part1.build()));
 	}
 
 	/**
@@ -81,23 +81,23 @@ public class Arinc653BuilderTest {
 		// When
 		final Arinc653DesignBuilder design = Arinc653Builder.newDesign(theProject);
 		final Arinc653PlatformBuilder platform = design.hasAPlatform().called("CPU").thatRuns(
-				aMIF().called("MIF1").withNoOffset(),
-				aMIF().called("MIF2").withOffset("0ms"),
-				aMIF().called("MIF3").withNoOffset().ofTimeBudget("3.33ms"),
-				aMIF().called("MIF4").withNoOffset()
+				aPartition().called("MIF1").withNoOffset(),
+				aPartition().called("MIF2").withOffset("0ms"),
+				aPartition().called("MIF3").withNoOffset().ofTimeBudget("3.33ms"),
+				aPartition().called("MIF4").withNoOffset()
 		).withMIFDuration("10ms");
 		final TaskBuilder t1 = aTask().called("T1").ofPeriod("10ms").ofPriority(2);
-		final Arinc653MIFBuilder mif1 = platform.getMIF(0).runs(
+		final Arinc653PartitionBuilder mif1 = platform.getPartition(0).runs(
 				t1,
 				aTask().called("T2").ofPeriod("20ms").ofPriority(1)
 		).under(SchedPolicyKind.FIXED_PRIORITY);
-		final Arinc653MIFBuilder mif2 = platform.getMIF(1);
-		final Arinc653MIFBuilder mif3 = platform.getMIF(2);
-		final Arinc653MIFBuilder mif4 = platform.getMIF(3);
+		final Arinc653PartitionBuilder mif2 = platform.getPartition(1);
+		final Arinc653PartitionBuilder mif3 = platform.getPartition(2);
+		final Arinc653PartitionBuilder mif4 = platform.getPartition(3);
 		platform.build();
 		
 		// then
-		assertEquals(4, platform.countMIF());
+		assertEquals(4, platform.countPartition());
 		assertNotNull(mif1);
 		assertEquals("MIF1", mif1.getName());
 		assertNotNull(mif1.getMIFDuration());
@@ -143,7 +143,7 @@ public class Arinc653BuilderTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		assertTrue(Arinc653MIFBuilder.isMIF(mif1.build()));
+		assertTrue(Arinc653PartitionBuilder.isPartition(mif1.build()));
 		
 		assertEquals(1, mif1.build().getOwnedResource().stream().filter(new Predicate<Resource>() {
 
@@ -160,35 +160,35 @@ public class Arinc653BuilderTest {
 		// Given a referecne model
 		final Arinc653DesignBuilder design = Arinc653Builder.newDesign(theProject);
 		final Arinc653PlatformBuilder platform = design.hasAPlatform().called("CPU").thatRuns(
-				aMIF().called("MIF1").withNoOffset(),
-				aMIF().called("MIF2").withOffset("0ms"),
-				aMIF().called("MIF3").withNoOffset(),
-				aMIF().called("MIF4").withNoOffset()
+				aPartition().called("MIF1").withNoOffset(),
+				aPartition().called("MIF2").withOffset("0ms"),
+				aPartition().called("MIF3").withNoOffset(),
+				aPartition().called("MIF4").withNoOffset()
 		).withMIFDuration("10ms");
-		final Arinc653MIFBuilder mif1 = platform.getMIF(0);
-		final Arinc653MIFBuilder mif2 = platform.getMIF(1);
-		final Arinc653MIFBuilder mif3 = platform.getMIF(2);
-		final Arinc653MIFBuilder mif4 = platform.getMIF(3);
+		final Arinc653PartitionBuilder mif1 = platform.getPartition(0);
+		final Arinc653PartitionBuilder mif2 = platform.getPartition(1);
+		final Arinc653PartitionBuilder mif3 = platform.getPartition(2);
+		final Arinc653PartitionBuilder mif4 = platform.getPartition(3);
 		mif1.hasAReference().called("mif1_start");
 		final DesignModel designRef = design.build();
 		// When building incrementally
 		final ProjectBuilder theProjectInc = new ProjectBuilder();
-		final Arinc653DesignBuilder designInc = Arinc653Builder.newDesign(theProjectInc);
+		//final Arinc653DesignBuilder designInc = Arinc653Builder.newDesign(theProjectInc);
 		final Arinc653PlatformBuilder platformInc = design.hasAPlatform().called("CPU");
 		platformInc.withMIFDuration("10ms");
-		final Arinc653MIFBuilder mif1Inc = aMIF().called("MIF1").withNoOffset();
+		final Arinc653PartitionBuilder mif1Inc = aPartition().called("MIF1").withNoOffset();
 		platformInc.addPartition(mif1Inc);
-		final Arinc653MIFBuilder mif2Inc = aMIF().called("MIF2").withOffset("0ms");
+		final Arinc653PartitionBuilder mif2Inc = aPartition().called("MIF2").withOffset("0ms");
 		platformInc.addPartition(mif2Inc);
-		final Arinc653MIFBuilder mif3Inc = aMIF().called("MIF3").withNoOffset();
+		final Arinc653PartitionBuilder mif3Inc = aPartition().called("MIF3").withNoOffset();
 		platformInc.addPartition(mif3Inc);
-		final Arinc653MIFBuilder mif4Inc = aMIF().called("MIF4").withNoOffset();
+		final Arinc653PartitionBuilder mif4Inc = aPartition().called("MIF4").withNoOffset();
 		platformInc.addPartition(mif4Inc);
 		mif1Inc.hasAReference().called("mif1_start");
 		final DesignModel designFinal = design.build();
 		
 		// Then we have same final models
-		assertEquals(4, platform.countMIF());
+		assertEquals(4, platform.countPartition());
 		assertNotNull(mif1);
 		assertEquals("MIF1", mif1.getName());
 		assertNotNull(mif1.getMIFDuration());
@@ -196,7 +196,7 @@ public class Arinc653BuilderTest {
 		assertEquals("10ms", mif2.getMIFDuration().toString());
 		assertEquals("40ms", platform.getMAFDuration().toString());
 		
-		assertEquals(platform.countMIF(), platformInc.countMIF());
+		assertEquals(platform.countPartition(), platformInc.countPartition());
 		assertNotNull(mif1Inc);
 		assertEquals(mif1.getName(), mif1Inc.getName());
 		assertNotNull(mif1Inc.getMIFDuration());

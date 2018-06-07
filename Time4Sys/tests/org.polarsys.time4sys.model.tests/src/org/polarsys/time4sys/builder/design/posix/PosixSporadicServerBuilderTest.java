@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.polarsys.time4sys.builder.design.TaskBuilder.aTask;
-import static org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder.aMIF;
+import static org.polarsys.time4sys.builder.design.arinc653.Arinc653PartitionBuilder.aPartition;
 import static org.polarsys.time4sys.builder.design.posix.PosixSporadicServerBuilder.aPSS;
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 
@@ -22,7 +22,7 @@ import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653DesignBuilder;
-import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
+import org.polarsys.time4sys.builder.design.arinc653.Arinc653PartitionBuilder;
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653PlatformBuilder;
 import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.grm.SchedulingParameter;
@@ -51,7 +51,7 @@ public class PosixSporadicServerBuilderTest {
 	public void testPosixSporadicServer() {
 		final Arinc653DesignBuilder design = Arinc653Builder.newDesign(theProject);
 		final Arinc653PlatformBuilder platform = design.hasAPlatform().called("CPU").thatRuns(
-				aMIF().called("MIF1").withNoOffset().thatRuns(
+				aPartition().called("MIF1").withNoOffset().thatRuns(
 						aPSS().called("PSS1")
 					          .ofBCET("5ms")
 					          .ofWCET("15ms")
@@ -70,8 +70,8 @@ public class PosixSporadicServerBuilderTest {
 		}
 		
 		
-		final Arinc653MIFBuilder mif1 = platform.getMIF(0);
-		assertEquals(1, platform.countMIF());
+		final Arinc653PartitionBuilder mif1 = platform.getPartition(0);
+		assertEquals(1, platform.countPartition());
 		assertNotNull(mif1);
 		assertEquals("MIF1", mif1.getName());
 		assertNotNull(mif1.getMIFDuration());
