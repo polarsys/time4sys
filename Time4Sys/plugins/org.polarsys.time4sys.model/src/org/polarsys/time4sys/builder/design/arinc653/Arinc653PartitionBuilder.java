@@ -142,7 +142,7 @@ public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
 
 	public Arinc653PartitionBuilder withOffset(final String offset) {
 		// TODO Auto-generated method stub
-		// throw new UnsupportedOperationException("Not yet implemented");
+		//throw new UnsupportedOperationException("Not yet implemented");
 		return this;
 	}
 
@@ -170,13 +170,24 @@ public class Arinc653PartitionBuilder extends Arinc653MIFBuilder {
 		return entry;
 	}
 
+	/**
+	 * @deprecated replaced by getDurationInMIF(indexOfMIF)
+	 */
+	@Deprecated
 	public Duration getMIFDuration() {
-		
+		return getDurationInFirstMIF();
+	}
+	
+	public Duration getDurationInFirstMIF() {
+		return getDurationInMIF(0);
+	}
+	
+	public Duration getDurationInMIF(final int index) {
 		final EList<Duration> timeSlots = getOrCreateTableEntry().getTimeSlot();
 		if (timeSlots == null || timeSlots.isEmpty()) {
 			return null;
 		}
-		return timeSlots.get(0);
+		return timeSlots.get(index);
 	}
 
 	public String getName() {
