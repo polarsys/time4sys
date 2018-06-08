@@ -22,6 +22,12 @@
   </properties>
 
  <repositories>
+ 
+   <repository> 
+   <id>JGraphX</id>
+   <url> http://nexus.talanlabs.com/content/repositories/releases/</url>
+ </repository>
+ 
  <!-- configure p2 repository to resolve against -->
   <repository> 
    <id>SiriusNeon</id>
@@ -33,11 +39,10 @@
    <layout>p2</layout>
    <url>http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella/</url>
  </repository>
- 
  <repository>
-  <id>Neon</id>
+  <id>Oxygen</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/releases/neon/</url>
+   <url>http://download.eclipse.org/releases/oxygen/</url>
  </repository>
  </repositories>
 	<build>

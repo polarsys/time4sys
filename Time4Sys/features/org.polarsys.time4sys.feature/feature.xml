@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.time4sys.feature"
       label="Time4Sys Feature"
-      version="0.0.1.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Time4Sys Project">
 
    <description>
@@ -442,6 +442,41 @@
 
    <plugin
          id="org.polarsys.time4sys.analysis.tools"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.analysisrepository"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.analysisrepository.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.analysisrepository.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.analysisrepository.graphic"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.marte.analysisrepository.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
