@@ -1,4 +1,4 @@
-Time4Sys
+﻿Time4Sys
 ========
 
 Description
@@ -22,10 +22,10 @@ Installation
 
 At your own risk, you could install current development from the continuous integration website <https://hudson.polarsys.org/time4sys/job/Time4Sys%20develop/>.
 
-Changes
+Build
 ----------
 
-TO BE DONE
+To build both product and update site for Time4Sys, go to Time4Sys/releng/org.polarsys.time4sys.aggregator in this repository and run your maven command.
 
 Authors
 -------

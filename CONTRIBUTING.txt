@@ -1,0 +1,85 @@
+# Contributing to PolarSys Time4Sys
+
+Thanks for your interest in this project.
+
+## Project description
+
+PolarSys Time4Sys provides a framework that fills the gap between the capture of
+timing aspects in the design phase of a real-time system and the ability of
+specific/dedicated tools to verify the consistency and performances of a given
+scheduling. Time4Sys is composed of two building blocks (the Design and the
+Analysis pivot models) as well as a set of transformation rules between them.
+Design Pivot Model Time4Sys Design model uses a subset of the MARTE OMG standard
+as a basis to represent a synthetic view of the system design model that
+captures all elements, data and properties impacting the system timing behaviour
+and required to perform scheduling analysis or simulation (e.g. tasks mapping on
+processors, communication links, execution times, scheduling parameters, etc.).
+Time4Sys Design is not limited to the use of a particular design modelling tool
+and environment. It can be connected to various environments and languages such
+as UML, SysML, AADL, or any other proprietary environment (e.g. Capella).
+Transformation Rules Scheduling analysis and simulation are seldom directly
+applicable to the conceptual design models in general and to Time4Sys Design
+models in particular due to the semantic mismatch between the latter and the
+variety of analysis and simulation models known from the classical real time
+systems research and represented by academic and commercial tools. Analysis
+Pivot Model Time4Sys Analysis pivot model is based on generic modelling concepts
+known from the classical real time systems research, such as tasks, processors,
+busses, scheduling parameters (priorities, time slots, deadlines, etc.).
+Time4Sys Analysis models preserve the timing behaviour modelled in the
+corresponding Time4Sys Design models, while ensuring the compatibility with the
+variety of existing timing verification tools. Same as Time4Sys Design, Time4Sys
+Analysis is not limited to a specific timing verification tool. This ensures a
+minimum of independence from the timing verification tools specificities and
+allows hiding its complexity to the designer. If required, one timing
+verification tool can be easily replaced by another. Ultimately, several tools
+could also be used together to run a timing verification. After timing
+verification in the selected tool, results are injected in Time4Sys Analysis.
+Then, they are translated to be compliant with the original design model and
+reinjected back in Time4Sys Design.
+
+* https://www.polarsys.org/projects/polarsys.time4sys
+
+## Developer resources
+
+Information regarding source code management, builds, coding standards, and
+more.
+
+* https://www.polarsys.org/projects/polarsys.time4sys/developer
+
+The project maintains the following source code repositories
+
+* https://github.com/polarsys/time4sys
+
+This project uses Bugzilla to track ongoing development and issues.
+
+* Search for issues: https://polarsys.org/bugs/buglist.cgi?product=Time4Sys
+* Create a new report: https://polarsys.org/bugs/enter_bug.cgi?product=Time4Sys
+
+Be sure to search for existing bugs before you create another one. Remember that
+contributions are always welcome!
+
+## Build
+
+To build both product and update site for Time4Sys, go to Time4Sys/releng/org.polarsys.time4sys.aggregator in this repository and run your maven command.
+
+## Eclipse Contributor Agreement
+
+Before your contribution can be accepted by the project team contributors must
+electronically sign the Eclipse Contributor Agreement (ECA).
+
+* http://www.eclipse.org/legal/ECA.php
+
+Commits that are provided by non-committers must have a Signed-off-by field in
+the footer indicating that the author is aware of the terms by which the
+contribution has been provided to the project. The non-committer must
+additionally have an Eclipse Foundation account and must have a signed Eclipse
+Contributor Agreement (ECA) on file.
+
+For more information, please see the Eclipse Committer Handbook:
+https://www.eclipse.org/projects/handbook/#resources-commit
+
+## Contact
+
+Contact the project developers via the project's "dev" list.
+
+* https://polarsys.org/mailman/listinfo/time4sys-dev
