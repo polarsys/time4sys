@@ -245,10 +245,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="TableEntryType" eSuperTypes="#//SchedulingParameter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" eType="#//TableDrivenSchedule"
         eOpposite="#//TableDrivenSchedule/entries"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeSlot" lowerBound="1"
-        upperBound="-1" eType="#//NFP_Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" unique="false"
-        upperBound="-1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeSlot" unique="false"
+        lowerBound="1" upperBound="-1" eType="#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" upperBound="-1"
+        eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialBudget" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activation" upperBound="-1"
         eType="#//NFP_TimeInterval" derived="true"/>

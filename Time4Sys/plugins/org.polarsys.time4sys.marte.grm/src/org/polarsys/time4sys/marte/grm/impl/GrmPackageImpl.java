@@ -2184,8 +2184,8 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 
 		initEClass(tableEntryTypeEClass, TableEntryType.class, "TableEntryType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTableEntryType_Schedule(), this.getTableDrivenSchedule(), this.getTableDrivenSchedule_Entries(), "schedule", null, 0, 1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTableEntryType_TimeSlot(), this.getNFP_Duration(), "timeSlot", null, 1, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTableEntryType_Offset(), this.getNFP_Duration(), "offset", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_TimeSlot(), this.getNFP_Duration(), "timeSlot", null, 1, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTableEntryType_Offset(), this.getNFP_Duration(), "offset", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTableEntryType_InitialBudget(), this.getNFP_Duration(), "initialBudget", null, 0, 1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTableEntryType_Activation(), this.getNFP_TimeInterval(), "activation", null, 0, -1, TableEntryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 

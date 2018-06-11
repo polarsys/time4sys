@@ -77,7 +77,7 @@ public interface TableEntryType extends SchedulingParameter {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time Slot</em>' attribute list.
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getTableEntryType_TimeSlot()
-	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_Duration" required="true"
+	 * @model unique="false" dataType="org.polarsys.time4sys.marte.grm.NFP_Duration" required="true"
 	 * @generated
 	 */
 	EList<Duration> getTimeSlot();
@@ -93,7 +93,7 @@ public interface TableEntryType extends SchedulingParameter {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Offset</em>' attribute list.
 	 * @see org.polarsys.time4sys.marte.grm.GrmPackage#getTableEntryType_Offset()
-	 * @model unique="false" dataType="org.polarsys.time4sys.marte.grm.NFP_Duration"
+	 * @model dataType="org.polarsys.time4sys.marte.grm.NFP_Duration"
 	 * @generated
 	 */
 	EList<Duration> getOffset();
