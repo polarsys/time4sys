@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.diagram.AbstractDNode;
 import org.eclipse.sirius.diagram.BorderedStyle;
@@ -70,6 +71,7 @@ import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
+import org.polarsys.time4sys.odesign.Activator;
 import org.polarsys.time4sys.odesign.OdesignFactory;
 import org.polarsys.time4sys.odesign.UtilizationStat;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
@@ -1008,7 +1010,7 @@ public class BehaviorScenarioServices {
 	public static String getMAF(final EObject context) {
 		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
 		if (proc != null) {
-			return Arinc653PlatformBuilder.as(proc).getMAFDuration().toString();
+			return Arinc653PlatformBuilder.as(proc).computeMAFDuration().toString();
 		}
 		return null;
 	}
@@ -1016,7 +1018,11 @@ public class BehaviorScenarioServices {
 	public static String getMIF(final EObject context) {
 		final HardwareProcessor proc = unwrap(context, HardwareProcessor.class);
 		if (proc != null) {
-			return Arinc653PlatformBuilder.as(proc).getMIFDuration().toString();
+			try {
+				return Arinc653PlatformBuilder.as(proc).getMIFDuration().toString();
+			} catch (IllegalStateException e) {
+				Activator.getDefault().getLog().log(new Status(Status.INFO, Activator.PLUGIN_ID, Status.OK, e.getLocalizedMessage(), e));
+			}
 		}
 		return null;
 	}

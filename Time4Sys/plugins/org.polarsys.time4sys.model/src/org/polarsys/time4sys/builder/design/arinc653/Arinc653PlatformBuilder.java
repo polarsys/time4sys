@@ -150,6 +150,14 @@ public class Arinc653PlatformBuilder {
 		return schedBuilder.getMAFDuration();
 	}
 	
+	public Duration computeMAFDuration() {
+		return schedBuilder.computeMAFDuration();
+	}
+	
+	public void updateFrameCycleTime() {
+		schedBuilder.updateFrameCycleTime();
+	}
+	
 	public Duration getMIFDuration() {
 		return schedBuilder.getMIFDuration();
 	}

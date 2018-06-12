@@ -108,11 +108,27 @@ public class TableDrivenSchedPolicyBuilder {
 			}
 		}
 	}
+	
+	public void withFrameCycleTime(final Duration t) {
+		schedule.setFrameCycleTime(t);
+	}
+	
+	public void updateFrameCycleTime() {
+		schedule.setFrameCycleTime(computeMAFDuration());
+	}
+	
+	public Duration getFrameCycleTime() {
+		return schedule.getFrameCycleTime();
+	}
 
 	public Duration getMAFDuration() {
 		if (schedule.eIsSet(GrmPackage.eINSTANCE.getTableDrivenSchedule_FrameCycleTime())) {
 			return schedule.getFrameCycleTime();
 		}
+		return computeMAFDuration();
+	}
+
+	public Duration computeMAFDuration() {
 		Duration sum = nfpFactory.createDurationFromString("0ms");
 		for (TableEntryType entry : schedule.getEntries()) {
 			for (Duration t : entry.getTimeSlot()) {
