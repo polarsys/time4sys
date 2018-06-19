@@ -30,7 +30,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.zest.core,
  org.eclipse.zest.layouts,
  org.eclipse.gef,
- org.polarsys.time4sys.libs;bundle-version="1.0.0",
+ org.polarsys.time4sys.libs,
  org.apache.commons.io
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.core.resources

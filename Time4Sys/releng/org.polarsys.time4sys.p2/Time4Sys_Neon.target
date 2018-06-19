@@ -42,7 +42,7 @@
 <unit id="fr.rtaw.pegaseplusplus.feature.feature.group" version="0.0.1.201709210931"/>
 <repository location="http://eclipse.realtimeatwork.com"/>
 </location>
-<location path="C:\Users\didier\Downloads\Capella1.2\capella\eclipse" type="Profile"/>
+<location path="${eclipse_home}" type="Profile"/>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="2.0.0.201709230612"/>
 <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="2.0.0.201709230612"/>
