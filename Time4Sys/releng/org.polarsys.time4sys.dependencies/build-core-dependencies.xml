@@ -5,7 +5,6 @@
 		<delete>
 			<fileset dir="site" />
 		</delete>
-
 		<echo>Building Analysis repository dependencies update site...</echo>
 		<p2.publish.featuresAndBundles repository="file:${basedir}/site/" repositoryName="Analysis Repository Dependencies" append="false" compress="true" source="${basedir}/exported_site/">
 		</p2.publish.featuresAndBundles>
