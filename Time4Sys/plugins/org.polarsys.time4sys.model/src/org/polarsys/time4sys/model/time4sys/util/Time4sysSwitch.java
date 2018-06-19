@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
-import org.polarsys.time4sys.model.time4sys.*;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;

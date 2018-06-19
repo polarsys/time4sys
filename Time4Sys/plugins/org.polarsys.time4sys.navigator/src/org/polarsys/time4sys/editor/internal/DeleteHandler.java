@@ -20,6 +20,7 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -43,15 +44,15 @@ import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
  */
 public class DeleteHandler extends AbstractHandler {
 
-	private Session collectSessionAndFillSelection(ISelection selection, List<ModelElement> selected) {
+	private Session collectSessionAndFillSelection(ISelection selection, List<EObject> selected) {
 		Session session = null;
 
 		if (selection instanceof StructuredSelection) {
 			for (final Object obj : ((StructuredSelection)selection).toArray()) {
-				if (obj instanceof ModelElement) {
-					selected.add((ModelElement)obj);
+				if (obj instanceof ModelElement || obj instanceof EModelElement) {
+					selected.add((EObject)obj);
 					if (session == null) {
-						session = SessionManager.INSTANCE.getSession((ModelElement)obj);
+						session = SessionManager.INSTANCE.getSession((EObject)obj);
 					}
 				}
 			}
@@ -65,7 +66,7 @@ public class DeleteHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final ISelection selection = HandlerUtil.getCurrentSelection(event);
 
-		final List<ModelElement> selected = new ArrayList<ModelElement>();
+		final List<EObject> selected = new ArrayList<EObject>();
 		final Session session = collectSessionAndFillSelection(selection, selected);
 
 		if (session != null) {
@@ -74,7 +75,7 @@ public class DeleteHandler extends AbstractHandler {
 				@Override
 				protected void doExecute() {
 
-					for (final ModelElement element : selected) {
+					for (final EObject element : selected) {
 						destroy(element);
 					}
 

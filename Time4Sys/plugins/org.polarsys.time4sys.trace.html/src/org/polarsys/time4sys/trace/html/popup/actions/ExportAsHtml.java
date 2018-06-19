@@ -145,7 +145,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("<head>");
 		w.write("<meta charset='utf-8' />");
 		w.write("<title>Tasks activation</title>");
-		w.write("<link rel='stylesheet' href='http://www.designcps.com/cpal-editor/tasks.css' />");
+		w.write("<link rel='stylesheet' href='file://C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.trace.html/display/tasks.css' />");
 		w.write("<link rel='stylesheet' href='tasks.css' />");
 		w.write("</head>");
 		w.write("<body>");
@@ -163,7 +163,7 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("</body>");
 		w.write("<script src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>");
 		w.write("<script src='d3.min.js' charset='utf-8'></script>");
-		w.write("<script src='http://www.designcps.com/cpal-editor/tasks.js'></script>");
+		w.write("<script src='file://C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.trace.html/display/tasks.js'></script>");
 		w.write("<script src='tasks.js'></script>");
 		w.write("<script>window.updateSVG('cpal_tasks_tsv', []);</script>");
 		w.write("</html>");

@@ -1,0 +1,82 @@
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000000;
+  shape-rendering: crispEdges;
+}
+
+.y.axis path {
+  display: none;
+}
+
+.Thinking {
+  fill: #1f77b4;
+}
+
+.WaitingForRightFork {
+  fill: #ff7f0e;
+}
+
+.WaitingForLeftFork {
+  fill: #2ca02c;
+}
+
+.Eating {
+  fill: #d62728;
+}
+
+.PuttingLeftFork {
+  fill: #9467bd;
+}
+
+.Init {
+  fill: #1f77b4;
+}
+
+.Idle {
+  fill: #ff7f0e;
+}
+
+.Main {
+  fill: #2ca02c;
+}
+
+.State1 {
+  fill: #d62728;
+}
+
+.State2 {
+  fill: #9467bd;
+}
+
+.State3 {
+  fill: #8c564b;
+}
+
+.State4 {
+  fill: #e377c2;
+}
+
+.State5 {
+  fill:#7f7f7f;
+}
+
+.State6 {
+  fill: #bcbd22;
+}
+
+.State7 {
+  fill: #17becf;
+}

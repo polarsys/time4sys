@@ -14,9 +14,11 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
@@ -35,7 +37,7 @@ public class PropertiesServices {
 
 	public List<EStructuralFeature> removeFeaturesToHide(EObject ctx, Collection<EStructuralFeature> unfiltered) {
 		List<EStructuralFeature> toBeFiltered = Lists.newArrayList(unfiltered);
-		
+
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE_CONNECTOR__SOURCE_PORT);
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE__OWNED_PORT);
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE__PSERVICES);
@@ -49,11 +51,11 @@ public class PropertiesServices {
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE__RSERVICES);
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE_USAGE__USED_RESOURCE);
 		toBeFiltered.remove(GrmPackage.Literals.RESOURCE_SERVICE__CONTEXT);
-	
+
 		toBeFiltered.remove(GqamPackage.Literals.BEHAVIOR_SCENARIO__PARENT_STEP);
 		toBeFiltered.remove(GqamPackage.Literals.PIN__PATTERN);
 		toBeFiltered.remove(GqamPackage.Literals.STEP__PROBABILITY);
-	
+
 		toBeFiltered.remove(SrmPackage.Literals.DEVICE_BROKER__CLOSE_SERVICES);
 		toBeFiltered.remove(SrmPackage.Literals.DEVICE_BROKER__OPEN_SERVICES);
 		toBeFiltered.remove(SrmPackage.Literals.DEVICE_BROKER__CONTROL_SERVICES);
@@ -99,7 +101,7 @@ public class PropertiesServices {
 		toBeFiltered.remove(SrmPackage.Literals.SOFTWARE_SCHEDULABLE_RESOURCE__JOIN_SERVICES);
 		toBeFiltered.remove(SrmPackage.Literals.SOFTWARE_SCHEDULABLE_RESOURCE__TIME_SLICE_ELEMENTS);
 		toBeFiltered.remove(SrmPackage.Literals.SOFTWARE_SCHEDULABLE_RESOURCE__YIELD_SERVICES);
-	
+
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_WIRE__SOURCE_PIN);
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_WIRE__TARGET_PIN);
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_PROCESSING_MEMORY__REPL_POLICY);
@@ -116,8 +118,8 @@ public class PropertiesServices {
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_COMPONENT__GRID);
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_COMPUTING_RESOURCE__OP_FREQUENCIES);
 		toBeFiltered.remove(HrmPackage.Literals.HARDWARE_CHIP__TECHNOLOGY);
-		toBeFiltered.remove(GrmPackage.Literals.PROCESSING_RESOURCE__SPEED_FACTOR);		
-		
+		toBeFiltered.remove(GrmPackage.Literals.PROCESSING_RESOURCE__SPEED_FACTOR);
+
 		toBeFiltered.remove(NfpPackage.Literals.COMPOSITE_DISTRIBUTION__PARTS);
 		toBeFiltered.remove(NfpPackage.Literals.DISCRETE_DISTRIBUTION__BUCKETS);
 		toBeFiltered.remove(NfpPackage.Literals.GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MU);
@@ -157,181 +159,202 @@ public class PropertiesServices {
 		}
 	}
 
-//	public List<EObject> removeSemanticElementsToHide(EObject ctx, Collection<EObject> unfiltered,
-//			DSemanticDecorator selection) {
-//		List<EObject> filtered = Lists.newArrayList();
-//		for (EObject eObject : unfiltered) {
-//			if (!(eObject instanceof EParameter)) {
-//				filtered.add(eObject);
-//			}
-//		}
-//		if (selection instanceof DEdge && ctx instanceof EClass
-//				&& ((DEdge) selection).getActualMapping() instanceof EdgeMapping
-//				&& "EC ESupertypes".equals(((EdgeMapping) ((DEdge) selection).getActualMapping()).getName())) {
-//			filtered.addAll(((EClass) ctx).getEGenericSuperTypes());
-//			for (EGenericType genType : ((EClass) ctx).getEGenericSuperTypes()) {
-//				filtered.addAll(genType.getETypeArguments());
-//			}
-//		}
-//
-//		return filtered;
-//	}
-//
-//	public EStringToStringMapEntryImpl getVisibleDocAnnotations(EObject self) {
-//		if (self instanceof EModelElement) {
-//			EAnnotation eAnnot = ((EModelElement) self).getEAnnotation(GEN_MODEL_PACKAGE_NS_URI);
-//			if (eAnnot != null) {
-//				for (EStringToStringMapEntryImpl mapEntry : Iterables.filter(eAnnot.getDetails(),
-//						EStringToStringMapEntryImpl.class)) {
-//					if ("documentation".equals(mapEntry.getKey())) {
-//						return mapEntry;
-//					}
-//				}
-//			}
-//
-//		} else if (self instanceof EAnnotation) {
-//			for (EStringToStringMapEntryImpl mapEntry : Iterables.filter(((EAnnotation) self).getDetails(),
-//					EStringToStringMapEntryImpl.class)) {
-//				if ("documentation".equals(mapEntry.getKey())) {
-//					return mapEntry;
-//				}
-//			}
-//		} else if (self instanceof EStringToStringMapEntryImpl) {
-//			if ("documentation".equals(((EStringToStringMapEntryImpl) self).getKey())) {
-//				return (EStringToStringMapEntryImpl) self;
-//			}
-//		}
-//		return null;
-//	}
-//
-//	public EObject setDocAnnotation(EObject self, String value) {
-//		if (self instanceof EModelElement) {
-//			EAnnotation eAnnot = ((EModelElement) self).getEAnnotation(GEN_MODEL_PACKAGE_NS_URI);
-//			if (eAnnot != null) {
-//				for (EStringToStringMapEntryImpl mapEntry : Iterables.filter(eAnnot.getDetails(),
-//						EStringToStringMapEntryImpl.class)) {
-//					if ("documentation".equals(mapEntry.getKey())) {
-//						mapEntry.setValue(value);
-//					}
-//				}
-//			} else {
-//				EAnnotation newAnnot = EcoreFactory.eINSTANCE.createEAnnotation();
-//				newAnnot.setSource(GEN_MODEL_PACKAGE_NS_URI);
-//				newAnnot.getDetails().put("documentation", value);
-//				((EModelElement) self).getEAnnotations().add(newAnnot);
-//			}
-//
-//		} else if (self instanceof EAnnotation) {
-//			for (EStringToStringMapEntryImpl mapEntry : Iterables.filter(((EAnnotation) self).getDetails(),
-//					EStringToStringMapEntryImpl.class)) {
-//				if ("documentation".equals(mapEntry.getKey())) {
-//					mapEntry.setValue(value);
-//				}
-//			}
-//
-//		} else if (self instanceof EStringToStringMapEntryImpl) {
-//			if ("documentation".equals(((EStringToStringMapEntryImpl) self).getKey())) {
-//				((EStringToStringMapEntryImpl) self).setValue(value);
-//			}
-//		}
-//		return self;
-//	}
-//
-//	public boolean isJavaFileGenerated(EObject cur) {
-//		URI javaImplementationURI = getJavaImplementationURI(cur);
-//		if (javaImplementationURI != null && cur.eResource() != null && cur.eResource().getResourceSet() != null
-//				&& cur.eResource().getResourceSet().getURIConverter() != null) {
-//			return cur.eResource().getResourceSet().getURIConverter().exists(javaImplementationURI,
-//					Collections.EMPTY_MAP);
-//		}
-//		return false;
-//	}
-//
-//	public String getJavaImplementationPath(EObject cur) {
-//		URI targetFile = getJavaImplementationURI(cur);
-//		if (targetFile != null) {
-//			return targetFile.toString();
-//		}
-//		return null;
-//	}
-//
-//	private URI getJavaImplementationURI(EObject cur) {
-//		GenClassifier gClass = null;
-//		if (cur instanceof GenFeature) {
-//			gClass = ((GenFeature) cur).getGenClass();
-//		}
-//		if (cur instanceof GenEnumLiteral) {
-//			gClass = ((GenEnumLiteral) cur).getGenEnum();
-//		}
-//		if (cur instanceof GenClassifier) {
-//			gClass = (GenClassifier) cur;
-//		}
-//		if (cur instanceof GenEnum) {
-//			gClass = (GenClassifier) cur;
-//		}
-//		String className = "";
-//		if (gClass instanceof GenClass) {
-//			className = ((GenClass) gClass).getClassName();
-//		} else if (gClass instanceof GenEnum) {
-//			className = ((GenEnum) gClass).getClassifierInstanceName();
-//		}
-//
-//		if (gClass != null && gClass.getGenPackage() != null) {
-//			String packageName = gClass.getGenPackage().getClassPackageName();
-//			URI targetDirectory = URI.createURI(gClass.getGenPackage().getGenModel().getModelDirectory())
-//					.appendSegments(packageName.split("\\."));
-//			URI targetFile = targetDirectory.appendSegment(className + ".java");
-//			return targetFile;
-//		}
-//		return null;
-//	}
-//
-//	public String upperBoundDisplay(ETypedElement host) {
-//		if (host.getUpperBound() == -1) {
-//			return "*";
-//		}
-//		return Integer.valueOf(host.getUpperBound()).toString();
-//	}
-//
-//	public ETypedElement setUpperBound(ETypedElement host, String newValue) {
-//		if ("*".equals(newValue)) {
-//			host.setUpperBound(-1);
-//		} else {
-//			host.setUpperBound(Integer.valueOf(newValue));
-//		}
-//		return host;
-//	}
-//
-//	public EObject eGetMonoRef(EObject cur, EStructuralFeature ref) {
-//		return (EObject) cur.eGet(ref);
-//	}
-//
-//	public EObject moveUpInContainer(EObject cur) {
-//		EObject container = cur.eContainer();
-//		if (container != null) {
-//			EList<EObject> siblings = (EList<EObject>) container.eGet(cur.eContainingFeature());
-//			int oldPosition = siblings.indexOf(cur);
-//			int newPosition = oldPosition - 1;
-//			if (newPosition < 0) {
-//				newPosition = 0;
-//			}
-//			siblings.move(newPosition, cur);
-//		}
-//		return cur;
-//	}
-//
-//	public EObject moveDownInContainer(EObject cur) {
-//		EObject container = cur.eContainer();
-//		if (container != null) {
-//			EList<EObject> siblings = (EList<EObject>) container.eGet(cur.eContainingFeature());
-//			int oldPosition = siblings.indexOf(cur);
-//			int newPosition = oldPosition + 1;
-//			if (newPosition > siblings.size() - 1) {
-//				newPosition = siblings.size() - 1;
-//			}
-//			siblings.move(newPosition, cur);
-//		}
-//		return cur;
-//	}
+	public Object createFromString(EAttribute feature, String newValue) {
+
+		return EcoreUtil.createFromString(((EAttribute) feature).getEAttributeType(), (String) newValue);
+	}
+
+	// public List<EObject> removeSemanticElementsToHide(EObject ctx,
+	// Collection<EObject> unfiltered,
+	// DSemanticDecorator selection) {
+	// List<EObject> filtered = Lists.newArrayList();
+	// for (EObject eObject : unfiltered) {
+	// if (!(eObject instanceof EParameter)) {
+	// filtered.add(eObject);
+	// }
+	// }
+	// if (selection instanceof DEdge && ctx instanceof EClass
+	// && ((DEdge) selection).getActualMapping() instanceof EdgeMapping
+	// && "EC ESupertypes".equals(((EdgeMapping) ((DEdge)
+	// selection).getActualMapping()).getName())) {
+	// filtered.addAll(((EClass) ctx).getEGenericSuperTypes());
+	// for (EGenericType genType : ((EClass) ctx).getEGenericSuperTypes()) {
+	// filtered.addAll(genType.getETypeArguments());
+	// }
+	// }
+	//
+	// return filtered;
+	// }
+	//
+	// public EStringToStringMapEntryImpl getVisibleDocAnnotations(EObject self)
+	// {
+	// if (self instanceof EModelElement) {
+	// EAnnotation eAnnot = ((EModelElement)
+	// self).getEAnnotation(GEN_MODEL_PACKAGE_NS_URI);
+	// if (eAnnot != null) {
+	// for (EStringToStringMapEntryImpl mapEntry :
+	// Iterables.filter(eAnnot.getDetails(),
+	// EStringToStringMapEntryImpl.class)) {
+	// if ("documentation".equals(mapEntry.getKey())) {
+	// return mapEntry;
+	// }
+	// }
+	// }
+	//
+	// } else if (self instanceof EAnnotation) {
+	// for (EStringToStringMapEntryImpl mapEntry :
+	// Iterables.filter(((EAnnotation) self).getDetails(),
+	// EStringToStringMapEntryImpl.class)) {
+	// if ("documentation".equals(mapEntry.getKey())) {
+	// return mapEntry;
+	// }
+	// }
+	// } else if (self instanceof EStringToStringMapEntryImpl) {
+	// if ("documentation".equals(((EStringToStringMapEntryImpl)
+	// self).getKey())) {
+	// return (EStringToStringMapEntryImpl) self;
+	// }
+	// }
+	// return null;
+	// }
+	//
+	// public EObject setDocAnnotation(EObject self, String value) {
+	// if (self instanceof EModelElement) {
+	// EAnnotation eAnnot = ((EModelElement)
+	// self).getEAnnotation(GEN_MODEL_PACKAGE_NS_URI);
+	// if (eAnnot != null) {
+	// for (EStringToStringMapEntryImpl mapEntry :
+	// Iterables.filter(eAnnot.getDetails(),
+	// EStringToStringMapEntryImpl.class)) {
+	// if ("documentation".equals(mapEntry.getKey())) {
+	// mapEntry.setValue(value);
+	// }
+	// }
+	// } else {
+	// EAnnotation newAnnot = EcoreFactory.eINSTANCE.createEAnnotation();
+	// newAnnot.setSource(GEN_MODEL_PACKAGE_NS_URI);
+	// newAnnot.getDetails().put("documentation", value);
+	// ((EModelElement) self).getEAnnotations().add(newAnnot);
+	// }
+	//
+	// } else if (self instanceof EAnnotation) {
+	// for (EStringToStringMapEntryImpl mapEntry :
+	// Iterables.filter(((EAnnotation) self).getDetails(),
+	// EStringToStringMapEntryImpl.class)) {
+	// if ("documentation".equals(mapEntry.getKey())) {
+	// mapEntry.setValue(value);
+	// }
+	// }
+	//
+	// } else if (self instanceof EStringToStringMapEntryImpl) {
+	// if ("documentation".equals(((EStringToStringMapEntryImpl)
+	// self).getKey())) {
+	// ((EStringToStringMapEntryImpl) self).setValue(value);
+	// }
+	// }
+	// return self;
+	// }
+	//
+	// public boolean isJavaFileGenerated(EObject cur) {
+	// URI javaImplementationURI = getJavaImplementationURI(cur);
+	// if (javaImplementationURI != null && cur.eResource() != null &&
+	// cur.eResource().getResourceSet() != null
+	// && cur.eResource().getResourceSet().getURIConverter() != null) {
+	// return
+	// cur.eResource().getResourceSet().getURIConverter().exists(javaImplementationURI,
+	// Collections.EMPTY_MAP);
+	// }
+	// return false;
+	// }
+	//
+	// public String getJavaImplementationPath(EObject cur) {
+	// URI targetFile = getJavaImplementationURI(cur);
+	// if (targetFile != null) {
+	// return targetFile.toString();
+	// }
+	// return null;
+	// }
+	//
+	// private URI getJavaImplementationURI(EObject cur) {
+	// GenClassifier gClass = null;
+	// if (cur instanceof GenFeature) {
+	// gClass = ((GenFeature) cur).getGenClass();
+	// }
+	// if (cur instanceof GenEnumLiteral) {
+	// gClass = ((GenEnumLiteral) cur).getGenEnum();
+	// }
+	// if (cur instanceof GenClassifier) {
+	// gClass = (GenClassifier) cur;
+	// }
+	// if (cur instanceof GenEnum) {
+	// gClass = (GenClassifier) cur;
+	// }
+	// String className = "";
+	// if (gClass instanceof GenClass) {
+	// className = ((GenClass) gClass).getClassName();
+	// } else if (gClass instanceof GenEnum) {
+	// className = ((GenEnum) gClass).getClassifierInstanceName();
+	// }
+	//
+	// if (gClass != null && gClass.getGenPackage() != null) {
+	// String packageName = gClass.getGenPackage().getClassPackageName();
+	// URI targetDirectory =
+	// URI.createURI(gClass.getGenPackage().getGenModel().getModelDirectory())
+	// .appendSegments(packageName.split("\\."));
+	// URI targetFile = targetDirectory.appendSegment(className + ".java");
+	// return targetFile;
+	// }
+	// return null;
+	// }
+	//
+	// public String upperBoundDisplay(ETypedElement host) {
+	// if (host.getUpperBound() == -1) {
+	// return "*";
+	// }
+	// return Integer.valueOf(host.getUpperBound()).toString();
+	// }
+	//
+	// public ETypedElement setUpperBound(ETypedElement host, String newValue) {
+	// if ("*".equals(newValue)) {
+	// host.setUpperBound(-1);
+	// } else {
+	// host.setUpperBound(Integer.valueOf(newValue));
+	// }
+	// return host;
+	// }
+	//
+	// public EObject eGetMonoRef(EObject cur, EStructuralFeature ref) {
+	// return (EObject) cur.eGet(ref);
+	// }
+	//
+	// public EObject moveUpInContainer(EObject cur) {
+	// EObject container = cur.eContainer();
+	// if (container != null) {
+	// EList<EObject> siblings = (EList<EObject>)
+	// container.eGet(cur.eContainingFeature());
+	// int oldPosition = siblings.indexOf(cur);
+	// int newPosition = oldPosition - 1;
+	// if (newPosition < 0) {
+	// newPosition = 0;
+	// }
+	// siblings.move(newPosition, cur);
+	// }
+	// return cur;
+	// }
+	//
+	// public EObject moveDownInContainer(EObject cur) {
+	// EObject container = cur.eContainer();
+	// if (container != null) {
+	// EList<EObject> siblings = (EList<EObject>)
+	// container.eGet(cur.eContainingFeature());
+	// int oldPosition = siblings.indexOf(cur);
+	// int newPosition = oldPosition + 1;
+	// if (newPosition > siblings.size() - 1) {
+	// newPosition = siblings.size() - 1;
+	// }
+	// siblings.move(newPosition, cur);
+	// }
+	// return cur;
+	// }
 
 }

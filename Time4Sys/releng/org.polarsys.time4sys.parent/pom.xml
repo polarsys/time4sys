@@ -19,16 +19,19 @@
     <tycho-version>0.24.0</tycho-version>
     <platform-version-name>neon</platform-version-name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<parent.dir>${project.basedir}/../..</parent.dir>
   </properties>
 
+  
  <repositories>
  
-   <repository> 
-   <id>JGraphX</id>
-   <url> http://nexus.talanlabs.com/content/repositories/releases/</url>
- </repository>
- 
  <!-- configure p2 repository to resolve against -->
+
+ <repository> 
+   <id>JGraphX</id>
+   <layout>p2</layout>
+   <url>file:${parent.dir}/releng/org.polarsys.time4sys.dependencies/site/</url>
+ </repository>
   <repository> 
    <id>SiriusNeon</id>
    <layout>p2</layout>
