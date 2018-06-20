@@ -497,13 +497,14 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.libs"
+         id="org.polarsys.time4sys.example.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.example.ui"
+         id="org.polarsys.time4sys.librairies"
          download-size="0"
          install-size="0"
          version="0.0.0"
