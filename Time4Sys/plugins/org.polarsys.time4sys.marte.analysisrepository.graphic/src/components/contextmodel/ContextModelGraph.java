@@ -158,7 +158,7 @@ public class ContextModelGraph extends mxGraph {
         
         layout.setLevelDistance(120);
         layout.setNodeDistance(120);
-        layout.setEdgeRouting(true);
+//        layout.setEdgeRouting(true);
         layout.setUseBoundingBox(true);
         layout.execute(getDefaultParent());
         

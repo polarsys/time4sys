@@ -17,8 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.e4.ui.model.workbench,
  org.eclipse.e4.core.di,
  org.eclipse.swt,
- org.polarsys.time4sys.jgraphx,
- org.polarsys.time4sys.libs
+ org.polarsys.time4sys.librairies
 Bundle-ActivationPolicy: lazy
 Export-Package: components.contextmodel,
  eclipseview.polarsys.ui.components,

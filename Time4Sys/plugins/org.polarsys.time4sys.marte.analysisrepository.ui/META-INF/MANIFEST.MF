@@ -30,8 +30,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.zest.core,
  org.eclipse.zest.layouts,
  org.eclipse.gef,
- org.polarsys.time4sys.libs,
- org.apache.commons.io
+ org.polarsys.time4sys.librairies
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.core.resources
 Export-Package: org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.polarsys.time4sys.librairies
+Bundle-SymbolicName: org.polarsys.time4sys.librairies
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.mxgraph.layout,
+ com.mxgraph.model,
+ com.mxgraph.swing,
+ com.mxgraph.util,
+ com.mxgraph.view,
+ org.apache.commons.io

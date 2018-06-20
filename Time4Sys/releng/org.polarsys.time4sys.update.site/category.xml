@@ -39,6 +39,9 @@
    <feature url="features/org.eclipse.acceleo.ui.interpreter_3.7.2.201708211328.jar" id="org.eclipse.acceleo.ui.interpreter" version="3.7.2.201708211328">
       <category name="T4S Dependencies"/>
    </feature>
+   <feature url="features/org.eclipse.zest_1.7.0.201606061308.jar" id="org.eclipse.zest" version="1.7.0.201606061308">
+      <category name="T4S Dependencies"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
