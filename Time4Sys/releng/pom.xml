@@ -19,6 +19,5 @@
                 <module>org.polarsys.time4sys.p2</module>
                 <module>org.polarsys.time4sys.libs</module>
                 <module>org.polarsys.time4sys.jgraphx</module>
-                <module>org.polarsys.time4sys.dependencies</module>
         </modules>
 </project>
