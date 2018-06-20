@@ -20,19 +20,4 @@
  <artifactId>org.polarsys.time4sys.marte.analysisrepository.graphic</artifactId>
  <version>1.0.0-SNAPSHOT</version>
  <packaging>eclipse-plugin</packaging>
- <dependencies>
- 	<dependency>
- 		<groupId>com.mxgraph</groupId>
- 		<artifactId>jgraphx</artifactId>
- 	</dependency>
- </dependencies>
- <dependencyManagement>
- 	<dependencies>
- 		<dependency>
- 			<groupId>com.mxgraph</groupId>
- 			<artifactId>jgraphx</artifactId>
- 			<version>1.12.0.2</version>
- 		</dependency>
- 	</dependencies>
- </dependencyManagement>
 </project>

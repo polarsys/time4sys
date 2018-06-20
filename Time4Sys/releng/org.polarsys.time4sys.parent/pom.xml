@@ -25,12 +25,6 @@
  <repositories>
  
  <!-- configure p2 repository to resolve against -->
-
- <repository> 
-   <id>JGraphX</id>
-   <layout>p2</layout>
-   <url>file:${project.basedir}/../../releng/org.polarsys.time4sys.dependencies/site/</url>
- </repository>
   <repository> 
    <id>SiriusNeon</id>
    <layout>p2</layout>
