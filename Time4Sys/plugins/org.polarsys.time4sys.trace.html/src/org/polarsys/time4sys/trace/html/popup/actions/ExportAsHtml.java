@@ -15,10 +15,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.net.URL;
 import java.util.List;
 
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
@@ -31,11 +33,13 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.Slice;
+import org.polarsys.time4sys.trace.html.Activator;
 
 public class ExportAsHtml implements IObjectActionDelegate {
 	
@@ -140,12 +144,15 @@ public class ExportAsHtml implements IObjectActionDelegate {
 	}
 
 	protected void export() throws IOException {
+		URL url = Platform.asLocalURL(Activator.getDefault().getBundle().getEntry("/"));
 		w.write("<!DOCTYPE html>");
 		w.write("<html>");
 		w.write("<head>");
 		w.write("<meta charset='utf-8' />");
 		w.write("<title>Tasks activation</title>");
-		w.write("<link rel='stylesheet' href='file://C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.trace.html/display/tasks.css' />");
+		w.write("<link rel='stylesheet' href='");
+		w.write(url.toString());
+		w.write("display/tasks.css' />");
 		w.write("<link rel='stylesheet' href='tasks.css' />");
 		w.write("</head>");
 		w.write("<body>");
@@ -163,7 +170,10 @@ public class ExportAsHtml implements IObjectActionDelegate {
 		w.write("</body>");
 		w.write("<script src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>");
 		w.write("<script src='d3.min.js' charset='utf-8'></script>");
-		w.write("<script src='file://C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.trace.html/display/tasks.js'></script>");
+		w.write("<script src='");
+		w.write(url.toString());
+		w.write("display/tasks.js' />");
+
 		w.write("<script src='tasks.js'></script>");
 		w.write("<script>window.updateSVG('cpal_tasks_tsv', []);</script>");
 		w.write("</html>");

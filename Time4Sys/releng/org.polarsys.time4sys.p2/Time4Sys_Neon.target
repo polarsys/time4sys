@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="144">
+<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="149">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.9.0.201710271504"/>
+<repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.9.0.201710271456"/>
@@ -15,8 +19,15 @@
 <repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.9.0.201710271504"/>
-<repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/"/>
+<unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="2.0.0.201709230612"/>
+<unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="2.0.0.201709230612"/>
+<unit id="org.eclipse.amalgam.explorer.contextual.feature.group" version="2.0.0.201709230612"/>
+<unit id="org.eclipse.amalgam.explorer.contextual.sirius.feature.group" version="2.0.0.201709230612"/>
+<repository location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
+<repository location="http://download.eclipse.org/releases/neon/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="5.1.1.201801311428"/>
@@ -43,17 +54,5 @@
 <repository location="http://eclipse.realtimeatwork.com"/>
 </location>
 <location path="${eclipse_home}" type="Profile"/>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="2.0.0.201709230612"/>
-<unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="2.0.0.201709230612"/>
-<unit id="org.eclipse.amalgam.explorer.contextual.feature.group" version="2.0.0.201709230612"/>
-<unit id="org.eclipse.amalgam.explorer.contextual.sirius.feature.group" version="2.0.0.201709230612"/>
-<repository location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
-<repository location="http://download.eclipse.org/releases/neon/"/>
-</location>
-<location path="${project_loc:org.polarsys.time4sys.dependencies}/site" type="Directory"/>
 </locations>
 </target>
