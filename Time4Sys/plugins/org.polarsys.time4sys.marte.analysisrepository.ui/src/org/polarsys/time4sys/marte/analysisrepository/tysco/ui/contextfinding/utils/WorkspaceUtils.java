@@ -19,7 +19,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
-import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.design.DesignModel;
 
 public class WorkspaceUtils {
 
@@ -70,16 +70,16 @@ public class WorkspaceUtils {
 	 * get time4sys project instance
 	 * @return
 	 */
-	public static Project getTime4sysProject () {
+	public static DesignModel getTime4sysProject () {
 		
 		ISelection selection = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getSelection();
-		Project time4sys = null;
+		DesignModel time4sys = null;
 		
 		if (selection != null & selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			
-			if (structuredSelection.getFirstElement() instanceof Project) {
-				time4sys = (Project)(structuredSelection.getFirstElement());		
+			if (structuredSelection.getFirstElement() instanceof DesignModel) {
+				time4sys = (DesignModel)(structuredSelection.getFirstElement());		
 			}
 		}
 		
@@ -94,7 +94,7 @@ public class WorkspaceUtils {
 	public static String getOutputFolderPath() {
 		
 		IProject currentProject = WorkspaceUtils.getCurrentProject();
-		IFolder folder = WorkspaceUtils.createFolder(currentProject,"tysco_out");
+		IFolder folder = WorkspaceUtils.createFolder(currentProject,"results");
 		String outputFolderPath = folder.getLocation().toOSString();
 		
 		//System.out.println("output folder path: "+outputFolderPath);

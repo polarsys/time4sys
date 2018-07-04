@@ -1,8 +1,6 @@
 package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 public class AnalysisRepositoryPlugin extends AbstractUIPlugin {

@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType;
@@ -43,27 +46,21 @@ import eclipseview.polarsys.ui.components.Node;
 import eclipseview.polarsys.ui.graphmodel.PolarsysGraphView;
 
 public class AnalysisRepositoryControler {
-	
+
 	/** Controler of User Interface **/
-//	private AnalysisRepositoryUI ui;
 	private AnalysisRepository analysisRepository;
-	private Project time4SysModel;
 	private AnalysisRepositoryResultUI resultUI;
 	private List<ContextModel> appropriateContexts;
 	private List<List<Integer>> violatedGroupIdLists;
 	private List<Result> results;
-	
+
 	private GraphModelFactory factory;
-	
+
 	private Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-	
-	private static final String[] AnalysisRepository_Name = {
-		      					"Analysis Repository (*.tysco)",
-		      					"All Files (*.*)"};
-	private static final String[] AnalysisRepository_Extension = { "*.tysco","*.*"};
-	
+
 	/**
 	 * Constructeur avec param
+	 * 
 	 * @param ui
 	 */
 	public AnalysisRepositoryControler() {
@@ -73,102 +70,110 @@ public class AnalysisRepositoryControler {
 		GraphModelPackage.eINSTANCE.eClass();
 		factory = GraphModelFactory.eINSTANCE;
 	}
-	
+
 	/**
 	 * check
 	 */
-	public void check(Project time4SysModel) {
-		
-		final String repositoryLocation = AnalysisRepositoryPlugin.getDefault().getPreferenceStore().getString("AnalysisRepositoryPath");
+	public void check(DesignModel time4SysModel) {
 
-		if (repositoryLocation==null||repositoryLocation.trim().compareTo("")==0) {
+		final String repositoryLocation = AnalysisRepositoryPlugin.getDefault().getPreferenceStore()
+				.getString("AnalysisRepositoryPath");
+
+		if (repositoryLocation == null || repositoryLocation.trim().compareTo("") == 0) {
 			return;
 		}
-				
+
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> map = reg.getExtensionToFactoryMap();
 		map.put("tysco", new XMIResourceFactoryImpl());
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.getResource(URI.createURI("file:/"+repositoryLocation),true); 
+		Resource resource = resSet.getResource(URI.createURI("file:/" + repositoryLocation), true);
 		try {
 			resource.load(null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		analysisRepository = (AnalysisRepository) resource.getContents().get(0);
-		if (analysisRepository==null) {
-			//ui.setNotification("Cannot get Analysis Repository in selected resource");
+		if (analysisRepository == null) {
+			// ui.setNotification("Cannot get Analysis Repository in selected
+			// resource");
 			return;
 		}
-		
-		if (analysisRepository!=null&&time4SysModel!=null) {
-			// Fermer la fenetre courante
+
+		if (analysisRepository != null && time4SysModel != null) {
+			// Close current window
 			Result result;
-			
-			if(analysisRepository.getAllRules()!=null) {
+
+			if (analysisRepository.getAllRules() != null) {
 				for (IdentificationRule r : analysisRepository.getAllRules()) {
-					
+
 					String ruleContent = "";
 					ruleContent = r.getContent();
 
 					// rule in OCL
-					if (ArFunctionalUtils.isOCLConstraint(ruleContent,time4SysModel)) {
-						
+					if (ArFunctionalUtils.isOCLConstraint(ruleContent, time4SysModel)) {
+
 						result = new Result();
 						result.setRefId(r.getId());
-						result.setEvaluatedResult(LanguageValidatorUtils.oclEvaluateInvariant(time4SysModel,ruleContent));
-						results.add(result);	
+						result.setEvaluatedResult(
+								LanguageValidatorUtils.oclEvaluateInvariant(time4SysModel, ruleContent));
+						results.add(result);
 					}
 				}
 			}
-			
-			// Afficher les résultats
-			//appropriateContexts = ParadUtils.findAppropriateContexts(analysisRepository,results);
-			appropriateContexts = ArFunctionalUtils.findAppropriateContexts(analysisRepository,results,violatedGroupIdLists);
+
+			// show results
+			// appropriateContexts =
+			// ParadUtils.findAppropriateContexts(analysisRepository,results);
+			appropriateContexts = ArFunctionalUtils.findAppropriateContexts(analysisRepository, results,
+					violatedGroupIdLists);
 			resultUI = new AnalysisRepositoryResultUI(shell, this);
 			resultUI.open();
 		}
 	}
-		
-	
+
 	/**
 	 * Run Transformation
+	 * 
 	 * @param test
 	 */
 	public boolean runTransformation(Test test) {
 		boolean fine = true;
-		
+
 		// Clean output folder
 		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
 		fine &= WorkspaceUtils.cleanFolder(outputFolderPath);
 		if (!fine) {
 			return fine;
 		}
-		
+
 		// Execute transformation
 		TestImplementation testImpl = test.getImplementations().get(0);
 		Transformation transfo = testImpl.getTransformation();
 		fine &= execTransfo(transfo);
 		WorkspaceUtils.refreshProject();
-		if (fine) ArFunctionalUtils.plainMessage("Transformation succeed");
+		if (!fine)
+			ArFunctionalUtils.errorMessage("Transformation failed");
 		return fine;
 	}
-	
-	
+
 	/**
 	 * Run Transformation
+	 * 
 	 * @param test
 	 */
 	public boolean runAnalysis(Test test) {
-		
+
+		File newFile = null;
 		boolean lock = true;
 		int count = 0;
-		String transformedFilePath = WorkspaceUtils.getOutputFolderPath()+"/transformed_model.txt";
+		String transformedFilePath = WorkspaceUtils.getOutputFolderPath() + "/transformed_model.txt";
+		String resultPath = WorkspaceUtils.getOutputFolderPath() + "/analysis_result.xml";
 		while (lock) {
 
-			File newFile = new File(transformedFilePath);
-			
-			if (newFile.exists()) {	
+			newFile = new File(transformedFilePath);
+
+			if (newFile.exists()) {
 				lock = false;
 			} else {
 				try {
@@ -178,86 +183,40 @@ public class AnalysisRepositoryControler {
 					e.printStackTrace();
 				}
 			}
-			
-			if (count>10) {
+
+			if (count > 10) {
 				ArFunctionalUtils.plainMessage("Transformed file not found in output folder");
 				return false;
-			}	
+			}
 		}
-		
-		// Do analysis
-		TestImplementation textImpl = test.getImplementations().get(0);
-		String analysisExecPath = WorkspaceUtils.getCurrentProject().getLocation().toOSString()+"/"+textImpl.getAnalysisExecPath();
-		String inputModelPath = transformedFilePath;
-		String toolName = textImpl.getToolName();
-		String outputModelPath = WorkspaceUtils.getOutputFolderPath() + "/" +ArFunctionalUtils.defaultOutputFileName;
-		String outputMess = ArFunctionalUtils.runAnalysis(analysisExecPath, toolName, inputModelPath, outputModelPath);
-		
-		ArFunctionalUtils.plainMessage("Analysis succeed");
-		
+		// TODO:Ajouter dans la doc qu'il faut installer MAST et mettre dans le
+		// PATH et redémarrer eclipse ou le PC.
+
+		// Launch the analysis here mast_analysis tool_name [options]
+		TestImplementation testImpl = test.getImplementations().get(0);
+		String execPath = WorkspaceUtils.getOutputFolderPath() + testImpl.getAnalysisExecPath();
+		List<String> args = new ArrayList<String>();
+		args.addAll(Arrays.asList(testImpl.getAnalysisExecPath().split(" ")));
+		args.add(transformedFilePath);
+		args.add(resultPath);
+		boolean transfoOk = execTransfo(args);
+		if (!transfoOk) {
+			ArFunctionalUtils.errorMessage("Analysis failed");
+		}
 		WorkspaceUtils.refreshProject();
 		return true;
 	}
-	
-	
+
 	/**
 	 * Trigger analysis
+	 * 
 	 * @param test
 	 */
 	public void runTransformationAndAnalysis(Test test) {
-		
-		boolean fine = true;
-		
-		// Clean output folder
-		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
-		fine &= WorkspaceUtils.cleanFolder(outputFolderPath);
-		if (!fine) {
-			return;
-		}
-		
-		// Execute transformation
-		TestImplementation testImpl = test.getImplementations().get(0);
-		Transformation transfo = testImpl.getTransformation();
-		fine &= execTransfo(transfo);
-		if (!fine) return;
-		
-		// Check transformation done and new file has appeared
-		boolean lock = true;
-		int count = 0;
-		String transformedFilePath = WorkspaceUtils.getOutputFolderPath()+"/transformed_model.txt";
-		while (lock) {
-
-			File newFile = new File(transformedFilePath);
-			
-			if (newFile.exists()) {	
-				lock = false;
-			} else {
-				try {
-					Thread.sleep(500);
-					count++;
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-			
-			if (count>10) {
-				System.out.println("Transformed file always not found in output folder");
-				return;
-			}
-		}
-		
-		// Do analysis
-		String analysisExecPath = WorkspaceUtils.getCurrentProject().getLocation().toOSString()+"/"+testImpl.getAnalysisExecPath();
-		String inputModelPath = transformedFilePath;
-		String toolName = testImpl.getToolName();
-		String outputModelPath = WorkspaceUtils.getOutputFolderPath() + "/" +ArFunctionalUtils.defaultOutputFileName;
-		String outputMess = ArFunctionalUtils.runAnalysis(analysisExecPath, toolName, inputModelPath, outputModelPath);
-		
-		ArFunctionalUtils.plainMessage("Analysis succeed");
-		WorkspaceUtils.refreshProject();
+		runTransformation(test);
+		runAnalysis(test);
 	}
-	
-	
+
 	public AnalysisRepository getAnalysisRepository() {
 		return analysisRepository;
 	}
@@ -274,10 +233,6 @@ public class AnalysisRepositoryControler {
 		this.results = results;
 	}
 
-	public void setTime4sysProject(Project project) {
-		this.time4SysModel = project;
-	}
-
 	public List<ContextModel> getAppropriateContexts() {
 		return appropriateContexts;
 	}
@@ -285,48 +240,56 @@ public class AnalysisRepositoryControler {
 	public void setAppropriateContexts(List<ContextModel> appropriateContexts) {
 		this.appropriateContexts = appropriateContexts;
 	}
-	
-
 
 	/**
 	 * 
 	 * @param transfo
 	 */
 	public boolean execTransfo(Transformation transfo) {
-		
-		if (transfo==null) return false;
-		
+
+		if (transfo == null)
+			return false;
+
 		// Construct arguments to execute jar file
 		List<String> args = new ArrayList<String>();
 		String inputModelPath = WorkspaceUtils.getInputModelPath();
-		String jarPath = WorkspaceUtils.getCurrentProject().getLocation().toOSString()+"/"+transfo.getTransfoExecPath();
+		String jarPath = WorkspaceUtils.getCurrentProject().getLocation().toOSString() + "/"
+				+ transfo.getTransfoExecPath();
 		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
 		args.add("java");
 		args.add("-jar");
 		args.add(jarPath);
 		args.add(inputModelPath);
 		args.add(outputFolderPath);
-		
-		//System.out.println("Input model path: "+inputModelPath);
-		//System.out.println("Output folder path:  "+outputFolderPath);
-		
+
 		// execute...
 		return execTransfo(args);
 	}
 	
-	
+	private static BufferedReader getOutput(Process p) {
+	    return new BufferedReader(new InputStreamReader(p.getInputStream()));
+	}
+
+	private static BufferedReader getError(Process p) {
+	    return new BufferedReader(new InputStreamReader(p.getErrorStream()));
+	}
+
 	public boolean execTransfo(List<String> args) {
 		ProcessBuilder processbuilder = new ProcessBuilder(args);
 		try {
 			Process process = processbuilder.start();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-			StringBuilder builder = new StringBuilder();
-			String line = null;
-			while ( (line = reader.readLine()) != null) {
-				builder.append(line);
-				builder.append(System.getProperty("line.separator"));
+			BufferedReader output = getOutput(process);
+			BufferedReader error = getError(process);
+			String ligne = "";
+
+			while ((ligne = output.readLine()) != null) {
+			    System.out.println(ligne);
 			}
-			
+
+			while ((ligne = error.readLine()) != null) {
+			 System.out.println(ligne);
+			}
+
 			// refresh project
 			WorkspaceUtils.refreshProject();
 
@@ -335,128 +298,135 @@ public class AnalysisRepositoryControler {
 			e.printStackTrace();
 			return false;
 		}
-		//ARUtils.plainMessage("Transformation finished");
+		// ARUtils.plainMessage("Transformation finished");
 		return true;
 	}
-	
 
-	
-	
-	/***************************** Result UI associated methods ****************************************/
+	/*****************************
+	 * Result UI associated methods
+	 ****************************************/
 	/**
 	 * Fill the tab with evaluated rules
 	 */
-	public void fillRulesTab() {	
+	public void fillRulesTab() {
 		// Construct info for UI to display
 		for (IdentificationRule rule : analysisRepository.getAllRules()) {
-			String id = ""+rule.getId();
+			String id = "" + rule.getId();
 			String description = rule.getDescription();
-			Result result = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results,rule.getId());
+			Result result = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results, rule.getId());
 			resultUI.addRuleToRulesTab(id, description, result.getEvaluatedResult().toString());
 		}
 	}
-	
+
 	/**
 	 * Display appropriate contexts info
 	 */
 	public void fillMatchedContext() {
 		// Construct info for UI to display
 		for (ContextModel ctx : appropriateContexts) {
-			String id = ""+ctx.getId();
+			String id = "" + ctx.getId();
 			String name = ctx.getName();
 			String description = ctx.getDescription();
 			resultUI.addMatchedContext(id, name, description);
 		}
 	}
-	
+
 	/**
 	 * Display details contexts info
 	 */
 	public void fillContextModels() {
 		// Construct info for UI to display
 		for (ContextModel ctx : analysisRepository.getAllContextModels()) {
-			if (isAccepted(ctx)) resultUI.addAcceptedContextModelDetail(ctx);
+			if (isAccepted(ctx))
+				resultUI.addAcceptedContextModelDetail(ctx);
 			else {
 				String matchedPercent = computeMatchedPercent(ctx);
-				resultUI.addNotAcceptedContextModelDetail(ctx,matchedPercent);
+				resultUI.addNotAcceptedContextModelDetail(ctx, matchedPercent);
 			}
 		}
 	}
-	
+
 	/**
 	 * Compute matched percent
+	 * 
 	 * @param ctx
 	 * @return
 	 */
 	public String computeMatchedPercent(ContextModel ctx) {
 		RuleGroup rootGroup = ctx.getRootGroup();
 		float matchedPercent = computeMatchedPercent(rootGroup);
-		return ""+matchedPercent;
+		return "" + matchedPercent;
 	}
-	
+
 	/**
 	 * Compute matched percent
+	 * 
 	 * @param group
 	 * @return
 	 */
 	public float computeMatchedPercent(RuleGroup group) {
-		
+
 		float matchedPercent = 0;
 		int satisfiedRuleNumber = 0;
 		int numberOfRules = getRuleNumber(group);
-		
+
 		List<ExpectedEvaluationValue> expectedValues = group.getExpectedRuleValues();
 		for (ExpectedEvaluationValue expectedVal : expectedValues) {
 			TruthType expectedTruthType = expectedVal.getValue();
-			if (expectedTruthType==TruthType.NEUTRAL) satisfiedRuleNumber++;
-			else if (expectedTruthType==TruthType.TRUE) {
-				Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results, expectedVal.getAssociatedRule().getId());
-				if (evaluatedResult.getEvaluatedResult()==EvaluationResultType.TRUE) satisfiedRuleNumber++;
+			if (expectedTruthType == TruthType.NEUTRAL)
+				satisfiedRuleNumber++;
+			else if (expectedTruthType == TruthType.TRUE) {
+				Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results,
+						expectedVal.getAssociatedRule().getId());
+				if (evaluatedResult.getEvaluatedResult() == EvaluationResultType.TRUE)
+					satisfiedRuleNumber++;
 			} else {
-				Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results, expectedVal.getAssociatedRule().getId());
-				if (evaluatedResult.getEvaluatedResult()==EvaluationResultType.FALSE) satisfiedRuleNumber++;
+				Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results,
+						expectedVal.getAssociatedRule().getId());
+				if (evaluatedResult.getEvaluatedResult() == EvaluationResultType.FALSE)
+					satisfiedRuleNumber++;
 			}
-		}	
-		
-		/*if (group.getConjunctionType()==ConjunctionType.AND) {
-			if (group.getSubGroups().size()==0) {
-				matchedPercent = satisfiedRuleNumber/(float)group.getExpectedRuleValues().size();
-			} else {
-				matchedPercent = 
-			}
-		}*/
-		
-		matchedPercent = satisfiedRuleNumber/(float)numberOfRules;
-		
+		}
+
+		/*
+		 * if (group.getConjunctionType()==ConjunctionType.AND) { if
+		 * (group.getSubGroups().size()==0) { matchedPercent =
+		 * satisfiedRuleNumber/(float)group.getExpectedRuleValues().size(); }
+		 * else { matchedPercent = } }
+		 */
+
+		matchedPercent = satisfiedRuleNumber / (float) numberOfRules;
+
 		return matchedPercent;
 	}
-	
+
 	/**
 	 * get number of rules of a group
+	 * 
 	 * @param group
 	 * @return
 	 */
 	private int getRuleNumber(RuleGroup group) {
 		int directRuleNumber = group.getExpectedRuleValues().size();
-		if (group.getSubGroups().size()==0) return directRuleNumber;
+		if (group.getSubGroups().size() == 0)
+			return directRuleNumber;
 		else {
 			int ruleNumber = directRuleNumber;
 			for (RuleGroup subGroup : group.getSubGroups()) {
 				ruleNumber += getRuleNumber(subGroup);
 			}
-			
-			System.out.println("number of rules: "+ruleNumber);
-			
+
+			System.out.println("number of rules: " + ruleNumber);
+
 			return ruleNumber;
 		}
 	}
-	
-	
+
 	/**
 	 * Display details tests info
 	 */
 	public void fillTestsGroup() {
-		
+
 		// Construct info for UI to display
 		for (ContextModel ctx : appropriateContexts) {
 			for (Test test : ctx.getAnalysisTests()) {
@@ -464,132 +434,138 @@ public class AnalysisRepositoryControler {
 			}
 		}
 	}
-	
+
 	/**
 	 * Generate graph corresponding to evaluation result of identification rules
+	 * 
 	 * @param ctx
 	 */
 	public void displayEvaluationResult(ContextModel ctx) {
-		
-		// Get Root node
-		//RulesGroup rootGroup = ctx.getRuleGroups().get(0);
-		RuleGroup rootGroup = ctx.getRootGroup();
-		if (rootGroup==null) return;
 
-        // Construct representation model
-        List<Integer> violatedGroupIdList = violatedGroupIdLists.get(analysisRepository.getAllContextModels().indexOf(ctx));
-        
+		// Get Root node
+		// RulesGroup rootGroup = ctx.getRuleGroups().get(0);
+		RuleGroup rootGroup = ctx.getRootGroup();
+		if (rootGroup == null)
+			return;
+
+		// Construct representation model
+		List<Integer> violatedGroupIdList = violatedGroupIdLists
+				.get(analysisRepository.getAllContextModels().indexOf(ctx));
+
 		// Initiate graph
-		//ContextModelGraph mxgraph = new ContextModelGraph();
+		// ContextModelGraph mxgraph = new ContextModelGraph();
 		GraphModel graphModel = factory.createGraphModel();
-				
+
 		// Display group
 		String type = rootGroup.getJunctionType().toString();
-		//Object mxrootNode = mxgraph.addNode(type);
+		// Object mxrootNode = mxgraph.addNode(type);
 		Node rootNode = GraphModelUtils.createNode(type, graphModel, factory);
 
 		// Coloring the node
 		int idGroup = rootGroup.getId();
 		coloringNode(rootNode, violatedGroupIdList, idGroup);
-		fillGraph(rootGroup,graphModel,rootNode, violatedGroupIdList);	
-		
+		fillGraph(rootGroup, graphModel, rootNode, violatedGroupIdList);
+
 		// Visualize graph model
 		PolarsysGraphView view = new PolarsysGraphView(shell);
 		view.visualize(graphModel);
 	}
-	
+
 	/**
 	 * Color the node
+	 * 
 	 * @param graphModel
 	 * @param rootNode
 	 * @param violatedIdList
 	 * @param idGroup
 	 */
-	private void coloringNode(Node rootNode,List<Integer> violatedIdList,int idGroup) {
+	private void coloringNode(Node rootNode, List<Integer> violatedIdList, int idGroup) {
 		if (violatedIdList.contains(idGroup)) {
 			rootNode.setColor(Color.RED);
 		} else {
 			rootNode.setColor(Color.BLUE);
 		}
 	}
-	
-	
+
 	/**
 	 * Fill graph
+	 * 
 	 * @param rootGroup
 	 * @param graphModel
 	 * @param rootNode
 	 * @param violatedGroupIdList
 	 */
-	private void fillGraph(RuleGroup parentGroup, GraphModel graphModel, Node parentNode, List<Integer> violatedGroupIdList) {
-		
+	private void fillGraph(RuleGroup parentGroup, GraphModel graphModel, Node parentNode,
+			List<Integer> violatedGroupIdList) {
+
 		List<Node> ruleNodes = new ArrayList<Node>();
 		List<Node> groupNodes = new ArrayList<Node>();
 		List<Integer> violatedNodeIdList = new ArrayList<Integer>();
-		
-		
-		
+
 		// Add rule nodes
 		for (ExpectedEvaluationValue val : parentGroup.getExpectedRuleValues()) {
 			TruthType expectedVal = val.getValue();
 			String rule = val.getAssociatedRule().getDescription();
-			String nodeLabel = expectedVal + " rule: "+rule;
+			String nodeLabel = expectedVal + " rule: " + rule;
 			int ruleId = val.getAssociatedRule().getId();
-			
+
 			// Create new rule node
 			Node ruleNode = GraphModelUtils.createNode(nodeLabel, graphModel, factory);
 			ruleNode.setRefId(ruleId);
-			
+
 			// Set color for node
-			Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results,val.getAssociatedRule().getId());
+			Result evaluatedResult = ArFunctionalUtils.getIdentificationRuleEvaluatedResultById(results,
+					val.getAssociatedRule().getId());
 			ruleNode.setTextColor(Color.BLACK);
-			
-			if (expectedVal==TruthType.NEUTRAL) {
+
+			if (expectedVal == TruthType.NEUTRAL) {
 				ruleNode.setColor(Color.GREEN);
-			} else if (expectedVal==TruthType.TRUE) {
-				if (evaluatedResult.getEvaluatedResult()==EvaluationResultType.TRUE) ruleNode.setColor(Color.GREEN);
+			} else if (expectedVal == TruthType.TRUE) {
+				if (evaluatedResult.getEvaluatedResult() == EvaluationResultType.TRUE)
+					ruleNode.setColor(Color.GREEN);
 				else {
 					violatedNodeIdList.add(ruleNode.getRefId());
 					ruleNode.setColor(Color.RED);
 				}
-			} else if (expectedVal==TruthType.FALSE) {
-				if (evaluatedResult.getEvaluatedResult()==EvaluationResultType.FALSE) ruleNode.setColor(Color.GREEN);
+			} else if (expectedVal == TruthType.FALSE) {
+				if (evaluatedResult.getEvaluatedResult() == EvaluationResultType.FALSE)
+					ruleNode.setColor(Color.GREEN);
 				else {
 					violatedNodeIdList.add(ruleNode.getRefId());
 					ruleNode.setColor(Color.RED);
 				}
 			}
-			
+
 			// Add node to nodes list
 			ruleNodes.add(ruleNode);
 		}
-		
+
 		// Add group nodes
 		for (RuleGroup gr : parentGroup.getSubGroups()) {
 			String type = gr.getJunctionType().toString();
 			Node grNode = GraphModelUtils.createNode(type, graphModel, factory);
 			groupNodes.add(grNode);
 			grNode.setRefId(gr.getId());
-			
+
 			coloringNode(grNode, violatedGroupIdList, gr.getId());
 		}
-		
+
 		if (violatedGroupIdList.contains(parentGroup.getId())) {
-			for (Node node : ruleNodes) {			
-				Connection edge = GraphModelUtils.createConnection("",graphModel, factory);
+			for (Node node : ruleNodes) {
+				Connection edge = GraphModelUtils.createConnection("", graphModel, factory);
 				edge.setSource(parentNode);
-				edge.setTarget(node);		
+				edge.setTarget(node);
 				if (violatedNodeIdList.contains(node.getRefId())) {
 					edge.setColor(Color.RED);
 				} else {
 					edge.setColor(Color.BLUE);
 				}
 			}
-			
-			for (Node node : groupNodes) {				
-				Connection edge = GraphModelUtils.createConnection("",graphModel, factory);
+
+			for (Node node : groupNodes) {
+				Connection edge = GraphModelUtils.createConnection("", graphModel, factory);
 				edge.setSource(parentNode);
-				edge.setTarget(node);		
+				edge.setTarget(node);
 				if (violatedGroupIdList.contains(node.getRefId())) {
 					edge.setColor(Color.RED);
 				} else {
@@ -598,34 +574,34 @@ public class AnalysisRepositoryControler {
 			}
 		} else {
 			for (Node node : ruleNodes) {
-				Connection edge = GraphModelUtils.createConnection("",graphModel, factory);
+				Connection edge = GraphModelUtils.createConnection("", graphModel, factory);
 				edge.setSource(parentNode);
 				edge.setTarget(node);
 				edge.setColor(Color.BLUE);
 			}
-			
+
 			for (Node node : groupNodes) {
-				Connection edge = GraphModelUtils.createConnection("",graphModel, factory);
+				Connection edge = GraphModelUtils.createConnection("", graphModel, factory);
 				edge.setSource(parentNode);
 				edge.setTarget(node);
 				edge.setColor(Color.BLUE);
 			}
 		}
-		
-		for (int i=0;i<parentGroup.getSubGroups().size();i++) {
-			fillGraph(parentGroup.getSubGroups().get(i), graphModel,groupNodes.get(i),violatedGroupIdList);
+
+		for (int i = 0; i < parentGroup.getSubGroups().size(); i++) {
+			fillGraph(parentGroup.getSubGroups().get(i), graphModel, groupNodes.get(i), violatedGroupIdList);
 		}
 	}
 
-	
 	/**
 	 * Check if a context is appropriate for the system
-	 * @param ctx : context model
-	 * @return 
+	 * 
+	 * @param ctx
+	 *            : context model
+	 * @return
 	 */
 	public boolean isAccepted(ContextModel ctx) {
 		return appropriateContexts.contains(ctx);
 	}
-
 
 }

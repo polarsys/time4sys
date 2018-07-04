@@ -11,6 +11,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.AnalysisRepositoryControler;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.AnalysisRepositoryUI;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
@@ -26,13 +27,12 @@ public class CheckHandler extends AbstractHandler {
 	 */	
 	
 	public CheckHandler() {
-		setBaseEnabled(false);
 	}
 	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ctrl = new AnalysisRepositoryControler();
-		Project time4SysModel = WorkspaceUtils.getTime4sysProject();
+		DesignModel time4SysModel = WorkspaceUtils.getTime4sysProject();
 		ctrl.check(time4SysModel);
 		return null;
 	}
@@ -44,7 +44,7 @@ public class CheckHandler extends AbstractHandler {
 		if (selection != null & selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			
-			if (structuredSelection.getFirstElement() instanceof Project) {
+			if (structuredSelection.getFirstElement() instanceof DesignModel) {
 					setBaseEnabled(true);
 					return;			
 			} 

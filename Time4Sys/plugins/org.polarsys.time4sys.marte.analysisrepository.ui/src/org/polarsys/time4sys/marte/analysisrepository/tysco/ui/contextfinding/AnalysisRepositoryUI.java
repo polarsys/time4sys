@@ -15,6 +15,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
 import org.polarsys.time4sys.model.time4sys.Project;
 
@@ -128,7 +129,7 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 	    check.addSelectionListener(new SelectionAdapter() {			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				Project time4SysModel = WorkspaceUtils.getTime4sysProject();
+				DesignModel time4SysModel = WorkspaceUtils.getTime4sysProject();
 
 				check(time4SysModel);
 			}			
@@ -141,8 +142,8 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 		return super.createDialogArea(parent);
 	}
 	
-	public void check(Project proj) {
-		ctrl.check(proj);
+	public void check(DesignModel dm) {
+		ctrl.check(dm);
 	}
 	
 //	public void loadRepositoryInSystem(){

@@ -79,10 +79,10 @@ public class CheckProjectWithAnalysisRepository extends AbstractHyperlinkAdapter
 	 * org.eclipse.sirius.business.api.session.Session)
 	 */
 	@Override
-	protected void linkPressed(final HyperlinkEvent event, final EObject project_p, final Session session) {
-		if (project_p instanceof Project) {
+	protected void linkPressed(final HyperlinkEvent event, final EObject design, final Session session) {
+		if (design instanceof DesignModel) {
 			AnalysisRepositoryControler ctrl = new AnalysisRepositoryControler();
-			ctrl.check((Project)project_p);
+			ctrl.check((DesignModel)design);
 		}
 	}
 }

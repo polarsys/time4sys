@@ -1,0 +1,430 @@
+[comment encoding = UTF-8 /]
+[module time4sys2mast(	'http://www.polarsys.org/time4sys/1.0',
+						'http://www.polarsys.org/time4sys/marte/gqam/1.0',
+								'http://www.polarsys.org/time4sys/marte/hrm/1.0',
+								'http://www.polarsys.org/time4sys/design/1.0',
+								'http://www.polarsys.org/time4sys/marte/srm/1.0',
+								'http://www.polarsys.org/time4sys/marte/grm/1.0',
+								'http://www.polarsys.org/time4sys/marte/nfp/1.0')]
+
+[template public generateMast(project : Project) post (trim())]
+[comment @main/]
+[if (project.name<>null)]
+	[file (project.name+'.txt', false, 'UTF-8')]
+[pattern2_transform(design)/]
+	[/file]
+[else]
+	[file ('transformedmodel.txt', false, 'UTF-8')]
+[pattern2_transform(design)/]
+	[/file]
+[/if]
+[/template]
+
+[template public pattern2_transform(design : DesignModel)]
+[let hardwareProcessor : HardwareProcessor = getHardwareProcessor(design)]
+[let softwareSchedulableResources : OrderedSet(SoftwareSchedulableResource) = getSchedulableResources(design)]
+[let mutex : OrderedSet(SoftwareMutualExclusionResource) = getMutexResources(design)]
+[let steps : Sequence(Step) = getAllSteps(design)]
+[let workloadEvents : OrderedSet(WorkloadEvent) = getAllWorkloadEvents(design)]
+[let behaviorScenario : BehaviorScenario = getMainBehaviorScenario(design)]
+[generateProcessingResource(hardwareProcessor)/]
+[generateScheduler(hardwareProcessor)/]
+[generateSchedulingServers(softwareSchedulableResources)/]
+[generateSharedResources(mutex)/]
+[generateOperations(steps,mutex)/]
+[generateTransactions(workloadEvents,behaviorScenario)/]
+[/let]
+[/let]
+[/let]
+[/let]
+[/let]
+[/let]	
+[/template]
+
+[comment generate processing_resource /]
+[template private generateProcessingResource(hwProcessor : HardwareProcessor)]
+Processing_Resource (
+	Type					=> Regular_Processor,
+	Name					=> [getProcessorName(hwProcessor)/],
+	Max_Interrupt_Priority	=> [getMaximumInterruptPriority(hwProcessor)/],
+	Min_Interrupt_Priority	=> [getMinimumInterruptPriority(hwProcessor)/],
+	Worst_ISR_Switch		=> [getWorstISRSwitch(hwProcessor)/],
+	Avg_ISR_Switch			=> [getAverageISRSwitch(hwProcessor)/],
+	Best_ISR_Switch			=> [getBestISRSwitch(hwProcessor)/],
+	Speed_Factor			=> [getProcessorSpeedFactor(hwProcessor)/]
+);
+[/template]
+
+[comment generate scheduler /]
+[template private generateScheduler(hwProcessor : HardwareProcessor)]
+[let processorName : String 	= getProcessorName(hwProcessor)]
+[let mainScheduler : Scheduler 	= getMainScheduler(hwProcessor)]
+Scheduler (
+	Type					=> Primary_Scheduler,
+	Name					=> [getSchedulerName(mainScheduler)/],
+	Host					=> [processorName/],
+	Policy					=>
+		(	Type					=> [getPolicyTypee(mainScheduler)/],
+			Worst_Context_Switch	=> [getWorstContextSwitch(mainScheduler)/],
+			Avg_Context_Switch		=> [getAvgContextSwitch(mainScheduler)/],
+			Best_Context_Switch		=> [getBestContextSwitch(mainScheduler)/],
+			Max_Priority			=> [getMaxPriority(mainScheduler)/],
+			Min_Priority			=> [getMinPriority(mainScheduler)/]));	
+[/let]
+[/let]
+[/template]
+
+[comment generate scheduling servers /]
+[template private generateSchedulingServers(softwareSchedulableResources : OrderedSet(SoftwareSchedulableResource))]
+[for (swResource : SoftwareSchedulableResource | softwareSchedulableResources)]
+[generateSchedulingServer(swResource)/]
+[/for]
+[/template]
+
+[comment generate scheduling server /]
+[template private generateSchedulingServer(swResource : SoftwareSchedulableResource)]
+[let scheduler : Scheduler = swResource.host]
+Scheduling_Server (
+	Type					=> Regular,
+	Name					=> [getServername(swResource)/],			
+	Server_Sched_Parameters	=>
+		(	Type 				=> [getSchedPolicy(swResource)/],
+			The_Priority		=> [getSoftwareResourcePriority(swResource)/],
+			Preassigned			=> ['No'/]),
+	Scheduler				=> [getSchedulerName(scheduler)/]);
+[/let]
+[/template]
+
+[comment generate shared resources from mutex elements /]
+[template private generateSharedResources(allMutex : OrderedSet(SoftwareMutualExclusionResource))]
+[for (mt : SoftwareMutualExclusionResource | allMutex)]
+[generateSharedResource(mt)/]
+[/for]
+[/template]
+
+[template private generateSharedResource(mt : SoftwareMutualExclusionResource)]
+Shared_Resource (
+[let gestionProtocol : MutualExclusionProtocol = mt.protocol]
+[let protocolKind : ProtectProtocolKind = gestionProtocol.protocol]
+[if (protocolKind=ProtectProtocolKind::PriorityCeiling)]
+	Type					=> Immediate_Ceiling_Resource,
+	Name					=> [mt.name.clean()/],
+	Ceiling					=> 32767,
+	Preassigned 			=> NO
+[elseif (protocolKind=ProtectProtocolKind::PriorityInheritance)]
+	Type					=> Priority_Inheritance_Resource,
+	Name					=> [mt.name.clean()/]
+[elseif (protocolKind=ProtectProtocolKind::StackBased)]
+	Type					=> SRP_Resource,
+	Name					=> [mt.name.clean()/]
+[else]	
+	Error: No corresponding protocol found
+[/if]
+[/let]
+[/let]
+);
+[/template]
+
+[comment generate list of operations from steps /]
+[template private generateOperations(steps : Sequence(Step),mutexList : OrderedSet(SoftwareMutualExclusionResource))]
+[for (st : Step | steps)]
+[generateOperation(st,mutexList)/]
+[/for]
+[/template]
+
+[comment generate operation corresponding to a step /]
+[template private generateOperation(step : Step,mutexList : OrderedSet(SoftwareMutualExclusionResource))]
+[let type : String = 'Simple']
+[let name : String = 'Operation_'+step.name.clean()]
+[let wcet : String = getNestedValue(step.worstCET)]
+[let bcet : String = getNestedValue(step.bestCET)]
+[let associatedMutexResources : OrderedSet(SoftwareMutualExclusionResource) = getAssociatedMutexResources(step,mutexList)]
+[if (associatedMutexResources->isEmpty())]
+Operation (
+	Type						=> [type/],
+	Name						=> [name/],
+	Worst_Case_Execution_Time	=> [wcet/],
+	Best_Case_Execution_Time	=> [bcet/]
+);
+[else]
+Operation (
+	Type						=> [type/],
+	Name						=> [name/],
+	Worst_Case_Execution_Time	=> [wcet/],
+	Best_Case_Execution_Time	=> [bcet/],
+	Shared_Resources_To_Lock	=> ([generateSharedResourcesFromMutex(associatedMutexResources)/]),
+	Shared_Resources_To_Unlock	=> ([generateSharedResourcesFromMutex(associatedMutexResources)/])
+);
+[/if]
+[/let]
+[/let]
+[/let]
+[/let]
+[/let]
+[/template]
+
+[template private generateSharedResourcesFromMutex(resources : OrderedSet(SoftwareMutualExclusionResource)) post (trim())]
+[let first : SoftwareMutualExclusionResource = resources->first()]
+[let rest : OrderedSet(SoftwareMutualExclusionResource) = resources->excluding(first)]
+[if (rest->isEmpty())]
+[first.name.clean()/]
+[else]
+[first.name.clean()/] 	
+[for (mt : SoftwareMutualExclusionResource | rest) separator ('\n')]
+,[mt.name.clean()/]
+[/for]
+[/if]
+[/let]
+[/let]
+[/template]
+
+[template private generateTransactions(workloadEvents : OrderedSet(WorkloadEvent),behaviorScenario : BehaviorScenario)]
+[for (workloadEvent : WorkloadEvent | workloadEvents) separator ('\n')]
+[generateTransaction(workloadEvent,behaviorScenario)/]
+[/for]
+[/template]
+
+[template private generateTransaction(workloadEvent : WorkloadEvent,behaviorScenario : BehaviorScenario)]
+[let transactionType : String = 'Regular']
+[let transactionName : String = generateTransactionName(workloadEvent)]
+Transaction (
+	Type					=> [transactionType/],
+	Name					=> [transactionName/],
+	External_Events			=> ((
+			[generateExternalEvents(workloadEvent)/]
+	)),
+	Internal_Events			=> (
+			[generateInternalEvents(workloadEvent,behaviorScenario)/]
+	),
+	Event_Handlers			=> (
+			[generateEventHandlers(workloadEvent,behaviorScenario)/]
+	)
+);
+[/let]
+[/let]
+[/template]
+
+[comment generate internal event (activities) of transaction /]
+[template private generateInternalEvents(workloadEvent : WorkloadEvent,behaviorScenario : BehaviorScenario) post (trim())]
+[generateInternalEventsFromJavaService(workloadEvent,behaviorScenario)/]
+[/template]
+
+[comment generate external event (trigger) from workload event /]
+[template private generateExternalEvents(workloadEvent : WorkloadEvent) post (trim())]
+[if (workloadEvent.pattern.oclIsTypeOf(PeriodicPattern))]
+[let periodicEvent : PeriodicPattern = workloadEvent.pattern.oclAsType(PeriodicPattern)]
+[let period : String = if (periodicEvent.period<>null) then getNestedValue(periodicEvent.period) else '0.0' endif]
+[let jitter : String = if (periodicEvent.jitter<>null) then getNestedValue(periodicEvent.jitter) else '0.0' endif]
+[let phase  : String = if (periodicEvent.phase<>null)  then getNestedValue(periodicEvent.phase)  else '0.0' endif]
+Type				=> Periodic,
+Name				=> [('ext_trigger')/],
+Period				=> [period/],
+Max_Jitter			=> [jitter/],
+Phase				=> [phase/]
+[/let]
+[/let]
+[/let]
+[/let]
+[elseif (workloadEvent.pattern.oclIsTypeOf(SporadicPattern))]
+[let sporadicEvent : SporadicPattern = workloadEvent.pattern.oclAsType(SporadicPattern)]
+[let min_interarrival : String = if (sporadicEvent.minInterarrival<>null) then sporadicEvent.minInterarrival.toString() else '0.0' endif]
+Type				=> Sporadic,
+Name				=> [('ext_trigger').clean()/],
+Distribution		=> UNIFORM,
+Min_Interarrival	=> [min_interarrival/]
+[/let]
+[/let]
+[/if]
+[/template]
+
+
+[query private generateTransactionName(arg : WorkloadEvent) : 
+	String = invoke('fr.ensma.lias.transformation.time4sys2mast.general.services.Time4Sys2MastServices',
+					'generateTransactionName(org.polarsys.time4sys.marte.gqam.WorkloadEvent)', 
+					Sequence{arg}) /]
+
+[query private generateEventHandlers(arg0 : WorkloadEvent,arg1 : BehaviorScenario) : 
+	String = invoke('fr.ensma.lias.transformation.time4sys2mast.general.services.Time4Sys2MastServices',
+					'generateEventHandlers(org.polarsys.time4sys.marte.gqam.WorkloadEvent,org.polarsys.time4sys.marte.gqam.BehaviorScenario)', 
+					Sequence{arg0,arg1}) /]
+
+[query private generateInternalEventsFromJavaService(arg0 : WorkloadEvent,arg1 : BehaviorScenario) : 
+	String = invoke('fr.ensma.lias.transformation.time4sys2mast.general.services.Time4Sys2MastServices',
+					'generateInternalEvents(org.polarsys.time4sys.marte.gqam.WorkloadEvent,org.polarsys.time4sys.marte.gqam.BehaviorScenario)', 
+					Sequence{arg0,arg1}) /]
+
+[comment get deadline (scheduling param) from software resource /]
+[query private getDeadlineFromSoftwareResource(swResource : SoftwareSchedulableResource) : 
+	String = swResource.schedParams 
+				-> select(pr:SchedulingParameter|pr.name.toLowerCase()='deadline')
+				-> first().value /]
+
+[comment get all workload events (triggers) /]
+[query private getAllWorkloadEvents(design : DesignModel) :
+	OrderedSet(WorkloadEvent) = design.workloadBehavior.demand/]
+
+[comment get all mutex resources that the step accesses /]
+[query private getAssociatedMutexResources(step : Step, mutexList : OrderedSet(SoftwareMutualExclusionResource)) : 
+	OrderedSet(SoftwareMutualExclusionResource) = mutexList->select(mt:SoftwareMutualExclusionResource|mt.accessTokenElements->includes(step)) /]
+
+[comment get all mutex resources /]
+[query private getMutexResources(design : DesignModel) : 
+	OrderedSet(SoftwareMutualExclusionResource) = design.resourcePackage.ownedElement->selectByType(SoftwareMutualExclusionResource)/]
+
+[comment get scheduling policy /]
+[query private getSchedPolicy(swResource : SoftwareSchedulableResource) : 
+	String = if (getPolicyType(swResource.host)=SchedPolicyKind::EarliestDeadlineFirst) then 'EDF_Policy'
+				else if (getPolicyType(swResource.host)=SchedPolicyKind::FixedPriority) then 'Fixed_Priority_Policy'
+				else 'undef'
+			 endif
+			 endif/]
+
+[comment get priority of Software Schedulable Resource /]
+[query private getSoftwareResourcePriority(swResource : SoftwareSchedulableResource) : 
+	String = swResource.schedParams->select(p:SchedulingParameter|p.name.toLowerCase()='fixedpriority')->first().value /]
+
+[comment get server name of schedulable resource /]
+[query private getServername(swResource : SoftwareSchedulableResource) : 
+	String = 'Server_'+swResource.name.clean()/]
+
+[comment get all schedulable resources /]
+[query private getSchedulableResources(design : DesignModel) : 
+	OrderedSet(SoftwareSchedulableResource) = getHardwareProcessor(design).ownedResource->selectByKind(SoftwareSchedulableResource) /]
+
+[comment get worst context switch of scheduler /]
+[query private getWorstContextSwitch(scheduler : Scheduler) :
+	String = '0.0' /]
+
+[comment get best context switch of scheduler /]
+[query private getBestContextSwitch(scheduler : Scheduler) : 
+	String = '0.0' /]
+
+[comment get average context switch of scheduler /]
+[query private getAvgContextSwitch(scheduler : Scheduler) : 
+	String = '0.0' /]
+
+[comment get max priority of scheduler /]
+[query private getMaxPriority(scheduler : Scheduler) : 
+	String = '32767' /]
+
+[comment get min priority of scheduler /]
+[query private getMinPriority(scheduler : Scheduler) : 
+	String = '1' /]
+
+[comment get current hardware resource /]
+[query private getHardwareProcessor(design : DesignModel) : 
+	HardwareProcessor = getAllHardwareResources(design)->asSequence()->first().oclAsType(HardwareProcessor) /]
+
+[comment get speed factor of processor /]
+[query private getProcessorSpeedFactor(hw : HardwareProcessor) : 
+	String = if (hw.speedFactor>0) then hw.speedFactor.toString()
+			 else '1.00'
+			 endif/]
+
+[comment get name of processor /]
+[query private getProcessorName(hw : HardwareProcessor) : 
+	String = hw.name.clean() /]
+
+[comment get Maximum Interrupt Priority of processor /]
+[query private getMaximumInterruptPriority(hw : HardwareProcessor) : 
+	String = '32767' /]
+
+[comment get Minimum Interrupt Priority of processor /]
+[query private getMinimumInterruptPriority(hw : HardwareProcessor) : 
+	String = '1' /]
+
+[comment get Best ISR Switch of processor /]
+[query private getBestISRSwitch(hw : HardwareProcessor) : 
+	String = '0.0' /]
+
+[comment get Worst ISR Switch of processor /]
+[query private getWorstISRSwitch(hw : HardwareProcessor) : 
+	String = '0.0' /]
+
+[comment get Average ISR Switch of processor /]
+[query private getAverageISRSwitch(hw : HardwareProcessor) : 
+	String = '0.0' /]
+
+[comment get main scheduler /]
+[query private getMainScheduler(hw : HardwareProcessor) : 
+	Scheduler = hw.mainScheduler /]
+
+[comment get scheduler host /]
+[query private getSchedulerHost(scheduler : Scheduler) : 
+	String = scheduler.host.name.clean() /]
+
+[comment get scheduler name /]
+[query private getSchedulerName(scheduler : Scheduler) : 
+	String = if (scheduler.name<>null) then scheduler.name.clean() 
+			 else 'MainScheduler'
+			 endif/]
+
+[comment get policy type /]
+[query private getPolicyTypee(scheduler : Scheduler) : 
+	String = if (scheduler.policy.policy=SchedPolicyKind::EarliestDeadlineFirst) then 'EDF'
+							else if (scheduler.policy.policy=SchedPolicyKind::FixedPriority) then 'FIXED_PRIORITY'
+							else 'undef'
+					  endif
+					  endif /]
+
+[comment get policy type /]
+[query private getPolicyType(scheduler : Scheduler) : 
+	SchedPolicyKind = scheduler.policy.policy /]
+
+[comment Pattern 2: 1 hardware resource, existence of shared resource, no branch in all behavior scenario (<=> nb predecessors or successors of a step < 2)/]
+[query public pattern2(project : Project) : 
+	Boolean = 	getAllHardwareResources(project)->size()=1
+				and getAllBehaviorScenarios(project.design)
+						->forAll(behaviorScenario:BehaviorScenario|behaviorScenario.getAllSteps()
+						->forAll(step:Step|getStepConnectors(step)
+						->forAll(rel:PrecedenceRelation|rel.predec->size()<2 and rel.succes->size()<2)))/]
+
+[comment get all hardware resources of system /]
+[query private getAllHardwareResources(project : Project) : 
+	Set(HardwareComputingResource) = getAllHardwareResources(project.design)/]
+
+[comment get all hardware resources of system /]
+[query private getAllHardwareResources(design : DesignModel) : 
+	Set(HardwareComputingResource) = design.resourcePackage.ownedElement->selectByKind(HardwareComputingResource)/]
+
+[comment get main behavior scenario of system /]
+[query private getMainBehaviorScenario(design : DesignModel) : 
+	BehaviorScenario = getAllBehaviorScenarios(design)->first() /]
+
+
+[comment get all behavior scenario of system /]
+[query private getAllBehaviorScenarios(workLoadBehavior : WorkloadBehavior) : 
+	OrderedSet(BehaviorScenario) = workLoadBehavior.behavior /]
+
+[comment get all behavior scenario of system /]
+[query private getAllBehaviorScenarios(design : DesignModel) : 
+	OrderedSet(BehaviorScenario) = getAllBehaviorScenarios(design.workloadBehavior) /]
+
+[comment get all steps from design /]
+[query private getAllSteps(design : DesignModel) : 
+	Sequence(Step) = getAllBehaviorScenarios(design)->collect(steps) /]
+
+[comment get all steps from behavior scenario /]
+[query private getAllSteps(behaviorScenario : BehaviorScenario) : 
+	OrderedSet(Step) = behaviorScenario.steps /]
+
+[comment get connectors from step /]
+[query private getStepConnectors(step : Step) : 
+	Set(PrecedenceRelation) = if (step.inputRel<>null and step.outputRel<>null) then step.inputRel->including(step.outputRel) 
+							  	else if (step.inputRel=null and step.outputRel<>null) then step.outputRel->asSet()
+							  	else if (step.inputRel<>null and step.outputRel=null) then step.inputRel->asSet()
+							  	else null
+							  endif
+							  endif
+							  endif/]
+
+[comment clean space between words/]
+[query private clean(word : String) : 
+	String = if (word=null) then ''
+			 else word.replaceAll(' ','')
+			 endif/]
+
+[query public getNestedValue(duration : NFP_Duration) : 
+	String = invoke('fr.ensma.lias.transformation.time4sys2mast.general.services.Time4Sys2MastServices',
+					'getNestedValue(org.polarsys.time4sys.marte.nfp.Duration)', 
+					Sequence{duration}) /]
