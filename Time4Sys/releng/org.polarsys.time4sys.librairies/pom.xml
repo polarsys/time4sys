@@ -14,7 +14,7 @@
   <groupId>time4sys</groupId>
   <artifactId>org.polarsys.time4sys.parent</artifactId>
   <version>1.0.0-SNAPSHOT</version>
- <relativePath>../releng/org.polarsys.time4sys.parent/pom.xml</relativePath>
+ <relativePath>../org.polarsys.time4sys.parent/pom.xml</relativePath>
  </parent>
  <groupId>time4sys</groupId>
  <artifactId>org.polarsys.time4sys.librairies</artifactId>

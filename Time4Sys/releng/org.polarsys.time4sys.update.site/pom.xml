@@ -16,17 +16,8 @@
 	<artifactId>org.polarsys.time4sys.update.site</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
+	
+	<name>Time4Sys Update Site</name>
+	<description>Time4Sys Eclipse Update Site</description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<includeAllDependencies>false</includeAllDependencies>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
