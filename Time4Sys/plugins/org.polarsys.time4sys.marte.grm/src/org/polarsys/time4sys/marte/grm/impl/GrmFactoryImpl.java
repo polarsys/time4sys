@@ -682,7 +682,7 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated NOT
 	 */
 	public DataTxRate createNFP_DataTxRateFromString(EDataType eDataType, String initialValue) {
-		throw new UnsupportedOperationException("Not yet implemtented");
+		return NfpFactory.eINSTANCE.createDataTxRate(initialValue);
 	}
 
 	/**

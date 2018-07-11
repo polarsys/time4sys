@@ -36,7 +36,7 @@ public enum DataTxRateUnitKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BPER_S(0, "B_PER_S", "B_PER_S"),
+	BPER_S(0, "B_PER_S", "b/s"),
 
 	/**
 	 * The '<em><b>KB PER S</b></em>' literal object.
@@ -148,12 +148,12 @@ public enum DataTxRateUnitKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
+	 * @generated NOT
 	 */
-	public static DataTxRateUnitKind getByName(String name) {
+	public static DataTxRateUnitKind getByLiteral(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DataTxRateUnitKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getLiteral().equals(name)) {
 				return result;
 			}
 		}

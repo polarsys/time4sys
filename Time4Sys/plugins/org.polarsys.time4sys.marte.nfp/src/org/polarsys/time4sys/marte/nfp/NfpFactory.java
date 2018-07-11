@@ -133,6 +133,13 @@ public interface NfpFactory extends EFactory {
 	 * @return
 	 * @generated NOT
 	 */
+	DataTxRate createDataTxRate(String value);
+
+	/**
+	 * 
+	 * @return
+	 * @generated NOT
+	 */
 	Duration createDurationFromString(String value);
 	
 	/**

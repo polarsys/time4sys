@@ -53,7 +53,7 @@ public enum DataSizeUnitKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	KB(2, "KB", ""),
+	KB(2, "KB", "KB"),
 
 	/**
 	 * The '<em><b>MB</b></em>' literal object.

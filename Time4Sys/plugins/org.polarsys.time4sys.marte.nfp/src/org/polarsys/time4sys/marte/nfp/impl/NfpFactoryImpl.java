@@ -23,20 +23,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.polarsys.time4sys.marte.nfp.*;
-import org.polarsys.time4sys.marte.nfp.Bucket;
-import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
-import org.polarsys.time4sys.marte.nfp.DataSize;
-import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
-import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
-import org.polarsys.time4sys.marte.nfp.Duration;
-import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
-import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.nfp.NfpPackage;
-import org.polarsys.time4sys.marte.nfp.NormalDistribution;
-import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
-import org.polarsys.time4sys.marte.nfp.TimeInterval;
-import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
-import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
@@ -477,6 +463,29 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			instanceValue = createTimeInterval();
 		}
 		return instanceValue.toString();
+	}
+
+	@Override
+	public DataTxRate createDataTxRate(String value) {
+		final DataTxRate txRate = new DataTxRateImpl();
+		final Scanner scan = new Scanner(value);
+		final String valueStr = scan.findInLine("\\d+(\\.\\d+)?((E|e)\\d+)?");
+		String unitStr;
+		try {
+			unitStr = scan.next();// scan.next("\\w+");
+		} catch (NoSuchElementException e) {
+			// There is no units. Use default
+			unitStr = "b/s";
+		}
+		scan.close();
+
+		DataTxRateUnitKind unit = DataTxRateUnitKind.getByLiteral(unitStr);
+		if (unit == null) {
+			unit = DataTxRateUnitKind.get(unitStr);
+		}
+		txRate.setValue(Double.parseDouble(valueStr));
+		txRate.setUnit(unit);
+		return txRate;
 	}
 
 } // NfpFactoryImpl

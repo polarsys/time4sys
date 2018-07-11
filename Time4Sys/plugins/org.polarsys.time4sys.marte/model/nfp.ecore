@@ -52,7 +52,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="DataSizeUnitKind">
     <eLiterals name="BIT"/>
     <eLiterals name="BYTE" value="1"/>
-    <eLiterals name="KB" value="2" literal=""/>
+    <eLiterals name="KB" value="2" literal="KB"/>
     <eLiterals name="MB" value="3"/>
     <eLiterals name="GB" value="4"/>
   </eClassifiers>
@@ -95,7 +95,7 @@
         defaultValueLiteral="B_PER_S"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataTxRateUnitKind">
-    <eLiterals name="B_PER_S"/>
+    <eLiterals name="B_PER_S" literal="b/s"/>
     <eLiterals name="KB_PER_S" value="1" literal="kb/s"/>
     <eLiterals name="MB_PER_S" value="2" literal="mb/s"/>
   </eClassifiers>

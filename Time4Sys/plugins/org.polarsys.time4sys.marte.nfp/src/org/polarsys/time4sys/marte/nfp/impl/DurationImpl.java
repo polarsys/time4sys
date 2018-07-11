@@ -466,7 +466,7 @@ public class DurationImpl extends AbstractRealWithUnitValueImpl<TimeUnitKind, Du
 
 	/**
 	 * 
-	 * @return true iff value and unit are set.
+	 * @return true if value and unit are set.
 	 * @geneared NOT
 	 */
 	public boolean isSimpleDuration() {
