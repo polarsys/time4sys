@@ -197,12 +197,12 @@ public enum DataSizeUnitKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
+	 * @generated NOT
 	 */
 	public static DataSizeUnitKind getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DataSizeUnitKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name.toUpperCase())) {
 				return result;
 			}
 		}

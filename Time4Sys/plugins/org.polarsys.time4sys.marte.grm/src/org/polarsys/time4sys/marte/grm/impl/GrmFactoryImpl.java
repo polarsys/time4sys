@@ -664,7 +664,7 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated NOT
 	 */
 	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
-		throw new UnsupportedOperationException("Not yet implemtented");
+		return NfpFactory.eINSTANCE.createDataSizeFromString(initialValue);
 	}
 
 	/**
@@ -673,7 +673,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated
 	 */
 	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		assert(instanceValue == null || instanceValue instanceof DataSize);
+		return NfpFactory.eINSTANCE.convertDataSizeToString((DataSize)instanceValue);
 	}
 
 	/**
@@ -682,7 +683,7 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated NOT
 	 */
 	public DataTxRate createNFP_DataTxRateFromString(EDataType eDataType, String initialValue) {
-		return NfpFactory.eINSTANCE.createDataTxRate(initialValue);
+		return NfpFactory.eINSTANCE.createDataTxRateFromString(initialValue);
 	}
 
 	/**
@@ -691,7 +692,8 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated
 	 */
 	public String convertNFP_DataTxRateToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		assert(instanceValue == null || instanceValue instanceof DataTxRate);
+		return NfpFactory.eINSTANCE.convertDataTxRateToString((DataTxRate)instanceValue);
 	}
 
 	/**

@@ -27,32 +27,32 @@ import org.polarsys.time4sys.marte.nfp.*;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
+ * 
  * @generated
  */
 public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc --> <!--
+	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static NfpFactory init() {
 		try {
-			NfpFactory theNfpFactory = (NfpFactory)EPackage.Registry.INSTANCE.getEFactory(NfpPackage.eNS_URI);
+			NfpFactory theNfpFactory = (NfpFactory) EPackage.Registry.INSTANCE.getEFactory(NfpPackage.eNS_URI);
 			if (theNfpFactory != null) {
 				return theNfpFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new NfpFactoryImpl();
 	}
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc --> <!--
+	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NfpFactoryImpl() {
@@ -61,72 +61,86 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case NfpPackage.BUCKET: return createBucket();
-			case NfpPackage.COMPOSITE_DISTRIBUTION: return createCompositeDistribution();
-			case NfpPackage.DATA_SIZE: return createDataSize();
-			case NfpPackage.DATA_TX_RATE: return createDataTxRate();
-			case NfpPackage.DISCRETE_DISTRIBUTION: return createDiscreteDistribution();
-			case NfpPackage.DURATION: return createDuration();
-			case NfpPackage.GENERALIZED_EXTREME_VALUE_DISTRIBUTION: return createGeneralizedExtremeValueDistribution();
-			case NfpPackage.NORMAL_DISTRIBUTION: return createNormalDistribution();
-			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
-			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
-			case NfpPackage.UNIFORM_DISTRIBUTION: return createUniformDistribution();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case NfpPackage.BUCKET:
+			return createBucket();
+		case NfpPackage.COMPOSITE_DISTRIBUTION:
+			return createCompositeDistribution();
+		case NfpPackage.DATA_SIZE:
+			return createDataSize();
+		case NfpPackage.DATA_TX_RATE:
+			return createDataTxRate();
+		case NfpPackage.DISCRETE_DISTRIBUTION:
+			return createDiscreteDistribution();
+		case NfpPackage.DURATION:
+			return createDuration();
+		case NfpPackage.GENERALIZED_EXTREME_VALUE_DISTRIBUTION:
+			return createGeneralizedExtremeValueDistribution();
+		case NfpPackage.NORMAL_DISTRIBUTION:
+			return createNormalDistribution();
+		case NfpPackage.PROBABILISTIC_DURATION:
+			return createProbabilisticDuration();
+		case NfpPackage.TIME_INTERVAL:
+			return createTimeInterval();
+		case NfpPackage.UNIFORM_DISTRIBUTION:
+			return createUniformDistribution();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case NfpPackage.DATA_SIZE_UNIT_KIND:
-				return createDataSizeUnitKindFromString(eDataType, initialValue);
-			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
-				return createDataTxRateUnitKindFromString(eDataType, initialValue);
-			case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
-				return createDiscreteDistributionKindFromString(eDataType, initialValue);
-			case NfpPackage.TIME_UNIT_KIND:
-				return createTimeUnitKindFromString(eDataType, initialValue);
-			case NfpPackage.MATH_CONTEXT:
-				return createMathContextFromString(eDataType, initialValue);
-			case NfpPackage.NFP_DURATION:
-				return createNFP_DurationFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case NfpPackage.DATA_SIZE_UNIT_KIND:
+			return createDataSizeUnitKindFromString(eDataType, initialValue);
+		case NfpPackage.DATA_TX_RATE_UNIT_KIND:
+			return createDataTxRateUnitKindFromString(eDataType, initialValue);
+		case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
+			return createDiscreteDistributionKindFromString(eDataType, initialValue);
+		case NfpPackage.TIME_UNIT_KIND:
+			return createTimeUnitKindFromString(eDataType, initialValue);
+		case NfpPackage.MATH_CONTEXT:
+			return createMathContextFromString(eDataType, initialValue);
+		case NfpPackage.NFP_DURATION:
+			return createNFP_DurationFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case NfpPackage.DATA_SIZE_UNIT_KIND:
-				return convertDataSizeUnitKindToString(eDataType, instanceValue);
-			case NfpPackage.DATA_TX_RATE_UNIT_KIND:
-				return convertDataTxRateUnitKindToString(eDataType, instanceValue);
-			case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
-				return convertDiscreteDistributionKindToString(eDataType, instanceValue);
-			case NfpPackage.TIME_UNIT_KIND:
-				return convertTimeUnitKindToString(eDataType, instanceValue);
-			case NfpPackage.MATH_CONTEXT:
-				return convertMathContextToString(eDataType, instanceValue);
-			case NfpPackage.NFP_DURATION:
-				return convertNFP_DurationToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case NfpPackage.DATA_SIZE_UNIT_KIND:
+			return convertDataSizeUnitKindToString(eDataType, instanceValue);
+		case NfpPackage.DATA_TX_RATE_UNIT_KIND:
+			return convertDataTxRateUnitKindToString(eDataType, instanceValue);
+		case NfpPackage.DISCRETE_DISTRIBUTION_KIND:
+			return convertDiscreteDistributionKindToString(eDataType, instanceValue);
+		case NfpPackage.TIME_UNIT_KIND:
+			return convertTimeUnitKindToString(eDataType, instanceValue);
+		case NfpPackage.MATH_CONTEXT:
+			return convertMathContextToString(eDataType, instanceValue);
+		case NfpPackage.NFP_DURATION:
+			return convertNFP_DurationToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -142,6 +156,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimeInterval createTimeInterval() {
@@ -150,8 +165,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DataSize createDataSize() {
@@ -160,8 +175,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DataTxRate createDataTxRate() {
@@ -170,8 +185,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ProbabilisticDuration createProbabilisticDuration() {
@@ -180,8 +195,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiscreteDistribution createDiscreteDistribution() {
@@ -190,8 +205,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Bucket createBucket() {
@@ -200,8 +215,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NormalDistribution createNormalDistribution() {
@@ -210,8 +225,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public GeneralizedExtremeValueDistribution createGeneralizedExtremeValueDistribution() {
@@ -220,8 +235,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UniformDistribution createUniformDistribution() {
@@ -230,8 +245,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CompositeDistribution createCompositeDistribution() {
@@ -241,16 +256,20 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TimeUnitKind createTimeUnitKindFromString(EDataType eDataType, String initialValue) {
 		TimeUnitKind result = TimeUnitKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertTimeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -258,19 +277,17 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public DataSizeUnitKind createDataSizeUnitKindFromString(EDataType eDataType, String initialValue) {
-		DataSizeUnitKind result = DataSizeUnitKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public DataSize createDataSizeUnitKindFromString(EDataType eDataType, String initialValue) {
+		return createDataSizeFromString(initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDataSizeUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -278,19 +295,17 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public DataTxRateUnitKind createDataTxRateUnitKindFromString(EDataType eDataType, String initialValue) {
-		DataTxRateUnitKind result = DataTxRateUnitKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public DataTxRate createDataTxRateUnitKindFromString(EDataType eDataType, String initialValue) {
+		return createDataTxRateFromString(initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDataTxRateUnitKindToString(EDataType eDataType, Object instanceValue) {
@@ -298,19 +313,21 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DiscreteDistributionKind createDiscreteDistributionKindFromString(EDataType eDataType, String initialValue) {
 		DiscreteDistributionKind result = DiscreteDistributionKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDiscreteDistributionKindToString(EDataType eDataType, Object instanceValue) {
@@ -318,8 +335,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public Duration createNFP_DurationFromString(EDataType eDataType, String initialValue) {
@@ -327,27 +344,27 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String convertNFP_DurationToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue == null || instanceValue instanceof Duration);
-		return convertDurationToString((Duration)instanceValue);
+		assert (instanceValue == null || instanceValue instanceof Duration);
+		return convertDurationToString((Duration) instanceValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MathContext createMathContextFromString(EDataType eDataType, String initialValue) {
-		return (MathContext)super.createFromString(eDataType, initialValue);
+		return (MathContext) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertMathContextToString(EDataType eDataType, Object instanceValue) {
@@ -356,14 +373,16 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NfpPackage getNfpPackage() {
-		return (NfpPackage)getEPackage();
+		return (NfpPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -399,7 +418,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		if (valueStr == null) {
 			duration = LongDurationImpl.ZERO;
 		} else {
-			assert(u != null);
+			assert (u != null);
 			duration = new LongDurationImpl(Double.parseDouble(valueStr), u);
 		}
 		return duration;
@@ -453,6 +472,27 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		}
 		return instanceValue.toString();
 	}
+	
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public String convertDataTxRateToString(DataTxRate instanceValue) {
+		if (instanceValue == null) {
+			instanceValue = createDataTxRate();
+		}
+		return instanceValue.toString();
+	}
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public String convertDataSizeToString(DataSize instanceValue) {
+		if (instanceValue == null) {
+			instanceValue = createDataSize();
+		}
+		return instanceValue.toString();
+	}
 
 	/**
 	 * @generated NOT
@@ -465,8 +505,11 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		return instanceValue.toString();
 	}
 
+	/**
+	 * @generated NOT
+	 */
 	@Override
-	public DataTxRate createDataTxRate(String value) {
+	public DataTxRate createDataTxRateFromString(String value) {
 		final DataTxRate txRate = new DataTxRateImpl();
 		final Scanner scan = new Scanner(value);
 		final String valueStr = scan.findInLine("\\d+(\\.\\d+)?((E|e)\\d+)?");
@@ -479,7 +522,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		}
 		scan.close();
 
-		DataTxRateUnitKind unit = DataTxRateUnitKind.getByLiteral(unitStr);
+		DataTxRateUnitKind unit = DataTxRateUnitKind.getByName(unitStr);
 		if (unit == null) {
 			unit = DataTxRateUnitKind.get(unitStr);
 		}
@@ -488,4 +531,30 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		return txRate;
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public DataSize createDataSizeFromString(String value) {
+		// TODO Auto-generated method stub
+		final DataSize dataSize = new DataSizeImpl();
+		final Scanner scan = new Scanner(value);
+		final String valueStr = scan.findInLine("\\d+(\\.\\d+)?((E|e)\\d+)?");
+		String unitStr;
+		try {
+			unitStr = scan.next();// scan.next("\\w+");
+		} catch (NoSuchElementException e) {
+			// There is no units. Use default
+			unitStr = "byte";
+		}
+		scan.close();
+
+		DataSizeUnitKind unit = DataSizeUnitKind.getByName(unitStr);
+		if (unit == null) {
+			unit = DataSizeUnitKind.get(unitStr);
+		}
+		dataSize.setValue(Double.parseDouble(valueStr));
+		dataSize.setUnit(unit);
+		return dataSize;
+	}
 } // NfpFactoryImpl

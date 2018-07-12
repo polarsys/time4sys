@@ -150,10 +150,10 @@ public enum DataTxRateUnitKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated NOT
 	 */
-	public static DataTxRateUnitKind getByLiteral(String name) {
+	public static DataTxRateUnitKind getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			DataTxRateUnitKind result = VALUES_ARRAY[i];
-			if (result.getLiteral().equals(name)) {
+			if (result.getLiteral().equals(name.toLowerCase())) {
 				return result;
 			}
 		}

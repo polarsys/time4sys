@@ -133,7 +133,7 @@ public interface NfpFactory extends EFactory {
 	 * @return
 	 * @generated NOT
 	 */
-	DataTxRate createDataTxRate(String value);
+	DataTxRate createDataTxRateFromString(String value);
 
 	/**
 	 * 
@@ -170,6 +170,27 @@ public interface NfpFactory extends EFactory {
 	 * @return
 	 * @generated NOT
 	 */
+	String convertDataTxRateToString(DataTxRate instanceValue);
+
+	/**
+	 * 
+	 * @return
+	 * @generated NOT
+	 */
+	String convertDataSizeToString(DataSize instanceValue);
+
+	/**
+	 * 
+	 * @return
+	 * @generated NOT
+	 */
 	String convertTimeIntervalToString(TimeInterval instanceValue);
+
+	/**
+	 * 
+	 * @return
+	 * @generated NOT
+	 */
+	DataSize createDataSizeFromString(String instanceValue);
 
 } //NfpFactory

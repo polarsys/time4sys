@@ -254,18 +254,14 @@ public class DataSizeImpl extends AbstractRealWithUnitValueImpl<DataSizeUnitKind
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
+		StringBuffer result = new StringBuffer();
 		result.append(value);
-		result.append(", unit: ");
-		result.append(unit);
-		result.append(')');
+		result.append(" ");
+		result.append(unit.getLiteral());
 		return result.toString();
 	}
 

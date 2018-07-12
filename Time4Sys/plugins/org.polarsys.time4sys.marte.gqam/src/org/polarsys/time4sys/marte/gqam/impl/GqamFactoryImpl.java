@@ -445,19 +445,20 @@ public class GqamFactoryImpl extends EFactoryImpl implements GqamFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public DataSize createNFP_DataSizeFromString(EDataType eDataType, String initialValue) {
-		return (DataSize)super.createFromString(eDataType, initialValue);
+		return NfpFactory.eINSTANCE.createDataSizeFromString(initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		assert(instanceValue == null || instanceValue instanceof DataSize);
+		return NfpFactory.eINSTANCE.convertDataSizeToString((DataSize)instanceValue);
 	}
 
 	/**
