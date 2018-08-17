@@ -20,6 +20,7 @@ import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->
@@ -233,5 +234,22 @@ public class TimeIntervalTest extends TestCase {
 	public void testConvertLongIntervalToString() {
 		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[452904007590ps,469904007590ps]");
 		assertEquals("[452904007590ps,469904007590ps]", NfpFactory.eINSTANCE.convertTimeIntervalToString(i));
+	}
+	
+	public void testTwoDotsNotation() {
+		final TimeInterval interval = NfpFactory.eINSTANCE.createTimeIntervalFromString("]0..12ms]");
+		assertEquals(true, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertTrue(interval.getMin().isZero());
+		assertEquals("12ms", interval.getMax().toString());
+	}
+	
+	public void testSemiColonNotation() {
+		final TimeInterval interval = NfpFactory.eINSTANCE.createTimeIntervalFromString("]11ms; 12ms]");
+		assertEquals(true, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertEquals("11ms", interval.getMin().toString());
+		assertEquals("12ms", interval.getMax().toString());
+		assertEquals("]11ms,12ms]", interval.toString());
 	}
 } //TimeIntervalTest

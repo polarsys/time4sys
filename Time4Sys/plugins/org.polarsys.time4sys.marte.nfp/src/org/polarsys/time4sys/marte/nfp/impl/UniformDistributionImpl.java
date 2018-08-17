@@ -14,6 +14,7 @@ package org.polarsys.time4sys.marte.nfp.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
@@ -31,6 +32,10 @@ public class UniformDistributionImpl extends ProbabilisticDurationImpl implement
 	 */
 	protected UniformDistributionImpl() {
 		super();
+	}
+
+	public UniformDistributionImpl(final TimeInterval value) {
+		super(value);
 	}
 
 	/**

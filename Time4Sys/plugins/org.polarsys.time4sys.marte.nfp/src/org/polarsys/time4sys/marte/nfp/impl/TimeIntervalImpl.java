@@ -125,6 +125,10 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 		this.maxOpen = isRightOpen;
 	}
 
+	public TimeIntervalImpl(final TimeInterval value) {
+		this(value.isMinOpen(), value.getMin(), value.getMax(), value.isMaxOpen());
+	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

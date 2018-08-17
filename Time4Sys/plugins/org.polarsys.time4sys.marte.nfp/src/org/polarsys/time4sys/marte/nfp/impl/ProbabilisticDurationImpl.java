@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 
 /**
@@ -170,6 +171,10 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 	 */
 	protected ProbabilisticDurationImpl() {
 		super();
+	}
+	
+	protected ProbabilisticDurationImpl(final TimeInterval value) {
+		super(value);
 	}
 
 	/**
@@ -698,27 +703,12 @@ public class ProbabilisticDurationImpl extends TimeIntervalImpl implements Proba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(", unit: ");
-		result.append(unit);
-		result.append(", best: ");
-		result.append(best);
-		result.append(", worst: ");
-		result.append(worst);
-		result.append(", clock: ");
-		result.append(clock);
-		result.append(", precision: ");
-		result.append(precision);
-		result.append(')');
-		return result.toString();
+		return super.toString();
 	}
 
 } //ProbabilisticDurationImpl

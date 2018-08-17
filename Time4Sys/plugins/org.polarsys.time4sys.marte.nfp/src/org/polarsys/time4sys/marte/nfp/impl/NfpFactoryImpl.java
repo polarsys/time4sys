@@ -22,7 +22,23 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.time4sys.marte.nfp.*;
+import org.polarsys.time4sys.marte.nfp.Bucket;
+import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
+import org.polarsys.time4sys.marte.nfp.DataSize;
+import org.polarsys.time4sys.marte.nfp.DataSizeUnitKind;
+import org.polarsys.time4sys.marte.nfp.DataTxRate;
+import org.polarsys.time4sys.marte.nfp.DataTxRateUnitKind;
+import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
+import org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.GeneralizedExtremeValueDistribution;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.NormalDistribution;
+import org.polarsys.time4sys.marte.nfp.ProbabilisticDuration;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
+import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
@@ -243,6 +259,10 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		UniformDistributionImpl uniformDistribution = new UniformDistributionImpl();
 		return uniformDistribution;
 	}
+	
+	public UniformDistribution createUniformDistribution(final TimeInterval value) {
+		return new UniformDistributionImpl(value);
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -418,6 +438,11 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		if (valueStr == null) {
 			duration = LongDurationImpl.ZERO;
 		} else {
+			if (u == null) {
+				// We got it wrong, it must be an interval, thus a uniform distribution.
+				final TimeInterval interval = createTimeIntervalFromString(value);
+				return createUniformDistribution(interval);
+			}
 			assert (u != null);
 			duration = new LongDurationImpl(Double.parseDouble(valueStr), u);
 		}
@@ -433,9 +458,9 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		final Scanner scan = new Scanner(value);
 		final String leftPar = scan.findInLine("\\]|\\[");
 		anInterval.setMinOpen("]".equals(leftPar));
-		final String leftStr = scan.findInLine("[^,]*");
+		final String leftStr = scan.findInLine("[^,;\\.]*");
 		anInterval.setMin(createDurationFromString(leftStr));
-		scan.findInLine(",");
+		scan.findInLine(",|(\\.\\.)|;");
 		String rightStr = scan.findInLine("[^\\]\\[]*");
 		if (rightStr == null) {
 			rightStr = leftStr;

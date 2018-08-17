@@ -16,7 +16,9 @@ import java.math.MathContext;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
@@ -439,6 +441,40 @@ public class DurationTest extends TestCase {
 	public void testExponentInString() {
 		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("9.707734992E9ps");
 		assertEquals("9707734992ps", d.toString());
+	}
+	
+	public void testUniformDistributionComma() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]0, 12ms]");
+		assertTrue(d instanceof TimeInterval);
+		assertTrue(d instanceof UniformDistribution);
+		final UniformDistribution interval = (UniformDistribution)d;
+		assertEquals(true, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertTrue(interval.getMin().isZero());
+		assertEquals("12ms", interval.getMax().toString());
+	}
+	
+	public void testUniformDistributionTwoDots() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]0..12ms]");
+		assertTrue(d instanceof TimeInterval);
+		assertTrue(d instanceof UniformDistribution);
+		final UniformDistribution interval = (UniformDistribution)d;
+		assertEquals(true, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertTrue(interval.getMin().isZero());
+		assertEquals("12ms", interval.getMax().toString());
+	}
+	
+	public void testUniformDistributionSemiColon() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]11ms;12ms]");
+		assertTrue(d instanceof TimeInterval);
+		assertTrue(d instanceof UniformDistribution);
+		final UniformDistribution interval = (UniformDistribution)d;
+		assertEquals(true, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertEquals("11ms", interval.getMin().toString());
+		assertEquals("12ms", interval.getMax().toString());
+		assertEquals("]11ms,12ms]", interval.toString());
 	}
 	
 } //DurationTest
