@@ -416,6 +416,16 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 */
 	@Override
 	public Duration createDurationFromString(final String value) {
+		try {
+			return createSimpleDurationFromString(value);
+		} catch(NumberFormatException e) {
+			// We got it wrong, it must be an interval, thus a uniform distribution.
+			final TimeInterval interval = createTimeIntervalFromString(value);
+			return createUniformDistribution(interval);			
+		}
+	}
+	
+	public Duration createSimpleDurationFromString(final String value) {
 		if (value == null) {
 			return LongDurationImpl.ZERO;
 		}
@@ -439,9 +449,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			duration = LongDurationImpl.ZERO;
 		} else {
 			if (u == null) {
-				// We got it wrong, it must be an interval, thus a uniform distribution.
-				final TimeInterval interval = createTimeIntervalFromString(value);
-				return createUniformDistribution(interval);
+				throw new NumberFormatException("Unexpected unit: " + ((unitStr == null) ? "null" : unitStr));
 			}
 			assert (u != null);
 			duration = new LongDurationImpl(Double.parseDouble(valueStr), u);
@@ -459,13 +467,13 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		final String leftPar = scan.findInLine("\\]|\\[");
 		anInterval.setMinOpen("]".equals(leftPar));
 		final String leftStr = scan.findInLine("[^,;\\.]*");
-		anInterval.setMin(createDurationFromString(leftStr));
+		anInterval.setMin(createSimpleDurationFromString(leftStr));
 		scan.findInLine(",|(\\.\\.)|;");
 		String rightStr = scan.findInLine("[^\\]\\[]*");
 		if (rightStr == null) {
 			rightStr = leftStr;
 		}
-		anInterval.setMax(createDurationFromString(rightStr));
+		anInterval.setMax(createSimpleDurationFromString(rightStr));
 		final String rightPar = scan.findInLine("\\]|\\[");
 		anInterval.setMaxOpen("[".equals(rightPar));
 		scan.close();
