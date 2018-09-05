@@ -5,7 +5,9 @@ package org.polarsys.time4sys.marte.nfp.tests;
 import junit.textui.TestRunner;
 
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
+import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
+import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,6 +67,71 @@ public class CompositeDistributionTest extends ProbabilisticDurationTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+	
+	public void testConvertTo() {
+		final Duration converted = getFixture().convertToUnit(TimeUnitKind.S);
+		assertEquals(TimeUnitKind.S, converted.getUnit());
+	}
+
+	@Override
+	public void testIsZero() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testNotZero() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testMax__Duration() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testMin__Duration() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testMultiply__long() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testLcm__Duration() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testDiv__Duration() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testDiv__Duration_MathContext() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testDivide__Duration() {
+		// TODO Auto-generated method stub
+		fail("TODO");
+	}
+
+	@Override
+	public void testDivide__long() {
+		// TODO Auto-generated method stub
+		fail("TODO");
 	}
 
 } //CompositeDistributionTest

@@ -146,7 +146,7 @@ public class GeneralizedExtremeValueDistributionItemProvider extends Probabilist
 	@Override
 	public String getText(Object object) {
 		GeneralizedExtremeValueDistribution generalizedExtremeValueDistribution = (GeneralizedExtremeValueDistribution)object;
-		return getString("_UI_GeneralizedExtremeValueDistribution_type") + " " + generalizedExtremeValueDistribution.isMinOpen();
+		return getString("_UI_GeneralizedExtremeValueDistribution_type") + " " + generalizedExtremeValueDistribution.getValue();
 	}
 	
 

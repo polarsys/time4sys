@@ -148,4 +148,70 @@ public interface TimeInterval extends EObject {
 	 */
 	Duration computeLength();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" valueRequired="true"
+	 * @generated
+	 */
+	boolean contains(Duration value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" unitRequired="true"
+	 * @generated
+	 */
+	TimeInterval convertToUnit(TimeUnitKind unit);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model vRequired="true"
+	 * @generated
+	 */
+	TimeInterval add(TimeInterval v);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model valueRequired="true"
+	 * @generated
+	 */
+	TimeInterval divide(long value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	Duration max(Duration other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	Duration min(Duration other);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" vRequired="true"
+	 * @generated
+	 */
+	TimeInterval multiply(long v);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" vRequired="true"
+	 * @generated
+	 */
+	TimeInterval sub(TimeInterval v);
+
+	Duration getCenter();
+
 } // TimeInterval

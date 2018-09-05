@@ -132,7 +132,7 @@ public class DiscreteDistributionItemProvider extends ProbabilisticDurationItemP
 	@Override
 	public String getText(Object object) {
 		DiscreteDistribution discreteDistribution = (DiscreteDistribution)object;
-		return getString("_UI_DiscreteDistribution_type") + " " + discreteDistribution.isMinOpen();
+		return getString("_UI_DiscreteDistribution_type") + " " + discreteDistribution.getValue();
 	}
 	
 

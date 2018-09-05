@@ -24,12 +24,13 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses({
-	DurationTest.class,
+	PointInTimeTest.class,
 	TimeIntervalTest.class,
 	TimeUnitKindTest.class,
 	TimeIntervalTest.class,
 	NfpPackageTest.class,
-	DataSizeUnitKindTest.class
+	DataSizeUnitKindTest.class,
+	UniformDistributionTest.class
 })
 public class AllTests {
 

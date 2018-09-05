@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -21,8 +20,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
+import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,6 +129,13 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 
 	public TimeIntervalImpl(final TimeInterval value) {
 		this(value.isMinOpen(), value.getMin(), value.getMax(), value.isMaxOpen());
+	}
+
+	public TimeIntervalImpl(final Duration value) {
+		setMax(value);
+		setMin(value);
+		setMaxOpen(false);
+		setMinOpen(false);
 	}
 
 	/**
@@ -269,6 +278,109 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean contains(final Duration value) {
+		final int maxCmp = getMax().compareTo(value);
+		final int minCmp = getMin().compareTo(value);
+		if (minCmp < 0 && maxCmp > 0) {
+			return true;
+		}
+		if (minCmp > 0) {
+			return false;
+		}
+		if (maxCmp < 0) {
+			return false;
+		}
+		return (minCmp == 0 && !isMinOpen()) || (maxCmp == 0 && !isMaxOpen());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimeInterval convertToUnit(final TimeUnitKind unit) {
+		return new TimeIntervalImpl(minOpen, min.convertToUnit(unit), max.convertToUnit(unit), maxOpen);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimeInterval add(final TimeInterval v) {
+		return new TimeIntervalImpl(minOpen || v.isMinOpen(), min.add(v.getMin()), max.add(v.getMax()), maxOpen || v.isMaxOpen());
+	}
+
+	public TimeInterval add(final Duration v) {
+		return add(NfpFactory.eINSTANCE.createTimeInterval(v));
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeInterval divide(long v) {
+		return new TimeIntervalImpl(minOpen, min.divide(v), max.divide(v), maxOpen);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Duration max(final Duration other) {
+		if (other.compareTo(max) > 0) {
+			return other;
+		}
+		if (other.compareTo(min) < 0) {
+			return new UniformDistributionImpl(this);
+		}
+		return new UniformDistributionImpl(new TimeIntervalImpl(false, other, max, maxOpen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Duration min(final Duration other) {
+		if (other.compareTo(max) > 0) {
+			return new UniformDistributionImpl(this);
+		}
+		if (other.compareTo(min) < 0) {
+			return other;
+		}
+		return new UniformDistributionImpl(new TimeIntervalImpl(minOpen, min, other, false));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimeInterval multiply(long v) {
+		return new TimeIntervalImpl(minOpen, min.multiply(v), max.multiply(v), maxOpen);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public TimeInterval sub(final TimeInterval v) {
+		return new TimeIntervalImpl(minOpen || v.isMinOpen(), min.sub(v.getMax()), max.sub(v.getMin()), maxOpen || v.isMaxOpen());
+	}
+
+	public TimeInterval sub(final Duration v) {
+		return add(NfpFactory.eINSTANCE.createTimeInterval(v));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -367,6 +479,22 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 		switch (operationID) {
 			case NfpPackage.TIME_INTERVAL___COMPUTE_LENGTH:
 				return computeLength();
+			case NfpPackage.TIME_INTERVAL___CONTAINS__DURATION:
+				return contains((Duration)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___CONVERT_TO_UNIT__TIMEUNITKIND:
+				return convertToUnit((TimeUnitKind)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___ADD__DURATION:
+				return add((TimeInterval)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___DIVIDE__DURATION:
+				return divide((Long)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___MAX__DURATION:
+				return max((Duration)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___MIN__DURATION:
+				return min((Duration)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___MULTIPLY__LONG:
+				return multiply((Long)arguments.get(0));
+			case NfpPackage.TIME_INTERVAL___SUB__DURATION:
+				return sub((TimeInterval)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -411,6 +539,11 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 		result.append(maxOpen);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public Duration getCenter() {
+		return getMax().add(getMin()).divide(2);
 	}
 
 } //TimeIntervalImpl

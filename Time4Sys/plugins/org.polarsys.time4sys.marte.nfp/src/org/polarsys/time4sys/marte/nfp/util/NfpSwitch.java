@@ -95,7 +95,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				CompositeDistribution compositeDistribution = (CompositeDistribution)theEObject;
 				T result = caseCompositeDistribution(compositeDistribution);
 				if (result == null) result = caseProbabilisticDuration(compositeDistribution);
-				if (result == null) result = caseTimeInterval(compositeDistribution);
 				if (result == null) result = caseDuration(compositeDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -116,7 +115,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				DiscreteDistribution discreteDistribution = (DiscreteDistribution)theEObject;
 				T result = caseDiscreteDistribution(discreteDistribution);
 				if (result == null) result = caseProbabilisticDuration(discreteDistribution);
-				if (result == null) result = caseTimeInterval(discreteDistribution);
 				if (result == null) result = caseDuration(discreteDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -131,7 +129,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				GeneralizedExtremeValueDistribution generalizedExtremeValueDistribution = (GeneralizedExtremeValueDistribution)theEObject;
 				T result = caseGeneralizedExtremeValueDistribution(generalizedExtremeValueDistribution);
 				if (result == null) result = caseProbabilisticDuration(generalizedExtremeValueDistribution);
-				if (result == null) result = caseTimeInterval(generalizedExtremeValueDistribution);
 				if (result == null) result = caseDuration(generalizedExtremeValueDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -140,7 +137,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				NormalDistribution normalDistribution = (NormalDistribution)theEObject;
 				T result = caseNormalDistribution(normalDistribution);
 				if (result == null) result = caseProbabilisticDuration(normalDistribution);
-				if (result == null) result = caseTimeInterval(normalDistribution);
 				if (result == null) result = caseDuration(normalDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -148,7 +144,6 @@ public class NfpSwitch<T> extends Switch<T> {
 			case NfpPackage.PROBABILISTIC_DURATION: {
 				ProbabilisticDuration probabilisticDuration = (ProbabilisticDuration)theEObject;
 				T result = caseProbabilisticDuration(probabilisticDuration);
-				if (result == null) result = caseTimeInterval(probabilisticDuration);
 				if (result == null) result = caseDuration(probabilisticDuration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -163,7 +158,6 @@ public class NfpSwitch<T> extends Switch<T> {
 				UniformDistribution uniformDistribution = (UniformDistribution)theEObject;
 				T result = caseUniformDistribution(uniformDistribution);
 				if (result == null) result = caseProbabilisticDuration(uniformDistribution);
-				if (result == null) result = caseTimeInterval(uniformDistribution);
 				if (result == null) result = caseDuration(uniformDistribution);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

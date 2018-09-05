@@ -171,9 +171,34 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sigma" lowerBound="1" eType="#//NFP_Duration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="NFP_Duration" instanceClassName="org.polarsys.time4sys.marte.nfp.Duration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//TimeInterval #//Duration"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="NFP_TimeInterval" instanceClassName="org.polarsys.time4sys.marte.nfp.TimeInterval"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticDuration" eSuperTypes="#//Duration"/>
   <eClassifiers xsi:type="ecore:EClass" name="TimeInterval">
     <eOperations name="computeLength" lowerBound="1" eType="#//Duration"/>
+    <eOperations name="contains" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="value" lowerBound="1" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="convertToUnit" lowerBound="1" eType="#//TimeInterval">
+      <eParameters name="unit" lowerBound="1" eType="#//TimeUnitKind"/>
+    </eOperations>
+    <eOperations name="add" eType="#//TimeInterval">
+      <eParameters name="v" lowerBound="1" eType="#//TimeInterval"/>
+    </eOperations>
+    <eOperations name="divide" eType="#//TimeInterval">
+      <eParameters name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="max" lowerBound="1" eType="#//Duration">
+      <eParameters name="other" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="min" lowerBound="1" eType="#//Duration">
+      <eParameters name="other" eType="#//Duration"/>
+    </eOperations>
+    <eOperations name="multiply" lowerBound="1" eType="#//TimeInterval">
+      <eParameters name="v" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eOperations>
+    <eOperations name="sub" lowerBound="1" eType="#//TimeInterval">
+      <eParameters name="v" lowerBound="1" eType="#//TimeInterval"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="#//Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="#//Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOpen" lowerBound="1"
@@ -191,5 +216,8 @@
     <eLiterals name="h" value="7" literal="hour"/>
     <eLiterals name="d" value="8" literal="days"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
+        eType="#//NFP_TimeInterval"/>
+  </eClassifiers>
 </ecore:EPackage>

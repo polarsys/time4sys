@@ -123,7 +123,7 @@ public class NormalDistributionItemProvider extends ProbabilisticDurationItemPro
 	@Override
 	public String getText(Object object) {
 		NormalDistribution normalDistribution = (NormalDistribution)object;
-		return getString("_UI_NormalDistribution_type") + " " + normalDistribution.isMinOpen();
+		return getString("_UI_NormalDistribution_type") + " " + normalDistribution.getValue();
 	}
 	
 

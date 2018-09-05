@@ -67,7 +67,7 @@ public enum DataTxRateUnitKind implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BPER_S
-	 * @model name="B_PER_S"
+	 * @model name="B_PER_S" literal="b/s"
 	 * @generated
 	 * @ordered
 	 */

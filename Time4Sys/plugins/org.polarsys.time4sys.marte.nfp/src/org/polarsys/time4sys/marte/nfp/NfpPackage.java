@@ -176,321 +176,6 @@ public interface NfpPackage extends EPackage {
 	int BUCKET_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL__MIN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL__MAX = 1;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL__MIN_OPEN = 2;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL__MAX_OPEN = 3;
-
-	/**
-	 * The number of structural features of the '<em>Time Interval</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL___COMPUTE_LENGTH = 0;
-
-	/**
-	 * The number of operations of the '<em>Time Interval</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_INTERVAL_OPERATION_COUNT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MIN = TIME_INTERVAL__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MAX = TIME_INTERVAL__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MIN_OPEN = TIME_INTERVAL__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__MAX_OPEN = TIME_INTERVAL__MAX_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__VALUE = TIME_INTERVAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__UNIT = TIME_INTERVAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Best</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__BEST = TIME_INTERVAL_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Worst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__WORST = TIME_INTERVAL_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Clock</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__CLOCK = TIME_INTERVAL_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION__PRECISION = TIME_INTERVAL_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Probabilistic Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION_FEATURE_COUNT = TIME_INTERVAL_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___COMPUTE_LENGTH = TIME_INTERVAL___COMPUTE_LENGTH;
-
-	/**
-	 * The operation id for the '<em>Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___ADD__DURATION = TIME_INTERVAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Compare To</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___COMPARE_TO__DURATION = TIME_INTERVAL_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Convert To Unit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = TIME_INTERVAL_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___DIV__DURATION = TIME_INTERVAL_OPERATION_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT = TIME_INTERVAL_OPERATION_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___DIVIDE__DURATION = TIME_INTERVAL_OPERATION_COUNT + 5;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___DIVIDE__LONG = TIME_INTERVAL_OPERATION_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Is Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___IS_ZERO = TIME_INTERVAL_OPERATION_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Lcm</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___LCM__DURATION = TIME_INTERVAL_OPERATION_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>Max</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___MAX__DURATION = TIME_INTERVAL_OPERATION_COUNT + 9;
-
-	/**
-	 * The operation id for the '<em>Min</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___MIN__DURATION = TIME_INTERVAL_OPERATION_COUNT + 10;
-
-	/**
-	 * The operation id for the '<em>Multiply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___MULTIPLY__LONG = TIME_INTERVAL_OPERATION_COUNT + 11;
-
-	/**
-	 * The operation id for the '<em>Not Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___NOT_ZERO = TIME_INTERVAL_OPERATION_COUNT + 12;
-
-	/**
-	 * The operation id for the '<em>Simplify</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___SIMPLIFY = TIME_INTERVAL_OPERATION_COUNT + 13;
-
-	/**
-	 * The operation id for the '<em>Sub</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION___SUB__DURATION = TIME_INTERVAL_OPERATION_COUNT + 14;
-
-	/**
-	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_DURATION_OPERATION_COUNT = TIME_INTERVAL_OPERATION_COUNT + 15;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.NormalDistributionImpl <em>Normal Distribution</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -531,40 +216,418 @@ public interface NfpPackage extends EPackage {
 	int COMPOSITE_DISTRIBUTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+	int DURATION__VALUE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+	int DURATION__UNIT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+	int DURATION__BEST = 2;
 
 	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+	int DURATION__WORST = 3;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION__CLOCK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION__PRECISION = 5;
+
+	/**
+	 * The number of structural features of the '<em>Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_FEATURE_COUNT = 6;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___ADD__DURATION = 0;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___COMPARE_TO__DURATION = 1;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = 2;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIV__DURATION = 3;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIV__DURATION_MATHCONTEXT = 4;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIVIDE__DURATION = 5;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___DIVIDE__LONG = 6;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___IS_ZERO = 7;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___LCM__DURATION = 8;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___MAX__DURATION = 9;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___MIN__DURATION = 10;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___MULTIPLY__LONG = 11;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___NOT_ZERO = 12;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___SIMPLIFY = 13;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION___SUB__DURATION = 14;
+
+	/**
+	 * The number of operations of the '<em>Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DURATION_OPERATION_COUNT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__VALUE = DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__UNIT = DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__BEST = DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__WORST = DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__CLOCK = DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION__PRECISION = DURATION__PRECISION;
+
+	/**
+	 * The number of structural features of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_FEATURE_COUNT = DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___ADD__DURATION = DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___COMPARE_TO__DURATION = DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION = DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIV__DURATION_MATHCONTEXT = DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIVIDE__DURATION = DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___DIVIDE__LONG = DURATION___DIVIDE__LONG;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___IS_ZERO = DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___LCM__DURATION = DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MAX__DURATION = DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MIN__DURATION = DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___MULTIPLY__LONG = DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___NOT_ZERO = DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SIMPLIFY = DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION___SUB__DURATION = DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Probabilistic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_DURATION_OPERATION_COUNT = DURATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -637,15 +700,6 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPOSITE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -1098,42 +1152,6 @@ public interface NfpPackage extends EPackage {
 	int DATA_TX_RATE_OPERATION_COUNT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1213,15 +1231,6 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -1374,249 +1383,6 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DURATION__VALUE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__UNIT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Best</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__BEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Worst</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__WORST = 3;
-
-	/**
-	 * The feature id for the '<em><b>Clock</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__CLOCK = 4;
-
-	/**
-	 * The feature id for the '<em><b>Precision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION__PRECISION = 5;
-
-	/**
-	 * The number of structural features of the '<em>Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION_FEATURE_COUNT = 6;
-
-	/**
-	 * The operation id for the '<em>Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___ADD__DURATION = 0;
-
-	/**
-	 * The operation id for the '<em>Compare To</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___COMPARE_TO__DURATION = 1;
-
-	/**
-	 * The operation id for the '<em>Convert To Unit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = 2;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIV__DURATION = 3;
-
-	/**
-	 * The operation id for the '<em>Div</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIV__DURATION_MATHCONTEXT = 4;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIVIDE__DURATION = 5;
-
-	/**
-	 * The operation id for the '<em>Divide</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___DIVIDE__LONG = 6;
-
-	/**
-	 * The operation id for the '<em>Is Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___IS_ZERO = 7;
-
-	/**
-	 * The operation id for the '<em>Lcm</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___LCM__DURATION = 8;
-
-	/**
-	 * The operation id for the '<em>Max</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MAX__DURATION = 9;
-
-	/**
-	 * The operation id for the '<em>Min</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MIN__DURATION = 10;
-
-	/**
-	 * The operation id for the '<em>Multiply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___MULTIPLY__LONG = 11;
-
-	/**
-	 * The operation id for the '<em>Not Zero</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___NOT_ZERO = 12;
-
-	/**
-	 * The operation id for the '<em>Simplify</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___SIMPLIFY = 13;
-
-	/**
-	 * The operation id for the '<em>Sub</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION___SUB__DURATION = 14;
-
-	/**
-	 * The number of operations of the '<em>Duration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION_OPERATION_COUNT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION__VALUE = PROBABILISTIC_DURATION__VALUE;
 
 	/**
@@ -1699,15 +1465,6 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -1854,42 +1611,6 @@ public interface NfpPackage extends EPackage {
 	int GENERALIZED_EXTREME_VALUE_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Min</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
-
-	/**
-	 * The feature id for the '<em><b>Max</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
-
-	/**
-	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
-
-	/**
-	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1969,15 +1690,6 @@ public interface NfpPackage extends EPackage {
 	 * @ordered
 	 */
 	int NORMAL_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NORMAL_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -2130,7 +1842,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION__MIN = PROBABILISTIC_DURATION__MIN;
+	int TIME_INTERVAL__MIN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Max</b></em>' reference.
@@ -2139,7 +1851,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION__MAX = PROBABILISTIC_DURATION__MAX;
+	int TIME_INTERVAL__MAX = 1;
 
 	/**
 	 * The feature id for the '<em><b>Min Open</b></em>' attribute.
@@ -2148,7 +1860,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION__MIN_OPEN = PROBABILISTIC_DURATION__MIN_OPEN;
+	int TIME_INTERVAL__MIN_OPEN = 2;
 
 	/**
 	 * The feature id for the '<em><b>Max Open</b></em>' attribute.
@@ -2157,7 +1869,106 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION__MAX_OPEN = PROBABILISTIC_DURATION__MAX_OPEN;
+	int TIME_INTERVAL__MAX_OPEN = 3;
+
+	/**
+	 * The number of structural features of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_FEATURE_COUNT = 4;
+
+	/**
+	 * The operation id for the '<em>Compute Length</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___COMPUTE_LENGTH = 0;
+
+	/**
+	 * The operation id for the '<em>Contains</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___CONTAINS__DURATION = 1;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___CONVERT_TO_UNIT__TIMEUNITKIND = 2;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___ADD__DURATION = 3;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___DIVIDE__DURATION = 4;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___MAX__DURATION = 5;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___MIN__DURATION = 6;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___MULTIPLY__LONG = 7;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL___SUB__DURATION = 8;
+
+	/**
+	 * The number of operations of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_OPERATION_COUNT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2214,22 +2025,22 @@ public interface NfpPackage extends EPackage {
 	int UNIFORM_DISTRIBUTION__PRECISION = PROBABILISTIC_DURATION__PRECISION;
 
 	/**
+	 * The feature id for the '<em><b>Interval</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIFORM_DISTRIBUTION__INTERVAL = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Uniform Distribution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIFORM_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Compute Length</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNIFORM_DISTRIBUTION___COMPUTE_LENGTH = PROBABILISTIC_DURATION___COMPUTE_LENGTH;
+	int UNIFORM_DISTRIBUTION_FEATURE_COUNT = PROBABILISTIC_DURATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Add</em>' operation.
@@ -2427,6 +2238,16 @@ public interface NfpPackage extends EPackage {
 	 */
 	int NFP_DURATION = 16;
 
+
+	/**
+	 * The meta object id for the '<em>NFP Time Interval</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_TimeInterval()
+	 * @generated
+	 */
+	int NFP_TIME_INTERVAL = 17;
 
 	/**
 	 * The meta object id for the '<em>Math Context</em>' data type.
@@ -2728,6 +2549,86 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTimeInterval__ComputeLength();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#contains(org.polarsys.time4sys.marte.nfp.Duration) <em>Contains</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Contains</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#contains(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Contains__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#convertToUnit(org.polarsys.time4sys.marte.nfp.TimeUnitKind) <em>Convert To Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Convert To Unit</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#convertToUnit(org.polarsys.time4sys.marte.nfp.TimeUnitKind)
+	 * @generated
+	 */
+	EOperation getTimeInterval__ConvertToUnit__TimeUnitKind();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Add__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Divide</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Divide__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Max</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Max__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Min</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#min(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Min__Duration();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#multiply(long) <em>Multiply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Multiply</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#multiply(long)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Multiply__long();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Sub</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Sub</em>' operation.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval)
+	 * @generated
+	 */
+	EOperation getTimeInterval__Sub__Duration();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>Data Size</em>}'.
@@ -3213,6 +3114,17 @@ public interface NfpPackage extends EPackage {
 	EClass getUniformDistribution();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.nfp.UniformDistribution#getInterval <em>Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interval</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.UniformDistribution#getInterval()
+	 * @see #getUniformDistribution()
+	 * @generated
+	 */
+	EAttribute getUniformDistribution_Interval();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.CompositeDistribution <em>Composite Distribution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3283,6 +3195,17 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getNFP_Duration();
+
+	/**
+	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.TimeInterval <em>NFP Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>NFP Time Interval</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+	 * @model instanceClass="org.polarsys.time4sys.marte.nfp.TimeInterval"
+	 * @generated
+	 */
+	EDataType getNFP_TimeInterval();
 
 	/**
 	 * Returns the meta object for data type '{@link java.math.MathContext <em>Math Context</em>}'.
@@ -3545,6 +3468,70 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TIME_INTERVAL___COMPUTE_LENGTH = eINSTANCE.getTimeInterval__ComputeLength();
+
+		/**
+		 * The meta object literal for the '<em><b>Contains</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___CONTAINS__DURATION = eINSTANCE.getTimeInterval__Contains__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Convert To Unit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___CONVERT_TO_UNIT__TIMEUNITKIND = eINSTANCE.getTimeInterval__ConvertToUnit__TimeUnitKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Add</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___ADD__DURATION = eINSTANCE.getTimeInterval__Add__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___DIVIDE__DURATION = eINSTANCE.getTimeInterval__Divide__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___MAX__DURATION = eINSTANCE.getTimeInterval__Max__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Min</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___MIN__DURATION = eINSTANCE.getTimeInterval__Min__Duration();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiply</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___MULTIPLY__LONG = eINSTANCE.getTimeInterval__Multiply__long();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_INTERVAL___SUB__DURATION = eINSTANCE.getTimeInterval__Sub__Duration();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl <em>Data Size</em>}' class.
@@ -3939,6 +3926,14 @@ public interface NfpPackage extends EPackage {
 		EClass UNIFORM_DISTRIBUTION = eINSTANCE.getUniformDistribution();
 
 		/**
+		 * The meta object literal for the '<em><b>Interval</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNIFORM_DISTRIBUTION__INTERVAL = eINSTANCE.getUniformDistribution_Interval();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4005,6 +4000,16 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NFP_DURATION = eINSTANCE.getNFP_Duration();
+
+		/**
+		 * The meta object literal for the '<em>NFP Time Interval</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.TimeInterval
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_TimeInterval()
+		 * @generated
+		 */
+		EDataType NFP_TIME_INTERVAL = eINSTANCE.getNFP_TimeInterval();
 
 		/**
 		 * The meta object literal for the '<em>Math Context</em>' data type.

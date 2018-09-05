@@ -114,7 +114,7 @@ public enum DataSizeUnitKind implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #KB
-	 * @model literal=""
+	 * @model
 	 * @generated
 	 * @ordered
 	 */

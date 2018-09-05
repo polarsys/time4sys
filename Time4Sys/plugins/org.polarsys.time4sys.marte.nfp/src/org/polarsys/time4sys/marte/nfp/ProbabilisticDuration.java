@@ -23,5 +23,5 @@ package org.polarsys.time4sys.marte.nfp;
  * @model
  * @generated
  */
-public interface ProbabilisticDuration extends TimeInterval, Duration {
+public interface ProbabilisticDuration extends Duration {
 } // ProbabilisticDuration

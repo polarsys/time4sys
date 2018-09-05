@@ -107,7 +107,7 @@ public class CompositeDistributionItemProvider extends ProbabilisticDurationItem
 	@Override
 	public String getText(Object object) {
 		CompositeDistribution compositeDistribution = (CompositeDistribution)object;
-		return getString("_UI_CompositeDistribution_type") + " " + compositeDistribution.isMinOpen();
+		return getString("_UI_CompositeDistribution_type") + " " + compositeDistribution.getValue();
 	}
 	
 

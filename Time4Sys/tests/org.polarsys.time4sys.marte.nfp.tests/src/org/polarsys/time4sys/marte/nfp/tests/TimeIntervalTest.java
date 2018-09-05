@@ -20,7 +20,6 @@ import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
-import org.polarsys.time4sys.marte.nfp.UniformDistribution;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +29,14 @@ import org.polarsys.time4sys.marte.nfp.UniformDistribution;
  * The following operations are tested:
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#computeLength() <em>Compute Length</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#contains(org.polarsys.time4sys.marte.nfp.Duration) <em>Contains</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#convertToUnit(org.polarsys.time4sys.marte.nfp.TimeUnitKind) <em>Convert To Unit</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Add</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long) <em>Divide</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#multiply(long) <em>Multiply</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Sub</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -115,6 +122,131 @@ public class TimeIntervalTest extends TestCase {
 	public void testComputeLength() {
 		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[");
 		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("9ms"), i.computeLength());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#contains(org.polarsys.time4sys.marte.nfp.Duration) <em>Contains</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#contains(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated NOT
+	 */
+	public void testContains__Duration() {
+		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[");
+		assertTrue(i.contains(i.getMin()));
+		assertFalse(i.contains(i.getMax()));
+		assertFalse(i.contains(NfpFactory.eINSTANCE.createDurationFromString("0ms")));
+		assertFalse(i.contains(NfpFactory.eINSTANCE.createDurationFromString("12ms")));
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#convertToUnit(org.polarsys.time4sys.marte.nfp.TimeUnitKind) <em>Convert To Unit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#convertToUnit(org.polarsys.time4sys.marte.nfp.TimeUnitKind)
+	 * @generated NOT
+	 */
+	public void testConvertToUnit__TimeUnitKind() {
+		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").convertToUnit(TimeUnitKind.US);
+		assertEquals("[1ms,10ms[", i.toString());
+		assertEquals(1000.0, i.getMin().getValue());
+		assertEquals(TimeUnitKind.US, i.getMin().getUnit());
+		assertEquals(10000.0, i.getMax().getValue());
+		assertEquals(TimeUnitKind.US, i.getMax().getUnit());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.Duration) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated NOT
+	 */
+	public void testAdd__Duration() {
+		assertEquals("[3ms,12ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
+		assertEquals("[3ms,15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Add</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval)
+	 * @generated NOT
+	 */
+	public void testAdd__TimeInterval() {
+		assertEquals("[3ms,15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long) <em>Divide</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long)
+	 * @generated NOT
+	 */
+	public void testDivide__long() {
+		assertEquals("]1ms,6ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms,18ms]").divide(3).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated NOT
+	 */
+	public void testMax__Duration() {
+		assertEquals("10ms", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
+		assertEquals("uniform(]3ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
+		assertEquals("uniform([3ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#min(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated NOT
+	 */
+	public void testMin__Duration() {
+		assertEquals("uniform(]0ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
+		assertEquals("0ms", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
+		assertEquals("uniform(]0ms,3ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#multiply(long) <em>Multiply</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#multiply(long)
+	 * @generated NOT
+	 */
+	public void testMultiply__long() {
+		assertEquals("]3ms,18ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]1ms,6ms]").multiply(3).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.Duration) <em>Sub</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.Duration)
+	 * @generated NOT
+	 */
+	public void testsub__Duration() {
+		assertEquals("[1ms,10ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[3ms,12ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
+		assertEquals("[0ms,8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
+	}
+
+	/**
+	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval) <em>Sub</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval)
+	 * @generated NOT
+	 */
+	public void testSub__TimeInterval() {
+		assertEquals("[0ms,8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
 	}
 
 	/**

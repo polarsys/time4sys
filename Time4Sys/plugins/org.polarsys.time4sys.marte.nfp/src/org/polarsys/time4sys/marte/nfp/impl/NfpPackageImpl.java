@@ -163,6 +163,13 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EDataType nfP_TimeIntervalEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType mathContextEDataType = null;
 
 	/**
@@ -476,6 +483,78 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 */
 	public EOperation getTimeInterval__ComputeLength() {
 		return timeIntervalEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Contains__Duration() {
+		return timeIntervalEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__ConvertToUnit__TimeUnitKind() {
+		return timeIntervalEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Add__Duration() {
+		return timeIntervalEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Divide__Duration() {
+		return timeIntervalEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Max__Duration() {
+		return timeIntervalEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Min__Duration() {
+		return timeIntervalEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Multiply__long() {
+		return timeIntervalEClass.getEOperations().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getTimeInterval__Sub__Duration() {
+		return timeIntervalEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -906,6 +985,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getUniformDistribution_Interval() {
+		return (EAttribute)uniformDistributionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCompositeDistribution() {
 		return compositeDistributionEClass;
 	}
@@ -962,6 +1050,15 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 	 */
 	public EDataType getNFP_Duration() {
 		return nfP_DurationEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getNFP_TimeInterval() {
+		return nfP_TimeIntervalEDataType;
 	}
 
 	/**
@@ -1086,8 +1183,17 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		createEAttribute(timeIntervalEClass, TIME_INTERVAL__MIN_OPEN);
 		createEAttribute(timeIntervalEClass, TIME_INTERVAL__MAX_OPEN);
 		createEOperation(timeIntervalEClass, TIME_INTERVAL___COMPUTE_LENGTH);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___CONTAINS__DURATION);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___CONVERT_TO_UNIT__TIMEUNITKIND);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___ADD__DURATION);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___DIVIDE__DURATION);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___MAX__DURATION);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___MIN__DURATION);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___MULTIPLY__LONG);
+		createEOperation(timeIntervalEClass, TIME_INTERVAL___SUB__DURATION);
 
 		uniformDistributionEClass = createEClass(UNIFORM_DISTRIBUTION);
+		createEAttribute(uniformDistributionEClass, UNIFORM_DISTRIBUTION__INTERVAL);
 
 		// Create enums
 		dataSizeUnitKindEEnum = createEEnum(DATA_SIZE_UNIT_KIND);
@@ -1098,6 +1204,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		// Create data types
 		mathContextEDataType = createEDataType(MATH_CONTEXT);
 		nfP_DurationEDataType = createEDataType(NFP_DURATION);
+		nfP_TimeIntervalEDataType = createEDataType(NFP_TIME_INTERVAL);
 	}
 
 	/**
@@ -1132,7 +1239,6 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		discreteDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
 		generalizedExtremeValueDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
 		normalDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
-		probabilisticDurationEClass.getESuperTypes().add(this.getTimeInterval());
 		probabilisticDurationEClass.getESuperTypes().add(this.getDuration());
 		uniformDistributionEClass.getESuperTypes().add(this.getProbabilisticDuration());
 
@@ -1298,7 +1404,32 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 
 		initEOperation(getTimeInterval__ComputeLength(), this.getDuration(), "computeLength", 1, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getTimeInterval__Contains__Duration(), ecorePackage.getEBoolean(), "contains", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__ConvertToUnit__TimeUnitKind(), this.getTimeInterval(), "convertToUnit", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTimeUnitKind(), "unit", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Add__Duration(), this.getTimeInterval(), "add", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTimeInterval(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Divide__Duration(), this.getTimeInterval(), "divide", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Max__Duration(), this.getDuration(), "max", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Min__Duration(), this.getDuration(), "min", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDuration(), "other", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Multiply__long(), this.getTimeInterval(), "multiply", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getELong(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getTimeInterval__Sub__Duration(), this.getTimeInterval(), "sub", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getTimeInterval(), "v", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(uniformDistributionEClass, UniformDistribution.class, "UniformDistribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUniformDistribution_Interval(), this.getNFP_TimeInterval(), "interval", null, 1, 1, UniformDistribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataSizeUnitKindEEnum, DataSizeUnitKind.class, "DataSizeUnitKind");
@@ -1331,6 +1462,7 @@ public class NfpPackageImpl extends EPackageImpl implements NfpPackage {
 		// Initialize data types
 		initEDataType(mathContextEDataType, MathContext.class, "MathContext", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(nfP_TimeIntervalEDataType, TimeInterval.class, "NFP_TimeInterval", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

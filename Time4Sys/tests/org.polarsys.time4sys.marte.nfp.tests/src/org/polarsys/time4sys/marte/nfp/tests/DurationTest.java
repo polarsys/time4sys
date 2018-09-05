@@ -12,14 +12,9 @@
  */
 package org.polarsys.time4sys.marte.nfp.tests;
 
-import java.math.MathContext;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
-import org.polarsys.time4sys.marte.nfp.UniformDistribution;
-
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
@@ -47,9 +42,9 @@ import junit.textui.TestRunner;
  *   <li>{@link org.polarsys.time4sys.marte.nfp.Duration#sub(org.polarsys.time4sys.marte.nfp.Duration) <em>Sub</em>}</li>
  * </ul>
  * </p>
- * @generated
+ * @generated NOT
  */
-public class DurationTest extends TestCase {
+public abstract class DurationTest extends TestCase {
 
 	/**
 	 * The fixture for this Duration test case.
@@ -128,8 +123,8 @@ public class DurationTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testAdd__Duration() {
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("0ps"), NfpFactory.eINSTANCE.createDurationFromString("0ms").add(NfpFactory.eINSTANCE.createDurationFromString("0ps")));
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("10ps"), NfpFactory.eINSTANCE.createDurationFromString("0ms").add(NfpFactory.eINSTANCE.createDurationFromString("10ps")));
+		assertEquals(getFixture(), getFixture().add(NfpFactory.eINSTANCE.createDurationFromString("0ms")));
+		getFixture().add(getFixture());
 	}
 
 	/**
@@ -140,9 +135,8 @@ public class DurationTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testConvertToUnit__TimeUnitKind() {
-		final Duration zero = NfpFactory.eINSTANCE.createDurationFromString("0ps");
-		final Duration d = zero.convertToUnit(TimeUnitKind.MS);
-		assertEquals("0ms", d.toString());
+		final Duration v = getFixture().convertToUnit(TimeUnitKind.MS);
+		assertEquals(TimeUnitKind.MS, v.getUnit());
 	}
 
 	/**
@@ -153,9 +147,7 @@ public class DurationTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testSimplify() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("0ps").simplify();
-		assertEquals("0ps", d.toString());
-		assertEquals(TimeUnitKind.PS, d.getUnit());
+		getFixture().simplify();
 	}
 
 	/**
@@ -166,8 +158,8 @@ public class DurationTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testSub__Duration() {
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("0ps"), NfpFactory.eINSTANCE.createDurationFromString("0ms").sub(NfpFactory.eINSTANCE.createDurationFromString("0ps")));
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("990us"), NfpFactory.eINSTANCE.createDurationFromString("1ms").sub(NfpFactory.eINSTANCE.createDurationFromString("10us")));
+		assertEquals(getFixture(), getFixture().sub(NfpFactory.eINSTANCE.createDurationFromString("0ms")));
+		getFixture().sub(getFixture());
 	}
 
 	/**
@@ -178,9 +170,7 @@ public class DurationTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testCompareTo__Duration() {
-		assertEquals(0, NfpFactory.eINSTANCE.createDurationFromString("0ms").compareTo(NfpFactory.eINSTANCE.createDurationFromString("0ps")));
-		assertTrue(0 < NfpFactory.eINSTANCE.createDurationFromString("10ms").compareTo(NfpFactory.eINSTANCE.createDurationFromString("0ps")));
-		assertTrue(0 > NfpFactory.eINSTANCE.createDurationFromString("0ms").compareTo(NfpFactory.eINSTANCE.createDurationFromString("100ps")));
+		assertEquals(0, getFixture().compareTo(getFixture()));
 	}
 
 	/**
@@ -190,12 +180,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#isZero()
 	 * @generated NOT
 	 */
-	public void testIsZero() {
-		assertTrue(NfpFactory.eINSTANCE.createDurationFromString("0ms").isZero());
-		assertTrue(NfpFactory.eINSTANCE.createDurationFromString("0s").isZero());
-		assertFalse(NfpFactory.eINSTANCE.createDurationFromString("10ms").isZero());
-		assertFalse(NfpFactory.eINSTANCE.createDurationFromString("0.0001ms").isZero());
-	}
+	public abstract void testIsZero();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#notZero() <em>Not Zero</em>}' operation.
@@ -204,12 +189,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#notZero()
 	 * @generated NOT
 	 */
-	public void testNotZero() {
-		assertFalse(NfpFactory.eINSTANCE.createDurationFromString("0ms").notZero());
-		assertFalse(NfpFactory.eINSTANCE.createDurationFromString("0s").notZero());
-		assertTrue(NfpFactory.eINSTANCE.createDurationFromString("10ms").notZero());
-		assertTrue(NfpFactory.eINSTANCE.createDurationFromString("0.0001ms").notZero());
-	}
+	public abstract void testNotZero();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}' operation.
@@ -218,41 +198,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#max(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public void testMax__Duration() {
-		assertMaxOfEquals("3ms", "5ms", "5ms");
-		assertMaxOfEquals("5ms", "3ms", "5ms");
-		assertMaxOfEquals("5ms", "5ps", "5ms");
-	}
-
-	protected void assertMaxOfEquals(final String v1, final String v2, final String expected) {
-		assertEquals(
-				NfpFactory.eINSTANCE.createDurationFromString(expected),
-				NfpFactory.eINSTANCE.createDurationFromString(v1).max(
-						NfpFactory.eINSTANCE.createDurationFromString(v2)));
-	}
-
-	protected void assertMinOfEquals(final String v1, final String v2, final String expected) {
-		assertEquals(
-				NfpFactory.eINSTANCE.createDurationFromString(expected),
-				NfpFactory.eINSTANCE.createDurationFromString(v1).min(
-						NfpFactory.eINSTANCE.createDurationFromString(v2)));
-	}
-	
-	protected void assertMultiplyOfEquals(final String v1, final long v2, final String expected) {
-		assertEquals(
-				NfpFactory.eINSTANCE.createDurationFromString(expected),
-				NfpFactory.eINSTANCE.createDurationFromString(v1).multiply(v2));
-	}
-	
-	protected void assertDivideOfEquals(final String v1, final long v2, final String expected) {
-		Duration expectedDuration = null;
-		if (expected != null) {
-			expectedDuration = NfpFactory.eINSTANCE.createDurationFromString(expected);
-		}
-		assertEquals(
-				expectedDuration,
-				NfpFactory.eINSTANCE.createDurationFromString(v1).divide(v2));
-	}
+	public abstract void testMax__Duration();
 	
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
@@ -261,11 +207,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public void testMin__Duration() {
-		assertMinOfEquals("3ms", "5ms", "3ms");
-		assertMinOfEquals("5ms", "3ms", "3ms");
-		assertMinOfEquals("5ms", "5ps", "5ps");
-	}
+	public abstract void testMin__Duration();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#multiply(long) <em>Multiply</em>}' operation.
@@ -274,11 +216,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#multiply(long)
 	 * @generated NOT
 	 */
-	public void testMultiply__long() {
-		assertMultiplyOfEquals("3ms", 3, "9ms");
-		assertMultiplyOfEquals("3ms", 0, "0ps");
-		assertMultiplyOfEquals("0ms", 3, "0ms");
-	}
+	public abstract void testMultiply__long();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#lcm(org.polarsys.time4sys.marte.nfp.Duration) <em>Lcm</em>}' operation.
@@ -287,10 +225,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#lcm(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public void testLcm__Duration() {
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("32ms"), NfpFactory.eINSTANCE.createDurationFromString("32ms").lcm(NfpFactory.eINSTANCE.createDurationFromString("32ms")));
-		assertEquals(NfpFactory.eINSTANCE.createDurationFromString("12ms"), NfpFactory.eINSTANCE.createDurationFromString("4ms").lcm(NfpFactory.eINSTANCE.createDurationFromString("6ms")));
-	}
+	public abstract void testLcm__Duration();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration) <em>Div</em>}' operation.
@@ -299,9 +234,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public void testDiv__Duration() {
-		assertEquals(0.032, NfpFactory.eINSTANCE.createDurationFromString("32ms").div(NfpFactory.eINSTANCE.createDurationFromString("1s")), 0.0000001);
-	}
+	public abstract void testDiv__Duration();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext) <em>Div</em>}' operation.
@@ -310,11 +243,7 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#div(org.polarsys.time4sys.marte.nfp.Duration, java.math.MathContext)
 	 * @generated NOT
 	 */
-	public void testDiv__Duration_MathContext() {
-		final MathContext mathContext = new MathContext(2);
-		assertEquals(5.3, NfpFactory.eINSTANCE.createDurationFromString("16ms").div(NfpFactory.eINSTANCE.createDurationFromString("3ms"), mathContext), 0.0000001);
-		//NB: If not using MathContext, one will get an arithmetic exception.
-	}
+	public abstract void testDiv__Duration_MathContext();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration) <em>Divide</em>}' operation.
@@ -323,158 +252,15 @@ public class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#divide(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public void testDivide__Duration() {
-		assertEquals(1L, NfpFactory.eINSTANCE.createDurationFromString("32ms").divide(NfpFactory.eINSTANCE.createDurationFromString("32ms")));
-	}
+	public abstract void testDivide__Duration();
 
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#divide(long) <em>Divide</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#divide(long)
-	 * @generated
+	 * @generated NOT
 	 */
-	public void testDivide__long() {
-		assertDivideOfEquals("9ms", 3, "3ms");
-		assertDivideOfEquals("3ms", 0, null);
-		assertDivideOfEquals("0ms", 3, "0ms");
-	}
-
-	public void testConvertSimpleDuration200msStringToDuration() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("200ms");
-		assertNotNull(d);
-		assertEquals(TimeUnitKind.MS, d.getUnit());
-		assertEquals(200.0, d.getValue());
-	}
-	
-	public void testConvertSimpleDuration2_0sStringToDuration() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("2.0s");
-		assertNotNull(d);
-		assertEquals(TimeUnitKind.S, d.getUnit());
-		assertEquals(2.0, d.getValue());
-	}
-	
-	public void testConvertSimpleDuration10dStringToDuration() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("10d");
-		assertNotNull(d);
-		assertEquals(TimeUnitKind.D, d.getUnit());
-		assertEquals(10.0, d.getValue());
-	}
-	
-	public void testConvertDuration2_0sToString() {
-		fixture.setUnit(TimeUnitKind.S);
-		fixture.setValue(2.0);
-		assertEquals("2s", NfpFactory.eINSTANCE.convertDurationToString(fixture));
-	}
-	
-	public void testConvertDurationWithoutUnitToDuration() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("42");
-		assertNotNull(d);
-		assertEquals(TimeUnitKind.MS, d.getUnit());
-		assertEquals(42.0, d.getValue());
-	}
-	
-	public void testZeroEqualityWhateverTheUnit() {
-		final Duration zMs = NfpFactory.eINSTANCE.createDurationFromString("0ms");
-		final Duration zPs = NfpFactory.eINSTANCE.createDurationFromString("0ps");
-		assertEquals(zMs, zPs);
-	}
-	
-	public void testSomeEqualities() {
-		final Duration v1 = NfpFactory.eINSTANCE.createDurationFromString("5ms");
-		final Duration v2 = NfpFactory.eINSTANCE.createDurationFromString("5ms");
-		assertEquals(v1, v2);
-	}
-	
-	public void testSomeDisequalities() {
-		final Duration v1 = NfpFactory.eINSTANCE.createDurationFromString("6ms");
-		final Duration v2 = NfpFactory.eINSTANCE.createDurationFromString("5ms");
-		assertNotSame(v1, v2);
-	}
-	
-	public void test5msEqualityWhateverTheUnit() {
-		final Duration zMs = NfpFactory.eINSTANCE.createDurationFromString("5ms");
-		final Duration zUs = NfpFactory.eINSTANCE.createDurationFromString("5000us");
-		assertEquals(zMs, zUs);
-		assertEquals(zUs, zMs);
-	}
-	
-	public void testUpgradeUnitSimplification() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("5000us").simplify();
-		assertEquals("5ms", d.toString());
-		assertEquals(TimeUnitKind.MS, d.getUnit());
-	}
-	
-	public void testDowngradeUnitSimplification() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("0.5s").simplify();
-		assertEquals("500ms", d.toString());
-		assertEquals(TimeUnitKind.MS, d.getUnit());
-	}
-	
-	public void testConvertTo() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("1500ms").simplify();
-		final Duration converted = d.convertToUnit(TimeUnitKind.S);
-		assertEquals("1500ms", converted.toString());
-		assertEquals(TimeUnitKind.S, converted.getUnit());
-		assertEquals(1.5, converted.getValue());
-	}
-	
-	public void testDowngradeUnitSimplificationGreaterThanOne() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("1025ms").simplify();
-		assertEquals("1025ms", d.toString());
-		assertEquals(TimeUnitKind.MS, d.getUnit());
-	}
-	
-	public void testZeroSimplificationDoesNotChangeUnit() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("0us").simplify();
-		assertEquals("0us", d.toString());
-		assertEquals(TimeUnitKind.US, d.getUnit());
-	}
-	
-	public void testAA() {
-		final Duration d = NfpFactory.eINSTANCE.createDuration();
-		d.setUnit(TimeUnitKind.PS);
-		d.setValue(9.707734992E9);
-		assertEquals("9707734992ps", d.toString());
-	}
-	
-	public void testExponentInString() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("9.707734992E9ps");
-		assertEquals("9707734992ps", d.toString());
-	}
-	
-	public void testUniformDistributionComma() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]0, 12ms]");
-		assertTrue(d instanceof TimeInterval);
-		assertTrue(d instanceof UniformDistribution);
-		final UniformDistribution interval = (UniformDistribution)d;
-		assertEquals(true, interval.isMinOpen());
-		assertEquals(false, interval.isMaxOpen());
-		assertTrue(interval.getMin().isZero());
-		assertEquals("12ms", interval.getMax().toString());
-	}
-	
-	public void testUniformDistributionTwoDots() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]0..12ms]");
-		assertTrue(d instanceof TimeInterval);
-		assertTrue(d instanceof UniformDistribution);
-		final UniformDistribution interval = (UniformDistribution)d;
-		assertEquals(true, interval.isMinOpen());
-		assertEquals(false, interval.isMaxOpen());
-		assertTrue(interval.getMin().isZero());
-		assertEquals("12ms", interval.getMax().toString());
-	}
-	
-	public void testUniformDistributionSemiColon() {
-		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("]11ms;12ms]");
-		assertTrue(d instanceof TimeInterval);
-		assertTrue(d instanceof UniformDistribution);
-		final UniformDistribution interval = (UniformDistribution)d;
-		assertEquals(true, interval.isMinOpen());
-		assertEquals(false, interval.isMaxOpen());
-		assertEquals("11ms", interval.getMin().toString());
-		assertEquals("12ms", interval.getMax().toString());
-		assertEquals("]11ms,12ms]", interval.toString());
-	}
+	public abstract void testDivide__long();
 	
 } //DurationTest

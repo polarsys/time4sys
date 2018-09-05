@@ -46,6 +46,7 @@ public interface NfpFactory extends EFactory {
 	 * @generated
 	 */
 	TimeInterval createTimeInterval();
+	TimeInterval createTimeInterval(Duration value);
 
 	/**
 	 * Returns a new object of class '<em>Data Size</em>'.
@@ -109,6 +110,8 @@ public interface NfpFactory extends EFactory {
 	 * @generated
 	 */
 	UniformDistribution createUniformDistribution();
+	UniformDistribution createUniformDistribution(TimeInterval value);
+	UniformDistribution createUniformDistribution(String interval);
 
 	/**
 	 * Returns a new object of class '<em>Composite Distribution</em>'.
