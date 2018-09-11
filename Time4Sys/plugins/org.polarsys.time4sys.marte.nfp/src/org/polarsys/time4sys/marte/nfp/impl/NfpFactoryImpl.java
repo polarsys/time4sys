@@ -417,6 +417,8 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		if (value != null) {
 			if ("null".equals(value)) {
 				return null;
+			} else if ("*".equals(value) || value.endsWith("Infinity")) {
+				return new DurationImpl(Double.POSITIVE_INFINITY, TimeUnitKind.PS);
 			} else if (value.startsWith("uniform(")) {
 				if (')' != value.charAt(value.length()-1)) {
 					throw new NumberFormatException("Malformed uniform distribution:" + value);

@@ -350,4 +350,14 @@ public class PointInTimeTest extends DurationTest {
 		assertEquals("9707734992ps", d.toString());
 	}
 	
+	public void testParseInfiniteVSL() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("*");
+		assertEquals(Double.POSITIVE_INFINITY, d.getValue());
+	}
+	
+	public void testParseInfiniteDouble() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString(Double.toString(Double.POSITIVE_INFINITY));
+		assertEquals(Double.POSITIVE_INFINITY, d.getValue());
+	}
+	
 } //DurationTest
