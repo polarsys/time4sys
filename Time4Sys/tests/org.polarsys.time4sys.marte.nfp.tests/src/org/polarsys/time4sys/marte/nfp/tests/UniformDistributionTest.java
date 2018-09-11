@@ -254,6 +254,21 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 		assertEquals(60000330.0, dUs.getWorst());
 	}
 	
+	public void testNullParse() {
+		assertNull(NfpFactory.eINSTANCE.createDurationFromString("null"));
+	}
+
+	public void testNullTolerance() {
+		final String userInput = "null";
+		for(int i=0; i < userInput.length(); ++i) {
+			try {
+				NfpFactory.eINSTANCE.createDurationFromString(userInput.substring(0, i));
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+	
 	public void testBadInputToleranceFullForm() {
 		final String userInput = "uniform(]11ms..12ms])";
 		for(int i=0; i < userInput.length(); ++i) {
