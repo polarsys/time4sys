@@ -414,12 +414,19 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 */
 	@Override
 	public Duration createDurationFromString(final String value) {
+		if (value != null && value.startsWith("uniform(")) {
+			if (')' != value.charAt(value.length()-1)) {
+				throw new NumberFormatException("Malformed uniform distribution:" + value);
+			}
+			final TimeInterval interval = createTimeIntervalFromString(value.substring("uniform(".length(), value.length()-1));
+			return createUniformDistribution(interval);
+		}
 		try {
 			return createSimpleDurationFromString(value);
 		} catch(NumberFormatException e) {
 			// We got it wrong, it must be an interval, thus a uniform distribution.
 			final TimeInterval interval = createTimeIntervalFromString(value);
-			return createUniformDistribution(interval);			
+			return createUniformDistribution(interval);
 		}
 	}
 	
@@ -466,7 +473,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		final TimeIntervalImpl anInterval = new TimeIntervalImpl();
 		final char leftPar = value.charAt(0);
 		if (leftPar != ']' && leftPar != '[') {
-			final Duration singlePoint = createDurationFromString(value);
+			final Duration singlePoint = createSimpleDurationFromString(value);
 			anInterval.setMax(singlePoint);
 			anInterval.setMin(singlePoint);
 			anInterval.setMinOpen(false);

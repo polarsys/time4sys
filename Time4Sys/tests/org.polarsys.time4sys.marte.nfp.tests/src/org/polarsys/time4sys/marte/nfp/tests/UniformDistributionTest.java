@@ -233,6 +233,7 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 		assertEquals(12000.0, dUs.getBest());
 		assertEquals(60000.0, dUs.getWorst());
 	}
+
 	public void testParseDouble() {
 		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("[12000.500us,60000.33us]");
 		assertTrue(d instanceof UniformDistribution);
@@ -241,6 +242,38 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 		final Duration dUs = d.convertToUnit(TimeUnitKind.NS);
 		assertEquals(12000500.0, dUs.getBest());
 		assertEquals(60000330.0, dUs.getWorst());
+	}
+	
+	public void testParseUniformSerial() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("uniform([12000.500us..60000.33us])");
+		assertTrue(d instanceof UniformDistribution);
+		assertEquals(12000.500, d.getBest());
+		assertEquals(60000.33, d.getWorst());
+		final Duration dUs = d.convertToUnit(TimeUnitKind.NS);
+		assertEquals(12000500.0, dUs.getBest());
+		assertEquals(60000330.0, dUs.getWorst());
+	}
+	
+	public void testBadInputToleranceFullForm() {
+		final String userInput = "uniform(]11ms..12ms])";
+		for(int i=0; i < userInput.length(); ++i) {
+			try {
+				NfpFactory.eINSTANCE.createDurationFromString(userInput.substring(0, i));
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+	}
+	
+	public void testBadInputToleranceShortForm() {
+		final String userInput = "]11ms..12ms]";
+		for(int i=0; i < userInput.length(); ++i) {
+			try {
+				NfpFactory.eINSTANCE.createDurationFromString(userInput.substring(0, i));
+			} catch (NumberFormatException e) {
+				
+			}
+		}
 	}
 	
 //	public void testCompareTo__Duration() {

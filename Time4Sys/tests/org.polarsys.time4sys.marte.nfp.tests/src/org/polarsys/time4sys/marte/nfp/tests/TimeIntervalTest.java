@@ -385,6 +385,14 @@ public class TimeIntervalTest extends TestCase {
 		assertEquals("]11ms,12ms]", interval.toString());
 	}
 	
+	public void testUniquePointNotation() {
+		final TimeInterval interval = NfpFactory.eINSTANCE.createTimeIntervalFromString("12ms");
+		assertEquals(false, interval.isMinOpen());
+		assertEquals(false, interval.isMaxOpen());
+		assertEquals("12ms", interval.getMin().toString());
+		assertEquals("12ms", interval.getMax().toString());
+	}
+	
 	public void testBadInputTolerance() {
 		// Reason of test: "]11m" used to cause infinite recursion
 		// NumberFormatException is the only exception that shall be raised. 
