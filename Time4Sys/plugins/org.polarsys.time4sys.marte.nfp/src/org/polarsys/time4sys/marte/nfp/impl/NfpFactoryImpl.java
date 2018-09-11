@@ -460,21 +460,38 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 */
 	@Override
 	public TimeInterval createTimeIntervalFromString(final String value) {
+		if (value == null || value.isEmpty()) {
+			return null;
+		}
 		final TimeIntervalImpl anInterval = new TimeIntervalImpl();
-		final Scanner scan = new Scanner(value);
-		final String leftPar = scan.findInLine("\\]|\\[");
-		anInterval.setMinOpen("]".equals(leftPar));
-		final String leftStr = scan.findInLine("[^,;\\.]*");
+		final char leftPar = value.charAt(0);
+		if (leftPar != ']' && leftPar != '[') {
+			final Duration singlePoint = createDurationFromString(value);
+			anInterval.setMax(singlePoint);
+			anInterval.setMin(singlePoint);
+			anInterval.setMinOpen(false);
+			anInterval.setMaxOpen(false);
+			return anInterval;
+		}
+		anInterval.setMinOpen(']' == leftPar);
+		final int twoDotsIdx = value.indexOf("..");
+		final int semicolonIdx = value.indexOf(";");
+		final int commaIdx = value.indexOf(",");
+		final int sepIdx = Math.max(twoDotsIdx, Math.max(semicolonIdx, commaIdx));
+		if (sepIdx == -1) {
+			throw new NumberFormatException("Unexpected interval: " + value);
+		}
+		final String leftStr = value.substring(1, sepIdx);
 		anInterval.setMin(createSimpleDurationFromString(leftStr));
-		scan.findInLine(",|(\\.\\.)|;");
-		String rightStr = scan.findInLine("[^\\]\\[]*");
-		if (rightStr == null) {
-			rightStr = leftStr;
+		final String rightStr;
+		if (sepIdx == twoDotsIdx) {
+			rightStr = value.substring(twoDotsIdx + 1, value.length() - 1);
+		} else {
+			rightStr = value.substring(sepIdx, value.length() - 1);
 		}
 		anInterval.setMax(createSimpleDurationFromString(rightStr));
-		final String rightPar = scan.findInLine("\\]|\\[");
-		anInterval.setMaxOpen("[".equals(rightPar));
-		scan.close();
+		final char rightPar = value.charAt(value.length() - 1);
+		anInterval.setMaxOpen('[' == rightPar);
 		return anInterval;
 	}
 

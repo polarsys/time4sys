@@ -203,6 +203,45 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 		assertEquals(3000.0, dUs.getBest());
 		assertEquals(18000.0, dUs.getWorst());
 	}
+
+	public void testBestWorstBug() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("[12000.0us..60000.0us]");
+		assertTrue(d instanceof UniformDistribution);
+		assertEquals(12000.0, d.getBest());
+		assertEquals(60000.0, d.getWorst());
+		final Duration dUs = d.convertToUnit(TimeUnitKind.US);
+		assertEquals(12000.0, dUs.getBest());
+		assertEquals(60000.0, dUs.getWorst());
+	}
+	
+	public void testBestWorstBugSemicolon() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("[12000.0us;60000.0us]");
+		assertTrue(d instanceof UniformDistribution);
+		assertEquals(12000.0, d.getBest());
+		assertEquals(60000.0, d.getWorst());
+		final Duration dUs = d.convertToUnit(TimeUnitKind.US);
+		assertEquals(12000.0, dUs.getBest());
+		assertEquals(60000.0, dUs.getWorst());
+	}
+	
+	public void testBestWorstBugComma() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("[12000.0us,60000.0us]");
+		assertTrue(d instanceof UniformDistribution);
+		assertEquals(12000.0, d.getBest());
+		assertEquals(60000.0, d.getWorst());
+		final Duration dUs = d.convertToUnit(TimeUnitKind.US);
+		assertEquals(12000.0, dUs.getBest());
+		assertEquals(60000.0, dUs.getWorst());
+	}
+	public void testParseDouble() {
+		final Duration d = NfpFactory.eINSTANCE.createDurationFromString("[12000.500us,60000.33us]");
+		assertTrue(d instanceof UniformDistribution);
+		assertEquals(12000.500, d.getBest());
+		assertEquals(60000.33, d.getWorst());
+		final Duration dUs = d.convertToUnit(TimeUnitKind.NS);
+		assertEquals(12000500.0, dUs.getBest());
+		assertEquals(60000330.0, dUs.getWorst());
+	}
 	
 //	public void testCompareTo__Duration() {
 //		super.testCompareTo__Duration();
