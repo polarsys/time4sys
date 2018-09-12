@@ -2,17 +2,17 @@
  */
 package org.polarsys.time4sys.marte.nfp.tests;
 
-import junit.textui.TestRunner;
-
 import java.math.MathContext;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
 import org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
-import org.polarsys.time4sys.marte.nfp.UniformDistribution;
+
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -234,5 +234,48 @@ public class DiscreteDistributionTest extends ProbabilisticDurationTest {
 		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("5ms"));
 		d.setKind(DiscreteDistributionKind.CYCLIC);
 		assertEquals("discrete(cyclic, {(0.5, uniform([0ms..3ms])), (0.5, 5ms)})", d.toString());
+	}
+	
+	public void testParseSimpleUnordered() {
+		final String input = "discrete(random, {(0.5, 10ms), (0.5, 5ms)})";
+		final Duration parsed = NfpFactory.eINSTANCE.createDurationFromString(input);
+		assertEquals(input, parsed.toString());
+		assertTrue(EcoreUtil.equals(fixture, parsed));
+	}
+	
+	public void testParseOneZero() {
+		final String input = "discrete(random, {(0.5, 10ms), (0.5, 5ms)})";
+		final Duration parsed = NfpFactory.eINSTANCE.createDurationFromString(input);
+		assertEquals(input, parsed.toString());
+		
+		final DiscreteDistribution d = NfpFactory.eINSTANCE.createDiscreteDistribution();
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("0ms"));
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("5ms"));
+		d.setKind(DiscreteDistributionKind.CYCLIC);
+		assertEquals(d, parsed);
+	}
+	
+	public void testParseOneUniform() {
+		final String input = "discrete(cyclic, {(0.5, uniform([0ms..3ms])), (0.5, 5ms)})";
+		final Duration parsed = NfpFactory.eINSTANCE.createDurationFromString(input);
+		assertEquals(input, parsed.toString());
+		
+		final DiscreteDistribution d = NfpFactory.eINSTANCE.createDiscreteDistribution();
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("[0ms..3ms]"));
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("5ms"));
+		d.setKind(DiscreteDistributionKind.CYCLIC);
+		assertEquals(d, parsed);
+	}
+	
+	public void testParseOneUniformWithIntervalNotation() {
+		final String input = "discrete(cyclic, {(0.5, [0ms..3ms]), (0.5, 5ms)})";
+		final Duration parsed = NfpFactory.eINSTANCE.createDurationFromString(input);
+		assertEquals("discrete(cyclic, {(0.5, uniform([0ms..3ms])), (0.5, 5ms)})", parsed.toString());
+		
+		final DiscreteDistribution d = NfpFactory.eINSTANCE.createDiscreteDistribution();
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("[0ms..3ms]"));
+		d.addBucket(0.5, NfpFactory.eINSTANCE.createDurationFromString("5ms"));
+		d.setKind(DiscreteDistributionKind.CYCLIC);
+		assertEquals(d, parsed);
 	}
 } //DiscreteDistributionTest

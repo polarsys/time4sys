@@ -46,6 +46,9 @@ import org.polarsys.time4sys.marte.nfp.UniformDistribution;
  * @generated
  */
 public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
+	private static final String UNIFORM_TOKEN = "uniform(";
+	private static final String DISCRETE_TOKEN = "discrete(";
+
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
@@ -414,17 +417,20 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 	 */
 	@Override
 	public Duration createDurationFromString(final String value) {
+		//TODO implement a VSL value parser instead of this pile of hack.
 		if (value != null) {
 			if ("null".equals(value)) {
 				return null;
 			} else if ("*".equals(value) || value.endsWith("Infinity")) {
 				return new DurationImpl(Double.POSITIVE_INFINITY, TimeUnitKind.PS);
-			} else if (value.startsWith("uniform(")) {
+			} else if (value.startsWith(UNIFORM_TOKEN)) {
 				if (')' != value.charAt(value.length()-1)) {
 					throw new NumberFormatException("Malformed uniform distribution:" + value);
 				}
-				final TimeInterval interval = createTimeIntervalFromString(value.substring("uniform(".length(), value.length()-1));
+				final TimeInterval interval = createTimeIntervalFromString(value.substring(UNIFORM_TOKEN.length(), value.length()-1));
 				return createUniformDistribution(interval);
+			} else if (value.startsWith(DISCRETE_TOKEN)) {
+				return createDiscreteDistributionFromString(value);
 			}
 		}
 		try {
@@ -436,6 +442,59 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		}
 	}
 	
+	public Duration createDiscreteDistributionFromString(final String value) {
+		if (value == null) {
+			return LongDurationImpl.ZERO;
+		}
+		if (value.startsWith(DISCRETE_TOKEN)) {
+			if (')' != value.charAt(value.length()-1)) {
+				throw new NumberFormatException("Malformed discrete distribution:" + value);
+			}
+			final String params = value.substring(DISCRETE_TOKEN.length(), value.length()-1);
+			final int idxComma = params.indexOf(',');
+			if (idxComma == -1) {
+				throw new NumberFormatException("Expected discrete([cyclic|random], {(<probability>, <duration>)...}), got " + value);
+			}
+			final String fisrtParam = params.substring(0, idxComma).toUpperCase();
+			final DiscreteDistribution d = createDiscreteDistribution();
+			if ("RANDOM".equals(fisrtParam)) {
+				d.setKind(DiscreteDistributionKind.RANDOM);
+			} else if ("CYCLIC".equals(fisrtParam)) {
+				d.setKind(DiscreteDistributionKind.CYCLIC);
+			} else {
+				throw new NumberFormatException("Unexpected kind: " + fisrtParam);
+			}
+			String reminder = params.substring(idxComma+1).trim();
+			if (reminder.charAt(0) != '{' || reminder.charAt(reminder.length()-1) != '}') {
+				throw new NumberFormatException("Expected discrete([cyclic|random], {(<probability>, <duration>)...}), got " + value);
+			}
+			while(!reminder.isEmpty()) {
+				final int startTuple = reminder.indexOf('(');
+				int endTuple = reminder.indexOf(')');
+				final int idxCommaTuple = reminder.indexOf(',');
+				final String probaStr = reminder.substring(startTuple + 1, idxCommaTuple).trim();
+				final double probability = Double.parseDouble(probaStr);
+				String durationStr = reminder.substring(idxCommaTuple+1, endTuple).trim();
+				if (durationStr.contains("uniform")) {
+					endTuple = reminder.indexOf(')', endTuple+1);
+					durationStr = reminder.substring(idxCommaTuple+1, endTuple).trim();
+				}
+				final Duration durationValue = createDurationFromString(durationStr);
+				d.addBucket(probability, durationValue);
+				reminder = reminder.substring(endTuple+1).trim();
+				if (reminder.charAt(0) == '}') {
+					break;
+				} else if (reminder.charAt(0) != ',') {
+					throw new NumberFormatException("Expected discrete([cyclic|random], {(<probability>, <duration>)...}), got " + value);
+				}
+				reminder = reminder.substring(1).trim();
+			}
+			return d;
+		} else {
+			throw new NumberFormatException("The input shall starts with 'discrete(', got " + value);
+		}
+	}
+
 	public Duration createSimpleDurationFromString(final String value) {
 		if (value == null) {
 			return LongDurationImpl.ZERO;
