@@ -115,14 +115,20 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	/**
 	 * @generated NOT
 	 */
-	protected TimeIntervalImpl(
+	public TimeIntervalImpl(
 			final boolean isLeftOpen,
 			final Duration leftValue,
 			final Duration rightValue,
 			final boolean isRightOpen) {
 		super();
 		this.min = leftValue;
+		if (leftValue instanceof UniformDistribution) {
+			this.min = ((UniformDistribution)leftValue).getInterval().getMin();
+		}
 		this.max = rightValue;
+		if (rightValue instanceof UniformDistribution) {
+			this.max = ((UniformDistribution)rightValue).getInterval().getMax();
+		}
 		this.minOpen = isLeftOpen;
 		this.maxOpen = isRightOpen;
 	}
@@ -177,11 +183,14 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMin(Duration newMin) {
 		Duration oldMin = min;
 		min = newMin;
+		if (newMin instanceof UniformDistribution) {
+			min = ((UniformDistribution)newMin).getInterval().getMin();
+		}
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.TIME_INTERVAL__MIN, oldMin, min));
 	}
@@ -215,11 +224,14 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setMax(Duration newMax) {
 		Duration oldMax = max;
 		max = newMax;
+		if (newMax instanceof UniformDistribution) {
+			max = ((UniformDistribution)newMax).getInterval().getMax();
+		}
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.TIME_INTERVAL__MAX, oldMax, max));
 	}
@@ -332,6 +344,12 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	 * @generated NOT
 	 */
 	public Duration max(final Duration other) {
+		if (other == max) {
+			return max;
+		}
+		if (other == null) {
+			return new UniformDistributionImpl(this);
+		}
 		if (other.compareTo(max) > 0) {
 			return other;
 		}
@@ -347,6 +365,12 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	 * @generated NOT
 	 */
 	public Duration min(final Duration other) {
+		if (other == min) {
+			return min;
+		}
+		if (other == null) {
+			return new UniformDistributionImpl(this);
+		}
 		if (other.compareTo(max) > 0) {
 			return new UniformDistributionImpl(this);
 		}
@@ -517,7 +541,7 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 					result.append("[");
 				}
 				result.append(min.toString());
-				result.append(",");
+				result.append("..");
 				result.append(max.toString());
 				if (maxOpen) {
 					result.append("[");

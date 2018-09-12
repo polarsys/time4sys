@@ -198,7 +198,10 @@ public abstract class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#max(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public abstract void testMax__Duration();
+	public void testMax__Duration() {
+		assertEquals(getFixture(), getFixture().max(null));
+	}
+
 	
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration) <em>Min</em>}' operation.
@@ -207,8 +210,10 @@ public abstract class DurationTest extends TestCase {
 	 * @see org.polarsys.time4sys.marte.nfp.Duration#min(org.polarsys.time4sys.marte.nfp.Duration)
 	 * @generated NOT
 	 */
-	public abstract void testMin__Duration();
-
+	
+	public void testMin__Duration() {
+		assertEquals(getFixture(), getFixture().min(null));
+	}
 	/**
 	 * Tests the '{@link org.polarsys.time4sys.marte.nfp.Duration#multiply(long) <em>Multiply</em>}' operation.
 	 * <!-- begin-user-doc -->

@@ -30,7 +30,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	TimeIntervalTest.class,
 	NfpPackageTest.class,
 	DataSizeUnitKindTest.class,
-	UniformDistributionTest.class
+	UniformDistributionTest.class,
+	DiscreteDistributionTest.class
 })
 public class AllTests {
 

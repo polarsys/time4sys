@@ -204,13 +204,16 @@ public class DurationImpl extends AbstractRealWithUnitValueImpl<TimeUnitKind, Du
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setValue(double newValue) {
 		double oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.DURATION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.DURATION__BEST, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.DURATION__WORST, oldValue, value));
+		}
 	}
 
 	/**
@@ -237,43 +240,37 @@ public class DurationImpl extends AbstractRealWithUnitValueImpl<TimeUnitKind, Du
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getBest() {
-		return best;
+		return getValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setBest(double newBest) {
-		double oldBest = best;
-		best = newBest;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.DURATION__BEST, oldBest, best));
+		throw new UnsupportedOperationException("Illegal call of setBest on single point in time duration.");
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public double getWorst() {
-		return worst;
+		return getValue();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setWorst(double newWorst) {
-		double oldWorst = worst;
-		worst = newWorst;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NfpPackage.DURATION__WORST, oldWorst, worst));
+		throw new UnsupportedOperationException("Illegal call of setWorst on single point in time duration.");
 	}
 
 	/**

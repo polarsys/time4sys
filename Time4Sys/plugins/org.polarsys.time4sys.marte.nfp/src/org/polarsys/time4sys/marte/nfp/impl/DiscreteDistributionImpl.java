@@ -12,7 +12,9 @@
  */
 package org.polarsys.time4sys.marte.nfp.impl;
 
+import java.math.MathContext;
 import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -21,11 +23,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.DiscreteDistribution;
 import org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind;
+import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
+import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 
 /**
  * <!-- begin-user-doc -->
@@ -210,17 +216,139 @@ public class DiscreteDistributionImpl extends ProbabilisticDurationImpl implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
-		result.append(kind);
-		result.append(')');
+		StringBuffer result = new StringBuffer();
+		result.append("discrete(");
+		result.append(getKind().toString().toLowerCase());
+		result.append(", {");
+		final Iterator<Bucket> itB = getBuckets().iterator();
+		while(itB.hasNext()) {
+			result.append(itB.next().toString());
+			if (itB.hasNext()) {
+				result.append(", ");
+			}
+		}
+		result.append("})");
 		return result.toString();
 	}
 
+	@Override
+	public void addBucket(double probability, Duration value) {
+		final Bucket b = NfpFactory.eINSTANCE.createBucket();
+		b.setProbability(probability);
+		b.setValue(value);
+		getBuckets().add(b);
+	}
+	
+	@Override
+	public Duration convertToUnit(final TimeUnitKind target) {
+		final DiscreteDistribution d = new DiscreteDistributionImpl();
+		d.setKind(getKind());
+		d.setUnit(target);
+		for(Bucket b: getBuckets()) {
+			final Duration converted = b.getValue().convertToUnit(target);
+			assert(converted.getUnit() == target);
+			d.addBucket(b.getProbability(), converted);
+		}
+		return d;
+	}
+	
+	@Override
+	public boolean isZero() {
+		for(Bucket b: getBuckets()) {
+			if (b.getValue().isZero()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public Duration multiply(final long other) {
+		final DiscreteDistribution d = new DiscreteDistributionImpl();
+		d.setKind(getKind());
+		d.setUnit(getUnit());
+		for(Bucket b: getBuckets()) {
+			final Duration converted = b.getValue().multiply(other);
+			d.addBucket(b.getProbability(), converted);
+		}
+		return d;
+	}
+	
+	@Override
+	public Duration divide(final long other) {
+		final DiscreteDistribution d = new DiscreteDistributionImpl();
+		d.setKind(getKind());
+		d.setUnit(getUnit());
+		for(Bucket b: getBuckets()) {
+			final Duration converted = b.getValue().divide(other);
+			d.addBucket(b.getProbability(), converted);
+		}
+		return d;
+	}
+	
+	@Override
+	public double div(final Duration other) {
+		throw new UnsupportedOperationException("Unavailable");
+	}
+	
+	@Override
+	public double div(final Duration other, final MathContext ctx) {
+		throw new UnsupportedOperationException("Unavailable");
+	}
+	
+	@Override
+	public double getWorst() {
+		if (getBuckets().isEmpty()) {
+			return 0.0;
+		}
+		return max(getBuckets().get(0).getValue()).getWorst();
+	}
+	
+	@Override
+	public double getBest() {
+		if (getBuckets().isEmpty()) {
+			return 0.0;
+		}
+		return min(getBuckets().get(0).getValue()).getBest();
+	}
+	
+	@Override
+	public Duration max(final Duration other) {
+		if (other == null) {
+			return this;
+		}
+		Duration worst = other;
+		for(Bucket b: getBuckets()) {
+			worst = b.getValue().max(worst);
+		}
+		return worst;
+	}
+	
+	@Override
+	public Duration min(final Duration other) {
+		if (other == null) {
+			return this;
+		}
+		Duration best = other;
+		for(Bucket b: getBuckets()) {
+			best = b.getValue().min(best);
+		}
+		return best;
+	}
+	
+	@Override
+	public Duration lcm(Duration v) {
+		Duration lcm = v;
+		for(Bucket b: getBuckets()) {
+			lcm = lcm.lcm(b.getValue());
+		}
+		return lcm;
+	}
+	
 } //DiscreteDistributionImpl

@@ -20,6 +20,8 @@ import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
+import org.polarsys.time4sys.marte.nfp.impl.TimeIntervalImpl;
+import org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,7 +150,7 @@ public class TimeIntervalTest extends TestCase {
 	 */
 	public void testConvertToUnit__TimeUnitKind() {
 		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").convertToUnit(TimeUnitKind.US);
-		assertEquals("[1ms,10ms[", i.toString());
+		assertEquals("[1ms..10ms[", i.toString());
 		assertEquals(1000.0, i.getMin().getValue());
 		assertEquals(TimeUnitKind.US, i.getMin().getUnit());
 		assertEquals(10000.0, i.getMax().getValue());
@@ -163,8 +165,8 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testAdd__Duration() {
-		assertEquals("[3ms,12ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
-		assertEquals("[3ms,15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
+		assertEquals("[3ms..12ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
+		assertEquals("[3ms..15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
 	}
 
 	/**
@@ -175,7 +177,7 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testAdd__TimeInterval() {
-		assertEquals("[3ms,15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
+		assertEquals("[3ms..15ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[1ms,10ms[").add(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
 	}
 
 	/**
@@ -186,7 +188,7 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testDivide__long() {
-		assertEquals("]1ms,6ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms,18ms]").divide(3).toString());
+		assertEquals("]1ms..6ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms,18ms]").divide(3).toString());
 	}
 
 	/**
@@ -198,8 +200,8 @@ public class TimeIntervalTest extends TestCase {
 	 */
 	public void testMax__Duration() {
 		assertEquals("10ms", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
-		assertEquals("uniform(]3ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
-		assertEquals("uniform([3ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+		assertEquals("uniform(]3ms..5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
+		assertEquals("uniform([3ms..5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
 	}
 
 	/**
@@ -210,9 +212,9 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testMin__Duration() {
-		assertEquals("uniform(]0ms,5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
+		assertEquals("uniform(]0ms..5ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
 		assertEquals("0ms", NfpFactory.eINSTANCE.createTimeIntervalFromString("]3ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
-		assertEquals("uniform(]0ms,3ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+		assertEquals("uniform(]0ms..3ms])", NfpFactory.eINSTANCE.createTimeIntervalFromString("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
 	}
 
 	/**
@@ -223,7 +225,7 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testMultiply__long() {
-		assertEquals("]3ms,18ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]1ms,6ms]").multiply(3).toString());
+		assertEquals("]3ms..18ms]", NfpFactory.eINSTANCE.createTimeIntervalFromString("]1ms,6ms]").multiply(3).toString());
 	}
 
 	/**
@@ -234,8 +236,8 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testsub__Duration() {
-		assertEquals("[1ms,10ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[3ms,12ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
-		assertEquals("[0ms,8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
+		assertEquals("[1ms..10ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[3ms,12ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createDurationFromString("2ms"))).toString());
+		assertEquals("[0ms..8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeInterval(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]"))).toString());
 	}
 
 	/**
@@ -246,7 +248,7 @@ public class TimeIntervalTest extends TestCase {
 	 * @generated NOT
 	 */
 	public void testSub__TimeInterval() {
-		assertEquals("[0ms,8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
+		assertEquals("[0ms..8ms[", NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createTimeIntervalFromString("[2ms, 5ms]")).toString());
 	}
 
 	/**
@@ -360,12 +362,12 @@ public class TimeIntervalTest extends TestCase {
 	
 	public void testConvertC5psO10MSIntervalToString() {
 		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[5ps,10ms[");
-		assertEquals("[5ps,10ms[", NfpFactory.eINSTANCE.convertTimeIntervalToString(i));
+		assertEquals("[5ps..10ms[", NfpFactory.eINSTANCE.convertTimeIntervalToString(i));
 	}
 	
 	public void testConvertLongIntervalToString() {
 		final TimeInterval i = NfpFactory.eINSTANCE.createTimeIntervalFromString("[452904007590ps,469904007590ps]");
-		assertEquals("[452904007590ps,469904007590ps]", NfpFactory.eINSTANCE.convertTimeIntervalToString(i));
+		assertEquals("[452904007590ps..469904007590ps]", NfpFactory.eINSTANCE.convertTimeIntervalToString(i));
 	}
 	
 	public void testTwoDotsNotation() {
@@ -382,7 +384,7 @@ public class TimeIntervalTest extends TestCase {
 		assertEquals(false, interval.isMaxOpen());
 		assertEquals("11ms", interval.getMin().toString());
 		assertEquals("12ms", interval.getMax().toString());
-		assertEquals("]11ms,12ms]", interval.toString());
+		assertEquals("]11ms..12ms]", interval.toString());
 	}
 	
 	public void testUniquePointNotation() {
@@ -404,5 +406,11 @@ public class TimeIntervalTest extends TestCase {
 				
 			}
 		}
+	}
+	
+	
+	public void testConstructorInUniformEnd() {
+		final TimeIntervalImpl i = new TimeIntervalImpl(false, NfpFactory.eINSTANCE.createDurationFromString("3ms"), NfpFactory.eINSTANCE.createUniformDistribution("[5ms..10ms]"), true);
+		assertEquals("[3ms..10ms[", i.toString());
 	}
 } //TimeIntervalTest

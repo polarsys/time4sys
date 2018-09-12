@@ -78,4 +78,6 @@ public interface DiscreteDistribution extends ProbabilisticDuration {
 	 */
 	void setKind(DiscreteDistributionKind value);
 
+	void addBucket(double probability, Duration value);
+
 } // DiscreteDistribution

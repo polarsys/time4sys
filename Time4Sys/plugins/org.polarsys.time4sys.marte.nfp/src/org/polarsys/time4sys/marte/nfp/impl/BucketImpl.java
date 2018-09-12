@@ -207,16 +207,16 @@ public class BucketImpl extends MinimalEObjectImpl.Container implements Bucket {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (probability: ");
+		StringBuffer result = new StringBuffer();
+		result.append('(');
 		result.append(probability);
-		result.append(", value: ");
+		result.append(", ");
 		result.append(value);
 		result.append(')');
 		return result.toString();

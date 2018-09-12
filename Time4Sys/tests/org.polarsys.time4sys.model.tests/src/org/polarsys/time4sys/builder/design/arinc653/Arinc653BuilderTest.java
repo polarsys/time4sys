@@ -108,15 +108,15 @@ public class Arinc653BuilderTest {
 			// Pass
 		}
 		
-		assertEquals("[0ms,10ms[", activationsOf1.get(0).toString());
+		assertEquals("[0ms..10ms[", activationsOf1.get(0).toString());
 		
 		part1.getOrCreateTableEntry().getOffset().add(NfpFactory.eINSTANCE.createDurationFromString("40ms"));
 		part1.getOrCreateTableEntry().getTimeSlot().add(NfpFactory.eINSTANCE.createDurationFromString("20ms"));
 		
 		activationsOf1 = part1.getOrCreateTableEntry().getActivation();
 		assertEquals(2, activationsOf1.size());
-		assertEquals("[0ms,10ms[", activationsOf1.get(0).toString());
-		assertEquals("[40ms,60ms[", activationsOf1.get(1).toString());
+		assertEquals("[0ms..10ms[", activationsOf1.get(0).toString());
+		assertEquals("[40ms..60ms[", activationsOf1.get(1).toString());
 		
 	}
 
@@ -280,13 +280,13 @@ public class Arinc653BuilderTest {
 		final TableEntryType tableEntry1 = part1.getOrCreateTableEntry();
 		final EList<TimeInterval> activationsOf1 = tableEntry1.getActivation();
 		assertEquals(2, activationsOf1.size());
-		assertEquals("[0ms,45ms[", activationsOf1.get(0).toString());
-		assertEquals("[60ms,70ms[", activationsOf1.get(1).toString());
+		assertEquals("[0ms..45ms[", activationsOf1.get(0).toString());
+		assertEquals("[60ms..70ms[", activationsOf1.get(1).toString());
 		
 		final EList<TimeInterval> activationsOf2 = part2.getOrCreateTableEntry().getActivation();
 		assertEquals(2, activationsOf2.size());
-		assertEquals("[45ms,60ms[", activationsOf2.get(0).toString());
-		assertEquals("[70ms,120ms[", activationsOf2.get(1).toString());
+		assertEquals("[45ms..60ms[", activationsOf2.get(0).toString());
+		assertEquals("[70ms..120ms[", activationsOf2.get(1).toString());
 		
 		assertEquals("60ms", platform.getMIFDuration().toString());
 		assertEquals("120ms", platform.getMAFDuration().toString());

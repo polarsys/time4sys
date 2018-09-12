@@ -360,4 +360,10 @@ public class PointInTimeTest extends DurationTest {
 		assertEquals(Double.POSITIVE_INFINITY, d.getValue());
 	}
 	
+	public void testBestWorst() {
+		final Duration dUs = NfpFactory.eINSTANCE.createDurationFromString("10us");
+		assertEquals(10.0, dUs.getBest());
+		assertEquals(10.0, dUs.getWorst());
+	}
+	
 } //DurationTest

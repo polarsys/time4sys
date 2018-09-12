@@ -2,8 +2,6 @@
  */
 package org.polarsys.time4sys.marte.nfp.tests;
 
-import junit.textui.TestRunner;
-
 import java.math.MathContext;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
@@ -11,6 +9,9 @@ import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.nfp.UniformDistribution;
+import org.polarsys.time4sys.marte.nfp.impl.UniformDistributionImpl;
+
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,7 +102,7 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 		assertEquals(false, interval.isMaxOpen());
 		assertEquals("11ms", interval.getMin().toString());
 		assertEquals("12ms", interval.getMax().toString());
-		assertEquals("]11ms,12ms]", interval.toString());
+		assertEquals("]11ms..12ms]", interval.toString());
 	}
 	
 	public void testConvertToUnit__TimeUnitKind() {
@@ -130,34 +131,37 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 
 	@Override
 	public void testMax__Duration() {
+		super.testMax__Duration();
 		assertEquals("10ms", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
-		assertEquals("uniform(]3ms,5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]3ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
-		assertEquals("uniform([3ms,5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+		assertEquals("uniform(]3ms..5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]3ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
+		assertEquals("uniform([3ms..5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").max(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+		
 	}
 
 	@Override
 	public void testMin__Duration() {
-		assertEquals("uniform(]0ms,5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
+		super.testMin__Duration();
+		assertEquals("uniform(]0ms..5ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("10ms")).toString());
 		assertEquals("0ms", NfpFactory.eINSTANCE.createUniformDistribution("]3ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("0ms")).toString());
-		assertEquals("uniform(]0ms,3ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
+		assertEquals("uniform(]0ms..3ms])", NfpFactory.eINSTANCE.createUniformDistribution("]0ms, 5ms]").min(NfpFactory.eINSTANCE.createDurationFromString("3ms")).toString());
 	}
 	
 	public void testAdd__Duration() {
-		assertEquals("uniform([3ms,12ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createDurationFromString("2ms")).toString());
-		assertEquals("uniform([3ms,15ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
-		assertEquals("uniform([3ms,15ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
+		assertEquals("uniform([3ms..12ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createDurationFromString("2ms")).toString());
+		assertEquals("uniform([3ms..15ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
+		assertEquals("uniform([3ms..15ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").add(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
 	}
 
 	@Override
 	public void testSub__Duration() {
 		super.testSub__Duration();
-		assertEquals("uniform([1ms,10ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[3ms,12ms[").sub(NfpFactory.eINSTANCE.createUniformDistribution("2ms")).toString());
-		assertEquals("uniform([0ms,8ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
+		assertEquals("uniform([1ms..10ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[3ms,12ms[").sub(NfpFactory.eINSTANCE.createUniformDistribution("2ms")).toString());
+		assertEquals("uniform([0ms..8ms[)", NfpFactory.eINSTANCE.createUniformDistribution("[5ms,10ms[").sub(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")).toString());
 	}
 	
 	@Override
 	public void testMultiply__long() {
-		assertEquals("uniform(]3ms,18ms])", NfpFactory.eINSTANCE.createUniformDistribution("]1ms,6ms]").multiply(3).toString());
+		assertEquals("uniform(]3ms..18ms])", NfpFactory.eINSTANCE.createUniformDistribution("]1ms,6ms]").multiply(3).toString());
 	}
 
 	@Override
@@ -188,7 +192,7 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 	}
 
 	public void testDivide__long() {
-		assertEquals("uniform(]1ms,6ms])", NfpFactory.eINSTANCE.createUniformDistribution("]3ms,18ms]").divide(3).toString());
+		assertEquals("uniform(]1ms..6ms])", NfpFactory.eINSTANCE.createUniformDistribution("]3ms,18ms]").divide(3).toString());
 	}
 	
 	public void testSimplify() {
@@ -290,7 +294,7 @@ public class UniformDistributionTest extends ProbabilisticDurationTest {
 			}
 		}
 	}
-	
+
 //	public void testCompareTo__Duration() {
 //		super.testCompareTo__Duration();
 //		assertFalse(NfpFactory.eINSTANCE.createUniformDistribution("[1ms,10ms[").compareTo(NfpFactory.eINSTANCE.createUniformDistribution("[2ms, 5ms]")));
