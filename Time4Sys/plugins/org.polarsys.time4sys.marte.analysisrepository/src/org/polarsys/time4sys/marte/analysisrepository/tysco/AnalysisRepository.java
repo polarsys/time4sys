@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllContextModels <em>All Context Models</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllRules <em>All Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllTests <em>All Tests</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllInnerTransfos <em>All Inner Transfos</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getAnalysisRepository()
@@ -127,5 +128,21 @@ public interface AnalysisRepository extends EObject {
 	 * @generated
 	 */
 	EList<Test> getAllTests();
+
+	/**
+	 * Returns the value of the '<em><b>All Inner Transfos</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Inner Transfos</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Inner Transfos</em>' containment reference list.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getAnalysisRepository_AllInnerTransfos()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<InnerTransformation> getAllInnerTransfos();
 
 } // AnalysisRepository

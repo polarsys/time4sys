@@ -71,6 +71,7 @@ public class TyscoFactoryImpl extends EFactoryImpl implements TyscoFactory {
 			case TyscoPackage.TRANSFORMATION: return createTransformation();
 			case TyscoPackage.RULE_GROUP: return createRuleGroup();
 			case TyscoPackage.EXPECTED_EVALUATION_VALUE: return createExpectedEvaluationValue();
+			case TyscoPackage.INNER_TRANSFORMATION: return createInnerTransformation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -252,6 +253,16 @@ public class TyscoFactoryImpl extends EFactoryImpl implements TyscoFactory {
 	public ExpectedEvaluationValue createExpectedEvaluationValue() {
 		ExpectedEvaluationValueImpl expectedEvaluationValue = new ExpectedEvaluationValueImpl();
 		return expectedEvaluationValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InnerTransformation createInnerTransformation() {
+		InnerTransformationImpl innerTransformation = new InnerTransformationImpl();
+		return innerTransformation;
 	}
 
 	/**

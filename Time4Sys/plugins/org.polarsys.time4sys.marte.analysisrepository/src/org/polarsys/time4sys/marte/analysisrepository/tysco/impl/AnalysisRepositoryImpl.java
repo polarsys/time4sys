@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
 
@@ -36,6 +37,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.AnalysisRepositoryImpl#getAllContextModels <em>All Context Models</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.AnalysisRepositoryImpl#getAllRules <em>All Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.AnalysisRepositoryImpl#getAllTests <em>All Tests</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.AnalysisRepositoryImpl#getAllInnerTransfos <em>All Inner Transfos</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +112,16 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<Test> allTests;
+
+	/**
+	 * The cached value of the '{@link #getAllInnerTransfos() <em>All Inner Transfos</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllInnerTransfos()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<InnerTransformation> allInnerTransfos;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -213,6 +225,18 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<InnerTransformation> getAllInnerTransfos() {
+		if (allInnerTransfos == null) {
+			allInnerTransfos = new EObjectContainmentEList<InnerTransformation>(InnerTransformation.class, this, TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS);
+		}
+		return allInnerTransfos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -222,6 +246,8 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 				return ((InternalEList<?>)getAllRules()).basicRemove(otherEnd, msgs);
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_TESTS:
 				return ((InternalEList<?>)getAllTests()).basicRemove(otherEnd, msgs);
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
+				return ((InternalEList<?>)getAllInnerTransfos()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -244,6 +270,8 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 				return getAllRules();
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_TESTS:
 				return getAllTests();
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
+				return getAllInnerTransfos();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +303,10 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 				getAllTests().clear();
 				getAllTests().addAll((Collection<? extends Test>)newValue);
 				return;
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
+				getAllInnerTransfos().clear();
+				getAllInnerTransfos().addAll((Collection<? extends InnerTransformation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -302,6 +334,9 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_TESTS:
 				getAllTests().clear();
 				return;
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
+				getAllInnerTransfos().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -324,6 +359,8 @@ public class AnalysisRepositoryImpl extends MinimalEObjectImpl.Container impleme
 				return allRules != null && !allRules.isEmpty();
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_TESTS:
 				return allTests != null && !allTests.isEmpty();
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
+				return allInnerTransfos != null && !allInnerTransfos.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

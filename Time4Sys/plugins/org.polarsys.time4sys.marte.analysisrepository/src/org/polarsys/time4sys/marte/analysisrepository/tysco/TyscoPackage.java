@@ -115,13 +115,22 @@ public interface TyscoPackage extends EPackage {
 	int ANALYSIS_REPOSITORY__ALL_TESTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>All Inner Transfos</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Analysis Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANALYSIS_REPOSITORY_FEATURE_COUNT = 5;
+	int ANALYSIS_REPOSITORY_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Analysis Repository</em>' class.
@@ -1112,6 +1121,70 @@ public interface TyscoPackage extends EPackage {
 	int EXPECTED_EVALUATION_VALUE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl <em>Inner Transformation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getInnerTransformation()
+	 * @generated
+	 */
+	int INNER_TRANSFORMATION = 17;
+
+	/**
+	 * The feature id for the '<em><b>Context Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__CONTEXT_MODEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__ID = 1;
+
+	/**
+	 * The feature id for the '<em><b>Turn True</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__TURN_TRUE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Turn False</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__TURN_FALSE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Inner Transformation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Inner Transformation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType <em>Evaluation Result Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1119,7 +1192,7 @@ public interface TyscoPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getEvaluationResultType()
 	 * @generated
 	 */
-	int EVALUATION_RESULT_TYPE = 17;
+	int EVALUATION_RESULT_TYPE = 18;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.JunctionType <em>Junction Type</em>}' enum.
@@ -1129,7 +1202,7 @@ public interface TyscoPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getJunctionType()
 	 * @generated
 	 */
-	int JUNCTION_TYPE = 18;
+	int JUNCTION_TYPE = 19;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType <em>Truth Type</em>}' enum.
@@ -1139,7 +1212,7 @@ public interface TyscoPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getTruthType()
 	 * @generated
 	 */
-	int TRUTH_TYPE = 19;
+	int TRUTH_TYPE = 20;
 
 
 	/**
@@ -1206,6 +1279,17 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnalysisRepository_AllTests();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllInnerTransfos <em>All Inner Transfos</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>All Inner Transfos</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository#getAllInnerTransfos()
+	 * @see #getAnalysisRepository()
+	 * @generated
+	 */
+	EReference getAnalysisRepository_AllInnerTransfos();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel <em>Context Model</em>}'.
@@ -1841,6 +1925,60 @@ public interface TyscoPackage extends EPackage {
 	EReference getExpectedEvaluationValue_AssociatedRule();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation <em>Inner Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Inner Transformation</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation
+	 * @generated
+	 */
+	EClass getInnerTransformation();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getContextModel <em>Context Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Model</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getContextModel()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EReference getInnerTransformation_ContextModel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getId()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EAttribute getInnerTransformation_Id();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getTurnTrue <em>Turn True</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Turn True</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getTurnTrue()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EReference getInnerTransformation_TurnTrue();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getTurnFalse <em>Turn False</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Turn False</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getTurnFalse()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EReference getInnerTransformation_TurnFalse();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType <em>Evaluation Result Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1942,6 +2080,14 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANALYSIS_REPOSITORY__ALL_TESTS = eINSTANCE.getAnalysisRepository_AllTests();
+
+		/**
+		 * The meta object literal for the '<em><b>All Inner Transfos</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS = eINSTANCE.getAnalysisRepository_AllInnerTransfos();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.ContextModelImpl <em>Context Model</em>}' class.
@@ -2446,6 +2592,48 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXPECTED_EVALUATION_VALUE__ASSOCIATED_RULE = eINSTANCE.getExpectedEvaluationValue_AssociatedRule();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl <em>Inner Transformation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl
+		 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getInnerTransformation()
+		 * @generated
+		 */
+		EClass INNER_TRANSFORMATION = eINSTANCE.getInnerTransformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Model</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INNER_TRANSFORMATION__CONTEXT_MODEL = eINSTANCE.getInnerTransformation_ContextModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INNER_TRANSFORMATION__ID = eINSTANCE.getInnerTransformation_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Turn True</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INNER_TRANSFORMATION__TURN_TRUE = eINSTANCE.getInnerTransformation_TurnTrue();
+
+		/**
+		 * The meta object literal for the '<em><b>Turn False</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INNER_TRANSFORMATION__TURN_FALSE = eINSTANCE.getInnerTransformation_TurnFalse();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType <em>Evaluation Result Type</em>}' enum.

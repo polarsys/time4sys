@@ -330,6 +330,19 @@ public class AnalysisRepositoryControler {
 			resultUI.addMatchedContext(id, name, description);
 		}
 	}
+	
+	/**
+	 * Display appropriate contexts info
+	 */
+	public void fillInnerTransformations() {
+		// Construct info for UI to display
+		for (ContextModel ctx : appropriateContexts) {
+			String id = "" + ctx.getId();
+			String name = ctx.getName();
+			String description = ctx.getDescription();
+			resultUI.addMatchedContext(id, name, description);
+		}
+	}
 
 	/**
 	 * Display details contexts info
@@ -346,6 +359,18 @@ public class AnalysisRepositoryControler {
 		}
 	}
 
+	public void fillInnerTransfos(){
+		for (ContextModel ctx : analysisRepository.getAllContextModels()) {
+			if (isAccepted(ctx))
+				resultUI.addAcceptedContextModelDetail(ctx);
+			else {
+				String matchedPercent = computeMatchedPercent(ctx);
+				resultUI.addNotAcceptedContextModelDetail(ctx, matchedPercent);
+			}
+		}
+
+	}
+	
 	/**
 	 * Compute matched percent
 	 * 
@@ -435,6 +460,14 @@ public class AnalysisRepositoryControler {
 		}
 	}
 
+	public void displayScanResult(ContextModel ctx) {
+		System.out.println("test");
+	}
+	
+	public void executeAllTransfoAndAnalyse(ContextModel ctx) {
+		System.out.println("test");
+	}
+	
 	/**
 	 * Generate graph corresponding to evaluation result of identification rules
 	 * 

@@ -18,6 +18,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ExecutionTime_Sustai
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ExpectedEvaluationValue;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.FeasibilityType;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Jitter_Sustainability;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.JunctionType;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.NecessaryCondition;
@@ -166,6 +167,13 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass innerTransformationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum evaluationResultTypeEEnum = null;
 
 	/**
@@ -304,6 +312,15 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 */
 	public EReference getAnalysisRepository_AllTests() {
 		return (EReference)analysisRepositoryEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAnalysisRepository_AllInnerTransfos() {
+		return (EReference)analysisRepositoryEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -842,6 +859,51 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInnerTransformation() {
+		return innerTransformationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInnerTransformation_ContextModel() {
+		return (EReference)innerTransformationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInnerTransformation_Id() {
+		return (EAttribute)innerTransformationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInnerTransformation_TurnTrue() {
+		return (EReference)innerTransformationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInnerTransformation_TurnFalse() {
+		return (EReference)innerTransformationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getEvaluationResultType() {
 		return evaluationResultTypeEEnum;
 	}
@@ -898,6 +960,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEReference(analysisRepositoryEClass, ANALYSIS_REPOSITORY__ALL_CONTEXT_MODELS);
 		createEReference(analysisRepositoryEClass, ANALYSIS_REPOSITORY__ALL_RULES);
 		createEReference(analysisRepositoryEClass, ANALYSIS_REPOSITORY__ALL_TESTS);
+		createEReference(analysisRepositoryEClass, ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS);
 
 		contextModelEClass = createEClass(CONTEXT_MODEL);
 		createEAttribute(contextModelEClass, CONTEXT_MODEL__ID);
@@ -974,6 +1037,12 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEAttribute(expectedEvaluationValueEClass, EXPECTED_EVALUATION_VALUE__VALUE);
 		createEReference(expectedEvaluationValueEClass, EXPECTED_EVALUATION_VALUE__ASSOCIATED_RULE);
 
+		innerTransformationEClass = createEClass(INNER_TRANSFORMATION);
+		createEReference(innerTransformationEClass, INNER_TRANSFORMATION__CONTEXT_MODEL);
+		createEAttribute(innerTransformationEClass, INNER_TRANSFORMATION__ID);
+		createEReference(innerTransformationEClass, INNER_TRANSFORMATION__TURN_TRUE);
+		createEReference(innerTransformationEClass, INNER_TRANSFORMATION__TURN_FALSE);
+
 		// Create enums
 		evaluationResultTypeEEnum = createEEnum(EVALUATION_RESULT_TYPE);
 		junctionTypeEEnum = createEEnum(JUNCTION_TYPE);
@@ -1024,6 +1093,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEReference(getAnalysisRepository_AllContextModels(), this.getContextModel(), null, "allContextModels", null, 0, -1, AnalysisRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysisRepository_AllRules(), this.getIdentificationRule(), null, "allRules", null, 0, -1, AnalysisRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAnalysisRepository_AllTests(), this.getTest(), null, "allTests", null, 0, -1, AnalysisRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysisRepository_AllInnerTransfos(), this.getInnerTransformation(), null, "allInnerTransfos", null, 0, -1, AnalysisRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(contextModelEClass, ContextModel.class, "ContextModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextModel_Id(), ecorePackage.getEInt(), "id", null, 1, 1, ContextModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1099,6 +1169,12 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEClass(expectedEvaluationValueEClass, ExpectedEvaluationValue.class, "ExpectedEvaluationValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getExpectedEvaluationValue_Value(), this.getTruthType(), "value", null, 0, 1, ExpectedEvaluationValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExpectedEvaluationValue_AssociatedRule(), this.getIdentificationRule(), null, "associatedRule", null, 1, 1, ExpectedEvaluationValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(innerTransformationEClass, InnerTransformation.class, "InnerTransformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInnerTransformation_ContextModel(), this.getContextModel(), null, "contextModel", null, 1, 1, InnerTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInnerTransformation_Id(), ecorePackage.getEInt(), "id", null, 1, 1, InnerTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInnerTransformation_TurnTrue(), this.getIdentificationRule(), null, "turnTrue", null, 0, -1, InnerTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInnerTransformation_TurnFalse(), this.getIdentificationRule(), null, "turnFalse", null, 0, -1, InnerTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(evaluationResultTypeEEnum, EvaluationResultType.class, "EvaluationResultType");

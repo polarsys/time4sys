@@ -27,6 +27,8 @@
         eType="#//IdentificationRule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allTests" upperBound="-1"
         eType="#//Test" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allInnerTransfos" upperBound="-1"
+        eType="#//InnerTransformation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContextModel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -156,6 +158,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExpectedEvaluationValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//TruthType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associatedRule" lowerBound="1"
+        eType="#//IdentificationRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InnerTransformation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextModel" lowerBound="1"
+        eType="#//ContextModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="turnTrue" upperBound="-1"
+        eType="#//IdentificationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="turnFalse" upperBound="-1"
         eType="#//IdentificationRule"/>
   </eClassifiers>
 </ecore:EPackage>

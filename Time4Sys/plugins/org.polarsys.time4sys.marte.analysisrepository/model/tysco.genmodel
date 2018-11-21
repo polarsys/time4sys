@@ -28,6 +28,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allContextModels"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allRules"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allTests"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tysco.ecore#//AnalysisRepository/allInnerTransfos"/>
     </genClasses>
     <genClasses ecoreClass="tysco.ecore#//ContextModel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ContextModel/id"/>
@@ -55,6 +56,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/requiredRules"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/equivalentRules"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//IdentificationRule/conflictualRules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//IdentificationRule/formalExpression"/>
     </genClasses>
     <genClasses ecoreClass="tysco.ecore#//TestImplementation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//TestImplementation/id"/>
@@ -94,6 +96,12 @@
     <genClasses ecoreClass="tysco.ecore#//ExpectedEvaluationValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//ExpectedEvaluationValue/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//ExpectedEvaluationValue/associatedRule"/>
+    </genClasses>
+    <genClasses ecoreClass="tysco.ecore#//InnerTransformation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//InnerTransformation/contextModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tysco.ecore#//InnerTransformation/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//InnerTransformation/turnTrue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tysco.ecore#//InnerTransformation/turnFalse"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

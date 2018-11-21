@@ -136,6 +136,10 @@ public class TyscoAdapterFactory extends AdapterFactoryImpl {
 				return createExpectedEvaluationValueAdapter();
 			}
 			@Override
+			public Adapter caseInnerTransformation(InnerTransformation object) {
+				return createInnerTransformationAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -390,6 +394,20 @@ public class TyscoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExpectedEvaluationValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation <em>Inner Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation
+	 * @generated
+	 */
+	public Adapter createInnerTransformationAdapter() {
 		return null;
 	}
 

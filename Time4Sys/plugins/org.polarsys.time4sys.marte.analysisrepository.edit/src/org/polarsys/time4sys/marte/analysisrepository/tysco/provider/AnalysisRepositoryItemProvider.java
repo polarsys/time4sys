@@ -128,6 +128,7 @@ public class AnalysisRepositoryItemProvider
 			childrenFeatures.add(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_CONTEXT_MODELS);
 			childrenFeatures.add(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_RULES);
 			childrenFeatures.add(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_TESTS);
+			childrenFeatures.add(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS);
 		}
 		return childrenFeatures;
 	}
@@ -190,6 +191,7 @@ public class AnalysisRepositoryItemProvider
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_CONTEXT_MODELS:
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_RULES:
 			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_TESTS:
+			case TyscoPackage.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -221,6 +223,11 @@ public class AnalysisRepositoryItemProvider
 			(createChildParameter
 				(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_TESTS,
 				 TyscoFactory.eINSTANCE.createTest()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyscoPackage.Literals.ANALYSIS_REPOSITORY__ALL_INNER_TRANSFOS,
+				 TyscoFactory.eINSTANCE.createInnerTransformation()));
 	}
 
 	/**

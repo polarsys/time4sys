@@ -394,6 +394,29 @@ public class TyscoItemProviderAdapterFactory extends TyscoAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InnerTransformationItemProvider innerTransformationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInnerTransformationAdapter() {
+		if (innerTransformationItemProvider == null) {
+			innerTransformationItemProvider = new InnerTransformationItemProvider(this);
+		}
+
+		return innerTransformationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -506,6 +529,7 @@ public class TyscoItemProviderAdapterFactory extends TyscoAdapterFactory impleme
 		if (transformationItemProvider != null) transformationItemProvider.dispose();
 		if (ruleGroupItemProvider != null) ruleGroupItemProvider.dispose();
 		if (expectedEvaluationValueItemProvider != null) expectedEvaluationValueItemProvider.dispose();
+		if (innerTransformationItemProvider != null) innerTransformationItemProvider.dispose();
 	}
 
 }

@@ -120,6 +120,8 @@ public class TyscoValidator extends EObjectValidator {
 				return validateRuleGroup((RuleGroup)value, diagnostics, context);
 			case TyscoPackage.EXPECTED_EVALUATION_VALUE:
 				return validateExpectedEvaluationValue((ExpectedEvaluationValue)value, diagnostics, context);
+			case TyscoPackage.INNER_TRANSFORMATION:
+				return validateInnerTransformation((InnerTransformation)value, diagnostics, context);
 			case TyscoPackage.EVALUATION_RESULT_TYPE:
 				return validateEvaluationResultType((EvaluationResultType)value, diagnostics, context);
 			case TyscoPackage.JUNCTION_TYPE:
@@ -701,6 +703,15 @@ public class TyscoValidator extends EObjectValidator {
 	 */
 	public boolean validateExpectedEvaluationValue(ExpectedEvaluationValue expectedEvaluationValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(expectedEvaluationValue, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInnerTransformation(InnerTransformation innerTransformation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(innerTransformation, diagnostics, context);
 	}
 
 	/**
