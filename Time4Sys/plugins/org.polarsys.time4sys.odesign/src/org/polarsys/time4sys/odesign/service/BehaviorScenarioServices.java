@@ -421,7 +421,7 @@ public class BehaviorScenarioServices {
 				// first iteration
 				if (isFirst) {
 					if ((select instanceof DEdge) && target instanceof ArrivalPattern) {
-						first = (((WorkloadEvent) ((ArrivalPattern) target).eContainer()).getEffect());
+						first = (BehaviorScenario) (((WorkloadEvent) ((ArrivalPattern) target).eContainer()).getEffect());
 					} else {
 						return false;
 					}

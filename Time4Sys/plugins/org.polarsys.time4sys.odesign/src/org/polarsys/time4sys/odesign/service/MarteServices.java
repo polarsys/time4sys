@@ -35,6 +35,7 @@ import org.polarsys.time4sys.marte.gqam.BurstPattern;
 import org.polarsys.time4sys.marte.gqam.ClosedPattern;
 import org.polarsys.time4sys.marte.gqam.ConnectorKind;
 import org.polarsys.time4sys.marte.gqam.ExecutionStep;
+import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
@@ -651,11 +652,11 @@ public class MarteServices {
 	}
 
 	public void setEffect(EObject source, EObject target) {
-		if (source instanceof ArrivalPattern && target instanceof Step) {
+		if (source instanceof ArrivalPattern && target instanceof FlowInvolvedElement) {
 			ArrivalPattern ap = (ArrivalPattern) source;
 			if (ap.eContainer() instanceof WorkloadEvent) {
 				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
-				we.setEffect((Step) target);
+				we.setEffect((FlowInvolvedElement) target);
 			}
 		}
 	}

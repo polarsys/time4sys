@@ -63,6 +63,7 @@ public class PinItemProvider extends MultiplicityElementItemProvider {
 			addNamePropertyDescriptor(object);
 			addOrderingPropertyDescriptor(object);
 			addTypenamePropertyDescriptor(object);
+			addCausePropertyDescriptor(object);
 			addIsControlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -130,6 +131,28 @@ public class PinItemProvider extends MultiplicityElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cause feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCausePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_FlowInvolvedElement_cause_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FlowInvolvedElement_cause_feature", "_UI_FlowInvolvedElement_type"),
+				 GqamPackage.Literals.FLOW_INVOLVED_ELEMENT__CAUSE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

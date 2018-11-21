@@ -104,22 +104,22 @@ public interface GqamPackage extends EPackage {
 	int BEHAVIOR_SCENARIO__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__STEPS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_SCENARIO__CAUSE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int BEHAVIOR_SCENARIO__CAUSE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__STEPS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -241,15 +241,6 @@ public interface GqamPackage extends EPackage {
 	int STEP__NAME = BEHAVIOR_SCENARIO__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__STEPS = BEHAVIOR_SCENARIO__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,6 +248,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int STEP__CAUSE = BEHAVIOR_SCENARIO__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__STEPS = BEHAVIOR_SCENARIO__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -524,15 +524,6 @@ public interface GqamPackage extends EPackage {
 	int ACQUIRE_STEP__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACQUIRE_STEP__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -540,6 +531,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACQUIRE_STEP__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1395,15 +1395,6 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_STEP__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1411,6 +1402,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_STEP__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1666,15 +1666,6 @@ public interface GqamPackage extends EPackage {
 	int DELAY__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELAY__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1682,6 +1673,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELAY__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1918,15 +1918,6 @@ public interface GqamPackage extends EPackage {
 	int EXECUTION_STEP__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTION_STEP__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1934,6 +1925,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTION_STEP__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -2153,13 +2153,22 @@ public interface GqamPackage extends EPackage {
 	int FLOW_INVOLVED_ELEMENT = 9;
 
 	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW_INVOLVED_ELEMENT__CAUSE = 0;
+
+	/**
 	 * The number of structural features of the '<em>Flow Involved Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_INVOLVED_ELEMENT_FEATURE_COUNT = 0;
+	int FLOW_INVOLVED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Flow Involved Element</em>' class.
@@ -2261,13 +2270,22 @@ public interface GqamPackage extends EPackage {
 	int PIN__TYPENAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__CAUSE = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
+	int PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -2276,7 +2294,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__IS_CONTROL = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
+	int PIN__IS_CONTROL = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Pin</em>' class.
@@ -2285,7 +2303,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
+	int PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2358,6 +2376,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PIN__TYPENAME = PIN__TYPENAME;
+
+	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__CAUSE = PIN__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -2823,6 +2850,15 @@ public interface GqamPackage extends EPackage {
 	int OUTPUT_PIN__TYPENAME = PIN__TYPENAME;
 
 	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUT_PIN__CAUSE = PIN__CAUSE;
+
+	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3084,15 +3120,6 @@ public interface GqamPackage extends EPackage {
 	int RELEASE_STEP__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELEASE_STEP__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3100,6 +3127,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELEASE_STEP__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -3345,15 +3381,6 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUESTED_SERVICE__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3361,6 +3388,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUESTED_SERVICE__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -3588,15 +3624,6 @@ public interface GqamPackage extends EPackage {
 	int RESOURCE_SERVICE_EXCECUTION__NAME = STEP__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_SERVICE_EXCECUTION__STEPS = STEP__STEPS;
-
-	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3604,6 +3631,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_SERVICE_EXCECUTION__CAUSE = STEP__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__STEPS = STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -4207,17 +4243,6 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehaviorScenario_Steps();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getCause <em>Cause</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Cause</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.BehaviorScenario#getCause()
-	 * @see #getBehaviorScenario()
-	 * @generated
-	 */
-	EReference getBehaviorScenario_Cause();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getRoot <em>Root</em>}'.
@@ -5096,6 +5121,17 @@ public interface GqamPackage extends EPackage {
 	EClass getFlowInvolvedElement();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.time4sys.marte.gqam.FlowInvolvedElement#getCause <em>Cause</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Cause</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.FlowInvolvedElement#getCause()
+	 * @see #getFlowInvolvedElement()
+	 * @generated
+	 */
+	EReference getFlowInvolvedElement_Cause();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern <em>Arrival Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5326,14 +5362,6 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIOR_SCENARIO__STEPS = eINSTANCE.getBehaviorScenario_Steps();
-
-		/**
-		 * The meta object literal for the '<em><b>Cause</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BEHAVIOR_SCENARIO__CAUSE = eINSTANCE.getBehaviorScenario_Cause();
 
 		/**
 		 * The meta object literal for the '<em><b>Root</b></em>' reference feature.
@@ -6038,6 +6066,14 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FLOW_INVOLVED_ELEMENT = eINSTANCE.getFlowInvolvedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Cause</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FLOW_INVOLVED_ELEMENT__CAUSE = eINSTANCE.getFlowInvolvedElement_Cause();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.

@@ -407,7 +407,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehaviorScenario_Cause() {
+	public EReference getBehaviorScenario_Root() {
 		return (EReference)behaviorScenarioEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -416,7 +416,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehaviorScenario_Root() {
+	public EReference getBehaviorScenario_ParentStep() {
 		return (EReference)behaviorScenarioEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -425,7 +425,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehaviorScenario_ParentStep() {
+	public EReference getBehaviorScenario_Connectors() {
 		return (EReference)behaviorScenarioEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -434,17 +434,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehaviorScenario_Connectors() {
-		return (EReference)behaviorScenarioEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getBehaviorScenario_RespTime() {
-		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -453,7 +444,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	public EAttribute getBehaviorScenario_BestCET() {
-		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -462,7 +453,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * @generated
 	 */
 	public EAttribute getBehaviorScenario_WorstCET() {
-		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)behaviorScenarioEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1154,6 +1145,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFlowInvolvedElement_Cause() {
+		return (EReference)flowInvolvedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArrivalPattern() {
 		return arrivalPatternEClass;
 	}
@@ -1351,7 +1351,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		behaviorScenarioEClass = createEClass(BEHAVIOR_SCENARIO);
 		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__STEPS);
-		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__CAUSE);
 		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__ROOT);
 		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__PARENT_STEP);
 		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__CONNECTORS);
@@ -1384,6 +1383,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		executionStepEClass = createEClass(EXECUTION_STEP);
 
 		flowInvolvedElementEClass = createEClass(FLOW_INVOLVED_ELEMENT);
+		createEReference(flowInvolvedElementEClass, FLOW_INVOLVED_ELEMENT__CAUSE);
 
 		inputPinEClass = createEClass(INPUT_PIN);
 		createEReference(inputPinEClass, INPUT_PIN__PREDECESSORS);
@@ -1555,7 +1555,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		initEClass(behaviorScenarioEClass, BehaviorScenario.class, "BehaviorScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorScenario_Steps(), this.getStep(), this.getStep_Scenario(), "steps", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorScenario_Cause(), this.getWorkloadEvent(), this.getWorkloadEvent_Effect(), "cause", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehaviorScenario_Root(), this.getStep(), null, "root", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehaviorScenario_ParentStep(), this.getStep(), this.getStep_ChildScenario(), "parentStep", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehaviorScenario_Connectors(), this.getPrecedenceRelation(), null, "connectors", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1592,6 +1591,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(flowInvolvedElementEClass, FlowInvolvedElement.class, "FlowInvolvedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFlowInvolvedElement_Cause(), this.getWorkloadEvent(), this.getWorkloadEvent_Effect(), "cause", null, 0, -1, FlowInvolvedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInputPin_Predecessors(), this.getOutputPin(), this.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1671,7 +1671,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getWorkloadBehavior_References(), this.getReference(), null, "references", null, 0, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadEvent_Effect(), this.getFlowInvolvedElement(), this.getFlowInvolvedElement_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

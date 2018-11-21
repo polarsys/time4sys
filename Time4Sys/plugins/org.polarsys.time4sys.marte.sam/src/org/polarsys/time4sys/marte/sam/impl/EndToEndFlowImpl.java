@@ -445,7 +445,7 @@ public class EndToEndFlowImpl extends NamedElementImpl implements EndToEndFlow {
 	private void forwardMarking(final Set<BehaviorScenario> accumulator) {
 		final Queue<BehaviorScenario> toExplore = new ConcurrentLinkedQueue<>();
 		for (WorkloadEvent evt : getEndToEndStimuli()) {
-			toExplore.add(evt.getEffect());
+			toExplore.add((BehaviorScenario) evt.getEffect());
 		}
 		while (!toExplore.isEmpty()) {
 			final BehaviorScenario current = toExplore.poll();

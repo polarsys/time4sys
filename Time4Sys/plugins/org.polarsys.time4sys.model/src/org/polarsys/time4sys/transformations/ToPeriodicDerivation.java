@@ -112,7 +112,7 @@ public class ToPeriodicDerivation extends IdentityDerivation {
 		patternArtefact.setValue(newPattern);
 		patternArtefact.setName("modified");
 		copyLnk.setRationale(slide2periodic);
-		final BehaviorScenario step = evt.getEffect();
+		final BehaviorScenario step = (BehaviorScenario) evt.getEffect();
 		copyLnk.getTargets().add(mappingFactory.createMappableArtefact("step", step));
 		assert(step instanceof Step);
 		// Update wcet of step

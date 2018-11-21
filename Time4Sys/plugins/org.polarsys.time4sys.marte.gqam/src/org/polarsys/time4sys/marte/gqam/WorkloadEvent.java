@@ -34,7 +34,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 public interface WorkloadEvent extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Effect</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getCause <em>Cause</em>}'.
+	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.FlowInvolvedElement#getCause <em>Cause</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Effect</em>' reference isn't clear,
@@ -42,13 +42,13 @@ public interface WorkloadEvent extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Effect</em>' reference.
-	 * @see #setEffect(BehaviorScenario)
+	 * @see #setEffect(FlowInvolvedElement)
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getWorkloadEvent_Effect()
-	 * @see org.polarsys.time4sys.marte.gqam.BehaviorScenario#getCause
+	 * @see org.polarsys.time4sys.marte.gqam.FlowInvolvedElement#getCause
 	 * @model opposite="cause"
 	 * @generated
 	 */
-	BehaviorScenario getEffect();
+	FlowInvolvedElement getEffect();
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getEffect <em>Effect</em>}' reference.
@@ -58,7 +58,7 @@ public interface WorkloadEvent extends NamedElement {
 	 * @see #getEffect()
 	 * @generated
 	 */
-	void setEffect(BehaviorScenario value);
+	void setEffect(FlowInvolvedElement value);
 
 	/**
 	 * Returns the value of the '<em><b>Pattern</b></em>' containment reference.
