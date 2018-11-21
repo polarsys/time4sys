@@ -2236,6 +2236,7 @@ public class GrmPackageImpl extends EPackageImpl implements GrmPackage {
 		addEEnumLiteral(schedPolicyKindEEnum, SchedPolicyKind.LEAST_LAXITY_FIRST);
 		addEEnumLiteral(schedPolicyKindEEnum, SchedPolicyKind.ROUND_ROBIN);
 		addEEnumLiteral(schedPolicyKindEEnum, SchedPolicyKind.TIME_TABLE_DRIVEN);
+		addEEnumLiteral(schedPolicyKindEEnum, SchedPolicyKind.PARALLEL);
 		addEEnumLiteral(schedPolicyKindEEnum, SchedPolicyKind.OTHER);
 
 		initEEnum(transmModeKindEEnum, TransmModeKind.class, "TransmModeKind");

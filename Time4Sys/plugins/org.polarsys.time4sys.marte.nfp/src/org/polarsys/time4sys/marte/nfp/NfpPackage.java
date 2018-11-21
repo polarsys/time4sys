@@ -1914,7 +1914,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_INTERVAL___ADD__DURATION = 3;
+	int TIME_INTERVAL___ADD__TIMEINTERVAL = 3;
 
 	/**
 	 * The operation id for the '<em>Divide</em>' operation.
@@ -1923,7 +1923,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_INTERVAL___DIVIDE__DURATION = 4;
+	int TIME_INTERVAL___DIVIDE__LONG = 4;
 
 	/**
 	 * The operation id for the '<em>Max</em>' operation.
@@ -1959,7 +1959,7 @@ public interface NfpPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_INTERVAL___SUB__DURATION = 8;
+	int TIME_INTERVAL___SUB__TIMEINTERVAL = 8;
 
 	/**
 	 * The number of operations of the '<em>Time Interval</em>' class.
@@ -2187,6 +2187,232 @@ public interface NfpPackage extends EPackage {
 	int UNIFORM_DISTRIBUTION_OPERATION_COUNT = PROBABILISTIC_DURATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.impl.CyclicDurationImpl <em>Cyclic Duration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.nfp.impl.CyclicDurationImpl
+	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCyclicDuration()
+	 * @generated
+	 */
+	int CYCLIC_DURATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__VALUE = DURATION__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__UNIT = DURATION__UNIT;
+
+	/**
+	 * The feature id for the '<em><b>Best</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__BEST = DURATION__BEST;
+
+	/**
+	 * The feature id for the '<em><b>Worst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__WORST = DURATION__WORST;
+
+	/**
+	 * The feature id for the '<em><b>Clock</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__CLOCK = DURATION__CLOCK;
+
+	/**
+	 * The feature id for the '<em><b>Precision</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__PRECISION = DURATION__PRECISION;
+
+	/**
+	 * The feature id for the '<em><b>Durations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION__DURATIONS = DURATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Cyclic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION_FEATURE_COUNT = DURATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Add</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___ADD__DURATION = DURATION___ADD__DURATION;
+
+	/**
+	 * The operation id for the '<em>Compare To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___COMPARE_TO__DURATION = DURATION___COMPARE_TO__DURATION;
+
+	/**
+	 * The operation id for the '<em>Convert To Unit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___CONVERT_TO_UNIT__TIMEUNITKIND = DURATION___CONVERT_TO_UNIT__TIMEUNITKIND;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___DIV__DURATION = DURATION___DIV__DURATION;
+
+	/**
+	 * The operation id for the '<em>Div</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___DIV__DURATION_MATHCONTEXT = DURATION___DIV__DURATION_MATHCONTEXT;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___DIVIDE__DURATION = DURATION___DIVIDE__DURATION;
+
+	/**
+	 * The operation id for the '<em>Divide</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___DIVIDE__LONG = DURATION___DIVIDE__LONG;
+
+	/**
+	 * The operation id for the '<em>Is Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___IS_ZERO = DURATION___IS_ZERO;
+
+	/**
+	 * The operation id for the '<em>Lcm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___LCM__DURATION = DURATION___LCM__DURATION;
+
+	/**
+	 * The operation id for the '<em>Max</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___MAX__DURATION = DURATION___MAX__DURATION;
+
+	/**
+	 * The operation id for the '<em>Min</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___MIN__DURATION = DURATION___MIN__DURATION;
+
+	/**
+	 * The operation id for the '<em>Multiply</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___MULTIPLY__LONG = DURATION___MULTIPLY__LONG;
+
+	/**
+	 * The operation id for the '<em>Not Zero</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___NOT_ZERO = DURATION___NOT_ZERO;
+
+	/**
+	 * The operation id for the '<em>Simplify</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___SIMPLIFY = DURATION___SIMPLIFY;
+
+	/**
+	 * The operation id for the '<em>Sub</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION___SUB__DURATION = DURATION___SUB__DURATION;
+
+	/**
+	 * The number of operations of the '<em>Cyclic Duration</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CYCLIC_DURATION_OPERATION_COUNT = DURATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.TimeUnitKind <em>Time Unit Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2194,7 +2420,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getTimeUnitKind()
 	 * @generated
 	 */
-	int TIME_UNIT_KIND = 14;
+	int TIME_UNIT_KIND = 15;
 
 
 	/**
@@ -2205,7 +2431,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataSizeUnitKind()
 	 * @generated
 	 */
-	int DATA_SIZE_UNIT_KIND = 11;
+	int DATA_SIZE_UNIT_KIND = 12;
 
 
 	/**
@@ -2216,7 +2442,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDataTxRateUnitKind()
 	 * @generated
 	 */
-	int DATA_TX_RATE_UNIT_KIND = 12;
+	int DATA_TX_RATE_UNIT_KIND = 13;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.nfp.DiscreteDistributionKind <em>Discrete Distribution Kind</em>}' enum.
@@ -2226,7 +2452,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getDiscreteDistributionKind()
 	 * @generated
 	 */
-	int DISCRETE_DISTRIBUTION_KIND = 13;
+	int DISCRETE_DISTRIBUTION_KIND = 14;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -2236,7 +2462,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 16;
+	int NFP_DURATION = 17;
 
 
 	/**
@@ -2247,7 +2473,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getNFP_TimeInterval()
 	 * @generated
 	 */
-	int NFP_TIME_INTERVAL = 17;
+	int NFP_TIME_INTERVAL = 18;
 
 	/**
 	 * The meta object id for the '<em>Math Context</em>' data type.
@@ -2257,7 +2483,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getMathContext()
 	 * @generated
 	 */
-	int MATH_CONTEXT = 15;
+	int MATH_CONTEXT = 16;
 
 
 	/**
@@ -2578,7 +2804,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#add(org.polarsys.time4sys.marte.nfp.TimeInterval)
 	 * @generated
 	 */
-	EOperation getTimeInterval__Add__Duration();
+	EOperation getTimeInterval__Add__TimeInterval();
 
 	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long) <em>Divide</em>}' operation.
@@ -2588,7 +2814,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#divide(long)
 	 * @generated
 	 */
-	EOperation getTimeInterval__Divide__Duration();
+	EOperation getTimeInterval__Divide__long();
 
 	/**
 	 * Returns the meta object for the '{@link org.polarsys.time4sys.marte.nfp.TimeInterval#max(org.polarsys.time4sys.marte.nfp.Duration) <em>Max</em>}' operation.
@@ -2628,7 +2854,7 @@ public interface NfpPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.nfp.TimeInterval#sub(org.polarsys.time4sys.marte.nfp.TimeInterval)
 	 * @generated
 	 */
-	EOperation getTimeInterval__Sub__Duration();
+	EOperation getTimeInterval__Sub__TimeInterval();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>Data Size</em>}'.
@@ -3125,6 +3351,27 @@ public interface NfpPackage extends EPackage {
 	EAttribute getUniformDistribution_Interval();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.CyclicDuration <em>Cyclic Duration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Cyclic Duration</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.CyclicDuration
+	 * @generated
+	 */
+	EClass getCyclicDuration();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.marte.nfp.CyclicDuration#getDurations <em>Durations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Durations</em>'.
+	 * @see org.polarsys.time4sys.marte.nfp.CyclicDuration#getDurations()
+	 * @see #getCyclicDuration()
+	 * @generated
+	 */
+	EReference getCyclicDuration_Durations();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.nfp.CompositeDistribution <em>Composite Distribution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3491,7 +3738,7 @@ public interface NfpPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TIME_INTERVAL___ADD__DURATION = eINSTANCE.getTimeInterval__Add__Duration();
+		EOperation TIME_INTERVAL___ADD__TIMEINTERVAL = eINSTANCE.getTimeInterval__Add__TimeInterval();
 
 		/**
 		 * The meta object literal for the '<em><b>Divide</b></em>' operation.
@@ -3499,7 +3746,7 @@ public interface NfpPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TIME_INTERVAL___DIVIDE__DURATION = eINSTANCE.getTimeInterval__Divide__Duration();
+		EOperation TIME_INTERVAL___DIVIDE__LONG = eINSTANCE.getTimeInterval__Divide__long();
 
 		/**
 		 * The meta object literal for the '<em><b>Max</b></em>' operation.
@@ -3531,7 +3778,7 @@ public interface NfpPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation TIME_INTERVAL___SUB__DURATION = eINSTANCE.getTimeInterval__Sub__Duration();
+		EOperation TIME_INTERVAL___SUB__TIMEINTERVAL = eINSTANCE.getTimeInterval__Sub__TimeInterval();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.DataSizeImpl <em>Data Size</em>}' class.
@@ -3932,6 +4179,24 @@ public interface NfpPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNIFORM_DISTRIBUTION__INTERVAL = eINSTANCE.getUniformDistribution_Interval();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.CyclicDurationImpl <em>Cyclic Duration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.nfp.impl.CyclicDurationImpl
+		 * @see org.polarsys.time4sys.marte.nfp.impl.NfpPackageImpl#getCyclicDuration()
+		 * @generated
+		 */
+		EClass CYCLIC_DURATION = eINSTANCE.getCyclicDuration();
+
+		/**
+		 * The meta object literal for the '<em><b>Durations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CYCLIC_DURATION__DURATIONS = eINSTANCE.getCyclicDuration_Durations();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.nfp.impl.CompositeDistributionImpl <em>Composite Distribution</em>}' class.

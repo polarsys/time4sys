@@ -87,6 +87,14 @@ public enum SchedPolicyKind implements Enumerator {
 	TIME_TABLE_DRIVEN(5, "TimeTableDriven", "TimeTableDriven"),
 
 	/**
+	 * The '<em><b>Parallel</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PARALLEL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PARALLEL(7, "Parallel", "Parallel"), /**
 	 * The '<em><b>Other</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +102,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OTHER(7, "Other", "Other");
+	OTHER(8, "Other", "Other");
 
 	/**
 	 * The '<em><b>Undef</b></em>' literal value.
@@ -202,6 +210,21 @@ public enum SchedPolicyKind implements Enumerator {
 	public static final int TIME_TABLE_DRIVEN_VALUE = 5;
 
 	/**
+	 * The '<em><b>Parallel</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Parallel</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PARALLEL
+	 * @model name="Parallel"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PARALLEL_VALUE = 7;
+
+	/**
 	 * The '<em><b>Other</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -214,7 +237,7 @@ public enum SchedPolicyKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OTHER_VALUE = 7;
+	public static final int OTHER_VALUE = 8;
 
 	/**
 	 * An array of all the '<em><b>Sched Policy Kind</b></em>' enumerators.
@@ -231,6 +254,7 @@ public enum SchedPolicyKind implements Enumerator {
 			LEAST_LAXITY_FIRST,
 			ROUND_ROBIN,
 			TIME_TABLE_DRIVEN,
+			PARALLEL,
 			OTHER,
 		};
 
@@ -295,6 +319,7 @@ public enum SchedPolicyKind implements Enumerator {
 			case LEAST_LAXITY_FIRST_VALUE: return LEAST_LAXITY_FIRST;
 			case ROUND_ROBIN_VALUE: return ROUND_ROBIN;
 			case TIME_TABLE_DRIVEN_VALUE: return TIME_TABLE_DRIVEN;
+			case PARALLEL_VALUE: return PARALLEL;
 			case OTHER_VALUE: return OTHER;
 		}
 		return null;

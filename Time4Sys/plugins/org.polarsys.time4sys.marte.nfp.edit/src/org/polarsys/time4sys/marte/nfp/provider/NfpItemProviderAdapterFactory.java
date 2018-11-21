@@ -301,6 +301,29 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.CyclicDuration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CyclicDurationItemProvider cyclicDurationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.time4sys.marte.nfp.CyclicDuration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCyclicDurationAdapter() {
+		if (cyclicDurationItemProvider == null) {
+			cyclicDurationItemProvider = new CyclicDurationItemProvider(this);
+		}
+
+		return cyclicDurationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.time4sys.marte.nfp.CompositeDistribution} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -483,6 +506,7 @@ public class NfpItemProviderAdapterFactory extends NfpAdapterFactory implements 
 		if (probabilisticDurationItemProvider != null) probabilisticDurationItemProvider.dispose();
 		if (timeIntervalItemProvider != null) timeIntervalItemProvider.dispose();
 		if (uniformDistributionItemProvider != null) uniformDistributionItemProvider.dispose();
+		if (cyclicDurationItemProvider != null) cyclicDurationItemProvider.dispose();
 	}
 
 }

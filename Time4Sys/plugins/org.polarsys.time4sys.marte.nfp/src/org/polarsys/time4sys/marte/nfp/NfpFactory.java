@@ -110,6 +110,15 @@ public interface NfpFactory extends EFactory {
 	 * @generated
 	 */
 	UniformDistribution createUniformDistribution();
+	/**
+	 * Returns a new object of class '<em>Cyclic Duration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cyclic Duration</em>'.
+	 * @generated
+	 */
+	CyclicDuration createCyclicDuration();
+
 	UniformDistribution createUniformDistribution(TimeInterval value);
 	UniformDistribution createUniformDistribution(String interval);
 

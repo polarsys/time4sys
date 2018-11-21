@@ -190,7 +190,8 @@
     <eLiterals name="LeastLaxityFirst" value="3"/>
     <eLiterals name="RoundRobin" value="4"/>
     <eLiterals name="TimeTableDriven" value="5"/>
-    <eLiterals name="Other" value="7"/>
+    <eLiterals name="Parallel" value="7" literal="Parallel"/>
+    <eLiterals name="Other" value="8"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scheduler" eSuperTypes="#//ResourceBroker">
     <eStructuralFeatures xsi:type="ecore:EReference" name="host" lowerBound="1" eType="#//ComputingResource"/>

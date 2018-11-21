@@ -334,8 +334,10 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeInterval divide(long v) {
-		return new TimeIntervalImpl(minOpen, min.divide(v), max.divide(v), maxOpen);
+	public TimeInterval divide(long value) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -507,9 +509,9 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 				return contains((Duration)arguments.get(0));
 			case NfpPackage.TIME_INTERVAL___CONVERT_TO_UNIT__TIMEUNITKIND:
 				return convertToUnit((TimeUnitKind)arguments.get(0));
-			case NfpPackage.TIME_INTERVAL___ADD__DURATION:
+			case NfpPackage.TIME_INTERVAL___ADD__TIMEINTERVAL:
 				return add((TimeInterval)arguments.get(0));
-			case NfpPackage.TIME_INTERVAL___DIVIDE__DURATION:
+			case NfpPackage.TIME_INTERVAL___DIVIDE__LONG:
 				return divide((Long)arguments.get(0));
 			case NfpPackage.TIME_INTERVAL___MAX__DURATION:
 				return max((Duration)arguments.get(0));
@@ -517,7 +519,7 @@ public class TimeIntervalImpl extends MinimalEObjectImpl.Container implements Ti
 				return min((Duration)arguments.get(0));
 			case NfpPackage.TIME_INTERVAL___MULTIPLY__LONG:
 				return multiply((Long)arguments.get(0));
-			case NfpPackage.TIME_INTERVAL___SUB__DURATION:
+			case NfpPackage.TIME_INTERVAL___SUB__TIMEINTERVAL:
 				return sub((TimeInterval)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);

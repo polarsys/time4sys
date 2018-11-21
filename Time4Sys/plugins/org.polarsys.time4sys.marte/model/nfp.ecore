@@ -92,7 +92,7 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1" eType="#//DataTxRateUnitKind"
-        defaultValueLiteral="B_PER_S"/>
+        defaultValueLiteral="b/s"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataTxRateUnitKind">
     <eLiterals name="B_PER_S" literal="b/s"/>
@@ -219,5 +219,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="UniformDistribution" eSuperTypes="#//ProbabilisticDuration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
         eType="#//NFP_TimeInterval"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CyclicDuration" eSuperTypes="#//Duration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="durations" upperBound="-1"
+        eType="#//Duration" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -673,8 +673,7 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated
 	 */
 	public String convertNFP_DataSizeToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue == null || instanceValue instanceof DataSize);
-		return NfpFactory.eINSTANCE.convertDataSizeToString((DataSize)instanceValue);
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**
@@ -692,8 +691,7 @@ public class GrmFactoryImpl extends EFactoryImpl implements GrmFactory {
 	 * @generated
 	 */
 	public String convertNFP_DataTxRateToString(EDataType eDataType, Object instanceValue) {
-		assert(instanceValue == null || instanceValue instanceof DataTxRate);
-		return NfpFactory.eINSTANCE.convertDataTxRateToString((DataTxRate)instanceValue);
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

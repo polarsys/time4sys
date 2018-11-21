@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.marte.nfp.*;
 import org.polarsys.time4sys.marte.nfp.Bucket;
 import org.polarsys.time4sys.marte.nfp.CompositeDistribution;
 import org.polarsys.time4sys.marte.nfp.DataSize;
@@ -96,6 +97,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			case NfpPackage.PROBABILISTIC_DURATION: return createProbabilisticDuration();
 			case NfpPackage.TIME_INTERVAL: return createTimeInterval();
 			case NfpPackage.UNIFORM_DISTRIBUTION: return createUniformDistribution();
+			case NfpPackage.CYCLIC_DURATION: return createCyclicDuration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -252,6 +254,16 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 		return uniformDistribution;
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CyclicDuration createCyclicDuration() {
+		CyclicDurationImpl cyclicDuration = new CyclicDurationImpl();
+		return cyclicDuration;
+	}
+
 	public UniformDistribution createUniformDistribution(final TimeInterval value) {
 		return new UniformDistributionImpl(value);
 	}
@@ -434,7 +446,7 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			}
 		}
 		try {
-			return createSimpleDurationFromString(value);
+			return createSimpleOrCyclicDurationFromString(value);
 		} catch(NumberFormatException e) {
 			// We got it wrong, it must be an interval, thus a uniform distribution.
 			final TimeInterval interval = createTimeIntervalFromString(value);
@@ -494,6 +506,24 @@ public class NfpFactoryImpl extends EFactoryImpl implements NfpFactory {
 			throw new NumberFormatException("The input shall starts with 'discrete(', got " + value);
 		}
 	}
+	
+	@SuppressWarnings("null")
+	public Duration createSimpleOrCyclicDurationFromString(final String value) {
+		if (value == null) {
+			return LongDurationImpl.ZERO;
+		}
+		String[] tab = value.split(",");
+		if (tab.length==1){
+			return createSimpleDurationFromString(value);
+		} else {
+			CyclicDuration durations = NfpFactory.eINSTANCE.createCyclicDuration();
+			for (int i = 0; i < tab.length; i++) {
+				durations.getDurations().add(createSimpleDurationFromString(tab[i]));
+			}
+			return durations;
+		}
+	}
+
 
 	public Duration createSimpleDurationFromString(final String value) {
 		if (value == null) {
