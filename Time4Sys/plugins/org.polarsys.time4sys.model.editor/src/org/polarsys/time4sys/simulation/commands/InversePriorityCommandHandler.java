@@ -34,7 +34,7 @@ public class InversePriorityCommandHandler extends AbstractTransformationCommand
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
+	public TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
 		return new InversePriorityRunnable(domain, simu);
 	}
 

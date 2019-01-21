@@ -136,9 +136,24 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__EFFECT, newEffect, newEffect));
 	}
+	
+	//TODO TODO TODO rules 18 et 20
+//	Rule 18 
+//	ocl:gqam::ExecutionStep.allInstances()
+//	-> forAll(st|st.root.cause.pattern
+//	-> exists(pt|pt.oclIsTypeOf(gqam::PeriodicPattern) and 
+//	pt.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value.toString().toReal() 
+//	= gqam::EndToEndFlow.allInstances().endToEndStimuli
+//	->select(etes|etes.pattern=pt)
+//	->first().endToEndDeadline.oclAsType(nfp::Duration).value.toString()))
 
+//	ocl:gqam::ExecutionStep.allInstances() -> forAll(st|st.cause.pattern
+//			 -> exists(pt|pt.oclIsTypeOf(gqam::PeriodicPattern) and (sam::EndToEndFlow.allInstances()
+//			 ->select(etef|etef.endToEndStimuli.pattern=pt).endToEndDeadline.oclAsType(nfp::Duration).value.toString() 
+//			 >= pt.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value.toString()))	/**	
+	
 	/**
-	 * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

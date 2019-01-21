@@ -32,5 +32,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef,
  org.polarsys.time4sys.librairies
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.core.resources
+Import-Package: org.eclipse.core.resources,
+ org.eclipse.emf.transaction,
+ org.polarsys.time4sys.simulation.commands
 Export-Package: org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding

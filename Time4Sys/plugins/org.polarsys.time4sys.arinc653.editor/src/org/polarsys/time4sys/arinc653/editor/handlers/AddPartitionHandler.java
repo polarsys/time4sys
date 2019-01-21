@@ -31,7 +31,7 @@ public class AddPartitionHandler  extends AbstractTransformationCommandHandler<H
 	}
 
 	@Override
-	protected TransfoRunnable<HardwareProcessor, SoftwareSchedulableResource> createRecordingCommand(final TransactionalEditingDomain domain, final HardwareProcessor ima) {
+	public TransfoRunnable<HardwareProcessor, SoftwareSchedulableResource> createRecordingCommand(final TransactionalEditingDomain domain, final HardwareProcessor ima) {
 		return new TransfoCommand(domain, ima);
 	}
 }

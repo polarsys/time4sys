@@ -27,7 +27,7 @@ public class InitNullDurationCommandHandler extends AbstractTransformationComman
 		@Override
 		public void doExecute() {
 			setResult(NullDurationInitializer.transform(
-					project,
+					AbstractTransformationCommandHandler.getProject(obj),
 					obj));
 		}
 	}
@@ -37,7 +37,7 @@ public class InitNullDurationCommandHandler extends AbstractTransformationComman
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
+	public TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
 		return new TransfoCommand(domain, simu);
 	}
 

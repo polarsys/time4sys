@@ -2,6 +2,7 @@ package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
@@ -29,6 +30,7 @@ import org.eclipse.swt.widgets.Text;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Deadline_Sustainability;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ExecutionTime_Sustainability;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Jitter_Sustainability;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.NecessaryCondition;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Period_Sustainability;
@@ -195,13 +197,10 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 		tab4 = new TabItem(tabFolder, SWT.NONE);
 		tab4.setText("Available Analysis Tests");
 
-		// scroll = new
-		// ScrolledComposite(tabFolder,SWT.V_SCROLL|SWT.H_SCROLL|SWT.BORDER);
 		scroll = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
 		scroll.setExpandHorizontal(true);
 		scroll.setExpandVertical(true);
-		// grid = new
-		// GridData(GridData.FILL_BOTH|GridData.GRAB_HORIZONTAL|GridData.GRAB_VERTICAL);
+
 		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
 		scroll.setLayoutData(grid);
 
@@ -214,28 +213,26 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 		scroll.setMinSize(compoTab4.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		scroll.setContent(compoTab4);
 		tab4.setControl(scroll);
-		
+
 		/***************** Tab 5 : Inner transfo tests *****************/
 		tab5 = new TabItem(tabFolder, SWT.None);
 		tab5.setText("Inner transformation tests");
 
-		// ScrolledComposite scroll = new
-		// ScrolledComposite(tabFolder,SWT.V_SCROLL|SWT.H_SCROLL|SWT.BORDER);
 		ScrolledComposite scroll2 = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
 		scroll2.setExpandHorizontal(true);
 		scroll2.setExpandVertical(true);
 		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
 		scroll2.setLayoutData(grid);
 
-		compoTab5 = new Composite(scroll, SWT.NONE);
+		compoTab5 = new Composite(scroll2, SWT.NONE);
 		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
 		compoTab5.setLayoutData(grid);
 		compoTab5.setLayout(new GridLayout(2, false));
 
 		ctrl.fillInnerTransfos();
 
-		scroll2.setMinSize(compoTab2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		scroll2.setContent(compoTab2);
+		scroll2.setMinSize(compoTab5.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		scroll2.setContent(compoTab5);
 		tab5.setControl(scroll2);
 
 		return area;
@@ -360,41 +357,6 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 				availTestsTextZone.append(test + "\n");
 			}
 		}
-
-		// Scan Inner Transformation rules
-		Group group1 = new Group(compoTab2, SWT.NONE);
-		FontDescriptor boldDescriptor1 = FontDescriptor.createFrom(group1.getFont()).setStyle(SWT.BOLD);
-		Font boldFont1 = boldDescriptor1.createFont(group1.getDisplay());
-		group1.setFont(boldFont1);
-		GridData gridData1 = new GridData(SWT.FILL, SWT.FILL, true, true);
-		gridData1.horizontalSpan = 2;
-		group1.setLayoutData(gridData1);
-		group1.setLayout(new GridLayout(2, false));
-
-		group1.setText("Test existing transformation to make your model analysable");
-
-		label = new Label(group, SWT.NONE);
-		label.setText("Scan inner transformation");
-		gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-		Button scan = new Button(group1, SWT.PUSH);
-		scan.setText("Scan");
-		scan.addListener(SWT.Selection, new Listener() {
-
-			@Override
-			public void handleEvent(Event event) {
-				ctrl.displayScanResult(ctx);
-			}
-		});
-		Button execute = new Button(group1, SWT.PUSH);
-		execute.setText("Execute transfo");
-		execute.addListener(SWT.Selection, new Listener() {
-
-			@Override
-			public void handleEvent(Event event) {
-				ctrl.executeAllTransfoAndAnalyse(ctx);
-			}
-		});
-
 
 	}
 
@@ -638,6 +600,107 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 				ctrl.runTransformationAndAnalysis(test);
 			}
 		});
+	}
+
+	/************************** TAB5 **********************************/
+
+	/**
+	 * Add a context's info
+	 * 
+	 * @param id
+	 * @param ctxName
+	 * @param description
+	 * @param references
+	 * @param associatedTestsName
+	 */
+	public void addInnerTransformationDetail(InnerTransformation transfo) {
+
+		// Displayed info
+		String id = "" + transfo.getId();
+		String ctxName = transfo.getName();
+		String description = transfo.getDescription();
+
+		List<String> turnTrueRules = transfo.getTurnTrue().stream().map(out -> out.getDescription())
+				.collect(Collectors.toList());
+		List<String> turnFalseRules = transfo.getTurnFalse().stream().map(out -> out.getDescription())
+				.collect(Collectors.toList());
+
+		Group group = new Group(compoTab5, SWT.NONE);
+		FontDescriptor boldDescriptor = FontDescriptor.createFrom(group.getFont()).setStyle(SWT.BOLD);
+		Font boldFont = boldDescriptor.createFont(group.getDisplay());
+		group.setFont(boldFont);
+		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		gridData.horizontalSpan = 2;
+		group.setLayoutData(gridData);
+		group.setLayout(new GridLayout(2, false));
+
+		group.setText(ctxName);
+
+		// Id
+		Label label = new Label(group, SWT.NONE);
+		label.setText("Id");
+		Text idTextZone = new Text(group, SWT.READ_ONLY | SWT.WRAP | SWT.MULTI | SWT.BORDER);
+		idTextZone.setText(id);
+
+		// Description
+		label = new Label(group, SWT.NONE);
+		label.setText("Description");
+		Text descriptionTextZone = new Text(group, SWT.READ_ONLY | SWT.WRAP | SWT.MULTI | SWT.BORDER);
+		descriptionTextZone.setText(description);
+
+		// Turn true rules
+		if (turnTrueRules != null && turnTrueRules.size() > 0) {
+			label = new Label(group, SWT.NONE);
+			label.setText("Turn true rules");
+			Text referencesTextZone = new Text(group, SWT.READ_ONLY | SWT.WRAP | SWT.MULTI | SWT.BORDER);
+			gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+
+			referencesTextZone.setText("");
+			for (String ref : turnTrueRules) {
+				referencesTextZone.append(ref + "\n");
+			}
+		}
+
+		// Turn true rules
+		if (turnFalseRules != null && turnFalseRules.size() > 0) {
+			label = new Label(group, SWT.NONE);
+			label.setText("Turn true rules");
+			Text referencesTextZone = new Text(group, SWT.READ_ONLY | SWT.WRAP | SWT.MULTI | SWT.BORDER);
+			gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+
+			referencesTextZone.setText("");
+			for (String ref : turnFalseRules) {
+				referencesTextZone.append(ref + "\n");
+			}
+		}
+
+		// Scan Inner Transformation rules
+
+		label = new Label(group, SWT.NONE);
+		label.setText("Scan inner transformation");
+		gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		Button scan = new Button(group, SWT.PUSH);
+		scan.setText("Scan");
+		// scan.addListener(SWT.Selection, new Listener() {
+		//
+		// @Override
+		// public void handleEvent(Event event) {
+		// ctrl.displayScanResult(ctx);
+		// }
+		// });
+		label = new Label(group, SWT.NONE);
+		label.setText("Transform model");
+
+		Button execute = new Button(group, SWT.PUSH);
+		execute.setText("Execute transfo");
+		execute.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				ctrl.executeInnerTransfo(transfo);
+			}
+		});
+
 	}
 
 	private String getCharacteristicName(TestCharacteristicType characType) {

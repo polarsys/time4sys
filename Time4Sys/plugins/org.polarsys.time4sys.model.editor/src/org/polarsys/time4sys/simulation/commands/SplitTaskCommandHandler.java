@@ -27,7 +27,7 @@ public class SplitTaskCommandHandler extends AbstractTransformationCommandHandle
 		public void doExecute() {
 			setResult(TaskSplitter.transform(
 					TaskSplitter.defaultCfg().namesAreIndexBased(),
-					project,
+					AbstractTransformationCommandHandler.getProject(obj),
 					obj));
 		}
 	}
@@ -37,7 +37,7 @@ public class SplitTaskCommandHandler extends AbstractTransformationCommandHandle
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
+	public TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
 		return new TransfoCommand(domain, simu);
 	}
 

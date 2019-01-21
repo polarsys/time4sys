@@ -1131,13 +1131,13 @@ public interface TyscoPackage extends EPackage {
 	int INNER_TRANSFORMATION = 17;
 
 	/**
-	 * The feature id for the '<em><b>Context Model</b></em>' reference.
+	 * The feature id for the '<em><b>Required Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_TRANSFORMATION__CONTEXT_MODEL = 0;
+	int INNER_TRANSFORMATION__REQUIRED_CONTEXT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1167,13 +1167,40 @@ public interface TyscoPackage extends EPackage {
 	int INNER_TRANSFORMATION__TURN_FALSE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__DESCRIPTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Class Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INNER_TRANSFORMATION__CLASS_PATH = 6;
+
+	/**
 	 * The number of structural features of the '<em>Inner Transformation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INNER_TRANSFORMATION_FEATURE_COUNT = 4;
+	int INNER_TRANSFORMATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Inner Transformation</em>' class.
@@ -1935,15 +1962,15 @@ public interface TyscoPackage extends EPackage {
 	EClass getInnerTransformation();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getContextModel <em>Context Model</em>}'.
+	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getRequiredContext <em>Required Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context Model</em>'.
-	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getContextModel()
+	 * @return the meta object for the reference '<em>Required Context</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getRequiredContext()
 	 * @see #getInnerTransformation()
 	 * @generated
 	 */
-	EReference getInnerTransformation_ContextModel();
+	EReference getInnerTransformation_RequiredContext();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getId <em>Id</em>}'.
@@ -1977,6 +2004,39 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInnerTransformation_TurnFalse();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getName()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EAttribute getInnerTransformation_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getDescription()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EAttribute getInnerTransformation_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getClassPath <em>Class Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class Path</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation#getClassPath()
+	 * @see #getInnerTransformation()
+	 * @generated
+	 */
+	EAttribute getInnerTransformation_ClassPath();
 
 	/**
 	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType <em>Evaluation Result Type</em>}'.
@@ -2604,12 +2664,12 @@ public interface TyscoPackage extends EPackage {
 		EClass INNER_TRANSFORMATION = eINSTANCE.getInnerTransformation();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Model</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Required Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INNER_TRANSFORMATION__CONTEXT_MODEL = eINSTANCE.getInnerTransformation_ContextModel();
+		EReference INNER_TRANSFORMATION__REQUIRED_CONTEXT = eINSTANCE.getInnerTransformation_RequiredContext();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -2634,6 +2694,30 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INNER_TRANSFORMATION__TURN_FALSE = eINSTANCE.getInnerTransformation_TurnFalse();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INNER_TRANSFORMATION__NAME = eINSTANCE.getInnerTransformation_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INNER_TRANSFORMATION__DESCRIPTION = eINSTANCE.getInnerTransformation_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Class Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INNER_TRANSFORMATION__CLASS_PATH = eINSTANCE.getInnerTransformation_ClassPath();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType <em>Evaluation Result Type</em>}' enum.

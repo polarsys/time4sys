@@ -12,6 +12,7 @@ package org.polarsys.time4sys.simulation.commands;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.ActivationPropagator;
 
@@ -26,7 +27,7 @@ public class PropagateActivationsCommandHandler extends AbstractTransformationCo
 		@Override
 		public void doExecute() {
 			setResult(ActivationPropagator.transform(
-					project,
+					AbstractTransformationCommandHandler.getProject(obj),
 					obj));
 		}
 	}
@@ -36,7 +37,7 @@ public class PropagateActivationsCommandHandler extends AbstractTransformationCo
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
+	public TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
 		return new TransfoCommand(domain, simu);
 	}
 

@@ -33,7 +33,7 @@ public class AddPlatformHandler  extends AbstractTransformationCommandHandler<De
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, HardwareProcessor> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel ima) {
+	public TransfoRunnable<DesignModel, HardwareProcessor> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel ima) {
 		return new TransfoCommand(domain, ima);
 	}
 	

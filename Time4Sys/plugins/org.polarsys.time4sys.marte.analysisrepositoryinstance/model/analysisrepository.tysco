@@ -409,9 +409,19 @@
     <ruleGroups subGroups="//@allContextModels.9/@ruleGroups.1" expectedRuleValues="//@allContextModels.9/@truthValues.18 //@allContextModels.9/@truthValues.2 //@allContextModels.9/@truthValues.1 //@allContextModels.9/@truthValues.25 //@allContextModels.9/@truthValues.0 //@allContextModels.9/@truthValues.3 //@allContextModels.9/@truthValues.4 //@allContextModels.9/@truthValues.20 //@allContextModels.9/@truthValues.21 //@allContextModels.9/@truthValues.15 //@allContextModels.9/@truthValues.16 //@allContextModels.9/@truthValues.22 //@allContextModels.9/@truthValues.23 //@allContextModels.9/@truthValues.24 //@allContextModels.9/@truthValues.12 //@allContextModels.9/@truthValues.11 //@allContextModels.9/@truthValues.10 //@allContextModels.9/@truthValues.13 //@allContextModels.9/@truthValues.14 //@allContextModels.9/@truthValues.5 //@allContextModels.9/@truthValues.6 //@allContextModels.9/@truthValues.9 //@allContextModels.9/@truthValues.7 //@allContextModels.9/@truthValues.8 //@allContextModels.9/@truthValues.31 //@allContextModels.9/@truthValues.29 //@allContextModels.9/@truthValues.28 //@allContextModels.9/@truthValues.30 //@allContextModels.9/@truthValues.27 //@allContextModels.9/@truthValues.26 //@allContextModels.9/@truthValues.32 //@allContextModels.9/@truthValues.33 //@allContextModels.9/@truthValues.34 //@allContextModels.9/@truthValues.35" id="1" description=""/>
     <ruleGroups expectedRuleValues="//@allContextModels.9/@truthValues.17 //@allContextModels.9/@truthValues.19" id="2" junctionType="or"/>
   </allContextModels>
+  <allContextModels id="11" name="test" description="do what you want" analysisTests="//@allTests.6" rootGroup="//@allContextModels.10/@ruleGroups.0">
+    <references>fgdg</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.0" description="test"/>
+  </allContextModels>
+  <allContextModels id="12" name="test" description="do what you want" analysisTests="//@allTests.7" rootGroup="//@allContextModels.11/@ruleGroups.0">
+    <references>fgdg</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.11/@truthValues.0" description="test"/>
+  </allContextModels>
   <allRules id="1" description="Every task has predefined offset" content="self.workloadBehavior.demand.pattern->forAll(p|p.phase&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,Offset);"/>
   <allRules id="2" description="Every task has predefined execution time" content="self.workloadBehavior.behavior.steps->forAll(st|st.worstCET&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,ExecutionTime);"/>
-  <allRules id="3" description="Every task has predefined deadline" content="srm::SoftwareSchedulableResource.allInstances()->forAll(swr|swr.schedParams->exists(p|p.name.toLowerCase()='deadline'))" formalExpression="forAll t : Task|PropertyExist(t,Deadline);"/>
+  <allRules id="3" description="Every task has predefined deadline" content="(sam::EndToEndFlow).allInstances().endToEndScenario->includesAll(gqam::ExecutionStep.allInstances()) and sam::EndToEndFlow.allInstances().endToEndStimuli->includesAll(gqam::ExecutionStep.allInstances().cause)" formalExpression="forAll t : Task|PropertyExist(t,Deadline);"/>
   <allRules id="4" description="Every task has predefined period" content="self.workloadBehavior.demand.pattern->forAll(p|p.oclIsTypeOf(gqam::PeriodicPattern) and p.oclAsType(gqam::PeriodicPattern).period&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,Period);"/>
   <allRules id="5" description="Every task has predefined priority" content="srm::SoftwareSchedulableResource.allInstances()->forAll(swr|swr.schedParams->exists(p|p.name.toLowerCase()='fixedpriority'))" formalExpression="forAll t : Task|PropertyExist(t,Priority);"/>
   <allRules id="6" description="Monoprocessor architecture" content="(hrm::HardwareComputingResource).allInstances()->size()=1" formalExpression="processors := {p:Processor};&#xD;&#xA;Cardinal(processors)=1;"/>
@@ -421,15 +431,15 @@
   <allRules id="10" description="Scheduling policy of all schedulers is Fixed Priority (FP) Policy" content="(srm::SoftwareScheduler).allInstances().policy.policy->forAll(p|p=grm::SchedPolicyKind::FixedPriority)" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = FixedPriority;"/>
   <allRules id="11" description="Exist at least a task, which has offset" content="self.workloadBehavior.demand.pattern->exists(p|p.phase&lt;>null)" formalExpression="exist t : Task| PropertyExist(t,Offset);"/>
   <allRules id="12" description="Exist at least a task, which has execution time" content="self.workloadBehavior.behavior.steps->exists(st|st.worstCET&lt;>null)" formalExpression="exist t : Task| PropertyExist(t,ExecutionTime);"/>
-  <allRules id="13" description="Exist at least a task, which has deadline" content="srm::SoftwareSchedulableResource.allInstances()->exists(swr|swr.schedParams->exists(p|p.name.toLowerCase()&lt;>'deadline'))" formalExpression="exist t : Task| PropertyExist(t,Deadline);"/>
+  <allRules id="13" description="Exist at least a task, which has deadline" content="sam::EndToEndFlow.allInstances().endToEndScenario->intersection(gqam::ExecutionStep.allInstances())->notEmpty() and sam::EndToEndFlow.allInstances().endToEndStimuli->intersection(gqam::ExecutionStep.allInstances().cause)->notEmpty()" formalExpression="exist t : Task| PropertyExist(t,Deadline);"/>
   <allRules id="14" description="Exist at least a task, which has period" content="self.workloadBehavior.demand.pattern->exists(p|p.oclIsTypeOf(gqam::PeriodicPattern) and  (p.oclIsTypeOf(gqam::PeriodicPattern) and p.oclAsType(gqam::PeriodicPattern).period&lt;>null))" formalExpression="exist t : Task| PropertyExist(t,Period);"/>
   <allRules id="15" description="Exist at least a task, which has priority" content="srm::SoftwareSchedulableResource.allInstances()->exists(swr|swr.schedParams->exists(p|p.name.toLowerCase()&lt;>'fixedpriority'))" formalExpression="exist t : Task| PropertyExist(t,Priority);"/>
   <allRules id="16" description="Every task releases simultaneously" content="gqam::ExecutionStep.allInstances().cause->forAll(event|event.oclIsTypeOf(gqam::PeriodicPattern) and event.oclAsType(gqam::PeriodicPattern).phase.oclAsType(nfp::Duration).value.toString().toReal()=0)" formalExpression="forAll t : Task|GetProperty(t,Offset)=0;"/>
   <allRules id="17" description="Exist at least a task which has differed offset" content="gqam::ExecutionStep.allInstances().cause->forAll(event|event.oclIsTypeOf(gqam::PeriodicPattern) and event.oclAsType(gqam::PeriodicPattern).phase.oclAsType(nfp::Duration).value.toString().toReal()&lt;>0)" formalExpression="exist t : Task|GetProperty(t,Offset)&lt;>0;"/>
   <allRules id="18" description="Every task has deadline equal to period (implicit deadline)" content="gqam::ExecutionStep.allInstances()&#xD;&#xA;&#x9;-> forAll(st|st.root.cause.pattern&#xD;&#xA;&#x9;-> exists(pt|pt.oclIsTypeOf(gqam::PeriodicPattern) and &#xD;&#xA;&#x9;pt.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value.toString().toReal() &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;= st.oclAsType(gqam::ExecutionStep).concurRes.schedParams->select(param|param.name.toLowerCase()='deadline')->first().value.toReal()))" formalExpression="forAll t: Task | GetProperty(t,Period)=GetProperty(t,Deadline);"/>
-  <allRules id="19" description="Every task has arbitrary deadline" content="gqam::ExecutionStep.allInstances()->forAll(st|st.concurRes.schedParams->exists(p|p.name.toLowerCase()='deadline'))" formalExpression="forAll t : Task| PropertyExist(t,Deadline);"/>
+  <allRules id="19" description="Every task has arbitrary deadline" content="sam::EndToEndFlow.allInstances().endToEndScenario->includesAll(gqam::ExecutionStep.allInstances()) and sam::EndToEndFlow.allInstances().endToEndStimuli->includesAll(gqam::ExecutionStep.allInstances().cause)" formalExpression="forAll t : Task| PropertyExist(t,Deadline);"/>
   <allRules id="20" description="Every task has deadline inferior or equal to period (constrained deadline)" content="gqam::ExecutionStep.allInstances()&#xD;&#xA;&#x9;-> forAll(st|st.root.cause.pattern&#xD;&#xA;&#x9;-> exists(pt|pt.oclIsTypeOf(gqam::PeriodicPattern) and &#xD;&#xA;&#x9;pt.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value.toString().toReal() &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;>= st.oclAsType(gqam::ExecutionStep).concurRes.schedParams->select(param|param.name.toLowerCase()='deadline')->first().value.toReal()))" formalExpression="forAll t: Task | GetProperty(t,Period)>=GetProperty(t,Deadline);"/>
-  <allRules id="21" description="Every task is independent" content="srm::SoftwareMutualExclusionResource.allInstances()->size()=0 and gqam::PrecedenceRelation.allInstances()->isEmpty()" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)=0;"/>
+  <allRules id="21" description="Every task is independent" content="srm::SoftwareMutualExclusionResource.allInstances()->size()=0 and gqam::OutputPin.allInstances().successors->isEmpty()" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)=0;"/>
   <allRules id="22" description="Every task is periodic" content="self.workloadBehavior.demand->forAll(event|event.pattern.oclIsTypeOf(gqam::PeriodicPattern))" formalExpression="forAll t : Task | GetProperty(t,Periodicity)=Periodic;"/>
   <allRules id="23" description="Exist at least a task which is sporadic" content="self.workloadBehavior.demand->exists(event|event.pattern.oclIsTypeOf(gqam::SporadicPattern))" formalExpression="exist t : Task | GetProperty(t,Periodicity) = Sporadic;"/>
   <allRules id="24" description="Exist at least a task whose arrival pattern is busrt pattern" content="self.workloadBehavior.demand->exists(event|event.pattern.oclIsTypeOf(gqam::BurstPattern))" formalExpression=""/>
@@ -441,7 +451,7 @@
   <allRules id="30" description="System has shared resources managed by  Stack-Resource Policy " content="false"/>
   <allRules id="31" description="System has shared resources managed by Minimal Stack-Resource Policy " content="false"/>
   <allRules id="32" description="System has shared resources" content="srm::SoftwareMutualExclusionResource.allInstances()->size()&lt;>0" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)>0;"/>
-  <allRules id="33" description="Tasks have precedence constraints" content="gqam::PrecedenceRelation.allInstances()->notEmpty()"/>
+  <allRules id="33" description="Tasks have precedence constraints" content="gqam::OutputPin.allInstances().successors->notEmpty()"/>
   <allRules id="34" description="Distributed system" content="(hrm::HardwareComputingResource).allInstances()->size()>1"/>
   <allRules id="35" description="Every task is preemptible" content="gqam::ExecutionStep.allInstances()->forAll(execStep|not execStep.isAtomic)" formalExpression="forAll t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;"/>
   <allRules id="36" description="Exist at least a task which is preemptible" content="gqam::ExecutionStep.allInstances()->exists(execStep|execStep.isAtomic)" formalExpression="exist t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;"/>
@@ -495,4 +505,16 @@
       <transformation contextModel="//@allContextModels.5" id="1"/>
     </implementations>
   </allTests>
+  <allTests name="romeo test" description="test romeo">
+    <implementations description="" analysisExecPath="">
+      <transformation id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\org.polarsys.time4sys.marte.transformation.time4sys2romeo.jar"/>
+    </implementations>
+  </allTests>
+  <allTests name="test mast" description="test mast">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="">
+      <transformation contextModel="//@allContextModels.0" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\mast_transfo.jar"/>
+    </implementations>
+  </allTests>
+  <allInnerTransfos id="1" turnTrue="//@allRules.14 //@allRules.1" turnFalse="//@allRules.0 //@allRules.3" name="Propagate event activation" description="Propagate Event" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="sdqdq" description="desc" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>
 </tysco:AnalysisRepository>

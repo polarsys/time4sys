@@ -4,13 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -24,6 +22,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ExpectedEvaluationValue;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.RuleGroup;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
@@ -34,7 +33,9 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.ut
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.Result;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.LanguageValidatorUtils;
-import org.polarsys.time4sys.model.time4sys.Project;
+import org.polarsys.time4sys.simulation.commands.AbstractTransformationCommandHandler;
+import org.polarsys.time4sys.simulation.commands.AutoRecordingCommand;
+import org.polarsys.time4sys.simulation.commands.CommandRunner;
 
 //import components.contextmodel.ContextModelGraph;
 import eclipseview.polarsys.ui.components.Color;
@@ -241,6 +242,27 @@ public class AnalysisRepositoryControler {
 		this.appropriateContexts = appropriateContexts;
 	}
 
+	public boolean executeInnerTransfo(InnerTransformation transfo) {
+
+		ClassLoader classLoader = AbstractTransformationCommandHandler.class.getClassLoader();
+
+		try {
+			Class transfoClass = classLoader.loadClass(transfo.getClassPath());
+			AbstractTransformationCommandHandler handler = (AbstractTransformationCommandHandler) transfoClass
+					.newInstance();
+			DesignModel dm = WorkspaceUtils.getTime4sysProject();
+			final CommandRunner cmdRunner = new CommandRunner(PlatformUI.getWorkbench().getActiveWorkbenchWindow(), dm);
+			AutoRecordingCommand arc = (AutoRecordingCommand)handler.createRecordingCommand(null, dm);
+			cmdRunner.execute(arc);
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+
+	}
+
 	/**
 	 * 
 	 * @param transfo
@@ -253,8 +275,7 @@ public class AnalysisRepositoryControler {
 		// Construct arguments to execute jar file
 		List<String> args = new ArrayList<String>();
 		String inputModelPath = WorkspaceUtils.getInputModelPath();
-		String jarPath = WorkspaceUtils.getCurrentProject().getLocation().toOSString() + "/"
-				+ transfo.getTransfoExecPath();
+		String jarPath = transfo.getTransfoExecPath();
 		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
 		args.add("java");
 		args.add("-jar");
@@ -265,13 +286,13 @@ public class AnalysisRepositoryControler {
 		// execute...
 		return execTransfo(args);
 	}
-	
+
 	private static BufferedReader getOutput(Process p) {
-	    return new BufferedReader(new InputStreamReader(p.getInputStream()));
+		return new BufferedReader(new InputStreamReader(p.getInputStream()));
 	}
 
 	private static BufferedReader getError(Process p) {
-	    return new BufferedReader(new InputStreamReader(p.getErrorStream()));
+		return new BufferedReader(new InputStreamReader(p.getErrorStream()));
 	}
 
 	public boolean execTransfo(List<String> args) {
@@ -283,11 +304,11 @@ public class AnalysisRepositoryControler {
 			String ligne = "";
 
 			while ((ligne = output.readLine()) != null) {
-			    System.out.println(ligne);
+				System.out.println(ligne);
 			}
 
 			while ((ligne = error.readLine()) != null) {
-			 System.out.println(ligne);
+				System.out.println(ligne);
 			}
 
 			// refresh project
@@ -330,7 +351,7 @@ public class AnalysisRepositoryControler {
 			resultUI.addMatchedContext(id, name, description);
 		}
 	}
-	
+
 	/**
 	 * Display appropriate contexts info
 	 */
@@ -359,18 +380,13 @@ public class AnalysisRepositoryControler {
 		}
 	}
 
-	public void fillInnerTransfos(){
-		for (ContextModel ctx : analysisRepository.getAllContextModels()) {
-			if (isAccepted(ctx))
-				resultUI.addAcceptedContextModelDetail(ctx);
-			else {
-				String matchedPercent = computeMatchedPercent(ctx);
-				resultUI.addNotAcceptedContextModelDetail(ctx, matchedPercent);
-			}
+	public void fillInnerTransfos() {
+		for (InnerTransformation ctx : analysisRepository.getAllInnerTransfos()) {
+			resultUI.addInnerTransformationDetail(ctx);
 		}
 
 	}
-	
+
 	/**
 	 * Compute matched percent
 	 * 
@@ -390,6 +406,9 @@ public class AnalysisRepositoryControler {
 	 * @return
 	 */
 	public float computeMatchedPercent(RuleGroup group) {
+
+		if (group == null)
+			return 1;
 
 		float matchedPercent = 0;
 		int satisfiedRuleNumber = 0;
@@ -432,6 +451,9 @@ public class AnalysisRepositoryControler {
 	 * @return
 	 */
 	private int getRuleNumber(RuleGroup group) {
+		if (group == null) {
+			return 0;
+		}
 		int directRuleNumber = group.getExpectedRuleValues().size();
 		if (group.getSubGroups().size() == 0)
 			return directRuleNumber;
@@ -463,11 +485,11 @@ public class AnalysisRepositoryControler {
 	public void displayScanResult(ContextModel ctx) {
 		System.out.println("test");
 	}
-	
+
 	public void executeAllTransfoAndAnalyse(ContextModel ctx) {
 		System.out.println("test");
 	}
-	
+
 	/**
 	 * Generate graph corresponding to evaluation result of identification rules
 	 * 

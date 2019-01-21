@@ -283,7 +283,7 @@
             </style>
           </conditionnalStyles>
         </containerMappings>
-        <containerMappings name="HwBus" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" domainClass="hrm.HardwareBus" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']">
+        <containerMappings name="HwBus" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@toolSection/@ownedTools[name='Edit%20Name']" semanticCandidatesExpression="aql:self.resourcePackage.ownedElement" domainClass="hrm.HardwareCommunicationResource" dropDescriptions="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ExecutionStep2SoftwareSchedulableResource']" reusedContainerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']">
           <subNodeMappings name="ComStep" semanticCandidatesExpression="aql:self.eInverse('comRes')" domainClass="gqam.CommunicationStep" reusedBorderedNodeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='InputPin'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep']/@borderedNodeMappings[name='OutputPin']">
             <style xsi:type="style:SquareDescription" showIcon="false" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
@@ -813,9 +813,18 @@
                   <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Patterns to show in '+ element.name"/>
-                    <parameters name="choiceSelection" value="service:getArrivalPattern()"/>
+                    <parameters name="choiceSelection" value="aql:self.getArrivalPattern()"/>
                     <parameters name="initialSelection" value="aql:elementView.ownedDiagramElements.target->filter(gqam::ArrivalPattern)"/>
                     <parameters name="elementToCreateMapping" value="aql:'ArrivalPattern'"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
+                      <parameters name="context" value="var:elementView"/>
+                      <parameters name="wizardMessage" value="aql:'Select Patterns to show in '+ element.name"/>
+                      <parameters name="choiceSelection" value="service:getArrivalPattern()"/>
+                      <parameters name="initialSelection" value="aql:elementView.ownedDiagramElements.target->filter(gqam::ArrivalPattern)"/>
+                      <parameters name="elementToCreateMapping" value="aql:'ArrivalPattern'"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1169,7 +1178,7 @@
                   <subModelOperations xsi:type="tool:ExternalJavaAction" name="selectResource" id="org.polarsys.time4sys.odesign.wizard.ShowHideWizard">
                     <parameters name="context" value="var:elementView"/>
                     <parameters name="wizardMessage" value="aql:'Select Bus to show in '+ element.name"/>
-                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareBus)"/>
+                    <parameters name="choiceSelection" value="aql:element.resourcePackage.ownedElement->filter(hrm::HardwareCommunicationResource)"/>
                     <parameters name="initialSelection" value="aql:self.ownedDiagramElements.target->filter(hrm::HardwareBus)"/>
                     <parameters name="elementToCreateMapping" value="aql:'HwBus'"/>
                   </subModelOperations>

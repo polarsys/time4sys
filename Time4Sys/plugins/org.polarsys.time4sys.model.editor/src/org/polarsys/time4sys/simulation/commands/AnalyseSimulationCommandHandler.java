@@ -35,7 +35,7 @@ public class AnalyseSimulationCommandHandler extends AbstractTransformationComma
 	}
 
 	@Override
-	protected TransfoRunnable<Simulation, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final Simulation simu) {
+	public TransfoRunnable<Simulation, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final Simulation simu) {
 		return new AnalyseSimulationRunnable(domain, simu);
 	}
 

@@ -27,7 +27,7 @@ public class SimpleInversePriorityCommandHandler extends AbstractTransformationC
 		public void doExecute() {
 			setResult(PriorityUrgencyInverter.transform(
 					PriorityUrgencyInverter.defaultCfg().inverseOnly(),
-					project,
+					AbstractTransformationCommandHandler.getProject(obj),
 					obj));
 		}
 
@@ -38,7 +38,7 @@ public class SimpleInversePriorityCommandHandler extends AbstractTransformationC
 	}
 
 	@Override
-	protected TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
+	public TransfoRunnable<DesignModel, Transformation> createRecordingCommand(final TransactionalEditingDomain domain, final DesignModel simu) {
 		return new SimpleInversePriorityRunnable(domain, simu);
 	}
 

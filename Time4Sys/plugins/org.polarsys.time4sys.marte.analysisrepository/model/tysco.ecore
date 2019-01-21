@@ -161,12 +161,15 @@
         eType="#//IdentificationRule"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InnerTransformation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contextModel" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredContext" lowerBound="1"
         eType="#//ContextModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="turnTrue" upperBound="-1"
         eType="#//IdentificationRule"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="turnFalse" upperBound="-1"
         eType="#//IdentificationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

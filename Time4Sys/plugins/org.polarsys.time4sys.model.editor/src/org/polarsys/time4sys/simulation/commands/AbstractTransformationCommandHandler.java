@@ -38,7 +38,7 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 	public static abstract class TransfoRunnable<T, R> extends AutoRecordingCommand {
 
 		protected final T obj;
-		protected Project project;
+		public Project project;
 		protected R result;
 		protected final TransactionalEditingDomain theDomain;
 
@@ -58,7 +58,7 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 		}
 	}
 	
-	private static Project getProject(final EObject obj) {
+	public static Project getProject(final EObject obj) {
 		EObject current = obj.eContainer();
 		while(current != null && !(current instanceof Project)) {
 			current = current.eContainer();
@@ -148,7 +148,7 @@ public abstract class AbstractTransformationCommandHandler<T extends EObject, R>
 		}
 		return null;
 	}
-
-	protected abstract TransfoRunnable<T, R> createRecordingCommand(final TransactionalEditingDomain domain, final T simu);
+	
+	public abstract TransfoRunnable<T, R> createRecordingCommand(final TransactionalEditingDomain domain, final T simu);
 	
 }

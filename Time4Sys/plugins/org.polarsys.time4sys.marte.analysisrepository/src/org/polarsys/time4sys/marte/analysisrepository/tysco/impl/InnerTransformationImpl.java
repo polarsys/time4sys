@@ -29,24 +29,27 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getContextModel <em>Context Model</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getRequiredContext <em>Required Context</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getTurnTrue <em>Turn True</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getTurnFalse <em>Turn False</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.InnerTransformationImpl#getClassPath <em>Class Path</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class InnerTransformationImpl extends MinimalEObjectImpl.Container implements InnerTransformation {
 	/**
-	 * The cached value of the '{@link #getContextModel() <em>Context Model</em>}' reference.
+	 * The cached value of the '{@link #getRequiredContext() <em>Required Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContextModel()
+	 * @see #getRequiredContext()
 	 * @generated
 	 * @ordered
 	 */
-	protected ContextModel contextModel;
+	protected ContextModel requiredContext;
 
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
@@ -89,6 +92,66 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	protected EList<IdentificationRule> turnFalse;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CLASS_PATH_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getClassPath() <em>Class Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassPath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String classPath = CLASS_PATH_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -112,16 +175,16 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextModel getContextModel() {
-		if (contextModel != null && contextModel.eIsProxy()) {
-			InternalEObject oldContextModel = (InternalEObject)contextModel;
-			contextModel = (ContextModel)eResolveProxy(oldContextModel);
-			if (contextModel != oldContextModel) {
+	public ContextModel getRequiredContext() {
+		if (requiredContext != null && requiredContext.eIsProxy()) {
+			InternalEObject oldRequiredContext = (InternalEObject)requiredContext;
+			requiredContext = (ContextModel)eResolveProxy(oldRequiredContext);
+			if (requiredContext != oldRequiredContext) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL, oldContextModel, contextModel));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT, oldRequiredContext, requiredContext));
 			}
 		}
-		return contextModel;
+		return requiredContext;
 	}
 
 	/**
@@ -129,8 +192,8 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextModel basicGetContextModel() {
-		return contextModel;
+	public ContextModel basicGetRequiredContext() {
+		return requiredContext;
 	}
 
 	/**
@@ -138,11 +201,11 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContextModel(ContextModel newContextModel) {
-		ContextModel oldContextModel = contextModel;
-		contextModel = newContextModel;
+	public void setRequiredContext(ContextModel newRequiredContext) {
+		ContextModel oldRequiredContext = requiredContext;
+		requiredContext = newRequiredContext;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL, oldContextModel, contextModel));
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT, oldRequiredContext, requiredContext));
 	}
 
 	/**
@@ -195,18 +258,87 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.INNER_TRANSFORMATION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getClassPath() {
+		return classPath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClassPath(String newClassPath) {
+		String oldClassPath = classPath;
+		classPath = newClassPath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH, oldClassPath, classPath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL:
-				if (resolve) return getContextModel();
-				return basicGetContextModel();
+			case TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT:
+				if (resolve) return getRequiredContext();
+				return basicGetRequiredContext();
 			case TyscoPackage.INNER_TRANSFORMATION__ID:
 				return getId();
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_TRUE:
 				return getTurnTrue();
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_FALSE:
 				return getTurnFalse();
+			case TyscoPackage.INNER_TRANSFORMATION__NAME:
+				return getName();
+			case TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION:
+				return getDescription();
+			case TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH:
+				return getClassPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -220,8 +352,8 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL:
-				setContextModel((ContextModel)newValue);
+			case TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT:
+				setRequiredContext((ContextModel)newValue);
 				return;
 			case TyscoPackage.INNER_TRANSFORMATION__ID:
 				setId((Integer)newValue);
@@ -233,6 +365,15 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_FALSE:
 				getTurnFalse().clear();
 				getTurnFalse().addAll((Collection<? extends IdentificationRule>)newValue);
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__NAME:
+				setName((String)newValue);
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH:
+				setClassPath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,8 +387,8 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL:
-				setContextModel((ContextModel)null);
+			case TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT:
+				setRequiredContext((ContextModel)null);
 				return;
 			case TyscoPackage.INNER_TRANSFORMATION__ID:
 				setId(ID_EDEFAULT);
@@ -257,6 +398,15 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_FALSE:
 				getTurnFalse().clear();
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH:
+				setClassPath(CLASS_PATH_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -270,14 +420,20 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyscoPackage.INNER_TRANSFORMATION__CONTEXT_MODEL:
-				return contextModel != null;
+			case TyscoPackage.INNER_TRANSFORMATION__REQUIRED_CONTEXT:
+				return requiredContext != null;
 			case TyscoPackage.INNER_TRANSFORMATION__ID:
 				return id != ID_EDEFAULT;
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_TRUE:
 				return turnTrue != null && !turnTrue.isEmpty();
 			case TyscoPackage.INNER_TRANSFORMATION__TURN_FALSE:
 				return turnFalse != null && !turnFalse.isEmpty();
+			case TyscoPackage.INNER_TRANSFORMATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH:
+				return CLASS_PATH_EDEFAULT == null ? classPath != null : !CLASS_PATH_EDEFAULT.equals(classPath);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -294,6 +450,12 @@ public class InnerTransformationImpl extends MinimalEObjectImpl.Container implem
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
 		result.append(id);
+		result.append(", name: ");
+		result.append(name);
+		result.append(", description: ");
+		result.append(description);
+		result.append(", classPath: ");
+		result.append(classPath);
 		result.append(')');
 		return result.toString();
 	}

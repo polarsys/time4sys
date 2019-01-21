@@ -35,7 +35,7 @@ public class UpgradeModelCommandHandler extends AbstractTransformationCommandHan
 	}
 
 	@Override
-	protected TransfoRunnable<Project, Project> createRecordingCommand(final TransactionalEditingDomain domain, final Project simu) {
+	public TransfoRunnable<Project, Project> createRecordingCommand(final TransactionalEditingDomain domain, final Project simu) {
 		return new UpgradeModelRunnable(domain, simu);
 	}
 

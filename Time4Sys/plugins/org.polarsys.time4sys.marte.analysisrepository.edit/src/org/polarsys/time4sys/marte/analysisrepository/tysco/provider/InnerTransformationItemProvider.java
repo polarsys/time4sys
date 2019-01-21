@@ -60,28 +60,31 @@ public class InnerTransformationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContextModelPropertyDescriptor(object);
+			addRequiredContextPropertyDescriptor(object);
 			addIdPropertyDescriptor(object);
 			addTurnTruePropertyDescriptor(object);
 			addTurnFalsePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
+			addClassPathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Context Model feature.
+	 * This adds a property descriptor for the Required Context feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextModelPropertyDescriptor(Object object) {
+	protected void addRequiredContextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_InnerTransformation_contextModel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_InnerTransformation_contextModel_feature", "_UI_InnerTransformation_type"),
-				 TyscoPackage.Literals.INNER_TRANSFORMATION__CONTEXT_MODEL,
+				 getString("_UI_InnerTransformation_requiredContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InnerTransformation_requiredContext_feature", "_UI_InnerTransformation_type"),
+				 TyscoPackage.Literals.INNER_TRANSFORMATION__REQUIRED_CONTEXT,
 				 true,
 				 false,
 				 true,
@@ -157,6 +160,72 @@ public class InnerTransformationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InnerTransformation_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InnerTransformation_name_feature", "_UI_InnerTransformation_type"),
+				 TyscoPackage.Literals.INNER_TRANSFORMATION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InnerTransformation_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InnerTransformation_description_feature", "_UI_InnerTransformation_type"),
+				 TyscoPackage.Literals.INNER_TRANSFORMATION__DESCRIPTION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Class Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassPathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_InnerTransformation_classPath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_InnerTransformation_classPath_feature", "_UI_InnerTransformation_type"),
+				 TyscoPackage.Literals.INNER_TRANSFORMATION__CLASS_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns InnerTransformation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,8 +244,10 @@ public class InnerTransformationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		InnerTransformation innerTransformation = (InnerTransformation)object;
-		return getString("_UI_InnerTransformation_type") + " " + innerTransformation.getId();
+		String label = ((InnerTransformation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_InnerTransformation_type") :
+			getString("_UI_InnerTransformation_type") + " " + label;
 	}
 	
 
@@ -193,6 +264,9 @@ public class InnerTransformationItemProvider
 
 		switch (notification.getFeatureID(InnerTransformation.class)) {
 			case TyscoPackage.INNER_TRANSFORMATION__ID:
+			case TyscoPackage.INNER_TRANSFORMATION__NAME:
+			case TyscoPackage.INNER_TRANSFORMATION__DESCRIPTION:
+			case TyscoPackage.INNER_TRANSFORMATION__CLASS_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
