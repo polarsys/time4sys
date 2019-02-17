@@ -406,25 +406,19 @@
     <truthValues value="false" associatedRule="//@allRules.33"/>
     <truthValues associatedRule="//@allRules.34"/>
     <truthValues value="neutral" associatedRule="//@allRules.35"/>
-    <ruleGroups subGroups="//@allContextModels.9/@ruleGroups.1" expectedRuleValues="//@allContextModels.9/@truthValues.18 //@allContextModels.9/@truthValues.2 //@allContextModels.9/@truthValues.1 //@allContextModels.9/@truthValues.25 //@allContextModels.9/@truthValues.0 //@allContextModels.9/@truthValues.3 //@allContextModels.9/@truthValues.4 //@allContextModels.9/@truthValues.20 //@allContextModels.9/@truthValues.21 //@allContextModels.9/@truthValues.15 //@allContextModels.9/@truthValues.16 //@allContextModels.9/@truthValues.22 //@allContextModels.9/@truthValues.23 //@allContextModels.9/@truthValues.24 //@allContextModels.9/@truthValues.12 //@allContextModels.9/@truthValues.11 //@allContextModels.9/@truthValues.10 //@allContextModels.9/@truthValues.13 //@allContextModels.9/@truthValues.14 //@allContextModels.9/@truthValues.5 //@allContextModels.9/@truthValues.6 //@allContextModels.9/@truthValues.9 //@allContextModels.9/@truthValues.7 //@allContextModels.9/@truthValues.8 //@allContextModels.9/@truthValues.31 //@allContextModels.9/@truthValues.29 //@allContextModels.9/@truthValues.28 //@allContextModels.9/@truthValues.30 //@allContextModels.9/@truthValues.27 //@allContextModels.9/@truthValues.26 //@allContextModels.9/@truthValues.32 //@allContextModels.9/@truthValues.33 //@allContextModels.9/@truthValues.34 //@allContextModels.9/@truthValues.35" id="1" description=""/>
-    <ruleGroups expectedRuleValues="//@allContextModels.9/@truthValues.17 //@allContextModels.9/@truthValues.19" id="2" junctionType="or"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.9/@truthValues.18 //@allContextModels.9/@truthValues.2 //@allContextModels.9/@truthValues.1 //@allContextModels.9/@truthValues.25 //@allContextModels.9/@truthValues.0 //@allContextModels.9/@truthValues.3 //@allContextModels.9/@truthValues.4 //@allContextModels.9/@truthValues.20 //@allContextModels.9/@truthValues.21 //@allContextModels.9/@truthValues.15 //@allContextModels.9/@truthValues.16 //@allContextModels.9/@truthValues.22 //@allContextModels.9/@truthValues.23 //@allContextModels.9/@truthValues.24 //@allContextModels.9/@truthValues.12 //@allContextModels.9/@truthValues.11 //@allContextModels.9/@truthValues.10 //@allContextModels.9/@truthValues.13 //@allContextModels.9/@truthValues.14 //@allContextModels.9/@truthValues.5 //@allContextModels.9/@truthValues.6 //@allContextModels.9/@truthValues.9 //@allContextModels.9/@truthValues.7 //@allContextModels.9/@truthValues.8 //@allContextModels.9/@truthValues.31 //@allContextModels.9/@truthValues.29 //@allContextModels.9/@truthValues.28 //@allContextModels.9/@truthValues.30 //@allContextModels.9/@truthValues.27 //@allContextModels.9/@truthValues.26 //@allContextModels.9/@truthValues.32 //@allContextModels.9/@truthValues.33 //@allContextModels.9/@truthValues.34 //@allContextModels.9/@truthValues.35" id="1" description=""/>
   </allContextModels>
-  <allContextModels id="11" name="test" description="do what you want" analysisTests="//@allTests.6" rootGroup="//@allContextModels.10/@ruleGroups.0">
-    <references>fgdg</references>
+  <allContextModels id="11" name="Romeo analysis" description="Check rules to verify the applicability of Romeo transformation" analysisTests="//@allTests.6 //@allTests.7" rootGroup="//@allContextModels.10/@ruleGroups.0">
+    <references>Romeo transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.0" description="test"/>
-  </allContextModels>
-  <allContextModels id="12" name="test" description="do what you want" analysisTests="//@allTests.7" rootGroup="//@allContextModels.11/@ruleGroups.0">
-    <references>fgdg</references>
-    <truthValues associatedRule="//@allRules.11"/>
-    <ruleGroups expectedRuleValues="//@allContextModels.11/@truthValues.0" description="test"/>
   </allContextModels>
   <allRules id="1" description="Every task has predefined offset" content="self.workloadBehavior.demand.pattern->forAll(p|p.phase&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,Offset);"/>
   <allRules id="2" description="Every task has predefined execution time" content="self.workloadBehavior.behavior.steps->forAll(st|st.worstCET&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,ExecutionTime);"/>
   <allRules id="3" description="Every task has predefined deadline" content="(sam::EndToEndFlow).allInstances().endToEndScenario->includesAll(gqam::ExecutionStep.allInstances()) and sam::EndToEndFlow.allInstances().endToEndStimuli->includesAll(gqam::ExecutionStep.allInstances().cause)" formalExpression="forAll t : Task|PropertyExist(t,Deadline);"/>
   <allRules id="4" description="Every task has predefined period" content="self.workloadBehavior.demand.pattern->forAll(p|p.oclIsTypeOf(gqam::PeriodicPattern) and p.oclAsType(gqam::PeriodicPattern).period&lt;>null)" formalExpression="forAll t : Task|PropertyExist(t,Period);"/>
   <allRules id="5" description="Every task has predefined priority" content="srm::SoftwareSchedulableResource.allInstances()->forAll(swr|swr.schedParams->exists(p|p.name.toLowerCase()='fixedpriority'))" formalExpression="forAll t : Task|PropertyExist(t,Priority);"/>
-  <allRules id="6" description="Monoprocessor architecture" content="(hrm::HardwareComputingResource).allInstances()->size()=1" formalExpression="processors := {p:Processor};&#xD;&#xA;Cardinal(processors)=1;"/>
+  <allRules id="6" description="Monoprocessor architecture" content="self.resourcePackage.ownedElement->select(oclIsKindOf(hrm::HardwareComputingResource))->size()=1" formalExpression="processors := {p:Processor};&#xD;&#xA;Cardinal(processors)=1;"/>
   <allRules id="7" description="Scheduling policy of all schedulers is Earliest Deadline First (EDF) policy" content="(srm::SoftwareScheduler).allInstances().policy.policy->forAll(p|p=grm::SchedPolicyKind::EarliestDeadlineFirst)" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = EarliestDeadlineFirst;"/>
   <allRules id="8" description="Scheduling policy of all schedulers is Least Laxity First (LLF) policy" content="(srm::SoftwareScheduler).allInstances().policy.policy->forAll(p|p=grm::SchedPolicyKind::LeastLaxityFirst)" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = LeastLaxityFirst;"/>
   <allRules id="9" description="Scheduling policy of all schedulers is Round Robin (RR) policy" content="(srm::SoftwareScheduler).allInstances().policy.policy->forAll(p|p=grm::SchedPolicyKind::RoundRobin)" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = RoundRobin;"/>
@@ -450,9 +444,9 @@
   <allRules id="29" description="System has shared resources managed by Immediate Priority Ceiling Protocol (IPCP)" content="false" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist r in commResources|GetProperty(r,ProtectProtocol)=IPCPProtectProtocol;"/>
   <allRules id="30" description="System has shared resources managed by  Stack-Resource Policy " content="false"/>
   <allRules id="31" description="System has shared resources managed by Minimal Stack-Resource Policy " content="false"/>
-  <allRules id="32" description="System has shared resources" content="srm::SoftwareMutualExclusionResource.allInstances()->size()&lt;>0" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)>0;"/>
+  <allRules id="32" description="System has shared resources" content="self.resourcePackage.ownedElement->select(oclIsKindOf(srm::SoftwareMutualExclusionResource))->size()&lt;>0" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)>0;"/>
   <allRules id="33" description="Tasks have precedence constraints" content="gqam::OutputPin.allInstances().successors->notEmpty()"/>
-  <allRules id="34" description="Distributed system" content="(hrm::HardwareComputingResource).allInstances()->size()>1"/>
+  <allRules id="34" description="Distributed system" content="self.resourcePackage.ownedElement->select(oclIsKindOf(hrm::HardwareComputingResource))->size()>1"/>
   <allRules id="35" description="Every task is preemptible" content="gqam::ExecutionStep.allInstances()->forAll(execStep|not execStep.isAtomic)" formalExpression="forAll t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;"/>
   <allRules id="36" description="Exist at least a task which is preemptible" content="gqam::ExecutionStep.allInstances()->exists(execStep|execStep.isAtomic)" formalExpression="exist t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;"/>
   <allTests id="1" name="RTA 1" description="Response Time Analysis for independent tasks, constrained deadline ">
@@ -476,8 +470,8 @@
     <references>Tindell, K. (1994). Adding time-offsets to schedulability analysis. University of York, Department of Computer Science.</references>
     <characteristics xsi:type="tysco:SufficientCondition" comment="" referencedContexts="//@allContextModels.0 //@allContextModels.2 //@allContextModels.7 //@allContextModels.9"/>
     <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.7 //@allContextModels.9"/>
-    <implementations id="1" name="RTA_3_Impl" description="Implementation of RTA for transactions" analysisExecPath="mast_analysis default" toolName="default">
-      <transformation contextModel="//@allContextModels.2" id="1" description="Transformation from Time4sys to MAST in case: periodic tasks with precedencies, constrained deadline and presence of shared resources" transfoExecPath="transformations\mast_transfo.jar"/>
+    <implementations id="1" name="RTA_3_Impl" description="Implementation of RTA for transactions" analysisExecPath="transformations/mast_transfo.jar" toolName="default">
+      <transformation contextModel="//@allContextModels.2" id="1" description="Transformation from Time4sys to MAST in case: periodic tasks with precedencies, constrained deadline and presence of shared resources" transfoExecPath="C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.marte.analysisrepositoryinstance/transformations/mast_transfo.jar"/>
     </implementations>
   </allTests>
   <allTests id="4" name="RTA 4" description="Extended Response Time Analysis technique for arbitrary deadline tasks set">
@@ -505,16 +499,20 @@
       <transformation contextModel="//@allContextModels.5" id="1"/>
     </implementations>
   </allTests>
-  <allTests name="romeo test" description="test romeo">
-    <implementations description="" analysisExecPath="">
-      <transformation id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\org.polarsys.time4sys.marte.transformation.time4sys2romeo.jar"/>
+  <allTests name="Romeo Analysis" description="Launch romeo analysis">
+    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\time4sys2romeo\org.polarsys.time4sys.marte.transformation.time4sys2romeo_3\analysis\romeo-cli.exe">
+      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\time4sys2romeo.jar"/>
     </implementations>
   </allTests>
-  <allTests name="test mast" description="test mast">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="">
-      <transformation contextModel="//@allContextModels.0" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\mast_transfo.jar"/>
+  <allTests name="Mast Analysis" description="Launch mast analysis">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="Mast analysis">
+      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\mast_transfo.jar"/>
     </implementations>
   </allTests>
   <allInnerTransfos id="1" turnTrue="//@allRules.14 //@allRules.1" turnFalse="//@allRules.0 //@allRules.3" name="Propagate event activation" description="Propagate Event" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>
-  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="sdqdq" description="desc" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Inverse Priority" description="Convert priority values to urgency values as expected by Time4Sys" classPath="org.polarsys.time4sys.simulation.commands.InversePriorityCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Add Partition" description="Add partition" classPath="org.polarsys.time4sys.arinc653.editor.handlers.AddPartitionHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Add Platform" description="Add platform" classPath="org.polarsys.time4sys.arinc653.editor.handlers.AddPlatformHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Init Null Duration" description="Init null duration to 0 ms duration" classPath="org.polarsys.time4sys.simulation.commands.InitNullDurationCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Split Task" description="Split Task for them to be in normal form" classPath="org.polarsys.time4sys.simulation.commands.SplitTaskCommandHandler"/>
 </tysco:AnalysisRepository>
