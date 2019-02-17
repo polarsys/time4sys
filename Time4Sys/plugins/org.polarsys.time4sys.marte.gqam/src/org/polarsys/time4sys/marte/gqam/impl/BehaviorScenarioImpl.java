@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.PrecedenceRelation;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -41,9 +40,9 @@ import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getSteps <em>Steps</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getRoot <em>Root</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getParentStep <em>Parent Step</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.BehaviorScenarioImpl#getRespTime <em>Resp Time</em>}</li>
@@ -54,16 +53,6 @@ import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
  * @generated
  */
 public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorScenario {
-	/**
-	 * The cached value of the '{@link #getCause() <em>Cause</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCause()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<WorkloadEvent> cause;
-
 	/**
 	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -83,6 +72,16 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	 * @ordered
 	 */
 	protected Step root;
+
+	/**
+	 * The cached value of the '{@link #getCause() <em>Cause</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCause()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<WorkloadEvent> cause;
 
 	/**
 	 * The cached value of the '{@link #getParentStep() <em>Parent Step</em>}' reference.
@@ -389,10 +388,10 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCause()).basicAdd(otherEnd, msgs);
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSteps()).basicAdd(otherEnd, msgs);
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCause()).basicAdd(otherEnd, msgs);
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				if (parentStep != null)
 					msgs = ((InternalEObject)parentStep).eInverseRemove(this, GqamPackage.STEP__CHILD_SCENARIO, Step.class, msgs);
@@ -409,10 +408,10 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				return ((InternalEList<?>)getCause()).basicRemove(otherEnd, msgs);
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				return ((InternalEList<?>)getCause()).basicRemove(otherEnd, msgs);
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				return basicSetParentStep(null, msgs);
 			case GqamPackage.BEHAVIOR_SCENARIO__CONNECTORS:
@@ -429,13 +428,13 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				return getCause();
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				return getSteps();
 			case GqamPackage.BEHAVIOR_SCENARIO__ROOT:
 				if (resolve) return getRoot();
 				return basicGetRoot();
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				return getCause();
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				if (resolve) return getParentStep();
 				return basicGetParentStep();
@@ -460,16 +459,16 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				getCause().clear();
-				getCause().addAll((Collection<? extends WorkloadEvent>)newValue);
-				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				getSteps().clear();
 				getSteps().addAll((Collection<? extends Step>)newValue);
 				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__ROOT:
 				setRoot((Step)newValue);
+				return;
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				getCause().clear();
+				getCause().addAll((Collection<? extends WorkloadEvent>)newValue);
 				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				setParentStep((Step)newValue);
@@ -499,14 +498,14 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				getCause().clear();
-				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				getSteps().clear();
 				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__ROOT:
 				setRoot((Step)null);
+				return;
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				getCause().clear();
 				return;
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				setParentStep((Step)null);
@@ -535,12 +534,12 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
-				return cause != null && !cause.isEmpty();
 			case GqamPackage.BEHAVIOR_SCENARIO__STEPS:
 				return steps != null && !steps.isEmpty();
 			case GqamPackage.BEHAVIOR_SCENARIO__ROOT:
 				return root != null;
+			case GqamPackage.BEHAVIOR_SCENARIO__CAUSE:
+				return cause != null && !cause.isEmpty();
 			case GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP:
 				return parentStep != null;
 			case GqamPackage.BEHAVIOR_SCENARIO__CONNECTORS:
@@ -553,38 +552,6 @@ public class BehaviorScenarioImpl extends NamedElementImpl implements BehaviorSc
 				return WORST_CET_EDEFAULT == null ? worstCET != null : !WORST_CET_EDEFAULT.equals(worstCET);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == FlowInvolvedElement.class) {
-			switch (derivedFeatureID) {
-				case GqamPackage.BEHAVIOR_SCENARIO__CAUSE: return GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == FlowInvolvedElement.class) {
-			switch (baseFeatureID) {
-				case GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE: return GqamPackage.BEHAVIOR_SCENARIO__CAUSE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

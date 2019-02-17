@@ -652,15 +652,26 @@ public class MarteServices {
 	}
 
 	public void setEffect(EObject source, EObject target) {
-		if (source instanceof ArrivalPattern && target instanceof FlowInvolvedElement) {
+		if (source instanceof ArrivalPattern && target instanceof BehaviorScenario) {
 			ArrivalPattern ap = (ArrivalPattern) source;
 			if (ap.eContainer() instanceof WorkloadEvent) {
 				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
-				we.setEffect((FlowInvolvedElement) target);
+				we.setEffect((BehaviorScenario) target);
 			}
 		}
 	}
 
+	public void setTransferData(EObject source, EObject target) {
+		if (source instanceof ArrivalPattern && target instanceof BehaviorScenario) {
+			ArrivalPattern ap = (ArrivalPattern) source;
+			if (ap.eContainer() instanceof WorkloadEvent) {
+				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
+				we.setTransferData((BehaviorScenario) target);
+			}
+		}
+	}
+
+	
 	public boolean isValidReferenceSelection(EObject context, List<EObject> views) {
 		for (EObject select : views) {
 			if (select instanceof DNode) {

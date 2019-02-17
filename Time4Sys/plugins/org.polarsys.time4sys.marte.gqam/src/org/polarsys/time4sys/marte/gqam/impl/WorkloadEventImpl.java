@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
-import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
+import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
@@ -32,6 +32,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getEffect <em>Effect</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getTransferData <em>Transfer Data</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
@@ -46,7 +47,17 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * @generated
 	 * @ordered
 	 */
-	protected FlowInvolvedElement effect;
+	protected BehaviorScenario effect;
+
+	/**
+	 * The cached value of the '{@link #getTransferData() <em>Transfer Data</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransferData()
+	 * @generated
+	 * @ordered
+	 */
+	protected BehaviorScenario transferData;
 
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
@@ -82,10 +93,10 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FlowInvolvedElement getEffect() {
+	public BehaviorScenario getEffect() {
 		if (effect != null && effect.eIsProxy()) {
 			InternalEObject oldEffect = (InternalEObject)effect;
-			effect = (FlowInvolvedElement)eResolveProxy(oldEffect);
+			effect = (BehaviorScenario)eResolveProxy(oldEffect);
 			if (effect != oldEffect) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GqamPackage.WORKLOAD_EVENT__EFFECT, oldEffect, effect));
@@ -99,7 +110,7 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FlowInvolvedElement basicGetEffect() {
+	public BehaviorScenario basicGetEffect() {
 		return effect;
 	}
 
@@ -108,8 +119,8 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEffect(FlowInvolvedElement newEffect, NotificationChain msgs) {
-		FlowInvolvedElement oldEffect = effect;
+	public NotificationChain basicSetEffect(BehaviorScenario newEffect, NotificationChain msgs) {
+		BehaviorScenario oldEffect = effect;
 		effect = newEffect;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__EFFECT, oldEffect, newEffect);
@@ -123,20 +134,58 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEffect(FlowInvolvedElement newEffect) {
+	public void setEffect(BehaviorScenario newEffect) {
 		if (newEffect != effect) {
 			NotificationChain msgs = null;
 			if (effect != null)
-				msgs = ((InternalEObject)effect).eInverseRemove(this, GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE, FlowInvolvedElement.class, msgs);
+				msgs = ((InternalEObject)effect).eInverseRemove(this, GqamPackage.BEHAVIOR_SCENARIO__CAUSE, BehaviorScenario.class, msgs);
 			if (newEffect != null)
-				msgs = ((InternalEObject)newEffect).eInverseAdd(this, GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE, FlowInvolvedElement.class, msgs);
+				msgs = ((InternalEObject)newEffect).eInverseAdd(this, GqamPackage.BEHAVIOR_SCENARIO__CAUSE, BehaviorScenario.class, msgs);
 			msgs = basicSetEffect(newEffect, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__EFFECT, newEffect, newEffect));
 	}
-	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehaviorScenario getTransferData() {
+		if (transferData != null && transferData.eIsProxy()) {
+			InternalEObject oldTransferData = (InternalEObject)transferData;
+			transferData = (BehaviorScenario)eResolveProxy(oldTransferData);
+			if (transferData != oldTransferData) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA, oldTransferData, transferData));
+			}
+		}
+		return transferData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehaviorScenario basicGetTransferData() {
+		return transferData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTransferData(BehaviorScenario newTransferData) {
+		BehaviorScenario oldTransferData = transferData;
+		transferData = newTransferData;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA, oldTransferData, transferData));
+	}
+
 	//TODO TODO TODO rules 18 et 20
 //	Rule 18 
 //	ocl:gqam::ExecutionStep.allInstances()
@@ -153,7 +202,7 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 //			 >= pt.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value.toString()))	/**	
 	
 	/**
-	* <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -205,8 +254,8 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				if (effect != null)
-					msgs = ((InternalEObject)effect).eInverseRemove(this, GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE, FlowInvolvedElement.class, msgs);
-				return basicSetEffect((FlowInvolvedElement)otherEnd, msgs);
+					msgs = ((InternalEObject)effect).eInverseRemove(this, GqamPackage.BEHAVIOR_SCENARIO__CAUSE, BehaviorScenario.class, msgs);
+				return basicSetEffect((BehaviorScenario)otherEnd, msgs);
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				if (pattern != null)
 					msgs = ((InternalEObject)pattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GqamPackage.WORKLOAD_EVENT__PATTERN, null, msgs);
@@ -242,6 +291,9 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				if (resolve) return getEffect();
 				return basicGetEffect();
+			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
+				if (resolve) return getTransferData();
+				return basicGetTransferData();
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				return getPattern();
 		}
@@ -257,7 +309,10 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
-				setEffect((FlowInvolvedElement)newValue);
+				setEffect((BehaviorScenario)newValue);
+				return;
+			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
+				setTransferData((BehaviorScenario)newValue);
 				return;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				setPattern((ArrivalPattern)newValue);
@@ -275,7 +330,10 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
-				setEffect((FlowInvolvedElement)null);
+				setEffect((BehaviorScenario)null);
+				return;
+			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
+				setTransferData((BehaviorScenario)null);
 				return;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				setPattern((ArrivalPattern)null);
@@ -294,6 +352,8 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				return effect != null;
+			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
+				return transferData != null;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				return pattern != null;
 		}

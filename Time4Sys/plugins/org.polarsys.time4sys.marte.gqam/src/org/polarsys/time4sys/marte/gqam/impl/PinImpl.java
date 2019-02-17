@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
@@ -40,8 +39,6 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.ObjectNode;
 import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
 import org.polarsys.time4sys.marte.gqam.Pin;
-
-import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
@@ -57,7 +54,6 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#getOrdering <em>Ordering</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#getTypename <em>Typename</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#getCause <em>Cause</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#getPattern <em>Pattern</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl#isIsControl <em>Is Control</em>}</li>
  * </ul>
@@ -134,16 +130,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 	 * @ordered
 	 */
 	protected String typename = TYPENAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCause() <em>Cause</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCause()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<WorkloadEvent> cause;
 
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
@@ -274,18 +260,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<WorkloadEvent> getCause() {
-		if (cause == null) {
-			cause = new EObjectWithInverseResolvingEList<WorkloadEvent>(WorkloadEvent.class, this, GqamPackage.PIN__CAUSE, GqamPackage.WORKLOAD_EVENT__EFFECT);
-		}
-		return cause;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ArrivalPattern getPattern() {
 		return pattern;
 	}
@@ -373,8 +347,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 		switch (featureID) {
 			case GqamPackage.PIN__EANNOTATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEAnnotations()).basicAdd(otherEnd, msgs);
-			case GqamPackage.PIN__CAUSE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCause()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -389,8 +361,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 		switch (featureID) {
 			case GqamPackage.PIN__EANNOTATIONS:
 				return ((InternalEList<?>)getEAnnotations()).basicRemove(otherEnd, msgs);
-			case GqamPackage.PIN__CAUSE:
-				return ((InternalEList<?>)getCause()).basicRemove(otherEnd, msgs);
 			case GqamPackage.PIN__PATTERN:
 				return basicSetPattern(null, msgs);
 		}
@@ -413,8 +383,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 				return getOrdering();
 			case GqamPackage.PIN__TYPENAME:
 				return getTypename();
-			case GqamPackage.PIN__CAUSE:
-				return getCause();
 			case GqamPackage.PIN__PATTERN:
 				return getPattern();
 			case GqamPackage.PIN__IS_CONTROL:
@@ -444,10 +412,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 				return;
 			case GqamPackage.PIN__TYPENAME:
 				setTypename((String)newValue);
-				return;
-			case GqamPackage.PIN__CAUSE:
-				getCause().clear();
-				getCause().addAll((Collection<? extends WorkloadEvent>)newValue);
 				return;
 			case GqamPackage.PIN__PATTERN:
 				setPattern((ArrivalPattern)newValue);
@@ -479,9 +443,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 			case GqamPackage.PIN__TYPENAME:
 				setTypename(TYPENAME_EDEFAULT);
 				return;
-			case GqamPackage.PIN__CAUSE:
-				getCause().clear();
-				return;
 			case GqamPackage.PIN__PATTERN:
 				setPattern((ArrivalPattern)null);
 				return;
@@ -508,8 +469,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 				return ordering != ORDERING_EDEFAULT;
 			case GqamPackage.PIN__TYPENAME:
 				return TYPENAME_EDEFAULT == null ? typename != null : !TYPENAME_EDEFAULT.equals(typename);
-			case GqamPackage.PIN__CAUSE:
-				return cause != null && !cause.isEmpty();
 			case GqamPackage.PIN__PATTERN:
 				return pattern != null;
 			case GqamPackage.PIN__IS_CONTROL:
@@ -556,7 +515,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 		}
 		if (baseClass == FlowInvolvedElement.class) {
 			switch (derivedFeatureID) {
-				case GqamPackage.PIN__CAUSE: return GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE;
 				default: return -1;
 			}
 		}
@@ -601,7 +559,6 @@ public abstract class PinImpl extends MultiplicityElementImpl implements Pin {
 		}
 		if (baseClass == FlowInvolvedElement.class) {
 			switch (baseFeatureID) {
-				case GqamPackage.FLOW_INVOLVED_ELEMENT__CAUSE: return GqamPackage.PIN__CAUSE;
 				default: return -1;
 			}
 		}

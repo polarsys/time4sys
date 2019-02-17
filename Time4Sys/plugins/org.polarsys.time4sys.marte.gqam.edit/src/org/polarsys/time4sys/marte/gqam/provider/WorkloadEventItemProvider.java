@@ -56,6 +56,7 @@ public class WorkloadEventItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addEffectPropertyDescriptor(object);
+			addTransferDataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +75,28 @@ public class WorkloadEventItemProvider extends NamedElementItemProvider {
 				 getString("_UI_WorkloadEvent_effect_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkloadEvent_effect_feature", "_UI_WorkloadEvent_type"),
 				 GqamPackage.Literals.WORKLOAD_EVENT__EFFECT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Transfer Data feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTransferDataPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WorkloadEvent_transferData_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WorkloadEvent_transferData_feature", "_UI_WorkloadEvent_type"),
+				 GqamPackage.Literals.WORKLOAD_EVENT__TRANSFER_DATA,
 				 true,
 				 false,
 				 true,

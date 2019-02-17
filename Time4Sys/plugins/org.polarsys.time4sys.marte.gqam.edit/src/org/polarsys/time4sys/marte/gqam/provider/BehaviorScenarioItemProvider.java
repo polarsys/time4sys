@@ -56,8 +56,8 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCausePropertyDescriptor(object);
 			addRootPropertyDescriptor(object);
+			addCausePropertyDescriptor(object);
 			addParentStepPropertyDescriptor(object);
 			addRespTimePropertyDescriptor(object);
 			addBestCETPropertyDescriptor(object);
@@ -77,9 +77,9 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_FlowInvolvedElement_cause_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FlowInvolvedElement_cause_feature", "_UI_FlowInvolvedElement_type"),
-				 GqamPackage.Literals.FLOW_INVOLVED_ELEMENT__CAUSE,
+				 getString("_UI_BehaviorScenario_cause_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehaviorScenario_cause_feature", "_UI_BehaviorScenario_type"),
+				 GqamPackage.Literals.BEHAVIOR_SCENARIO__CAUSE,
 				 true,
 				 false,
 				 true,

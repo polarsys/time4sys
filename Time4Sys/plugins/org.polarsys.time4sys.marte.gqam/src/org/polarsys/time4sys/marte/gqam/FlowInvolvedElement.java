@@ -12,7 +12,6 @@
  */
 package org.polarsys.time4sys.marte.gqam;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,34 +23,10 @@ import org.eclipse.emf.ecore.EObject;
  * An Flow Involved Element is a model element that is part of a functional chain, data-flow, or control-flow of interest.
  * <!-- end-model-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.FlowInvolvedElement#getCause <em>Cause</em>}</li>
- * </ul>
  *
  * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getFlowInvolvedElement()
  * @model abstract="true"
  * @generated
  */
 public interface FlowInvolvedElement extends EObject {
-
-	/**
-	 * Returns the value of the '<em><b>Cause</b></em>' reference list.
-	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.WorkloadEvent}.
-	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getEffect <em>Effect</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cause</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cause</em>' reference list.
-	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getFlowInvolvedElement_Cause()
-	 * @see org.polarsys.time4sys.marte.gqam.WorkloadEvent#getEffect
-	 * @model opposite="effect"
-	 * @generated
-	 */
-	EList<WorkloadEvent> getCause();
 } // FlowInvolvedElement

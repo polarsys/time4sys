@@ -27,6 +27,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getSteps <em>Steps</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getRoot <em>Root</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getCause <em>Cause</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getParentStep <em>Parent Step</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.BehaviorScenario#getRespTime <em>Resp Time</em>}</li>
@@ -82,6 +83,24 @@ public interface BehaviorScenario extends NamedElement, FlowInvolvedElement {
 	 * @generated
 	 */
 	void setRoot(Step value);
+
+	/**
+	 * Returns the value of the '<em><b>Cause</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.marte.gqam.WorkloadEvent}.
+	 * It is bidirectional and its opposite is '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getEffect <em>Effect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cause</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cause</em>' reference list.
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getBehaviorScenario_Cause()
+	 * @see org.polarsys.time4sys.marte.gqam.WorkloadEvent#getEffect
+	 * @model opposite="effect"
+	 * @generated
+	 */
+	EList<WorkloadEvent> getCause();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Step</b></em>' reference.
