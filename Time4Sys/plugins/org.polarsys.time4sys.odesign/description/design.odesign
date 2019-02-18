@@ -157,7 +157,7 @@
         </edgeMappings>
         <edgeMappings name="Event2StepData" deletionDescription="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteEvent2Step']" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='ArrivalPattern']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@containerMappings[name='Hardware%20Resource']/@subContainerMappings[name='SubSw']/@subNodeMappings[name='ExecutionStep'] //@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@nodeMappings[name='BehaviorScenario']" targetFinderExpression="aql:self.eInverse('pattern').transferData" reconnections="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design%20Architecture']/@defaultLayer/@toolSections.1/@ownedTools[name='ReconnectEvent']">
           <style>
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
