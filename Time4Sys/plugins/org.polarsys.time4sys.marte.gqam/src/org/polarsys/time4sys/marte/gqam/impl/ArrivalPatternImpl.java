@@ -37,6 +37,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.impl.ModelElementImpl;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl#getJitter <em>Jitter</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl#getPhase <em>Phase</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl#isIsControl <em>Is Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +89,25 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 	 * @ordered
 	 */
 	protected Reference reference;
+
+	/**
+	 * The default value of the '{@link #isIsControl() <em>Is Control</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_CONTROL_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isIsControl() <em>Is Control</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsControl()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isControl = IS_CONTROL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,6 +254,27 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsControl() {
+		return isControl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsControl(boolean newIsControl) {
+		boolean oldIsControl = isControl;
+		isControl = newIsControl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.ARRIVAL_PATTERN__IS_CONTROL, oldIsControl, isControl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -290,6 +331,8 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 			case GqamPackage.ARRIVAL_PATTERN__REFERENCE:
 				if (resolve) return getReference();
 				return basicGetReference();
+			case GqamPackage.ARRIVAL_PATTERN__IS_CONTROL:
+				return isIsControl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +356,9 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 				return;
 			case GqamPackage.ARRIVAL_PATTERN__REFERENCE:
 				setReference((Reference)newValue);
+				return;
+			case GqamPackage.ARRIVAL_PATTERN__IS_CONTROL:
+				setIsControl((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,6 +384,9 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 			case GqamPackage.ARRIVAL_PATTERN__REFERENCE:
 				setReference((Reference)null);
 				return;
+			case GqamPackage.ARRIVAL_PATTERN__IS_CONTROL:
+				setIsControl(IS_CONTROL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +407,8 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 				return PHASE_EDEFAULT == null ? phase != null : !PHASE_EDEFAULT.equals(phase);
 			case GqamPackage.ARRIVAL_PATTERN__REFERENCE:
 				return reference != null;
+			case GqamPackage.ARRIVAL_PATTERN__IS_CONTROL:
+				return isControl != IS_CONTROL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,6 +427,8 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 		result.append(jitter);
 		result.append(", phase: ");
 		result.append(phase);
+		result.append(", isControl: ");
+		result.append(isControl);
 		result.append(')');
 		return result.toString();
 	}

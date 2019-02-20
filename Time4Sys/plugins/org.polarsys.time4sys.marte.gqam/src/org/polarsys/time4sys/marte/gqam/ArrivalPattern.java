@@ -28,6 +28,7 @@ import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#getJitter <em>Jitter</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#getPhase <em>Phase</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#isIsControl <em>Is Control</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getArrivalPattern()
@@ -140,5 +141,31 @@ public interface ArrivalPattern extends ModelElement {
 	 * @generated
 	 */
 	void setReference(Reference value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Control</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Control</em>' attribute.
+	 * @see #setIsControl(boolean)
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getArrivalPattern_IsControl()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsControl();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#isIsControl <em>Is Control</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Control</em>' attribute.
+	 * @see #isIsControl()
+	 * @generated
+	 */
+	void setIsControl(boolean value);
 
 } // ArrivalPattern

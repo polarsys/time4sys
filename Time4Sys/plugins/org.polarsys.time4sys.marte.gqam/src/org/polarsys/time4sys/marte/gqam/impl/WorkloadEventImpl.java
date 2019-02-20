@@ -32,7 +32,6 @@ import org.polarsys.time4sys.marte.nfp.coreelements.impl.NamedElementImpl;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getEffect <em>Effect</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getTransferData <em>Transfer Data</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl#getPattern <em>Pattern</em>}</li>
  * </ul>
  *
@@ -48,16 +47,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 	 * @ordered
 	 */
 	protected BehaviorScenario effect;
-
-	/**
-	 * The cached value of the '{@link #getTransferData() <em>Transfer Data</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransferData()
-	 * @generated
-	 * @ordered
-	 */
-	protected BehaviorScenario transferData;
 
 	/**
 	 * The cached value of the '{@link #getPattern() <em>Pattern</em>}' containment reference.
@@ -146,44 +135,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__EFFECT, newEffect, newEffect));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviorScenario getTransferData() {
-		if (transferData != null && transferData.eIsProxy()) {
-			InternalEObject oldTransferData = (InternalEObject)transferData;
-			transferData = (BehaviorScenario)eResolveProxy(oldTransferData);
-			if (transferData != oldTransferData) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA, oldTransferData, transferData));
-			}
-		}
-		return transferData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviorScenario basicGetTransferData() {
-		return transferData;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTransferData(BehaviorScenario newTransferData) {
-		BehaviorScenario oldTransferData = transferData;
-		transferData = newTransferData;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA, oldTransferData, transferData));
 	}
 
 	//TODO TODO TODO rules 18 et 20
@@ -291,9 +242,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				if (resolve) return getEffect();
 				return basicGetEffect();
-			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
-				if (resolve) return getTransferData();
-				return basicGetTransferData();
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				return getPattern();
 		}
@@ -310,9 +258,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				setEffect((BehaviorScenario)newValue);
-				return;
-			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
-				setTransferData((BehaviorScenario)newValue);
 				return;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				setPattern((ArrivalPattern)newValue);
@@ -332,9 +277,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				setEffect((BehaviorScenario)null);
 				return;
-			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
-				setTransferData((BehaviorScenario)null);
-				return;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				setPattern((ArrivalPattern)null);
 				return;
@@ -352,8 +294,6 @@ public class WorkloadEventImpl extends NamedElementImpl implements WorkloadEvent
 		switch (featureID) {
 			case GqamPackage.WORKLOAD_EVENT__EFFECT:
 				return effect != null;
-			case GqamPackage.WORKLOAD_EVENT__TRANSFER_DATA:
-				return transferData != null;
 			case GqamPackage.WORKLOAD_EVENT__PATTERN:
 				return pattern != null;
 		}

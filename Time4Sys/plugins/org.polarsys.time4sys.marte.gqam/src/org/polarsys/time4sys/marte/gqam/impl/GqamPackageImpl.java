@@ -587,17 +587,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWorkloadEvent_TransferData() {
-		return (EReference)workloadEventEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getWorkloadEvent_Pattern() {
-		return (EReference)workloadEventEClass.getEStructuralFeatures().get(2);
+		return (EReference)workloadEventEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1208,6 +1199,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getArrivalPattern_IsControl() {
+		return (EAttribute)arrivalPatternEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPeriodicPattern() {
 		return periodicPatternEClass;
 	}
@@ -1357,6 +1357,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEAttribute(arrivalPatternEClass, ARRIVAL_PATTERN__JITTER);
 		createEAttribute(arrivalPatternEClass, ARRIVAL_PATTERN__PHASE);
 		createEReference(arrivalPatternEClass, ARRIVAL_PATTERN__REFERENCE);
+		createEAttribute(arrivalPatternEClass, ARRIVAL_PATTERN__IS_CONTROL);
 
 		behaviorScenarioEClass = createEClass(BEHAVIOR_SCENARIO);
 		createEReference(behaviorScenarioEClass, BEHAVIOR_SCENARIO__STEPS);
@@ -1473,7 +1474,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		workloadEventEClass = createEClass(WORKLOAD_EVENT);
 		createEReference(workloadEventEClass, WORKLOAD_EVENT__EFFECT);
-		createEReference(workloadEventEClass, WORKLOAD_EVENT__TRANSFER_DATA);
 		createEReference(workloadEventEClass, WORKLOAD_EVENT__PATTERN);
 
 		// Create enums
@@ -1562,6 +1562,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getArrivalPattern_Jitter(), this.getNFP_Duration(), "jitter", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArrivalPattern_Phase(), this.getNFP_Duration(), "phase", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrivalPattern_Reference(), this.getReference(), null, "reference", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArrivalPattern_IsControl(), ecorePackage.getEBoolean(), "isControl", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorScenarioEClass, BehaviorScenario.class, "BehaviorScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorScenario_Steps(), this.getStep(), this.getStep_Scenario(), "steps", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1682,7 +1683,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkloadEvent_TransferData(), this.getBehaviorScenario(), null, "transferData", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

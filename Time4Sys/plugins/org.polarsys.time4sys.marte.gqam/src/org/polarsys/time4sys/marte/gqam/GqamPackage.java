@@ -852,13 +852,22 @@ public interface GqamPackage extends EPackage {
 	int ARRIVAL_PATTERN__REFERENCE = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL_PATTERN__IS_CONTROL = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Arrival Pattern</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL_PATTERN_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int ARRIVAL_PATTERN_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -932,6 +941,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int BURST_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BURST_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Min Interarrival</b></em>' attribute.
@@ -1077,6 +1095,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOSED_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLOSED_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Population</b></em>' attribute.
@@ -2742,6 +2769,15 @@ public interface GqamPackage extends EPackage {
 	int ONCE__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
 
 	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ONCE__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+
+	/**
 	 * The number of structural features of the '<em>Once</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2920,6 +2956,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int PERIODIC_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERIODIC_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Period</b></em>' attribute.
@@ -3867,6 +3912,15 @@ public interface GqamPackage extends EPackage {
 	int SLIDING_WINDOW_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
 
 	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLIDING_WINDOW_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+
+	/**
 	 * The feature id for the '<em><b>Window Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3955,6 +4009,15 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPORADIC_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPORADIC_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Min Interarrival</b></em>' attribute.
@@ -4101,22 +4164,13 @@ public interface GqamPackage extends EPackage {
 	int WORKLOAD_EVENT__EFFECT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Transfer Data</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKLOAD_EVENT__TRANSFER_DATA = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_EVENT__PATTERN = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int WORKLOAD_EVENT__PATTERN = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Workload Event</em>' class.
@@ -4125,7 +4179,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKLOAD_EVENT_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int WORKLOAD_EVENT_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -4431,17 +4485,6 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWorkloadEvent_Effect();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getTransferData <em>Transfer Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Transfer Data</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.WorkloadEvent#getTransferData()
-	 * @see #getWorkloadEvent()
-	 * @generated
-	 */
-	EReference getWorkloadEvent_TransferData();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.marte.gqam.WorkloadEvent#getPattern <em>Pattern</em>}'.
@@ -5170,6 +5213,17 @@ public interface GqamPackage extends EPackage {
 	EReference getArrivalPattern_Reference();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.ArrivalPattern#isIsControl <em>Is Control</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Control</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.ArrivalPattern#isIsControl()
+	 * @see #getArrivalPattern()
+	 * @generated
+	 */
+	EAttribute getArrivalPattern_IsControl();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.PeriodicPattern <em>Periodic Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5512,14 +5566,6 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference WORKLOAD_EVENT__EFFECT = eINSTANCE.getWorkloadEvent_Effect();
-
-		/**
-		 * The meta object literal for the '<em><b>Transfer Data</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WORKLOAD_EVENT__TRANSFER_DATA = eINSTANCE.getWorkloadEvent_TransferData();
 
 		/**
 		 * The meta object literal for the '<em><b>Pattern</b></em>' containment reference feature.
@@ -6108,6 +6154,14 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARRIVAL_PATTERN__REFERENCE = eINSTANCE.getArrivalPattern_Reference();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Control</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARRIVAL_PATTERN__IS_CONTROL = eINSTANCE.getArrivalPattern_IsControl();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.

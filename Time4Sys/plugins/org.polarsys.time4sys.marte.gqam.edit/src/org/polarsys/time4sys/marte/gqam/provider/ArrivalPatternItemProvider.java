@@ -59,6 +59,7 @@ public class ArrivalPatternItemProvider
 			addJitterPropertyDescriptor(object);
 			addPhasePropertyDescriptor(object);
 			addReferencePropertyDescriptor(object);
+			addIsControlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,28 @@ public class ArrivalPatternItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Control feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsControlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ArrivalPattern_isControl_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArrivalPattern_isControl_feature", "_UI_ArrivalPattern_type"),
+				 GqamPackage.Literals.ARRIVAL_PATTERN__IS_CONTROL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -159,6 +182,7 @@ public class ArrivalPatternItemProvider
 		switch (notification.getFeatureID(ArrivalPattern.class)) {
 			case GqamPackage.ARRIVAL_PATTERN__JITTER:
 			case GqamPackage.ARRIVAL_PATTERN__PHASE:
+			case GqamPackage.ARRIVAL_PATTERN__IS_CONTROL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

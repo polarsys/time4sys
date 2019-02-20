@@ -379,7 +379,7 @@ public class MarteServices {
 
 	public static DesignModel getDesign(EObject context) {
 		final EClass designModelEClass = DesignPackage.eINSTANCE.getDesignModel();
-		final EObject fContainer = EcoreUtil2.getFirstContainer(context,  designModelEClass);
+		final EObject fContainer = EcoreUtil2.getFirstContainer(context, designModelEClass);
 		return DesignModel.class.cast(fContainer);
 	}
 
@@ -585,7 +585,7 @@ public class MarteServices {
 			behaviorScenario.getCause().add(we);
 		}
 	}
-	
+
 	public void addOnceEventOnStep(EObject bs) {
 		Once pp = GqamFactory.eINSTANCE.createOnce();
 		if (bs instanceof BehaviorScenario) {
@@ -666,12 +666,12 @@ public class MarteServices {
 			ArrivalPattern ap = (ArrivalPattern) source;
 			if (ap.eContainer() instanceof WorkloadEvent) {
 				WorkloadEvent we = (WorkloadEvent) ap.eContainer();
-				we.setTransferData((BehaviorScenario) target);
+				we.setEffect((BehaviorScenario) target);
+				ap.setIsControl(false);
 			}
 		}
 	}
 
-	
 	public boolean isValidReferenceSelection(EObject context, List<EObject> views) {
 		for (EObject select : views) {
 			if (select instanceof DNode) {
@@ -686,10 +686,10 @@ public class MarteServices {
 
 	public void createReference(EObject context, List<EObject> views) {
 		Reference ref = GqamFactory.eINSTANCE.createReference();
-		if (context instanceof ArrivalPattern){
-			WorkloadBehavior wb = (WorkloadBehavior)((ArrivalPattern)context).getParent().eContainer();
+		if (context instanceof ArrivalPattern) {
+			WorkloadBehavior wb = (WorkloadBehavior) ((ArrivalPattern) context).getParent().eContainer();
 			wb.getReferences().add(ref);
-			ref.setReferenceName("Reference "+ wb.getReferences().size());
+			ref.setReferenceName("Reference " + wb.getReferences().size());
 		}
 		for (EObject select : views) {
 			EObject target = ((DNode) select).getTarget();
