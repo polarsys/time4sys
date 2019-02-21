@@ -146,6 +146,226 @@ public interface GqamPackage extends EPackage {
 	int ACQUIRE_STEP = 0;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReleaseStepImpl <em>Release Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ReleaseStepImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReleaseStep()
+	 * @generated
+	 */
+	int RELEASE_STEP = 20;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl <em>Requested Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getRequestedService()
+	 * @generated
+	 */
+	int REQUESTED_SERVICE = 21;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl <em>Execution Step</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getExecutionStep()
+	 * @generated
+	 */
+	int EXECUTION_STEP = 8;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getArrivalPattern()
+	 * @generated
+	 */
+	int ARRIVAL_PATTERN = 1;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl <em>Burst Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getBurstPattern()
+	 * @generated
+	 */
+	int BURST_PATTERN = 3;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ClosedPatternImpl <em>Closed Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ClosedPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getClosedPattern()
+	 * @generated
+	 */
+	int CLOSED_PATTERN = 4;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPeriodicPattern()
+	 * @generated
+	 */
+	int PERIODIC_PATTERN = 16;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl <em>Sporadic Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
+	 * @generated
+	 */
+	int SPORADIC_PATTERN = 24;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReference()
+	 * @generated
+	 */
+	int REFERENCE = 19;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
+	 * @generated
+	 */
+	int SLIDING_WINDOW_PATTERN = 23;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.DelayImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getDelay()
+	 * @generated
+	 */
+	int DELAY = 7;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl <em>Multiplicity Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getMultiplicityElement()
+	 * @generated
+	 */
+	int MULTIPLICITY_ELEMENT = 12;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl <em>Input Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.InputPinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getInputPin()
+	 * @generated
+	 */
+	int INPUT_PIN = 10;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOutputPin()
+	 * @generated
+	 */
+	int OUTPUT_PIN = 15;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OnceImpl <em>Once</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.OnceImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOnce()
+	 * @generated
+	 */
+	int ONCE = 14;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl <em>Communication Channel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getCommunicationChannel()
+	 * @generated
+	 */
+	int COMMUNICATION_CHANNEL = 5;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl <em>Pin</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.PinImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPin()
+	 * @generated
+	 */
+	int PIN = 17;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl <em>Flow Involved Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getFlowInvolvedElement()
+	 * @generated
+	 */
+	int FLOW_INVOLVED_ELEMENT = 9;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
+	 * @generated
+	 */
+	int TIMED_OBSERVER = 26;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
+	 * @generated
+	 */
+	int LATENCY_OBSERVER = 11;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
+	 * @generated
+	 */
+	int RESOURCE_SERVICE_EXCECUTION = 22;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl <em>Object Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getObjectNode()
+	 * @generated
+	 */
+	int OBJECT_NODE = 13;
+
+	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -371,13 +591,13 @@ public interface GqamPackage extends EPackage {
 	int ACQUIRE_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int ACQUIRE_STEP__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Acq Res</b></em>' reference.
@@ -423,46 +643,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACQUIRE_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReleaseStepImpl <em>Release Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ReleaseStepImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReleaseStep()
-	 * @generated
-	 */
-	int RELEASE_STEP = 20;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl <em>Requested Service</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.RequestedServiceImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getRequestedService()
-	 * @generated
-	 */
-	int REQUESTED_SERVICE = 21;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl <em>Execution Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ExecutionStepImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getExecutionStep()
-	 * @generated
-	 */
-	int EXECUTION_STEP = 8;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl <em>Arrival Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ArrivalPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getArrivalPattern()
-	 * @generated
-	 */
-	int ARRIVAL_PATTERN = 1;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -663,16 +843,6 @@ public interface GqamPackage extends EPackage {
 	int BEHAVIOR_SCENARIO_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl <em>Burst Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getBurstPattern()
-	 * @generated
-	 */
-	int BURST_PATTERN = 3;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,16 +987,6 @@ public interface GqamPackage extends EPackage {
 	int BURST_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ClosedPatternImpl <em>Closed Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ClosedPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getClosedPattern()
-	 * @generated
-	 */
-	int CLOSED_PATTERN = 4;
-
-	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -924,106 +1084,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLOSED_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPeriodicPattern()
-	 * @generated
-	 */
-	int PERIODIC_PATTERN = 16;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl <em>Sporadic Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.SporadicPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSporadicPattern()
-	 * @generated
-	 */
-	int SPORADIC_PATTERN = 24;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl <em>Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ReferenceImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getReference()
-	 * @generated
-	 */
-	int REFERENCE = 19;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl <em>Sliding Window Pattern</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.SlidingWindowPatternImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getSlidingWindowPattern()
-	 * @generated
-	 */
-	int SLIDING_WINDOW_PATTERN = 23;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.DelayImpl <em>Delay</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.DelayImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getDelay()
-	 * @generated
-	 */
-	int DELAY = 7;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl <em>Multiplicity Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.MultiplicityElementImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getMultiplicityElement()
-	 * @generated
-	 */
-	int MULTIPLICITY_ELEMENT = 12;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl <em>Input Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.InputPinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getInputPin()
-	 * @generated
-	 */
-	int INPUT_PIN = 10;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl <em>Output Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.OutputPinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOutputPin()
-	 * @generated
-	 */
-	int OUTPUT_PIN = 15;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.OnceImpl <em>Once</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.OnceImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getOnce()
-	 * @generated
-	 */
-	int ONCE = 14;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl <em>Communication Channel</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.CommunicationChannelImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getCommunicationChannel()
-	 * @generated
-	 */
-	int COMMUNICATION_CHANNEL = 5;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -1404,13 +1464,13 @@ public interface GqamPackage extends EPackage {
 	int COMMUNICATION_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int COMMUNICATION_STEP__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute.
@@ -1456,16 +1516,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMUNICATION_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl <em>Pin</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.PinImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getPin()
-	 * @generated
-	 */
-	int PIN = 17;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -1693,13 +1743,13 @@ public interface GqamPackage extends EPackage {
 	int DELAY__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int DELAY__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1963,13 +2013,13 @@ public interface GqamPackage extends EPackage {
 	int EXECUTION_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int EXECUTION_STEP__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The number of structural features of the '<em>Execution Step</em>' class.
@@ -1997,16 +2047,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXECUTION_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl <em>Flow Involved Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getFlowInvolvedElement()
-	 * @generated
-	 */
-	int FLOW_INVOLVED_ELEMENT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Flow Involved Element</em>' class.
@@ -2133,26 +2173,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT_PIN_OPERATION_COUNT = GqamPackage.PIN_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
-	 * @generated
-	 */
-	int TIMED_OBSERVER = 26;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
-	 * @generated
-	 */
-	int LATENCY_OBSERVER = 11;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2297,26 +2317,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getResourceServiceExcecution()
-	 * @generated
-	 */
-	int RESOURCE_SERVICE_EXCECUTION = 22;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl <em>Object Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.ObjectNodeImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getObjectNode()
-	 * @generated
-	 */
-	int OBJECT_NODE = 13;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3084,13 +3084,13 @@ public interface GqamPackage extends EPackage {
 	int RELEASE_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int RELEASE_STEP__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Rel Res</b></em>' reference.
@@ -3363,13 +3363,13 @@ public interface GqamPackage extends EPackage {
 	int REQUESTED_SERVICE__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int REQUESTED_SERVICE__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The number of structural features of the '<em>Requested Service</em>' class.
@@ -3624,13 +3624,13 @@ public interface GqamPackage extends EPackage {
 	int RESOURCE_SERVICE_EXCECUTION__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
+	int RESOURCE_SERVICE_EXCECUTION__OCCURENCE_PHASE = GqamPackage.STEP__OCCURENCE_PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Resource Service</b></em>' reference.
@@ -4092,13 +4092,13 @@ public interface GqamPackage extends EPackage {
 	int STEP__OCCURENCE_PERIOD = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 14;
 
 	/**
-	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * The feature id for the '<em><b>Occurence Phase</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__OCCURENCE_OFFSET = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 15;
+	int STEP__OCCURENCE_PHASE = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 15;
 
 	/**
 	 * The number of structural features of the '<em>Step</em>' class.
@@ -4761,15 +4761,15 @@ public interface GqamPackage extends EPackage {
 	EAttribute getStep_OccurencePeriod();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset <em>Occurence Offset</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurencePhase <em>Occurence Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Occurence Offset</em>'.
-	 * @see org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset()
+	 * @return the meta object for the attribute '<em>Occurence Phase</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.Step#getOccurencePhase()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EAttribute getStep_OccurenceOffset();
+	EAttribute getStep_OccurencePhase();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.TimedObserver <em>Timed Observer</em>}'.
@@ -5834,12 +5834,12 @@ public interface GqamPackage extends EPackage {
 		EAttribute STEP__OCCURENCE_PERIOD = eINSTANCE.getStep_OccurencePeriod();
 
 		/**
-		 * The meta object literal for the '<em><b>Occurence Offset</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Occurence Phase</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEP__OCCURENCE_OFFSET = eINSTANCE.getStep_OccurenceOffset();
+		EAttribute STEP__OCCURENCE_PHASE = eINSTANCE.getStep_OccurencePhase();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.

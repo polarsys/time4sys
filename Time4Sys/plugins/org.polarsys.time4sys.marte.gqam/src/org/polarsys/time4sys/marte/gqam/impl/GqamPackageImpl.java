@@ -700,7 +700,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStep_OccurenceOffset() {
+	public EAttribute getStep_OccurencePhase() {
 		return (EAttribute)stepEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -1487,7 +1487,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(stepEClass, STEP__INPUT_PIN);
 		createEReference(stepEClass, STEP__OUTPUT_PIN);
 		createEAttribute(stepEClass, STEP__OCCURENCE_PERIOD);
-		createEAttribute(stepEClass, STEP__OCCURENCE_OFFSET);
+		createEAttribute(stepEClass, STEP__OCCURENCE_PHASE);
 
 		timedObserverEClass = createEClass(TIMED_OBSERVER);
 		createEAttribute(timedObserverEClass, TIMED_OBSERVER__LAXITY);
@@ -1699,7 +1699,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getStep_InputPin(), theGqamPackage_1.getInputPin(), null, "inputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_OutputPin(), theGqamPackage_1.getOutputPin(), null, "outputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_OccurencePeriod(), theEcorePackage.getEInt(), "occurencePeriod", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_OccurenceOffset(), theEcorePackage.getEInt(), "occurenceOffset", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_OccurencePhase(), theEcorePackage.getEInt(), "occurencePhase", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timedObserverEClass, TimedObserver.class, "TimedObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimedObserver_Laxity(), theGqamPackage_1.getLaxityKind(), "laxity", null, 0, -1, TimedObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

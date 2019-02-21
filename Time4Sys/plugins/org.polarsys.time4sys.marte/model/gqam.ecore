@@ -280,7 +280,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputPin" upperBound="-1"
         eType="#//OutputPin" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurencePeriod" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurenceOffset" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="occurencePhase" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimedObserver" eSuperTypes="nfp_annotation.ecore#//Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="laxity" upperBound="-1"

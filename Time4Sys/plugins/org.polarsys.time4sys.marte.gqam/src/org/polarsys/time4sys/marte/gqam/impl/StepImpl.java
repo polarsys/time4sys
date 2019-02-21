@@ -58,7 +58,7 @@ import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getInputPin <em>Input Pin</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOutputPin <em>Output Pin</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOccurencePeriod <em>Occurence Period</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOccurenceOffset <em>Occurence Offset</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.StepImpl#getOccurencePhase <em>Occurence Phase</em>}</li>
  * </ul>
  *
  * @generated
@@ -265,24 +265,24 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	protected int occurencePeriod = OCCURENCE_PERIOD_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOccurenceOffset() <em>Occurence Offset</em>}' attribute.
+	 * The default value of the '{@link #getOccurencePhase() <em>Occurence Phase</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOccurenceOffset()
+	 * @see #getOccurencePhase()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int OCCURENCE_OFFSET_EDEFAULT = 0;
+	protected static final int OCCURENCE_PHASE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getOccurenceOffset() <em>Occurence Offset</em>}' attribute.
+	 * The cached value of the '{@link #getOccurencePhase() <em>Occurence Phase</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOccurenceOffset()
+	 * @see #getOccurencePhase()
 	 * @generated
 	 * @ordered
 	 */
-	protected int occurenceOffset = OCCURENCE_OFFSET_EDEFAULT;
+	protected int occurencePhase = OCCURENCE_PHASE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -593,8 +593,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getOccurenceOffset() {
-		return occurenceOffset;
+	public int getOccurencePhase() {
+		return occurencePhase;
 	}
 
 	/**
@@ -602,11 +602,11 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOccurenceOffset(int newOccurenceOffset) {
-		int oldOccurenceOffset = occurenceOffset;
-		occurenceOffset = newOccurenceOffset;
+	public void setOccurencePhase(int newOccurencePhase) {
+		int oldOccurencePhase = occurencePhase;
+		occurencePhase = newOccurencePhase;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.STEP__OCCURENCE_OFFSET, oldOccurenceOffset, occurenceOffset));
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.STEP__OCCURENCE_PHASE, oldOccurencePhase, occurencePhase));
 	}
 
 	/**
@@ -911,8 +911,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 				return getOutputPin();
 			case GqamPackage.STEP__OCCURENCE_PERIOD:
 				return getOccurencePeriod();
-			case GqamPackage.STEP__OCCURENCE_OFFSET:
-				return getOccurenceOffset();
+			case GqamPackage.STEP__OCCURENCE_PHASE:
+				return getOccurencePhase();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -973,8 +973,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 			case GqamPackage.STEP__OCCURENCE_PERIOD:
 				setOccurencePeriod((Integer)newValue);
 				return;
-			case GqamPackage.STEP__OCCURENCE_OFFSET:
-				setOccurenceOffset((Integer)newValue);
+			case GqamPackage.STEP__OCCURENCE_PHASE:
+				setOccurencePhase((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1033,8 +1033,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 			case GqamPackage.STEP__OCCURENCE_PERIOD:
 				setOccurencePeriod(OCCURENCE_PERIOD_EDEFAULT);
 				return;
-			case GqamPackage.STEP__OCCURENCE_OFFSET:
-				setOccurenceOffset(OCCURENCE_OFFSET_EDEFAULT);
+			case GqamPackage.STEP__OCCURENCE_PHASE:
+				setOccurencePhase(OCCURENCE_PHASE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1078,8 +1078,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 				return outputPin != null && !outputPin.isEmpty();
 			case GqamPackage.STEP__OCCURENCE_PERIOD:
 				return occurencePeriod != OCCURENCE_PERIOD_EDEFAULT;
-			case GqamPackage.STEP__OCCURENCE_OFFSET:
-				return occurenceOffset != OCCURENCE_OFFSET_EDEFAULT;
+			case GqamPackage.STEP__OCCURENCE_PHASE:
+				return occurencePhase != OCCURENCE_PHASE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1140,8 +1140,8 @@ public class StepImpl extends BehaviorScenarioImpl implements Step {
 		result.append(serviceCount);
 		result.append(", occurencePeriod: ");
 		result.append(occurencePeriod);
-		result.append(", occurenceOffset: ");
-		result.append(occurenceOffset);
+		result.append(", occurencePhase: ");
+		result.append(occurencePhase);
 		result.append(')');
 		return result.toString();
 	}
