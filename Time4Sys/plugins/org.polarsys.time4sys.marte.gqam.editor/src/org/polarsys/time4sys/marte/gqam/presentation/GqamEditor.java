@@ -675,6 +675,7 @@ public class GqamEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GqamItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new GqamItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GrmItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new NfpItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AnnotationItemProviderAdapterFactory());

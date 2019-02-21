@@ -7,7 +7,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.polarsys.time4sys.marte.gqam.tests.GqamAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="org.polarsys.time4sys.marte.gqam.edit" editorPluginID="org.polarsys.time4sys.marte.gqam.editor"
-    usedGenPackages="grm.genmodel#//grm nfp.genmodel#//nfp nfp_annotation.genmodel#//annotation"
+    usedGenPackages="grm.genmodel#//grm nfp.genmodel#//nfp nfp_annotation.genmodel#//annotation ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore core_elements.genmodel#//coreelements"
     operationReflection="true" importOrganizing="true">
   <foreignModel>gqam.ecore</foreignModel>
   <genPackages prefix="Gqam" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
@@ -19,6 +19,19 @@
       <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Fork"/>
       <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Join"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gqam.ecore#//LaxityKind">
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/undef"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/hard"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/soft"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gqam.ecore#//ObjectNodeOrderingKind">
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/UNORDERED"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/LIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/ORDERED"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="gqam.ecore#//NFP_DataSize"/>
     <genDataTypes ecoreDataType="gqam.ecore#//NFP_Duration"/>
     <genClasses ecoreClass="gqam.ecore#//AcquireStep">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//AcquireStep/acqRes"/>
@@ -29,11 +42,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/jitter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/phase"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//ArrivalPattern/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/isControl"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//BehaviorScenario">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/steps"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/cause"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/root"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/cause"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/parentStep"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/connectors"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BehaviorScenario/respTime"/>
@@ -57,22 +71,43 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ClosedPattern/population"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ClosedPattern/extDelay"/>
     </genClasses>
+    <genClasses ecoreClass="gqam.ecore#//CommunicationChannel"/>
     <genClasses ecoreClass="gqam.ecore#//CommunicationStep">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//CommunicationStep/msgSize"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//CommunicationStep/comRes"/>
     </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//EndToEndFlow">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//EndToEndFlow/endToEndStimuli"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//EndToEndFlow/endToEndScenario"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//EndToEndFlow/isSchedulable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//EndToEndFlow/schedulabilitySlack"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//EndToEndFlow/endToEndTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//EndToEndFlow/endToEndDeadline"/>
+    <genClasses ecoreClass="gqam.ecore#//Delay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Delay/duration"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//ExecutionStep"/>
+    <genClasses image="false" ecoreClass="gqam.ecore#//FlowInvolvedElement"/>
+    <genClasses ecoreClass="gqam.ecore#//InputPin">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//InputPin/predecessors"/>
+    </genClasses>
+    <genClasses ecoreClass="gqam.ecore#//LatencyObserver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/latency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/missRatio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/maxJitter"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gqam.ecore#//MultiplicityElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/upperBound"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gqam.ecore#//ObjectNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ObjectNode/ordering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ObjectNode/typename"/>
+    </genClasses>
+    <genClasses ecoreClass="gqam.ecore#//Once"/>
+    <genClasses ecoreClass="gqam.ecore#//OutputPin">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//OutputPin/successors"/>
+    </genClasses>
     <genClasses ecoreClass="gqam.ecore#//PeriodicPattern">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//PeriodicPattern/period"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//PeriodicPattern/occurences"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gqam.ecore#//Pin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Pin/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Pin/isControl"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//PrecedenceRelation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//PrecedenceRelation/predec"/>
@@ -87,6 +122,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ReleaseStep/resUnits"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//RequestedService"/>
+    <genClasses ecoreClass="gqam.ecore#//ResourceServiceExcecution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//ResourceServiceExcecution/resourceService"/>
+    </genClasses>
     <genClasses ecoreClass="gqam.ecore#//SlidingWindowPattern">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SlidingWindowPattern/windowSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SlidingWindowPattern/nbEvents"/>
@@ -109,32 +147,190 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/concurRes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/inputPin"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/outputPin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/occurencePeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/occurenceOffset"/>
     </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//WorkloadEvent">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/effect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/pattern"/>
+    <genClasses ecoreClass="gqam.ecore#//TimedObserver">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//TimedObserver/laxity"/>
     </genClasses>
     <genClasses ecoreClass="gqam.ecore#//WorkloadBehavior">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/behavior"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/demand"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/references"/>
     </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//Delay">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Delay/duration"/>
+    <genClasses ecoreClass="gqam.ecore#//WorkloadEvent">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/pattern"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="gqam.ecore#//MultiplicityElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/lowerBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/upperBound"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="gqam.ecore#//ControlPin">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//ControlPin/pattern"/>
-    </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//InputPin">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//InputPin/predecessors"/>
-    </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//OutputPin">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gqam.ecore#//OutputPin/successors"/>
-    </genClasses>
-    <genClasses ecoreClass="gqam.ecore#//Once"/>
+    <nestedGenPackages prefix="Gqam" basePackage="org.polarsys.time4sys.marte" disposableProviderFactory="true"
+        extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="gqam.ecore#/">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="gqam.ecore#//ConnectorKind">
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Sequence"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Branch"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Merge"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Fork"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ConnectorKind/Join"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="gqam.ecore#//LaxityKind">
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/undef"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/hard"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/soft"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//LaxityKind/other"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="gqam.ecore#//ObjectNodeOrderingKind">
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/UNORDERED"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/LIFO"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/FIFO"/>
+        <genEnumLiterals ecoreEnumLiteral="gqam.ecore#//ObjectNodeOrderingKind/ORDERED"/>
+      </genEnums>
+      <genDataTypes ecoreDataType="gqam.ecore#//NFP_DataSize"/>
+      <genDataTypes ecoreDataType="gqam.ecore#//NFP_Duration"/>
+      <genClasses ecoreClass="gqam.ecore#//AcquireStep">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//AcquireStep/acqRes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//AcquireStep/resUnits"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gqam.ecore#//ArrivalPattern">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gqam.ecore#//ArrivalPattern/parent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/jitter"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/phase"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//ArrivalPattern/reference"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ArrivalPattern/isControl"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//BehaviorScenario">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/steps"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/root"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/cause"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/parentStep"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//BehaviorScenario/connectors"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BehaviorScenario/respTime"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BehaviorScenario/bestCET"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BehaviorScenario/worstCET"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//BurstPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BurstPattern/minInterarrival"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BurstPattern/maxInterarrival"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BurstPattern/minEventInterval"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BurstPattern/maxEventInterval"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//BurstPattern/burstSize"/>
+        <genOperations ecoreOperation="gqam.ecore#//BurstPattern/setOuterPeriod">
+          <genParameters ecoreParameter="gqam.ecore#//BurstPattern/setOuterPeriod/value"/>
+        </genOperations>
+        <genOperations ecoreOperation="gqam.ecore#//BurstPattern/setInnerPeriod">
+          <genParameters ecoreParameter="gqam.ecore#//BurstPattern/setInnerPeriod/value"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//ClosedPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ClosedPattern/population"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ClosedPattern/extDelay"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//CommunicationChannel"/>
+      <genClasses ecoreClass="gqam.ecore#//CommunicationStep">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//CommunicationStep/msgSize"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//CommunicationStep/comRes"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//Delay">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Delay/duration"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//ExecutionStep"/>
+      <genClasses image="false" ecoreClass="gqam.ecore#//FlowInvolvedElement"/>
+      <genClasses ecoreClass="gqam.ecore#//InputPin">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//InputPin/predecessors"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//LatencyObserver">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/latency"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/missRatio"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//LatencyObserver/maxJitter"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gqam.ecore#//MultiplicityElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/lowerBound"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//MultiplicityElement/upperBound"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gqam.ecore#//ObjectNode">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ObjectNode/ordering"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ObjectNode/typename"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//Once"/>
+      <genClasses ecoreClass="gqam.ecore#//OutputPin">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//OutputPin/successors"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//PeriodicPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//PeriodicPattern/period"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//PeriodicPattern/occurences"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="gqam.ecore#//Pin">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Pin/pattern"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Pin/isControl"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//PrecedenceRelation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//PrecedenceRelation/predec"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//PrecedenceRelation/succes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//PrecedenceRelation/connectorKind"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//Reference">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Reference/referenceName"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//ReleaseStep">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//ReleaseStep/relRes"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//ReleaseStep/resUnits"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//RequestedService"/>
+      <genClasses ecoreClass="gqam.ecore#//ResourceServiceExcecution">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//ResourceServiceExcecution/resourceService"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//SlidingWindowPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SlidingWindowPattern/windowSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SlidingWindowPattern/nbEvents"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//SporadicPattern">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SporadicPattern/minInterarrival"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//SporadicPattern/maxInterarrival"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//Step">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/isAtomic"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/blockingTime"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/repetitions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/probability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/priority"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/serviceCount"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gqam.ecore#//Step/scenario"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//Step/childScenario"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//Step/inputRel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//Step/outputRel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//Step/concurRes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/inputPin"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//Step/outputPin"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/occurencePeriod"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//Step/occurenceOffset"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//TimedObserver">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gqam.ecore#//TimedObserver/laxity"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//WorkloadBehavior">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/behavior"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/demand"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadBehavior/references"/>
+      </genClasses>
+      <genClasses ecoreClass="gqam.ecore#//WorkloadEvent">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/effect"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gqam.ecore#//WorkloadEvent/pattern"/>
+      </genClasses>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

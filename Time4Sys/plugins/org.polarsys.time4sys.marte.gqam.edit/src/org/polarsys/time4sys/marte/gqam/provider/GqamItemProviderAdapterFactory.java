@@ -950,12 +950,12 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 				newChildDescriptors.add
 					(createChildParameter
 						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
-						 GqamFactory.eINSTANCE.createTimedObserver()));
+						 GqamFactory.eINSTANCE.createLatencyObserver()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(CoreElementsPackage.Literals.PACKAGE__OWNED_ELEMENT,
-						 GqamFactory.eINSTANCE.createLatencyObserver()));
+						 GqamFactory.eINSTANCE.createTimedObserver()));
 
 				return null;
 			}
@@ -1041,11 +1041,6 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 				newChildDescriptors.add
 					(createChildParameter
 						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
-						 GqamFactory.eINSTANCE.createStep()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
 						 GqamFactory.eINSTANCE.createAcquireStep()));
 
 				newChildDescriptors.add
@@ -1080,13 +1075,18 @@ public class GqamItemProviderAdapterFactory extends GqamAdapterFactory implement
 
 				newChildDescriptors.add
 					(createChildParameter
-						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNED_RULE,
-						 GqamFactory.eINSTANCE.createTimedObserver()));
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNS,
+						 GqamFactory.eINSTANCE.createStep()));
 
 				newChildDescriptors.add
 					(createChildParameter
 						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNED_RULE,
 						 GqamFactory.eINSTANCE.createLatencyObserver()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(AnnotationPackage.Literals.ANNOTATED_MODEL__OWNED_RULE,
+						 GqamFactory.eINSTANCE.createTimedObserver()));
 
 				return null;
 			}

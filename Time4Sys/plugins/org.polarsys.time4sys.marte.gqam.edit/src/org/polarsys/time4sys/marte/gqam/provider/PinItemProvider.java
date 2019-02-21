@@ -273,6 +273,36 @@ public class PinItemProvider extends MultiplicityElementItemProvider {
 			(createChildParameter
 				(GqamPackage.Literals.PIN__PATTERN,
 				 GqamFactory.eINSTANCE.createSporadicPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createBurstPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createClosedPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createOnce()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createPeriodicPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createSlidingWindowPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.PIN__PATTERN,
+				 GqamFactory.eINSTANCE.createSporadicPattern()));
 	}
 
 }

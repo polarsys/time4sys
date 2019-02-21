@@ -88,11 +88,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.ACQUIRE_STEP: {
 				AcquireStep acquireStep = (AcquireStep)theEObject;
 				T result = caseAcquireStep(acquireStep);
-				if (result == null) result = caseStep(acquireStep);
-				if (result == null) result = caseBehaviorScenario(acquireStep);
+				if (result == null) result = caseGqam_Step(acquireStep);
+				if (result == null) result = caseGqam_BehaviorScenario(acquireStep);
 				if (result == null) result = caseAnnotatedElement(acquireStep);
 				if (result == null) result = caseNamedElement(acquireStep);
-				if (result == null) result = caseFlowInvolvedElement(acquireStep);
+				if (result == null) result = caseGqam_FlowInvolvedElement(acquireStep);
 				if (result == null) result = caseENamedElement(acquireStep);
 				if (result == null) result = caseModelElement(acquireStep);
 				if (result == null) result = caseEModelElement(acquireStep);
@@ -111,7 +111,7 @@ public class GqamSwitch<T> extends Switch<T> {
 				BehaviorScenario behaviorScenario = (BehaviorScenario)theEObject;
 				T result = caseBehaviorScenario(behaviorScenario);
 				if (result == null) result = caseNamedElement(behaviorScenario);
-				if (result == null) result = caseFlowInvolvedElement(behaviorScenario);
+				if (result == null) result = caseGqam_FlowInvolvedElement(behaviorScenario);
 				if (result == null) result = caseENamedElement(behaviorScenario);
 				if (result == null) result = caseModelElement(behaviorScenario);
 				if (result == null) result = caseEModelElement(behaviorScenario);
@@ -121,7 +121,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.BURST_PATTERN: {
 				BurstPattern burstPattern = (BurstPattern)theEObject;
 				T result = caseBurstPattern(burstPattern);
-				if (result == null) result = caseArrivalPattern(burstPattern);
+				if (result == null) result = caseGqam_ArrivalPattern(burstPattern);
 				if (result == null) result = caseModelElement(burstPattern);
 				if (result == null) result = caseEModelElement(burstPattern);
 				if (result == null) result = defaultCase(theEObject);
@@ -130,7 +130,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.CLOSED_PATTERN: {
 				ClosedPattern closedPattern = (ClosedPattern)theEObject;
 				T result = caseClosedPattern(closedPattern);
-				if (result == null) result = caseArrivalPattern(closedPattern);
+				if (result == null) result = caseGqam_ArrivalPattern(closedPattern);
 				if (result == null) result = caseModelElement(closedPattern);
 				if (result == null) result = caseEModelElement(closedPattern);
 				if (result == null) result = defaultCase(theEObject);
@@ -154,11 +154,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.COMMUNICATION_STEP: {
 				CommunicationStep communicationStep = (CommunicationStep)theEObject;
 				T result = caseCommunicationStep(communicationStep);
-				if (result == null) result = caseStep(communicationStep);
-				if (result == null) result = caseBehaviorScenario(communicationStep);
+				if (result == null) result = caseGqam_Step(communicationStep);
+				if (result == null) result = caseGqam_BehaviorScenario(communicationStep);
 				if (result == null) result = caseAnnotatedElement(communicationStep);
 				if (result == null) result = caseNamedElement(communicationStep);
-				if (result == null) result = caseFlowInvolvedElement(communicationStep);
+				if (result == null) result = caseGqam_FlowInvolvedElement(communicationStep);
 				if (result == null) result = caseENamedElement(communicationStep);
 				if (result == null) result = caseModelElement(communicationStep);
 				if (result == null) result = caseEModelElement(communicationStep);
@@ -168,11 +168,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.DELAY: {
 				Delay delay = (Delay)theEObject;
 				T result = caseDelay(delay);
-				if (result == null) result = caseStep(delay);
-				if (result == null) result = caseBehaviorScenario(delay);
+				if (result == null) result = caseGqam_Step(delay);
+				if (result == null) result = caseGqam_BehaviorScenario(delay);
 				if (result == null) result = caseAnnotatedElement(delay);
 				if (result == null) result = caseNamedElement(delay);
-				if (result == null) result = caseFlowInvolvedElement(delay);
+				if (result == null) result = caseGqam_FlowInvolvedElement(delay);
 				if (result == null) result = caseENamedElement(delay);
 				if (result == null) result = caseModelElement(delay);
 				if (result == null) result = caseEModelElement(delay);
@@ -182,11 +182,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.EXECUTION_STEP: {
 				ExecutionStep executionStep = (ExecutionStep)theEObject;
 				T result = caseExecutionStep(executionStep);
-				if (result == null) result = caseStep(executionStep);
-				if (result == null) result = caseBehaviorScenario(executionStep);
+				if (result == null) result = caseGqam_Step(executionStep);
+				if (result == null) result = caseGqam_BehaviorScenario(executionStep);
 				if (result == null) result = caseAnnotatedElement(executionStep);
 				if (result == null) result = caseNamedElement(executionStep);
-				if (result == null) result = caseFlowInvolvedElement(executionStep);
+				if (result == null) result = caseGqam_FlowInvolvedElement(executionStep);
 				if (result == null) result = caseENamedElement(executionStep);
 				if (result == null) result = caseModelElement(executionStep);
 				if (result == null) result = caseEModelElement(executionStep);
@@ -202,11 +202,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.INPUT_PIN: {
 				InputPin inputPin = (InputPin)theEObject;
 				T result = caseInputPin(inputPin);
-				if (result == null) result = casePin(inputPin);
-				if (result == null) result = caseMultiplicityElement(inputPin);
+				if (result == null) result = caseGqam_Pin(inputPin);
+				if (result == null) result = caseGqam_MultiplicityElement(inputPin);
 				if (result == null) result = caseNamedElement(inputPin);
-				if (result == null) result = caseObjectNode(inputPin);
-				if (result == null) result = caseFlowInvolvedElement(inputPin);
+				if (result == null) result = caseGqam_ObjectNode(inputPin);
+				if (result == null) result = caseGqam_FlowInvolvedElement(inputPin);
 				if (result == null) result = caseENamedElement(inputPin);
 				if (result == null) result = caseModelElement(inputPin);
 				if (result == null) result = caseEModelElement(inputPin);
@@ -216,7 +216,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.LATENCY_OBSERVER: {
 				LatencyObserver latencyObserver = (LatencyObserver)theEObject;
 				T result = caseLatencyObserver(latencyObserver);
-				if (result == null) result = caseTimedObserver(latencyObserver);
+				if (result == null) result = caseGqam_TimedObserver(latencyObserver);
 				if (result == null) result = caseAnnotation_Constraint(latencyObserver);
 				if (result == null) result = caseConstraint(latencyObserver);
 				if (result == null) result = casePackageableElement(latencyObserver);
@@ -244,7 +244,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.ONCE: {
 				Once once = (Once)theEObject;
 				T result = caseOnce(once);
-				if (result == null) result = caseArrivalPattern(once);
+				if (result == null) result = caseGqam_ArrivalPattern(once);
 				if (result == null) result = caseModelElement(once);
 				if (result == null) result = caseEModelElement(once);
 				if (result == null) result = defaultCase(theEObject);
@@ -253,11 +253,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.OUTPUT_PIN: {
 				OutputPin outputPin = (OutputPin)theEObject;
 				T result = caseOutputPin(outputPin);
-				if (result == null) result = casePin(outputPin);
-				if (result == null) result = caseMultiplicityElement(outputPin);
+				if (result == null) result = caseGqam_Pin(outputPin);
+				if (result == null) result = caseGqam_MultiplicityElement(outputPin);
 				if (result == null) result = caseNamedElement(outputPin);
-				if (result == null) result = caseObjectNode(outputPin);
-				if (result == null) result = caseFlowInvolvedElement(outputPin);
+				if (result == null) result = caseGqam_ObjectNode(outputPin);
+				if (result == null) result = caseGqam_FlowInvolvedElement(outputPin);
 				if (result == null) result = caseENamedElement(outputPin);
 				if (result == null) result = caseModelElement(outputPin);
 				if (result == null) result = caseEModelElement(outputPin);
@@ -267,7 +267,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.PERIODIC_PATTERN: {
 				PeriodicPattern periodicPattern = (PeriodicPattern)theEObject;
 				T result = casePeriodicPattern(periodicPattern);
-				if (result == null) result = caseArrivalPattern(periodicPattern);
+				if (result == null) result = caseGqam_ArrivalPattern(periodicPattern);
 				if (result == null) result = caseModelElement(periodicPattern);
 				if (result == null) result = caseEModelElement(periodicPattern);
 				if (result == null) result = defaultCase(theEObject);
@@ -276,10 +276,10 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.PIN: {
 				Pin pin = (Pin)theEObject;
 				T result = casePin(pin);
-				if (result == null) result = caseMultiplicityElement(pin);
+				if (result == null) result = caseGqam_MultiplicityElement(pin);
 				if (result == null) result = caseNamedElement(pin);
-				if (result == null) result = caseObjectNode(pin);
-				if (result == null) result = caseFlowInvolvedElement(pin);
+				if (result == null) result = caseGqam_ObjectNode(pin);
+				if (result == null) result = caseGqam_FlowInvolvedElement(pin);
 				if (result == null) result = caseENamedElement(pin);
 				if (result == null) result = caseModelElement(pin);
 				if (result == null) result = caseEModelElement(pin);
@@ -305,11 +305,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.RELEASE_STEP: {
 				ReleaseStep releaseStep = (ReleaseStep)theEObject;
 				T result = caseReleaseStep(releaseStep);
-				if (result == null) result = caseStep(releaseStep);
-				if (result == null) result = caseBehaviorScenario(releaseStep);
+				if (result == null) result = caseGqam_Step(releaseStep);
+				if (result == null) result = caseGqam_BehaviorScenario(releaseStep);
 				if (result == null) result = caseAnnotatedElement(releaseStep);
 				if (result == null) result = caseNamedElement(releaseStep);
-				if (result == null) result = caseFlowInvolvedElement(releaseStep);
+				if (result == null) result = caseGqam_FlowInvolvedElement(releaseStep);
 				if (result == null) result = caseENamedElement(releaseStep);
 				if (result == null) result = caseModelElement(releaseStep);
 				if (result == null) result = caseEModelElement(releaseStep);
@@ -319,11 +319,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.REQUESTED_SERVICE: {
 				RequestedService requestedService = (RequestedService)theEObject;
 				T result = caseRequestedService(requestedService);
-				if (result == null) result = caseStep(requestedService);
-				if (result == null) result = caseBehaviorScenario(requestedService);
+				if (result == null) result = caseGqam_Step(requestedService);
+				if (result == null) result = caseGqam_BehaviorScenario(requestedService);
 				if (result == null) result = caseAnnotatedElement(requestedService);
 				if (result == null) result = caseNamedElement(requestedService);
-				if (result == null) result = caseFlowInvolvedElement(requestedService);
+				if (result == null) result = caseGqam_FlowInvolvedElement(requestedService);
 				if (result == null) result = caseENamedElement(requestedService);
 				if (result == null) result = caseModelElement(requestedService);
 				if (result == null) result = caseEModelElement(requestedService);
@@ -333,11 +333,11 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.RESOURCE_SERVICE_EXCECUTION: {
 				ResourceServiceExcecution resourceServiceExcecution = (ResourceServiceExcecution)theEObject;
 				T result = caseResourceServiceExcecution(resourceServiceExcecution);
-				if (result == null) result = caseStep(resourceServiceExcecution);
-				if (result == null) result = caseBehaviorScenario(resourceServiceExcecution);
+				if (result == null) result = caseGqam_Step(resourceServiceExcecution);
+				if (result == null) result = caseGqam_BehaviorScenario(resourceServiceExcecution);
 				if (result == null) result = caseAnnotatedElement(resourceServiceExcecution);
 				if (result == null) result = caseNamedElement(resourceServiceExcecution);
-				if (result == null) result = caseFlowInvolvedElement(resourceServiceExcecution);
+				if (result == null) result = caseGqam_FlowInvolvedElement(resourceServiceExcecution);
 				if (result == null) result = caseENamedElement(resourceServiceExcecution);
 				if (result == null) result = caseModelElement(resourceServiceExcecution);
 				if (result == null) result = caseEModelElement(resourceServiceExcecution);
@@ -347,7 +347,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.SLIDING_WINDOW_PATTERN: {
 				SlidingWindowPattern slidingWindowPattern = (SlidingWindowPattern)theEObject;
 				T result = caseSlidingWindowPattern(slidingWindowPattern);
-				if (result == null) result = caseArrivalPattern(slidingWindowPattern);
+				if (result == null) result = caseGqam_ArrivalPattern(slidingWindowPattern);
 				if (result == null) result = caseModelElement(slidingWindowPattern);
 				if (result == null) result = caseEModelElement(slidingWindowPattern);
 				if (result == null) result = defaultCase(theEObject);
@@ -356,7 +356,7 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.SPORADIC_PATTERN: {
 				SporadicPattern sporadicPattern = (SporadicPattern)theEObject;
 				T result = caseSporadicPattern(sporadicPattern);
-				if (result == null) result = caseArrivalPattern(sporadicPattern);
+				if (result == null) result = caseGqam_ArrivalPattern(sporadicPattern);
 				if (result == null) result = caseModelElement(sporadicPattern);
 				if (result == null) result = caseEModelElement(sporadicPattern);
 				if (result == null) result = defaultCase(theEObject);
@@ -365,10 +365,10 @@ public class GqamSwitch<T> extends Switch<T> {
 			case GqamPackage.STEP: {
 				Step step = (Step)theEObject;
 				T result = caseStep(step);
-				if (result == null) result = caseBehaviorScenario(step);
+				if (result == null) result = caseGqam_BehaviorScenario(step);
 				if (result == null) result = caseAnnotatedElement(step);
 				if (result == null) result = caseNamedElement(step);
-				if (result == null) result = caseFlowInvolvedElement(step);
+				if (result == null) result = caseGqam_FlowInvolvedElement(step);
 				if (result == null) result = caseENamedElement(step);
 				if (result == null) result = caseModelElement(step);
 				if (result == null) result = caseEModelElement(step);
@@ -548,6 +548,36 @@ public class GqamSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Flow Involved Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Flow Involved Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_FlowInvolvedElement(FlowInvolvedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavior Scenario</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavior Scenario</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_BehaviorScenario(BehaviorScenario object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Annotated Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -559,6 +589,36 @@ public class GqamSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAnnotatedElement(AnnotatedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_Step(Step object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arrival Pattern</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arrival Pattern</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_ArrivalPattern(ArrivalPattern object) {
 		return null;
 	}
 
@@ -998,6 +1058,51 @@ public class GqamSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Multiplicity Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Multiplicity Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_MultiplicityElement(MultiplicityElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Object Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Object Node</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_ObjectNode(ObjectNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pin</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pin</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_Pin(Pin object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1024,6 +1129,21 @@ public class GqamSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAnnotation_Constraint(org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Timed Observer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Timed Observer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGqam_TimedObserver(TimedObserver object) {
 		return null;
 	}
 

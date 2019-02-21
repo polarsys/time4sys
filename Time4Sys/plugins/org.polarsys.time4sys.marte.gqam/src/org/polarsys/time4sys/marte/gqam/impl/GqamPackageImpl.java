@@ -360,11 +360,16 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		NfpPackage.eINSTANCE.eClass();
 		AnnotationPackage.eINSTANCE.eClass();
 
+		// Obtain or create and register interdependencies
+		GqamPackageImpl theGqamPackage_1 = (GqamPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI) instanceof GqamPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI) : GqamPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theGqamPackage.createPackageContents();
+		theGqamPackage_1.createPackageContents();
 
 		// Initialize created meta-data
 		theGqamPackage.initializePackageContents();
+		theGqamPackage_1.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -679,6 +684,24 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 */
 	public EReference getStep_OutputPin() {
 		return (EReference)stepEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStep_OccurencePeriod() {
+		return (EAttribute)stepEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStep_OccurenceOffset() {
+		return (EAttribute)stepEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1463,6 +1486,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		createEReference(stepEClass, STEP__CONCUR_RES);
 		createEReference(stepEClass, STEP__INPUT_PIN);
 		createEReference(stepEClass, STEP__OUTPUT_PIN);
+		createEAttribute(stepEClass, STEP__OCCURENCE_PERIOD);
+		createEAttribute(stepEClass, STEP__OCCURENCE_OFFSET);
 
 		timedObserverEClass = createEClass(TIMED_OBSERVER);
 		createEAttribute(timedObserverEClass, TIMED_OBSERVER__LAXITY);
@@ -1510,6 +1535,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		GqamPackage theGqamPackage_1 = (GqamPackage)EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI);
 		GrmPackage theGrmPackage = (GrmPackage)EPackage.Registry.INSTANCE.getEPackage(GrmPackage.eNS_URI);
 		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
@@ -1520,33 +1546,33 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		acquireStepEClass.getESuperTypes().add(this.getStep());
+		acquireStepEClass.getESuperTypes().add(theGqamPackage_1.getStep());
 		arrivalPatternEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		behaviorScenarioEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
-		behaviorScenarioEClass.getESuperTypes().add(this.getFlowInvolvedElement());
-		burstPatternEClass.getESuperTypes().add(this.getArrivalPattern());
-		closedPatternEClass.getESuperTypes().add(this.getArrivalPattern());
+		behaviorScenarioEClass.getESuperTypes().add(theGqamPackage_1.getFlowInvolvedElement());
+		burstPatternEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
+		closedPatternEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
 		communicationChannelEClass.getESuperTypes().add(theGrmPackage.getSchedulableResource());
-		communicationStepEClass.getESuperTypes().add(this.getStep());
-		delayEClass.getESuperTypes().add(this.getStep());
-		executionStepEClass.getESuperTypes().add(this.getStep());
-		inputPinEClass.getESuperTypes().add(this.getPin());
-		latencyObserverEClass.getESuperTypes().add(this.getTimedObserver());
+		communicationStepEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		delayEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		executionStepEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		inputPinEClass.getESuperTypes().add(theGqamPackage_1.getPin());
+		latencyObserverEClass.getESuperTypes().add(theGqamPackage_1.getTimedObserver());
 		objectNodeEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
-		onceEClass.getESuperTypes().add(this.getArrivalPattern());
-		outputPinEClass.getESuperTypes().add(this.getPin());
-		periodicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
-		pinEClass.getESuperTypes().add(this.getMultiplicityElement());
+		onceEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
+		outputPinEClass.getESuperTypes().add(theGqamPackage_1.getPin());
+		periodicPatternEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
+		pinEClass.getESuperTypes().add(theGqamPackage_1.getMultiplicityElement());
 		pinEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
-		pinEClass.getESuperTypes().add(this.getObjectNode());
-		pinEClass.getESuperTypes().add(this.getFlowInvolvedElement());
+		pinEClass.getESuperTypes().add(theGqamPackage_1.getObjectNode());
+		pinEClass.getESuperTypes().add(theGqamPackage_1.getFlowInvolvedElement());
 		referenceEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
-		releaseStepEClass.getESuperTypes().add(this.getStep());
-		requestedServiceEClass.getESuperTypes().add(this.getStep());
-		resourceServiceExcecutionEClass.getESuperTypes().add(this.getStep());
-		slidingWindowPatternEClass.getESuperTypes().add(this.getArrivalPattern());
-		sporadicPatternEClass.getESuperTypes().add(this.getArrivalPattern());
-		stepEClass.getESuperTypes().add(this.getBehaviorScenario());
+		releaseStepEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		requestedServiceEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		resourceServiceExcecutionEClass.getESuperTypes().add(theGqamPackage_1.getStep());
+		slidingWindowPatternEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
+		sporadicPatternEClass.getESuperTypes().add(theGqamPackage_1.getArrivalPattern());
+		stepEClass.getESuperTypes().add(theGqamPackage_1.getBehaviorScenario());
 		stepEClass.getESuperTypes().add(theAnnotationPackage.getAnnotatedElement());
 		timedObserverEClass.getESuperTypes().add(theAnnotationPackage.getConstraint());
 		workloadBehaviorEClass.getESuperTypes().add(theCoreElementsPackage.getNamedElement());
@@ -1558,85 +1584,85 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getAcquireStep_ResUnits(), ecorePackage.getEInt(), "resUnits", null, 0, 1, AcquireStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrivalPatternEClass, ArrivalPattern.class, "ArrivalPattern", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrivalPattern_Parent(), this.getWorkloadEvent(), this.getWorkloadEvent_Pattern(), "parent", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArrivalPattern_Jitter(), this.getNFP_Duration(), "jitter", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArrivalPattern_Phase(), this.getNFP_Duration(), "phase", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArrivalPattern_Reference(), this.getReference(), null, "reference", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrivalPattern_Parent(), theGqamPackage_1.getWorkloadEvent(), theGqamPackage_1.getWorkloadEvent_Pattern(), "parent", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArrivalPattern_Jitter(), theGqamPackage_1.getNFP_Duration(), "jitter", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArrivalPattern_Phase(), theGqamPackage_1.getNFP_Duration(), "phase", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArrivalPattern_Reference(), theGqamPackage_1.getReference(), null, "reference", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArrivalPattern_IsControl(), ecorePackage.getEBoolean(), "isControl", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorScenarioEClass, BehaviorScenario.class, "BehaviorScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorScenario_Steps(), this.getStep(), this.getStep_Scenario(), "steps", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorScenario_Root(), this.getStep(), null, "root", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorScenario_Cause(), this.getWorkloadEvent(), this.getWorkloadEvent_Effect(), "cause", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorScenario_ParentStep(), this.getStep(), this.getStep_ChildScenario(), "parentStep", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehaviorScenario_Connectors(), this.getPrecedenceRelation(), null, "connectors", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBehaviorScenario_RespTime(), this.getNFP_Duration(), "respTime", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBehaviorScenario_BestCET(), this.getNFP_Duration(), "bestCET", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBehaviorScenario_WorstCET(), this.getNFP_Duration(), "worstCET", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorScenario_Steps(), theGqamPackage_1.getStep(), theGqamPackage_1.getStep_Scenario(), "steps", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorScenario_Root(), theGqamPackage_1.getStep(), null, "root", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorScenario_Cause(), theGqamPackage_1.getWorkloadEvent(), theGqamPackage_1.getWorkloadEvent_Effect(), "cause", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorScenario_ParentStep(), theGqamPackage_1.getStep(), theGqamPackage_1.getStep_ChildScenario(), "parentStep", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehaviorScenario_Connectors(), theGqamPackage_1.getPrecedenceRelation(), null, "connectors", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviorScenario_RespTime(), theGqamPackage_1.getNFP_Duration(), "respTime", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviorScenario_BestCET(), theGqamPackage_1.getNFP_Duration(), "bestCET", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviorScenario_WorstCET(), theGqamPackage_1.getNFP_Duration(), "worstCET", null, 0, 1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(burstPatternEClass, BurstPattern.class, "BurstPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBurstPattern_MinInterarrival(), this.getNFP_Duration(), "minInterarrival", null, 1, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBurstPattern_MaxInterarrival(), this.getNFP_Duration(), "maxInterarrival", null, 0, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBurstPattern_MinEventInterval(), this.getNFP_Duration(), "minEventInterval", null, 1, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBurstPattern_MaxEventInterval(), this.getNFP_Duration(), "maxEventInterval", null, 0, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBurstPattern_MinInterarrival(), theGqamPackage_1.getNFP_Duration(), "minInterarrival", null, 1, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBurstPattern_MaxInterarrival(), theGqamPackage_1.getNFP_Duration(), "maxInterarrival", null, 0, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBurstPattern_MinEventInterval(), theGqamPackage_1.getNFP_Duration(), "minEventInterval", null, 1, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBurstPattern_MaxEventInterval(), theGqamPackage_1.getNFP_Duration(), "maxEventInterval", null, 0, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBurstPattern_BurstSize(), ecorePackage.getELong(), "burstSize", null, 1, 1, BurstPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getBurstPattern__SetOuterPeriod__Duration(), null, "setOuterPeriod", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getNFP_Duration(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theGqamPackage_1.getNFP_Duration(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getBurstPattern__SetInnerPeriod__Duration(), null, "setInnerPeriod", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getNFP_Duration(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theGqamPackage_1.getNFP_Duration(), "value", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(closedPatternEClass, ClosedPattern.class, "ClosedPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClosedPattern_Population(), ecorePackage.getELong(), "population", "0", 1, 1, ClosedPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClosedPattern_ExtDelay(), this.getNFP_Duration(), "extDelay", "0", 1, 1, ClosedPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClosedPattern_ExtDelay(), theGqamPackage_1.getNFP_Duration(), "extDelay", "0", 1, 1, ClosedPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationChannelEClass, CommunicationChannel.class, "CommunicationChannel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(communicationStepEClass, CommunicationStep.class, "CommunicationStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCommunicationStep_MsgSize(), this.getNFP_DataSize(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationStep_MsgSize(), theGqamPackage_1.getNFP_DataSize(), "msgSize", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationStep_ComRes(), theGrmPackage.getCommunicationResource(), null, "comRes", null, 0, 1, CommunicationStep.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(delayEClass, Delay.class, "Delay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDelay_Duration(), this.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDelay_Duration(), theGqamPackage_1.getNFP_Duration(), "duration", null, 1, 1, Delay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executionStepEClass, ExecutionStep.class, "ExecutionStep", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(flowInvolvedElementEClass, FlowInvolvedElement.class, "FlowInvolvedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInputPin_Predecessors(), this.getOutputPin(), this.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInputPin_Predecessors(), theGqamPackage_1.getOutputPin(), theGqamPackage_1.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(latencyObserverEClass, LatencyObserver.class, "LatencyObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLatencyObserver_Latency(), this.getNFP_Duration(), "latency", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLatencyObserver_Latency(), theGqamPackage_1.getNFP_Duration(), "latency", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLatencyObserver_MissRatio(), ecorePackage.getEDouble(), "missRatio", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLatencyObserver_MaxJitter(), this.getNFP_Duration(), "maxJitter", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLatencyObserver_MaxJitter(), theGqamPackage_1.getNFP_Duration(), "maxJitter", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(multiplicityElementEClass, MultiplicityElement.class, "MultiplicityElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMultiplicityElement_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMultiplicityElement_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 1, 1, MultiplicityElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objectNodeEClass, ObjectNode.class, "ObjectNode", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObjectNode_Ordering(), this.getObjectNodeOrderingKind(), "ordering", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjectNode_Ordering(), theGqamPackage_1.getObjectNodeOrderingKind(), "ordering", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectNode_Typename(), theEcorePackage.getEString(), "typename", null, 0, 1, ObjectNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(onceEClass, Once.class, "Once", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(outputPinEClass, OutputPin.class, "OutputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutputPin_Successors(), this.getInputPin(), this.getInputPin_Predecessors(), "successors", null, 0, -1, OutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutputPin_Successors(), theGqamPackage_1.getInputPin(), theGqamPackage_1.getInputPin_Predecessors(), "successors", null, 0, -1, OutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(periodicPatternEClass, PeriodicPattern.class, "PeriodicPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPeriodicPattern_Period(), this.getNFP_Duration(), "period", "", 0, 1, PeriodicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPeriodicPattern_Period(), theGqamPackage_1.getNFP_Duration(), "period", "", 0, 1, PeriodicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPeriodicPattern_Occurences(), ecorePackage.getEInt(), "occurences", null, 0, 1, PeriodicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pinEClass, Pin.class, "Pin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPin_Pattern(), this.getArrivalPattern(), null, "pattern", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPin_Pattern(), theGqamPackage_1.getArrivalPattern(), null, "pattern", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPin_IsControl(), theEcorePackage.getEBoolean(), "isControl", "true", 1, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(precedenceRelationEClass, PrecedenceRelation.class, "PrecedenceRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrecedenceRelation_Predec(), this.getStep(), this.getStep_OutputRel(), "predec", null, 0, -1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPrecedenceRelation_Succes(), this.getStep(), this.getStep_InputRel(), "succes", null, 0, -1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPrecedenceRelation_ConnectorKind(), this.getConnectorKind(), "connectorKind", null, 0, 1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrecedenceRelation_Predec(), theGqamPackage_1.getStep(), theGqamPackage_1.getStep_OutputRel(), "predec", null, 0, -1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrecedenceRelation_Succes(), theGqamPackage_1.getStep(), theGqamPackage_1.getStep_InputRel(), "succes", null, 0, -1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPrecedenceRelation_ConnectorKind(), theGqamPackage_1.getConnectorKind(), "connectorKind", null, 0, 1, PrecedenceRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_ReferenceName(), ecorePackage.getEString(), "referenceName", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1651,39 +1677,41 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEReference(getResourceServiceExcecution_ResourceService(), theGrmPackage.getResourceService(), null, "resourceService", null, 0, 1, ResourceServiceExcecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(slidingWindowPatternEClass, SlidingWindowPattern.class, "SlidingWindowPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSlidingWindowPattern_WindowSize(), this.getNFP_Duration(), "windowSize", null, 1, 1, SlidingWindowPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlidingWindowPattern_WindowSize(), theGqamPackage_1.getNFP_Duration(), "windowSize", null, 1, 1, SlidingWindowPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSlidingWindowPattern_NbEvents(), ecorePackage.getELong(), "nbEvents", null, 0, 1, SlidingWindowPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sporadicPatternEClass, SporadicPattern.class, "SporadicPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSporadicPattern_MinInterarrival(), this.getNFP_Duration(), "minInterarrival", null, 0, 1, SporadicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSporadicPattern_MaxInterarrival(), this.getNFP_Duration(), "maxInterarrival", null, 0, 1, SporadicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSporadicPattern_MinInterarrival(), theGqamPackage_1.getNFP_Duration(), "minInterarrival", null, 0, 1, SporadicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSporadicPattern_MaxInterarrival(), theGqamPackage_1.getNFP_Duration(), "maxInterarrival", null, 0, 1, SporadicPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStep_IsAtomic(), ecorePackage.getEBoolean(), "isAtomic", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_BlockingTime(), this.getNFP_Duration(), "blockingTime", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_BlockingTime(), theGqamPackage_1.getNFP_Duration(), "blockingTime", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_Repetitions(), ecorePackage.getEDouble(), "repetitions", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_Probability(), ecorePackage.getEDouble(), "probability", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_ServiceCount(), ecorePackage.getEInt(), "serviceCount", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Scenario(), this.getBehaviorScenario(), this.getBehaviorScenario_Steps(), "scenario", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_ChildScenario(), this.getBehaviorScenario(), this.getBehaviorScenario_ParentStep(), "childScenario", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_InputRel(), this.getPrecedenceRelation(), this.getPrecedenceRelation_Succes(), "inputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_OutputRel(), this.getPrecedenceRelation(), this.getPrecedenceRelation_Predec(), "outputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_Scenario(), theGqamPackage_1.getBehaviorScenario(), theGqamPackage_1.getBehaviorScenario_Steps(), "scenario", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_ChildScenario(), theGqamPackage_1.getBehaviorScenario(), theGqamPackage_1.getBehaviorScenario_ParentStep(), "childScenario", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_InputRel(), theGqamPackage_1.getPrecedenceRelation(), theGqamPackage_1.getPrecedenceRelation_Succes(), "inputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_OutputRel(), theGqamPackage_1.getPrecedenceRelation(), theGqamPackage_1.getPrecedenceRelation_Predec(), "outputRel", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_ConcurRes(), theGrmPackage.getSchedulableResource(), null, "concurRes", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_InputPin(), this.getInputPin(), null, "inputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_OutputPin(), this.getOutputPin(), null, "outputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_InputPin(), theGqamPackage_1.getInputPin(), null, "inputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_OutputPin(), theGqamPackage_1.getOutputPin(), null, "outputPin", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_OccurencePeriod(), theEcorePackage.getEInt(), "occurencePeriod", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_OccurenceOffset(), theEcorePackage.getEInt(), "occurenceOffset", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timedObserverEClass, TimedObserver.class, "TimedObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimedObserver_Laxity(), this.getLaxityKind(), "laxity", null, 0, -1, TimedObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimedObserver_Laxity(), theGqamPackage_1.getLaxityKind(), "laxity", null, 0, -1, TimedObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workloadBehaviorEClass, WorkloadBehavior.class, "WorkloadBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWorkloadBehavior_Behavior(), this.getBehaviorScenario(), null, "behavior", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkloadBehavior_Demand(), this.getWorkloadEvent(), null, "demand", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkloadBehavior_References(), this.getReference(), null, "references", null, 0, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadBehavior_Behavior(), theGqamPackage_1.getBehaviorScenario(), null, "behavior", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadBehavior_Demand(), theGqamPackage_1.getWorkloadEvent(), null, "demand", null, 1, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadBehavior_References(), theGqamPackage_1.getReference(), null, "references", null, 0, -1, WorkloadBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(workloadEventEClass, WorkloadEvent.class, "WorkloadEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWorkloadEvent_Effect(), this.getBehaviorScenario(), this.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWorkloadEvent_Pattern(), this.getArrivalPattern(), this.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadEvent_Effect(), theGqamPackage_1.getBehaviorScenario(), theGqamPackage_1.getBehaviorScenario_Cause(), "effect", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWorkloadEvent_Pattern(), theGqamPackage_1.getArrivalPattern(), theGqamPackage_1.getArrivalPattern_Parent(), "pattern", null, 0, 1, WorkloadEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(connectorKindEEnum, ConnectorKind.class, "ConnectorKind");
@@ -1708,9 +1736,6 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		// Initialize data types
 		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nfP_DurationEDataType, Duration.class, "NFP_Duration", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-
-		// Create resource
-		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

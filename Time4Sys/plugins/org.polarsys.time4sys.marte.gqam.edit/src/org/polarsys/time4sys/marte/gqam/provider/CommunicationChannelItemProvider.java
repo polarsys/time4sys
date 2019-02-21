@@ -115,6 +115,11 @@ public class CommunicationChannelItemProvider extends SchedulableResourceItemPro
 			(createChildParameter
 				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
 				 GqamFactory.eINSTANCE.createCommunicationChannel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GrmPackage.Literals.RESOURCE__OWNED_RESOURCE,
+				 GqamFactory.eINSTANCE.createCommunicationChannel()));
 	}
 
 	/**

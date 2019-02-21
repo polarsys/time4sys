@@ -294,6 +294,46 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createAcquireStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createCommunicationStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createDelay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createExecutionStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createReleaseStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createRequestedService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
+				 GqamFactory.eINSTANCE.createStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
 				 GqamFactory.eINSTANCE.createStep()));
 
 		newChildDescriptors.add
@@ -330,6 +370,11 @@ public class BehaviorScenarioItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(GqamPackage.Literals.BEHAVIOR_SCENARIO__STEPS,
 				 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.BEHAVIOR_SCENARIO__CONNECTORS,
+				 GqamFactory.eINSTANCE.createPrecedenceRelation()));
 
 		newChildDescriptors.add
 			(createChildParameter

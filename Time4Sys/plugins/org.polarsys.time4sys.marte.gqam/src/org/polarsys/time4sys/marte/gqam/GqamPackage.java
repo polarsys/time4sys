@@ -86,123 +86,6 @@ public interface GqamPackage extends EPackage {
 	int BEHAVIOR_SCENARIO = 2;
 
 	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__STEPS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Root</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__ROOT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Cause</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__CAUSE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__PARENT_STEP = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__CONNECTORS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__RESP_TIME = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__BEST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO__WORST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of structural features of the '<em>Behavior Scenario</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Behavior Scenario</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIOR_SCENARIO_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.WorkloadEventImpl <em>Workload Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,249 +104,6 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	int STEP = 25;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__EANNOTATIONS = BEHAVIOR_SCENARIO__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__NAME = BEHAVIOR_SCENARIO__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__STEPS = BEHAVIOR_SCENARIO__STEPS;
-
-	/**
-	 * The feature id for the '<em><b>Root</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__ROOT = BEHAVIOR_SCENARIO__ROOT;
-
-	/**
-	 * The feature id for the '<em><b>Cause</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__CAUSE = BEHAVIOR_SCENARIO__CAUSE;
-
-	/**
-	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__PARENT_STEP = BEHAVIOR_SCENARIO__PARENT_STEP;
-
-	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__CONNECTORS = BEHAVIOR_SCENARIO__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__RESP_TIME = BEHAVIOR_SCENARIO__RESP_TIME;
-
-	/**
-	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__BEST_CET = BEHAVIOR_SCENARIO__BEST_CET;
-
-	/**
-	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__WORST_CET = BEHAVIOR_SCENARIO__WORST_CET;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__OWNER = BEHAVIOR_SCENARIO_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__IS_ATOMIC = BEHAVIOR_SCENARIO_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__BLOCKING_TIME = BEHAVIOR_SCENARIO_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__REPETITIONS = BEHAVIOR_SCENARIO_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Probability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__PROBABILITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__PRIORITY = BEHAVIOR_SCENARIO_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__SERVICE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__CHILD_SCENARIO = BEHAVIOR_SCENARIO_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__INPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__OUTPUT_REL = BEHAVIOR_SCENARIO_FEATURE_COUNT + 10;
-
-	/**
-	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__CONCUR_RES = BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
-
-	/**
-	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__INPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
-
-	/**
-	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__OUTPUT_PIN = BEHAVIOR_SCENARIO_FEATURE_COUNT + 13;
-
-	/**
-	 * The number of structural features of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_FEATURE_COUNT = BEHAVIOR_SCENARIO_FEATURE_COUNT + 14;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP___GET_EANNOTATION__STRING = BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_OPERATION_COUNT = BEHAVIOR_SCENARIO_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PrecedenceRelationImpl <em>Precedence Relation</em>}' class.
@@ -512,7 +152,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
+	int ACQUIRE_STEP__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -521,7 +161,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__NAME = STEP__NAME;
+	int ACQUIRE_STEP__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -530,7 +170,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__STEPS = STEP__STEPS;
+	int ACQUIRE_STEP__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -539,7 +179,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__ROOT = STEP__ROOT;
+	int ACQUIRE_STEP__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -548,7 +188,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__CAUSE = STEP__CAUSE;
+	int ACQUIRE_STEP__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -557,7 +197,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__PARENT_STEP = STEP__PARENT_STEP;
+	int ACQUIRE_STEP__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -566,7 +206,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__CONNECTORS = STEP__CONNECTORS;
+	int ACQUIRE_STEP__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -575,7 +215,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__RESP_TIME = STEP__RESP_TIME;
+	int ACQUIRE_STEP__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -584,7 +224,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__BEST_CET = STEP__BEST_CET;
+	int ACQUIRE_STEP__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -593,7 +233,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__WORST_CET = STEP__WORST_CET;
+	int ACQUIRE_STEP__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -602,7 +242,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__OWNER = STEP__OWNER;
+	int ACQUIRE_STEP__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -611,7 +251,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__IS_ATOMIC = STEP__IS_ATOMIC;
+	int ACQUIRE_STEP__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -620,7 +260,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int ACQUIRE_STEP__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -629,7 +269,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__REPETITIONS = STEP__REPETITIONS;
+	int ACQUIRE_STEP__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -638,7 +278,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__PROBABILITY = STEP__PROBABILITY;
+	int ACQUIRE_STEP__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -647,7 +287,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__PRIORITY = STEP__PRIORITY;
+	int ACQUIRE_STEP__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -656,7 +296,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int ACQUIRE_STEP__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -665,7 +305,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__SCENARIO = STEP__SCENARIO;
+	int ACQUIRE_STEP__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -674,7 +314,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int ACQUIRE_STEP__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -683,7 +323,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__INPUT_REL = STEP__INPUT_REL;
+	int ACQUIRE_STEP__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -692,7 +332,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__OUTPUT_REL = STEP__OUTPUT_REL;
+	int ACQUIRE_STEP__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -701,7 +341,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__CONCUR_RES = STEP__CONCUR_RES;
+	int ACQUIRE_STEP__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -710,7 +350,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__INPUT_PIN = STEP__INPUT_PIN;
+	int ACQUIRE_STEP__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -719,7 +359,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int ACQUIRE_STEP__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACQUIRE_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Acq Res</b></em>' reference.
@@ -728,7 +386,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__ACQ_RES = STEP_FEATURE_COUNT + 0;
+	int ACQUIRE_STEP__ACQ_RES = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Res Units</b></em>' attribute.
@@ -737,7 +395,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP__RES_UNITS = STEP_FEATURE_COUNT + 1;
+	int ACQUIRE_STEP__RES_UNITS = GqamPackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Acquire Step</em>' class.
@@ -746,7 +404,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
+	int ACQUIRE_STEP_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -755,7 +413,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int ACQUIRE_STEP___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Acquire Step</em>' class.
@@ -764,7 +422,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACQUIRE_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int ACQUIRE_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ReleaseStepImpl <em>Release Step</em>}' class.
@@ -888,6 +546,123 @@ public interface GqamPackage extends EPackage {
 	int ARRIVAL_PATTERN_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__EANNOTATIONS = CoreElementsPackage.NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__NAME = CoreElementsPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__STEPS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Root</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__ROOT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__CAUSE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__PARENT_STEP = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__CONNECTORS = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__RESP_TIME = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__BEST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO__WORST_CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>Behavior Scenario</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO_FEATURE_COUNT = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING = CoreElementsPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Behavior Scenario</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_SCENARIO_OPERATION_COUNT = CoreElementsPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.BurstPatternImpl <em>Burst Pattern</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -904,7 +679,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int BURST_PATTERN__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -913,7 +688,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__PARENT = ARRIVAL_PATTERN__PARENT;
+	int BURST_PATTERN__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -922,7 +697,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__JITTER = ARRIVAL_PATTERN__JITTER;
+	int BURST_PATTERN__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -931,7 +706,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__PHASE = ARRIVAL_PATTERN__PHASE;
+	int BURST_PATTERN__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -940,7 +715,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int BURST_PATTERN__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -949,7 +724,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int BURST_PATTERN__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Min Interarrival</b></em>' attribute.
@@ -958,7 +733,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__MIN_INTERARRIVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int BURST_PATTERN__MIN_INTERARRIVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Interarrival</b></em>' attribute.
@@ -967,7 +742,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__MAX_INTERARRIVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 1;
+	int BURST_PATTERN__MAX_INTERARRIVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Min Event Interval</b></em>' attribute.
@@ -976,7 +751,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__MIN_EVENT_INTERVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+	int BURST_PATTERN__MIN_EVENT_INTERVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Max Event Interval</b></em>' attribute.
@@ -985,7 +760,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__MAX_EVENT_INTERVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 3;
+	int BURST_PATTERN__MAX_EVENT_INTERVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Burst Size</b></em>' attribute.
@@ -994,7 +769,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN__BURST_SIZE = ARRIVAL_PATTERN_FEATURE_COUNT + 4;
+	int BURST_PATTERN__BURST_SIZE = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Burst Pattern</em>' class.
@@ -1003,7 +778,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 5;
+	int BURST_PATTERN_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1012,7 +787,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int BURST_PATTERN___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Outer Period</em>' operation.
@@ -1021,7 +796,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN___SET_OUTER_PERIOD__DURATION = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int BURST_PATTERN___SET_OUTER_PERIOD__DURATION = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Set Inner Period</em>' operation.
@@ -1030,7 +805,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN___SET_INNER_PERIOD__DURATION = ARRIVAL_PATTERN_OPERATION_COUNT + 1;
+	int BURST_PATTERN___SET_INNER_PERIOD__DURATION = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Burst Pattern</em>' class.
@@ -1039,7 +814,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BURST_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 2;
+	int BURST_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ClosedPatternImpl <em>Closed Pattern</em>}' class.
@@ -1058,7 +833,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int CLOSED_PATTERN__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -1067,7 +842,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__PARENT = ARRIVAL_PATTERN__PARENT;
+	int CLOSED_PATTERN__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -1076,7 +851,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__JITTER = ARRIVAL_PATTERN__JITTER;
+	int CLOSED_PATTERN__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -1085,7 +860,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__PHASE = ARRIVAL_PATTERN__PHASE;
+	int CLOSED_PATTERN__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -1094,7 +869,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int CLOSED_PATTERN__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -1103,7 +878,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int CLOSED_PATTERN__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Population</b></em>' attribute.
@@ -1112,7 +887,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__POPULATION = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int CLOSED_PATTERN__POPULATION = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ext Delay</b></em>' attribute.
@@ -1121,7 +896,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN__EXT_DELAY = ARRIVAL_PATTERN_FEATURE_COUNT + 1;
+	int CLOSED_PATTERN__EXT_DELAY = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Closed Pattern</em>' class.
@@ -1130,7 +905,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+	int CLOSED_PATTERN_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1139,7 +914,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int CLOSED_PATTERN___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Closed Pattern</em>' class.
@@ -1148,7 +923,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOSED_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int CLOSED_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PeriodicPatternImpl <em>Periodic Pattern</em>}' class.
@@ -1410,7 +1185,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
+	int COMMUNICATION_STEP__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1419,7 +1194,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__NAME = STEP__NAME;
+	int COMMUNICATION_STEP__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -1428,7 +1203,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__STEPS = STEP__STEPS;
+	int COMMUNICATION_STEP__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1437,7 +1212,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__ROOT = STEP__ROOT;
+	int COMMUNICATION_STEP__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -1446,7 +1221,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__CAUSE = STEP__CAUSE;
+	int COMMUNICATION_STEP__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -1455,7 +1230,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__PARENT_STEP = STEP__PARENT_STEP;
+	int COMMUNICATION_STEP__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -1464,7 +1239,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__CONNECTORS = STEP__CONNECTORS;
+	int COMMUNICATION_STEP__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -1473,7 +1248,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__RESP_TIME = STEP__RESP_TIME;
+	int COMMUNICATION_STEP__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -1482,7 +1257,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__BEST_CET = STEP__BEST_CET;
+	int COMMUNICATION_STEP__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -1491,7 +1266,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__WORST_CET = STEP__WORST_CET;
+	int COMMUNICATION_STEP__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -1500,7 +1275,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__OWNER = STEP__OWNER;
+	int COMMUNICATION_STEP__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -1509,7 +1284,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__IS_ATOMIC = STEP__IS_ATOMIC;
+	int COMMUNICATION_STEP__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -1518,7 +1293,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int COMMUNICATION_STEP__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -1527,7 +1302,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__REPETITIONS = STEP__REPETITIONS;
+	int COMMUNICATION_STEP__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -1536,7 +1311,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__PROBABILITY = STEP__PROBABILITY;
+	int COMMUNICATION_STEP__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -1545,7 +1320,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__PRIORITY = STEP__PRIORITY;
+	int COMMUNICATION_STEP__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -1554,7 +1329,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int COMMUNICATION_STEP__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -1563,7 +1338,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__SCENARIO = STEP__SCENARIO;
+	int COMMUNICATION_STEP__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -1572,7 +1347,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int COMMUNICATION_STEP__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -1581,7 +1356,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__INPUT_REL = STEP__INPUT_REL;
+	int COMMUNICATION_STEP__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -1590,7 +1365,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__OUTPUT_REL = STEP__OUTPUT_REL;
+	int COMMUNICATION_STEP__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -1599,7 +1374,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__CONCUR_RES = STEP__CONCUR_RES;
+	int COMMUNICATION_STEP__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -1608,7 +1383,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__INPUT_PIN = STEP__INPUT_PIN;
+	int COMMUNICATION_STEP__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -1617,7 +1392,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int COMMUNICATION_STEP__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Msg Size</b></em>' attribute.
@@ -1626,7 +1419,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__MSG_SIZE = STEP_FEATURE_COUNT + 0;
+	int COMMUNICATION_STEP__MSG_SIZE = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Com Res</b></em>' reference.
@@ -1635,7 +1428,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP__COM_RES = STEP_FEATURE_COUNT + 1;
+	int COMMUNICATION_STEP__COM_RES = GqamPackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Communication Step</em>' class.
@@ -1644,7 +1437,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
+	int COMMUNICATION_STEP_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1653,7 +1446,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int COMMUNICATION_STEP___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Communication Step</em>' class.
@@ -1662,7 +1455,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int COMMUNICATION_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.PinImpl <em>Pin</em>}' class.
@@ -1681,7 +1474,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__EANNOTATIONS = STEP__EANNOTATIONS;
+	int DELAY__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1690,7 +1483,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__NAME = STEP__NAME;
+	int DELAY__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -1699,7 +1492,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__STEPS = STEP__STEPS;
+	int DELAY__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1708,7 +1501,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__ROOT = STEP__ROOT;
+	int DELAY__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -1717,7 +1510,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__CAUSE = STEP__CAUSE;
+	int DELAY__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -1726,7 +1519,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__PARENT_STEP = STEP__PARENT_STEP;
+	int DELAY__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -1735,7 +1528,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__CONNECTORS = STEP__CONNECTORS;
+	int DELAY__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -1744,7 +1537,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__RESP_TIME = STEP__RESP_TIME;
+	int DELAY__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -1753,7 +1546,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__BEST_CET = STEP__BEST_CET;
+	int DELAY__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -1762,7 +1555,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__WORST_CET = STEP__WORST_CET;
+	int DELAY__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -1771,7 +1564,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__OWNER = STEP__OWNER;
+	int DELAY__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -1780,7 +1573,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__IS_ATOMIC = STEP__IS_ATOMIC;
+	int DELAY__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -1789,7 +1582,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int DELAY__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -1798,7 +1591,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__REPETITIONS = STEP__REPETITIONS;
+	int DELAY__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -1807,7 +1600,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__PROBABILITY = STEP__PROBABILITY;
+	int DELAY__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -1816,7 +1609,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__PRIORITY = STEP__PRIORITY;
+	int DELAY__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -1825,7 +1618,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int DELAY__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -1834,7 +1627,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__SCENARIO = STEP__SCENARIO;
+	int DELAY__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -1843,7 +1636,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int DELAY__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -1852,7 +1645,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__INPUT_REL = STEP__INPUT_REL;
+	int DELAY__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -1861,7 +1654,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__OUTPUT_REL = STEP__OUTPUT_REL;
+	int DELAY__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -1870,7 +1663,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__CONCUR_RES = STEP__CONCUR_RES;
+	int DELAY__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -1879,7 +1672,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__INPUT_PIN = STEP__INPUT_PIN;
+	int DELAY__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -1888,7 +1681,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int DELAY__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELAY__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -1897,7 +1708,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY__DURATION = STEP_FEATURE_COUNT + 0;
+	int DELAY__DURATION = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Delay</em>' class.
@@ -1906,7 +1717,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
+	int DELAY_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1915,7 +1726,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int DELAY___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Delay</em>' class.
@@ -1924,7 +1735,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELAY_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int DELAY_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -1933,7 +1744,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
+	int EXECUTION_STEP__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1942,7 +1753,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__NAME = STEP__NAME;
+	int EXECUTION_STEP__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -1951,7 +1762,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__STEPS = STEP__STEPS;
+	int EXECUTION_STEP__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -1960,7 +1771,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__ROOT = STEP__ROOT;
+	int EXECUTION_STEP__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -1969,7 +1780,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__CAUSE = STEP__CAUSE;
+	int EXECUTION_STEP__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -1978,7 +1789,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__PARENT_STEP = STEP__PARENT_STEP;
+	int EXECUTION_STEP__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -1987,7 +1798,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__CONNECTORS = STEP__CONNECTORS;
+	int EXECUTION_STEP__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -1996,7 +1807,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__RESP_TIME = STEP__RESP_TIME;
+	int EXECUTION_STEP__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -2005,7 +1816,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__BEST_CET = STEP__BEST_CET;
+	int EXECUTION_STEP__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -2014,7 +1825,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__WORST_CET = STEP__WORST_CET;
+	int EXECUTION_STEP__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -2023,7 +1834,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__OWNER = STEP__OWNER;
+	int EXECUTION_STEP__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -2032,7 +1843,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__IS_ATOMIC = STEP__IS_ATOMIC;
+	int EXECUTION_STEP__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -2041,7 +1852,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int EXECUTION_STEP__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -2050,7 +1861,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__REPETITIONS = STEP__REPETITIONS;
+	int EXECUTION_STEP__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -2059,7 +1870,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__PROBABILITY = STEP__PROBABILITY;
+	int EXECUTION_STEP__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -2068,7 +1879,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__PRIORITY = STEP__PRIORITY;
+	int EXECUTION_STEP__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -2077,7 +1888,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int EXECUTION_STEP__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -2086,7 +1897,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__SCENARIO = STEP__SCENARIO;
+	int EXECUTION_STEP__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -2095,7 +1906,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int EXECUTION_STEP__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -2104,7 +1915,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__INPUT_REL = STEP__INPUT_REL;
+	int EXECUTION_STEP__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -2113,7 +1924,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__OUTPUT_REL = STEP__OUTPUT_REL;
+	int EXECUTION_STEP__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -2122,7 +1933,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__CONCUR_RES = STEP__CONCUR_RES;
+	int EXECUTION_STEP__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -2131,7 +1942,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__INPUT_PIN = STEP__INPUT_PIN;
+	int EXECUTION_STEP__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -2140,7 +1951,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int EXECUTION_STEP__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The number of structural features of the '<em>Execution Step</em>' class.
@@ -2149,7 +1978,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 0;
+	int EXECUTION_STEP_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2158,7 +1987,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int EXECUTION_STEP___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Execution Step</em>' class.
@@ -2167,7 +1996,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTION_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int EXECUTION_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.FlowInvolvedElementImpl <em>Flow Involved Element</em>}' class.
@@ -2204,6 +2033,242 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
+	int INPUT_PIN__LOWER_BOUND = GqamPackage.PIN__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__UPPER_BOUND = GqamPackage.PIN__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__EANNOTATIONS = GqamPackage.PIN__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__NAME = GqamPackage.PIN__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__ORDERING = GqamPackage.PIN__ORDERING;
+
+	/**
+	 * The feature id for the '<em><b>Typename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__TYPENAME = GqamPackage.PIN__TYPENAME;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__PATTERN = GqamPackage.PIN__PATTERN;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__IS_CONTROL = GqamPackage.PIN__IS_CONTROL;
+
+	/**
+	 * The feature id for the '<em><b>Predecessors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__PREDECESSORS = GqamPackage.PIN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Input Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN_FEATURE_COUNT = GqamPackage.PIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN___GET_EANNOTATION__STRING = GqamPackage.PIN___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Input Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN_OPERATION_COUNT = GqamPackage.PIN_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
+	 * @generated
+	 */
+	int TIMED_OBSERVER = 26;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
+	 * @generated
+	 */
+	int LATENCY_OBSERVER = 11;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__EANNOTATIONS = GqamPackage.TIMED_OBSERVER__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__NAME = GqamPackage.TIMED_OBSERVER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__CONSTRAINED_ELEMENT = GqamPackage.TIMED_OBSERVER__CONSTRAINED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__CONTEXT = GqamPackage.TIMED_OBSERVER__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__KIND = GqamPackage.TIMED_OBSERVER__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__LAXITY = GqamPackage.TIMED_OBSERVER__LAXITY;
+
+	/**
+	 * The feature id for the '<em><b>Latency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__LATENCY = GqamPackage.TIMED_OBSERVER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Miss Ratio</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__MISS_RATIO = GqamPackage.TIMED_OBSERVER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Max Jitter</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER__MAX_JITTER = GqamPackage.TIMED_OBSERVER_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Latency Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER_FEATURE_COUNT = GqamPackage.TIMED_OBSERVER_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER___GET_EANNOTATION__STRING = GqamPackage.TIMED_OBSERVER___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Latency Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LATENCY_OBSERVER_OPERATION_COUNT = GqamPackage.TIMED_OBSERVER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
 	int MULTIPLICITY_ELEMENT__LOWER_BOUND = 0;
 
 	/**
@@ -2232,422 +2297,6 @@ public interface GqamPackage extends EPackage {
 	 * @ordered
 	 */
 	int MULTIPLICITY_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__LOWER_BOUND = MULTIPLICITY_ELEMENT__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__UPPER_BOUND = MULTIPLICITY_ELEMENT__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__EANNOTATIONS = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__NAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__ORDERING = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Typename</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__TYPENAME = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__PATTERN = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN__IS_CONTROL = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN_FEATURE_COUNT = MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN___GET_EANNOTATION__STRING = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PIN_OPERATION_COUNT = MULTIPLICITY_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__LOWER_BOUND = PIN__LOWER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__UPPER_BOUND = PIN__UPPER_BOUND;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__EANNOTATIONS = PIN__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__NAME = PIN__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__ORDERING = PIN__ORDERING;
-
-	/**
-	 * The feature id for the '<em><b>Typename</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__TYPENAME = PIN__TYPENAME;
-
-	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__PATTERN = PIN__PATTERN;
-
-	/**
-	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__IS_CONTROL = PIN__IS_CONTROL;
-
-	/**
-	 * The feature id for the '<em><b>Predecessors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN__PREDECESSORS = PIN_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Input Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN_FEATURE_COUNT = PIN_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN___GET_EANNOTATION__STRING = PIN___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Input Pin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT_PIN_OPERATION_COUNT = PIN_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getTimedObserver()
-	 * @generated
-	 */
-	int TIMED_OBSERVER = 26;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__EANNOTATIONS = AnnotationPackage.CONSTRAINT__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__NAME = AnnotationPackage.CONSTRAINT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__CONSTRAINED_ELEMENT = AnnotationPackage.CONSTRAINT__CONSTRAINED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__CONTEXT = AnnotationPackage.CONSTRAINT__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__KIND = AnnotationPackage.CONSTRAINT__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER__LAXITY = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Timed Observer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER_FEATURE_COUNT = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER___GET_EANNOTATION__STRING = AnnotationPackage.CONSTRAINT___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Timed Observer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMED_OBSERVER_OPERATION_COUNT = AnnotationPackage.CONSTRAINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl
-	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLatencyObserver()
-	 * @generated
-	 */
-	int LATENCY_OBSERVER = 11;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__EANNOTATIONS = TIMED_OBSERVER__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__NAME = TIMED_OBSERVER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__CONSTRAINED_ELEMENT = TIMED_OBSERVER__CONSTRAINED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__CONTEXT = TIMED_OBSERVER__CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__KIND = TIMED_OBSERVER__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__LAXITY = TIMED_OBSERVER__LAXITY;
-
-	/**
-	 * The feature id for the '<em><b>Latency</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__LATENCY = TIMED_OBSERVER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Miss Ratio</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__MISS_RATIO = TIMED_OBSERVER_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Max Jitter</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER__MAX_JITTER = TIMED_OBSERVER_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Latency Observer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER_FEATURE_COUNT = TIMED_OBSERVER_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER___GET_EANNOTATION__STRING = TIMED_OBSERVER___GET_EANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Latency Observer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LATENCY_OBSERVER_OPERATION_COUNT = TIMED_OBSERVER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.impl.ResourceServiceExcecutionImpl <em>Resource Service Excecution</em>}' class.
@@ -2730,7 +2379,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int ONCE__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2739,7 +2388,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__PARENT = ARRIVAL_PATTERN__PARENT;
+	int ONCE__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -2748,7 +2397,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__JITTER = ARRIVAL_PATTERN__JITTER;
+	int ONCE__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -2757,7 +2406,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__PHASE = ARRIVAL_PATTERN__PHASE;
+	int ONCE__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -2766,7 +2415,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int ONCE__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -2775,7 +2424,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int ONCE__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The number of structural features of the '<em>Once</em>' class.
@@ -2784,7 +2433,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int ONCE_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2793,7 +2442,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int ONCE___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Once</em>' class.
@@ -2802,7 +2451,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ONCE_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int ONCE_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -2811,7 +2460,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__LOWER_BOUND = PIN__LOWER_BOUND;
+	int OUTPUT_PIN__LOWER_BOUND = GqamPackage.PIN__LOWER_BOUND;
 
 	/**
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
@@ -2820,7 +2469,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__UPPER_BOUND = PIN__UPPER_BOUND;
+	int OUTPUT_PIN__UPPER_BOUND = GqamPackage.PIN__UPPER_BOUND;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2829,7 +2478,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__EANNOTATIONS = PIN__EANNOTATIONS;
+	int OUTPUT_PIN__EANNOTATIONS = GqamPackage.PIN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2838,7 +2487,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__NAME = PIN__NAME;
+	int OUTPUT_PIN__NAME = GqamPackage.PIN__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
@@ -2847,7 +2496,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__ORDERING = PIN__ORDERING;
+	int OUTPUT_PIN__ORDERING = GqamPackage.PIN__ORDERING;
 
 	/**
 	 * The feature id for the '<em><b>Typename</b></em>' attribute.
@@ -2856,7 +2505,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__TYPENAME = PIN__TYPENAME;
+	int OUTPUT_PIN__TYPENAME = GqamPackage.PIN__TYPENAME;
 
 	/**
 	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
@@ -2865,7 +2514,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__PATTERN = PIN__PATTERN;
+	int OUTPUT_PIN__PATTERN = GqamPackage.PIN__PATTERN;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -2874,7 +2523,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__IS_CONTROL = PIN__IS_CONTROL;
+	int OUTPUT_PIN__IS_CONTROL = GqamPackage.PIN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Successors</b></em>' reference list.
@@ -2883,7 +2532,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN__SUCCESSORS = PIN_FEATURE_COUNT + 0;
+	int OUTPUT_PIN__SUCCESSORS = GqamPackage.PIN_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Output Pin</em>' class.
@@ -2892,7 +2541,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN_FEATURE_COUNT = PIN_FEATURE_COUNT + 1;
+	int OUTPUT_PIN_FEATURE_COUNT = GqamPackage.PIN_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2901,7 +2550,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN___GET_EANNOTATION__STRING = PIN___GET_EANNOTATION__STRING;
+	int OUTPUT_PIN___GET_EANNOTATION__STRING = GqamPackage.PIN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Output Pin</em>' class.
@@ -2910,7 +2559,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_PIN_OPERATION_COUNT = PIN_OPERATION_COUNT + 0;
+	int OUTPUT_PIN_OPERATION_COUNT = GqamPackage.PIN_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -2919,7 +2568,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int PERIODIC_PATTERN__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -2928,7 +2577,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__PARENT = ARRIVAL_PATTERN__PARENT;
+	int PERIODIC_PATTERN__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -2937,7 +2586,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__JITTER = ARRIVAL_PATTERN__JITTER;
+	int PERIODIC_PATTERN__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -2946,7 +2595,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__PHASE = ARRIVAL_PATTERN__PHASE;
+	int PERIODIC_PATTERN__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -2955,7 +2604,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int PERIODIC_PATTERN__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -2964,7 +2613,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int PERIODIC_PATTERN__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Period</b></em>' attribute.
@@ -2973,7 +2622,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__PERIOD = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int PERIODIC_PATTERN__PERIOD = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Occurences</b></em>' attribute.
@@ -2982,7 +2631,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN__OCCURENCES = ARRIVAL_PATTERN_FEATURE_COUNT + 1;
+	int PERIODIC_PATTERN__OCCURENCES = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Periodic Pattern</em>' class.
@@ -2991,7 +2640,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+	int PERIODIC_PATTERN_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3000,7 +2649,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int PERIODIC_PATTERN___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Periodic Pattern</em>' class.
@@ -3009,7 +2658,106 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERIODIC_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int PERIODIC_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__LOWER_BOUND = GqamPackage.MULTIPLICITY_ELEMENT__LOWER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__UPPER_BOUND = GqamPackage.MULTIPLICITY_ELEMENT__UPPER_BOUND;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__EANNOTATIONS = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__NAME = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Ordering</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__ORDERING = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Typename</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__TYPENAME = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Pattern</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__PATTERN = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN__IS_CONTROL = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN_FEATURE_COUNT = GqamPackage.MULTIPLICITY_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN___GET_EANNOTATION__STRING = GqamPackage.MULTIPLICITY_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Pin</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIN_OPERATION_COUNT = GqamPackage.MULTIPLICITY_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Predec</b></em>' reference list.
@@ -3117,7 +2865,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__EANNOTATIONS = STEP__EANNOTATIONS;
+	int RELEASE_STEP__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3126,7 +2874,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__NAME = STEP__NAME;
+	int RELEASE_STEP__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -3135,7 +2883,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__STEPS = STEP__STEPS;
+	int RELEASE_STEP__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -3144,7 +2892,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__ROOT = STEP__ROOT;
+	int RELEASE_STEP__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -3153,7 +2901,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__CAUSE = STEP__CAUSE;
+	int RELEASE_STEP__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -3162,7 +2910,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__PARENT_STEP = STEP__PARENT_STEP;
+	int RELEASE_STEP__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -3171,7 +2919,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__CONNECTORS = STEP__CONNECTORS;
+	int RELEASE_STEP__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -3180,7 +2928,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__RESP_TIME = STEP__RESP_TIME;
+	int RELEASE_STEP__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -3189,7 +2937,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__BEST_CET = STEP__BEST_CET;
+	int RELEASE_STEP__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -3198,7 +2946,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__WORST_CET = STEP__WORST_CET;
+	int RELEASE_STEP__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -3207,7 +2955,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__OWNER = STEP__OWNER;
+	int RELEASE_STEP__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -3216,7 +2964,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__IS_ATOMIC = STEP__IS_ATOMIC;
+	int RELEASE_STEP__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -3225,7 +2973,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int RELEASE_STEP__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -3234,7 +2982,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__REPETITIONS = STEP__REPETITIONS;
+	int RELEASE_STEP__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -3243,7 +2991,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__PROBABILITY = STEP__PROBABILITY;
+	int RELEASE_STEP__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3252,7 +3000,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__PRIORITY = STEP__PRIORITY;
+	int RELEASE_STEP__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -3261,7 +3009,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int RELEASE_STEP__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -3270,7 +3018,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__SCENARIO = STEP__SCENARIO;
+	int RELEASE_STEP__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -3279,7 +3027,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int RELEASE_STEP__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -3288,7 +3036,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__INPUT_REL = STEP__INPUT_REL;
+	int RELEASE_STEP__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -3297,7 +3045,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__OUTPUT_REL = STEP__OUTPUT_REL;
+	int RELEASE_STEP__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -3306,7 +3054,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__CONCUR_RES = STEP__CONCUR_RES;
+	int RELEASE_STEP__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -3315,7 +3063,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__INPUT_PIN = STEP__INPUT_PIN;
+	int RELEASE_STEP__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -3324,7 +3072,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int RELEASE_STEP__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_STEP__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Rel Res</b></em>' reference.
@@ -3333,7 +3099,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__REL_RES = STEP_FEATURE_COUNT + 0;
+	int RELEASE_STEP__REL_RES = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Res Units</b></em>' attribute.
@@ -3342,7 +3108,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP__RES_UNITS = STEP_FEATURE_COUNT + 1;
+	int RELEASE_STEP__RES_UNITS = GqamPackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Release Step</em>' class.
@@ -3351,7 +3117,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP_FEATURE_COUNT = STEP_FEATURE_COUNT + 2;
+	int RELEASE_STEP_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3360,7 +3126,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int RELEASE_STEP___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Release Step</em>' class.
@@ -3369,7 +3135,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE_STEP_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int RELEASE_STEP_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3378,7 +3144,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__EANNOTATIONS = STEP__EANNOTATIONS;
+	int REQUESTED_SERVICE__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3387,7 +3153,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__NAME = STEP__NAME;
+	int REQUESTED_SERVICE__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -3396,7 +3162,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__STEPS = STEP__STEPS;
+	int REQUESTED_SERVICE__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -3405,7 +3171,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__ROOT = STEP__ROOT;
+	int REQUESTED_SERVICE__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -3414,7 +3180,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__CAUSE = STEP__CAUSE;
+	int REQUESTED_SERVICE__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -3423,7 +3189,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__PARENT_STEP = STEP__PARENT_STEP;
+	int REQUESTED_SERVICE__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -3432,7 +3198,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__CONNECTORS = STEP__CONNECTORS;
+	int REQUESTED_SERVICE__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -3441,7 +3207,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__RESP_TIME = STEP__RESP_TIME;
+	int REQUESTED_SERVICE__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -3450,7 +3216,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__BEST_CET = STEP__BEST_CET;
+	int REQUESTED_SERVICE__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -3459,7 +3225,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__WORST_CET = STEP__WORST_CET;
+	int REQUESTED_SERVICE__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -3468,7 +3234,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__OWNER = STEP__OWNER;
+	int REQUESTED_SERVICE__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -3477,7 +3243,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__IS_ATOMIC = STEP__IS_ATOMIC;
+	int REQUESTED_SERVICE__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -3486,7 +3252,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int REQUESTED_SERVICE__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -3495,7 +3261,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__REPETITIONS = STEP__REPETITIONS;
+	int REQUESTED_SERVICE__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -3504,7 +3270,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__PROBABILITY = STEP__PROBABILITY;
+	int REQUESTED_SERVICE__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3513,7 +3279,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__PRIORITY = STEP__PRIORITY;
+	int REQUESTED_SERVICE__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -3522,7 +3288,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int REQUESTED_SERVICE__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -3531,7 +3297,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__SCENARIO = STEP__SCENARIO;
+	int REQUESTED_SERVICE__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -3540,7 +3306,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int REQUESTED_SERVICE__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -3549,7 +3315,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__INPUT_REL = STEP__INPUT_REL;
+	int REQUESTED_SERVICE__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -3558,7 +3324,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__OUTPUT_REL = STEP__OUTPUT_REL;
+	int REQUESTED_SERVICE__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -3567,7 +3333,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__CONCUR_RES = STEP__CONCUR_RES;
+	int REQUESTED_SERVICE__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -3576,7 +3342,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__INPUT_PIN = STEP__INPUT_PIN;
+	int REQUESTED_SERVICE__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -3585,7 +3351,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int REQUESTED_SERVICE__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUESTED_SERVICE__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The number of structural features of the '<em>Requested Service</em>' class.
@@ -3594,7 +3378,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE_FEATURE_COUNT = STEP_FEATURE_COUNT + 0;
+	int REQUESTED_SERVICE_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3603,7 +3387,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int REQUESTED_SERVICE___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Requested Service</em>' class.
@@ -3612,7 +3396,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REQUESTED_SERVICE_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int REQUESTED_SERVICE_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3621,7 +3405,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__EANNOTATIONS = STEP__EANNOTATIONS;
+	int RESOURCE_SERVICE_EXCECUTION__EANNOTATIONS = GqamPackage.STEP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3630,7 +3414,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__NAME = STEP__NAME;
+	int RESOURCE_SERVICE_EXCECUTION__NAME = GqamPackage.STEP__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
@@ -3639,7 +3423,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__STEPS = STEP__STEPS;
+	int RESOURCE_SERVICE_EXCECUTION__STEPS = GqamPackage.STEP__STEPS;
 
 	/**
 	 * The feature id for the '<em><b>Root</b></em>' reference.
@@ -3648,7 +3432,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__ROOT = STEP__ROOT;
+	int RESOURCE_SERVICE_EXCECUTION__ROOT = GqamPackage.STEP__ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Cause</b></em>' reference list.
@@ -3657,7 +3441,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__CAUSE = STEP__CAUSE;
+	int RESOURCE_SERVICE_EXCECUTION__CAUSE = GqamPackage.STEP__CAUSE;
 
 	/**
 	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
@@ -3666,7 +3450,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__PARENT_STEP = STEP__PARENT_STEP;
+	int RESOURCE_SERVICE_EXCECUTION__PARENT_STEP = GqamPackage.STEP__PARENT_STEP;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -3675,7 +3459,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__CONNECTORS = STEP__CONNECTORS;
+	int RESOURCE_SERVICE_EXCECUTION__CONNECTORS = GqamPackage.STEP__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
@@ -3684,7 +3468,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__RESP_TIME = STEP__RESP_TIME;
+	int RESOURCE_SERVICE_EXCECUTION__RESP_TIME = GqamPackage.STEP__RESP_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
@@ -3693,7 +3477,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__BEST_CET = STEP__BEST_CET;
+	int RESOURCE_SERVICE_EXCECUTION__BEST_CET = GqamPackage.STEP__BEST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
@@ -3702,7 +3486,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__WORST_CET = STEP__WORST_CET;
+	int RESOURCE_SERVICE_EXCECUTION__WORST_CET = GqamPackage.STEP__WORST_CET;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -3711,7 +3495,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__OWNER = STEP__OWNER;
+	int RESOURCE_SERVICE_EXCECUTION__OWNER = GqamPackage.STEP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
@@ -3720,7 +3504,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__IS_ATOMIC = STEP__IS_ATOMIC;
+	int RESOURCE_SERVICE_EXCECUTION__IS_ATOMIC = GqamPackage.STEP__IS_ATOMIC;
 
 	/**
 	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
@@ -3729,7 +3513,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__BLOCKING_TIME = STEP__BLOCKING_TIME;
+	int RESOURCE_SERVICE_EXCECUTION__BLOCKING_TIME = GqamPackage.STEP__BLOCKING_TIME;
 
 	/**
 	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
@@ -3738,7 +3522,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__REPETITIONS = STEP__REPETITIONS;
+	int RESOURCE_SERVICE_EXCECUTION__REPETITIONS = GqamPackage.STEP__REPETITIONS;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -3747,7 +3531,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__PROBABILITY = STEP__PROBABILITY;
+	int RESOURCE_SERVICE_EXCECUTION__PROBABILITY = GqamPackage.STEP__PROBABILITY;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -3756,7 +3540,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__PRIORITY = STEP__PRIORITY;
+	int RESOURCE_SERVICE_EXCECUTION__PRIORITY = GqamPackage.STEP__PRIORITY;
 
 	/**
 	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
@@ -3765,7 +3549,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__SERVICE_COUNT = STEP__SERVICE_COUNT;
+	int RESOURCE_SERVICE_EXCECUTION__SERVICE_COUNT = GqamPackage.STEP__SERVICE_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -3774,7 +3558,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__SCENARIO = STEP__SCENARIO;
+	int RESOURCE_SERVICE_EXCECUTION__SCENARIO = GqamPackage.STEP__SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
@@ -3783,7 +3567,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__CHILD_SCENARIO = STEP__CHILD_SCENARIO;
+	int RESOURCE_SERVICE_EXCECUTION__CHILD_SCENARIO = GqamPackage.STEP__CHILD_SCENARIO;
 
 	/**
 	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
@@ -3792,7 +3576,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__INPUT_REL = STEP__INPUT_REL;
+	int RESOURCE_SERVICE_EXCECUTION__INPUT_REL = GqamPackage.STEP__INPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
@@ -3801,7 +3585,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_REL = STEP__OUTPUT_REL;
+	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_REL = GqamPackage.STEP__OUTPUT_REL;
 
 	/**
 	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
@@ -3810,7 +3594,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__CONCUR_RES = STEP__CONCUR_RES;
+	int RESOURCE_SERVICE_EXCECUTION__CONCUR_RES = GqamPackage.STEP__CONCUR_RES;
 
 	/**
 	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
@@ -3819,7 +3603,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__INPUT_PIN = STEP__INPUT_PIN;
+	int RESOURCE_SERVICE_EXCECUTION__INPUT_PIN = GqamPackage.STEP__INPUT_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
@@ -3828,7 +3612,25 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_PIN = STEP__OUTPUT_PIN;
+	int RESOURCE_SERVICE_EXCECUTION__OUTPUT_PIN = GqamPackage.STEP__OUTPUT_PIN;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__OCCURENCE_PERIOD = GqamPackage.STEP__OCCURENCE_PERIOD;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_SERVICE_EXCECUTION__OCCURENCE_OFFSET = GqamPackage.STEP__OCCURENCE_OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Resource Service</b></em>' reference.
@@ -3837,7 +3639,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION__RESOURCE_SERVICE = STEP_FEATURE_COUNT + 0;
+	int RESOURCE_SERVICE_EXCECUTION__RESOURCE_SERVICE = GqamPackage.STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Service Excecution</em>' class.
@@ -3846,7 +3648,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION_FEATURE_COUNT = STEP_FEATURE_COUNT + 1;
+	int RESOURCE_SERVICE_EXCECUTION_FEATURE_COUNT = GqamPackage.STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3855,7 +3657,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION___GET_EANNOTATION__STRING = STEP___GET_EANNOTATION__STRING;
+	int RESOURCE_SERVICE_EXCECUTION___GET_EANNOTATION__STRING = GqamPackage.STEP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Resource Service Excecution</em>' class.
@@ -3864,7 +3666,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_SERVICE_EXCECUTION_OPERATION_COUNT = STEP_OPERATION_COUNT + 0;
+	int RESOURCE_SERVICE_EXCECUTION_OPERATION_COUNT = GqamPackage.STEP_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3873,7 +3675,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int SLIDING_WINDOW_PATTERN__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -3882,7 +3684,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__PARENT = ARRIVAL_PATTERN__PARENT;
+	int SLIDING_WINDOW_PATTERN__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -3891,7 +3693,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__JITTER = ARRIVAL_PATTERN__JITTER;
+	int SLIDING_WINDOW_PATTERN__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -3900,7 +3702,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__PHASE = ARRIVAL_PATTERN__PHASE;
+	int SLIDING_WINDOW_PATTERN__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -3909,7 +3711,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int SLIDING_WINDOW_PATTERN__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -3918,7 +3720,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int SLIDING_WINDOW_PATTERN__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Window Size</b></em>' attribute.
@@ -3927,7 +3729,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__WINDOW_SIZE = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int SLIDING_WINDOW_PATTERN__WINDOW_SIZE = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Nb Events</b></em>' attribute.
@@ -3936,7 +3738,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN__NB_EVENTS = ARRIVAL_PATTERN_FEATURE_COUNT + 1;
+	int SLIDING_WINDOW_PATTERN__NB_EVENTS = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Sliding Window Pattern</em>' class.
@@ -3945,7 +3747,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+	int SLIDING_WINDOW_PATTERN_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -3954,7 +3756,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int SLIDING_WINDOW_PATTERN___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Sliding Window Pattern</em>' class.
@@ -3963,7 +3765,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SLIDING_WINDOW_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int SLIDING_WINDOW_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3972,7 +3774,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__EANNOTATIONS = ARRIVAL_PATTERN__EANNOTATIONS;
+	int SPORADIC_PATTERN__EANNOTATIONS = GqamPackage.ARRIVAL_PATTERN__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -3981,7 +3783,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__PARENT = ARRIVAL_PATTERN__PARENT;
+	int SPORADIC_PATTERN__PARENT = GqamPackage.ARRIVAL_PATTERN__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Jitter</b></em>' attribute.
@@ -3990,7 +3792,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__JITTER = ARRIVAL_PATTERN__JITTER;
+	int SPORADIC_PATTERN__JITTER = GqamPackage.ARRIVAL_PATTERN__JITTER;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' attribute.
@@ -3999,7 +3801,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__PHASE = ARRIVAL_PATTERN__PHASE;
+	int SPORADIC_PATTERN__PHASE = GqamPackage.ARRIVAL_PATTERN__PHASE;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -4008,7 +3810,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__REFERENCE = ARRIVAL_PATTERN__REFERENCE;
+	int SPORADIC_PATTERN__REFERENCE = GqamPackage.ARRIVAL_PATTERN__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Is Control</b></em>' attribute.
@@ -4017,7 +3819,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__IS_CONTROL = ARRIVAL_PATTERN__IS_CONTROL;
+	int SPORADIC_PATTERN__IS_CONTROL = GqamPackage.ARRIVAL_PATTERN__IS_CONTROL;
 
 	/**
 	 * The feature id for the '<em><b>Min Interarrival</b></em>' attribute.
@@ -4026,7 +3828,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__MIN_INTERARRIVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 0;
+	int SPORADIC_PATTERN__MIN_INTERARRIVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Interarrival</b></em>' attribute.
@@ -4035,7 +3837,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN__MAX_INTERARRIVAL = ARRIVAL_PATTERN_FEATURE_COUNT + 1;
+	int SPORADIC_PATTERN__MAX_INTERARRIVAL = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Sporadic Pattern</em>' class.
@@ -4044,7 +3846,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN_FEATURE_COUNT = ARRIVAL_PATTERN_FEATURE_COUNT + 2;
+	int SPORADIC_PATTERN_FEATURE_COUNT = GqamPackage.ARRIVAL_PATTERN_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -4053,7 +3855,7 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN___GET_EANNOTATION__STRING = ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
+	int SPORADIC_PATTERN___GET_EANNOTATION__STRING = GqamPackage.ARRIVAL_PATTERN___GET_EANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Sporadic Pattern</em>' class.
@@ -4062,7 +3864,349 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPORADIC_PATTERN_OPERATION_COUNT = ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+	int SPORADIC_PATTERN_OPERATION_COUNT = GqamPackage.ARRIVAL_PATTERN_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__EANNOTATIONS = GqamPackage.BEHAVIOR_SCENARIO__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__NAME = GqamPackage.BEHAVIOR_SCENARIO__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__STEPS = GqamPackage.BEHAVIOR_SCENARIO__STEPS;
+
+	/**
+	 * The feature id for the '<em><b>Root</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__ROOT = GqamPackage.BEHAVIOR_SCENARIO__ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Cause</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__CAUSE = GqamPackage.BEHAVIOR_SCENARIO__CAUSE;
+
+	/**
+	 * The feature id for the '<em><b>Parent Step</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__PARENT_STEP = GqamPackage.BEHAVIOR_SCENARIO__PARENT_STEP;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__CONNECTORS = GqamPackage.BEHAVIOR_SCENARIO__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Resp Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__RESP_TIME = GqamPackage.BEHAVIOR_SCENARIO__RESP_TIME;
+
+	/**
+	 * The feature id for the '<em><b>Best CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__BEST_CET = GqamPackage.BEHAVIOR_SCENARIO__BEST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Worst CET</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__WORST_CET = GqamPackage.BEHAVIOR_SCENARIO__WORST_CET;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OWNER = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Atomic</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__IS_ATOMIC = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Blocking Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__BLOCKING_TIME = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Repetitions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__REPETITIONS = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Probability</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__PROBABILITY = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__PRIORITY = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Service Count</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__SERVICE_COUNT = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__SCENARIO = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Child Scenario</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__CHILD_SCENARIO = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Input Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__INPUT_REL = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Output Rel</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OUTPUT_REL = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Concur Res</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__CONCUR_RES = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 11;
+
+	/**
+	 * The feature id for the '<em><b>Input Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__INPUT_PIN = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 12;
+
+	/**
+	 * The feature id for the '<em><b>Output Pin</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OUTPUT_PIN = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 13;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OCCURENCE_PERIOD = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 14;
+
+	/**
+	 * The feature id for the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__OCCURENCE_OFFSET = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 15;
+
+	/**
+	 * The number of structural features of the '<em>Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP_FEATURE_COUNT = GqamPackage.BEHAVIOR_SCENARIO_FEATURE_COUNT + 16;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP___GET_EANNOTATION__STRING = GqamPackage.BEHAVIOR_SCENARIO___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Step</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP_OPERATION_COUNT = GqamPackage.BEHAVIOR_SCENARIO_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__EANNOTATIONS = AnnotationPackage.CONSTRAINT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__NAME = AnnotationPackage.CONSTRAINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Constrained Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__CONSTRAINED_ELEMENT = AnnotationPackage.CONSTRAINT__CONSTRAINED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Context</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__CONTEXT = AnnotationPackage.CONSTRAINT__CONTEXT;
+
+	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__KIND = AnnotationPackage.CONSTRAINT__KIND;
+
+	/**
+	 * The feature id for the '<em><b>Laxity</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER__LAXITY = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Timed Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER_FEATURE_COUNT = AnnotationPackage.CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER___GET_EANNOTATION__STRING = AnnotationPackage.CONSTRAINT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Timed Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMED_OBSERVER_OPERATION_COUNT = AnnotationPackage.CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4604,6 +4748,28 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStep_OutputPin();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurencePeriod <em>Occurence Period</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occurence Period</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.Step#getOccurencePeriod()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EAttribute getStep_OccurencePeriod();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset <em>Occurence Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Occurence Offset</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EAttribute getStep_OccurenceOffset();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.TimedObserver <em>Timed Observer</em>}'.
@@ -5658,6 +5824,22 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STEP__OUTPUT_PIN = eINSTANCE.getStep_OutputPin();
+
+		/**
+		 * The meta object literal for the '<em><b>Occurence Period</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEP__OCCURENCE_PERIOD = eINSTANCE.getStep_OccurencePeriod();
+
+		/**
+		 * The meta object literal for the '<em><b>Occurence Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STEP__OCCURENCE_OFFSET = eINSTANCE.getStep_OccurenceOffset();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.TimedObserverImpl <em>Timed Observer</em>}' class.

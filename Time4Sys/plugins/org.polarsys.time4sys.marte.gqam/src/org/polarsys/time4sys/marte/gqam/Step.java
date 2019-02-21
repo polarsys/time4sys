@@ -39,6 +39,8 @@ import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getConcurRes <em>Concur Res</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getInputPin <em>Input Pin</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOutputPin <em>Output Pin</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOccurencePeriod <em>Occurence Period</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset <em>Occurence Offset</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep()
@@ -187,6 +189,58 @@ public interface Step extends BehaviorScenario, AnnotatedElement {
 	 * @generated
 	 */
 	EList<OutputPin> getOutputPin();
+
+	/**
+	 * Returns the value of the '<em><b>Occurence Period</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Occurence Period</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Occurence Period</em>' attribute.
+	 * @see #setOccurencePeriod(int)
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_OccurencePeriod()
+	 * @model
+	 * @generated
+	 */
+	int getOccurencePeriod();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurencePeriod <em>Occurence Period</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occurence Period</em>' attribute.
+	 * @see #getOccurencePeriod()
+	 * @generated
+	 */
+	void setOccurencePeriod(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Occurence Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Occurence Offset</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Occurence Offset</em>' attribute.
+	 * @see #setOccurenceOffset(int)
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getStep_OccurenceOffset()
+	 * @model
+	 * @generated
+	 */
+	int getOccurenceOffset();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.Step#getOccurenceOffset <em>Occurence Offset</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Occurence Offset</em>' attribute.
+	 * @see #getOccurenceOffset()
+	 * @generated
+	 */
+	void setOccurenceOffset(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Input Rel</b></em>' reference.

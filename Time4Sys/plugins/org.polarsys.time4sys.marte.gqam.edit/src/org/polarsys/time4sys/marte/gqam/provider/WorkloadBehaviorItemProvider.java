@@ -149,6 +149,51 @@ public class WorkloadBehaviorItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createAcquireStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createBehaviorScenario()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createCommunicationStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createDelay()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createExecutionStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createReleaseStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createRequestedService()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createResourceServiceExcecution()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
+				 GqamFactory.eINSTANCE.createStep()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__BEHAVIOR,
 				 GqamFactory.eINSTANCE.createBehaviorScenario()));
 
 		newChildDescriptors.add
@@ -195,6 +240,16 @@ public class WorkloadBehaviorItemProvider
 			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__DEMAND,
 				 GqamFactory.eINSTANCE.createWorkloadEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__DEMAND,
+				 GqamFactory.eINSTANCE.createWorkloadEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_BEHAVIOR__REFERENCES,
+				 GqamFactory.eINSTANCE.createReference()));
 
 		newChildDescriptors.add
 			(createChildParameter

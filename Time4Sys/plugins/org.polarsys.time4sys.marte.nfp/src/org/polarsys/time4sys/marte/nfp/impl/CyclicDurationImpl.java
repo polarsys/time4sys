@@ -159,7 +159,7 @@ public class CyclicDurationImpl extends DurationImpl implements CyclicDuration {
 			StringBuffer result= new StringBuffer("");
 			for (Duration duration:this.getDurations()){
 				result.append(duration.toString());
-				result.append(", ");
+				result.append("; ");
 			}
 			result.deleteCharAt(result.length()-1);
 			result.deleteCharAt(result.length()-1);

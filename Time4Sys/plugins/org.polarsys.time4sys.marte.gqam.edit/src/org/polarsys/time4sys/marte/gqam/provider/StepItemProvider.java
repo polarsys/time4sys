@@ -65,6 +65,8 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 			addInputRelPropertyDescriptor(object);
 			addOutputRelPropertyDescriptor(object);
 			addConcurResPropertyDescriptor(object);
+			addOccurencePeriodPropertyDescriptor(object);
+			addOccurenceOffsetPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -131,6 +133,50 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Occurence Period feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOccurencePeriodPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Step_occurencePeriod_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_occurencePeriod_feature", "_UI_Step_type"),
+				 GqamPackage.Literals.STEP__OCCURENCE_PERIOD,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Occurence Offset feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOccurenceOffsetPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Step_occurenceOffset_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Step_occurenceOffset_feature", "_UI_Step_type"),
+				 GqamPackage.Literals.STEP__OCCURENCE_OFFSET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -364,6 +410,8 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 			case GqamPackage.STEP__PROBABILITY:
 			case GqamPackage.STEP__PRIORITY:
 			case GqamPackage.STEP__SERVICE_COUNT:
+			case GqamPackage.STEP__OCCURENCE_PERIOD:
+			case GqamPackage.STEP__OCCURENCE_OFFSET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GqamPackage.STEP__INPUT_PIN:
@@ -389,6 +437,16 @@ public class StepItemProvider extends BehaviorScenarioItemProvider {
 			(createChildParameter
 				(GqamPackage.Literals.STEP__INPUT_PIN,
 				 GqamFactory.eINSTANCE.createInputPin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.STEP__INPUT_PIN,
+				 GqamFactory.eINSTANCE.createInputPin()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.STEP__OUTPUT_PIN,
+				 GqamFactory.eINSTANCE.createOutputPin()));
 
 		newChildDescriptors.add
 			(createChildParameter

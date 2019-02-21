@@ -197,6 +197,36 @@ public class WorkloadEventItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
 				 GqamFactory.eINSTANCE.createSporadicPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createBurstPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createClosedPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createOnce()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createPeriodicPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createSlidingWindowPattern()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GqamPackage.Literals.WORKLOAD_EVENT__PATTERN,
+				 GqamFactory.eINSTANCE.createSporadicPattern()));
 	}
 
 }
