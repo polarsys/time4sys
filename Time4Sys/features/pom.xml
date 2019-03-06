@@ -14,7 +14,7 @@
 
         <modules>
                 <module>org.polarsys.time4sys.feature</module>
+                <module>org.polarsys.time4sys.marte.feature</module>
                 <module>org.polarsys.time4sys.feature.tests</module>
-				
         </modules>
 </project>

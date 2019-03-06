@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.polarsys.time4sys.feature">
+      <category name="Time4Sys"/>
+   </feature>
+   <category-def name="Time4Sys" label="Time4Sys">
+      <description>
+         Install Time4Sys plugins.
+      </description>
+   </category-def>
+   <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
+</site>

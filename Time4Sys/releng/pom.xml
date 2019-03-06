@@ -11,11 +11,11 @@
   <version>1.0.0-SNAPSHOT</version>
  <relativePath>org.polarsys.time4sys.parent/pom.xml</relativePath>
  </parent>
-
         <modules>
                 <module>org.polarsys.time4sys.launcher</module>
                 <module>org.polarsys.time4sys.parent</module>
                 <module>org.polarsys.time4sys.update.site</module>
+                <module>org.polarsys.time4sys.marte.update.site</module>
                 <module>org.polarsys.time4sys.p2</module>
                 <module>org.polarsys.time4sys.librairies</module>
         </modules>
