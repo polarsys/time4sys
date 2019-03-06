@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature id="org.polarsys.time4sys.feature">
+   <feature url="features/org.polarsys.time4sys.marte.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.marte.feature" version="1.0.0.qualifier">
       <category name="Time4Sys"/>
    </feature>
    <category-def name="Time4Sys" label="Time4Sys">
