@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getName <em>Name</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getReferences <em>References</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getReferences <em>References</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getCharacteristics <em>Characteristics</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.Test#getImplementations <em>Implementations</em>}</li>
  * </ul>

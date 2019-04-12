@@ -68,6 +68,8 @@ public class TestImplementationItemProvider
 			addDescriptionPropertyDescriptor(object);
 			addAnalysisExecPathPropertyDescriptor(object);
 			addToolNamePropertyDescriptor(object);
+			addTestedFilePropertyDescriptor(object);
+			addTestResultPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -183,6 +185,50 @@ public class TestImplementationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Tested File feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTestedFilePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_testedFile_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_testedFile_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__TESTED_FILE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Test Result feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTestResultPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_testResult_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_testResult_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__TEST_RESULT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -255,6 +301,8 @@ public class TestImplementationItemProvider
 			case TyscoPackage.TEST_IMPLEMENTATION__DESCRIPTION:
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
+			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
+			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TRANSFORMATION:

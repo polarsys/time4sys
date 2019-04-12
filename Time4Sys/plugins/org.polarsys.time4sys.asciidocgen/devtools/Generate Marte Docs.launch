@@ -13,6 +13,6 @@
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.polarsys.time4sys.mdgen.main.Generate"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;/home/loic/projets/waruna/trunk/Eclipse/plugins/org.polarsys.time4sys.marte/model/marte.ecore&quot; &quot;/home/loic/projets/waruna/trunk/Eclipse/plugins/org.polarsys.time4sys.marte/docs&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.marte/model/marte.ecore&quot; &quot;C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.marte/docs&quot;"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="org.polarsys.time4sys.asciidocgen"/>
 </launchConfiguration>

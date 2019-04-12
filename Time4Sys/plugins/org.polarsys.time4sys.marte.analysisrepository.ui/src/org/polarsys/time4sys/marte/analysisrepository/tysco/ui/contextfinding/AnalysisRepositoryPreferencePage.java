@@ -1,12 +1,10 @@
 package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding;
 
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 public class AnalysisRepositoryPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 	/**

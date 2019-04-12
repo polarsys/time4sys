@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Acceleo Time4sys2mast Module Runtime Plug-in
+Bundle-Name: Time4sys2mast Module Runtime Plug-in
 Bundle-SymbolicName: fr.ensma.lias.transformation.time4sys2mast
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: fr.ensma.lias.transformation.time4sys2mast.Activator
+Bundle-Activator: fr.ensma.lias.transformation.time4sys2mast.general.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model,
@@ -24,11 +24,16 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.nfp;bundle-version="0.1.0",
  org.polarsys.time4sys.trace;bundle-version="0.1.0",
  org.polarsys.time4sys.marte.nfp.edit;bundle-version="0.1.0",
- org.polarsys.time4sys.marte.nfp.editor;bundle-version="0.1.0"
+ org.polarsys.time4sys.marte.nfp.editor;bundle-version="0.1.0",
+ org.polarsys.time4sys.marte.analysisrepository,
+ org.eclipse.equinox.ds,
+ org.polarsys.time4sys.marte.analysisrepository.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: 
  fr.ensma.lias.transformation.time4sys2mast.general,
  fr.ensma.lias.transformation.time4sys2mast.general.services
+Import-Package: org.osgi.service.component.annotations
+Service-Component: OSGI-INF/fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator.xml
 

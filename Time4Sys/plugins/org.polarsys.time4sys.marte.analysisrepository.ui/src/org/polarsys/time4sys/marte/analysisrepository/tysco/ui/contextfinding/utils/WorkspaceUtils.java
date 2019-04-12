@@ -91,16 +91,12 @@ public class WorkspaceUtils {
 	 * the default name is "result.xmi"
 	 * @return
 	 */
-	public static String getOutputFolderPath() {
+	public static String getOutputFolderPath(String results) {
 		
 		IProject currentProject = WorkspaceUtils.getCurrentProject();
-		IFolder folder = WorkspaceUtils.createFolder(currentProject,"results");
+		IFolder folder = WorkspaceUtils.createFolder(currentProject,results);
 		String outputFolderPath = folder.getLocation().toOSString();
-		
-		//System.out.println("output folder path: "+outputFolderPath);
-		
-		//String outputModelPath = outputFolderPath+ "/transformed_model.txt";
-		
+				
 		return outputFolderPath;
 	}
 	
@@ -137,26 +133,26 @@ public class WorkspaceUtils {
 	 * Get path of model to transform
 	 * @return the model in current editor
 	 */
-	public static String getInputModelPath() {
-		String sourcePath=null;
-		
-		// get path of source model to transform (first argument of Acceleo)
-		IWorkbench workbench = PlatformUI.getWorkbench();
-		if (workbench==null) return null;
-		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-		if (window==null) return null;
-		IWorkbenchPage page = window.getActivePage();
-		if (page==null) return null;
-		IEditorPart part = page.getActiveEditor();
-		if (part==null) return null;
-		IEditorInput editorInput = part.getEditorInput();
-		if (editorInput==null) return null;
-		if (editorInput instanceof FileEditorInput) {
-			sourcePath = ((FileEditorInput)editorInput).getPath().toOSString();
-		}
-		
-		return sourcePath;
-	}
+//	public static String getInputModelPath() {
+//		String sourcePath=null;
+//		
+//		// get path of source model to transform (first argument of Acceleo)
+//		IWorkbench workbench = PlatformUI.getWorkbench();
+//		if (workbench==null) return null;
+//		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
+//		if (window==null) return null;
+//		IWorkbenchPage page = window.getActivePage();
+//		if (page==null) return null;
+//		IEditorPart part = page.getActiveEditor();
+//		if (part==null) return null;
+//		IEditorInput editorInput = part.getEditorInput();
+//		if (editorInput==null) return null;
+//		if (editorInput instanceof FileEditorInput) {
+//			sourcePath = ((FileEditorInput)editorInput).getPath().toOSString();
+//		}
+//		
+//		return sourcePath;
+//	}
 	
 	
 	/**

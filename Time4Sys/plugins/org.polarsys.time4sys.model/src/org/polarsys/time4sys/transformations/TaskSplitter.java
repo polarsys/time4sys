@@ -39,7 +39,7 @@ import org.polarsys.time4sys.model.time4sys.Transformation;
  * @author loic
  *
  */
-public class TaskSplitter extends AbstractTransformation {
+public class TaskSplitter extends AbstractEndogenousMappedTransformation {
 
 	public static final String COPY_TASK_ROLE = "copy-task";
 	public static final String ORIGINAL_TASK_ROLE = "original-task";

@@ -500,13 +500,13 @@
     </implementations>
   </allTests>
   <allTests name="Romeo Analysis" description="Launch romeo analysis">
-    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\time4sys2romeo\org.polarsys.time4sys.marte.transformation.time4sys2romeo_3\analysis\romeo-cli.exe">
-      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\time4sys2romeo.jar"/>
+    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\time4sys2romeo\org.polarsys.time4sys.marte.transformation.time4sys2romeo_3\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.txt" testResult="romeo_result\\analysis_result.txt">
+      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.RomeoCTSSerialization"/>
     </implementations>
   </allTests>
   <allTests name="Mast Analysis" description="Launch mast analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="Mast analysis">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="C:\SCM\time4sysGithub\Time4Sys\plugins\org.polarsys.time4sys.marte.analysisrepositoryinstance\transformations\mast_transfo.jar"/>
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml">
+      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
     </implementations>
   </allTests>
   <allInnerTransfos id="1" turnTrue="//@allRules.14 //@allRules.1" turnFalse="//@allRules.0 //@allRules.3" name="Propagate event activation" description="Propagate Event" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>

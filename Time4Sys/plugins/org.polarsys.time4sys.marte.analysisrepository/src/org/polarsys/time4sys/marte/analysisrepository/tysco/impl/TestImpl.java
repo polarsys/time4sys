@@ -34,8 +34,8 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getReferences <em>References</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getReferences <em>References</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getCharacteristics <em>Characteristics</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImpl#getImplementations <em>Implementations</em>}</li>
  * </ul>
@@ -84,16 +84,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReferences() <em>References</em>}' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferences()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> references;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,6 +102,16 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getReferences() <em>References</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferences()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> references;
 
 	/**
 	 * The cached value of the '{@link #getCharacteristics() <em>Characteristics</em>}' containment reference list.
@@ -279,10 +279,10 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 				return getId();
 			case TyscoPackage.TEST__NAME:
 				return getName();
-			case TyscoPackage.TEST__REFERENCES:
-				return getReferences();
 			case TyscoPackage.TEST__DESCRIPTION:
 				return getDescription();
+			case TyscoPackage.TEST__REFERENCES:
+				return getReferences();
 			case TyscoPackage.TEST__CHARACTERISTICS:
 				return getCharacteristics();
 			case TyscoPackage.TEST__IMPLEMENTATIONS:
@@ -306,12 +306,12 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 			case TyscoPackage.TEST__NAME:
 				setName((String)newValue);
 				return;
+			case TyscoPackage.TEST__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
 			case TyscoPackage.TEST__REFERENCES:
 				getReferences().clear();
 				getReferences().addAll((Collection<? extends String>)newValue);
-				return;
-			case TyscoPackage.TEST__DESCRIPTION:
-				setDescription((String)newValue);
 				return;
 			case TyscoPackage.TEST__CHARACTERISTICS:
 				getCharacteristics().clear();
@@ -339,11 +339,11 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 			case TyscoPackage.TEST__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TyscoPackage.TEST__REFERENCES:
-				getReferences().clear();
-				return;
 			case TyscoPackage.TEST__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case TyscoPackage.TEST__REFERENCES:
+				getReferences().clear();
 				return;
 			case TyscoPackage.TEST__CHARACTERISTICS:
 				getCharacteristics().clear();
@@ -367,10 +367,10 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 				return id != ID_EDEFAULT;
 			case TyscoPackage.TEST__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TyscoPackage.TEST__REFERENCES:
-				return references != null && !references.isEmpty();
 			case TyscoPackage.TEST__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case TyscoPackage.TEST__REFERENCES:
+				return references != null && !references.isEmpty();
 			case TyscoPackage.TEST__CHARACTERISTICS:
 				return characteristics != null && !characteristics.isEmpty();
 			case TyscoPackage.TEST__IMPLEMENTATIONS:
@@ -393,10 +393,10 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test {
 		result.append(id);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", references: ");
-		result.append(references);
 		result.append(", description: ");
 		result.append(description);
+		result.append(", references: ");
+		result.append(references);
 		result.append(')');
 		return result.toString();
 	}

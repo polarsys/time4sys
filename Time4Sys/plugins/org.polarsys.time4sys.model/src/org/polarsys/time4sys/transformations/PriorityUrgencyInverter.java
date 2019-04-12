@@ -33,7 +33,7 @@ import org.polarsys.time4sys.transformations.PriorityUrgencyInverter.PriorityUrg
  * @author loic
  *
  */
-public class PriorityUrgencyInverter extends AbstractTransformation {
+public class PriorityUrgencyInverter extends AbstractEndogenousMappedTransformation {
 	
 	public static final String TRANS_NAME = "Priority to Urgency".intern();
 	

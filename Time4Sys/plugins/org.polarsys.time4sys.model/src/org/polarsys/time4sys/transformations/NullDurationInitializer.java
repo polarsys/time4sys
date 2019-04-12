@@ -33,7 +33,7 @@ import org.polarsys.time4sys.model.time4sys.Transformation;
  * @author loic
  *
  */
-public class NullDurationInitializer extends AbstractTransformation {
+public class NullDurationInitializer extends AbstractEndogenousMappedTransformation {
 
 	public static final String TRANS_NAME = "Initialize null durations to 0 ms".intern();
 

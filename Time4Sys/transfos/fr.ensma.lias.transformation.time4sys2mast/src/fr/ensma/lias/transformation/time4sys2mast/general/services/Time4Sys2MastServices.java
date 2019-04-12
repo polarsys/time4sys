@@ -22,7 +22,7 @@ public class Time4Sys2MastServices {
 	
 	private static int transactionId = 1;
 	
-	public String generateInternalEvents(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
+	public static String generateInternalEvents(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
 		String internalEvents = "";
 		String type = "Regular";
 		String timingRequirementType = "Hard_Global_Deadline";
@@ -81,7 +81,7 @@ public class Time4Sys2MastServices {
 	 * @param behaviorScenario
 	 * @return
 	 */
-	public String generateEventHandlers(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
+	public static String generateEventHandlers(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
 		String eventHandlers = "";
 		String type = "Activity";
 		String inputEvent = "";
@@ -137,7 +137,7 @@ public class Time4Sys2MastServices {
 	 * @param currentStep
 	 * @return
 	 */
-	private Step getSuccStep(Step currentStep)  {
+	private static Step getSuccStep(Step currentStep)  {
 		if (currentStep.getOutputRel()==null) return null;
 		List<Step> succs = currentStep.getOutputRel().getSucces();
 		if (succs.isEmpty()) return null;
@@ -149,7 +149,7 @@ public class Time4Sys2MastServices {
 	 * @param currentStep
 	 * @return
 	 */
-	private String getDeadline(Step currentStep) {
+	private static String getDeadline(Step currentStep) {
 		List<SchedulingParameter> allParams = currentStep.getConcurRes().getSchedParams();
 		
 		for (SchedulingParameter param : allParams) {
@@ -164,7 +164,7 @@ public class Time4Sys2MastServices {
 	 * @param workloadEvent
 	 * @return
 	 */
-	private String generateInternalEventName(WorkloadEvent workloadEvent,int id) {
+	private static String generateInternalEventName(WorkloadEvent workloadEvent,int id) {
 		String internalEventName = "internal";
 		if (workloadEvent.getName()!=null) internalEventName+="_"+workloadEvent.getName().replaceAll(" ","").trim();
 		internalEventName+="_"+id;
@@ -176,16 +176,16 @@ public class Time4Sys2MastServices {
 	 * generate transaction name
 	 * @return
 	 */
-	public String generateTransactionName(WorkloadEvent workloadEvent) {
+	public static String generateTransactionName(WorkloadEvent workloadEvent) {
 		return "Transaction_"+transactionId++;
 	}
 	
 	
-	public String getNestedValue(Duration duration) {
+	public static String getNestedValue(Duration duration) {
 		return ""+duration.getValue();
 	}
 	
-	public String getNestedValue(String s) {
+	public static String getNestedValue(String s) {
 		if (s==null) return null;
 		for (int i = 0; i < s.length(); i++){
 		    char c = s.charAt(i);   

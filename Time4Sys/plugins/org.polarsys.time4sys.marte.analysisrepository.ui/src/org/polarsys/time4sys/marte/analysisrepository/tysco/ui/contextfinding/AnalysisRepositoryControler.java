@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.internal.utils.FileUtil;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -16,6 +18,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.util.tracker.ServiceTracker;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
@@ -28,10 +33,12 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Transformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.common.CurrentAnalysisContext;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.ArFunctionalUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.GraphModelUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.Result;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractExogenousTransformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.LanguageValidatorUtils;
 import org.polarsys.time4sys.simulation.commands.AbstractTransformationCommandHandler;
 import org.polarsys.time4sys.simulation.commands.AutoRecordingCommand;
@@ -54,7 +61,7 @@ public class AnalysisRepositoryControler {
 	private List<ContextModel> appropriateContexts;
 	private List<List<Integer>> violatedGroupIdLists;
 	private List<Result> results;
-
+	// private static DesignModel design;
 	private GraphModelFactory factory;
 
 	private Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
@@ -76,7 +83,8 @@ public class AnalysisRepositoryControler {
 	 * check
 	 */
 	public void check(DesignModel time4SysModel) {
-
+		CurrentAnalysisContext context = CurrentAnalysisContext.getInstance();
+		context.setDesignModel(time4SysModel);
 		final String repositoryLocation = AnalysisRepositoryPlugin.getDefault().getPreferenceStore()
 				.getString("AnalysisRepositoryPath");
 
@@ -107,13 +115,10 @@ public class AnalysisRepositoryControler {
 
 			if (analysisRepository.getAllRules() != null) {
 				for (IdentificationRule r : analysisRepository.getAllRules()) {
-
 					String ruleContent = "";
 					ruleContent = r.getContent();
-
 					// rule in OCL
 					if (ArFunctionalUtils.isOCLConstraint(ruleContent, time4SysModel)) {
-
 						result = new Result();
 						result.setRefId(r.getId());
 						result.setEvaluatedResult(
@@ -141,21 +146,25 @@ public class AnalysisRepositoryControler {
 	public boolean runTransformation(Test test) {
 		boolean fine = true;
 
+		TestImplementation testImpl = test.getImplementations().get(0);
+
 		// Clean output folder
-		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
+		String outputFolderPath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestedFile()));
 		fine &= WorkspaceUtils.cleanFolder(outputFolderPath);
 		if (!fine) {
 			return fine;
 		}
-
+		
 		// Execute transformation
-		TestImplementation testImpl = test.getImplementations().get(0);
 		Transformation transfo = testImpl.getTransformation();
-		fine &= execTransfo(transfo);
+		fine &= execTransfo(transfo, testImpl);
+
+		//Refresh
 		WorkspaceUtils.refreshProject();
 		if (!fine)
 			ArFunctionalUtils.errorMessage("Transformation failed");
 		return fine;
+
 	}
 
 	/**
@@ -165,11 +174,15 @@ public class AnalysisRepositoryControler {
 	 */
 	public boolean runAnalysis(Test test) {
 
+		// Launch the analysis here mast_analysis tool_name [options]
+		TestImplementation testImpl = test.getImplementations().get(0);
+
 		File newFile = null;
 		boolean lock = true;
 		int count = 0;
-		String transformedFilePath = WorkspaceUtils.getOutputFolderPath() + "/transformed_model.txt";
-		String resultPath = WorkspaceUtils.getOutputFolderPath() + "/analysis_result.xml";
+		String transformedFilePath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestedFile()));
+		transformedFilePath+=File.separator+getFileName(testImpl.getTestedFile());
+		String resultPath = WorkspaceUtils.getOutputFolderPath(testImpl.getTestResult());
 		while (lock) {
 
 			newFile = new File(transformedFilePath);
@@ -193,9 +206,7 @@ public class AnalysisRepositoryControler {
 		// TODO:Ajouter dans la doc qu'il faut installer MAST et mettre dans le
 		// PATH et redémarrer eclipse ou le PC.
 
-		// Launch the analysis here mast_analysis tool_name [options]
-		TestImplementation testImpl = test.getImplementations().get(0);
-		String execPath = WorkspaceUtils.getOutputFolderPath() + testImpl.getAnalysisExecPath();
+//		String execPath = WorkspaceUtils.getOutputFolderPath("") + testImpl.getAnalysisExecPath();
 		List<String> args = new ArrayList<String>();
 		args.addAll(Arrays.asList(testImpl.getAnalysisExecPath().split(" ")));
 		args.add(transformedFilePath);
@@ -207,6 +218,23 @@ public class AnalysisRepositoryControler {
 		WorkspaceUtils.refreshProject();
 		return true;
 	}
+
+	public static String getFolder(String testedFile) {
+		// TODO Auto-generated method stub
+		return testedFile.substring(0,testedFile.lastIndexOf(File.separator)+1);
+	}
+
+	public static String getFileName(String testedFile) {
+		// TODO Auto-generated method stub
+		return testedFile.substring(testedFile.lastIndexOf(File.separator)+1);
+	}
+
+//	public static String[] filePaths(String str) {
+//		if (str == null || str.isEmpty()) {
+//			return new String[] {};
+//		}
+//		return str.lastIndexOf()(File.separator);
+//	}
 
 	/**
 	 * Trigger analysis
@@ -250,9 +278,12 @@ public class AnalysisRepositoryControler {
 			Class transfoClass = classLoader.loadClass(transfo.getClassPath());
 			AbstractTransformationCommandHandler handler = (AbstractTransformationCommandHandler) transfoClass
 					.newInstance();
-			DesignModel dm = WorkspaceUtils.getTime4sysProject();
-			final CommandRunner cmdRunner = new CommandRunner(PlatformUI.getWorkbench().getActiveWorkbenchWindow(), dm);
-			AutoRecordingCommand arc = (AutoRecordingCommand)handler.createRecordingCommand(null, dm);
+
+			CurrentAnalysisContext context = CurrentAnalysisContext.getInstance();
+			DesignModel design = context.getDesignModel();
+			final CommandRunner cmdRunner = new CommandRunner(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
+					design);
+			AutoRecordingCommand arc = (AutoRecordingCommand) handler.createRecordingCommand(null, design);
 			cmdRunner.execute(arc);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -263,28 +294,83 @@ public class AnalysisRepositoryControler {
 
 	}
 
+	public static <T> List<T> getServices(Class<T> clazz) {
+		Class<AbstractExogenousTransformation> classFromBundle = AbstractExogenousTransformation.class;
+		BundleContext ctx = FrameworkUtil.getBundle(classFromBundle).getBundleContext();
+
+		// ServiceTracker<?, ?> tracker = new ServiceTracker<>(ctx,
+		// AbstractExogenousTransformation.class, null);
+		// try {
+		// tracker.open();
+		// return tracker.getService();
+		// } catch (Exception e) {
+		// throw new RuntimeException(e);
+		// } finally {
+		// tracker.close();
+		// }
+
+		if (ctx != null) {
+			ServiceTracker<T, T> tracker = new ServiceTracker<>(ctx, classFromBundle.getName(), null);
+			try {
+				tracker.open();
+				@SuppressWarnings("unchecked")
+				T[] services = tracker.getServices((T[]) Array.newInstance(clazz, 1));
+				if (services.length == 1 && services[0] == null) {
+					return new ArrayList<T>();
+				}
+				return Arrays.asList(services);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			} finally {
+				tracker.close();
+			}
+		}
+		return new ArrayList<T>();
+
+	}
+
 	/**
 	 * 
 	 * @param transfo
 	 */
-	public boolean execTransfo(Transformation transfo) {
-
+	public boolean execTransfo(Transformation transfo, TestImplementation testImpl) {
 		if (transfo == null)
 			return false;
 
-		// Construct arguments to execute jar file
-		List<String> args = new ArrayList<String>();
-		String inputModelPath = WorkspaceUtils.getInputModelPath();
-		String jarPath = transfo.getTransfoExecPath();
-		String outputFolderPath = WorkspaceUtils.getOutputFolderPath();
-		args.add("java");
-		args.add("-jar");
-		args.add(jarPath);
-		args.add(inputModelPath);
-		args.add(outputFolderPath);
-
-		// execute...
-		return execTransfo(args);
+		try {
+			String transfoExecPath = transfo.getTransfoExecPath();
+			List<AbstractExogenousTransformation> list = getServices(AbstractExogenousTransformation.class);
+			for (AbstractExogenousTransformation aet : list) {
+				if (aet.getClass().getName().equals(transfoExecPath)) {
+					aet.transform(testImpl);
+				}
+			}
+			// classLoader.loadClass(transfoExecPath);
+			//
+			// AbstractExogenousTransformation handler =
+			// (AbstractExogenousTransformation) transfoClass.newInstance();
+			//
+			// handler.transform();
+			// // Construct arguments to execute jar file
+			// // List<String> args = new ArrayList<String>();
+			// // String inputModelPath = WorkspaceUtils.getInputModelPath();
+			// // String jarPath = transfo.getTransfoExecPath();
+			// // String outputFolderPath =
+			// WorkspaceUtils.getOutputFolderPath();
+			// // args.add("java");
+			// // args.add("-jar");
+			// // args.add(jarPath);
+			// // args.add(inputModelPath);
+			// // args.add(outputFolderPath);
+			//
+			// // execute...
+			// // return execTransfo(args);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 
 	private static BufferedReader getOutput(Process p) {

@@ -28,6 +28,8 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTransformation <em>Transformation</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getAnalysisExecPath <em>Analysis Exec Path</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getToolName <em>Tool Name</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestedFile <em>Tested File</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestResult <em>Test Result</em>}</li>
  * </ul>
  *
  * @generated
@@ -142,6 +144,46 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String toolName = TOOL_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTestedFile() <em>Tested File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestedFile()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TESTED_FILE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTestedFile() <em>Tested File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestedFile()
+	 * @generated
+	 * @ordered
+	 */
+	protected String testedFile = TESTED_FILE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTestResult() <em>Test Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TEST_RESULT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTestResult() <em>Test Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestResult()
+	 * @generated
+	 * @ordered
+	 */
+	protected String testResult = TEST_RESULT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,6 +357,48 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTestedFile() {
+		return testedFile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTestedFile(String newTestedFile) {
+		String oldTestedFile = testedFile;
+		testedFile = newTestedFile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE, oldTestedFile, testedFile));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getTestResult() {
+		return testResult;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTestResult(String newTestResult) {
+		String oldTestResult = testResult;
+		testResult = newTestResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT, oldTestResult, testResult));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -360,6 +444,10 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return getAnalysisExecPath();
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				return getToolName();
+			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
+				return getTestedFile();
+			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+				return getTestResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +477,12 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				setToolName((String)newValue);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
+				setTestedFile((String)newValue);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+				setTestResult((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -420,6 +514,12 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				setToolName(TOOL_NAME_EDEFAULT);
 				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
+				setTestedFile(TESTED_FILE_EDEFAULT);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+				setTestResult(TEST_RESULT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -444,6 +544,10 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return ANALYSIS_EXEC_PATH_EDEFAULT == null ? analysisExecPath != null : !ANALYSIS_EXEC_PATH_EDEFAULT.equals(analysisExecPath);
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				return TOOL_NAME_EDEFAULT == null ? toolName != null : !TOOL_NAME_EDEFAULT.equals(toolName);
+			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
+				return TESTED_FILE_EDEFAULT == null ? testedFile != null : !TESTED_FILE_EDEFAULT.equals(testedFile);
+			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+				return TEST_RESULT_EDEFAULT == null ? testResult != null : !TEST_RESULT_EDEFAULT.equals(testResult);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -468,6 +572,10 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 		result.append(analysisExecPath);
 		result.append(", toolName: ");
 		result.append(toolName);
+		result.append(", testedFile: ");
+		result.append(testedFile);
+		result.append(", testResult: ");
+		result.append(testResult);
 		result.append(')');
 		return result.toString();
 	}

@@ -42,7 +42,7 @@ import org.polarsys.time4sys.model.time4sys.Transformation;
  * @author loic
  *
  */
-public class ActivationPropagator extends AbstractTransformation {
+public class ActivationPropagator extends AbstractEndogenousMappedTransformation {
 
 	public static final String TRANS_NAME = ActivationPropagator.class.getSimpleName();
 	public static final String CTRL2DATAFLOW_RULE = "control2data-flow rule";

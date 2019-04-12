@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator">
+   <service>
+      <provide interface="org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractExogenousTransformation"/>
+   </service>
+   <implementation class="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+</scr:component>

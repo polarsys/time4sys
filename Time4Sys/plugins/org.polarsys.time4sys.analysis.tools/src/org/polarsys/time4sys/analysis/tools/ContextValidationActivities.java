@@ -50,7 +50,9 @@ public class ContextValidationActivities extends AbstractHyperlinkAdapter {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Deprecated
 	@Override
+	/**Used before integration of the analysis repository*/
 	protected void linkPressed(HyperlinkEvent event, EObject root, Session session) {
 		// TODO Auto-generated method stub
 		IExtensionRegistry registry = Platform.getExtensionRegistry();

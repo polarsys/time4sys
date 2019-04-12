@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTransformation <em>Transformation</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getAnalysisExecPath <em>Analysis Exec Path</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getToolName <em>Tool Name</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestedFile <em>Tested File</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestResult <em>Test Result</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation()
@@ -184,5 +186,57 @@ public interface TestImplementation extends EObject {
 	 * @generated
 	 */
 	void setToolName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tested File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tested File</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tested File</em>' attribute.
+	 * @see #setTestedFile(String)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation_TestedFile()
+	 * @model
+	 * @generated
+	 */
+	String getTestedFile();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestedFile <em>Tested File</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tested File</em>' attribute.
+	 * @see #getTestedFile()
+	 * @generated
+	 */
+	void setTestedFile(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Test Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Test Result</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Test Result</em>' attribute.
+	 * @see #setTestResult(String)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation_TestResult()
+	 * @model
+	 * @generated
+	 */
+	String getTestResult();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestResult <em>Test Result</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Test Result</em>' attribute.
+	 * @see #getTestResult()
+	 * @generated
+	 */
+	void setTestResult(String value);
 
 } // TestImplementation

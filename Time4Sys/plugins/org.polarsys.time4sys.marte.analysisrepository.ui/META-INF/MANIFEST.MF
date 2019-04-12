@@ -35,4 +35,5 @@ Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.core.resources,
  org.eclipse.emf.transaction,
  org.polarsys.time4sys.simulation.commands
-Export-Package: org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding
+Export-Package: org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding,
+ org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils

@@ -65,8 +65,8 @@ public class TestItemProvider
 
 			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addReferencesPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addReferencesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -230,8 +230,8 @@ public class TestItemProvider
 		switch (notification.getFeatureID(Test.class)) {
 			case TyscoPackage.TEST__ID:
 			case TyscoPackage.TEST__NAME:
-			case TyscoPackage.TEST__REFERENCES:
 			case TyscoPackage.TEST__DESCRIPTION:
+			case TyscoPackage.TEST__REFERENCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TyscoPackage.TEST__CHARACTERISTICS:

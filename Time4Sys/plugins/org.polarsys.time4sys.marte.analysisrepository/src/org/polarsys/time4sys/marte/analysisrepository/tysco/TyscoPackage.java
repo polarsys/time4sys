@@ -279,22 +279,22 @@ public interface TyscoPackage extends EPackage {
 	int TEST__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>References</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__REFERENCES = 2;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__DESCRIPTION = 3;
+	int TEST__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>References</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST__REFERENCES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Characteristics</b></em>' containment reference list.
@@ -488,13 +488,31 @@ public interface TyscoPackage extends EPackage {
 	int TEST_IMPLEMENTATION__TOOL_NAME = 5;
 
 	/**
+	 * The feature id for the '<em><b>Tested File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__TESTED_FILE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Test Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__TEST_RESULT = 7;
+
+	/**
 	 * The number of structural features of the '<em>Test Implementation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION_FEATURE_COUNT = 6;
+	int TEST_IMPLEMENTATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Test Implementation</em>' class.
@@ -1667,6 +1685,28 @@ public interface TyscoPackage extends EPackage {
 	EAttribute getTestImplementation_ToolName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestedFile <em>Tested File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tested File</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestedFile()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_TestedFile();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestResult <em>Test Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Test Result</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestResult()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_TestResult();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestCharacteristicType <em>Test Characteristic Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2412,6 +2452,22 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEST_IMPLEMENTATION__TOOL_NAME = eINSTANCE.getTestImplementation_ToolName();
+
+		/**
+		 * The meta object literal for the '<em><b>Tested File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__TESTED_FILE = eINSTANCE.getTestImplementation_TestedFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Test Result</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__TEST_RESULT = eINSTANCE.getTestImplementation_TestResult();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestCharacteristicTypeImpl <em>Test Characteristic Type</em>}' class.

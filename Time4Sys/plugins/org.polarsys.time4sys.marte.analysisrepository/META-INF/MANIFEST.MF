@@ -8,6 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.time4sys.marte.analysisrepository.tysco,
+ org.polarsys.time4sys.marte.analysisrepository.tysco.common,
  org.polarsys.time4sys.marte.analysisrepository.tysco.impl,
  org.polarsys.time4sys.marte.analysisrepository.tysco.util
 Require-Bundle: org.eclipse.core.runtime,
