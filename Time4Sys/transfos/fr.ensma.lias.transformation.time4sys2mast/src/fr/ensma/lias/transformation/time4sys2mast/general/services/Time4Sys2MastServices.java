@@ -92,8 +92,8 @@ public class Time4Sys2MastServices {
 		
 		Step currentStep = (Step) workloadEvent.getEffect();
 		String triggerEvent = "ext_trigger";
-		activityOperation = "Operation_"+currentStep.getName().trim();
-		activityServer = "Server_"+currentStep.getConcurRes().getName().trim();
+		activityOperation = "Operation_"+currentStep.getName().replaceAll(" ", "");
+		activityServer = "Server_"+currentStep.getConcurRes().getName().replaceAll(" ", "");
 		outputEvent = generateInternalEventName(workloadEvent, eventId++);
 		
 		// Generate the first event handler		  

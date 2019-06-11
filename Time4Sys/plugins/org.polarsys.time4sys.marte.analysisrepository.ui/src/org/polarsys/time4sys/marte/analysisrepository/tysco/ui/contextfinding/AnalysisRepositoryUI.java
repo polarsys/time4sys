@@ -129,8 +129,8 @@ public class AnalysisRepositoryUI extends TitleAreaDialog {
 	    check.addSelectionListener(new SelectionAdapter() {			
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
-				DesignModel time4SysModel = WorkspaceUtils.getTime4sysProject();
-
+				WorkspaceUtils.setTime4sysProject();
+				DesignModel time4SysModel = WorkspaceUtils.getDesign();
 				check(time4SysModel);
 			}			
 			@Override

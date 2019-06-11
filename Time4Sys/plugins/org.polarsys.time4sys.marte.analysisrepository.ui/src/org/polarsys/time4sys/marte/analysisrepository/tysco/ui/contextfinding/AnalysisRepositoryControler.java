@@ -1,7 +1,9 @@
 package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
@@ -154,12 +156,12 @@ public class AnalysisRepositoryControler {
 		if (!fine) {
 			return fine;
 		}
-		
+
 		// Execute transformation
 		Transformation transfo = testImpl.getTransformation();
 		fine &= execTransfo(transfo, testImpl);
 
-		//Refresh
+		// Refresh
 		WorkspaceUtils.refreshProject();
 		if (!fine)
 			ArFunctionalUtils.errorMessage("Transformation failed");
@@ -181,8 +183,10 @@ public class AnalysisRepositoryControler {
 		boolean lock = true;
 		int count = 0;
 		String transformedFilePath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestedFile()));
-		transformedFilePath+=File.separator+getFileName(testImpl.getTestedFile());
-		String resultPath = WorkspaceUtils.getOutputFolderPath(testImpl.getTestResult());
+		transformedFilePath += File.separator + getFileName(testImpl.getTestedFile());
+		String resultPath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestResult()));
+		resultPath += File.separator + getFileName(testImpl.getTestResult());
+
 		while (lock) {
 
 			newFile = new File(transformedFilePath);
@@ -206,35 +210,44 @@ public class AnalysisRepositoryControler {
 		// TODO:Ajouter dans la doc qu'il faut installer MAST et mettre dans le
 		// PATH et redémarrer eclipse ou le PC.
 
-//		String execPath = WorkspaceUtils.getOutputFolderPath("") + testImpl.getAnalysisExecPath();
+		// String execPath = WorkspaceUtils.getOutputFolderPath("") +
+		// testImpl.getAnalysisExecPath();
 		List<String> args = new ArrayList<String>();
 		args.addAll(Arrays.asList(testImpl.getAnalysisExecPath().split(" ")));
 		args.add(transformedFilePath);
-		args.add(resultPath);
-		boolean transfoOk = execTransfo(args);
-		if (!transfoOk) {
-			ArFunctionalUtils.errorMessage("Analysis failed");
+		FileWriter fr;
+		try {
+			fr = new FileWriter(resultPath);
+			boolean transfoOk = execTransfo(args, fr);
+			if (!transfoOk) {
+				ArFunctionalUtils.errorMessage("Analysis failed");
+			}
+			fr.close();
+			WorkspaceUtils.refreshProject();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		WorkspaceUtils.refreshProject();
 		return true;
+
 	}
 
 	public static String getFolder(String testedFile) {
 		// TODO Auto-generated method stub
-		return testedFile.substring(0,testedFile.lastIndexOf(File.separator)+1);
+		return testedFile.substring(0, testedFile.lastIndexOf(File.separator) + 1);
 	}
 
 	public static String getFileName(String testedFile) {
 		// TODO Auto-generated method stub
-		return testedFile.substring(testedFile.lastIndexOf(File.separator)+1);
+		return testedFile.substring(testedFile.lastIndexOf(File.separator) + 1);
 	}
 
-//	public static String[] filePaths(String str) {
-//		if (str == null || str.isEmpty()) {
-//			return new String[] {};
-//		}
-//		return str.lastIndexOf()(File.separator);
-//	}
+	// public static String[] filePaths(String str) {
+	// if (str == null || str.isEmpty()) {
+	// return new String[] {};
+	// }
+	// return str.lastIndexOf()(File.separator);
+	// }
 
 	/**
 	 * Trigger analysis
@@ -381,20 +394,21 @@ public class AnalysisRepositoryControler {
 		return new BufferedReader(new InputStreamReader(p.getErrorStream()));
 	}
 
-	public boolean execTransfo(List<String> args) {
+	public boolean execTransfo(List<String> args, FileWriter result) {
 		ProcessBuilder processbuilder = new ProcessBuilder(args);
 		try {
 			Process process = processbuilder.start();
-			BufferedReader output = getOutput(process);
+			BufferedReader ouput = getOutput(process);
 			BufferedReader error = getError(process);
 			String ligne = "";
-
-			while ((ligne = output.readLine()) != null) {
-				System.out.println(ligne);
+			while ((ligne = ouput.readLine()) != null) {
+				result.write(ligne);
+				result.write("\n");
 			}
 
 			while ((ligne = error.readLine()) != null) {
-				System.out.println(ligne);
+				result.write(ligne);
+				result.write("\n");
 			}
 
 			// refresh project

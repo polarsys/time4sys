@@ -32,7 +32,8 @@ public class CheckHandler extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ctrl = new AnalysisRepositoryControler();
-		DesignModel time4SysModel = WorkspaceUtils.getTime4sysProject();
+		WorkspaceUtils.setTime4sysProject();
+		DesignModel time4SysModel = WorkspaceUtils.getDesign();
 		ctrl.check(time4SysModel);
 		return null;
 	}
