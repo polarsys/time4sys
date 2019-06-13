@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated petrinet -->
+      <package
+            uri="http://org.polarsys.time4sys.marte.transformation.petrinet"
+            class="petrinet.PetrinetPackage"
+            genModel="model/petrinet.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated taskmodel -->
+      <package
+            uri="http://org.polarsys.time4sys.marte.transformation.petrinet.taskmodel"
+            class="taskmodel.TaskmodelPackage"
+            genModel="model/taskmodel.genmodel"/>
+   </extension>
+
+</plugin>

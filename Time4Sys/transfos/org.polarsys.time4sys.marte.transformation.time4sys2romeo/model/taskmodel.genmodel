@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.marte.transformation.time4sys2romeo_3/src"
+    modelPluginID="org.polarsys.time4sys.marte.transformation.time4sys2romeo_3" modelName="Taskmodel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="petrinet.genmodel#//petrinet"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>taskmodel.ecore</foreignModel>
+  <genPackages prefix="Taskmodel" disposableProviderFactory="true" ecorePackage="taskmodel.ecore#/">
+    <genClasses ecoreClass="taskmodel.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//System/observers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//System/ownedTasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//System/ownedMutualExclusionResources"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//System/convertToPetriNet"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//System/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Task">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Task/stimulus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Task/allFragments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Task/fragments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Task/sharingResourceFragments"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//Task/clone"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="taskmodel.ecore#//Observer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Observer/ownedTransitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Observer/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Observer/ownedPlaces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Observer/checkPlaces"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Stimulus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Stimulus/offset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Stimulus/firstRelease"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Stimulus/period"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//Stimulus/jitter"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//Stimulus/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//First_Release">
+      <genOperations ecoreOperation="taskmodel.ecore#//First_Release/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Period">
+      <genOperations ecoreOperation="taskmodel.ecore#//Period/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Jitter">
+      <genOperations ecoreOperation="taskmodel.ecore#//Jitter/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Fragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taskmodel.ecore#//Fragment/priority"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//Fragment/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//Offset">
+      <genOperations ecoreOperation="taskmodel.ecore#//Offset/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//BoundObserver"/>
+    <genClasses ecoreClass="taskmodel.ecore#//ResponseTimeObserver"/>
+    <genClasses image="false" ecoreClass="taskmodel.ecore#//SimpleComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SimpleComponent/ownedTransition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SimpleComponent/connections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SimpleComponent/ownedPlace"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//SharingResourceFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SharingResourceFragment/firstFragment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SharingResourceFragment/secondFragment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//SharingResourceFragment/connections"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//SharingResourceFragment/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//MutualExclusionResource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//MutualExclusionResource/mutualExclusionResourcePlace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taskmodel.ecore#//MutualExclusionResource/connections"/>
+      <genOperations ecoreOperation="taskmodel.ecore#//MutualExclusionResource/clone"/>
+    </genClasses>
+    <genClasses ecoreClass="taskmodel.ecore#//AbstractFragment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taskmodel.ecore#//AbstractFragment/task"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
