@@ -89,18 +89,7 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 //			Place observerPlace = system.getObservers().get(i).getOwnedPlaces().get(0);
 //			
 //		}
-//	}
-	
-	
-	private static String getSourceDirPath() {
-		String sourceDir = launcher.getClass().getClassLoader().getResource("time4sys2petrinet/RomeoCTSSerialization").getPath();
-		if (sourceDir.contains("!")) sourceDir = sourceDir.substring(0,sourceDir.lastIndexOf('!')+1);
-        else sourceDir = sourceDir.substring(0,sourceDir.lastIndexOf("bin/time4sys2petrinet/"));
-        if (sourceDir.startsWith("/")) sourceDir = sourceDir.substring(1,sourceDir.length());
-        if (sourceDir.startsWith("file:/")) sourceDir = sourceDir.substring(6,sourceDir.length());
-        return sourceDir;
-	}
-	
+//	}	
 	
 	/**
 	 * Generate transition
@@ -1340,21 +1329,22 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 	 * @param outputModelPath
 	 * @return
 	 */
-	public static boolean check(String outputModelPath) {
+	public static boolean check(String outputModelPath, TestImplementation test) {
 		
 		Runtime rt = Runtime.getRuntime();
-		String[] commands = {"analysis/romeo-cli.exe",outputModelPath,"-m"};
+		
+		String[] commands = {test.getAnalysisExecPath(),outputModelPath,"-m"};
 
 		try {
 			Process proc = rt.exec(commands);
 			BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-//			BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+			BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 			String s = null;
 			String response = "";
 			while ((s=stdInput.readLine())!=null) {
 				response += s;
 			}
-			
+			//[info] Checking not (E (true U not (( P8 <= 1 ))))falseTrace: T1, T2, T4, T5, T3, T4
 			if (isTrue(response)) return true;
 			
 		} catch (IOException e) {
@@ -1481,7 +1471,7 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 	 * @param outputFilePath
 	 * @return
 	 */
-	public static boolean runAnalysis(String outputFilePath) {
+	public static boolean runAnalysis(String outputFilePath, TestImplementation test) {
 
 		DesignModel design = CurrentAnalysisContext.getInstance().getDesignModel();
 		System system = Time4Sys2PetriNet.transform(design);
@@ -1505,7 +1495,7 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 				
 				//java.lang.System.out.println(nbTokenMax);
 				
-				if (check(outputFilePath)) break;	
+				if (check(outputFilePath, test)) break;	
 			}
 						
 			// Create response time observer in function of nb reentrancies
@@ -1552,6 +1542,6 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 		IProject currentProject = WorkspaceUtils.getProject();
 		IFolder folder = WorkspaceUtils.createFolder(currentProject, AnalysisRepositoryControler.getFolder(test.getTestedFile()));
 		String outputFolderPath = folder.getLocation().toOSString()+File.separator+AnalysisRepositoryControler.getFileName(test.getTestedFile());
-		runAnalysis(outputFolderPath);
+		runAnalysis(outputFolderPath, test);
 	}
 }

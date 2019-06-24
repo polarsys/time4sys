@@ -356,13 +356,10 @@ public class RomeoXmlSerialization implements AbstractExogenousTransformation{
 		// TODO Auto-generated method stub
 		IProject currentProject = WorkspaceUtils.getProject();
 		IFolder folder = WorkspaceUtils.createFolder(currentProject, AnalysisRepositoryControler.getFolder(test.getTestedFile()));
-//		String outputFolderPath = folder.getLocation().toOSString()+File.separator+AnalysisRepositoryControler.getFileName(test.getTestedFile());
-//		String inputFolderPath = folder.getLocation().toOSString()+File.separator+AnalysisRepositoryControler.getFileName(test.getTestResult());
+		String outputFolderPath = folder.getLocation().toOSString()+File.separator+AnalysisRepositoryControler.getFileName(test.getTestedFile());
+		String inputFolderPath = folder.getLocation().toOSString()+File.separator+AnalysisRepositoryControler.getFileName(test.getTestResult());
 
-		
-		String inputFilePath = "model/lehoczky.petrinet";
-		String outputFilePath = "model/lehoczky.xml";
-		romeoXmlSerialization(inputFilePath, outputFilePath);
+		romeoXmlSerialization(inputFolderPath, outputFolderPath);
 
 	}
 

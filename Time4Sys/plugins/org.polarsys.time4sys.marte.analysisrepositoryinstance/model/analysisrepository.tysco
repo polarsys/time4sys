@@ -408,7 +408,7 @@
     <truthValues value="neutral" associatedRule="//@allRules.35"/>
     <ruleGroups expectedRuleValues="//@allContextModels.9/@truthValues.18 //@allContextModels.9/@truthValues.2 //@allContextModels.9/@truthValues.1 //@allContextModels.9/@truthValues.25 //@allContextModels.9/@truthValues.0 //@allContextModels.9/@truthValues.3 //@allContextModels.9/@truthValues.4 //@allContextModels.9/@truthValues.20 //@allContextModels.9/@truthValues.21 //@allContextModels.9/@truthValues.15 //@allContextModels.9/@truthValues.16 //@allContextModels.9/@truthValues.22 //@allContextModels.9/@truthValues.23 //@allContextModels.9/@truthValues.24 //@allContextModels.9/@truthValues.12 //@allContextModels.9/@truthValues.11 //@allContextModels.9/@truthValues.10 //@allContextModels.9/@truthValues.13 //@allContextModels.9/@truthValues.14 //@allContextModels.9/@truthValues.5 //@allContextModels.9/@truthValues.6 //@allContextModels.9/@truthValues.9 //@allContextModels.9/@truthValues.7 //@allContextModels.9/@truthValues.8 //@allContextModels.9/@truthValues.31 //@allContextModels.9/@truthValues.29 //@allContextModels.9/@truthValues.28 //@allContextModels.9/@truthValues.30 //@allContextModels.9/@truthValues.27 //@allContextModels.9/@truthValues.26 //@allContextModels.9/@truthValues.32 //@allContextModels.9/@truthValues.33 //@allContextModels.9/@truthValues.34 //@allContextModels.9/@truthValues.35" id="1" description=""/>
   </allContextModels>
-  <allContextModels id="11" name="Romeo analysis" description="Check rules to verify the applicability of Romeo transformation" analysisTests="//@allTests.6 //@allTests.7" rootGroup="//@allContextModels.10/@ruleGroups.0">
+  <allContextModels id="11" name="Romeo analysis" description="Check rules to verify the applicability of Romeo transformation" analysisTests="//@allTests.6 //@allTests.8 //@allTests.7" rootGroup="//@allContextModels.10/@ruleGroups.0">
     <references>Romeo transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.0" description="test"/>
@@ -499,9 +499,14 @@
       <transformation contextModel="//@allContextModels.5" id="1"/>
     </implementations>
   </allTests>
-  <allTests name="Romeo Analysis" description="Launch romeo analysis">
-    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\time4sys2romeo\org.polarsys.time4sys.marte.transformation.time4sys2romeo_3\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.txt" testResult="romeo_result\\analysis_result.txt">
+  <allTests name="Romeo CTS Analysis" description="Launch romeo CTS analysis">
+    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\runtime-org.polarsys.time4sys.product_2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.cts" testResult="romeo_result\\RomeoCTS_result.txt">
       <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.RomeoCTSSerialization"/>
+    </implementations>
+  </allTests>
+  <allTests name="Romeo Petri Analysis" description="Launch romeo Petri analysis">
+    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\workspace2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.xml" testResult="romeo_result\\RomeoXML_result.txt">
+      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.Time4Sys2PetriNet"/>
     </implementations>
   </allTests>
   <allTests name="Mast Analysis" description="Launch mast analysis">

@@ -218,7 +218,7 @@ public class AnalysisRepositoryControler {
 		FileWriter fr;
 		try {
 			fr = new FileWriter(resultPath);
-			boolean transfoOk = execTransfo(args, fr);
+			boolean transfoOk = execAnalysis(args, fr);
 			if (!transfoOk) {
 				ArFunctionalUtils.errorMessage("Analysis failed");
 			}
@@ -394,7 +394,7 @@ public class AnalysisRepositoryControler {
 		return new BufferedReader(new InputStreamReader(p.getErrorStream()));
 	}
 
-	public boolean execTransfo(List<String> args, FileWriter result) {
+	public boolean execAnalysis(List<String> args, FileWriter result) {
 		ProcessBuilder processbuilder = new ProcessBuilder(args);
 		try {
 			Process process = processbuilder.start();
