@@ -32,6 +32,7 @@ import petrinet.Place;
 import petrinet.TimedInhibitorArc;
 import petrinet.Transition;
 
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.

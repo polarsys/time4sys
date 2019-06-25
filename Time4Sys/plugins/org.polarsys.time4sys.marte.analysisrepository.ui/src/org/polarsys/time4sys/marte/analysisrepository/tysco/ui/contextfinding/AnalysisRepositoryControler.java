@@ -1,7 +1,17 @@
+/*******************************************************************************
+ * Copyright (c) 2018-2019 LIAS and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html
+ *
+ * Contributors:
+ * Yassine OUHAMMOU- initial API and implementation
+ * Aurelien DIDIER- check design instead of whole project
+ *******************************************************************************/
 package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,7 +22,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.internal.utils.FileUtil;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;

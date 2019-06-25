@@ -1345,6 +1345,7 @@ public class RomeoCTSSerialization implements AbstractExogenousTransformation{
 				response += s;
 			}
 			//[info] Checking not (E (true U not (( P8 <= 1 ))))falseTrace: T1, T2, T4, T5, T3, T4
+			//[info] Checking not (E (true U not (( P11 <= 1 ))))[warning] Transition speeds different from 1: no (theoretical) termination guaranteetrue
 			if (isTrue(response)) return true;
 			
 		} catch (IOException e) {

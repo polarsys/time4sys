@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="170">
+<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="175">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
@@ -68,5 +68,6 @@
 <unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
 <repository location="http://download.eclipse.org/releases/neon/201703141400"/>
 </location>
+<location path="C:\Users\didier\Downloads\tempo_plugins\plugins" type="Directory"/>
 </locations>
 </target>

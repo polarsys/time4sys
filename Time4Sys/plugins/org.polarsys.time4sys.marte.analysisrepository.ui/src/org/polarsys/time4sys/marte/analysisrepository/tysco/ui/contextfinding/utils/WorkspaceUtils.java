@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2018-2019 LIAS and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html
+ *
+ * Contributors:
+ * Yassine OUHAMMOU- initial API and implementation
+ * Aurelien DIDIER- remove deprecated
+ *******************************************************************************/
 package org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils;
 
 import java.io.File;
@@ -16,13 +27,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IEditorPart;
-import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.part.FileEditorInput;
 import org.polarsys.time4sys.design.DesignModel;
 
 public class WorkspaceUtils {

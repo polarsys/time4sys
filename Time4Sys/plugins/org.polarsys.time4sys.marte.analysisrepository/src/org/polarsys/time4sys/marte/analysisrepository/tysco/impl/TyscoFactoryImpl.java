@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2018-2019 LIAS and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html
+ *
+ * Contributors:
+ * Yassine OUHAMMOU- initial API and implementation
+ *
+ *******************************************************************************/
 /**
  */
 package org.polarsys.time4sys.marte.analysisrepository.tysco.impl;
@@ -6,12 +17,28 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.time4sys.marte.analysisrepository.tysco.*;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.Deadline_Sustainability;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ExecutionTime_Sustainability;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.ExpectedEvaluationValue;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.InnerTransformation;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.Jitter_Sustainability;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.JunctionType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.NecessaryCondition;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.Period_Sustainability;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.RuleGroup;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.SufficientCondition;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.Transformation;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoFactory;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
 
 /**
  * <!-- begin-user-doc -->

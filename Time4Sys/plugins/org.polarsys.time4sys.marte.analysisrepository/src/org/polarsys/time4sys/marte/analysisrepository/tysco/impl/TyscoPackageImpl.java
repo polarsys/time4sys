@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2018-2019 LIAS and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html
+ *
+ * Contributors:
+ * Yassine OUHAMMOU- initial API and implementation
+ *
+ *******************************************************************************/
 /**
  */
 package org.polarsys.time4sys.marte.analysisrepository.tysco.impl;
@@ -8,7 +19,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
@@ -33,7 +43,6 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.Transformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoFactory;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
-
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.TyscoValidator;
 
 /**

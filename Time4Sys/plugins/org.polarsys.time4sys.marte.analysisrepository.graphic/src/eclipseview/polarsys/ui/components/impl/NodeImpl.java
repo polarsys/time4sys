@@ -1,14 +1,25 @@
+/*******************************************************************************
+ * Copyright (c) 2018-2019 LIAS and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v20.html
+ *
+ * Contributors:
+ * Yassine OUHAMMOU- initial API and implementation
+ *
+ *******************************************************************************/
 /**
  */
 package eclipseview.polarsys.ui.components.impl;
 
-import eclipseview.polarsys.ui.components.Color;
-import eclipseview.polarsys.ui.components.GraphModelPackage;
-import eclipseview.polarsys.ui.components.Node;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import eclipseview.polarsys.ui.components.Color;
+import eclipseview.polarsys.ui.components.GraphModelPackage;
+import eclipseview.polarsys.ui.components.Node;
 
 /**
  * <!-- begin-user-doc -->
