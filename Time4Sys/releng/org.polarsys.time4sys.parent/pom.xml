@@ -28,7 +28,7 @@
   <repository> 
    <id>SiriusNeon</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/</url>
+   <url>http://download.eclipse.org/sirius/updates/stable/6.1.3-S20190506-061916/oxygen/</url>
  </repository>
  <repository>
    <id>amalgam</id>

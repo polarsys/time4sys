@@ -35,14 +35,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.edit.api.part.IDiagramBorderNodeEditPart;
 import org.eclipse.sirius.diagram.ui.edit.api.part.IStyleEditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.WorkspaceImageEditPart;
-import org.eclipse.sirius.diagram.ui.tools.api.figure.AirStyleDefaultSizeNodeFigure;
+import org.eclipse.sirius.ext.gmf.runtime.gef.ui.figures.AirStyleDefaultSizeNodeFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.WorkspaceImageFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.locator.DBorderItemLocator;
 

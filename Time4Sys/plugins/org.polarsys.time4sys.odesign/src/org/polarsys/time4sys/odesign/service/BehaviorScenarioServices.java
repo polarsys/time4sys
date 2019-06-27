@@ -37,6 +37,7 @@ import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.style.BorderedStyleDescription;
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
+import org.eclipse.sirius.diagram.tools.api.command.view.RefreshSiriusElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
@@ -671,7 +672,7 @@ public class BehaviorScenarioServices {
 						}
 					}
 				}
-				me.getValue().refresh();
+				RefreshSiriusElement.refresh(me.getValue());
 			}
 		}
 
@@ -895,7 +896,7 @@ public class BehaviorScenarioServices {
 						incompleteBS.add(me.getKey());
 					}
 				}
-				me.getValue().refresh();
+				RefreshSiriusElement.refresh(me.getValue());
 			}
 		}
 
