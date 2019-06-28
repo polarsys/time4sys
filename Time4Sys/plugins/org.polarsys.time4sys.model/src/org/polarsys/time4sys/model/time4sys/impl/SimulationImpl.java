@@ -11,8 +11,8 @@
 package org.polarsys.time4sys.model.time4sys.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.math.BigInteger;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;

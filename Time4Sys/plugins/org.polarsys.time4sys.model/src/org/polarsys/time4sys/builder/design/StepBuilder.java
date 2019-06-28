@@ -13,7 +13,6 @@ package org.polarsys.time4sys.builder.design;
 import java.util.List;
 
 import org.polarsys.time4sys.design.DesignFactory;
-import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.InputPin;

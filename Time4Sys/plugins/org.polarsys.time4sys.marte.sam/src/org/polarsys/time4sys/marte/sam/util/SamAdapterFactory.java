@@ -14,20 +14,19 @@ package org.polarsys.time4sys.marte.sam.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.gqam.TimedObserver;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.Constraint;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
-import org.polarsys.time4sys.marte.sam.*;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamPackage;
+import org.polarsys.time4sys.marte.sam.SchedulingObserver;
 
 /**
  * <!-- begin-user-doc -->

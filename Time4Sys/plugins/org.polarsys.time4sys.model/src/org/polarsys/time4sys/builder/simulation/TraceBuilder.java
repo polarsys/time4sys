@@ -28,7 +28,6 @@ import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
-import org.polarsys.time4sys.marte.grm.ComputingResource;
 import org.polarsys.time4sys.marte.grm.ProcessingResource;
 import org.polarsys.time4sys.marte.grm.Resource;
 import org.polarsys.time4sys.marte.grm.ResourcePackage;

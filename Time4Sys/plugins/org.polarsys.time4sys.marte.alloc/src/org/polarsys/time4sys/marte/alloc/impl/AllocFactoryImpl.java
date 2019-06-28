@@ -16,12 +16,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.time4sys.marte.alloc.*;
+import org.polarsys.time4sys.marte.alloc.AllocFactory;
+import org.polarsys.time4sys.marte.alloc.AllocPackage;
+import org.polarsys.time4sys.marte.alloc.Allocate;
+import org.polarsys.time4sys.marte.alloc.AllocationKind;
+import org.polarsys.time4sys.marte.alloc.AllocationNature;
 
 /**
  * <!-- begin-user-doc -->

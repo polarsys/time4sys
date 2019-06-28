@@ -15,7 +15,6 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 
 import org.eclipse.core.internal.registry.ExtensionRegistry;
-import org.eclipse.core.internal.registry.IRegistryConstants;
 import org.eclipse.core.runtime.ContributorFactoryOSGi;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IContributor;

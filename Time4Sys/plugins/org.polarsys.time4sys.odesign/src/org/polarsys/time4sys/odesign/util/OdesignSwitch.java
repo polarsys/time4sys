@@ -12,10 +12,9 @@ package org.polarsys.time4sys.odesign.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.odesign.*;
+import org.polarsys.time4sys.odesign.OdesignPackage;
+import org.polarsys.time4sys.odesign.UtilizationStat;
 
 /**
  * <!-- begin-user-doc -->

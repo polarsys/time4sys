@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.gqam;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
 
 /**

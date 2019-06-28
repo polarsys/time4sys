@@ -16,12 +16,12 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
 import org.polarsys.time4sys.marte.hrm.provider.HrmEditPlugin;
 import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
+import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
 import org.polarsys.time4sys.marte.sam.provider.SamEditPlugin;
 import org.polarsys.time4sys.marte.srm.provider.SrmEditPlugin;
 

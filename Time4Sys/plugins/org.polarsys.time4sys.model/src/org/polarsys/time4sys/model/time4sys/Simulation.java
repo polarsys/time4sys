@@ -11,6 +11,7 @@
 package org.polarsys.time4sys.model.time4sys;
 
 import java.math.BigInteger;
+
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;

@@ -13,24 +13,12 @@ package org.polarsys.time4sys.odesign.wizard;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.sirius.business.api.query.EObjectQuery;
-import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
-import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
-import org.eclipse.sirius.diagram.description.DiagramElementMapping;
-import org.eclipse.sirius.viewpoint.ViewpointPackage;
-import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.CommunicationStep;
-import org.polarsys.time4sys.marte.gqam.ExecutionStep;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 import org.polarsys.time4sys.marte.gqam.Step;
-import org.polarsys.time4sys.marte.grm.CommunicationResource;
-import org.polarsys.time4sys.marte.grm.SchedulableResource;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
-import org.polarsys.time4sys.odesign.service.DiagramServices;
 
 @SuppressWarnings("restriction")
 public class AddRemoveInvolvedElement extends ShowHideWizard {

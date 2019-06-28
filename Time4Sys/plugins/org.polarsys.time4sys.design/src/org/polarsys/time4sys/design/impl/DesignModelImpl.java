@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.design.DesignPackage;
-import org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageImpl;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.WorkloadBehavior;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
@@ -36,6 +35,7 @@ import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.ModelingConcern;
+import org.polarsys.time4sys.marte.nfp.coreelements.impl.PackageImpl;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 /**

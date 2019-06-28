@@ -12,6 +12,7 @@ package org.polarsys.time4sys.analysis.tools;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.model.IClientSelector;
+import org.eclipse.ui.internal.keys.model.ModelElement;
 
 /**
  * Class used to match {@link ModelElement} elements.

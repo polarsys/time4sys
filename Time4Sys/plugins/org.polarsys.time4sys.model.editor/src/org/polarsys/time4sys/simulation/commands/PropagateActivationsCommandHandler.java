@@ -12,7 +12,6 @@ package org.polarsys.time4sys.simulation.commands;
 
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.time4sys.design.DesignModel;
-import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.ActivationPropagator;
 

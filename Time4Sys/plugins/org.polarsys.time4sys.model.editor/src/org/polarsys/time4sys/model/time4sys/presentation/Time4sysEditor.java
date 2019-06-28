@@ -50,6 +50,7 @@ import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -136,7 +137,6 @@ import org.polarsys.time4sys.marte.nfp.annotation.annotation.provider.Annotation
 import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsItemProviderAdapterFactory;
 import org.polarsys.time4sys.marte.sam.provider.SamItemProviderAdapterFactory;
 import org.polarsys.time4sys.model.time4sys.provider.Time4sysItemProviderAdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.polarsys.time4sys.trace.provider.TraceItemProviderAdapterFactory;
 
 

@@ -13,9 +13,7 @@
 package org.polarsys.time4sys.marte.alloc;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
 
 /**

@@ -25,7 +25,6 @@ import org.polarsys.time4sys.marte.grm.PeriodicServerParameters;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Transformation;
-import org.polarsys.time4sys.transformations.PriorityUrgencyInverter.PriorityUrgencyInverterConfiguration;
 
 /**
  * Convert priority values to urgency values as expected by Time4Sys.

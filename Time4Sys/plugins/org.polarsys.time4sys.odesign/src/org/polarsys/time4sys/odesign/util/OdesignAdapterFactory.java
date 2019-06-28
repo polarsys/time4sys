@@ -12,12 +12,10 @@ package org.polarsys.time4sys.odesign.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.polarsys.time4sys.odesign.*;
+import org.polarsys.time4sys.odesign.OdesignPackage;
+import org.polarsys.time4sys.odesign.UtilizationStat;
 
 /**
  * <!-- begin-user-doc -->

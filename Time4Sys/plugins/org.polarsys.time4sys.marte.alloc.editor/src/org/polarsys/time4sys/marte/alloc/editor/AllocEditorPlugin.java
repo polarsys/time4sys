@@ -13,15 +13,10 @@
 package org.polarsys.time4sys.marte.alloc.editor;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
 
 /**

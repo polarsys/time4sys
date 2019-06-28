@@ -14,13 +14,15 @@ package org.polarsys.time4sys.marte.nfp.annotation.annotation.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-import org.polarsys.time4sys.marte.nfp.annotation.annotation.*;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.ModelingConcern;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**

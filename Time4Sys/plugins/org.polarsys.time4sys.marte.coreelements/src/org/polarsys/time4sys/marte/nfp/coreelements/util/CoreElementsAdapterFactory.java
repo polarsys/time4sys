@@ -14,13 +14,10 @@ package org.polarsys.time4sys.marte.nfp.coreelements.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
 import org.polarsys.time4sys.marte.nfp.coreelements.Constraint;
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;

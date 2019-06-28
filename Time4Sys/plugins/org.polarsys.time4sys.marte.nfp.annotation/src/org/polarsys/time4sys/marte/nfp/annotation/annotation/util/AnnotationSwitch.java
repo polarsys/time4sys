@@ -16,9 +16,12 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.time4sys.marte.nfp.annotation.annotation.*;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedModel;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
+import org.polarsys.time4sys.marte.nfp.annotation.annotation.ModelingConcern;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
 
 /**

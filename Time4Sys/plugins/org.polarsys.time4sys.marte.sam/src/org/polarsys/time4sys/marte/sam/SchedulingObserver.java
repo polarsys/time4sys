@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.sam;
 
 import org.polarsys.time4sys.marte.gqam.TimedObserver;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 
 /**

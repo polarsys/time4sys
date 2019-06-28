@@ -21,8 +21,6 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.tools.api.ui.RefreshEditorsPrecommitListener;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
-import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
-import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 import org.polarsys.time4sys.marte.sam.SamFactory;
 import org.polarsys.time4sys.model.time4sys.Project;

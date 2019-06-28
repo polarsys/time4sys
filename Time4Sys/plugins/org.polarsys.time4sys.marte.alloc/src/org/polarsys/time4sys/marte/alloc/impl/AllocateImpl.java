@@ -15,22 +15,15 @@ package org.polarsys.time4sys.marte.alloc.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.alloc.Allocate;
 import org.polarsys.time4sys.marte.alloc.AllocationKind;
 import org.polarsys.time4sys.marte.alloc.AllocationNature;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.Constraint;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.impl.AbstractionImpl;
 
 /**

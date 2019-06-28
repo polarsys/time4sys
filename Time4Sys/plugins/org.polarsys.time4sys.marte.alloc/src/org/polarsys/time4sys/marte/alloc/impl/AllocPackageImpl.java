@@ -17,17 +17,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.alloc.AllocFactory;
 import org.polarsys.time4sys.marte.alloc.AllocPackage;
 import org.polarsys.time4sys.marte.alloc.Allocate;
 import org.polarsys.time4sys.marte.alloc.AllocationKind;
 import org.polarsys.time4sys.marte.alloc.AllocationNature;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 
 /**

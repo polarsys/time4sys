@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.marte.nfp.impl;
 
 import java.math.MathContext;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;

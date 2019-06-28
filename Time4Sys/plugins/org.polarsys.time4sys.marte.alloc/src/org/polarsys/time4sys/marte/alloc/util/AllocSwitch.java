@@ -16,11 +16,9 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.polarsys.time4sys.marte.alloc.*;
-
+import org.polarsys.time4sys.marte.alloc.AllocPackage;
+import org.polarsys.time4sys.marte.alloc.Allocate;
 import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
 import org.polarsys.time4sys.marte.nfp.coreelements.Dependency;
 import org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship;

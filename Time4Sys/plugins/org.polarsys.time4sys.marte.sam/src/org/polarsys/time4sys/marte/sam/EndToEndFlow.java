@@ -17,7 +17,6 @@ import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.FlowInvolvedElement;
 import org.polarsys.time4sys.marte.gqam.TimedObserver;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotatedElement;
 import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;

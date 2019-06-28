@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder.design;
 
-import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
