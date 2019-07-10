@@ -77,6 +77,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="conflictualRules" upperBound="-1"
         eType="#//IdentificationRule"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="formalExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appliedClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oneOrAll" eType="#//AllOrOne"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestImplementation">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -173,5 +175,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AllOrOne">
+    <eLiterals name="ForAll" literal="ForAll"/>
+    <eLiterals name="ExistOne" value="1" literal="ExistOne"/>
   </eClassifiers>
 </ecore:EPackage>

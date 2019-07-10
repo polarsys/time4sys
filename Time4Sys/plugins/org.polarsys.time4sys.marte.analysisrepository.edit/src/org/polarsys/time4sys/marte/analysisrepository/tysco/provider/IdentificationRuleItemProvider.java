@@ -75,6 +75,8 @@ public class IdentificationRuleItemProvider
 			addEquivalentRulesPropertyDescriptor(object);
 			addConflictualRulesPropertyDescriptor(object);
 			addFormalExpressionPropertyDescriptor(object);
+			addAppliedClassPropertyDescriptor(object);
+			addOneOrAllPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -234,6 +236,50 @@ public class IdentificationRuleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Applied Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAppliedClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IdentificationRule_appliedClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IdentificationRule_appliedClass_feature", "_UI_IdentificationRule_type"),
+				 TyscoPackage.Literals.IDENTIFICATION_RULE__APPLIED_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the One Or All feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOneOrAllPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IdentificationRule_oneOrAll_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IdentificationRule_oneOrAll_feature", "_UI_IdentificationRule_type"),
+				 TyscoPackage.Literals.IDENTIFICATION_RULE__ONE_OR_ALL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns IdentificationRule.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -274,6 +320,8 @@ public class IdentificationRuleItemProvider
 			case TyscoPackage.IDENTIFICATION_RULE__DESCRIPTION:
 			case TyscoPackage.IDENTIFICATION_RULE__CONTENT:
 			case TyscoPackage.IDENTIFICATION_RULE__FORMAL_EXPRESSION:
+			case TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS:
+			case TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

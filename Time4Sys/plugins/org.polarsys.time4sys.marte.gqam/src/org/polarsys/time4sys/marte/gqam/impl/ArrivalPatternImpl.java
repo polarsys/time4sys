@@ -98,7 +98,7 @@ public abstract class ArrivalPatternImpl extends ModelElementImpl implements Arr
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_CONTROL_EDEFAULT = false;
+	protected static final boolean IS_CONTROL_EDEFAULT = true;
 	/**
 	 * The cached value of the '{@link #isIsControl() <em>Is Control</em>}' attribute.
 	 * <!-- begin-user-doc -->

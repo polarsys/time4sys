@@ -19,10 +19,12 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -33,6 +35,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.util.tracker.ServiceTracker;
 import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.EvaluationResultType;
@@ -44,6 +47,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.Test;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Transformation;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TruthType;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoFactory;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.common.CurrentAnalysisContext;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.ArFunctionalUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.GraphModelUtils;
@@ -124,17 +128,35 @@ public class AnalysisRepositoryControler {
 			// Close current window
 			Result result;
 
+			// Check all elements of the model
+			// Check if all are OK, or if an OK exists
 			if (analysisRepository.getAllRules() != null) {
 				for (IdentificationRule r : analysisRepository.getAllRules()) {
 					String ruleContent = "";
 					ruleContent = r.getContent();
-					// rule in OCL
-					if (ArFunctionalUtils.isOCLConstraint(ruleContent, time4SysModel)) {
-						result = new Result();
-						result.setRefId(r.getId());
-						result.setEvaluatedResult(
-								LanguageValidatorUtils.oclEvaluateInvariant(time4SysModel, ruleContent));
-						results.add(result);
+					String className = r.getAppliedClass();
+					ClassLoader classLoader = AbstractTransformationCommandHandler.class.getClassLoader();
+
+					try {
+						if (className == null) {
+							className = "org.polarsys.time4sys.design.DesignModel";
+						}
+						Class transfoClass = classLoader.loadClass(className);
+						Iterator<EObject> it = time4SysModel.eAllContents();
+						Result res = new Result();
+						checkRule(r, ruleContent, transfoClass, time4SysModel, res);
+						while (it.hasNext()) {
+							EObject obj = it.next();
+							checkRule(r, ruleContent, transfoClass, obj, res);
+						}
+						//Add a false result if not passed
+						if (res.getEvaluatedResult()==null){
+							res.setRefId(r.getId());
+							res.setEvaluatedResult(EvaluationResultType.FALSE);
+							results.add(res);
+						}
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
 					}
 				}
 			}
@@ -146,6 +168,30 @@ public class AnalysisRepositoryControler {
 					violatedGroupIdLists);
 			resultUI = new AnalysisRepositoryResultUI(shell, this);
 			resultUI.open();
+		}
+	}
+
+	private void checkRule(IdentificationRule r, String ruleContent, Class transfoClass, EObject obj, Result result) {
+		if (transfoClass.isInstance(obj)) {
+			if (r.getOneOrAll() == AllOrOne.FOR_ALL) {
+				if (result.getEvaluatedResult() == null || result.getEvaluatedResult().getLiteral() == "True") {
+					// rule in OCL
+					getRuleResult(r, ruleContent, obj, result);
+				}
+			}
+			if (r.getOneOrAll() == AllOrOne.EXIST_ONE) {
+				if (result.getEvaluatedResult() == null || result.getEvaluatedResult().getLiteral() == "False") {
+					getRuleResult(r, ruleContent, obj, result);
+				}
+			}
+		}
+	}
+
+	private void getRuleResult(IdentificationRule r, String ruleContent, EObject obj, Result result) {
+		if (ArFunctionalUtils.isOCLConstraint(ruleContent, obj)) {
+			result.setRefId(r.getId());
+			result.setEvaluatedResult(LanguageValidatorUtils.oclEvaluateInvariant(obj, ruleContent));
+			results.add(result);
 		}
 	}
 
