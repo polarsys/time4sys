@@ -12,35 +12,35 @@ package fr.ensma.lias.transformation.time4sys2mast.general.services;
 
 import java.util.List;
 
+import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
-import org.polarsys.time4sys.marte.grm.SchedulingParameter;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+
+import fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator;
 
 public class Time4Sys2MastServices {
-	
-	private static int transactionId = 1;
-	
-	public static String generateInternalEvents(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
+
+	public static String generateInternalEvents(BehaviorScenario behaviorScenario, DesignModel design) {
 		String internalEvents = "";
 		String type = "Regular";
 		String timingRequirementType = "Hard_Global_Deadline";
-		int eventId=1;
-		
-		// The first internal event 
-		Step currentStep = (Step) workloadEvent.getEffect();
-		String triggerEvent = "ext_trigger";
-		String name = generateInternalEventName(workloadEvent,eventId++);
+		int eventId = 1;
+
+		// The first internal event
+		String triggerEvent = "ext_trigger_"+behaviorScenario.getName().replaceAll(" ", "").trim();
+		String name = generateInternalEventName(behaviorScenario, eventId++);
 		internalEvents += "(\n";
 		internalEvents += "\tType				=> " + type + ",\n";
-		internalEvents += "\tName				=> " + name ;
-		if (getDeadline(currentStep)!=null) {
+		internalEvents += "\tName				=> " + name;
+		if (getETEF(behaviorScenario, design) != null) {
 			internalEvents += ",\n";
 			internalEvents += "\tTiming_Requirements		=> " + "\n";
-			internalEvents += "\t\t(Type				=> " +timingRequirementType+ ",\n";
-			internalEvents += "\t\t Deadline			=> " +getNestedValue(getDeadline(currentStep))+ ",\n";
-			internalEvents += "\t\t Referenced_Event		=> " +triggerEvent+"))";
+			internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
+			internalEvents += "\t\t Deadline			=> " + getNestedValue(String.valueOf(getETEF(behaviorScenario, design).getEndToEndDeadline().getValue())) + ",\n";
+			internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
 		} else {
 			internalEvents += ")";
 		}
@@ -48,151 +48,155 @@ public class Time4Sys2MastServices {
 		// Generate other internal events
 		Step nextStep = null;
 		while (true) {
-			nextStep = getSuccStep(currentStep);
-			
+			nextStep = getSuccStep(behaviorScenario);
+
 			// Stop condition
-			if (nextStep==null) break;
-			
-			// Update parameters 
-			name = generateInternalEventName(workloadEvent, eventId++);
-			currentStep = nextStep;
-			
+			if (nextStep == null)
+				break;
+
+			// Update parameters
+			name = generateInternalEventName(behaviorScenario, eventId++);
+			behaviorScenario = nextStep;
+
 			// Generate event
 			internalEvents += ",\n";
 			internalEvents += "(\n";
 			internalEvents += "\tType				=> " + type + ",\n";
 			internalEvents += "\tName				=> " + name;
-			if (getDeadline(currentStep)!=null) {
+			if (getETEF(behaviorScenario, design) != null) {
 				internalEvents += ",\n";
 				internalEvents += "\tTiming_Requirements		=> " + "\n";
-				internalEvents += "\t\t(Type				=> " +timingRequirementType+ ",\n";
-				internalEvents += "\t\t Deadline			=> " +getNestedValue(getDeadline(currentStep))+ ",\n";
-				internalEvents += "\t\t Referenced_Event		=> " +triggerEvent+"))";
+				internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
+				internalEvents += "\t\t Deadline			=> " + getNestedValue(String.valueOf(getETEF(behaviorScenario, design).getEndToEndDeadline().getValue())) + ",\n";
+				internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
 			} else {
 				internalEvents += ")";
 			}
 		}
 		return internalEvents;
 	}
-	
+
 	/**
 	 * Generate event handlers
+	 * 
 	 * @param workloadEvent
 	 * @param behaviorScenario
 	 * @return
 	 */
-	public static String generateEventHandlers(WorkloadEvent workloadEvent,BehaviorScenario behaviorScenario)  {
+	public static String generateEventHandlers(List<WorkloadEvent> wes, BehaviorScenario behaviorScenario) {
 		String eventHandlers = "";
 		String type = "Activity";
 		String inputEvent = "";
 		String outputEvent = "";
 		String activityOperation = "";
 		String activityServer = "";
-		int eventId=1;
-		
-		Step currentStep = (Step) workloadEvent.getEffect();
-		String triggerEvent = "ext_trigger";
-		activityOperation = "Operation_"+currentStep.getName().replaceAll(" ", "");
-		activityServer = "Server_"+currentStep.getConcurRes().getName().replaceAll(" ", "");
-		outputEvent = generateInternalEventName(workloadEvent, eventId++);
-		
-		// Generate the first event handler		  
+		int eventId = 1;
+
+		Step currentStep = (Step) behaviorScenario;
+		String triggerEvent = "ext_trigger_"+currentStep.getName().replaceAll(" ", "");
+		activityOperation = "Operation_" + Time4Sys2MastGenerator.getNameOrNull(currentStep).replaceAll(" ", "");
+		activityServer = "Server_" + Time4Sys2MastGenerator.getNameOrNull(currentStep.getConcurRes()).replaceAll(" ", "");
+		outputEvent = generateInternalEventName(currentStep, eventId++);
+
+		// Generate the first event handler
 		eventHandlers += "(\n";
-		eventHandlers += "\tType				=> " + type +",\n";		
-		eventHandlers += "\tInput_Event			=> " + triggerEvent+",\n";
-		eventHandlers += "\tOutput_Event			=> " + outputEvent+",\n";
-		eventHandlers += "\tActivity_Operation	=> " + activityOperation+",\n";
-		eventHandlers += "\tActivity_Server		=> " + activityServer+")";
-					
+		eventHandlers += "\tType				=> " + type + ",\n";
+		eventHandlers += "\tInput_Event			=> " + triggerEvent + ",\n";
+		eventHandlers += "\tOutput_Event			=> " + outputEvent + ",\n";
+		eventHandlers += "\tActivity_Operation	=> " + activityOperation + ",\n";
+		eventHandlers += "\tActivity_Server		=> " + activityServer + ")";
+
 		// Generate other event handlers
 		Step nextStep = null;
 		while (true) {
 			nextStep = getSuccStep(currentStep);
-			
+
 			// Stop condition
-			if (nextStep==null) break;
-			
+			if (nextStep == null)
+				break;
+
 			// Update parameters
 			inputEvent = outputEvent;
-			outputEvent = generateInternalEventName(workloadEvent, eventId++);
+			outputEvent = generateInternalEventName(currentStep, eventId++);
 			currentStep = nextStep;
-			activityOperation =  "Operation_"+currentStep.getName().trim();
-			activityServer = "Server_"+currentStep.getConcurRes().getName().trim();
-			
+			activityOperation = "Operation_" + currentStep.getName().trim();
+			activityServer = "Server_" + currentStep.getConcurRes().getName().trim();
+
 			// Generate event handler
 			eventHandlers += ",\n";
 			eventHandlers += "(\n";
-			eventHandlers += "\tType				=> " + type +",\n";		
-			eventHandlers += "\tInput_Event			=> " + inputEvent+",\n";
-			eventHandlers += "\tOutput_Event			=> " + outputEvent+",\n";
-			eventHandlers += "\tActivity_Operation	=> " + activityOperation+",\n";
-			eventHandlers += "\tActivity_Server		=> " + activityServer+")";
+			eventHandlers += "\tType				=> " + type + ",\n";
+			eventHandlers += "\tInput_Event			=> " + inputEvent + ",\n";
+			eventHandlers += "\tOutput_Event			=> " + outputEvent + ",\n";
+			eventHandlers += "\tActivity_Operation	=> " + activityOperation + ",\n";
+			eventHandlers += "\tActivity_Server		=> " + activityServer + ")";
 		}
-		
+
 		return eventHandlers;
 	}
-	
+
 	/**
 	 * Get successor of current step in the workflow
+	 * 
 	 * @param currentStep
 	 * @return
 	 */
-	private static Step getSuccStep(Step currentStep)  {
-		if (currentStep.getOutputRel()==null) return null;
-		List<Step> succs = currentStep.getOutputRel().getSucces();
-		if (succs.isEmpty()) return null;
-		else return succs.get(0);
+	private static Step getSuccStep(BehaviorScenario currentStep) {
+		if (currentStep instanceof Step && ((Step)currentStep).getOutputRel() == null)
+			return null;
+		List<Step> succs = ((Step)currentStep).getOutputRel().getSucces();
+		if (succs.isEmpty())
+			return null;
+		else
+			return succs.get(0);
 	}
-	
+
 	/**
 	 * Get deadline as scheduling parameter of concurrence resource
+	 * 
 	 * @param currentStep
 	 * @return
 	 */
-	private static String getDeadline(Step currentStep) {
-		List<SchedulingParameter> allParams = currentStep.getConcurRes().getSchedParams();
-		
-		for (SchedulingParameter param : allParams) {
-			if (param.getName().toLowerCase().compareTo("deadline")==0) return param.getValue();
+	private static EndToEndFlow getETEF(BehaviorScenario currentStep, DesignModel design) {
+		for (EndToEndFlow etef: design.getEndToEndFlows()) {
+			if (etef.getEndToEndScenario()!=null && etef.getEndToEndStimuli()!= null && etef.getEndToEndScenario().equals(currentStep)){
+				return etef;
+			}
 		}
-		
 		return null;
 	}
-	
+
 	/**
 	 * Generate internal event root name
+	 * 
 	 * @param workloadEvent
 	 * @return
 	 */
-	private static String generateInternalEventName(WorkloadEvent workloadEvent,int id) {
+	private static String generateInternalEventName(BehaviorScenario step, int id) {
 		String internalEventName = "internal";
-		if (workloadEvent.getName()!=null) internalEventName+="_"+workloadEvent.getName().replaceAll(" ","").trim();
-		internalEventName+="_"+id;
+		if (step.getName() != null)
+			internalEventName += "_" + step.getName().replaceAll(" ", "").trim();
+		internalEventName += "_" + id;
 		return internalEventName;
 	}
 
-	
-	/**
-	 * generate transaction name
-	 * @return
-	 */
-	public static String generateTransactionName(WorkloadEvent workloadEvent) {
-		return "Transaction_"+transactionId++;
+	public static double getNestedValue(Duration duration) {
+		if (duration == null) {
+			return 0;
+		} else {
+			return  duration.convertToUnit(Time4Sys2MastGenerator.getMinUnit()).getValue();
+		}
 	}
-	
-	
-	public static String getNestedValue(Duration duration) {
-		return ""+duration.getValue();
-	}
-	
+
 	public static String getNestedValue(String s) {
-		if (s==null) return null;
-		for (int i = 0; i < s.length(); i++){
-		    char c = s.charAt(i);   
-		    if (Character.isLetter(c)) {
-		    	int index = s.indexOf(c);
-		    	return s.substring(0, index);
-		    }
+		if (s == null)
+			return null;
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (Character.isLetter(c)) {
+				int index = s.indexOf(c);
+				return s.substring(0, index);
+			}
 		}
 		return s;
 	}

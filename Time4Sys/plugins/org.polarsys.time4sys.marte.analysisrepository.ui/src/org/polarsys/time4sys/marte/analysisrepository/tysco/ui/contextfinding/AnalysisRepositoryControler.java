@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.BundleContext;
@@ -351,7 +352,7 @@ public class AnalysisRepositoryControler {
 			DesignModel design = context.getDesignModel();
 			final CommandRunner cmdRunner = new CommandRunner(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
 					design);
-			AutoRecordingCommand arc = (AutoRecordingCommand) handler.createRecordingCommand(null, design);
+			AutoRecordingCommand arc = (AutoRecordingCommand) handler.createRecordingCommand(cmdRunner.getDomain(), design);
 			cmdRunner.execute(arc);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
