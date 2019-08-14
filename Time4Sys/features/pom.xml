@@ -16,5 +16,6 @@
                 <module>org.polarsys.time4sys.feature</module>
                 <module>org.polarsys.time4sys.marte.feature</module>
                 <module>org.polarsys.time4sys.feature.tests</module>
+                <module>org.polarsys.time4sys.marte.transformation.feature</module>
         </modules>
 </project>

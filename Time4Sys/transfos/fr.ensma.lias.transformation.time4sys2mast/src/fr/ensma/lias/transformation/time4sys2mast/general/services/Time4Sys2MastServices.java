@@ -17,6 +17,7 @@ import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
+import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
 
 import fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator;
@@ -30,7 +31,7 @@ public class Time4Sys2MastServices {
 		int eventId = 1;
 
 		// The first internal event
-		String triggerEvent = "ext_trigger_"+behaviorScenario.getName().replaceAll(" ", "").trim();
+		String triggerEvent = "ext_trigger_" + behaviorScenario.getName().replaceAll(" ", "").trim();
 		String name = generateInternalEventName(behaviorScenario, eventId++);
 		internalEvents += "(\n";
 		internalEvents += "\tType				=> " + type + ",\n";
@@ -39,7 +40,9 @@ public class Time4Sys2MastServices {
 			internalEvents += ",\n";
 			internalEvents += "\tTiming_Requirements		=> " + "\n";
 			internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
-			internalEvents += "\t\t Deadline			=> " + getNestedValue(String.valueOf(getETEF(behaviorScenario, design).getEndToEndDeadline().getValue())) + ",\n";
+			String addDeadline= getDeadlineAsString(behaviorScenario, design);
+			internalEvents += "\t\t Deadline			=> "+getDeadlineAsString(behaviorScenario, design)+
+					 ",\n";
 			internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
 		} else {
 			internalEvents += ")";
@@ -67,13 +70,19 @@ public class Time4Sys2MastServices {
 				internalEvents += ",\n";
 				internalEvents += "\tTiming_Requirements		=> " + "\n";
 				internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
-				internalEvents += "\t\t Deadline			=> " + getNestedValue(String.valueOf(getETEF(behaviorScenario, design).getEndToEndDeadline().getValue())) + ",\n";
+				internalEvents += "\t\t Deadline			=> "
+						+ getDeadlineAsString(behaviorScenario, design)
+						+ ",\n";
 				internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
 			} else {
 				internalEvents += ")";
 			}
 		}
 		return internalEvents;
+	}
+
+	public static String getDeadlineAsString(BehaviorScenario behaviorScenario, DesignModel design) {
+		return getNestedValue(String.valueOf(getETEF(behaviorScenario, design).getEndToEndDeadline().getValue()));
 	}
 
 	/**
@@ -93,9 +102,9 @@ public class Time4Sys2MastServices {
 		int eventId = 1;
 
 		Step currentStep = (Step) behaviorScenario;
-		String triggerEvent = "ext_trigger_"+currentStep.getName().replaceAll(" ", "");
-		activityOperation = "Operation_" + Time4Sys2MastGenerator.getNameOrNull(currentStep).replaceAll(" ", "");
-		activityServer = "Server_" + Time4Sys2MastGenerator.getNameOrNull(currentStep.getConcurRes()).replaceAll(" ", "");
+		String triggerEvent = Time4Sys2MastGenerator.getName(currentStep, "ext_trigger_");
+		activityOperation = Time4Sys2MastGenerator.getName(currentStep, "Operation_");
+		activityServer = Time4Sys2MastGenerator.getName(currentStep.getConcurRes(), "Server_");
 		outputEvent = generateInternalEventName(currentStep, eventId++);
 
 		// Generate the first event handler
@@ -119,8 +128,8 @@ public class Time4Sys2MastServices {
 			inputEvent = outputEvent;
 			outputEvent = generateInternalEventName(currentStep, eventId++);
 			currentStep = nextStep;
-			activityOperation = "Operation_" + currentStep.getName().trim();
-			activityServer = "Server_" + currentStep.getConcurRes().getName().trim();
+			activityOperation = Time4Sys2MastGenerator.getName(currentStep, "Operation_");
+			activityServer = Time4Sys2MastGenerator.getName(currentStep.getConcurRes(), "Server_");
 
 			// Generate event handler
 			eventHandlers += ",\n";
@@ -142,9 +151,9 @@ public class Time4Sys2MastServices {
 	 * @return
 	 */
 	private static Step getSuccStep(BehaviorScenario currentStep) {
-		if (currentStep instanceof Step && ((Step)currentStep).getOutputRel() == null)
+		if (currentStep instanceof Step && ((Step) currentStep).getOutputRel() == null)
 			return null;
-		List<Step> succs = ((Step)currentStep).getOutputRel().getSucces();
+		List<Step> succs = ((Step) currentStep).getOutputRel().getSucces();
 		if (succs.isEmpty())
 			return null;
 		else
@@ -158,8 +167,9 @@ public class Time4Sys2MastServices {
 	 * @return
 	 */
 	private static EndToEndFlow getETEF(BehaviorScenario currentStep, DesignModel design) {
-		for (EndToEndFlow etef: design.getEndToEndFlows()) {
-			if (etef.getEndToEndScenario()!=null && etef.getEndToEndStimuli()!= null && etef.getEndToEndScenario().equals(currentStep)){
+		for (EndToEndFlow etef : design.getEndToEndFlows()) {
+			if (etef.getEndToEndScenario() != null && etef.getEndToEndStimuli() != null
+					&& etef.getEndToEndScenario().equals(currentStep)) {
 				return etef;
 			}
 		}
@@ -173,18 +183,14 @@ public class Time4Sys2MastServices {
 	 * @return
 	 */
 	private static String generateInternalEventName(BehaviorScenario step, int id) {
-		String internalEventName = "internal";
-		if (step.getName() != null)
-			internalEventName += "_" + step.getName().replaceAll(" ", "").trim();
-		internalEventName += "_" + id;
-		return internalEventName;
+		return Time4Sys2MastGenerator.getName(step, "internal_" + id);
 	}
 
-	public static double getNestedValue(Duration duration) {
+	public static double getNestedValue(Duration duration, TimeUnitKind unit) {
 		if (duration == null) {
 			return 0;
 		} else {
-			return  duration.convertToUnit(Time4Sys2MastGenerator.getMinUnit()).getValue();
+			return duration.convertToUnit(unit).getValue();
 		}
 	}
 

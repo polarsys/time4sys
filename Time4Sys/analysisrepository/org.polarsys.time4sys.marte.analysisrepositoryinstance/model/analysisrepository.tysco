@@ -416,7 +416,7 @@
     <truthValues associatedRule="//@allRules.9"/>
     <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.10/@truthValues.0 //@allContextModels.0/@truthValues.9"/>
   </allContextModels>
-  <allContextModels id="12" name="MAST analysis" description="Check rules to verify the applicability of MAST transformation" analysisTests="//@allTests.8 //@allTests.11 //@allTests.10 //@allTests.9 //@allTests.12" rootGroup="//@allContextModels.11/@ruleGroups.0">
+  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9" rootGroup="//@allContextModels.11/@ruleGroups.0">
     <references>Mast transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <truthValues associatedRule="//@allRules.34"/>
@@ -424,8 +424,21 @@
     <truthValues associatedRule="//@allRules.9"/>
     <truthValues value="false" associatedRule="//@allRules.37"/>
     <truthValues associatedRule="//@allRules.38"/>
-    <ruleGroups subGroups="//@allContextModels.11/@ruleGroups.1" expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5"/>
-    <ruleGroups expectedRuleValues="//@allContextModels.5/@truthValues.6 //@allContextModels.0/@truthValues.9" id="1" junctionType="or" description=""/>
+    <truthValues associatedRule="//@allRules.29"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5 //@allContextModels.1/@truthValues.9"/>
+  </allContextModels>
+  <allContextModels id="12" name="MAST analysis" description="Check rules for MAST EDF analysis" analysisTests="//@allTests.8" rootGroup="//@allContextModels.12/@ruleGroups.0">
+    <references>Mast transformation applicability</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues associatedRule="//@allRules.36"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="false" associatedRule="//@allRules.37"/>
+    <truthValues associatedRule="//@allRules.38"/>
+    <truthValues associatedRule="//@allRules.29"/>
+    <ruleGroups subGroups="//@allContextModels.12/@ruleGroups.2" expectedRuleValues="//@allContextModels.12/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.12/@truthValues.0 //@allContextModels.12/@truthValues.4 //@allContextModels.12/@truthValues.5"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.5/@truthValues.6 //@allContextModels.12/@truthValues.6" id="2" description=""/>
+    <ruleGroups subGroups="//@allContextModels.12/@ruleGroups.1" expectedRuleValues="//@allContextModels.0/@truthValues.31" id="1" junctionType="or"/>
   </allContextModels>
   <allRules id="1" description="Every task has predefined offset" content="self.cause.pattern.phase->size()>0" formalExpression="forAll t : Task|PropertyExist(t,Offset);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
   <allRules id="2" description="Every task has predefined execution time" content="self.worstCET&lt;>null" formalExpression="forAll t : Task|PropertyExist(t,ExecutionTime);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
@@ -456,7 +469,7 @@
   <allRules id="27" description="System has shared resources managed by Priority Inheritance Protocol (PIP)" content="self.concurrentAccessProtocol=srm::ConcurrentAccesProtocolKind::PIP" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist res in commResources|GetProperty(res,ProtectProtocol)=PIPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
   <allRules id="28" description="System has shared resources managed by Priority Ceiling Protocol (PCP)" content="self.concurrentAccessProtocol=srm::ConcurrentAccesProtocolKind::PCP" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist res in commResources|GetProperty(res,ProtectProtocol)=PCPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
   <allRules id="29" description="System has shared resources managed by Immediate Priority Ceiling Protocol (IPCP)" content="self.concurrentAccessProtocol.name='IPCP'" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist r in commResources|GetProperty(r,ProtectProtocol)=IPCPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
-  <allRules id="30" description="System has shared resources managed by  Stack-Resource Policy " content="self.concurrentAccessProtocol.name='Stack-Resource'" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
+  <allRules id="30" description="System has shared resources managed by  Stack-Resource Policy " content="self.protocol=grm::ProtectProtocolKind::StackBased" appliedClass="org.polarsys.time4sys.marte.grm.MutualExclusionProtocol" oneOrAll="ExistOne"/>
   <allRules id="31" description="System has shared resources managed by Minimal Stack-Resource Policy " content="self.concurrentAccessProtocol.name='Minimal Stack-Resource'" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
   <allRules id="32" description="System has shared resources" content="self.resourcePackage.ownedElement->select(oclIsKindOf(srm::SoftwareMutualExclusionResource))->size()&lt;>0" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)>0;" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
   <allRules id="33" description="Tasks have precedence constraints" content="self.successors->notEmpty()" appliedClass="org.polarsys.time4sys.marte.gqam.OutputPin"/>
@@ -526,28 +539,13 @@
       <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.Time4Sys2PetriNet"/>
     </implementations>
   </allTests>
-  <allTests name="Mast Default Analysis" description="Launch mast default analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
-    </implementations>
-  </allTests>
-  <allTests name="Mast -c Analysis" description="Launch mast -c analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default -c" toolName="C Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\c_analysis_result.xml">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
-    </implementations>
-  </allTests>
-  <allTests name="Mast parameters Analysis" description="Launch mast parameters analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default -p" toolName="P Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\p_analysis_result.xml">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
-    </implementations>
-  </allTests>
-  <allTests name="Mast Holistic Analysis" description="Launch mast holistic analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis holistic" toolName="H Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\h_analysis_result.xml">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+  <allTests name="Mast edf monoprocessor" description="Launch mast EDF analysis">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="EDF Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\edf_result.xml" resultParserClass="org.polarsys.time4sys.mast.result.parser.MastResultParser">
+      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2EDFMastGenerator"/>
     </implementations>
   </allTests>
   <allTests name="Mast XML Default Analysis" description="Launch mast default analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\convert.bat" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml" resultParserClass="org.polarsys.time4sys.mast.result.parser.MastResultParser">
       <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
     </implementations>
   </allTests>

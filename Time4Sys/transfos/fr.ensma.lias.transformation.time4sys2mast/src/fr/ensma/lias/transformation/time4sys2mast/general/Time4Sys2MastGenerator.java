@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +22,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.osgi.service.component.annotations.Component;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation;
@@ -57,10 +59,16 @@ import fr.ensma.lias.transformation.time4sys2mast.general.services.Time4Sys2Mast
 @Component
 public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 
-	DesignModel design;
-	static TimeUnitKind minUnit;
-
+	private static DesignModel design;
+	static int iStep;
+	static int iElement;
+	public static TimeUnitKind minUnit;
+	private static XMLResource resource;
+	private static HashMap<String,String> mapp= new HashMap<>();
+	
 	public void transform(TestImplementation testImpl) {
+		iStep=0;
+		iElement=0;
 		// if (args.length < 1) {
 		// System.out.println("Arguments not valid : {folder}.");
 		// } else {
@@ -76,6 +84,9 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 
 		CurrentAnalysisContext context = CurrentAnalysisContext.getInstance();
 		DesignModel model = context.getDesignModel();
+
+	    resource = (XMLResource) model.eResource();
+	    
 		Time4Sys2MastGenerator generator = new Time4Sys2MastGenerator();
 		generator.generate(model, file);
 
@@ -145,30 +156,28 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	private void generateOperation(FileWriter mastWriter, Step step, List<SoftwareMutualExclusionResource> mutex)
 			throws IOException {
 		String type = "Simple";
-		String name = "Operation_" + getNameOrNull(step).replaceAll(" ", "");
-		String wcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getWorstCET()));
-		String bcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getBestCET()));
+		String name = getName(step, "Operation_");
+		String wcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getWorstCET(), minUnit));
+		String bcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getBestCET(), minUnit));
 		List<SoftwareMutualExclusionResource> associatedMutexResources = getAssociatedMutexResources(step, mutex);
 		mastWriter.write("Operation (\n");
 		mastWriter.write("	Type						=> " + type + ",\n");
 		mastWriter.write("	Name						=> " + name + ",\n");
 		mastWriter.write("	Worst_Case_Execution_Time	=> " + wcet + ",\n");
 		mastWriter.write("	Best_Case_Execution_Time	=> " + bcet);
+		generateSharedResourceContribution(mastWriter, associatedMutexResources);
+		mastWriter.write("\n);\n");
+	}
+
+	private void generateSharedResourceContribution(FileWriter mastWriter,
+			List<SoftwareMutualExclusionResource> associatedMutexResources) throws IOException {
 		if (!associatedMutexResources.isEmpty()) {
 			mastWriter.write(",\n	Shared_Resources_To_Lock	=> (");
 			generateSharedResourcesFromMutex(mastWriter, associatedMutexResources);
 			mastWriter.write("),\n");
 			mastWriter.write("	Shared_Resources_To_Unlock	=> (");
 			generateSharedResourcesFromMutex(mastWriter, associatedMutexResources);
-		}
-		mastWriter.write("\n);\n");
-	}
-
-	public static String getNameOrNull(NamedElement step) {
-		if (step.getName() == null) {
-			return "";
-		} else {
-			return step.getName();
+			mastWriter.write(")");
 		}
 	}
 
@@ -176,8 +185,8 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			List<SoftwareMutualExclusionResource> resources) throws IOException {
 		int i = 1;
 		for (SoftwareMutualExclusionResource mt : resources) {
-			mastWriter.write(mt.getName());
-			if (resources.size() == i) {
+			mastWriter.write(getName(mt));
+			if (resources.size() < i) {
 				i++;
 				mastWriter.write(", ");
 			}
@@ -190,7 +199,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	}
 
 	private double getNestedValue(Duration worstCET) {
-		return Time4Sys2MastServices.getNestedValue(worstCET);
+		return Time4Sys2MastServices.getNestedValue(worstCET, minUnit);
 	}
 
 	private void generateSharedResources(FileWriter mastWriter, List<SoftwareMutualExclusionResource> mutex)
@@ -206,19 +215,19 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		ProtectProtocolKind protocolKind = gestionProtocol.getProtocol();
 		if (protocolKind == ProtectProtocolKind.PRIORITY_CEILING) {
 			mastWriter.write("Type					=> Immediate_Ceiling_Resource,\n");
-			mastWriter.write("Name					=> " + mt.getName().replaceAll(" ", "") + ",\n");
-			mastWriter.write("Ceiling					=> 32767\n");
-			mastWriter.write("Preassigned 			=> NO\n");
+			mastWriter.write("Name					=> " + getName(mt) + ",\n");
+			mastWriter.write("Ceiling					=> 32767,\n");
+			mastWriter.write("Preassigned 			=> No\n");
 		} else if (protocolKind == ProtectProtocolKind.PRIORITY_INHERITANCE) {
 			mastWriter.write("Type					=> Priority_Inheritance_Resource,\n");
-			mastWriter.write("Name					=> " + mt.getName().replaceAll(" ", "") + "\n");
+			mastWriter.write("Name					=> " + getName(mt) + "\n");
 		} else if (protocolKind == ProtectProtocolKind.STACK_BASED) {
 			mastWriter.write("Type					=> SRP_Resource,\n");
-			mastWriter.write("Name					=> " + mt.getName().replaceAll(" ", "") + "\n");
+			mastWriter.write("Name					=> " + getName(mt) + "\n");
 		} else {
 			mastWriter.write("Error: No corresponding protocol found\n");
-			mastWriter.write(");\n");
 		}
+		mastWriter.write(");\n");
 	}
 
 	private void generateSchedulingServers(FileWriter mastWriter,
@@ -240,7 +249,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		// SchedPolicyKind.EARLIEST_DEADLINE_FIRST) {
 		// mastWriter.write(" Type => EDF_Policy,\n");
 		// }
-		mastWriter.write("	Name					=> Server_" + swResource.getName().replaceAll(" ", "") + ",\n");
+		mastWriter.write("	Name					=> Server_" + getName(swResource)+ ",\n");
 		mastWriter.write("	Server_Sched_Parameters	=>\n");
 		mastWriter.write("		(	Type 				=> " + getSchedParamPolicy(scheduler) + ",\n");
 		if (scheduler.getPolicy().getPolicy() == SchedPolicyKind.FIXED_PRIORITY) {
@@ -248,7 +257,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 					+ getSoftwareResourcePriority(swResource).replaceAll(" ", "") + ",\n");
 		}
 		mastWriter.write("			Preassigned			=> No),\n");
-		mastWriter.write("	Scheduler				=> " + getNameOrMain(scheduler).replaceAll(" ", "") + ");\n");
+		mastWriter.write("	Scheduler				=> " + getNameOrMain(scheduler) + ");\n");
 	}
 
 	private String getSchedParamPolicy(Scheduler scheduler) {
@@ -284,10 +293,10 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	private void generateTransaction(FileWriter mastWriter, List<WorkloadEvent> wes, BehaviorScenario bs)
 			throws IOException {
 		String transactionType = "Regular";
-		String transactionName = generateTransactionName(bs);
+		String transactionName = getName(bs);
 		mastWriter.write("Transaction (\n");
 		mastWriter.write("	Type					=> " + transactionType + ",\n");
-		mastWriter.write("	Name					=> " + transactionName.replaceAll(" ", "") + ",\n");
+		mastWriter.write("	Name					=> " + transactionName+ ",\n");
 		generateExternalEvents(mastWriter, wes);
 		mastWriter.write("	Internal_Events			=> (\n");
 		mastWriter.write("			" + generateInternalEvents(mastWriter, wes, bs) + "\n");
@@ -298,9 +307,37 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		mastWriter.write(");\n");
 
 	}
-
-	public static String generateTransactionName(BehaviorScenario bs) {
-		return bs.getName();
+	
+	private String getNameOrMain(Scheduler mainScheduler) {
+		String res = mainScheduler.getName();
+		if (res == null) {
+			res= "MainScheduler";
+		} 
+		res=res.replaceAll(" ", "").toLowerCase();
+		mapp.put(res, resource.getID(mainScheduler));
+		return res;
+	}
+	
+	public static String getName(NamedElement mt) {
+		String name = mt.getName();
+		if (name==null){
+			iElement++;
+			name="Element"+iElement;
+		}
+		name=name.replaceAll(" ", "").toLowerCase();
+		mapp.put(name, resource.getID(mt));
+		return name;
+	}
+	
+	public static String getName(NamedElement mt, String prefix) {
+		String name = mt.getName();
+		if (name==null){
+			iElement++;
+			name=prefix+iElement;
+		}
+		name=(prefix+name).replaceAll(" ", "").toLowerCase();
+		mapp.put(name, resource.getID(mt));
+		return name;
 	}
 
 	private String generateEventHandlers(FileWriter mastWriter, List<WorkloadEvent> wes, BehaviorScenario bs) {
@@ -325,8 +362,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 				String phase = periodicEvent.getPhase() != null
 						? String.valueOf(getNestedValue(periodicEvent.getPhase())) : "0.0";
 				mastWriter.write("	Type				=> Periodic,\n");
-				mastWriter.write("		Name				=> ext_trigger_"
-						+ we.getEffect().getName().replaceAll(" ", "").trim() + ",\n");
+				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
 				mastWriter.write("		Period			=> " + period + ",\n");
 				mastWriter.write("		Max_Jitter			=> " + jitter + ",\n");
 				mastWriter.write("		Phase			=> " + phase + "\n");
@@ -335,15 +371,13 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 				String min_interarrival = sporadicEvent.getMinInterarrival() != null
 						? sporadicEvent.getMinInterarrival().toString() : "0.0";
 				mastWriter.write("		Type				=> Sporadic,\n");
-				mastWriter.write("		Name				=> ext_trigger_"
-						+ we.getEffect().getName().replaceAll(" ", "").trim() + ",\n");
+				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
 				mastWriter.write("		Distribution		=> Uniform,\n");
 				mastWriter.write("		Min_Interarrival	=> " + min_interarrival + "\n");
 			} else if (we.getPattern() instanceof BurstPattern) {
 				BurstPattern burstPattern = (BurstPattern) we.getPattern();
 				mastWriter.write("		Type				=> Bursty,\n");
-				mastWriter.write("		Name				=> ext_trigger_"
-						+ we.getEffect().getName().replaceAll(" ", "").trim() + ",\n");
+				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
 				mastWriter.write("		Avg_Interarrival	=> " + averageInterarrival(burstPattern) + ",\n");
 				mastWriter.write("		Distribution		=> Uniform,\n");
 				mastWriter.write("		Bound_Interval		=> " + boundInterval(burstPattern) + ",\n");
@@ -424,7 +458,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			throws IOException {
 		mastWriter.write("Processing_Resource (\n");
 		mastWriter.write("	Type					=> Regular_Processor,\n");
-		mastWriter.write("	Name					=> " + hwProcessor.getName().replaceAll(" ", "") + ",\n");
+		mastWriter.write("	Name					=> " + getName(hwProcessor) + ",\n");
 		mastWriter.write("	Max_Interrupt_Priority	=> " + getMaximumInterruptPriority(hwProcessor) + ",\n");
 		mastWriter.write("	Min_Interrupt_Priority	=> " + getMinimumInterruptPriority(hwProcessor) + ",\n");
 		mastWriter.write("	Worst_ISR_Switch		=> " + getWorstISRSwitch(hwProcessor) + ",\n");
@@ -436,11 +470,11 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 
 	/* doit on garder les clean d'acceleo ? */
 	private void generateScheduler(FileWriter mastWriter, HardwareComputingResource hwProcessor) throws IOException {
-		String processorName = hwProcessor.getName().replaceAll(" ", "");
+		String processorName = getName(hwProcessor);
 		Scheduler mainScheduler = hwProcessor.getMainScheduler();
 		mastWriter.write("Scheduler (\n");
 		mastWriter.write("	Type					=> Primary_Scheduler,\n");
-		mastWriter.write("	Name					=> " + getNameOrMain(mainScheduler).replaceAll(" ", "") + ",\n");
+		mastWriter.write("	Name					=> " + getNameOrMain(mainScheduler)+ ",\n");
 		mastWriter.write("	Host					=> " + processorName + ",\n");
 		generateSchedPolicy(mastWriter, mainScheduler);
 	}
@@ -466,14 +500,6 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		}
 		mastWriter.write("));\n");
 
-	}
-
-	private String getNameOrMain(Scheduler mainScheduler) {
-		String res = mainScheduler.getName();
-		if (res == null) {
-			return "MainScheduler";
-		} else
-			return res;
 	}
 
 	private String getBestContextSwitch(Scheduler mainScheduler) {
@@ -551,5 +577,9 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 
 	public static TimeUnitKind getMinUnit() {
 		return minUnit;
+	}
+	
+	public static HashMap<String,String> getMapp(){
+		return mapp;
 	}
 }

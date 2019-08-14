@@ -42,6 +42,9 @@
    <feature url="features/org.eclipse.zest_1.7.0.201606061308.jar" id="org.eclipse.zest" version="1.7.0.201606061308">
       <category name="T4S Dependencies"/>
    </feature>
+   <feature url="features/org.polarsys.time4sys.marte.transformation.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.marte.transformation.feature" version="1.0.0.qualifier">
+      <category name="T4S Transformation"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
@@ -121,6 +124,7 @@
          Install plugins required by Time4Sys (Sirius, Acceleo, EEF)
       </description>
    </category-def>
+   <category-def name="T4S Transformation" label="T4S Transformation"/>
    <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
