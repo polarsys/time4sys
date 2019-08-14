@@ -535,13 +535,22 @@ public interface TyscoPackage extends EPackage {
 	int TEST_IMPLEMENTATION__TEST_RESULT = 7;
 
 	/**
+	 * The feature id for the '<em><b>Result Parser Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = 8;
+
+	/**
 	 * The number of structural features of the '<em>Test Implementation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION_FEATURE_COUNT = 8;
+	int TEST_IMPLEMENTATION_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Test Implementation</em>' class.
@@ -1769,6 +1778,17 @@ public interface TyscoPackage extends EPackage {
 	EAttribute getTestImplementation_TestResult();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass <em>Result Parser Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Result Parser Class</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_ResultParserClass();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestCharacteristicType <em>Test Characteristic Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2556,6 +2576,14 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEST_IMPLEMENTATION__TEST_RESULT = eINSTANCE.getTestImplementation_TestResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Result Parser Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = eINSTANCE.getTestImplementation_ResultParserClass();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestCharacteristicTypeImpl <em>Test Characteristic Type</em>}' class.

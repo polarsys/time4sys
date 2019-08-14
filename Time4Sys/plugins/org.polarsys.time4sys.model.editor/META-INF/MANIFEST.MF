@@ -21,12 +21,16 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.design.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.gqam.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.grm.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.hrm.edit;visibility:=reexport,
  org.polarsys.time4sys.mapping.edit;visibility:=reexport,
  org.polarsys.time4sys.trace.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.coreelements.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.nfp.annotation.edit;visibility:=reexport,
+ org.polarsys.time4sys.marte.nfp.edit;visibility:=reexport,
+ org.polarsys.time4sys.results.edit;visibility:=reexport,
  org.polarsys.time4sys.marte.sam.edit;visibility:=reexport,
+ org.polarsys.time4sys.schedulingtrace.model.edit;visibility:=reexport,
  org.eclipse.emf.transaction
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.emf.transaction.util

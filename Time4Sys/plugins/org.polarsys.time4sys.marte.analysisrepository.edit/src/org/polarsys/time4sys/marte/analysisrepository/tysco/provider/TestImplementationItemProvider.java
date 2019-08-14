@@ -77,6 +77,7 @@ public class TestImplementationItemProvider
 			addToolNamePropertyDescriptor(object);
 			addTestedFilePropertyDescriptor(object);
 			addTestResultPropertyDescriptor(object);
+			addResultParserClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -236,6 +237,28 @@ public class TestImplementationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Result Parser Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResultParserClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_resultParserClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_resultParserClass_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -310,6 +333,7 @@ public class TestImplementationItemProvider
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TRANSFORMATION:

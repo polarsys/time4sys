@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schedulingtrace" nsURI="http://www.polarsys.org/time4sys/schedulingtrace/1.0"
+    nsPrefix="schedulingtrace">
+  <eClassifiers xsi:type="ecore:EClass" name="Processor" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasktraces" upperBound="-1"
+        eType="#//TaskTrace" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partitions" upperBound="-1"
+        eType="#//Partition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareResource" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/hrm.ecore#//HardwareResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobWithMaxRT" eType="#//Job"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchedulingTrace" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Trace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processors" upperBound="-1"
+        eType="#//Processor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobWithMaxRT" eType="#//Job"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskTrace" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobs" upperBound="-1" eType="#//Job"
+        containment="true" eOpposite="#//Job/tasktrace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobWithMaxRT" eType="#//Job"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Partition" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasktraces" upperBound="-1"
+        eType="#//TaskTrace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableResource" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jobWithMaxRT" eType="#//Job"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Job" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasktrace" eType="#//TaskTrace"
+        eOpposite="#//TaskTrace/jobs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionInstances" upperBound="-1"
+        eType="#//FunctionInstance" containment="true" eOpposite="#//FunctionInstance/job"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulableResource" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/grm.ecore#//SchedulableResource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listPreemptedBy" upperBound="-1"
+        eType="#//PreemptedBy" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionInstance" eSuperTypes="../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="job" eType="#//Job" eOpposite="#//Job/functionInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="step" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/gqam.ecore#//Step"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PreemptedBy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="job" eType="#//Job"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" eType="ecore:EDataType ../../org.polarsys.time4sys.trace/model/trace.ecore#//NFP_Duration"/>
+  </eClassifiers>
+</ecore:EPackage>

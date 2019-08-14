@@ -55,6 +55,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.ut
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.Result;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.utils.WorkspaceUtils;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractExogenousTransformation;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractResultParser;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.LanguageValidatorUtils;
 import org.polarsys.time4sys.simulation.commands.AbstractTransformationCommandHandler;
 import org.polarsys.time4sys.simulation.commands.AutoRecordingCommand;
@@ -150,8 +151,8 @@ public class AnalysisRepositoryControler {
 							EObject obj = it.next();
 							checkRule(r, ruleContent, transfoClass, obj, res);
 						}
-						//Add a false result if not passed
-						if (res.getEvaluatedResult()==null){
+						// Add a false result if not passed
+						if (res.getEvaluatedResult() == null) {
 							res.setRefId(r.getId());
 							res.setEvaluatedResult(EvaluationResultType.FALSE);
 							results.add(res);
@@ -271,6 +272,7 @@ public class AnalysisRepositoryControler {
 		List<String> args = new ArrayList<String>();
 		args.addAll(Arrays.asList(testImpl.getAnalysisExecPath().split(" ")));
 		args.add(transformedFilePath);
+		args.add(resultPath);
 		FileWriter fr;
 		try {
 			fr = new FileWriter(resultPath);
@@ -279,6 +281,14 @@ public class AnalysisRepositoryControler {
 				ArFunctionalUtils.errorMessage("Analysis failed");
 			}
 			fr.close();
+
+			String transfoExecPath = testImpl.getResultParserClass();
+			List<AbstractResultParser> list = getARPServices(AbstractResultParser.class);
+			for (AbstractResultParser arp:list){
+				if (arp.getClass().getName().equals(transfoExecPath)) {
+					arp.parseResult(testImpl);
+				}
+			}
 			WorkspaceUtils.refreshProject();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -352,7 +362,8 @@ public class AnalysisRepositoryControler {
 			DesignModel design = context.getDesignModel();
 			final CommandRunner cmdRunner = new CommandRunner(PlatformUI.getWorkbench().getActiveWorkbenchWindow(),
 					design);
-			AutoRecordingCommand arc = (AutoRecordingCommand) handler.createRecordingCommand(cmdRunner.getDomain(), design);
+			AutoRecordingCommand arc = (AutoRecordingCommand) handler.createRecordingCommand(cmdRunner.getDomain(),
+					design);
 			cmdRunner.execute(arc);
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -363,39 +374,40 @@ public class AnalysisRepositoryControler {
 
 	}
 
-	public static <T> List<T> getServices(Class<T> clazz) {
+	public static <T> List<T> getAETServices(Class<T> clazz) {
 		Class<AbstractExogenousTransformation> classFromBundle = AbstractExogenousTransformation.class;
 		BundleContext ctx = FrameworkUtil.getBundle(classFromBundle).getBundleContext();
 
-		// ServiceTracker<?, ?> tracker = new ServiceTracker<>(ctx,
-		// AbstractExogenousTransformation.class, null);
-		// try {
-		// tracker.open();
-		// return tracker.getService();
-		// } catch (Exception e) {
-		// throw new RuntimeException(e);
-		// } finally {
-		// tracker.close();
-		// }
-
 		if (ctx != null) {
-			ServiceTracker<T, T> tracker = new ServiceTracker<>(ctx, classFromBundle.getName(), null);
-			try {
-				tracker.open();
-				@SuppressWarnings("unchecked")
-				T[] services = tracker.getServices((T[]) Array.newInstance(clazz, 1));
-				if (services.length == 1 && services[0] == null) {
-					return new ArrayList<T>();
-				}
-				return Arrays.asList(services);
-			} catch (Exception e) {
-				throw new RuntimeException(e);
-			} finally {
-				tracker.close();
-			}
+			return getServices(clazz, classFromBundle, ctx);
 		}
 		return new ArrayList<T>();
+	}
+	public static <T> List<T> getARPServices(Class<T> clazz) {
+		Class<AbstractResultParser> classFromBundle = AbstractResultParser.class;
+		BundleContext ctx = FrameworkUtil.getBundle(classFromBundle).getBundleContext();
+		if (ctx != null) {
+			return getServices(clazz, classFromBundle, ctx);
+		}
+		return new ArrayList<T>();
+	}
 
+	private static <T,G> List<T> getServices(Class<T> clazz, Class<G> classFromBundle,
+			BundleContext ctx) {
+		ServiceTracker<T, T> tracker = new ServiceTracker<>(ctx, classFromBundle.getName(), null);
+		try {
+			tracker.open();
+			@SuppressWarnings("unchecked")
+			T[] services = tracker.getServices((T[]) Array.newInstance(clazz, 1));
+			if (services.length == 1 && services[0] == null) {
+				return new ArrayList<T>();
+			}
+			return Arrays.asList(services);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		} finally {
+			tracker.close();
+		}
 	}
 
 	/**
@@ -408,7 +420,7 @@ public class AnalysisRepositoryControler {
 
 		try {
 			String transfoExecPath = transfo.getTransfoExecPath();
-			List<AbstractExogenousTransformation> list = getServices(AbstractExogenousTransformation.class);
+			List<AbstractExogenousTransformation> list = getAETServices(AbstractExogenousTransformation.class);
 			for (AbstractExogenousTransformation aet : list) {
 				if (aet.getClass().getName().equals(transfoExecPath)) {
 					aet.transform(testImpl);

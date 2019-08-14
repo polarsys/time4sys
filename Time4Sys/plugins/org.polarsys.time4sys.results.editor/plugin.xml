@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated results -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.time4sys.results.results.presentation.ResultsModelWizardID"
+            name="%_UI_ResultsModelWizard_label"
+            class="org.polarsys.time4sys.results.results.presentation.ResultsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ResultsModelFile.gif">
+         <description>%_UI_ResultsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated results -->
+      <editor
+            id="org.polarsys.time4sys.results.results.presentation.ResultsEditorID"
+            name="%_UI_ResultsEditor_label"
+            icon="icons/full/obj16/ResultsModelFile.gif"
+            extensions="results"
+            class="org.polarsys.time4sys.results.results.presentation.ResultsEditor"
+            contributorClass="org.polarsys.time4sys.results.results.presentation.ResultsActionBarContributor">
+      </editor>
+   </extension>
+
+null
+null
+</plugin>

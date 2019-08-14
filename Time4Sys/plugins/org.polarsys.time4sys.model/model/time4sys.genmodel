@@ -3,30 +3,37 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.model/src" modelPluginID="org.polarsys.time4sys.model"
     modelName="Time4sys" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
-    usedGenPackages="../../org.polarsys.time4sys.marte/model/alloc.genmodel#//alloc ../../org.polarsys.time4sys.marte/model/design.genmodel#//design ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.mapping/model/mapping.genmodel#//mapping ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
+    usedGenPackages="../../org.polarsys.time4sys.marte/model/core_elements.genmodel#//coreelements ../../org.polarsys.time4sys.marte/model/design.genmodel#//design ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.marte/model/hrm.genmodel#//hrm ../../org.polarsys.time4sys.mapping/model/mapping.genmodel#//mapping ../../org.polarsys.time4sys.marte/model/nfp_annotation.genmodel#//annotation ../../org.polarsys.time4sys.marte/model/nfp.genmodel#//nfp ../../org.polarsys.time4sys.results/model/results.genmodel#//results ../../org.polarsys.time4sys.marte/model/sam.genmodel#//sam ../../org.polarsys.time4sys.schedulingtrace.model/model/schedulingtrace.genmodel#//schedulingtrace ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
     operationReflection="true" importOrganizing="true">
   <foreignModel>time4sys.ecore</foreignModel>
   <genPackages prefix="Time4sys" basePackage="org.polarsys.time4sys.model" resource="XMI"
       disposableProviderFactory="true" ecorePackage="time4sys.ecore#/">
     <genClasses ecoreClass="time4sys.ecore#//Project">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/analysis"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/design"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute time4sys.ecore#//Project/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/mappings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/traces"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/derivations"/>
-      <genOperations ecoreOperation="time4sys.ecore#//Project/deriveAnalyzedSystem">
-        <genParameters ecoreParameter="time4sys.ecore#//Project/deriveAnalyzedSystem/override"/>
-      </genOperations>
-      <genOperations ecoreOperation="time4sys.ecore#//Project/derive">
-        <genParameters ecoreParameter="time4sys.ecore#//Project/derive/source"/>
-      </genOperations>
-      <genOperations ecoreOperation="time4sys.ecore#//Project/splitTasks">
-        <genParameters ecoreParameter="time4sys.ecore#//Project/splitTasks/source"/>
-      </genOperations>
-      <genOperations ecoreOperation="time4sys.ecore#//Project/convertToPeriodicActivation">
-        <genParameters ecoreParameter="time4sys.ecore#//Project/convertToPeriodicActivation/source"/>
-      </genOperations>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/transformations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/simulations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Project/results"/>
+    </genClasses>
+    <genClasses ecoreClass="time4sys.ecore#//Transformation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Transformation/result"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Transformation/mapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute time4sys.ecore#//Transformation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="time4sys.ecore#//Simulation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute time4sys.ecore#//Simulation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Simulation/mapping"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//Simulation/trace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute time4sys.ecore#//Simulation/seed"/>
+      <genOperations ecoreOperation="time4sys.ecore#//Simulation/getDesignModel"/>
+    </genClasses>
+    <genClasses ecoreClass="time4sys.ecore#//AnalysisResult">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//AnalysisResult/mapping"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference time4sys.ecore#//AnalysisResult/analysis"/>
+      <genOperations ecoreOperation="time4sys.ecore#//AnalysisResult/getDesignModel"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

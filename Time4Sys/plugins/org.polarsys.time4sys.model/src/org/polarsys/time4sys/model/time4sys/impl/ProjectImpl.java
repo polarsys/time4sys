@@ -29,6 +29,7 @@ import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.model.time4sys.Transformation;
+import org.polarsys.time4sys.results.results.ResultSetContainer;
 import org.polarsys.time4sys.trace.Trace;
 import org.polarsys.time4sys.transformations.IdentityDerivation;
 
@@ -47,6 +48,7 @@ import org.polarsys.time4sys.transformations.IdentityDerivation;
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getDerivations <em>Derivations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getTransformations <em>Transformations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getSimulations <em>Simulations</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.impl.ProjectImpl#getResults <em>Results</em>}</li>
  * </ul>
  *
  * @generated
@@ -132,6 +134,16 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	 * @ordered
 	 */
 	protected EList<Simulation> simulations;
+
+	/**
+	 * The cached value of the '{@link #getResults() <em>Results</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResults()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ResultSetContainer> results;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,6 +291,18 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ResultSetContainer> getResults() {
+		if (results == null) {
+			results = new EObjectContainmentEList<ResultSetContainer>(ResultSetContainer.class, this, Time4sysPackage.PROJECT__RESULTS);
+		}
+		return results;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public Transformation derive(final DesignModel source) {
@@ -305,6 +329,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 				return ((InternalEList<?>)getTransformations()).basicRemove(otherEnd, msgs);
 			case Time4sysPackage.PROJECT__SIMULATIONS:
 				return ((InternalEList<?>)getSimulations()).basicRemove(otherEnd, msgs);
+			case Time4sysPackage.PROJECT__RESULTS:
+				return ((InternalEList<?>)getResults()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -331,6 +357,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 				return getTransformations();
 			case Time4sysPackage.PROJECT__SIMULATIONS:
 				return getSimulations();
+			case Time4sysPackage.PROJECT__RESULTS:
+				return getResults();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -370,6 +398,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 				getSimulations().clear();
 				getSimulations().addAll((Collection<? extends Simulation>)newValue);
 				return;
+			case Time4sysPackage.PROJECT__RESULTS:
+				getResults().clear();
+				getResults().addAll((Collection<? extends ResultSetContainer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -403,6 +435,9 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 			case Time4sysPackage.PROJECT__SIMULATIONS:
 				getSimulations().clear();
 				return;
+			case Time4sysPackage.PROJECT__RESULTS:
+				getResults().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -429,6 +464,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
 				return transformations != null && !transformations.isEmpty();
 			case Time4sysPackage.PROJECT__SIMULATIONS:
 				return simulations != null && !simulations.isEmpty();
+			case Time4sysPackage.PROJECT__RESULTS:
+				return results != null && !results.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

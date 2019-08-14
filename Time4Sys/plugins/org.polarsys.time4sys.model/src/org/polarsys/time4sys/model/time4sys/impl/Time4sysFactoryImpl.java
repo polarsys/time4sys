@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.model.time4sys.*;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
@@ -70,6 +71,7 @@ public class Time4sysFactoryImpl extends EFactoryImpl implements Time4sysFactory
 			case Time4sysPackage.PROJECT: return createProject();
 			case Time4sysPackage.TRANSFORMATION: return createTransformation();
 			case Time4sysPackage.SIMULATION: return createSimulation();
+			case Time4sysPackage.ANALYSIS_RESULT: return createAnalysisResult();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +105,16 @@ public class Time4sysFactoryImpl extends EFactoryImpl implements Time4sysFactory
 	public Simulation createSimulation() {
 		SimulationImpl simulation = new SimulationImpl();
 		return simulation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AnalysisResult createAnalysisResult() {
+		AnalysisResultImpl analysisResult = new AnalysisResultImpl();
+		return analysisResult;
 	}
 
 	/**

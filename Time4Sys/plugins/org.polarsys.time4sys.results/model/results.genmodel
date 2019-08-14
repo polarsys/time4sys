@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.results/src" modelPluginID="org.polarsys.time4sys.results"
+    modelName="Results" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.polarsys.time4sys.marte/model/core_elements.genmodel#//coreelements ../../org.polarsys.time4sys.marte/model/design.genmodel#//design ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.marte/model/hrm.genmodel#//hrm ../../org.polarsys.time4sys.mapping/model/mapping.genmodel#//mapping ../../org.polarsys.time4sys.marte/model/nfp_annotation.genmodel#//annotation ../../org.polarsys.time4sys.marte/model/nfp.genmodel#//nfp ../../org.polarsys.time4sys.marte/model/sam.genmodel#//sam ../../org.polarsys.time4sys.schedulingtrace.model/model/schedulingtrace.genmodel#//schedulingtrace ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>results.ecore</foreignModel>
+  <genPackages prefix="Results" basePackage="org.polarsys.time4sys.results" disposableProviderFactory="true"
+      ecorePackage="results.ecore#/">
+    <genClasses ecoreClass="results.ecore#//ResultSetContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference results.ecore#//ResultSetContainer/resultSet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//ResultSetContainer/designModel"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//AnalysisResultSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//AnalysisResultSet/nbOfIterations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//AnalysisResultSet/hasConverged"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//TaskChainResult">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//TaskChainResult/resource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//TaskChainResult/slice"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//TaskChainResult/schedulingTrace"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//SimulationResult"/>
+    <genClasses image="false" ecoreClass="results.ecore#//AbstractResultReference"/>
+    <genClasses ecoreClass="results.ecore#//ContainedResult"/>
+    <genClasses ecoreClass="results.ecore#//ReferencedResult">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//ReferencedResult/data"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//TaskResult">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference results.ecore#//TaskResult/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/slack"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/nbOfSuspension"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/deadline"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/responseTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute results.ecore#//TaskResult/cet"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="results.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//Event/jitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//Event/minDist"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference results.ecore#//Event/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//SimplePeriodicEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//SimplePeriodicEvent/period"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//SimpleSporadicEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//SimpleSporadicEvent/dMin"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//OnceEvent"/>
+    <genClasses ecoreClass="results.ecore#//SlidingWindowEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//SlidingWindowEvent/nbEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//SlidingWindowEvent/windowSize"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//TindellEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TindellEvent/burstSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TindellEvent/innerPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//TindellEvent/outerPeriod"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//Offset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//Offset/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//Offset/reference"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="results.ecore#//AtomicResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//AtomicResult/load"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference results.ecore#//AtomicResult/parameter"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="results.ecore#//AbstractResultSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//AbstractResultSet/toolName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//AbstractResultSet/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference results.ecore#//AbstractResultSet/results"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//AbstractResultSet/mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//CustomTaskResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//CustomTaskResult/bufferSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//CustomTaskResult/busyWindowLength"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//ComputingResourceResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//ComputingResourceResult/typeName"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//SharedResourceResult">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//SharedResourceResult/utilization"/>
+    </genClasses>
+    <genClasses ecoreClass="results.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute results.ecore#//Parameter/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="results.ecore#//AbstractResult">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference results.ecore#//AbstractResult/subResults"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

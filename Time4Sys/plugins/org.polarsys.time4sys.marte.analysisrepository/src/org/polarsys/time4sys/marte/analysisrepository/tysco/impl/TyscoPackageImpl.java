@@ -669,6 +669,15 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTestImplementation_ResultParserClass() {
+		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTestCharacteristicType() {
 		return testCharacteristicTypeEClass;
 	}
@@ -1090,6 +1099,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TOOL_NAME);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TESTED_FILE);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TEST_RESULT);
+		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__RESULT_PARSER_CLASS);
 
 		testCharacteristicTypeEClass = createEClass(TEST_CHARACTERISTIC_TYPE);
 		createEAttribute(testCharacteristicTypeEClass, TEST_CHARACTERISTIC_TYPE__COMMENT);
@@ -1231,6 +1241,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEAttribute(getTestImplementation_ToolName(), ecorePackage.getEString(), "toolName", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestedFile(), ecorePackage.getEString(), "testedFile", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestResult(), ecorePackage.getEString(), "testResult", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestImplementation_ResultParserClass(), ecorePackage.getEString(), "resultParserClass", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCharacteristicTypeEClass, TestCharacteristicType.class, "TestCharacteristicType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestCharacteristicType_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, TestCharacteristicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

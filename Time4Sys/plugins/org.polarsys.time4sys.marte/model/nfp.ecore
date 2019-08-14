@@ -199,8 +199,10 @@
     <eOperations name="sub" lowerBound="1" eType="#//TimeInterval">
       <eParameters name="v" lowerBound="1" eType="#//TimeInterval"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="#//Duration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="#//Duration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="#//Duration"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOpen" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOpen" lowerBound="1"

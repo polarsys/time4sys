@@ -39,6 +39,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getToolName <em>Tool Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestedFile <em>Tested File</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestResult <em>Test Result</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getResultParserClass <em>Result Parser Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -193,6 +194,26 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String testResult = TEST_RESULT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResultParserClass() <em>Result Parser Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultParserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESULT_PARSER_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResultParserClass() <em>Result Parser Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultParserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String resultParserClass = RESULT_PARSER_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -408,6 +429,27 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResultParserClass() {
+		return resultParserClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResultParserClass(String newResultParserClass) {
+		String oldResultParserClass = resultParserClass;
+		resultParserClass = newResultParserClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS, oldResultParserClass, resultParserClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -457,6 +499,8 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return getTestedFile();
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				return getTestResult();
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				return getResultParserClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -492,6 +536,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				setTestResult((String)newValue);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				setResultParserClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -529,6 +576,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				setTestResult(TEST_RESULT_EDEFAULT);
 				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				setResultParserClass(RESULT_PARSER_CLASS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -557,6 +607,8 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return TESTED_FILE_EDEFAULT == null ? testedFile != null : !TESTED_FILE_EDEFAULT.equals(testedFile);
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				return TEST_RESULT_EDEFAULT == null ? testResult != null : !TEST_RESULT_EDEFAULT.equals(testResult);
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				return RESULT_PARSER_CLASS_EDEFAULT == null ? resultParserClass != null : !RESULT_PARSER_CLASS_EDEFAULT.equals(resultParserClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -585,6 +637,8 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 		result.append(testedFile);
 		result.append(", testResult: ");
 		result.append(testResult);
+		result.append(", resultParserClass: ");
+		result.append(resultParserClass);
 		result.append(')');
 		return result.toString();
 	}
