@@ -416,7 +416,7 @@
     <truthValues associatedRule="//@allRules.9"/>
     <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.10/@truthValues.0 //@allContextModels.0/@truthValues.9"/>
   </allContextModels>
-  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9" rootGroup="//@allContextModels.11/@ruleGroups.0">
+  <allContextModels id="12" name="MAST analysis" description="Check rules for MAST EDF analysis" analysisTests="//@allTests.8" rootGroup="//@allContextModels.11/@ruleGroups.0">
     <references>Mast transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <truthValues associatedRule="//@allRules.34"/>
@@ -425,9 +425,10 @@
     <truthValues value="false" associatedRule="//@allRules.37"/>
     <truthValues associatedRule="//@allRules.38"/>
     <truthValues associatedRule="//@allRules.29"/>
-    <ruleGroups expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5 //@allContextModels.1/@truthValues.9"/>
+    <ruleGroups subGroups="//@allContextModels.11/@ruleGroups.1" expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5 //@allContextModels.5/@truthValues.6"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.0/@truthValues.31 //@allContextModels.12/@truthValues.6" id="1" junctionType="or"/>
   </allContextModels>
-  <allContextModels id="12" name="MAST analysis" description="Check rules for MAST EDF analysis" analysisTests="//@allTests.8" rootGroup="//@allContextModels.12/@ruleGroups.0">
+  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9" rootGroup="//@allContextModels.12/@ruleGroups.0">
     <references>Mast transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <truthValues associatedRule="//@allRules.34"/>
@@ -436,9 +437,7 @@
     <truthValues value="false" associatedRule="//@allRules.37"/>
     <truthValues associatedRule="//@allRules.38"/>
     <truthValues associatedRule="//@allRules.29"/>
-    <ruleGroups subGroups="//@allContextModels.12/@ruleGroups.2" expectedRuleValues="//@allContextModels.12/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.12/@truthValues.0 //@allContextModels.12/@truthValues.4 //@allContextModels.12/@truthValues.5"/>
-    <ruleGroups expectedRuleValues="//@allContextModels.5/@truthValues.6 //@allContextModels.12/@truthValues.6" id="2" description=""/>
-    <ruleGroups subGroups="//@allContextModels.12/@ruleGroups.1" expectedRuleValues="//@allContextModels.0/@truthValues.31" id="1" junctionType="or"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.12/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.12/@truthValues.0 //@allContextModels.12/@truthValues.4 //@allContextModels.12/@truthValues.5 //@allContextModels.1/@truthValues.9"/>
   </allContextModels>
   <allRules id="1" description="Every task has predefined offset" content="self.cause.pattern.phase->size()>0" formalExpression="forAll t : Task|PropertyExist(t,Offset);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
   <allRules id="2" description="Every task has predefined execution time" content="self.worstCET&lt;>null" formalExpression="forAll t : Task|PropertyExist(t,ExecutionTime);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
