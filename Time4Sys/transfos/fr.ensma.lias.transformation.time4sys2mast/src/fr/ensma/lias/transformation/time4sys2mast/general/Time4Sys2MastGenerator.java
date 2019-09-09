@@ -13,6 +13,8 @@ package fr.ensma.lias.transformation.time4sys2mast.general;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +34,7 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.ut
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractExogenousTransformation;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.BurstPattern;
+import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.gqam.PeriodicPattern;
 import org.polarsys.time4sys.marte.gqam.SporadicPattern;
 import org.polarsys.time4sys.marte.gqam.Step;
@@ -64,11 +67,11 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	static int iElement;
 	public static TimeUnitKind minUnit;
 	private static XMLResource resource;
-	private static HashMap<String,String> mapp= new HashMap<>();
-	
+	private static HashMap<String, String> mapp = new HashMap<>();
+
 	public void transform(TestImplementation testImpl) {
-		iStep=0;
-		iElement=0;
+		iStep = 0;
+		iElement = 0;
 		// if (args.length < 1) {
 		// System.out.println("Arguments not valid : {folder}.");
 		// } else {
@@ -85,8 +88,8 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		CurrentAnalysisContext context = CurrentAnalysisContext.getInstance();
 		DesignModel model = context.getDesignModel();
 
-	    resource = (XMLResource) model.eResource();
-	    
+		resource = (XMLResource) model.eResource();
+
 		Time4Sys2MastGenerator generator = new Time4Sys2MastGenerator();
 		generator.generate(model, file);
 
@@ -98,7 +101,11 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			minUnit = getMinDurationUnit(des);
 			// String transfoName = design.getName();
 			FileWriter mastWriter = createFileWriter(design, targetFile.getAbsolutePath());
-			generateMastContent(mastWriter);
+			try {
+				generateMastContent(mastWriter);
+			} catch (Exception e) {
+				mastWriter.close();
+			}
 			mastWriter.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -140,7 +147,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			generateSchedulingServers(mastWriter, softwareSchedulableResources);
 			generateSharedResources(mastWriter, mutex);
 			generateOperations(mastWriter, steps, mutex);
-			generateTransactions(mastWriter, workloadEvents);
+			generateTransactions(mastWriter, workloadEvents, steps);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -249,7 +256,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		// SchedPolicyKind.EARLIEST_DEADLINE_FIRST) {
 		// mastWriter.write(" Type => EDF_Policy,\n");
 		// }
-		mastWriter.write("	Name					=> Server_" + getName(swResource)+ ",\n");
+		mastWriter.write("	Name					=> server_" + getName(swResource) + ",\n");
 		mastWriter.write("	Server_Sched_Parameters	=>\n");
 		mastWriter.write("		(	Type 				=> " + getSchedParamPolicy(scheduler) + ",\n");
 		if (scheduler.getPolicy().getPolicy() == SchedPolicyKind.FIXED_PRIORITY) {
@@ -283,69 +290,176 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		return getSchedPolicyType(swResource.getScheduler());
 	}
 
-	private void generateTransactions(FileWriter mastWriter, List<WorkloadEvent> workloadEvents) throws IOException {
-		List<BehaviorScenario> steps = workloadEvents.stream().map(out -> out.getEffect()).collect(Collectors.toList());
-		for (BehaviorScenario step : steps) {
-			generateTransaction(mastWriter, step.getCause(), step);
+	private void generateTransactions(FileWriter mastWriter, List<WorkloadEvent> workloadEvents, List<Step> steps)
+			throws IOException {
+		// List<BehaviorScenario> steps = workloadEvents.stream().map(out ->
+		// out.getEffect()).collect(Collectors.toList());
+		// for (BehaviorScenario step : steps) {
+		generateTransaction(mastWriter, workloadEvents, steps);
+		// }
+	}
+
+	private void generateTransaction(FileWriter mastWriter, List<WorkloadEvent> wes, List<Step> steps)
+			throws IOException {
+		String transactionType = "Regular";
+		String transactionName = "MainTransaction";
+		mastWriter.write("Transaction (\n");
+		mastWriter.write("	Type					=> " + transactionType + ",\n");
+		mastWriter.write("	Name					=> " + transactionName + ",\n");
+		generateTransactionContent(mastWriter, wes, steps);
+
+	}
+
+	private void generateTransactionContent(FileWriter mastWriter, List<WorkloadEvent> wes, List<Step> steps)
+			throws IOException {
+
+		HashMap<Step, Step> intermediateOutputStep = new HashMap<>();
+		HashMap<Step, Step> intermediateInputStep = new HashMap<>();
+		HashMap<Step, List<String>> inputStepMap = new HashMap<>();
+		HashMap<Step, List<String>> outputStepMap = new HashMap<>();
+		HashMap<Step, List<String>> eventStepMap = new HashMap<>();
+		HashMap<Step, String> typeStepMap = new HashMap<Step, String>();
+		for (Step step : steps) {
+			inputStepMap.put(step, new ArrayList<String>());
+			outputStepMap.put(step, new ArrayList<String>());
+			eventStepMap.put(step, new ArrayList<String>());
+		}
+		// Populate intermediate step maps when needed
+		for (Step step : steps) {
+			typeStepMap.put(step, "Activity");
+			List<Step> successors = step.getOutputPin().stream().map(out -> out.getSuccessors())
+					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
+					.map(out -> (Step) out).collect(Collectors.toList());
+			List<Step> predecessors = step.getInputPin().stream().map(out -> out.getPredecessors())
+					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
+					.map(out -> (Step) out).collect(Collectors.toList());
+			if (successors.size() > 1) {
+				Step nextStep = GqamFactory.eINSTANCE.createStep();
+				intermediateOutputStep.put(step, nextStep);
+				outputStepMap.put(nextStep, new ArrayList<>());
+				inputStepMap.put(nextStep, new ArrayList<>());
+				typeStepMap.put(nextStep, "Multicast");
+			}
+			if (predecessors.size() > 1) {
+				Step previousStep = GqamFactory.eINSTANCE.createStep();
+				intermediateInputStep.put(step, previousStep);
+				outputStepMap.put(previousStep, new ArrayList<>());
+				inputStepMap.put(previousStep, new ArrayList<>());
+				typeStepMap.put(previousStep, "Barrier");
+			}
+		}
+		// Complete all the map once before generating code
+		for (Step step : steps) {
+			// Add all event in map
+			for (WorkloadEvent we : step.getCause()) {
+				addInList(inputStepMap, step, getName(we.getEffect(), "ext_trigger_"));
+				addInList(eventStepMap, step, getName(we.getEffect(), "ext_trigger_"));
+			}
+			List<Step> successors = step.getOutputPin().stream().map(out -> out.getSuccessors())
+					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
+					.map(out -> (Step) out).collect(Collectors.toList());
+//			List<Step> predecessors = step.getInputPin().stream().map(out -> out.getPredecessors())
+//					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
+//					.map(out -> (Step) out).collect(Collectors.toList());
+			// Add names to the map for each step
+			if (successors.size() > 1) {
+				outputStepMap.get(step).add(getName(step, "intermediateStep_"));// OK
+				for (Step succ : successors) {
+					inputStepMap.get(intermediateInputStep).add(getName(succ, "intermediateStep_"));// OK
+					// If there are intermediate step needed
+					// outputStepMap.get((Step)
+					// intermediateInputStep).add(getName((Step) succ,
+					// "internal_"));// OK
+					if (intermediateInputStep.containsKey(succ)) {// NO ?
+						// Intermediate leading to another intermediate
+						Step interSucc = intermediateInputStep.get(succ);// OK
+						addInList(inputStepMap, interSucc, getName(step, "intermediateStep_"));// BOF
+						addInList(outputStepMap, interSucc, getName(step, "internal_"));// BOF
+						addInList(inputStepMap, succ, getName(succ, "intermediate_"));// BOF
+					} else {
+						// intermediate leading directly to the successor
+						// function
+						addInList(outputStepMap, step, getName(step, "internal_"));
+						addInList(inputStepMap, succ, getName(step, "internal_"));
+					}
+				}
+			} else if (successors.size() == 1) {
+				outputStepMap.put((Step) step, Arrays.asList(getName(step, "internal_")));// OK
+				Step succ = successors.get(0);
+				if (intermediateInputStep.containsKey(succ)) {// NO ?
+					Step interSucc = intermediateInputStep.get(succ);// OK
+					addInList(inputStepMap, interSucc, getName(step, "internal_"));
+					addInList(outputStepMap, interSucc, getName(succ, "intermediate_"));
+					addInList(inputStepMap, succ, getName(succ, "intermediate_"));// BOF
+				} else {
+					// inputStepMap.g(succ, Arrays.asList(getName(step,
+					// "internal_")));//OK
+					inputStepMap.get(succ).add(getName(step, "internal_"));// BOF
+				}
+				// outputStepMap.put((Step) intermediateInputStep, new
+				// ArrayList<String>());//OK
+			} else if (successors.size()==0){
+				addInList(outputStepMap, step, getName(step,"out_"));
+			}
+		}
+
+		generateExternalEvents(mastWriter, wes);
+		mastWriter.write("	Internal_Events			=> (\n");
+		mastWriter.write("			" + generateInternalEvents(mastWriter, steps, outputStepMap) + "\n");
+		mastWriter.write("	)),\n");
+		mastWriter.write("	Event_Handlers			=> (\n");
+		mastWriter.write("			"
+				+ generateEventHandlers(mastWriter, steps, typeStepMap, inputStepMap, outputStepMap) + "\n");
+		mastWriter.write("	)\n");
+		mastWriter.write(");\n");
+	}
+
+	private void addInList(HashMap<Step, List<String>> inputStepMap, Step step, String name) {
+		if (!inputStepMap.get(step).contains(name)) {
+			inputStepMap.get(step).add(name);
 		}
 	}
 
-	private void generateTransaction(FileWriter mastWriter, List<WorkloadEvent> wes, BehaviorScenario bs)
-			throws IOException {
-		String transactionType = "Regular";
-		String transactionName = getName(bs);
-		mastWriter.write("Transaction (\n");
-		mastWriter.write("	Type					=> " + transactionType + ",\n");
-		mastWriter.write("	Name					=> " + transactionName+ ",\n");
-		generateExternalEvents(mastWriter, wes);
-		mastWriter.write("	Internal_Events			=> (\n");
-		mastWriter.write("			" + generateInternalEvents(mastWriter, wes, bs) + "\n");
-		mastWriter.write("	),\n");
-		mastWriter.write("	Event_Handlers			=> (\n");
-		mastWriter.write("			" + generateEventHandlers(mastWriter, wes, bs) + "\n");
-		mastWriter.write("	)\n");
-		mastWriter.write(");\n");
-
-	}
-	
 	private String getNameOrMain(Scheduler mainScheduler) {
 		String res = mainScheduler.getName();
 		if (res == null) {
-			res= "MainScheduler";
-		} 
-		res=res.replaceAll(" ", "").toLowerCase();
+			res = "MainScheduler";
+		}
+		res = res.replaceAll(" ", "").toLowerCase();
 		mapp.put(res, resource.getID(mainScheduler));
 		return res;
 	}
-	
+
 	public static String getName(NamedElement mt) {
 		String name = mt.getName();
-		if (name==null){
+		if (name == null) {
 			iElement++;
-			name="Element"+iElement;
+			name = "Element" + iElement;
 		}
-		name=name.replaceAll(" ", "").toLowerCase();
+		name = name.replaceAll(" ", "").toLowerCase();
 		mapp.put(name, resource.getID(mt));
 		return name;
 	}
-	
+
 	public static String getName(NamedElement mt, String prefix) {
 		String name = mt.getName();
-		if (name==null){
+		if (name == null) {
 			iElement++;
-			name=prefix+iElement;
+			name = prefix + iElement;
 		}
-		name=(prefix+name).replaceAll(" ", "").toLowerCase();
+		name = (prefix + name).replaceAll(" ", "").toLowerCase();
 		mapp.put(name, resource.getID(mt));
 		return name;
 	}
 
-	private String generateEventHandlers(FileWriter mastWriter, List<WorkloadEvent> wes, BehaviorScenario bs) {
-		return Time4Sys2MastServices.generateEventHandlers(wes, bs);
+	private String generateEventHandlers(FileWriter mastWriter, List<Step> steps, HashMap<Step, String> typeStepMap,
+			HashMap<Step, List<String>> inputStepMap, HashMap<Step, List<String>> oututStepMap) {
+		return Time4Sys2MastServices.generateEventHandlers(steps, typeStepMap, inputStepMap, oututStepMap);
 	}
 
-	private String generateInternalEvents(FileWriter mastWriter, List<WorkloadEvent> wes, BehaviorScenario bs) {
-		return Time4Sys2MastServices.generateInternalEvents(bs, design);
+	private String generateInternalEvents(FileWriter mastWriter, List<Step> steps,
+			HashMap<Step, List<String>> outputStepMap) {
+		return Time4Sys2MastServices.generateInternalEvents(steps, outputStepMap, design);
 	}
 
 	private void generateExternalEvents(FileWriter mastWriter, List<WorkloadEvent> wes) throws IOException {
@@ -362,7 +476,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 				String phase = periodicEvent.getPhase() != null
 						? String.valueOf(getNestedValue(periodicEvent.getPhase())) : "0.0";
 				mastWriter.write("	Type				=> Periodic,\n");
-				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
+				mastWriter.write("		Name				=> " + getName(we.getEffect(), "ext_trigger_") + ",\n");
 				mastWriter.write("		Period			=> " + period + ",\n");
 				mastWriter.write("		Max_Jitter			=> " + jitter + ",\n");
 				mastWriter.write("		Phase			=> " + phase + "\n");
@@ -371,25 +485,24 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 				String min_interarrival = sporadicEvent.getMinInterarrival() != null
 						? sporadicEvent.getMinInterarrival().toString() : "0.0";
 				mastWriter.write("		Type				=> Sporadic,\n");
-				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
+				mastWriter.write("		Name				=> " + getName(we.getEffect(), "ext_trigger_") + ",\n");
 				mastWriter.write("		Distribution		=> Uniform,\n");
 				mastWriter.write("		Min_Interarrival	=> " + min_interarrival + "\n");
 			} else if (we.getPattern() instanceof BurstPattern) {
 				BurstPattern burstPattern = (BurstPattern) we.getPattern();
 				mastWriter.write("		Type				=> Bursty,\n");
-				mastWriter.write("		Name				=> "+getName(we.getEffect(), "ext_trigger_")+ ",\n");
+				mastWriter.write("		Name				=> " + getName(we.getEffect(), "ext_trigger_") + ",\n");
 				mastWriter.write("		Avg_Interarrival	=> " + averageInterarrival(burstPattern) + ",\n");
 				mastWriter.write("		Distribution		=> Uniform,\n");
 				mastWriter.write("		Bound_Interval		=> " + boundInterval(burstPattern) + ",\n");
 				mastWriter.write("		Max_Arrivals		=> " + burstPattern.getBurstSize() + ",\n");
 			}
-			mastWriter.write("	)");
 			if (wes.size() > i) {
 				i++;
-				mastWriter.write("),\n");
+				mastWriter.write("\t),\n");
 			}
 		}
-		mastWriter.write("),\n");
+		mastWriter.write("\t)),\n");
 	}
 
 	private String averageInterarrival(BurstPattern bp) {
@@ -432,9 +545,16 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	}
 
 	private List<SoftwareSchedulableResource> getSchedulableResources(DesignModel design) {
-		return getHardwareComputingResource(design).getOwnedResource().stream()
-				.filter(out -> out instanceof SoftwareSchedulableResource).map(out -> (SoftwareSchedulableResource) out)
-				.collect(Collectors.toList());
+		// get sub resources too.
+		TreeIterator<EObject> contents = design.eAllContents();
+		List<SoftwareSchedulableResource> results = new ArrayList<SoftwareSchedulableResource>();
+		while (contents.hasNext()) {
+			EObject obj = contents.next();
+			if (obj instanceof SoftwareSchedulableResource) {
+				results.add((SoftwareSchedulableResource) obj);
+			}
+		}
+		return results;
 	}
 
 	private HardwareComputingResource getHardwareComputingResource(DesignModel design) {
@@ -474,7 +594,7 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 		Scheduler mainScheduler = hwProcessor.getMainScheduler();
 		mastWriter.write("Scheduler (\n");
 		mastWriter.write("	Type					=> Primary_Scheduler,\n");
-		mastWriter.write("	Name					=> " + getNameOrMain(mainScheduler)+ ",\n");
+		mastWriter.write("	Name					=> " + getNameOrMain(mainScheduler) + ",\n");
 		mastWriter.write("	Host					=> " + processorName + ",\n");
 		generateSchedPolicy(mastWriter, mainScheduler);
 	}
@@ -578,8 +698,8 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 	public static TimeUnitKind getMinUnit() {
 		return minUnit;
 	}
-	
-	public static HashMap<String,String> getMapp(){
+
+	public static HashMap<String, String> getMapp() {
 		return mapp;
 	}
 }

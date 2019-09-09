@@ -10,12 +10,14 @@
  *******************************************************************************/
 package fr.ensma.lias.transformation.time4sys2mast.general.services;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.Step;
-import org.polarsys.time4sys.marte.gqam.WorkloadEvent;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;
@@ -24,59 +26,69 @@ import fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator
 
 public class Time4Sys2MastServices {
 
-	public static String generateInternalEvents(BehaviorScenario behaviorScenario, DesignModel design) {
+	public static String generateInternalEvents(List<Step> steps, HashMap<Step, List<String>> outputStepMap,
+			DesignModel design) {
 		String internalEvents = "";
 		String type = "Regular";
 		String timingRequirementType = "Hard_Global_Deadline";
-		int eventId = 1;
+		int i = 0;
+		for (Entry<Step, List<String>> entry : outputStepMap.entrySet()) {
+			Step key = entry.getKey();
+			for (String internalEventName : outputStepMap.get(key)) {
+				// The first internal event
+				// String name = generateInternalEventName(bs, i);
+				if (i>0){
+					internalEvents += "),\n";
+				}
+				i++;
+				internalEvents += "\t(Type				=> " + type + ",\n";
+				internalEvents += "\tName				=> " + internalEventName;
+				if (key.getName() != null) {
+					String triggerEvent = "ext_trigger_" + key.getName().replaceAll(" ", "").trim();
 
-		// The first internal event
-		String triggerEvent = "ext_trigger_" + behaviorScenario.getName().replaceAll(" ", "").trim();
-		String name = generateInternalEventName(behaviorScenario, eventId++);
-		internalEvents += "(\n";
-		internalEvents += "\tType				=> " + type + ",\n";
-		internalEvents += "\tName				=> " + name;
-		if (getETEF(behaviorScenario, design) != null) {
-			internalEvents += ",\n";
-			internalEvents += "\tTiming_Requirements		=> " + "\n";
-			internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
-			String addDeadline= getDeadlineAsString(behaviorScenario, design);
-			internalEvents += "\t\t Deadline			=> "+getDeadlineAsString(behaviorScenario, design)+
-					 ",\n";
-			internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
-		} else {
-			internalEvents += ")";
-		}
-
-		// Generate other internal events
-		Step nextStep = null;
-		while (true) {
-			nextStep = getSuccStep(behaviorScenario);
-
-			// Stop condition
-			if (nextStep == null)
-				break;
-
-			// Update parameters
-			name = generateInternalEventName(behaviorScenario, eventId++);
-			behaviorScenario = nextStep;
-
-			// Generate event
-			internalEvents += ",\n";
-			internalEvents += "(\n";
-			internalEvents += "\tType				=> " + type + ",\n";
-			internalEvents += "\tName				=> " + name;
-			if (getETEF(behaviorScenario, design) != null) {
-				internalEvents += ",\n";
-				internalEvents += "\tTiming_Requirements		=> " + "\n";
-				internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
-				internalEvents += "\t\t Deadline			=> "
-						+ getDeadlineAsString(behaviorScenario, design)
-						+ ",\n";
-				internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + "))";
-			} else {
-				internalEvents += ")";
+					if (getETEF(key, design) != null) {
+						internalEvents += ",\n";
+						internalEvents += "\tTiming_Requirements		=> " + "\n";
+						internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
+						internalEvents += "\t\t Deadline			=> " + getDeadlineAsString(key, design) + ",\n";
+						internalEvents += "\t\t Referenced_Event		=> " + triggerEvent + ")";
+					}
+				}
 			}
+//			if (i < outputStepMap.entrySet().size()) {
+//				internalEvents += "),\n";
+//			}
+
+			// Generate other internal events
+			// Step nextStep = null;
+			// while (true) {
+			// nextStep = getSuccStep(step);
+			//
+			// // Stop condition
+			// if (nextStep == null)
+			// break;
+			//
+			// // Update parameters
+			// name = generateInternalEventName(step, i++);
+			// step = nextStep;
+			//
+			// // Generate event
+			// internalEvents += ",\n";
+			// internalEvents += "\t(Type => " + type + ",\n";
+			// internalEvents += "\tName => " + name;
+			// if (getETEF(step, design) != null) {
+			// internalEvents += ",\n";
+			// internalEvents += "\tTiming_Requirements => " + "\n";
+			// internalEvents += "\t\t(Type => " + timingRequirementType +
+			// ",\n";
+			// internalEvents += "\t\t Deadline => " +
+			// getDeadlineAsString(step, design) + ",\n";
+			// internalEvents += "\t\t Referenced_Event => " + triggerEvent
+			// + "))";
+			// } else {
+			// internalEvents += ")\n";
+			// }
+			// }
 		}
 		return internalEvents;
 	}
@@ -92,56 +104,119 @@ public class Time4Sys2MastServices {
 	 * @param behaviorScenario
 	 * @return
 	 */
-	public static String generateEventHandlers(List<WorkloadEvent> wes, BehaviorScenario behaviorScenario) {
+	public static String generateEventHandlers(List<Step> steps, HashMap<Step, String> typeStepMap,
+			HashMap<Step, List<String>> inputStepMap, HashMap<Step, List<String>> oututStepMap) {
 		String eventHandlers = "";
-		String type = "Activity";
-		String inputEvent = "";
-		String outputEvent = "";
 		String activityOperation = "";
 		String activityServer = "";
-		int eventId = 1;
+		int i = 0;
 
-		Step currentStep = (Step) behaviorScenario;
-		String triggerEvent = Time4Sys2MastGenerator.getName(currentStep, "ext_trigger_");
-		activityOperation = Time4Sys2MastGenerator.getName(currentStep, "Operation_");
-		activityServer = Time4Sys2MastGenerator.getName(currentStep.getConcurRes(), "Server_");
-		outputEvent = generateInternalEventName(currentStep, eventId++);
+		for (Map.Entry<Step, String> entry : typeStepMap.entrySet()) {
+			Step currentStep = entry.getKey();
+			i++;
+			List<String> inputEventName = inputStepMap.get(currentStep);
+			List<String> outputEventName = oututStepMap.get(currentStep);
+			// if (currentStep.getCause().size() > 0) {
+			// triggerEvent = Time4Sys2MastGenerator.getName(currentStep,
+			// "ext_trigger_");
+			// inputEventName.add(triggerEvent);
+			// }
+			// String type = getType(inputEventName, outputEventName);
+			// outputEvent = generateInternalEventName(currentStep, eventId++);
 
-		// Generate the first event handler
-		eventHandlers += "(\n";
-		eventHandlers += "\tType				=> " + type + ",\n";
-		eventHandlers += "\tInput_Event			=> " + triggerEvent + ",\n";
-		eventHandlers += "\tOutput_Event			=> " + outputEvent + ",\n";
-		eventHandlers += "\tActivity_Operation	=> " + activityOperation + ",\n";
-		eventHandlers += "\tActivity_Server		=> " + activityServer + ")";
+			// Generate the first event handler
+			eventHandlers += "\t(Type				=> " + typeStepMap.get(currentStep) + ",\n";
+			// Barrier
+			if (typeStepMap.get(currentStep).equals("Barrier")) {
+				eventHandlers += "\tInput_Events_List			=> (";
+				int j = 0;
+				for (String itInputName : inputEventName) {
+					j++;
+					eventHandlers += itInputName;
+					if (j < inputEventName.size()) {
+						eventHandlers += ",";
+					} else {
+						eventHandlers += "),\n";
+					}
+				}
+				eventHandlers += "\tOutput_Event		=> " + outputEventName.get(0);
+			}
+			// Multicast
+			if (typeStepMap.get(currentStep).equals("Multicast")) {
+				int j = 0;
+				eventHandlers += "\tOutput_Events_List			=> (";
+				for (String itOutputName : outputEventName) {
+					j++;
+					eventHandlers += itOutputName;
+					if (j < outputEventName.size()) {
+						eventHandlers += ",";
+					} else {
+						eventHandlers += "),\n";
+					}
+				}
+				eventHandlers += "\tInput_Event		=> " + inputEventName.get(0) + "),\n";
+			}
+			// Activity
+			if (typeStepMap.get(currentStep).equals("Activity")) {
+				eventHandlers += "\tInput_Event		=> " + inputEventName.get(0) + ",\n";
+				if (outputEventName.size() == 1) {
+					eventHandlers += "\tOutput_Event		=> " + outputEventName.get(0) + ",\n";
+				}
+				activityOperation = Time4Sys2MastGenerator.getName(currentStep, "operation_");
+				activityServer = Time4Sys2MastGenerator.getName(currentStep.getConcurRes(), "server_");
+				eventHandlers += "\tActivity_Operation	=> " + activityOperation + ",\n";
+				eventHandlers += "\tActivity_Server		=> " + activityServer + ")";
+			} else {
+				eventHandlers += ")";
+			}
+			if (i < typeStepMap.entrySet().size()) {
+				eventHandlers += ",\n";
+			}
 
-		// Generate other event handlers
-		Step nextStep = null;
-		while (true) {
-			nextStep = getSuccStep(currentStep);
-
-			// Stop condition
-			if (nextStep == null)
-				break;
-
-			// Update parameters
-			inputEvent = outputEvent;
-			outputEvent = generateInternalEventName(currentStep, eventId++);
-			currentStep = nextStep;
-			activityOperation = Time4Sys2MastGenerator.getName(currentStep, "Operation_");
-			activityServer = Time4Sys2MastGenerator.getName(currentStep.getConcurRes(), "Server_");
-
-			// Generate event handler
-			eventHandlers += ",\n";
-			eventHandlers += "(\n";
-			eventHandlers += "\tType				=> " + type + ",\n";
-			eventHandlers += "\tInput_Event			=> " + inputEvent + ",\n";
-			eventHandlers += "\tOutput_Event			=> " + outputEvent + ",\n";
-			eventHandlers += "\tActivity_Operation	=> " + activityOperation + ",\n";
-			eventHandlers += "\tActivity_Server		=> " + activityServer + ")";
+			// Generate other event handlers
+			// Step nextStep = null;
+			// while (true) {
+			// nextStep = getSuccStep(currentStep);
+			//
+			// // Stop condition
+			// if (nextStep == null)
+			// break;
+			//
+			// // Update parameters
+			// inputEvent = outputEvent;
+			// outputEvent = generateInternalEventName(currentStep, eventId++);
+			// currentStep = nextStep;
+			// activityOperation = Time4Sys2MastGenerator.getName(currentStep,
+			// "operation_");
+			// activityServer =
+			// Time4Sys2MastGenerator.getName(currentStep.getConcurRes(),
+			// "server_");
+			//
+			// // Generate event handler
+			// eventHandlers += ",\n";
+			// eventHandlers += "(\n";
+			// eventHandlers += "\tType => " + type + ",\n";
+			// eventHandlers += "\tInput_Event => " + inputEvent + ",\n";
+			// eventHandlers += "\tOutput_Event => " + outputEvent + ",\n";
+			// eventHandlers += "\tActivity_Operation => " + activityOperation +
+			// ",\n";
+			// eventHandlers += "\tActivity_Server => " + activityServer + ")";
+			// }
 		}
 
 		return eventHandlers;
+	}
+
+	// calculer directement dans la Map
+	private static String getType(List<String> inputName, List<String> outputName) {
+		// TODO Auto-generated method stub
+		if (inputName.size() > 1) {
+			return "Barrier";
+		}
+		if (outputName.size() > 1) {
+			return "Multicast";
+		}
+		return "Activity";
 	}
 
 	/**
