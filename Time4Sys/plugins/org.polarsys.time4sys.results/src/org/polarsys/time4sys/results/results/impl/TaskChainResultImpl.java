@@ -53,8 +53,8 @@ import org.polarsys.time4sys.trace.Slice;
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getNbOfSuspension <em>Nb Of Suspension</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getResponseTime <em>Response Time</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getCet <em>Cet</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getBCET <em>BCET</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getWCET <em>WCET</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getResource <em>Resource</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getSlice <em>Slice</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskChainResultImpl#getSchedulingTrace <em>Scheduling Trace</em>}</li>
@@ -194,44 +194,44 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 	protected Duration deadline = DEADLINE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getResponseTime() <em>Response Time</em>}' attribute.
+	 * The default value of the '{@link #getBCET() <em>BCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResponseTime()
+	 * @see #getBCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeInterval RESPONSE_TIME_EDEFAULT = null;
+	protected static final Duration BCET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResponseTime() <em>Response Time</em>}' attribute.
+	 * The cached value of the '{@link #getBCET() <em>BCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResponseTime()
+	 * @see #getBCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeInterval responseTime = RESPONSE_TIME_EDEFAULT;
+	protected Duration bcet = BCET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCet() <em>Cet</em>}' attribute.
+	 * The default value of the '{@link #getWCET() <em>WCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCet()
+	 * @see #getWCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeInterval CET_EDEFAULT = null;
+	protected static final Duration WCET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCet() <em>Cet</em>}' attribute.
+	 * The cached value of the '{@link #getWCET() <em>WCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCet()
+	 * @see #getWCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeInterval cet = CET_EDEFAULT;
+	protected Duration wcet = WCET_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getResource() <em>Resource</em>}' reference.
@@ -396,8 +396,8 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeInterval getCet() {
-		return cet;
+	public Duration getBCET() {
+		return bcet;
 	}
 
 	/**
@@ -405,11 +405,11 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCet(TimeInterval newCet) {
-		TimeInterval oldCet = cet;
-		cet = newCet;
+	public void setBCET(Duration newBCET) {
+		Duration oldBCET = bcet;
+		bcet = newBCET;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_CHAIN_RESULT__CET, oldCet, cet));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_CHAIN_RESULT__BCET, oldBCET, bcet));
 	}
 
 	/**
@@ -417,8 +417,8 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeInterval getResponseTime() {
-		return responseTime;
+	public Duration getWCET() {
+		return wcet;
 	}
 
 	/**
@@ -426,11 +426,11 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResponseTime(TimeInterval newResponseTime) {
-		TimeInterval oldResponseTime = responseTime;
-		responseTime = newResponseTime;
+	public void setWCET(Duration newWCET) {
+		Duration oldWCET = wcet;
+		wcet = newWCET;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME, oldResponseTime, responseTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_CHAIN_RESULT__WCET, oldWCET, wcet));
 	}
 
 	/**
@@ -626,10 +626,10 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 				return getNbOfSuspension();
 			case ResultsPackage.TASK_CHAIN_RESULT__DEADLINE:
 				return getDeadline();
-			case ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME:
-				return getResponseTime();
-			case ResultsPackage.TASK_CHAIN_RESULT__CET:
-				return getCet();
+			case ResultsPackage.TASK_CHAIN_RESULT__BCET:
+				return getBCET();
+			case ResultsPackage.TASK_CHAIN_RESULT__WCET:
+				return getWCET();
 			case ResultsPackage.TASK_CHAIN_RESULT__RESOURCE:
 				if (resolve) return getResource();
 				return basicGetResource();
@@ -677,11 +677,11 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 			case ResultsPackage.TASK_CHAIN_RESULT__DEADLINE:
 				setDeadline((Duration)newValue);
 				return;
-			case ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME:
-				setResponseTime((TimeInterval)newValue);
+			case ResultsPackage.TASK_CHAIN_RESULT__BCET:
+				setBCET((Duration)newValue);
 				return;
-			case ResultsPackage.TASK_CHAIN_RESULT__CET:
-				setCet((TimeInterval)newValue);
+			case ResultsPackage.TASK_CHAIN_RESULT__WCET:
+				setWCET((Duration)newValue);
 				return;
 			case ResultsPackage.TASK_CHAIN_RESULT__RESOURCE:
 				setResource((Resource)newValue);
@@ -729,11 +729,11 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 			case ResultsPackage.TASK_CHAIN_RESULT__DEADLINE:
 				setDeadline(DEADLINE_EDEFAULT);
 				return;
-			case ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME:
-				setResponseTime(RESPONSE_TIME_EDEFAULT);
+			case ResultsPackage.TASK_CHAIN_RESULT__BCET:
+				setBCET(BCET_EDEFAULT);
 				return;
-			case ResultsPackage.TASK_CHAIN_RESULT__CET:
-				setCet(CET_EDEFAULT);
+			case ResultsPackage.TASK_CHAIN_RESULT__WCET:
+				setWCET(WCET_EDEFAULT);
 				return;
 			case ResultsPackage.TASK_CHAIN_RESULT__RESOURCE:
 				setResource((Resource)null);
@@ -772,10 +772,10 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 				return nbOfSuspension != NB_OF_SUSPENSION_EDEFAULT;
 			case ResultsPackage.TASK_CHAIN_RESULT__DEADLINE:
 				return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
-			case ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME:
-				return RESPONSE_TIME_EDEFAULT == null ? responseTime != null : !RESPONSE_TIME_EDEFAULT.equals(responseTime);
-			case ResultsPackage.TASK_CHAIN_RESULT__CET:
-				return CET_EDEFAULT == null ? cet != null : !CET_EDEFAULT.equals(cet);
+			case ResultsPackage.TASK_CHAIN_RESULT__BCET:
+				return BCET_EDEFAULT == null ? bcet != null : !BCET_EDEFAULT.equals(bcet);
+			case ResultsPackage.TASK_CHAIN_RESULT__WCET:
+				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
 			case ResultsPackage.TASK_CHAIN_RESULT__RESOURCE:
 				return resource != null;
 			case ResultsPackage.TASK_CHAIN_RESULT__SLICE:
@@ -813,8 +813,8 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 				case ResultsPackage.TASK_CHAIN_RESULT__PRIORITY: return ResultsPackage.TASK_RESULT__PRIORITY;
 				case ResultsPackage.TASK_CHAIN_RESULT__NB_OF_SUSPENSION: return ResultsPackage.TASK_RESULT__NB_OF_SUSPENSION;
 				case ResultsPackage.TASK_CHAIN_RESULT__DEADLINE: return ResultsPackage.TASK_RESULT__DEADLINE;
-				case ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME: return ResultsPackage.TASK_RESULT__RESPONSE_TIME;
-				case ResultsPackage.TASK_CHAIN_RESULT__CET: return ResultsPackage.TASK_RESULT__CET;
+				case ResultsPackage.TASK_CHAIN_RESULT__BCET: return ResultsPackage.TASK_RESULT__BCET;
+				case ResultsPackage.TASK_CHAIN_RESULT__WCET: return ResultsPackage.TASK_RESULT__WCET;
 				default: return -1;
 			}
 		}
@@ -848,8 +848,8 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 				case ResultsPackage.TASK_RESULT__PRIORITY: return ResultsPackage.TASK_CHAIN_RESULT__PRIORITY;
 				case ResultsPackage.TASK_RESULT__NB_OF_SUSPENSION: return ResultsPackage.TASK_CHAIN_RESULT__NB_OF_SUSPENSION;
 				case ResultsPackage.TASK_RESULT__DEADLINE: return ResultsPackage.TASK_CHAIN_RESULT__DEADLINE;
-				case ResultsPackage.TASK_RESULT__RESPONSE_TIME: return ResultsPackage.TASK_CHAIN_RESULT__RESPONSE_TIME;
-				case ResultsPackage.TASK_RESULT__CET: return ResultsPackage.TASK_CHAIN_RESULT__CET;
+				case ResultsPackage.TASK_RESULT__BCET: return ResultsPackage.TASK_CHAIN_RESULT__BCET;
+				case ResultsPackage.TASK_RESULT__WCET: return ResultsPackage.TASK_CHAIN_RESULT__WCET;
 				default: return -1;
 			}
 		}
@@ -876,10 +876,10 @@ public class TaskChainResultImpl extends NamedElementImpl implements TaskChainRe
 		result.append(nbOfSuspension);
 		result.append(", deadline: ");
 		result.append(deadline);
-		result.append(", responseTime: ");
-		result.append(responseTime);
-		result.append(", cet: ");
-		result.append(cet);
+		result.append(", BCET: ");
+		result.append(bcet);
+		result.append(", WCET: ");
+		result.append(wcet);
 		result.append(')');
 		return result.toString();
 	}

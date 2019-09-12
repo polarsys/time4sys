@@ -44,9 +44,10 @@ public class Time4Sys2MastServices {
 				internalEvents += "\t(Type				=> " + type + ",\n";
 				internalEvents += "\tName				=> " + internalEventName;
 				if (key.getName() != null) {
-					String triggerEvent = "ext_trigger_" + key.getName().replaceAll(" ", "").trim();
 
-					if (getETEF(key, design) != null) {
+					EndToEndFlow etef = getETEF(key, design);
+					if (etef != null) {
+						String triggerEvent = "ext_trigger_" + etef.getEndToEndStimuli().get(0).getEffect().getName().replaceAll(" ", "").trim();
 						internalEvents += ",\n";
 						internalEvents += "\tTiming_Requirements		=> " + "\n";
 						internalEvents += "\t\t(Type				=> " + timingRequirementType + ",\n";
@@ -154,7 +155,7 @@ public class Time4Sys2MastServices {
 						eventHandlers += "),\n";
 					}
 				}
-				eventHandlers += "\tInput_Event		=> " + inputEventName.get(0) + "),\n";
+				eventHandlers += "\tInput_Event		=> " + inputEventName.get(0);
 			}
 			// Activity
 			if (typeStepMap.get(currentStep).equals("Activity")) {
@@ -208,32 +209,32 @@ public class Time4Sys2MastServices {
 	}
 
 	// calculer directement dans la Map
-	private static String getType(List<String> inputName, List<String> outputName) {
-		// TODO Auto-generated method stub
-		if (inputName.size() > 1) {
-			return "Barrier";
-		}
-		if (outputName.size() > 1) {
-			return "Multicast";
-		}
-		return "Activity";
-	}
+//	private static String getType(List<String> inputName, List<String> outputName) {
+//		// TODO Auto-generated method stub
+//		if (inputName.size() > 1) {
+//			return "Barrier";
+//		}
+//		if (outputName.size() > 1) {
+//			return "Multicast";
+//		}
+//		return "Activity";
+//	}
 
-	/**
-	 * Get successor of current step in the workflow
-	 * 
-	 * @param currentStep
-	 * @return
-	 */
-	private static Step getSuccStep(BehaviorScenario currentStep) {
-		if (currentStep instanceof Step && ((Step) currentStep).getOutputRel() == null)
-			return null;
-		List<Step> succs = ((Step) currentStep).getOutputRel().getSucces();
-		if (succs.isEmpty())
-			return null;
-		else
-			return succs.get(0);
-	}
+//	/**
+//	 * Get successor of current step in the workflow
+//	 * 
+//	 * @param currentStep
+//	 * @return
+//	 */
+//	private static Step getSuccStep(BehaviorScenario currentStep) {
+//		if (currentStep instanceof Step && ((Step) currentStep).getOutputRel() == null)
+//			return null;
+//		List<Step> succs = ((Step) currentStep).getOutputRel().getSucces();
+//		if (succs.isEmpty())
+//			return null;
+//		else
+//			return succs.get(0);
+//	}
 
 	/**
 	 * Get deadline as scheduling parameter of concurrence resource
@@ -257,9 +258,9 @@ public class Time4Sys2MastServices {
 	 * @param workloadEvent
 	 * @return
 	 */
-	private static String generateInternalEventName(BehaviorScenario step, int id) {
-		return Time4Sys2MastGenerator.getName(step, "internal_" + id);
-	}
+//	private static String generateInternalEventName(BehaviorScenario step, int id) {
+//		return Time4Sys2MastGenerator.getName(step, "internal_" + id);
+//	}
 
 	public static double getNestedValue(Duration duration, TimeUnitKind unit) {
 		if (duration == null) {

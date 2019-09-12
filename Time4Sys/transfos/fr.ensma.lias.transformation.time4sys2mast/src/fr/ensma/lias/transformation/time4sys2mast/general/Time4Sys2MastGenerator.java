@@ -358,14 +358,17 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			List<Step> successors = step.getOutputPin().stream().map(out -> out.getSuccessors())
 					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
 					.map(out -> (Step) out).collect(Collectors.toList());
-//			List<Step> predecessors = step.getInputPin().stream().map(out -> out.getPredecessors())
-//					.flatMap(Collection::stream).map(out -> out.eContainer()).filter(out -> out instanceof Step)
-//					.map(out -> (Step) out).collect(Collectors.toList());
+			// List<Step> predecessors = step.getInputPin().stream().map(out ->
+			// out.getPredecessors())
+			// .flatMap(Collection::stream).map(out ->
+			// out.eContainer()).filter(out -> out instanceof Step)
+			// .map(out -> (Step) out).collect(Collectors.toList());
 			// Add names to the map for each step
 			if (successors.size() > 1) {
-				outputStepMap.get(step).add(getName(step, "intermediateStep_"));// OK
+				outputStepMap.get(step).add(getName(step, "interSuccIn_"));// OK
 				for (Step succ : successors) {
-					inputStepMap.get(intermediateInputStep).add(getName(succ, "intermediateStep_"));// OK
+					Step intermediateStep = intermediateOutputStep.get(step);
+//					inputStepMap.get(intermediateStep).add(getName(step, "interSuccIn_"));// OK
 					// If there are intermediate step needed
 					// outputStepMap.get((Step)
 					// intermediateInputStep).add(getName((Step) succ,
@@ -379,8 +382,9 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 					} else {
 						// intermediate leading directly to the successor
 						// function
-						addInList(outputStepMap, step, getName(step, "internal_"));
-						addInList(inputStepMap, succ, getName(step, "internal_"));
+						addInList(inputStepMap, intermediateStep, getName(step, "interSuccIn_"));
+						addInList(outputStepMap, intermediateStep, getName(succ, "interSuccOut_"));
+						addInList(inputStepMap, succ, getName(succ, "interSuccOut_"));
 					}
 				}
 			} else if (successors.size() == 1) {
@@ -392,14 +396,10 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 					addInList(outputStepMap, interSucc, getName(succ, "intermediate_"));
 					addInList(inputStepMap, succ, getName(succ, "intermediate_"));// BOF
 				} else {
-					// inputStepMap.g(succ, Arrays.asList(getName(step,
-					// "internal_")));//OK
 					inputStepMap.get(succ).add(getName(step, "internal_"));// BOF
 				}
-				// outputStepMap.put((Step) intermediateInputStep, new
-				// ArrayList<String>());//OK
-			} else if (successors.size()==0){
-				addInList(outputStepMap, step, getName(step,"out_"));
+			} else if (successors.size() == 0) {
+				addInList(outputStepMap, step, getName(step, "out_"));
 			}
 		}
 

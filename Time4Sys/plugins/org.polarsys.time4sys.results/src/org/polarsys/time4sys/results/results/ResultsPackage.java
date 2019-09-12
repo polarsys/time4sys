@@ -332,22 +332,22 @@ public interface ResultsPackage extends EPackage {
 	int TASK_CHAIN_RESULT__DEADLINE = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Response Time</b></em>' attribute.
+	 * The feature id for the '<em><b>BCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_CHAIN_RESULT__RESPONSE_TIME = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
+	int TASK_CHAIN_RESULT__BCET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Cet</b></em>' attribute.
+	 * The feature id for the '<em><b>WCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_CHAIN_RESULT__CET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int TASK_CHAIN_RESULT__WCET = CoreElementsPackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Resource</b></em>' reference.
@@ -942,22 +942,22 @@ public interface ResultsPackage extends EPackage {
 	int TASK_RESULT__DEADLINE = ATOMIC_RESULT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Response Time</b></em>' attribute.
+	 * The feature id for the '<em><b>BCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_RESULT__RESPONSE_TIME = ATOMIC_RESULT_FEATURE_COUNT + 5;
+	int TASK_RESULT__BCET = ATOMIC_RESULT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Cet</b></em>' attribute.
+	 * The feature id for the '<em><b>WCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_RESULT__CET = ATOMIC_RESULT_FEATURE_COUNT + 6;
+	int TASK_RESULT__WCET = ATOMIC_RESULT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Task Result</em>' class.
@@ -1590,22 +1590,22 @@ public interface ResultsPackage extends EPackage {
 	int CUSTOM_TASK_RESULT__DEADLINE = TASK_RESULT__DEADLINE;
 
 	/**
-	 * The feature id for the '<em><b>Response Time</b></em>' attribute.
+	 * The feature id for the '<em><b>BCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_TASK_RESULT__RESPONSE_TIME = TASK_RESULT__RESPONSE_TIME;
+	int CUSTOM_TASK_RESULT__BCET = TASK_RESULT__BCET;
 
 	/**
-	 * The feature id for the '<em><b>Cet</b></em>' attribute.
+	 * The feature id for the '<em><b>WCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_TASK_RESULT__CET = TASK_RESULT__CET;
+	int CUSTOM_TASK_RESULT__WCET = TASK_RESULT__WCET;
 
 	/**
 	 * The feature id for the '<em><b>Buffer Size</b></em>' attribute.
@@ -2112,26 +2112,26 @@ public interface ResultsPackage extends EPackage {
 	EAttribute getTaskResult_Deadline();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.results.results.TaskResult#getCet <em>Cet</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.results.results.TaskResult#getBCET <em>BCET</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cet</em>'.
-	 * @see org.polarsys.time4sys.results.results.TaskResult#getCet()
+	 * @return the meta object for the attribute '<em>BCET</em>'.
+	 * @see org.polarsys.time4sys.results.results.TaskResult#getBCET()
 	 * @see #getTaskResult()
 	 * @generated
 	 */
-	EAttribute getTaskResult_Cet();
+	EAttribute getTaskResult_BCET();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.results.results.TaskResult#getResponseTime <em>Response Time</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.results.results.TaskResult#getWCET <em>WCET</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Response Time</em>'.
-	 * @see org.polarsys.time4sys.results.results.TaskResult#getResponseTime()
+	 * @return the meta object for the attribute '<em>WCET</em>'.
+	 * @see org.polarsys.time4sys.results.results.TaskResult#getWCET()
 	 * @see #getTaskResult()
 	 * @generated
 	 */
-	EAttribute getTaskResult_ResponseTime();
+	EAttribute getTaskResult_WCET();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.results.results.TaskResult#getSlack <em>Slack</em>}'.
@@ -2751,20 +2751,20 @@ public interface ResultsPackage extends EPackage {
 		EAttribute TASK_RESULT__DEADLINE = eINSTANCE.getTaskResult_Deadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Cet</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>BCET</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TASK_RESULT__CET = eINSTANCE.getTaskResult_Cet();
+		EAttribute TASK_RESULT__BCET = eINSTANCE.getTaskResult_BCET();
 
 		/**
-		 * The meta object literal for the '<em><b>Response Time</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>WCET</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TASK_RESULT__RESPONSE_TIME = eINSTANCE.getTaskResult_ResponseTime();
+		EAttribute TASK_RESULT__WCET = eINSTANCE.getTaskResult_WCET();
 
 		/**
 		 * The meta object literal for the '<em><b>Slack</b></em>' attribute feature.

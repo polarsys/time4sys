@@ -1885,23 +1885,20 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Design Results" titleExpression="Design Results Table" domainClass="design.DesignModel">
-      <ownedLineMappings name="ResultSet" domainClass="results.ResultSet" semanticCandidatesExpression="&lt;%resultSets%>" headerLabelExpression="&lt;%sourceName + &quot; - &quot; + date%>">
-        <ownedSubLines name="ComputingResourceResult" semanticElements="&lt;%refersTo+self%>" domainClass="results.ComputingResourceResult" semanticCandidatesExpression="&lt;%results%>" headerLabelExpression="&lt;%refersTo.name%>">
-          <ownedSubLines name="SchedulableResourceResult" semanticElements="&lt;%refersTo+self%>" domainClass="results.TaskResult" semanticCandidatesExpression="&lt;%resultSet.results &amp;&amp; self.refersTo.ownedResource.~refersTo%>" headerLabelExpression="&lt;%refersTo.name%>"/>
-        </ownedSubLines>
-      </ownedLineMappings>
-      <ownedColumnMappings name="Priority" headerLabelExpression="Priority" featureName="priority" labelExpression="&lt;%refersTo.schedParams.nGet(0).value%>">
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Analysis Results" titleExpression="aql:'Analysis Results of '+self.toolName+ '; '+ self.date.toString()" domainClass="results.AnalysisResultSet">
+      <ownedLineMappings name="ComputingResourceResult" semanticElements="&lt;%refersTo+self%>" domainClass="results.ComputingResourceResult" headerLabelExpression="&lt;%refersTo.name%>"/>
+      <ownedLineMappings name="TaskResult" semanticElements="aql:self.getSourceMapping(container)" domainClass="results.TaskResult" headerLabelExpression="aql:self.getSourceMappingName()"/>
+      <ownedColumnMappings name="Load" headerLabelExpression="Load" featureName="load" labelExpression="aql:self.getLoad()">
         <defaultForeground labelSize="10">
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
       </ownedColumnMappings>
-      <ownedColumnMappings name="Load" headerLabelExpression="Load" featureName="load" labelExpression="&lt;%load + &quot;%&quot;%>">
+      <ownedColumnMappings name="BCET" headerLabelExpression="BCET" featureName="BCET" labelExpression="aql:self.BCET.toString()">
         <defaultForeground labelSize="10">
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
       </ownedColumnMappings>
-      <ownedColumnMappings name="ResponseTime" headerLabelExpression="Response Time" featureName="responseTime" labelExpression="&lt;%responseTime%>">
+      <ownedColumnMappings name="WCET" headerLabelExpression="WCET" featureName="WCET" labelExpression="aql:self.WCET.toString()">
         <defaultForeground labelSize="10">
           <foreGroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
         </defaultForeground>
@@ -2135,6 +2132,7 @@
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.EndToEndFlowServices"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PlatformCreation"/>
     <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.actions.extensions.Arinc653PartitionCreation"/>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.time4sys.odesign.service.ResultServices"/>
   </ownedViewpoints>
   <userColorsPalettes>
     <entries xsi:type="description:UserFixedColor" red="138" green="197" blue="255" name="CustomBlue"/>

@@ -3,7 +3,6 @@
 package org.polarsys.time4sys.results.results;
 
 import org.polarsys.time4sys.marte.nfp.Duration;
-import org.polarsys.time4sys.marte.nfp.TimeInterval;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,8 +18,8 @@ import org.polarsys.time4sys.marte.nfp.TimeInterval;
  *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getNbOfSuspension <em>Nb Of Suspension</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getResponseTime <em>Response Time</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getCet <em>Cet</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getBCET <em>BCET</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.TaskResult#getWCET <em>WCET</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.results.results.ResultsPackage#getTaskResult()
@@ -81,56 +80,56 @@ public interface TaskResult extends AtomicResult {
 	void setDeadline(Duration value);
 
 	/**
-	 * Returns the value of the '<em><b>Cet</b></em>' attribute.
+	 * Returns the value of the '<em><b>BCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cet</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>BCET</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cet</em>' attribute.
-	 * @see #setCet(TimeInterval)
-	 * @see org.polarsys.time4sys.results.results.ResultsPackage#getTaskResult_Cet()
-	 * @model dataType="org.polarsys.time4sys.marte.nfp.NFP_TimeInterval"
+	 * @return the value of the '<em>BCET</em>' attribute.
+	 * @see #setBCET(Duration)
+	 * @see org.polarsys.time4sys.results.results.ResultsPackage#getTaskResult_BCET()
+	 * @model dataType="org.polarsys.time4sys.marte.nfp.NFP_Duration"
 	 * @generated
 	 */
-	TimeInterval getCet();
+	Duration getBCET();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.time4sys.results.results.TaskResult#getCet <em>Cet</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.time4sys.results.results.TaskResult#getBCET <em>BCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cet</em>' attribute.
-	 * @see #getCet()
+	 * @param value the new value of the '<em>BCET</em>' attribute.
+	 * @see #getBCET()
 	 * @generated
 	 */
-	void setCet(TimeInterval value);
+	void setBCET(Duration value);
 
 	/**
-	 * Returns the value of the '<em><b>Response Time</b></em>' attribute.
+	 * Returns the value of the '<em><b>WCET</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Response Time</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>WCET</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Response Time</em>' attribute.
-	 * @see #setResponseTime(TimeInterval)
-	 * @see org.polarsys.time4sys.results.results.ResultsPackage#getTaskResult_ResponseTime()
-	 * @model dataType="org.polarsys.time4sys.marte.nfp.NFP_TimeInterval"
+	 * @return the value of the '<em>WCET</em>' attribute.
+	 * @see #setWCET(Duration)
+	 * @see org.polarsys.time4sys.results.results.ResultsPackage#getTaskResult_WCET()
+	 * @model dataType="org.polarsys.time4sys.marte.nfp.NFP_Duration"
 	 * @generated
 	 */
-	TimeInterval getResponseTime();
+	Duration getWCET();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.time4sys.results.results.TaskResult#getResponseTime <em>Response Time</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.time4sys.results.results.TaskResult#getWCET <em>WCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Response Time</em>' attribute.
-	 * @see #getResponseTime()
+	 * @param value the new value of the '<em>WCET</em>' attribute.
+	 * @see #getWCET()
 	 * @generated
 	 */
-	void setResponseTime(TimeInterval value);
+	void setWCET(Duration value);
 
 	/**
 	 * Returns the value of the '<em><b>Slack</b></em>' attribute.

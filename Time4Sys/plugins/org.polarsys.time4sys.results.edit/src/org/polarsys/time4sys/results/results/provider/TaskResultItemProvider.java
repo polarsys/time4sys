@@ -14,10 +14,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.polarsys.time4sys.marte.nfp.NfpFactory;
-
-import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.results.results.ResultsFactory;
 import org.polarsys.time4sys.results.results.ResultsPackage;
 import org.polarsys.time4sys.results.results.TaskResult;
@@ -54,7 +50,8 @@ public class TaskResultItemProvider extends AtomicResultItemProvider {
 			addPriorityPropertyDescriptor(object);
 			addNbOfSuspensionPropertyDescriptor(object);
 			addDeadlinePropertyDescriptor(object);
-			addResponseTimePropertyDescriptor(object);
+			addBCETPropertyDescriptor(object);
+			addWCETPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,19 +79,41 @@ public class TaskResultItemProvider extends AtomicResultItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Response Time feature.
+	 * This adds a property descriptor for the BCET feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResponseTimePropertyDescriptor(Object object) {
+	protected void addBCETPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TaskResult_responseTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_responseTime_feature", "_UI_TaskResult_type"),
-				 ResultsPackage.Literals.TASK_RESULT__RESPONSE_TIME,
+				 getString("_UI_TaskResult_BCET_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_BCET_feature", "_UI_TaskResult_type"),
+				 ResultsPackage.Literals.TASK_RESULT__BCET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the WCET feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWCETPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskResult_WCET_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_WCET_feature", "_UI_TaskResult_type"),
+				 ResultsPackage.Literals.TASK_RESULT__WCET,
 				 true,
 				 false,
 				 false,
@@ -182,7 +201,6 @@ public class TaskResultItemProvider extends AtomicResultItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ResultsPackage.Literals.TASK_RESULT__EVENT);
-			childrenFeatures.add(ResultsPackage.Literals.TASK_RESULT__CET);
 		}
 		return childrenFeatures;
 	}
@@ -241,10 +259,11 @@ public class TaskResultItemProvider extends AtomicResultItemProvider {
 			case ResultsPackage.TASK_RESULT__SLACK:
 			case ResultsPackage.TASK_RESULT__PRIORITY:
 			case ResultsPackage.TASK_RESULT__NB_OF_SUSPENSION:
+			case ResultsPackage.TASK_RESULT__BCET:
+			case ResultsPackage.TASK_RESULT__WCET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ResultsPackage.TASK_RESULT__EVENT:
-			case ResultsPackage.TASK_RESULT__CET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -286,11 +305,6 @@ public class TaskResultItemProvider extends AtomicResultItemProvider {
 			(createChildParameter
 				(ResultsPackage.Literals.TASK_RESULT__EVENT,
 				 ResultsFactory.eINSTANCE.createTindellEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ResultsPackage.Literals.TASK_RESULT__CET,
-				 NfpFactory.eINSTANCE.createFromString(NfpPackage.Literals.NFP_TIME_INTERVAL, null))); // TODO: ensure this is a valid literal value
 	}
 
 }

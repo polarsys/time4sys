@@ -30,8 +30,8 @@ import org.polarsys.time4sys.results.results.TaskResult;
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getNbOfSuspension <em>Nb Of Suspension</em>}</li>
  *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getResponseTime <em>Response Time</em>}</li>
- *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getCet <em>Cet</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getBCET <em>BCET</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.results.results.impl.TaskResultImpl#getWCET <em>WCET</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,44 +128,44 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 	protected Duration deadline = DEADLINE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getResponseTime() <em>Response Time</em>}' attribute.
+	 * The default value of the '{@link #getBCET() <em>BCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResponseTime()
+	 * @see #getBCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeInterval RESPONSE_TIME_EDEFAULT = null;
+	protected static final Duration BCET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getResponseTime() <em>Response Time</em>}' attribute.
+	 * The cached value of the '{@link #getBCET() <em>BCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getResponseTime()
+	 * @see #getBCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeInterval responseTime = RESPONSE_TIME_EDEFAULT;
+	protected Duration bcet = BCET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCet() <em>Cet</em>}' attribute.
+	 * The default value of the '{@link #getWCET() <em>WCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCet()
+	 * @see #getWCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeInterval CET_EDEFAULT = null;
+	protected static final Duration WCET_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCet() <em>Cet</em>}' attribute.
+	 * The cached value of the '{@link #getWCET() <em>WCET</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCet()
+	 * @see #getWCET()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeInterval cet = CET_EDEFAULT;
+	protected Duration wcet = WCET_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +255,8 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeInterval getCet() {
-		return cet;
+	public Duration getBCET() {
+		return bcet;
 	}
 
 	/**
@@ -264,11 +264,11 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCet(TimeInterval newCet) {
-		TimeInterval oldCet = cet;
-		cet = newCet;
+	public void setBCET(Duration newBCET) {
+		Duration oldBCET = bcet;
+		bcet = newBCET;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_RESULT__CET, oldCet, cet));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_RESULT__BCET, oldBCET, bcet));
 	}
 
 	/**
@@ -276,8 +276,8 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeInterval getResponseTime() {
-		return responseTime;
+	public Duration getWCET() {
+		return wcet;
 	}
 
 	/**
@@ -285,11 +285,11 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResponseTime(TimeInterval newResponseTime) {
-		TimeInterval oldResponseTime = responseTime;
-		responseTime = newResponseTime;
+	public void setWCET(Duration newWCET) {
+		Duration oldWCET = wcet;
+		wcet = newWCET;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_RESULT__RESPONSE_TIME, oldResponseTime, responseTime));
+			eNotify(new ENotificationImpl(this, Notification.SET, ResultsPackage.TASK_RESULT__WCET, oldWCET, wcet));
 	}
 
 	/**
@@ -387,10 +387,10 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 				return getNbOfSuspension();
 			case ResultsPackage.TASK_RESULT__DEADLINE:
 				return getDeadline();
-			case ResultsPackage.TASK_RESULT__RESPONSE_TIME:
-				return getResponseTime();
-			case ResultsPackage.TASK_RESULT__CET:
-				return getCet();
+			case ResultsPackage.TASK_RESULT__BCET:
+				return getBCET();
+			case ResultsPackage.TASK_RESULT__WCET:
+				return getWCET();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -418,11 +418,11 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 			case ResultsPackage.TASK_RESULT__DEADLINE:
 				setDeadline((Duration)newValue);
 				return;
-			case ResultsPackage.TASK_RESULT__RESPONSE_TIME:
-				setResponseTime((TimeInterval)newValue);
+			case ResultsPackage.TASK_RESULT__BCET:
+				setBCET((Duration)newValue);
 				return;
-			case ResultsPackage.TASK_RESULT__CET:
-				setCet((TimeInterval)newValue);
+			case ResultsPackage.TASK_RESULT__WCET:
+				setWCET((Duration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -451,11 +451,11 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 			case ResultsPackage.TASK_RESULT__DEADLINE:
 				setDeadline(DEADLINE_EDEFAULT);
 				return;
-			case ResultsPackage.TASK_RESULT__RESPONSE_TIME:
-				setResponseTime(RESPONSE_TIME_EDEFAULT);
+			case ResultsPackage.TASK_RESULT__BCET:
+				setBCET(BCET_EDEFAULT);
 				return;
-			case ResultsPackage.TASK_RESULT__CET:
-				setCet(CET_EDEFAULT);
+			case ResultsPackage.TASK_RESULT__WCET:
+				setWCET(WCET_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -479,10 +479,10 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 				return nbOfSuspension != NB_OF_SUSPENSION_EDEFAULT;
 			case ResultsPackage.TASK_RESULT__DEADLINE:
 				return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
-			case ResultsPackage.TASK_RESULT__RESPONSE_TIME:
-				return RESPONSE_TIME_EDEFAULT == null ? responseTime != null : !RESPONSE_TIME_EDEFAULT.equals(responseTime);
-			case ResultsPackage.TASK_RESULT__CET:
-				return CET_EDEFAULT == null ? cet != null : !CET_EDEFAULT.equals(cet);
+			case ResultsPackage.TASK_RESULT__BCET:
+				return BCET_EDEFAULT == null ? bcet != null : !BCET_EDEFAULT.equals(bcet);
+			case ResultsPackage.TASK_RESULT__WCET:
+				return WCET_EDEFAULT == null ? wcet != null : !WCET_EDEFAULT.equals(wcet);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -505,10 +505,10 @@ public class TaskResultImpl extends AtomicResultImpl implements TaskResult {
 		result.append(nbOfSuspension);
 		result.append(", deadline: ");
 		result.append(deadline);
-		result.append(", responseTime: ");
-		result.append(responseTime);
-		result.append(", cet: ");
-		result.append(cet);
+		result.append(", BCET: ");
+		result.append(bcet);
+		result.append(", WCET: ");
+		result.append(wcet);
 		result.append(')');
 		return result.toString();
 	}

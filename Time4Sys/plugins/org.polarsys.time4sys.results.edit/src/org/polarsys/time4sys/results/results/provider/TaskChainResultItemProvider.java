@@ -17,10 +17,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.polarsys.time4sys.marte.nfp.NfpFactory;
-
-import org.polarsys.time4sys.marte.nfp.NfpPackage;
 import org.polarsys.time4sys.marte.nfp.coreelements.provider.NamedElementItemProvider;
 
 import org.polarsys.time4sys.results.results.ResultsFactory;
@@ -61,7 +57,8 @@ public class TaskChainResultItemProvider extends NamedElementItemProvider {
 			addPriorityPropertyDescriptor(object);
 			addNbOfSuspensionPropertyDescriptor(object);
 			addDeadlinePropertyDescriptor(object);
-			addResponseTimePropertyDescriptor(object);
+			addBCETPropertyDescriptor(object);
+			addWCETPropertyDescriptor(object);
 			addResourcePropertyDescriptor(object);
 			addSlicePropertyDescriptor(object);
 			addSchedulingTracePropertyDescriptor(object);
@@ -136,19 +133,41 @@ public class TaskChainResultItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Response Time feature.
+	 * This adds a property descriptor for the BCET feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResponseTimePropertyDescriptor(Object object) {
+	protected void addBCETPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TaskResult_responseTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_responseTime_feature", "_UI_TaskResult_type"),
-				 ResultsPackage.Literals.TASK_RESULT__RESPONSE_TIME,
+				 getString("_UI_TaskResult_BCET_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_BCET_feature", "_UI_TaskResult_type"),
+				 ResultsPackage.Literals.TASK_RESULT__BCET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the WCET feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWCETPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskResult_WCET_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskResult_WCET_feature", "_UI_TaskResult_type"),
+				 ResultsPackage.Literals.TASK_RESULT__WCET,
 				 true,
 				 false,
 				 false,
@@ -303,7 +322,6 @@ public class TaskChainResultItemProvider extends NamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ResultsPackage.Literals.ATOMIC_RESULT__PARAMETER);
 			childrenFeatures.add(ResultsPackage.Literals.TASK_RESULT__EVENT);
-			childrenFeatures.add(ResultsPackage.Literals.TASK_RESULT__CET);
 		}
 		return childrenFeatures;
 	}
@@ -363,11 +381,12 @@ public class TaskChainResultItemProvider extends NamedElementItemProvider {
 			case ResultsPackage.TASK_CHAIN_RESULT__SLACK:
 			case ResultsPackage.TASK_CHAIN_RESULT__PRIORITY:
 			case ResultsPackage.TASK_CHAIN_RESULT__NB_OF_SUSPENSION:
+			case ResultsPackage.TASK_CHAIN_RESULT__BCET:
+			case ResultsPackage.TASK_CHAIN_RESULT__WCET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ResultsPackage.TASK_CHAIN_RESULT__PARAMETER:
 			case ResultsPackage.TASK_CHAIN_RESULT__EVENT:
-			case ResultsPackage.TASK_CHAIN_RESULT__CET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -414,11 +433,6 @@ public class TaskChainResultItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(ResultsPackage.Literals.TASK_RESULT__EVENT,
 				 ResultsFactory.eINSTANCE.createTindellEvent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ResultsPackage.Literals.TASK_RESULT__CET,
-				 NfpFactory.eINSTANCE.createFromString(NfpPackage.Literals.NFP_TIME_INTERVAL, null))); // TODO: ensure this is a valid literal value
 	}
 
 	/**

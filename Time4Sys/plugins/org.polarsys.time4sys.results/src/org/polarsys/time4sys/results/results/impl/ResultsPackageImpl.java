@@ -462,8 +462,8 @@ public class ResultsPackageImpl extends EPackageImpl implements ResultsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTaskResult_Cet() {
-		return (EAttribute)taskResultEClass.getEStructuralFeatures().get(6);
+	public EAttribute getTaskResult_BCET() {
+		return (EAttribute)taskResultEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -471,8 +471,8 @@ public class ResultsPackageImpl extends EPackageImpl implements ResultsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTaskResult_ResponseTime() {
-		return (EAttribute)taskResultEClass.getEStructuralFeatures().get(5);
+	public EAttribute getTaskResult_WCET() {
+		return (EAttribute)taskResultEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -882,8 +882,8 @@ public class ResultsPackageImpl extends EPackageImpl implements ResultsPackage {
 		createEAttribute(taskResultEClass, TASK_RESULT__PRIORITY);
 		createEAttribute(taskResultEClass, TASK_RESULT__NB_OF_SUSPENSION);
 		createEAttribute(taskResultEClass, TASK_RESULT__DEADLINE);
-		createEAttribute(taskResultEClass, TASK_RESULT__RESPONSE_TIME);
-		createEAttribute(taskResultEClass, TASK_RESULT__CET);
+		createEAttribute(taskResultEClass, TASK_RESULT__BCET);
+		createEAttribute(taskResultEClass, TASK_RESULT__WCET);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__JITTER);
@@ -1030,8 +1030,8 @@ public class ResultsPackageImpl extends EPackageImpl implements ResultsPackage {
 		initEAttribute(getTaskResult_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskResult_NbOfSuspension(), theEcorePackage.getEInt(), "nbOfSuspension", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskResult_Deadline(), theNfpPackage.getNFP_Duration(), "deadline", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaskResult_ResponseTime(), theNfpPackage.getNFP_TimeInterval(), "responseTime", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaskResult_Cet(), theNfpPackage.getNFP_TimeInterval(), "cet", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTaskResult_BCET(), theNfpPackage.getNFP_Duration(), "BCET", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTaskResult_WCET(), theNfpPackage.getNFP_Duration(), "WCET", null, 0, 1, TaskResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Jitter(), ecorePackage.getEInt(), "jitter", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
