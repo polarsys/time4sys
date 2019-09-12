@@ -14,5 +14,6 @@
         <modules>
                 <module>fr.ensma.lias.transformation.time4sys2mast</module>
                 <module>org.polarsys.time4sys.marte.transformation.time4sys2romeo</module>
+                <module>org.polarsys.time4sys.mast.result.parser</module>
         </modules>
 </project>
