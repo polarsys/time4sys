@@ -242,6 +242,7 @@ public class AnalysisRepositoryControler {
 		String transformedFilePath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestedFile()));
 		transformedFilePath += File.separator + getFileName(testImpl.getTestedFile());
 		String resultPath = WorkspaceUtils.getOutputFolderPath(getFolder(testImpl.getTestResult()));
+		boolean consoleOutput = testImpl.isConsoleOutput();
 		resultPath += File.separator + getFileName(testImpl.getTestResult());
 
 		while (lock) {
@@ -273,27 +274,20 @@ public class AnalysisRepositoryControler {
 		args.addAll(Arrays.asList(testImpl.getAnalysisExecPath().split(" ")));
 		args.add(transformedFilePath);
 		args.add(resultPath);
-		FileWriter fr;
-		try {
-			fr = new FileWriter(resultPath);
-			boolean transfoOk = execAnalysis(args, fr);
+			boolean transfoOk = execAnalysis(args, resultPath, consoleOutput);
 			if (!transfoOk) {
 				ArFunctionalUtils.errorMessage("Analysis failed");
 			}
-			fr.close();
 
 			String transfoExecPath = testImpl.getResultParserClass();
 			List<AbstractResultParser> list = getARPServices(AbstractResultParser.class);
-			for (AbstractResultParser arp:list){
+			for (AbstractResultParser arp : list) {
 				if (arp.getClass().getName().equals(transfoExecPath)) {
 					arp.parseResult(testImpl);
 				}
 			}
 			WorkspaceUtils.refreshProject();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		return true;
 
 	}
@@ -383,6 +377,7 @@ public class AnalysisRepositoryControler {
 		}
 		return new ArrayList<T>();
 	}
+
 	public static <T> List<T> getARPServices(Class<T> clazz) {
 		Class<AbstractResultParser> classFromBundle = AbstractResultParser.class;
 		BundleContext ctx = FrameworkUtil.getBundle(classFromBundle).getBundleContext();
@@ -392,8 +387,7 @@ public class AnalysisRepositoryControler {
 		return new ArrayList<T>();
 	}
 
-	private static <T,G> List<T> getServices(Class<T> clazz, Class<G> classFromBundle,
-			BundleContext ctx) {
+	private static <T, G> List<T> getServices(Class<T> clazz, Class<G> classFromBundle, BundleContext ctx) {
 		ServiceTracker<T, T> tracker = new ServiceTracker<>(ctx, classFromBundle.getName(), null);
 		try {
 			tracker.open();
@@ -462,30 +456,34 @@ public class AnalysisRepositoryControler {
 		return new BufferedReader(new InputStreamReader(p.getErrorStream()));
 	}
 
-	public boolean execAnalysis(List<String> args, FileWriter result) {
+	public boolean execAnalysis(List<String> args, String resultPath, boolean consoleOutput) {
+
 		ProcessBuilder processbuilder = new ProcessBuilder(args);
-		try {
-			Process process = processbuilder.start();
-			BufferedReader ouput = getOutput(process);
-			BufferedReader error = getError(process);
-			String ligne = "";
-			while ((ligne = ouput.readLine()) != null) {
-				result.write(ligne);
-				result.write("\n");
-			}
+			try {
+				Process process = processbuilder.start();
+				FileWriter result = new FileWriter(resultPath);
+				BufferedReader ouput = getOutput(process);
+				BufferedReader error = getError(process);
+				if (consoleOutput) {
+				String ligne = "";
+				while ((ligne = ouput.readLine()) != null) {
+					result.write(ligne);
+					result.write("\n");
+				}
 
-			while ((ligne = error.readLine()) != null) {
-				result.write(ligne);
-				result.write("\n");
+				while ((ligne = error.readLine()) != null) {
+					result.write(ligne);
+					result.write("\n");
+				}
+				result.close();
 			}
-
 			// refresh project
-			WorkspaceUtils.refreshProject();
+				WorkspaceUtils.refreshProject();
 
-		} catch (IOException e) {
-			System.out.println("error");
-			e.printStackTrace();
-			return false;
+			} catch (IOException e) {
+				System.out.println("error");
+				e.printStackTrace();
+				return false;
 		}
 		// ARUtils.plainMessage("Transformation finished");
 		return true;

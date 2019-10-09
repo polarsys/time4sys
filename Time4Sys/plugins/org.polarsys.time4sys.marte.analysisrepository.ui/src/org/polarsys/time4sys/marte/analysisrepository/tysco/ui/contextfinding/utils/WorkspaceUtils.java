@@ -27,8 +27,15 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.FileEditorInput;
 import org.polarsys.time4sys.design.DesignModel;
+import org.polarsys.time4sys.model.time4sys.Project;
 
 public class WorkspaceUtils {
 
@@ -47,28 +54,28 @@ public class WorkspaceUtils {
 	 * 
 	 * @return
 	 */
-//	public static IProject getCurrentProject() {
-//		IWorkbench workbench = PlatformUI.getWorkbench();
-//		if (workbench == null)
-//			return null;
-//		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-//		if (window == null)
-//			return null;
-//		IWorkbenchPage page = window.getActivePage();
-//		if (page == null)
-//			return null;
-//		IEditorPart part = page.getActiveEditor();
-//		if (part == null)
-//			return null;
-//		IEditorInput editorInput = part.getEditorInput();
-//		if (editorInput == null)
-//			return null;
-//		if (editorInput instanceof FileEditorInput) {
-//			IProject project = ((FileEditorInput) editorInput).getFile().getProject();
-//			return project;
-//		}
-//		return null;
-//	}
+	public static IProject getCurrentProject() {
+		IWorkbench workbench = PlatformUI.getWorkbench();
+		if (workbench == null)
+			return null;
+		IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
+		if (window == null)
+			return null;
+		IWorkbenchPage page = window.getActivePage();
+		if (page == null)
+			return null;
+		IEditorPart part = page.getActiveEditor();
+		if (part == null)
+			return null;
+		IEditorInput editorInput = part.getEditorInput();
+		if (editorInput == null)
+			return null;
+		if (editorInput instanceof FileEditorInput) {
+			IProject project = ((FileEditorInput) editorInput).getFile().getProject();
+			return project;
+		}
+		return null;
+	}
 
 	public static IFile getIFile(Resource res) {
 		URI uri = res.getURI();

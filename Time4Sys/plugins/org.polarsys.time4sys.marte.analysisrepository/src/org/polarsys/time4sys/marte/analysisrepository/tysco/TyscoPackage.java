@@ -508,13 +508,22 @@ public interface TyscoPackage extends EPackage {
 	int TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH = 4;
 
 	/**
+	 * The feature id for the '<em><b>Console Output</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__CONSOLE_OUTPUT = 5;
+
+	/**
 	 * The feature id for the '<em><b>Tool Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TOOL_NAME = 5;
+	int TEST_IMPLEMENTATION__TOOL_NAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Tested File</b></em>' attribute.
@@ -523,7 +532,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TESTED_FILE = 6;
+	int TEST_IMPLEMENTATION__TESTED_FILE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Test Result</b></em>' attribute.
@@ -532,7 +541,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TEST_RESULT = 7;
+	int TEST_IMPLEMENTATION__TEST_RESULT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Result Parser Class</b></em>' attribute.
@@ -541,7 +550,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = 8;
+	int TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Test Implementation</em>' class.
@@ -550,7 +559,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION_FEATURE_COUNT = 9;
+	int TEST_IMPLEMENTATION_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Test Implementation</em>' class.
@@ -1745,6 +1754,17 @@ public interface TyscoPackage extends EPackage {
 	EAttribute getTestImplementation_AnalysisExecPath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput <em>Console Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Console Output</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_ConsoleOutput();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getToolName <em>Tool Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2552,6 +2572,14 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH = eINSTANCE.getTestImplementation_AnalysisExecPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Console Output</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__CONSOLE_OUTPUT = eINSTANCE.getTestImplementation_ConsoleOutput();
 
 		/**
 		 * The meta object literal for the '<em><b>Tool Name</b></em>' attribute feature.

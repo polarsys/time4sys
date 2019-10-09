@@ -58,6 +58,9 @@ import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.nfp.impl.LongDurationImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
+import org.polarsys.time4sys.schedulingtrace.Partition;
+import org.polarsys.time4sys.schedulingtrace.Processor;
+import org.polarsys.time4sys.schedulingtrace.SchedulingTrace;
 import org.polarsys.time4sys.trace.Event;
 import org.polarsys.time4sys.trace.SchedulingEvent;
 import org.polarsys.time4sys.trace.Slice;
@@ -74,15 +77,14 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			throws IOException, ParserConfigurationException, TransformerException {
 		new ExportAsTimingGraphics(slice).writeGanttXml(output);
 	}
-	
+
 	public static void exportGraphicsXml(final Slice slice, final File output)
 			throws IOException, ParserConfigurationException, TransformerException {
 		new ExportAsTimingGraphics(slice).writeGraphicsXml(output);
 	}
 
 	protected Shell shell;
-	protected Slice slice = null;
-	protected Trace trace = null;
+	protected EObject rootElement = null;
 	private File output;
 
 	/**
@@ -91,10 +93,10 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 	public ExportAsTimingGraphics() {
 		this(null);
 	}
-	
+
 	public ExportAsTimingGraphics(final Slice toBeExported) {
 		super();
-		slice = toBeExported;
+		rootElement = toBeExported;
 	}
 
 	/**
@@ -108,15 +110,15 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 	 * @see IActionDelegate#run(IAction)
 	 */
 	public void run(IAction action) {
-		if (slice == null && trace == null) {
+		if (rootElement == null) {
 			return;
 		}
 		final File folder = getTimingGraphicsFolder();
 		final Exception errGantt = writeGanttXml(new File(folder, "gantt.xml"));
 		final Exception errGraphics = writeGraphicsXml(new File(folder, "graphics.xml"));
-		if ((errGantt == null || errGraphics == null) && 
-			MessageDialog.openQuestion(shell, "Trace Timing Graphics(tm) exporter",
-				"Gantt chart(s) exported in " + output.getAbsolutePath() + ".\n" + "Would you view it?")) {
+		if ((errGantt == null || errGraphics == null)
+				&& MessageDialog.openQuestion(shell, "Trace Timing Graphics(tm) exporter",
+						"Gantt chart(s) exported in " + output.getAbsolutePath() + ".\n" + "Would you view it?")) {
 			/* If no errors raised during the export */
 			if (output.exists() && output.isFile()) {
 				final Bundle plugin = Platform.getBundle("org.polarsys.time4sys.trace.timinggraphics");
@@ -134,7 +136,8 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 				} else {
 					/* And the Timing graphics plugin is installed */
 					try {
-						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView("com.linkconet.e3.dashboard.realtimecharts.ui.views.GanttChartsView");
+						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+								.showView("com.linkconet.e3.dashboard.realtimecharts.ui.views.GanttChartsView");
 					} catch (PartInitException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -143,9 +146,10 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			}
 		}
 	}
-	
+
 	private File getTimingGraphicsFolder() {
-		final ScopedPreferenceStore preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, "com.linkconet.e3.dashboard.RealTimeCharts.ui");
+		final ScopedPreferenceStore preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE,
+				"com.linkconet.e3.dashboard.RealTimeCharts.ui");
 		final String path = preferenceStore.getString("xmlFilesLocation");
 		final File folder;
 		if (path == null || path.trim().isEmpty()) {
@@ -181,7 +185,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		}
 		return null;
 	}
-	
+
 	private Exception writeGraphicsXml(final File outputFile) {
 		output = outputFile;
 		final FileOutputStream os;
@@ -212,7 +216,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		slice = null;
+		rootElement = null;
 		if (selection.isEmpty()) {
 			return;
 		}
@@ -221,11 +225,15 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			obj = ((IStructuredSelection) selection).getFirstElement();
 		}
 		if (obj instanceof Slice) {
-			slice = (Slice) obj;
+			rootElement = (Slice) obj;
+		}
+		if (obj instanceof SchedulingTrace) {
+			rootElement = (SchedulingTrace) obj;
 		}
 		if (obj instanceof Trace) {
-			trace = (Trace) obj;
+			rootElement = (Trace) obj;
 		}
+
 	}
 
 	static private Text setTextProperty(final Element parent, final String eltName, final String value) {
@@ -241,17 +249,17 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final Duration durInPS = value.convertToUnit(TimeUnitKind.PS);
 		final long picoseconds;
 		if (durInPS instanceof LongDurationImpl) {
-			picoseconds = ((LongDurationImpl)durInPS).getValueInPicoSeconds();
+			picoseconds = ((LongDurationImpl) durInPS).getValueInPicoSeconds();
 		} else {
 			picoseconds = (long) durInPS.getValue();
 		}
 		setTextProperty(parent, eltName, Long.toString(picoseconds));
 	}
-	
+
 	private static String percentageFormat(int value) {
 		return String.format("%d.%02d", value / 100, value % 100);
 	}
-	
+
 	private static void setPercentagePropertyTwoDigits(final Element parent, final String eltName, final int value) {
 		setTextProperty(parent, eltName, percentageFormat(value));
 	}
@@ -261,8 +269,9 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		parent.appendChild(child);
 		return child;
 	}
-	
-	protected void exportGraphicsXml(final OutputStreamWriter w) throws IOException, ParserConfigurationException, TransformerException {
+
+	protected void exportGraphicsXml(final OutputStreamWriter w)
+			throws IOException, ParserConfigurationException, TransformerException {
 		final DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		final Document graphicsDoc = docBuilder.newDocument();
@@ -271,17 +280,29 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final Element tabSimulationLoad = createChildElement(tabsFileElt, "Tab");
 		String label = null;
 		String descr = null;
-		final Queue<Slice> toBeDone = new LinkedBlockingQueue<>();
-		if (slice != null) {
-			toBeDone.add(slice);
-			label = slice.getName();
+		final Queue<Slice> inputElementForGeneration = new LinkedBlockingQueue<>();
+		if (rootElement instanceof Slice) {
+			Slice slice = (Slice) rootElement;
+			inputElementForGeneration.add(slice);
+			label = findBestName(slice,slice.getName());
 			descr = getSimulationName(slice);
-		}
-		if (trace != null) {
-			toBeDone.addAll(trace.getSlices());
+		} else if (rootElement instanceof SchedulingTrace) {
+			SchedulingTrace schedulingTrace = (SchedulingTrace) rootElement;
+			inputElementForGeneration.addAll(schedulingTrace.getProcessors());
+			label = "SchedulingTrace";
+			descr = getSimulationName(schedulingTrace);
+		} else if (rootElement instanceof Processor) {
+			Processor processor = (Processor) rootElement;
+			inputElementForGeneration.addAll(processor.getSubSlices());
+			label = "SchedulingTrace";
+			descr = getSimulationName(processor);
+		} else if (rootElement instanceof Trace) {
+			Trace trace = (Trace) rootElement;
+			inputElementForGeneration.addAll(trace.getSlices());
 			label = "Trace";
 			descr = getSimulationName(trace);
 		}
+
 		if (label == null) {
 			label = "";
 		}
@@ -291,7 +312,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		setTextProperty(tabSimulationLoad, "Title", "Load of " + label);
 		final Element dataSetsElt = createChildElement(tabSimulationLoad, "DataSets");
 
-		for (Slice tab : toBeDone) {
+		for (Slice tab : inputElementForGeneration) {
 			createLoadSelector(dataSetsElt, tab);
 		}
 
@@ -302,15 +323,15 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final StreamResult result = new StreamResult(w);
 		transformer.transform(source, result);
 	}
-	
+
 	static private void createLoadSelector(final Element dataSetsElt, final Slice root) {
 		final Element pieDatasetElt = createChildElement(dataSetsElt, "PieDataset");
-		setTextProperty(pieDatasetElt, "Selector", root.getName());
-		final Text titleElt = setTextProperty(pieDatasetElt, "Title", root.getName());
+		setTextProperty(pieDatasetElt, "Selector", findBestName(root,root.getName()));
+		final Text titleElt = setTextProperty(pieDatasetElt, "Title", findBestName(root,root.getName()));
 		final Duration simDuration = root.getLatestTimestamp();
 		// two-digits fixed-point percentage, ie 123 = 1.23%, 100% = 10000
 		int accumulator = 0;
-		
+
 		for (Slice sub : root.getSubSlices()) {
 			accumulator += addLoadItem(pieDatasetElt, sub, simDuration);
 			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
@@ -342,7 +363,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		if (sliceDuration.notZero()) {
 			final int percentage = (int) (sliceDuration.div(simDuration, MathContext.DECIMAL32) * 10000.0);
 			final Element pieItemElt = createChildElement(pieDatasetElt, "PieItem");
-			setTextProperty(pieItemElt, "Key", sub.getName());
+			setTextProperty(pieItemElt, "Key", findBestName(sub,sub.getName()));
 			setPercentagePropertyTwoDigits(pieItemElt, "Value", percentage);
 			return percentage;
 		} else {
@@ -350,7 +371,8 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		}
 	}
 
-	protected void exportGanttXml(final OutputStreamWriter w) throws IOException, ParserConfigurationException, TransformerException {
+	protected void exportGanttXml(final OutputStreamWriter writer)
+			throws IOException, ParserConfigurationException, TransformerException {
 		final DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		final DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		final Document ganttDoc = docBuilder.newDocument();
@@ -360,24 +382,37 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		String label = null;
 		String descr = null;
 		final Queue<Slice> toBeDone = new LinkedBlockingQueue<>();
-		if (slice != null) {
+		if (rootElement instanceof Slice) {
+			Slice slice = (Slice) rootElement;
 			toBeDone.add(slice);
-			label = slice.getName();
+			label = findBestName(slice,slice.getName());
 			descr = getSimulationName(slice);
-		}
-		if (trace != null) {
-			toBeDone.addAll(trace.getSlices());
-			label = "Trace";
-			descr = getSimulationName(trace);
-		}
-		if (label == null) {
-			label = "";
-		}
-		if (descr == null) {
-			descr = "";
-		}
+		} else if (rootElement instanceof SchedulingTrace) {
+			SchedulingTrace schedulingTrace = (SchedulingTrace) rootElement;
+			toBeDone.addAll(schedulingTrace.getProcessors());
+			label = "SchedulingTrace";
+			descr = getSimulationName(schedulingTrace);
+		} else if (rootElement instanceof Processor) {
+			Processor processor = (Processor) rootElement;
+			toBeDone.addAll(processor.getSubSlices());
+			label = "SchedulingTrace";
+			descr = getSimulationName(processor);
+		} else if(rootElement instanceof Trace)
 
-		setTextProperty(ganttFileElt, "Date", new Date().toString());
+	{
+		Trace trace = (Trace) rootElement;
+		toBeDone.addAll(trace.getSlices());
+		label = "Trace";
+		descr = getSimulationName(trace);
+	}if(label==null)
+	{
+		label = "";
+	}if(descr==null)
+	{
+		descr = "";
+	}
+
+	setTextProperty(ganttFileElt, "Date", new Date().toString());
 		setTextProperty(ganttFileElt, "Description", descr);
 		setTextProperty(ganttFileElt, "Name", label);
 		setTextProperty(ganttFileElt, "Uuid", UUID.randomUUID().toString());
@@ -400,24 +435,22 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		final Transformer transformer = transformerFactory.newTransformer();
 		final DOMSource source = new DOMSource(ganttDoc);
-		final StreamResult result = new StreamResult(w);
+		final StreamResult result = new StreamResult(writer);
 		transformer.transform(source, result);
 	}
-	
-	
 
 	static private void createGanttSelector(final Element ganttsElt, final Slice root) {
 		final Element ganttElt = createChildElement(ganttsElt, "Gantt");
-		setTextProperty(ganttElt, "Selector", root.getName());
-		setTextProperty(ganttElt, "Title", root.getName());
+		setTextProperty(ganttElt, "Selector", findBestName(root, root.getName()));
+		setTextProperty(ganttElt, "Title", findBestName(root, root.getName()));
 		setTextProperty(ganttElt, "Date", "01/01/2017 10:00:00");
-		setTextProperty(ganttElt, "Description", root.getName());
+		setTextProperty(ganttElt, "Description", findBestName(root, root.getName()));
 		setTimePropery(ganttElt, "Length", root.getLatestTimestamp());
 
 		final Element ganttLinesElt = createChildElement(ganttElt, "GanttLines");
 
 		for (Slice sub : root.getSubSlices()) {
-			addGanttLine(ganttLinesElt, sub.getName(), sub, "activation");
+			addGanttLine(ganttLinesElt, findBestName(root, root.getName()), sub, "activation");
 			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
@@ -474,7 +507,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		}*/
 		return getSlicesOfSlices(slices, sub);
 	}
-	
+
 	private static List<Slice> getSlicesOfSlices(final List<Slice> accumulator, final Slice sub) {
 		if (sub.getOwnedSubSlices().size()>0){
 			accumulator.addAll(sub.getOwnedSubSlices());
@@ -576,6 +609,13 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			current = current.eContainer();
 		}
 		return null;
+	}
+	
+	public static String findBestName(EObject obj, String name){
+		if (name.equals(null) || name==""){
+			return obj.eClass().getName();
+		}
+		return name;
 	}
 
 }

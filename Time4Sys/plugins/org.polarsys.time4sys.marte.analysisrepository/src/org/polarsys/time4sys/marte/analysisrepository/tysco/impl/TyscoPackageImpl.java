@@ -642,7 +642,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_ToolName() {
+	public EAttribute getTestImplementation_ConsoleOutput() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -651,7 +651,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_TestedFile() {
+	public EAttribute getTestImplementation_ToolName() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -660,7 +660,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_TestResult() {
+	public EAttribute getTestImplementation_TestedFile() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -669,8 +669,17 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_ResultParserClass() {
+	public EAttribute getTestImplementation_TestResult() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTestImplementation_ResultParserClass() {
+		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1096,6 +1105,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__DESCRIPTION);
 		createEReference(testImplementationEClass, TEST_IMPLEMENTATION__TRANSFORMATION);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH);
+		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__CONSOLE_OUTPUT);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TOOL_NAME);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TESTED_FILE);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TEST_RESULT);
@@ -1238,6 +1248,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEAttribute(getTestImplementation_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestImplementation_Transformation(), this.getTransformation(), this.getTransformation_TestImplementation(), "transformation", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_AnalysisExecPath(), ecorePackage.getEString(), "analysisExecPath", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestImplementation_ConsoleOutput(), ecorePackage.getEBoolean(), "consoleOutput", "true", 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_ToolName(), ecorePackage.getEString(), "toolName", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestedFile(), ecorePackage.getEString(), "testedFile", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestResult(), ecorePackage.getEString(), "testResult", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

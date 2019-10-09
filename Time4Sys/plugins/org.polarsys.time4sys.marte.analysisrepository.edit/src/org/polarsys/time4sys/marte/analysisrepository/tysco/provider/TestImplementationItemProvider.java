@@ -74,6 +74,7 @@ public class TestImplementationItemProvider
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addAnalysisExecPathPropertyDescriptor(object);
+			addConsoleOutputPropertyDescriptor(object);
 			addToolNamePropertyDescriptor(object);
 			addTestedFilePropertyDescriptor(object);
 			addTestResultPropertyDescriptor(object);
@@ -166,6 +167,28 @@ public class TestImplementationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Console Output feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConsoleOutputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_consoleOutput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_consoleOutput_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__CONSOLE_OUTPUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -330,6 +353,7 @@ public class TestImplementationItemProvider
 			case TyscoPackage.TEST_IMPLEMENTATION__NAME:
 			case TyscoPackage.TEST_IMPLEMENTATION__DESCRIPTION:
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
