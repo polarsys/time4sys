@@ -58,7 +58,6 @@ import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeUnitKind;
 import org.polarsys.time4sys.marte.nfp.impl.LongDurationImpl;
 import org.polarsys.time4sys.model.time4sys.Simulation;
-import org.polarsys.time4sys.schedulingtrace.Partition;
 import org.polarsys.time4sys.schedulingtrace.Processor;
 import org.polarsys.time4sys.schedulingtrace.SchedulingTrace;
 import org.polarsys.time4sys.trace.Event;
@@ -334,15 +333,16 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
 		for (Slice sub : root.getSubSlices()) {
 			accumulator += addLoadItem(pieDatasetElt, sub, simDuration);
-			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
 				createLoadSelector(dataSetsElt, sub);
 			}
 		}
 		for (Slice sub : root.getOwnedSubSlices()) {
 			accumulator += addLoadItem(pieDatasetElt, sub, simDuration);
-			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
 				createLoadSelector(dataSetsElt, sub);
 			}
+
 		}
 		if (pieDatasetElt.hasChildNodes() && accumulator <= 10000) {
 			if (accumulator <= 10000) {
@@ -451,13 +451,13 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
 		for (Slice sub : root.getSubSlices()) {
 			addGanttLine(ganttLinesElt, findBestName(root, root.getName()), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}
 		for (Slice sub : root.getOwnedSubSlices()) {
 			addGanttLine(ganttLinesElt, sub.getName(), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}
@@ -516,7 +516,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 			}
 		}
 		if (sub.getSubSlices().size()>0){
-			accumulator.addAll(sub.getOwnedSubSlices());
+			accumulator.addAll(sub.getSubSlices());
 			for (Slice owned : sub.getSubSlices()){
 				getSlicesOfSlices(accumulator, owned);
 			}
