@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Parser
 Bundle-SymbolicName: org.polarsys.time4sys.mast.result.parser
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: org.polarsys.time4sys.mast.result.parser.Activator
+Bundle-Activator: org.polarsys.time4sys.mast.parser.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.analysisrepository,
  org.eclipse.core.resources,
@@ -14,6 +14,9 @@ Require-Bundle: org.eclipse.core.runtime,
  fr.ensma.lias.transformation.time4sys2mast
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Service-Component: OSGI-INF/org.polarsys.time4sys.mast.result.parser.MastResultParser.xml
+Service-Component: OSGI-INF/org.polarsys.time4sys.mast.result.parser.MastResultParser.xml,
+ OSGI-INF/org.polarsys.time4sys.mast.result.parser.JSimMastResultParser.xml,
+ OSGI-INF/org.polarsys.time4sys.mast.parser.MastResultParser.xml,
+ OSGI-INF/org.polarsys.time4sys.mast.parser.JSimMastResultParser.xml
 Import-Package: org.eclipse.emf.transaction,
  org.eclipse.emf.transaction.util

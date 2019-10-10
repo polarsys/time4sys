@@ -412,7 +412,7 @@
     <references>Romeo transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <truthValues associatedRule="//@allRules.34"/>
-    <truthValues associatedRule="//@allRules.36"/>
+    <truthValues value="false" associatedRule="//@allRules.36"/>
     <truthValues associatedRule="//@allRules.9"/>
     <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.10/@truthValues.0 //@allContextModels.0/@truthValues.9"/>
   </allContextModels>
@@ -428,7 +428,7 @@
     <ruleGroups subGroups="//@allContextModels.11/@ruleGroups.1" expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5 //@allContextModels.5/@truthValues.6"/>
     <ruleGroups expectedRuleValues="//@allContextModels.0/@truthValues.31 //@allContextModels.12/@truthValues.6" id="1" junctionType="or"/>
   </allContextModels>
-  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9" rootGroup="//@allContextModels.12/@ruleGroups.0">
+  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9 //@allTests.10" rootGroup="//@allContextModels.12/@ruleGroups.0">
     <references>Mast transformation applicability</references>
     <truthValues associatedRule="//@allRules.11"/>
     <truthValues associatedRule="//@allRules.34"/>
@@ -519,7 +519,7 @@
       <transformation contextModel="//@allContextModels.4" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath=""/>
     </implementations>
   </allTests>
-  <allTests id="1" name="DBF 1" description="Demand Bound Function test for independent periodic task set">
+  <allTests id="6" name="DBF 1" description="Demand Bound Function test for independent periodic task set">
     <references>Jeffay, K., &amp; Stone, D. (1993, December). Accounting for interrupt handling costs in dynamic priority task systems. In Real-Time Systems Symposium, 1993., Proceedings. (pp. 212-221). IEEE.</references>
     <references>Baruah, S. K., Rosier, L. E., &amp; Howell, R. R. (1990). Algorithms and complexity concerning the preemptive scheduling of periodic, real-time tasks on one processor. Real-time systems, 2(4), 301-324.</references>
     <characteristics xsi:type="tysco:SufficientCondition" comment="" referencedContexts="//@allContextModels.5"/>
@@ -528,24 +528,29 @@
       <transformation contextModel="//@allContextModels.5" id="1"/>
     </implementations>
   </allTests>
-  <allTests name="Romeo CTS Analysis" description="Launch romeo CTS analysis">
+  <allTests id="7" name="Romeo CTS Analysis" description="Launch romeo CTS analysis">
     <implementations name="" description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\runtime-org.polarsys.time4sys.product_2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" toolName="" testedFile="romeo\\transformedmodel.cts" testResult="romeo_result\\RomeoCTS_result.txt">
       <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.RomeoCTSSerialization"/>
     </implementations>
   </allTests>
-  <allTests name="Romeo Petri Analysis" description="Launch romeo Petri analysis">
+  <allTests id="8" name="Romeo Petri Analysis" description="Launch romeo Petri analysis">
     <implementations description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\workspace2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.xml" testResult="romeo_result\\RomeoXML_result.txt">
       <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.Time4Sys2PetriNet"/>
     </implementations>
   </allTests>
-  <allTests name="Mast edf monoprocessor" description="Launch mast EDF analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="EDF Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\edf_result.xml" resultParserClass="org.polarsys.time4sys.mast.result.parser.MastResultParser">
+  <allTests id="9" name="Mast edf monoprocessor" description="Launch mast EDF analysis">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="EDF Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\edf_result.xml" resultParserClass="org.polarsys.time4sys.mast.parser.result.MastResultParser">
       <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2EDFMastGenerator"/>
     </implementations>
   </allTests>
-  <allTests name="Mast XML Default Analysis" description="Launch mast default analysis">
-    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml" resultParserClass="org.polarsys.time4sys.mast.result.parser.MastResultParser">
-      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+  <allTests id="10" name="Mast XML Default Analysis" description="Launch mast default analysis">
+    <implementations id="1" name="Mast_Analysis" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\mast_analysis.bat default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml" resultParserClass="org.polarsys.time4sys.mast.parser.MastResultParser">
+      <transformation contextModel="//@allContextModels.12" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+    </implementations>
+  </allTests>
+  <allTests id="11" name="JSimMast SimulationAnalysis" description="Launch JSimMast simulation">
+    <implementations id="1" name="Mast_Simulation" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\mast_simu.bat" consoleOutput="false" toolName="Mast simulation" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\simulation_trace.xml" resultParserClass="org.polarsys.time4sys.mast.parser.JSimMastResultParser">
+      <transformation contextModel="//@allContextModels.12" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
     </implementations>
   </allTests>
   <allInnerTransfos id="1" turnTrue="//@allRules.14 //@allRules.1" turnFalse="//@allRules.0 //@allRules.3" name="Propagate event activation" description="Propagate Event" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>

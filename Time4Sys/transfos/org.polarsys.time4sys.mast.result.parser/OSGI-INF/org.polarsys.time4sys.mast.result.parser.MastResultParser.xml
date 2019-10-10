@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="org.polarsys.time4sys.mast.result.parser.MastResultParser">
-   <service>
-      <provide interface="org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractResultParser"/>
-   </service>
-   <implementation class="org.polarsys.time4sys.mast.result.parser.MastResultParser"/>
-</scr:component>

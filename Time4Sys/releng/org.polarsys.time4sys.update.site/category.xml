@@ -45,6 +45,9 @@
    <feature url="features/org.polarsys.time4sys.marte.transformation.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.marte.transformation.feature" version="1.0.0.qualifier">
       <category name="T4S Transformation"/>
    </feature>
+   <feature url="features/org.polarsys.time4sys.result.parser.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.result.parser.feature" version="1.0.0.qualifier">
+      <category name="Time4Sys"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
