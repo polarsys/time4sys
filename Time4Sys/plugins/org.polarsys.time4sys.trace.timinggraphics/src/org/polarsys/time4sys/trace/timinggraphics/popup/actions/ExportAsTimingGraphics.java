@@ -420,7 +420,7 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		final Element tabsElt = createChildElement(ganttFileElt, "Tabs");
 
 		final Element tabElt = createChildElement(tabsElt, "Tab");
-		setTextProperty(tabElt, "Name", "Gantts");
+		setTextProperty(tabElt, "Name", "GantTest");
 
 		final Element configElt = createChildElement(tabElt, "Config");
 		setTextProperty(configElt, "Unit", "ms");
@@ -445,19 +445,26 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		setTextProperty(ganttElt, "Title", findBestName(root, root.getName()));
 		setTextProperty(ganttElt, "Date", "01/01/2017 10:00:00");
 		setTextProperty(ganttElt, "Description", findBestName(root, root.getName()));
-		setTimePropery(ganttElt, "Length", root.getLatestTimestamp());
-
+		Duration firstTimestamp = root.getFirstTimestamp();
+		if (root instanceof SchedulingTrace){
+			SchedulingTrace sched= (SchedulingTrace) root;
+			setTimePropery(ganttElt, "StartTime", sched.getRange().getMin());
+			setTimePropery(ganttElt, "Length", sched.getRange().getMax());
+		} else {
+			setTimePropery(ganttElt, "StartTime", firstTimestamp);
+			setTimePropery(ganttElt, "Length", root.getLatestTimestamp());
+		}
 		final Element ganttLinesElt = createChildElement(ganttElt, "GanttLines");
 
 		for (Slice sub : root.getSubSlices()) {
 			addGanttLine(ganttLinesElt, findBestName(root, root.getName()), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || /*sub.getKind() == SliceKind.TASK ||*/ "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}
 		for (Slice sub : root.getOwnedSubSlices()) {
 			addGanttLine(ganttLinesElt, sub.getName(), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || sub.getKind() == SliceKind.TASK || "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || /*sub.getKind() == SliceKind.TASK ||*/ "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}
@@ -479,6 +486,10 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 		for (Slice job : filterSliceKind(slices, SliceKind.JOB)) {
 			createGanttElement(ganttElementsElt, job);
 		}
+		for (Slice job : filterSliceKind(slices, SliceKind.TASK)) {
+			createGanttElement(ganttElementsElt, job);
+		}
+
 	}
 
 	private static List<Slice> filterSliceKind(List<Slice> slices, SliceKind job) {

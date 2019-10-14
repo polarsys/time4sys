@@ -429,6 +429,20 @@ public class SliceImpl extends EModelElementImpl implements Slice {
 		}
 		return max;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Duration getFirstTimestamp() {
+		Duration min = getLatestTimestamp();
+		for(Event evt: getAggregatedEvents()) {//TODO more efficient visiting
+			min = min.min(evt.getTimestamp());
+		}
+		return min;
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
