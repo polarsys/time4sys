@@ -48,6 +48,9 @@
    <feature url="features/org.polarsys.time4sys.result.parser.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.result.parser.feature" version="1.0.0.qualifier">
       <category name="Time4Sys"/>
    </feature>
+   <feature id="org.polarsys.time4sys.ctf.importer.feature">
+      <category name="CTF Importer"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
@@ -117,6 +120,7 @@
    <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
+   
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
          Install Time4Sys plugins.
@@ -124,7 +128,12 @@
    </category-def>
    <category-def name="T4S Dependencies" label="T4S Dependencies">
       <description>
-         Install plugins required by Time4Sys (Sirius, Acceleo, EEF)
+         Install plugins required by Time4Sys (Sirius, Acceleo, EEF).
+      </description>
+   </category-def>
+   <category-def name="CTF Importer" label="CTF Importer">
+      <description>
+         Install CTF Importer plugins (LTTng format import).
       </description>
    </category-def>
    <category-def name="T4S Transformation" label="T4S Transformation"/>

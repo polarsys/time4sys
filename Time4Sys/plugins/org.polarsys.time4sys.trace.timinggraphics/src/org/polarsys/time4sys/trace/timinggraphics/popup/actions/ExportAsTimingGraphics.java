@@ -458,13 +458,13 @@ public class ExportAsTimingGraphics implements IObjectActionDelegate {
 
 		for (Slice sub : root.getSubSlices()) {
 			addGanttLine(ganttLinesElt, findBestName(root, root.getName()), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || /*sub.getKind() == SliceKind.TASK ||*/ "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}
 		for (Slice sub : root.getOwnedSubSlices()) {
 			addGanttLine(ganttLinesElt, sub.getName(), sub, "activation");
-			if (sub.getKind() == SliceKind.RESOURCE || /*sub.getKind() == SliceKind.TASK ||*/ "Package".equals(sub.getKindLabel())) {
+			if (sub.getKind() == SliceKind.RESOURCE || "Package".equals(sub.getKindLabel())) {
 				createGanttSelector(ganttsElt, sub);
 			}
 		}

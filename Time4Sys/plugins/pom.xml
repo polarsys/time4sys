@@ -85,6 +85,7 @@
 <module>org.polarsys.time4sys.schedulingtrace.model</module>
 <module>org.polarsys.time4sys.schedulingtrace.model.edit</module>
 <module>org.polarsys.time4sys.schedulingtrace.model.editor</module>
+<module>CTF</module>
 
 </modules>
 </project>
