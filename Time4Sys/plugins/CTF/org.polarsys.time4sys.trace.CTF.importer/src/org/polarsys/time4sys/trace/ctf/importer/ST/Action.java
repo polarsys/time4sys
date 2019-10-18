@@ -9,7 +9,7 @@
  *     Khouloud BOUDHHIR / Oualid KHAYATI - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.time4sys.trace.CTF.importer.ST;
+package org.polarsys.time4sys.trace.ctf.importer.ST;
 
 /**
 An implementation of the class Action

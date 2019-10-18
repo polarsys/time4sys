@@ -9,12 +9,12 @@
  *     Khouloud BOUDHHIR / Oualid KHAYATI - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.time4sys.trace.CTF.importer.ST;
+package org.polarsys.time4sys.trace.ctf.importer.ST;
 /**
-An implementation of the class CTFKernelLine: 
-*There is 2 types of CTFLine: 
-* - CTFKernelLine
-* - CTFUserLine
+An implementation of the class ctfKernelLine: 
+*There is 2 types of ctfLine: 
+* - ctfKernelLine
+* - ctfUserLine
 
 * The following features are implemented:
 * - TidPred : id of Predecessor task

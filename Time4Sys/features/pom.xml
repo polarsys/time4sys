@@ -17,6 +17,6 @@
                 <module>org.polarsys.time4sys.feature.tests</module>
                 <module>org.polarsys.time4sys.marte.transformation.feature</module>
                 <module>org.polarsys.time4sys.result.parser.feature</module>
-				<module>org.polarsys.time4sys.ctf.importer.feature</module>
+				<module>org.polarsys.time4sys.trace.ctf.importer.feature</module>
         </modules>
 </project>

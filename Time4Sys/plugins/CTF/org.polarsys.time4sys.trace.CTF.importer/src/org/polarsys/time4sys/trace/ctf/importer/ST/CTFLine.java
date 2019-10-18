@@ -9,14 +9,14 @@
  *     Khouloud BOUDHHIR / Oualid KHAYATI - initial API and implementation
  *******************************************************************************/
 
-package org.polarsys.time4sys.trace.CTF.importer.ST;
+package org.polarsys.time4sys.trace.ctf.importer.ST;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
-  An implementation of the class CTFLine
+  An implementation of the class ctfLine
  
  * The following features are implemented:
  * - Timestamp

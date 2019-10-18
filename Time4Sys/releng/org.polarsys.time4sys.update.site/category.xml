@@ -42,13 +42,13 @@
    <feature url="features/org.eclipse.zest_1.7.0.201606061308.jar" id="org.eclipse.zest" version="1.7.0.201606061308">
       <category name="T4S Dependencies"/>
    </feature>
-   <feature url="features/org.polarsys.time4sys.marte.transformation.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.marte.transformation.feature" version="1.0.0.qualifier">
+   <feature id="org.polarsys.time4sys.marte.transformation.feature">
       <category name="T4S Transformation"/>
    </feature>
-   <feature url="features/org.polarsys.time4sys.result.parser.feature_1.0.0.qualifier.jar" id="org.polarsys.time4sys.result.parser.feature" version="1.0.0.qualifier">
+   <feature id="org.polarsys.time4sys.result.parser.feature">
       <category name="Time4Sys"/>
    </feature>
-   <feature id="org.polarsys.time4sys.ctf.importer.feature">
+   <feature id="org.polarsys.time4sys.trace.ctf.importer.feature">
       <category name="CTF Importer"/>
    </feature>
    <bundle id="org.eclipse.sirius.editor">

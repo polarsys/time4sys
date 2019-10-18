@@ -10,13 +10,13 @@
         Aurelien Didier (Artal Technologies) - initial API and implementation
  -->
 <feature
-      id="org.polarsys.time4sys.ctf.importer.feature"
-      label="CTF Importer Feature"
+      id="org.polarsys.time4sys.trace.ctf.importer.feature"
+      label="ctf Importer Feature"
       version="1.0.0.qualifier"
       provider-name="Time4Sys Project">
 
    <description>
-      CTF Importer feature.
+      ctf Importer feature.
    </description>
 
    <copyright>
@@ -28,14 +28,14 @@
    </license>
 
    <plugin
-         id="org.polarsys.time4sys.ctf.importer"
+         id="org.polarsys.time4sys.trace.ctf.importer"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 		 
 	<plugin
-         id="org.polarsys.time4sys.ctf.importer.ui"
+         id="org.polarsys.time4sys.trace.ctf.importer.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

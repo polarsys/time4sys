@@ -10,8 +10,8 @@
  *******************************************************************************/
 package org.polarsys.time4sys.trace.ctf.importer.ui.popup.actions;
 /**
-An implementation of the class ImportCTFtoSTAction
-* Load CTF File
+An implementation of the class ImportctftoSTAction
+* Load ctf File
 * Generate Scheduling Trace
 * Save file trace.ST
 * @author Khouloud
@@ -33,7 +33,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
 import org.polarsys.time4sys.schedulingtrace.SchedulingTrace;
-import org.polarsys.time4sys.trace.CTF.importer.ST.TraceCTFImporterSchedulingTrace;
+import org.polarsys.time4sys.trace.ctf.importer.ST.TraceCTFImporterSchedulingTrace;
 
 //import com.linksoftware.runtimearchitect.core.console.RTAConsole;
 
