@@ -412,11 +412,13 @@ public class BehaviorScenarioServices {
 	}
 
 	public static boolean isValidETEFSelection(EObject context, List<EObject> views) {
+		boolean res= false;
 		boolean isFirst = true;
 		List<EObject> last = null;
 		BehaviorScenario first = null;
 		for (EObject select : views) {
 			if (select instanceof DEdge) {
+				res=true;
 				EObject target = ((DEdge) select).getTarget();
 				// first iteration
 				if (isFirst) {
@@ -442,7 +444,7 @@ public class BehaviorScenarioServices {
 				}
 			}
 		}
-		return true;
+		return res;
 	}
 
 	private static List<EObject> getNextSteps(EObject target) {
