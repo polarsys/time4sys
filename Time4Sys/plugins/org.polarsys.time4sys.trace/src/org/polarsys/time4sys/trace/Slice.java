@@ -269,5 +269,13 @@ public interface Slice extends EModelElement {
 	 * @generated
 	 */
 	Duration getLatestTimestamp();
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.polarsys.time4sys.trace.NFP_Duration"
+	 * @generated NOT
+	 */
+	Duration getFirstTimestamp();
 
 } // Slice

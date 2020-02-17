@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.time4sys.schedulingtrace.model/src-gen"
+    editDirectory="/org.polarsys.time4sys.schedulingtrace.model.edit/src" modelPluginID="org.polarsys.time4sys.schedulingtrace.model"
+    modelName="Schedulingtrace" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../org.polarsys.time4sys.marte/model/core_elements.genmodel#//coreelements ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.polarsys.time4sys.marte/model/gqam.genmodel#//gqam ../../org.polarsys.time4sys.marte/model/grm.genmodel#//grm ../../org.polarsys.time4sys.marte/model/hrm.genmodel#//hrm ../../org.polarsys.time4sys.marte/model/nfp_annotation.genmodel#//annotation ../../org.polarsys.time4sys.trace/model/trace.genmodel#//trace"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>schedulingtrace.ecore</foreignModel>
+  <genPackages prefix="Schedulingtrace" basePackage="org.polarsys.time4sys" disposableProviderFactory="true"
+      ecorePackage="schedulingtrace.ecore#/">
+    <genClasses ecoreClass="schedulingtrace.ecore#//Processor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Processor/tasktraces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Processor/partitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Processor/hardwareResource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Processor/jobWithMaxRT"/>
+    </genClasses>
+    <genClasses ecoreClass="schedulingtrace.ecore#//SchedulingTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//SchedulingTrace/processors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//SchedulingTrace/jobWithMaxRT"/>
+    </genClasses>
+    <genClasses ecoreClass="schedulingtrace.ecore#//TaskTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//TaskTrace/jobs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//TaskTrace/jobWithMaxRT"/>
+    </genClasses>
+    <genClasses ecoreClass="schedulingtrace.ecore#//Partition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Partition/tasktraces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Partition/schedulableResource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Partition/jobWithMaxRT"/>
+    </genClasses>
+    <genClasses ecoreClass="schedulingtrace.ecore#//Job">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Job/tasktrace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Job/functionInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Job/schedulableResource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//Job/preemptedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute schedulingtrace.ecore#//Job/id"/>
+    </genClasses>
+    <genClasses ecoreClass="schedulingtrace.ecore#//FunctionInstance">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference schedulingtrace.ecore#//FunctionInstance/job"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference schedulingtrace.ecore#//FunctionInstance/step"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute schedulingtrace.ecore#//FunctionInstance/id"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

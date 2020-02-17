@@ -14,7 +14,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.model.time4sys.Transformation;
 import org.polarsys.time4sys.transformations.NullDurationInitializer;
-import org.polarsys.time4sys.transformations.TaskSplitter;
 
 public class InitNullDurationCommandHandler extends AbstractTransformationCommandHandler<DesignModel, Transformation> {
 

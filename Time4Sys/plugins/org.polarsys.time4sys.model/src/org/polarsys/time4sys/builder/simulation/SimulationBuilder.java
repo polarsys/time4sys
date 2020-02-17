@@ -13,7 +13,6 @@ package org.polarsys.time4sys.builder.simulation;
 import org.polarsys.time4sys.builder.ProjectBuilder;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.mapping.MappingBuilder;
-import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
 import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.model.time4sys.Simulation;

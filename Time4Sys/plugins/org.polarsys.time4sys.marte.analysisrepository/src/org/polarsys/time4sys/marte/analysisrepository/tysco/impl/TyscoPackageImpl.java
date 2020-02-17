@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Deadline_Sustainability;
@@ -198,6 +199,13 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * @generated
 	 */
 	private EEnum truthTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum allOrOneEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -562,6 +570,24 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getIdentificationRule_AppliedClass() {
+		return (EAttribute)identificationRuleEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIdentificationRule_OneOrAll() {
+		return (EAttribute)identificationRuleEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTestImplementation() {
 		return testImplementationEClass;
 	}
@@ -616,7 +642,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_ToolName() {
+	public EAttribute getTestImplementation_ConsoleOutput() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -625,7 +651,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_TestedFile() {
+	public EAttribute getTestImplementation_ToolName() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -634,8 +660,26 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTestImplementation_TestResult() {
+	public EAttribute getTestImplementation_TestedFile() {
 		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTestImplementation_TestResult() {
+		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTestImplementation_ResultParserClass() {
+		return (EAttribute)testImplementationEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -985,6 +1029,15 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getAllOrOne() {
+		return allOrOneEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TyscoFactory getTyscoFactory() {
 		return (TyscoFactory)getEFactoryInstance();
 	}
@@ -1043,6 +1096,8 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEReference(identificationRuleEClass, IDENTIFICATION_RULE__EQUIVALENT_RULES);
 		createEReference(identificationRuleEClass, IDENTIFICATION_RULE__CONFLICTUAL_RULES);
 		createEAttribute(identificationRuleEClass, IDENTIFICATION_RULE__FORMAL_EXPRESSION);
+		createEAttribute(identificationRuleEClass, IDENTIFICATION_RULE__APPLIED_CLASS);
+		createEAttribute(identificationRuleEClass, IDENTIFICATION_RULE__ONE_OR_ALL);
 
 		testImplementationEClass = createEClass(TEST_IMPLEMENTATION);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__ID);
@@ -1050,9 +1105,11 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__DESCRIPTION);
 		createEReference(testImplementationEClass, TEST_IMPLEMENTATION__TRANSFORMATION);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH);
+		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__CONSOLE_OUTPUT);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TOOL_NAME);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TESTED_FILE);
 		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__TEST_RESULT);
+		createEAttribute(testImplementationEClass, TEST_IMPLEMENTATION__RESULT_PARSER_CLASS);
 
 		testCharacteristicTypeEClass = createEClass(TEST_CHARACTERISTIC_TYPE);
 		createEAttribute(testCharacteristicTypeEClass, TEST_CHARACTERISTIC_TYPE__COMMENT);
@@ -1106,6 +1163,7 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		evaluationResultTypeEEnum = createEEnum(EVALUATION_RESULT_TYPE);
 		junctionTypeEEnum = createEEnum(JUNCTION_TYPE);
 		truthTypeEEnum = createEEnum(TRUTH_TYPE);
+		allOrOneEEnum = createEEnum(ALL_OR_ONE);
 	}
 
 	/**
@@ -1181,6 +1239,8 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEReference(getIdentificationRule_EquivalentRules(), this.getIdentificationRule(), null, "equivalentRules", null, 0, -1, IdentificationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIdentificationRule_ConflictualRules(), this.getIdentificationRule(), null, "conflictualRules", null, 0, -1, IdentificationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIdentificationRule_FormalExpression(), ecorePackage.getEString(), "formalExpression", null, 0, 1, IdentificationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIdentificationRule_AppliedClass(), ecorePackage.getEString(), "appliedClass", null, 0, 1, IdentificationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIdentificationRule_OneOrAll(), this.getAllOrOne(), "oneOrAll", null, 0, 1, IdentificationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testImplementationEClass, TestImplementation.class, "TestImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestImplementation_Id(), ecorePackage.getEInt(), "id", null, 1, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1188,9 +1248,11 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		initEAttribute(getTestImplementation_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestImplementation_Transformation(), this.getTransformation(), this.getTransformation_TestImplementation(), "transformation", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_AnalysisExecPath(), ecorePackage.getEString(), "analysisExecPath", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestImplementation_ConsoleOutput(), ecorePackage.getEBoolean(), "consoleOutput", "true", 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_ToolName(), ecorePackage.getEString(), "toolName", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestedFile(), ecorePackage.getEString(), "testedFile", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestImplementation_TestResult(), ecorePackage.getEString(), "testResult", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestImplementation_ResultParserClass(), ecorePackage.getEString(), "resultParserClass", null, 0, 1, TestImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testCharacteristicTypeEClass, TestCharacteristicType.class, "TestCharacteristicType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTestCharacteristicType_Comment(), ecorePackage.getEString(), "comment", null, 0, 1, TestCharacteristicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1255,6 +1317,10 @@ public class TyscoPackageImpl extends EPackageImpl implements TyscoPackage {
 		addEEnumLiteral(truthTypeEEnum, TruthType.TRUE);
 		addEEnumLiteral(truthTypeEEnum, TruthType.FALSE);
 		addEEnumLiteral(truthTypeEEnum, TruthType.NEUTRAL);
+
+		initEEnum(allOrOneEEnum, AllOrOne.class, "AllOrOne");
+		addEEnumLiteral(allOrOneEEnum, AllOrOne.FOR_ALL);
+		addEEnumLiteral(allOrOneEEnum, AllOrOne.EXIST_ONE);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -18,6 +18,9 @@
         eType="#//Transformation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="simulations" upperBound="-1"
         eType="#//Simulation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="results" upperBound="-1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.results/model/results.ecore#//ResultSetContainer"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transformation" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//ModelElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="result" lowerBound="1"
@@ -37,5 +40,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="trace" lowerBound="1" eType="ecore:EClass ../../org.polarsys.time4sys.trace/model/trace.ecore#//Trace"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisResult" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//ModelElement">
+    <eOperations name="getDesignModel" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.mapping/model/mapping.ecore#//Mapping"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="analysis" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.results/model/results.ecore#//ResultSetContainer"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

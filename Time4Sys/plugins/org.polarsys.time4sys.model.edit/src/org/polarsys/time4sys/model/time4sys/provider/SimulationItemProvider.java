@@ -26,6 +26,7 @@ import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.marte.nfp.coreelements.provider.ModelElementItemProvider;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
+import org.polarsys.time4sys.schedulingtrace.SchedulingtraceFactory;
 import org.polarsys.time4sys.trace.TraceFactory;
 
 /**
@@ -203,6 +204,11 @@ public class SimulationItemProvider
 			(createChildParameter
 				(Time4sysPackage.Literals.SIMULATION__MAPPING,
 				 MappingFactory.eINSTANCE.createMapping()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.SIMULATION__TRACE,
+				 SchedulingtraceFactory.eINSTANCE.createSchedulingTrace()));
 
 		newChildDescriptors.add
 			(createChildParameter

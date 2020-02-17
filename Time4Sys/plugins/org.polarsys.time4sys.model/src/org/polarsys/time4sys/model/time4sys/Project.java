@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Mapping;
+import org.polarsys.time4sys.results.results.ResultSetContainer;
 import org.polarsys.time4sys.trace.Trace;
 
 /**
@@ -34,6 +35,7 @@ import org.polarsys.time4sys.trace.Trace;
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getDerivations <em>Derivations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getTransformations <em>Transformations</em>}</li>
  *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getSimulations <em>Simulations</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.model.time4sys.Project#getResults <em>Results</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject()
@@ -173,5 +175,21 @@ public interface Project extends EObject {
 	 * @generated
 	 */
 	EList<Simulation> getSimulations();
+
+	/**
+	 * Returns the value of the '<em><b>Results</b></em>' containment reference list.
+	 * The list contents are of type {@link org.polarsys.time4sys.results.results.ResultSetContainer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Results</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Results</em>' containment reference list.
+	 * @see org.polarsys.time4sys.model.time4sys.Time4sysPackage#getProject_Results()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ResultSetContainer> getResults();
 
 } // Project

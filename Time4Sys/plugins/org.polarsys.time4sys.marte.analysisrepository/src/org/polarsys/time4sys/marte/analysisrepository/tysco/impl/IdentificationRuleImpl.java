@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
 
@@ -39,6 +40,8 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.IdentificationRuleImpl#getEquivalentRules <em>Equivalent Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.IdentificationRuleImpl#getConflictualRules <em>Conflictual Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.IdentificationRuleImpl#getFormalExpression <em>Formal Expression</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.IdentificationRuleImpl#getAppliedClass <em>Applied Class</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.IdentificationRuleImpl#getOneOrAll <em>One Or All</em>}</li>
  * </ul>
  *
  * @generated
@@ -153,6 +156,46 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String formalExpression = FORMAL_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAppliedClass() <em>Applied Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppliedClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String APPLIED_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAppliedClass() <em>Applied Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAppliedClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String appliedClass = APPLIED_CLASS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOneOrAll() <em>One Or All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOneOrAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final AllOrOne ONE_OR_ALL_EDEFAULT = AllOrOne.FOR_ALL;
+
+	/**
+	 * The cached value of the '{@link #getOneOrAll() <em>One Or All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOneOrAll()
+	 * @generated
+	 * @ordered
+	 */
+	protected AllOrOne oneOrAll = ONE_OR_ALL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -298,6 +341,48 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getAppliedClass() {
+		return appliedClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAppliedClass(String newAppliedClass) {
+		String oldAppliedClass = appliedClass;
+		appliedClass = newAppliedClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS, oldAppliedClass, appliedClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AllOrOne getOneOrAll() {
+		return oneOrAll;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOneOrAll(AllOrOne newOneOrAll) {
+		AllOrOne oldOneOrAll = oneOrAll;
+		oneOrAll = newOneOrAll == null ? ONE_OR_ALL_EDEFAULT : newOneOrAll;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL, oldOneOrAll, oneOrAll));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -315,6 +400,10 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 				return getConflictualRules();
 			case TyscoPackage.IDENTIFICATION_RULE__FORMAL_EXPRESSION:
 				return getFormalExpression();
+			case TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS:
+				return getAppliedClass();
+			case TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL:
+				return getOneOrAll();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,6 +441,12 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.IDENTIFICATION_RULE__FORMAL_EXPRESSION:
 				setFormalExpression((String)newValue);
 				return;
+			case TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS:
+				setAppliedClass((String)newValue);
+				return;
+			case TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL:
+				setOneOrAll((AllOrOne)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -385,6 +480,12 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.IDENTIFICATION_RULE__FORMAL_EXPRESSION:
 				setFormalExpression(FORMAL_EXPRESSION_EDEFAULT);
 				return;
+			case TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS:
+				setAppliedClass(APPLIED_CLASS_EDEFAULT);
+				return;
+			case TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL:
+				setOneOrAll(ONE_OR_ALL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -411,6 +512,10 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 				return conflictualRules != null && !conflictualRules.isEmpty();
 			case TyscoPackage.IDENTIFICATION_RULE__FORMAL_EXPRESSION:
 				return FORMAL_EXPRESSION_EDEFAULT == null ? formalExpression != null : !FORMAL_EXPRESSION_EDEFAULT.equals(formalExpression);
+			case TyscoPackage.IDENTIFICATION_RULE__APPLIED_CLASS:
+				return APPLIED_CLASS_EDEFAULT == null ? appliedClass != null : !APPLIED_CLASS_EDEFAULT.equals(appliedClass);
+			case TyscoPackage.IDENTIFICATION_RULE__ONE_OR_ALL:
+				return oneOrAll != ONE_OR_ALL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -433,6 +538,10 @@ public class IdentificationRuleImpl extends MinimalEObjectImpl.Container impleme
 		result.append(content);
 		result.append(", formalExpression: ");
 		result.append(formalExpression);
+		result.append(", appliedClass: ");
+		result.append(appliedClass);
+		result.append(", oneOrAll: ");
+		result.append(oneOrAll);
 		result.append(')');
 		return result.toString();
 	}

@@ -32,10 +32,6 @@ import org.polarsys.time4sys.marte.grm.ResourcePort;
 import org.polarsys.time4sys.marte.grm.ResourceService;
 import org.polarsys.time4sys.marte.grm.StorageResource;
 import org.polarsys.time4sys.marte.grm.TimingResource;
-import org.polarsys.time4sys.marte.hrm.*;
-import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
-import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
-import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 import org.polarsys.time4sys.marte.hrm.EnvCondition;
 import org.polarsys.time4sys.marte.hrm.FirmwareArchitecture;
 import org.polarsys.time4sys.marte.hrm.HardwareActuator;
@@ -84,6 +80,9 @@ import org.polarsys.time4sys.marte.hrm.HardwareTimingResource;
 import org.polarsys.time4sys.marte.hrm.HardwareWatchdog;
 import org.polarsys.time4sys.marte.hrm.HardwareWire;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
+import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.NamedElement;
+import org.polarsys.time4sys.marte.nfp.coreelements.PackageableElement;
 
 /**
  * <!-- begin-user-doc -->

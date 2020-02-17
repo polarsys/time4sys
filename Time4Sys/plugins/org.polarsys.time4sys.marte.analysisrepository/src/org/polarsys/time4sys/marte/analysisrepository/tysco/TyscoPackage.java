@@ -417,13 +417,31 @@ public interface TyscoPackage extends EPackage {
 	int IDENTIFICATION_RULE__FORMAL_EXPRESSION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Applied Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTIFICATION_RULE__APPLIED_CLASS = 7;
+
+	/**
+	 * The feature id for the '<em><b>One Or All</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDENTIFICATION_RULE__ONE_OR_ALL = 8;
+
+	/**
 	 * The number of structural features of the '<em>Identification Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IDENTIFICATION_RULE_FEATURE_COUNT = 7;
+	int IDENTIFICATION_RULE_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Identification Rule</em>' class.
@@ -490,13 +508,22 @@ public interface TyscoPackage extends EPackage {
 	int TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH = 4;
 
 	/**
+	 * The feature id for the '<em><b>Console Output</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__CONSOLE_OUTPUT = 5;
+
+	/**
 	 * The feature id for the '<em><b>Tool Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TOOL_NAME = 5;
+	int TEST_IMPLEMENTATION__TOOL_NAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Tested File</b></em>' attribute.
@@ -505,7 +532,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TESTED_FILE = 6;
+	int TEST_IMPLEMENTATION__TESTED_FILE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Test Result</b></em>' attribute.
@@ -514,7 +541,16 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION__TEST_RESULT = 7;
+	int TEST_IMPLEMENTATION__TEST_RESULT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Result Parser Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Test Implementation</em>' class.
@@ -523,7 +559,7 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_IMPLEMENTATION_FEATURE_COUNT = 8;
+	int TEST_IMPLEMENTATION_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Test Implementation</em>' class.
@@ -1272,6 +1308,17 @@ public interface TyscoPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne <em>All Or One</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getAllOrOne()
+	 * @generated
+	 */
+	int ALL_OR_ONE = 21;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository <em>Analysis Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1620,6 +1667,28 @@ public interface TyscoPackage extends EPackage {
 	EAttribute getIdentificationRule_FormalExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getAppliedClass <em>Applied Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Applied Class</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getAppliedClass()
+	 * @see #getIdentificationRule()
+	 * @generated
+	 */
+	EAttribute getIdentificationRule_AppliedClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getOneOrAll <em>One Or All</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>One Or All</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getOneOrAll()
+	 * @see #getIdentificationRule()
+	 * @generated
+	 */
+	EAttribute getIdentificationRule_OneOrAll();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation <em>Test Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1685,6 +1754,17 @@ public interface TyscoPackage extends EPackage {
 	EAttribute getTestImplementation_AnalysisExecPath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput <em>Console Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Console Output</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_ConsoleOutput();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getToolName <em>Tool Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1716,6 +1796,17 @@ public interface TyscoPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTestImplementation_TestResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass <em>Result Parser Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Result Parser Class</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass()
+	 * @see #getTestImplementation()
+	 * @generated
+	 */
+	EAttribute getTestImplementation_ResultParserClass();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestCharacteristicType <em>Test Characteristic Type</em>}'.
@@ -2120,6 +2211,16 @@ public interface TyscoPackage extends EPackage {
 	EEnum getTruthType();
 
 	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne <em>All Or One</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>All Or One</em>'.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne
+	 * @generated
+	 */
+	EEnum getAllOrOne();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2407,6 +2508,22 @@ public interface TyscoPackage extends EPackage {
 		EAttribute IDENTIFICATION_RULE__FORMAL_EXPRESSION = eINSTANCE.getIdentificationRule_FormalExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>Applied Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IDENTIFICATION_RULE__APPLIED_CLASS = eINSTANCE.getIdentificationRule_AppliedClass();
+
+		/**
+		 * The meta object literal for the '<em><b>One Or All</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IDENTIFICATION_RULE__ONE_OR_ALL = eINSTANCE.getIdentificationRule_OneOrAll();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl <em>Test Implementation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2457,6 +2574,14 @@ public interface TyscoPackage extends EPackage {
 		EAttribute TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH = eINSTANCE.getTestImplementation_AnalysisExecPath();
 
 		/**
+		 * The meta object literal for the '<em><b>Console Output</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__CONSOLE_OUTPUT = eINSTANCE.getTestImplementation_ConsoleOutput();
+
+		/**
 		 * The meta object literal for the '<em><b>Tool Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2479,6 +2604,14 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEST_IMPLEMENTATION__TEST_RESULT = eINSTANCE.getTestImplementation_TestResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Result Parser Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_IMPLEMENTATION__RESULT_PARSER_CLASS = eINSTANCE.getTestImplementation_ResultParserClass();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestCharacteristicTypeImpl <em>Test Characteristic Type</em>}' class.
@@ -2815,6 +2948,16 @@ public interface TyscoPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TRUTH_TYPE = eINSTANCE.getTruthType();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne <em>All Or One</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne
+		 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TyscoPackageImpl#getAllOrOne()
+		 * @generated
+		 */
+		EEnum ALL_OR_ONE = eINSTANCE.getAllOrOne();
 
 	}
 

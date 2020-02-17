@@ -15,15 +15,11 @@ package org.polarsys.time4sys.marte.gqam.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.LaxityKind;
 import org.polarsys.time4sys.marte.gqam.TimedObserver;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.impl.ConstraintImpl;
 
 /**

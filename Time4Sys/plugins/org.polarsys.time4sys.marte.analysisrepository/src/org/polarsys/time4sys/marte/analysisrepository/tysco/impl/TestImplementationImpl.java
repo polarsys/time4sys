@@ -36,9 +36,11 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTransformation <em>Transformation</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getAnalysisExecPath <em>Analysis Exec Path</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#isConsoleOutput <em>Console Output</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getToolName <em>Tool Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestedFile <em>Tested File</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getTestResult <em>Test Result</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.impl.TestImplementationImpl#getResultParserClass <em>Result Parser Class</em>}</li>
  * </ul>
  *
  * @generated
@@ -135,6 +137,26 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	protected String analysisExecPath = ANALYSIS_EXEC_PATH_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isConsoleOutput() <em>Console Output</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConsoleOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CONSOLE_OUTPUT_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isConsoleOutput() <em>Console Output</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isConsoleOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean consoleOutput = CONSOLE_OUTPUT_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getToolName() <em>Tool Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +215,26 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String testResult = TEST_RESULT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getResultParserClass() <em>Result Parser Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultParserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RESULT_PARSER_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getResultParserClass() <em>Result Parser Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResultParserClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String resultParserClass = RESULT_PARSER_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -345,6 +387,27 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isConsoleOutput() {
+		return consoleOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsoleOutput(boolean newConsoleOutput) {
+		boolean oldConsoleOutput = consoleOutput;
+		consoleOutput = newConsoleOutput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT, oldConsoleOutput, consoleOutput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getToolName() {
 		return toolName;
 	}
@@ -408,6 +471,27 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResultParserClass() {
+		return resultParserClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResultParserClass(String newResultParserClass) {
+		String oldResultParserClass = resultParserClass;
+		resultParserClass = newResultParserClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS, oldResultParserClass, resultParserClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -451,12 +535,16 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return getTransformation();
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
 				return getAnalysisExecPath();
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
+				return isConsoleOutput();
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				return getToolName();
 			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
 				return getTestedFile();
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				return getTestResult();
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				return getResultParserClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -484,6 +572,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
 				setAnalysisExecPath((String)newValue);
 				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
+				setConsoleOutput((Boolean)newValue);
+				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				setToolName((String)newValue);
 				return;
@@ -492,6 +583,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				setTestResult((String)newValue);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				setResultParserClass((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -520,6 +614,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
 				setAnalysisExecPath(ANALYSIS_EXEC_PATH_EDEFAULT);
 				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
+				setConsoleOutput(CONSOLE_OUTPUT_EDEFAULT);
+				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				setToolName(TOOL_NAME_EDEFAULT);
 				return;
@@ -528,6 +625,9 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				setTestResult(TEST_RESULT_EDEFAULT);
+				return;
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				setResultParserClass(RESULT_PARSER_CLASS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -551,12 +651,16 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 				return transformation != null;
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
 				return ANALYSIS_EXEC_PATH_EDEFAULT == null ? analysisExecPath != null : !ANALYSIS_EXEC_PATH_EDEFAULT.equals(analysisExecPath);
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
+				return consoleOutput != CONSOLE_OUTPUT_EDEFAULT;
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 				return TOOL_NAME_EDEFAULT == null ? toolName != null : !TOOL_NAME_EDEFAULT.equals(toolName);
 			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
 				return TESTED_FILE_EDEFAULT == null ? testedFile != null : !TESTED_FILE_EDEFAULT.equals(testedFile);
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
 				return TEST_RESULT_EDEFAULT == null ? testResult != null : !TEST_RESULT_EDEFAULT.equals(testResult);
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
+				return RESULT_PARSER_CLASS_EDEFAULT == null ? resultParserClass != null : !RESULT_PARSER_CLASS_EDEFAULT.equals(resultParserClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -579,12 +683,16 @@ public class TestImplementationImpl extends MinimalEObjectImpl.Container impleme
 		result.append(description);
 		result.append(", analysisExecPath: ");
 		result.append(analysisExecPath);
+		result.append(", consoleOutput: ");
+		result.append(consoleOutput);
 		result.append(", toolName: ");
 		result.append(toolName);
 		result.append(", testedFile: ");
 		result.append(testedFile);
 		result.append(", testResult: ");
 		result.append(testResult);
+		result.append(", resultParserClass: ");
+		result.append(resultParserClass);
 		result.append(')');
 		return result.toString();
 	}

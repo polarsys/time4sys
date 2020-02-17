@@ -66,6 +66,7 @@
 <module>../../plugins</module>
 <module>../../releng</module>
 <module>../../features</module>
+<module>../../transfos</module>
 <module>../../tests</module>
 </modules>
 </project>

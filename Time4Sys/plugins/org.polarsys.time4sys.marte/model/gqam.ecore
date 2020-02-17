@@ -15,7 +15,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jitter" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//NFP_Duration"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Reference"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorScenario" eSuperTypes="core_elements.ecore#//NamedElement #//FlowInvolvedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="steps" upperBound="-1"

@@ -74,9 +74,11 @@ public class TestImplementationItemProvider
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addAnalysisExecPathPropertyDescriptor(object);
+			addConsoleOutputPropertyDescriptor(object);
 			addToolNamePropertyDescriptor(object);
 			addTestedFilePropertyDescriptor(object);
 			addTestResultPropertyDescriptor(object);
+			addResultParserClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -170,6 +172,28 @@ public class TestImplementationItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Console Output feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConsoleOutputPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_consoleOutput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_consoleOutput_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__CONSOLE_OUTPUT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Tool Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +251,28 @@ public class TestImplementationItemProvider
 				 getString("_UI_TestImplementation_testResult_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_testResult_feature", "_UI_TestImplementation_type"),
 				 TyscoPackage.Literals.TEST_IMPLEMENTATION__TEST_RESULT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Result Parser Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResultParserClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TestImplementation_resultParserClass_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TestImplementation_resultParserClass_feature", "_UI_TestImplementation_type"),
+				 TyscoPackage.Literals.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS,
 				 true,
 				 false,
 				 false,
@@ -307,9 +353,11 @@ public class TestImplementationItemProvider
 			case TyscoPackage.TEST_IMPLEMENTATION__NAME:
 			case TyscoPackage.TEST_IMPLEMENTATION__DESCRIPTION:
 			case TyscoPackage.TEST_IMPLEMENTATION__ANALYSIS_EXEC_PATH:
+			case TyscoPackage.TEST_IMPLEMENTATION__CONSOLE_OUTPUT:
 			case TyscoPackage.TEST_IMPLEMENTATION__TOOL_NAME:
 			case TyscoPackage.TEST_IMPLEMENTATION__TESTED_FILE:
 			case TyscoPackage.TEST_IMPLEMENTATION__TEST_RESULT:
+			case TyscoPackage.TEST_IMPLEMENTATION__RESULT_PARSER_CLASS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TyscoPackage.TEST_IMPLEMENTATION__TRANSFORMATION:

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.polarsys.time4sys.builder.design.Annotations;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
 import org.polarsys.time4sys.builder.design.TaskBuilder;
-import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
 import org.polarsys.time4sys.marte.grm.FixedPriorityParameters;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
 import org.polarsys.time4sys.marte.grm.GrmPackage;

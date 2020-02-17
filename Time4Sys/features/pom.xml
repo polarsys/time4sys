@@ -11,10 +11,12 @@
   <version>1.0.0-SNAPSHOT</version>
  <relativePath>../releng/org.polarsys.time4sys.parent/pom.xml</relativePath>
  </parent>
-
         <modules>
                 <module>org.polarsys.time4sys.feature</module>
                 <module>org.polarsys.time4sys.marte.feature</module>
                 <module>org.polarsys.time4sys.feature.tests</module>
+                <module>org.polarsys.time4sys.marte.transformation.feature</module>
+                <module>org.polarsys.time4sys.result.parser.feature</module>
+				<module>org.polarsys.time4sys.trace.ctf.importer.feature</module>
         </modules>
 </project>

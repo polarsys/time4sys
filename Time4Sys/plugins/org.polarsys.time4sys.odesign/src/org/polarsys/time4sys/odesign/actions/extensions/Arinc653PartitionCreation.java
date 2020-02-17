@@ -16,7 +16,6 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
-import org.polarsys.time4sys.builder.design.arinc653.Arinc653MIFBuilder;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 import org.polarsys.time4sys.odesign.service.BehaviorScenarioServices;
 

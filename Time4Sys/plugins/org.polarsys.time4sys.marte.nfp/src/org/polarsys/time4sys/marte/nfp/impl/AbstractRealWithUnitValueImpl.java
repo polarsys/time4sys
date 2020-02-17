@@ -17,7 +17,6 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.polarsys.time4sys.marte.nfp.Dimension;
-import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.ValueWithUnit;
 
 /**

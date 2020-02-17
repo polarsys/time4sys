@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.*;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Deadline_Sustainability;
@@ -157,6 +158,8 @@ public class TyscoValidator extends EObjectValidator {
 				return validateJunctionType((JunctionType)value, diagnostics, context);
 			case TyscoPackage.TRUTH_TYPE:
 				return validateTruthType((TruthType)value, diagnostics, context);
+			case TyscoPackage.ALL_OR_ONE:
+				return validateAllOrOne((AllOrOne)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -767,6 +770,15 @@ public class TyscoValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateTruthType(TruthType truthType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAllOrOne(AllOrOne allOrOne, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

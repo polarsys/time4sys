@@ -12,7 +12,6 @@ package org.polarsys.time4sys.builder.design;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Predicate;
 
 import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;

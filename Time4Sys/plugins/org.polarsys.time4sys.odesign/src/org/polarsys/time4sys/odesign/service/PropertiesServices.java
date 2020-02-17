@@ -23,7 +23,6 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.grm.GrmPackage;
 import org.polarsys.time4sys.marte.hrm.HrmPackage;
 import org.polarsys.time4sys.marte.nfp.NfpPackage;
-import org.polarsys.time4sys.marte.sam.SamPackage;
 import org.polarsys.time4sys.marte.srm.SrmPackage;
 
 import com.google.common.collect.ImmutableList;

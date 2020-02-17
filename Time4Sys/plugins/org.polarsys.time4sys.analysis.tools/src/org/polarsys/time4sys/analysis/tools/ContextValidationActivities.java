@@ -11,9 +11,7 @@
 package org.polarsys.time4sys.analysis.tools;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;
 import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
@@ -21,18 +19,10 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.validation.AbstractModelConstraint;
-import org.eclipse.emf.validation.internal.EMFModelValidationPlugin;
-import org.eclipse.emf.validation.internal.service.AbstractGetConstraintsOperation;
 import org.eclipse.emf.validation.model.ConstraintSeverity;
-import org.eclipse.emf.validation.model.EvaluationMode;
-import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
-import org.eclipse.emf.validation.service.IConstraintDescriptor;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.osgi.framework.Bundle;

@@ -12,7 +12,6 @@ package org.polarsys.time4sys.simulation.commands;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.polarsys.time4sys.model.time4sys.Project;
 
 public abstract class AutoRecordingCommand extends RecordingCommand {
 

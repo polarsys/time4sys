@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.polarsys.time4sys.marte.analysisrepository.tysco.*;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.AnalysisRepository;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.ContextModel;
 import org.polarsys.time4sys.marte.analysisrepository.tysco.Deadline_Sustainability;
@@ -118,6 +119,8 @@ public class TyscoFactoryImpl extends EFactoryImpl implements TyscoFactory {
 				return createJunctionTypeFromString(eDataType, initialValue);
 			case TyscoPackage.TRUTH_TYPE:
 				return createTruthTypeFromString(eDataType, initialValue);
+			case TyscoPackage.ALL_OR_ONE:
+				return createAllOrOneFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -137,6 +140,8 @@ public class TyscoFactoryImpl extends EFactoryImpl implements TyscoFactory {
 				return convertJunctionTypeToString(eDataType, instanceValue);
 			case TyscoPackage.TRUTH_TYPE:
 				return convertTruthTypeToString(eDataType, instanceValue);
+			case TyscoPackage.ALL_OR_ONE:
+				return convertAllOrOneToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -349,6 +354,26 @@ public class TyscoFactoryImpl extends EFactoryImpl implements TyscoFactory {
 	 * @generated
 	 */
 	public String convertTruthTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AllOrOne createAllOrOneFromString(EDataType eDataType, String initialValue) {
+		AllOrOne result = AllOrOne.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAllOrOneToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

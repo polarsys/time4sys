@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
+import org.polarsys.time4sys.model.time4sys.*;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
@@ -101,6 +102,14 @@ public class Time4sysSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Time4sysPackage.ANALYSIS_RESULT: {
+				AnalysisResult analysisResult = (AnalysisResult)theEObject;
+				T result = caseAnalysisResult(analysisResult);
+				if (result == null) result = caseModelElement(analysisResult);
+				if (result == null) result = caseEModelElement(analysisResult);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -147,6 +156,21 @@ public class Time4sysSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSimulation(Simulation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Analysis Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Analysis Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnalysisResult(AnalysisResult object) {
 		return null;
 	}
 

@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.polarsys.time4sys.builder;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,15 +21,11 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.polarsys.time4sys.builder.design.DesignBuilder;
-import org.polarsys.time4sys.builder.design.ProcessorBuilder;
 import org.polarsys.time4sys.builder.simulation.SimulationBuilder;
 import org.polarsys.time4sys.design.DesignFactory;
 import org.polarsys.time4sys.design.DesignModel;
-import org.polarsys.time4sys.design.DesignPackage;
-import org.polarsys.time4sys.design.impl.DesignPackageImpl;
 import org.polarsys.time4sys.marte.gqam.GqamFactory;
 import org.polarsys.time4sys.marte.grm.GrmFactory;
-import org.polarsys.time4sys.marte.hrm.HardwareProcessor;
 import org.polarsys.time4sys.marte.hrm.HrmFactory;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
 import org.polarsys.time4sys.marte.srm.SrmFactory;

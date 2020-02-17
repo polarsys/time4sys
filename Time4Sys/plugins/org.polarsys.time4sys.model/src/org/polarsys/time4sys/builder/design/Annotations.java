@@ -20,9 +20,6 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.polarsys.time4sys.builder.design.arinc653.Arinc653Builder;
-import org.polarsys.time4sys.marte.grm.TableDrivenSchedule;
-import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 
 /**
  * @author loic

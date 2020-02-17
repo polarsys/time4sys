@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getEquivalentRules <em>Equivalent Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getConflictualRules <em>Conflictual Rules</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getFormalExpression <em>Formal Expression</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getAppliedClass <em>Applied Class</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getOneOrAll <em>One Or All</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getIdentificationRule()
@@ -190,5 +192,60 @@ public interface IdentificationRule extends EObject {
 	 * @generated
 	 */
 	void setFormalExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Applied Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Applied Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Applied Class</em>' attribute.
+	 * @see #setAppliedClass(String)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getIdentificationRule_AppliedClass()
+	 * @model
+	 * @generated
+	 */
+	String getAppliedClass();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getAppliedClass <em>Applied Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Applied Class</em>' attribute.
+	 * @see #getAppliedClass()
+	 * @generated
+	 */
+	void setAppliedClass(String value);
+
+	/**
+	 * Returns the value of the '<em><b>One Or All</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>One Or All</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>One Or All</em>' attribute.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne
+	 * @see #setOneOrAll(AllOrOne)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getIdentificationRule_OneOrAll()
+	 * @model
+	 * @generated
+	 */
+	AllOrOne getOneOrAll();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.IdentificationRule#getOneOrAll <em>One Or All</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>One Or All</em>' attribute.
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.AllOrOne
+	 * @see #getOneOrAll()
+	 * @generated
+	 */
+	void setOneOrAll(AllOrOne value);
 
 } // IdentificationRule

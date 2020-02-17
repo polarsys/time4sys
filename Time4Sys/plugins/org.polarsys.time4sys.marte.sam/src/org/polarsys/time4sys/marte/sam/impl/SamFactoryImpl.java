@@ -16,14 +16,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
-
-import org.polarsys.time4sys.marte.sam.*;
+import org.polarsys.time4sys.marte.sam.EndToEndFlow;
+import org.polarsys.time4sys.marte.sam.SamFactory;
+import org.polarsys.time4sys.marte.sam.SamPackage;
+import org.polarsys.time4sys.marte.sam.SchedulingObserver;
 
 /**
  * <!-- begin-user-doc -->

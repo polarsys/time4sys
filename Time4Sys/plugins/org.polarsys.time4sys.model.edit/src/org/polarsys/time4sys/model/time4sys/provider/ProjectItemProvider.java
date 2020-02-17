@@ -35,6 +35,8 @@ import org.polarsys.time4sys.mapping.MappingFactory;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
+import org.polarsys.time4sys.results.results.ResultsFactory;
+import org.polarsys.time4sys.schedulingtrace.SchedulingtraceFactory;
 import org.polarsys.time4sys.trace.TraceFactory;
 
 /**
@@ -111,6 +113,7 @@ public class ProjectItemProvider
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__DERIVATIONS);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__TRANSFORMATIONS);
 			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__SIMULATIONS);
+			childrenFeatures.add(Time4sysPackage.Literals.PROJECT__RESULTS);
 		}
 		return childrenFeatures;
 	}
@@ -175,6 +178,7 @@ public class ProjectItemProvider
 			case Time4sysPackage.PROJECT__DERIVATIONS:
 			case Time4sysPackage.PROJECT__TRANSFORMATIONS:
 			case Time4sysPackage.PROJECT__SIMULATIONS:
+			case Time4sysPackage.PROJECT__RESULTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -205,6 +209,11 @@ public class ProjectItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(Time4sysPackage.Literals.PROJECT__TRACES,
+				 SchedulingtraceFactory.eINSTANCE.createSchedulingTrace()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.PROJECT__TRACES,
 				 TraceFactory.eINSTANCE.createTrace()));
 
 		newChildDescriptors.add
@@ -221,6 +230,16 @@ public class ProjectItemProvider
 			(createChildParameter
 				(Time4sysPackage.Literals.PROJECT__SIMULATIONS,
 				 Time4sysFactory.eINSTANCE.createSimulation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.PROJECT__RESULTS,
+				 ResultsFactory.eINSTANCE.createResultSetContainer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Time4sysPackage.Literals.PROJECT__RESULTS,
+				 ResultsFactory.eINSTANCE.createResultSetContainer()));
 	}
 
 	/**

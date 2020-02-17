@@ -13,9 +13,7 @@
 package org.polarsys.time4sys.marte.nfp.coreelements.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 import org.polarsys.time4sys.marte.nfp.coreelements.ModelElement;
 

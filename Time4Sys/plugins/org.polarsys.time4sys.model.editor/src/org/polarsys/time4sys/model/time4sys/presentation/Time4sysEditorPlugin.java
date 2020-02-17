@@ -18,12 +18,15 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.polarsys.time4sys.design.provider.DesignEditPlugin;
 import org.polarsys.time4sys.mapping.provider.MappingEditPlugin;
-import org.polarsys.time4sys.marte.gqam.provider.AllocEditPlugin;
 import org.polarsys.time4sys.marte.gqam.provider.GqamEditPlugin;
 import org.polarsys.time4sys.marte.grm.provider.GrmEditPlugin;
+import org.polarsys.time4sys.marte.hrm.provider.HrmEditPlugin;
 import org.polarsys.time4sys.marte.nfp.annotation.provider.Nfp_AnnotationEditPlugin;
 import org.polarsys.time4sys.marte.nfp.coreelements.provider.CoreElementsEditPlugin;
+import org.polarsys.time4sys.marte.nfp.provider.NfpEditPlugin;
 import org.polarsys.time4sys.marte.sam.provider.SamEditPlugin;
+import org.polarsys.time4sys.results.results.provider.ResultsEditPlugin;
+import org.polarsys.time4sys.schedulingtrace.provider.SchedulingtraceEditPlugin;
 import org.polarsys.time4sys.trace.provider.TraceEditPlugin;
 
 /**
@@ -58,16 +61,19 @@ public final class Time4sysEditorPlugin extends EMFPlugin {
 	public Time4sysEditorPlugin() {
 		super
 			(new ResourceLocator [] {
-				AllocEditPlugin.INSTANCE,
+				CoreElementsEditPlugin.INSTANCE,
 				DesignEditPlugin.INSTANCE,
+				EcoreEditPlugin.INSTANCE,
 				GqamEditPlugin.INSTANCE,
 				GrmEditPlugin.INSTANCE,
+				HrmEditPlugin.INSTANCE,
 				MappingEditPlugin.INSTANCE,
-				TraceEditPlugin.INSTANCE,
-				CoreElementsEditPlugin.INSTANCE,
-				EcoreEditPlugin.INSTANCE,
 				Nfp_AnnotationEditPlugin.INSTANCE,
+				NfpEditPlugin.INSTANCE,
+				ResultsEditPlugin.INSTANCE,
 				SamEditPlugin.INSTANCE,
+				SchedulingtraceEditPlugin.INSTANCE,
+				TraceEditPlugin.INSTANCE,
 			});
 	}
 

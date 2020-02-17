@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************************************
+                       Schema templates for XML Mast Traces File
+                				  (Version MAST 1.3.7 )
+
+			                	        (MAST Project)
+
+	By:   Patricia Lopez Martinez (lopezpa@unican.es)
+            Jose M. Drake Moyano    (drakej@unican.es)
+
+    Grupo de Computadores y Tiempo Real (CTR)
+    Universidad de Cantabria
+
+	Santander, 8-Feb-05
+********************************************************************************************************-->
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://mast.unican.es/xmlmast/xmlmast_1_4/Mast_Trace"
+	xmlns:mast_trace="http://mast.unican.es/xmlmast/xmlmast_1_4/Mast_Trace" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified">
+
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType name="Date_Time">
+		<xs:restriction base="xs:dateTime"/>
+		<!-- YYYY-MM-DDThh:mm:ss format -->
+	</xs:simpleType>
+	<xs:simpleType name="Time">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"/>
+		</xs:restriction>
+		<!-- Time interval quantity type -->
+	</xs:simpleType>
+	<xs:simpleType name="Identifier">
+		<xs:restriction base="xs:NCName">
+			<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|.|_)*"/>
+		</xs:restriction>
+		<!-- Identify a object univocally:begin with a letter, followed by letters, digits, underscores ('_') or periods ('.') -->
+	</xs:simpleType>
+	<xs:simpleType name="External_Reference">
+		<xs:restriction base="xs:NCName">
+			<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|.|_)*"/>
+		</xs:restriction>
+		<!-- References an external object: begin with a letter, followed by letters, digits, underscores ('_') or periods ('.') -->
+	</xs:simpleType>
+	<xs:simpleType name="Source_Identifier">
+		<xs:restriction base="xs:int"/>
+		<!-- Key integer (positive, negative,o zero) identifier of a model object that is able to generate trace messages. -->
+	</xs:simpleType>
+	<xs:simpleType name="Message_Identifier">
+		<xs:restriction base="xs:nonNegativeInteger"/>
+		<!-- Non negative integer (positive o zero) thas is an univoval identifier of a message type -->
+	</xs:simpleType>
+
+	<!-- MESSAGE TYPE LIST -->
+	<xs:complexType name="Message_Type">
+		<xs:attribute name="Mid" type="mast_trace:Message_Identifier" use="required"/>
+		<xs:attribute name="Type" type="xs:string" use="optional"/>
+		<!-- Link an explanatory text (type)with a message type (Mid).-->
+	</xs:complexType>
+	<xs:complexType name="Msg_Type_List">
+		<xs:sequence>
+			<xs:element name="Msg_Type" type="mast_trace:Message_Type" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<!-- List of message types that are referenced in the traces file-->
+	</xs:complexType>
+
+	<!-- MESSAGE LIST -->
+	<xs:complexType name="Source">
+		<xs:attribute name="Sid" type="mast_trace:Source_Identifier" use="required"/>
+		<xs:attribute name="Name" type="mast_trace:External_Reference" use="optional"/>
+		<xs:attribute name="Type" type="xs:string" use="optional"/>
+		<!-- Data linked to a model object that is able to generate messages:
+					(Sid)Source key number, (Name) Source identifier in the model and
+					(Type) type of object model -->
+	</xs:complexType>
+	<xs:complexType name="Src_List">
+		<xs:sequence>
+			<xs:element name="Src" type="mast_trace:Source" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<!-- List of model object referenced as a source of messages -->
+	</xs:complexType>
+
+	<!-- MESSAGE LIST -->
+	<xs:complexType name="Message">
+		<xs:attribute name="T" type="mast_trace:Time" use="required"/>
+		<xs:attribute name="S" type="mast_trace:Source_Identifier" use="required"/>
+		<xs:attribute name="M" type="mast_trace:Message_Identifier" use="required"/>
+		<!-- Data linked to a message instance:(Time) Ocurrence time, (Sid) Source of message,(Mid) Mesage type -->
+	</xs:complexType>
+	<xs:complexType name="Msg_List">
+		<xs:sequence>
+			<xs:element name="Msg" type="mast_trace:Message" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<!-- List of messages included in a traces file -->
+	</xs:complexType>
+
+	<!-- TRACE FILE (root element) -->
+	<xs:element name="TRACE_FILE">
+		<!-- Data included in a traces file: -->
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Declared message type list -->
+				<xs:element name="Msg_Type_List" type="mast_trace:Msg_Type_List" minOccurs="0"/>
+				<!-- Declared model object as message source -->
+				<xs:element name="Src_List" type="mast_trace:Src_List" minOccurs="0"/>
+				<!-- Message list of the traces register -->
+				<xs:element name="Msg_List" type="mast_trace:Msg_List"/>
+			</xs:sequence>
+			<xs:attribute name="Model_Name" type="mast_trace:Identifier" use="required"/>
+			<xs:attribute name="Model_Date" type="mast_trace:Date_Time" use="required"/>
+			<xs:attribute name="Generation_Tool" type="xs:string" use="required"/>
+			<xs:attribute name="Generation_Profile" type="xs:string" use="optional"/>
+			<xs:attribute name="Generation_Date" type="mast_trace:Date_Time" use="required"/>
+			<xs:attribute name="Start_Time" type="mast_trace:Time" use="required"/>
+			<xs:attribute name="End_Time" type="mast_trace:Time" use="required"/>
+			<!-- Real-time situation description -->
+			<!-- Name of the of the real-time situation model that has
+								generated the trace -->
+			<!-- Date of last modification of the analyses real-time situation model -->
+			<!-- Text representing the name of the tool that generated the traces -->
+			<!-- Text representing the command and options used to invoke the tool for the generation of the traces -->
+			<!-- Date of generation of traces -->
+			<!-- Init time of the trace generation -->
+			<!-- End time of the trace generation -->
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

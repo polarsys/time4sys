@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v20.html
  *
  * Contributors:
- *     Loïc Fejoz - initial API and implementation
+ *     Aurelien Didier - initial API and implementation
  *******************************************************************************/
 package org.polarsys.time4sys.marte.analysisrepository.tysco.util;
 

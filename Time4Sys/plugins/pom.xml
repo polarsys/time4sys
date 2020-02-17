@@ -79,5 +79,13 @@
 <module>org.polarsys.time4sys.trace.timinggraphics</module>
 <module>org.polarsys.time4sys.ui</module>
 <module>org.polarsys.time4sys.ui.perspective</module>
+<module>org.polarsys.time4sys.results</module>
+<module>org.polarsys.time4sys.results.edit</module>
+<module>org.polarsys.time4sys.results.editor</module>
+<module>org.polarsys.time4sys.schedulingtrace.model</module>
+<module>org.polarsys.time4sys.schedulingtrace.model.edit</module>
+<module>org.polarsys.time4sys.schedulingtrace.model.editor</module>
+<module>CTF</module>
+
 </modules>
 </project>

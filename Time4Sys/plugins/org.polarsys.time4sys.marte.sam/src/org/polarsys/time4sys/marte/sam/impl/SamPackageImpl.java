@@ -18,12 +18,9 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
-
 import org.polarsys.time4sys.marte.nfp.annotation.annotation.AnnotationPackage;
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 import org.polarsys.time4sys.marte.sam.EndToEndFlow;

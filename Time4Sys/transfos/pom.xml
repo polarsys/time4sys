@@ -1,0 +1,19 @@
+<project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>Time4Sys</groupId>
+        <artifactId>org.polarsys.time4sys.transfos</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <packaging>pom</packaging>
+
+ <parent>
+  <groupId>time4sys</groupId>
+  <artifactId>org.polarsys.time4sys.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+ <relativePath>../releng/org.polarsys.time4sys.parent/pom.xml</relativePath>
+ </parent>
+        <modules>
+                <module>fr.ensma.lias.transformation.time4sys2mast</module>
+                <module>org.polarsys.time4sys.marte.transformation.time4sys2romeo</module>
+                <module>org.polarsys.time4sys.mast.result.parser</module>
+        </modules>
+</project>

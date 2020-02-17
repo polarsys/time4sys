@@ -13,12 +13,11 @@ package org.polarsys.time4sys.odesign.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.time4sys.odesign.*;
+import org.polarsys.time4sys.odesign.OdesignFactory;
+import org.polarsys.time4sys.odesign.OdesignPackage;
+import org.polarsys.time4sys.odesign.UtilizationStat;
 
 /**
  * <!-- begin-user-doc -->

@@ -16,9 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.Abstraction;
 import org.polarsys.time4sys.marte.nfp.coreelements.Constraint;
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsFactory;

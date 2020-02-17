@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.time4sys.trace.*;
 import org.polarsys.time4sys.trace.DataSizeValueChangeEvent;
 import org.polarsys.time4sys.trace.DurationValueChangeEvent;
 import org.polarsys.time4sys.trace.Event;

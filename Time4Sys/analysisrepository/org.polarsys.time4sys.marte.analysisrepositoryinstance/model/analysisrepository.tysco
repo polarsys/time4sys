@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tysco:AnalysisRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tysco="http://org.polarsys.time4sys.marte.analysisrepository" name="Analysis Repository for Time4sys">
+  <allContextModels id="1" name="Context 1" description="Liu&amp;Layland for concrete periodic preemptible independent tasks with pre-assigned priority,  constrained deadline, fixed priority scheduler" analysisTests="//@allTests.0 //@allTests.1 //@allTests.3 //@allTests.2" rootGroup="//@allContextModels.0/@ruleGroups.0">
+    <references>Joseph, Mathai, and Paritosh Pandya. &quot;Finding response times in a real-time system.&quot; The Computer Journal 29.5 (1986): 390-395.</references>
+    <references>Liu, C. L., &amp; Layland, J. W. (1973). Scheduling algorithms for multiprogramming in a hard-real-time environment. Journal of the ACM (JACM), 20(1), 46-61.</references>
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.0/@ruleGroups.1" expectedRuleValues="//@allContextModels.0/@truthValues.18 //@allContextModels.0/@truthValues.2 //@allContextModels.0/@truthValues.1 //@allContextModels.0/@truthValues.25 //@allContextModels.0/@truthValues.0 //@allContextModels.0/@truthValues.3 //@allContextModels.0/@truthValues.4 //@allContextModels.0/@truthValues.20 //@allContextModels.0/@truthValues.21 //@allContextModels.0/@truthValues.15 //@allContextModels.0/@truthValues.16 //@allContextModels.0/@truthValues.22 //@allContextModels.0/@truthValues.23 //@allContextModels.0/@truthValues.24 //@allContextModels.0/@truthValues.12 //@allContextModels.0/@truthValues.11 //@allContextModels.0/@truthValues.10 //@allContextModels.0/@truthValues.13 //@allContextModels.0/@truthValues.14 //@allContextModels.0/@truthValues.5 //@allContextModels.0/@truthValues.6 //@allContextModels.0/@truthValues.9 //@allContextModels.0/@truthValues.7 //@allContextModels.0/@truthValues.8 //@allContextModels.0/@truthValues.31 //@allContextModels.0/@truthValues.29 //@allContextModels.0/@truthValues.28 //@allContextModels.0/@truthValues.30 //@allContextModels.0/@truthValues.27 //@allContextModels.0/@truthValues.26 //@allContextModels.0/@truthValues.32 //@allContextModels.0/@truthValues.33 //@allContextModels.0/@truthValues.34 //@allContextModels.0/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.0/@truthValues.17 //@allContextModels.0/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="2" name="Context 2" description="Liu&amp;Layland for concrete periodic preemptible tasks using shared resources with no precedencies, pre-assigned priority, constrained deadline, fixed priority scheduler" analysisTests="//@allTests.1" rootGroup="//@allContextModels.1/@ruleGroups.0">
+    <references>Kaiser, C. (1982). Exclusion mutuelle et ordonnancement par priorité. Technique et science informatiques, 1(1), 59-68.</references>
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues value="false" associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.1/@ruleGroups.1" expectedRuleValues="//@allContextModels.1/@truthValues.18 //@allContextModels.1/@truthValues.2 //@allContextModels.1/@truthValues.1 //@allContextModels.1/@truthValues.25 //@allContextModels.1/@truthValues.0 //@allContextModels.1/@truthValues.3 //@allContextModels.1/@truthValues.4 //@allContextModels.1/@truthValues.20 //@allContextModels.1/@truthValues.21 //@allContextModels.1/@truthValues.15 //@allContextModels.1/@truthValues.16 //@allContextModels.1/@truthValues.22 //@allContextModels.1/@truthValues.23 //@allContextModels.1/@truthValues.24 //@allContextModels.1/@truthValues.12 //@allContextModels.1/@truthValues.11 //@allContextModels.1/@truthValues.10 //@allContextModels.1/@truthValues.13 //@allContextModels.1/@truthValues.14 //@allContextModels.1/@truthValues.5 //@allContextModels.1/@truthValues.6 //@allContextModels.1/@truthValues.9 //@allContextModels.1/@truthValues.7 //@allContextModels.1/@truthValues.8 //@allContextModels.1/@truthValues.31 //@allContextModels.1/@truthValues.29 //@allContextModels.1/@truthValues.28 //@allContextModels.1/@truthValues.30 //@allContextModels.1/@truthValues.27 //@allContextModels.1/@truthValues.26 //@allContextModels.1/@truthValues.32 //@allContextModels.1/@truthValues.33 //@allContextModels.1/@truthValues.34 //@allContextModels.1/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.1/@truthValues.17 //@allContextModels.1/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="3" name="Context 3" description="Liu&amp;Layland for concrete periodic preemptible tasks imposed by precedence constraints with pre-assigned priority, constrained deadline, fixed priority scheduler" rootGroup="//@allContextModels.2/@ruleGroups.0">
+    <references>Palencia, J. C., &amp; Harbour, M. G. (1998, December). Schedulability analysis for tasks with static and dynamic offsets. In Real-Time Systems Symposium, 1998. Proceedings. The 19th IEEE (pp. 26-37). IEEE.</references>
+    <references>Tindell, K. (1994). Adding time-offsets to schedulability analysis. University of York, Department of Computer Science.</references>
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues value="neutral" associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues associatedRule="//@allRules.31"/>
+    <truthValues associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.2/@ruleGroups.1" expectedRuleValues="//@allContextModels.2/@truthValues.18 //@allContextModels.2/@truthValues.2 //@allContextModels.2/@truthValues.1 //@allContextModels.2/@truthValues.25 //@allContextModels.2/@truthValues.0 //@allContextModels.2/@truthValues.3 //@allContextModels.2/@truthValues.4 //@allContextModels.2/@truthValues.20 //@allContextModels.2/@truthValues.21 //@allContextModels.2/@truthValues.15 //@allContextModels.2/@truthValues.16 //@allContextModels.2/@truthValues.22 //@allContextModels.2/@truthValues.23 //@allContextModels.2/@truthValues.24 //@allContextModels.2/@truthValues.12 //@allContextModels.2/@truthValues.11 //@allContextModels.2/@truthValues.10 //@allContextModels.2/@truthValues.13 //@allContextModels.2/@truthValues.14 //@allContextModels.2/@truthValues.5 //@allContextModels.2/@truthValues.6 //@allContextModels.2/@truthValues.9 //@allContextModels.2/@truthValues.7 //@allContextModels.2/@truthValues.8 //@allContextModels.2/@truthValues.31 //@allContextModels.2/@truthValues.29 //@allContextModels.2/@truthValues.28 //@allContextModels.2/@truthValues.30 //@allContextModels.2/@truthValues.27 //@allContextModels.2/@truthValues.26 //@allContextModels.2/@truthValues.32 //@allContextModels.2/@truthValues.33 //@allContextModels.2/@truthValues.34 //@allContextModels.2/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.2/@truthValues.17 //@allContextModels.2/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="4" name="Context 4" description="Liu&amp;Layland for concrete periodic preemptible tasks with no precedencies, pre-assigned priority, arbitrary deadline, fixed priority scheduler" analysisTests="//@allTests.3" rootGroup="//@allContextModels.3/@ruleGroups.0">
+    <references>Lehoczky, J. P. (1990, December). Fixed priority scheduling of periodic task sets with arbitrary deadlines. In Real-Time Systems Symposium, 1990. Proceedings., 11th (pp. 201-209). IEEE.</references>
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues value="neutral" associatedRule="//@allRules.17"/>
+    <truthValues associatedRule="//@allRules.18"/>
+    <truthValues value="neutral" associatedRule="//@allRules.19"/>
+    <truthValues value="neutral" associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.3/@truthValues.18 //@allContextModels.3/@truthValues.2 //@allContextModels.3/@truthValues.1 //@allContextModels.3/@truthValues.25 //@allContextModels.3/@truthValues.0 //@allContextModels.3/@truthValues.3 //@allContextModels.3/@truthValues.4 //@allContextModels.3/@truthValues.20 //@allContextModels.3/@truthValues.21 //@allContextModels.3/@truthValues.15 //@allContextModels.3/@truthValues.16 //@allContextModels.3/@truthValues.22 //@allContextModels.3/@truthValues.23 //@allContextModels.3/@truthValues.24 //@allContextModels.3/@truthValues.12 //@allContextModels.3/@truthValues.11 //@allContextModels.3/@truthValues.10 //@allContextModels.3/@truthValues.13 //@allContextModels.3/@truthValues.14 //@allContextModels.3/@truthValues.5 //@allContextModels.3/@truthValues.6 //@allContextModels.3/@truthValues.9 //@allContextModels.3/@truthValues.7 //@allContextModels.3/@truthValues.8 //@allContextModels.3/@truthValues.31 //@allContextModels.3/@truthValues.29 //@allContextModels.3/@truthValues.28 //@allContextModels.3/@truthValues.30 //@allContextModels.3/@truthValues.27 //@allContextModels.3/@truthValues.26 //@allContextModels.3/@truthValues.32 //@allContextModels.3/@truthValues.33 //@allContextModels.3/@truthValues.34 //@allContextModels.3/@truthValues.35 //@allContextModels.3/@truthValues.19 //@allContextModels.3/@truthValues.17" id="1" description=""/>
+  </allContextModels>
+  <allContextModels id="5" name="Context 5" description="Liu&amp;Layland for concrete periodic preemptible independent tasks with  no precedencies, arbitrary deadline and fixed priority scheduler" analysisTests="//@allTests.4" rootGroup="//@allContextModels.4/@ruleGroups.0">
+    <references>Audsley, N. C. (1991). Optimal priority assignment and feasibility of static priority tasks with arbitrary start times. University of York, Department of Computer Science.</references>
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues value="false" associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="false" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues value="neutral" associatedRule="//@allRules.17"/>
+    <truthValues associatedRule="//@allRules.18"/>
+    <truthValues value="neutral" associatedRule="//@allRules.19"/>
+    <truthValues associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.4/@truthValues.18 //@allContextModels.4/@truthValues.2 //@allContextModels.4/@truthValues.1 //@allContextModels.4/@truthValues.25 //@allContextModels.4/@truthValues.0 //@allContextModels.4/@truthValues.3 //@allContextModels.4/@truthValues.4 //@allContextModels.4/@truthValues.20 //@allContextModels.4/@truthValues.21 //@allContextModels.4/@truthValues.15 //@allContextModels.4/@truthValues.16 //@allContextModels.4/@truthValues.22 //@allContextModels.4/@truthValues.23 //@allContextModels.4/@truthValues.24 //@allContextModels.4/@truthValues.12 //@allContextModels.4/@truthValues.11 //@allContextModels.4/@truthValues.10 //@allContextModels.4/@truthValues.13 //@allContextModels.4/@truthValues.14 //@allContextModels.4/@truthValues.5 //@allContextModels.4/@truthValues.6 //@allContextModels.4/@truthValues.9 //@allContextModels.4/@truthValues.7 //@allContextModels.4/@truthValues.8 //@allContextModels.4/@truthValues.31 //@allContextModels.4/@truthValues.29 //@allContextModels.4/@truthValues.28 //@allContextModels.4/@truthValues.30 //@allContextModels.4/@truthValues.27 //@allContextModels.4/@truthValues.26 //@allContextModels.4/@truthValues.32 //@allContextModels.4/@truthValues.33 //@allContextModels.4/@truthValues.34 //@allContextModels.4/@truthValues.35 //@allContextModels.4/@truthValues.19 //@allContextModels.4/@truthValues.17" id="1" description=""/>
+  </allContextModels>
+  <allContextModels id="6" name="Context 6" description="Concrete periodic preemptible independent tasks with constrained deadline with EDF (Earliest Deadline First) scheduler" rootGroup="//@allContextModels.5/@ruleGroups.0">
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues value="neutral" associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues value="false" associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.5/@ruleGroups.1" expectedRuleValues="//@allContextModels.5/@truthValues.18 //@allContextModels.5/@truthValues.2 //@allContextModels.5/@truthValues.1 //@allContextModels.5/@truthValues.25 //@allContextModels.5/@truthValues.0 //@allContextModels.5/@truthValues.3 //@allContextModels.5/@truthValues.4 //@allContextModels.5/@truthValues.20 //@allContextModels.5/@truthValues.21 //@allContextModels.5/@truthValues.15 //@allContextModels.5/@truthValues.16 //@allContextModels.5/@truthValues.22 //@allContextModels.5/@truthValues.23 //@allContextModels.5/@truthValues.24 //@allContextModels.5/@truthValues.12 //@allContextModels.5/@truthValues.11 //@allContextModels.5/@truthValues.10 //@allContextModels.5/@truthValues.13 //@allContextModels.5/@truthValues.14 //@allContextModels.5/@truthValues.5 //@allContextModels.5/@truthValues.6 //@allContextModels.5/@truthValues.9 //@allContextModels.5/@truthValues.7 //@allContextModels.5/@truthValues.8 //@allContextModels.5/@truthValues.31 //@allContextModels.5/@truthValues.29 //@allContextModels.5/@truthValues.28 //@allContextModels.5/@truthValues.30 //@allContextModels.5/@truthValues.27 //@allContextModels.5/@truthValues.26 //@allContextModels.5/@truthValues.32 //@allContextModels.5/@truthValues.33 //@allContextModels.5/@truthValues.34 //@allContextModels.5/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.5/@truthValues.17 //@allContextModels.5/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="7" name="Context 7" description="Concrete periodic preemptible independent tasks with constrained deadline with (LLF) Least Laxity First scheduler" rootGroup="//@allContextModels.6/@ruleGroups.0">
+    <truthValues associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues value="neutral" associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues value="false" associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.6/@ruleGroups.1" expectedRuleValues="//@allContextModels.6/@truthValues.18 //@allContextModels.6/@truthValues.2 //@allContextModels.6/@truthValues.1 //@allContextModels.6/@truthValues.25 //@allContextModels.6/@truthValues.0 //@allContextModels.6/@truthValues.3 //@allContextModels.6/@truthValues.4 //@allContextModels.6/@truthValues.20 //@allContextModels.6/@truthValues.21 //@allContextModels.6/@truthValues.15 //@allContextModels.6/@truthValues.16 //@allContextModels.6/@truthValues.22 //@allContextModels.6/@truthValues.23 //@allContextModels.6/@truthValues.24 //@allContextModels.6/@truthValues.12 //@allContextModels.6/@truthValues.11 //@allContextModels.6/@truthValues.10 //@allContextModels.6/@truthValues.13 //@allContextModels.6/@truthValues.14 //@allContextModels.6/@truthValues.5 //@allContextModels.6/@truthValues.6 //@allContextModels.6/@truthValues.9 //@allContextModels.6/@truthValues.7 //@allContextModels.6/@truthValues.8 //@allContextModels.6/@truthValues.31 //@allContextModels.6/@truthValues.29 //@allContextModels.6/@truthValues.28 //@allContextModels.6/@truthValues.30 //@allContextModels.6/@truthValues.27 //@allContextModels.6/@truthValues.26 //@allContextModels.6/@truthValues.32 //@allContextModels.6/@truthValues.33 //@allContextModels.6/@truthValues.34 //@allContextModels.6/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.6/@truthValues.17 //@allContextModels.6/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="8" name="Context 8" description="Liu&amp;Layland for non-concrete periodic preemptible independent tasks with pre-assigned priority, constrained deadline, fixed priority scheduler" analysisTests="//@allTests.2 //@allTests.0 //@allTests.1 //@allTests.3" rootGroup="//@allContextModels.7/@ruleGroups.0">
+    <references>Kaiser, C. (1982). Exclusion mutuelle et ordonnancement par priorité. Technique et science informatiques, 1(1), 59-68.</references>
+    <truthValues value="false" associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.7/@ruleGroups.1" expectedRuleValues="//@allContextModels.7/@truthValues.18 //@allContextModels.7/@truthValues.2 //@allContextModels.7/@truthValues.1 //@allContextModels.7/@truthValues.25 //@allContextModels.7/@truthValues.0 //@allContextModels.7/@truthValues.3 //@allContextModels.7/@truthValues.4 //@allContextModels.7/@truthValues.20 //@allContextModels.7/@truthValues.21 //@allContextModels.7/@truthValues.15 //@allContextModels.7/@truthValues.16 //@allContextModels.7/@truthValues.22 //@allContextModels.7/@truthValues.23 //@allContextModels.7/@truthValues.24 //@allContextModels.7/@truthValues.12 //@allContextModels.7/@truthValues.11 //@allContextModels.7/@truthValues.10 //@allContextModels.7/@truthValues.13 //@allContextModels.7/@truthValues.14 //@allContextModels.7/@truthValues.5 //@allContextModels.7/@truthValues.6 //@allContextModels.7/@truthValues.9 //@allContextModels.7/@truthValues.7 //@allContextModels.7/@truthValues.8 //@allContextModels.7/@truthValues.31 //@allContextModels.7/@truthValues.29 //@allContextModels.7/@truthValues.28 //@allContextModels.7/@truthValues.30 //@allContextModels.7/@truthValues.27 //@allContextModels.7/@truthValues.26 //@allContextModels.7/@truthValues.32 //@allContextModels.7/@truthValues.33 //@allContextModels.7/@truthValues.34 //@allContextModels.7/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.7/@truthValues.17 //@allContextModels.7/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="9" name="Context 9" description="Liu&amp;Layland for non-concrete periodic preemptible tasks using shared resources with no precedencies, pre-assigned priority, constrained deadline, fixed priority scheduler" analysisTests="//@allTests.1" rootGroup="//@allContextModels.8/@ruleGroups.0">
+    <references>Kaiser, C. (1982). Exclusion mutuelle et ordonnancement par priorité. Technique et science informatiques, 1(1), 59-68.</references>
+    <truthValues value="false" associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues value="false" associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues associatedRule="//@allRules.31"/>
+    <truthValues value="false" associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups subGroups="//@allContextModels.8/@ruleGroups.1" expectedRuleValues="//@allContextModels.8/@truthValues.18 //@allContextModels.8/@truthValues.2 //@allContextModels.8/@truthValues.1 //@allContextModels.8/@truthValues.25 //@allContextModels.8/@truthValues.0 //@allContextModels.8/@truthValues.3 //@allContextModels.8/@truthValues.4 //@allContextModels.8/@truthValues.20 //@allContextModels.8/@truthValues.21 //@allContextModels.8/@truthValues.15 //@allContextModels.8/@truthValues.16 //@allContextModels.8/@truthValues.22 //@allContextModels.8/@truthValues.23 //@allContextModels.8/@truthValues.24 //@allContextModels.8/@truthValues.12 //@allContextModels.8/@truthValues.11 //@allContextModels.8/@truthValues.10 //@allContextModels.8/@truthValues.13 //@allContextModels.8/@truthValues.14 //@allContextModels.8/@truthValues.5 //@allContextModels.8/@truthValues.6 //@allContextModels.8/@truthValues.9 //@allContextModels.8/@truthValues.7 //@allContextModels.8/@truthValues.8 //@allContextModels.8/@truthValues.31 //@allContextModels.8/@truthValues.29 //@allContextModels.8/@truthValues.28 //@allContextModels.8/@truthValues.30 //@allContextModels.8/@truthValues.27 //@allContextModels.8/@truthValues.26 //@allContextModels.8/@truthValues.32 //@allContextModels.8/@truthValues.33 //@allContextModels.8/@truthValues.34 //@allContextModels.8/@truthValues.35" id="1" description=""/>
+    <ruleGroups expectedRuleValues="//@allContextModels.8/@truthValues.17 //@allContextModels.8/@truthValues.19" id="2" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="10" name="Context 10" description="Liu&amp;Layland for non-concrete periodic preemptible tasks imposed by precedence constraints with pre-assigned priority, constrained deadline, fixed priority scheduler" analysisTests="//@allTests.2" rootGroup="//@allContextModels.9/@ruleGroups.0">
+    <references>Palencia, J. C., &amp; Harbour, M. G. (1998, December). Schedulability analysis for tasks with static and dynamic offsets. In Real-Time Systems Symposium, 1998. Proceedings. The 19th IEEE (pp. 26-37). IEEE.</references>
+    <references>Tindell, K. (1994). Adding time-offsets to schedulability analysis. University of York, Department of Computer Science.</references>
+    <truthValues value="false" associatedRule="//@allRules.0"/>
+    <truthValues associatedRule="//@allRules.1"/>
+    <truthValues value="neutral" associatedRule="//@allRules.2"/>
+    <truthValues associatedRule="//@allRules.3"/>
+    <truthValues associatedRule="//@allRules.4"/>
+    <truthValues associatedRule="//@allRules.5"/>
+    <truthValues value="false" associatedRule="//@allRules.6"/>
+    <truthValues value="false" associatedRule="//@allRules.7"/>
+    <truthValues value="false" associatedRule="//@allRules.8"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="neutral" associatedRule="//@allRules.10"/>
+    <truthValues value="neutral" associatedRule="//@allRules.11"/>
+    <truthValues value="neutral" associatedRule="//@allRules.12"/>
+    <truthValues value="neutral" associatedRule="//@allRules.13"/>
+    <truthValues value="neutral" associatedRule="//@allRules.14"/>
+    <truthValues value="neutral" associatedRule="//@allRules.15"/>
+    <truthValues value="neutral" associatedRule="//@allRules.16"/>
+    <truthValues associatedRule="//@allRules.17"/>
+    <truthValues value="neutral" associatedRule="//@allRules.18"/>
+    <truthValues associatedRule="//@allRules.19"/>
+    <truthValues value="neutral" associatedRule="//@allRules.20"/>
+    <truthValues associatedRule="//@allRules.21"/>
+    <truthValues value="false" associatedRule="//@allRules.22"/>
+    <truthValues value="false" associatedRule="//@allRules.23"/>
+    <truthValues value="false" associatedRule="//@allRules.24"/>
+    <truthValues value="neutral" associatedRule="//@allRules.25"/>
+    <truthValues value="neutral" associatedRule="//@allRules.26"/>
+    <truthValues value="neutral" associatedRule="//@allRules.27"/>
+    <truthValues value="neutral" associatedRule="//@allRules.28"/>
+    <truthValues value="neutral" associatedRule="//@allRules.29"/>
+    <truthValues value="neutral" associatedRule="//@allRules.30"/>
+    <truthValues value="false" associatedRule="//@allRules.31"/>
+    <truthValues associatedRule="//@allRules.32"/>
+    <truthValues value="false" associatedRule="//@allRules.33"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="neutral" associatedRule="//@allRules.35"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.9/@truthValues.18 //@allContextModels.9/@truthValues.2 //@allContextModels.9/@truthValues.1 //@allContextModels.9/@truthValues.25 //@allContextModels.9/@truthValues.0 //@allContextModels.9/@truthValues.3 //@allContextModels.9/@truthValues.4 //@allContextModels.9/@truthValues.20 //@allContextModels.9/@truthValues.21 //@allContextModels.9/@truthValues.15 //@allContextModels.9/@truthValues.16 //@allContextModels.9/@truthValues.22 //@allContextModels.9/@truthValues.23 //@allContextModels.9/@truthValues.24 //@allContextModels.9/@truthValues.12 //@allContextModels.9/@truthValues.11 //@allContextModels.9/@truthValues.10 //@allContextModels.9/@truthValues.13 //@allContextModels.9/@truthValues.14 //@allContextModels.9/@truthValues.5 //@allContextModels.9/@truthValues.6 //@allContextModels.9/@truthValues.9 //@allContextModels.9/@truthValues.7 //@allContextModels.9/@truthValues.8 //@allContextModels.9/@truthValues.31 //@allContextModels.9/@truthValues.29 //@allContextModels.9/@truthValues.28 //@allContextModels.9/@truthValues.30 //@allContextModels.9/@truthValues.27 //@allContextModels.9/@truthValues.26 //@allContextModels.9/@truthValues.32 //@allContextModels.9/@truthValues.33 //@allContextModels.9/@truthValues.34 //@allContextModels.9/@truthValues.35" id="1" description=""/>
+  </allContextModels>
+  <allContextModels id="11" name="Romeo analysis" description="Check rules to verify the applicability of Romeo transformation" analysisTests="//@allTests.6 //@allTests.7" rootGroup="//@allContextModels.10/@ruleGroups.0">
+    <references>Romeo transformation applicability</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues value="false" associatedRule="//@allRules.36"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.10/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.10/@truthValues.0 //@allContextModels.0/@truthValues.9"/>
+  </allContextModels>
+  <allContextModels id="12" name="MAST analysis" description="Check rules for MAST EDF analysis" analysisTests="//@allTests.8" rootGroup="//@allContextModels.11/@ruleGroups.0">
+    <references>Mast transformation applicability</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues associatedRule="//@allRules.36"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="false" associatedRule="//@allRules.37"/>
+    <truthValues associatedRule="//@allRules.38"/>
+    <truthValues associatedRule="//@allRules.29"/>
+    <ruleGroups subGroups="//@allContextModels.11/@ruleGroups.1" expectedRuleValues="//@allContextModels.11/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.11/@truthValues.0 //@allContextModels.11/@truthValues.4 //@allContextModels.11/@truthValues.5 //@allContextModels.5/@truthValues.6"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.0/@truthValues.31 //@allContextModels.12/@truthValues.6" id="1" junctionType="or"/>
+  </allContextModels>
+  <allContextModels id="13" name="MAST analysis" description="Check rules for MAST Fixed Priority analysis" analysisTests="//@allTests.9 //@allTests.10" rootGroup="//@allContextModels.12/@ruleGroups.0">
+    <references>Mast transformation applicability</references>
+    <truthValues associatedRule="//@allRules.11"/>
+    <truthValues associatedRule="//@allRules.34"/>
+    <truthValues associatedRule="//@allRules.36"/>
+    <truthValues associatedRule="//@allRules.9"/>
+    <truthValues value="false" associatedRule="//@allRules.37"/>
+    <truthValues associatedRule="//@allRules.38"/>
+    <truthValues associatedRule="//@allRules.29"/>
+    <ruleGroups expectedRuleValues="//@allContextModels.12/@truthValues.2 //@allContextModels.4/@truthValues.34 //@allContextModels.12/@truthValues.0 //@allContextModels.12/@truthValues.4 //@allContextModels.12/@truthValues.5 //@allContextModels.1/@truthValues.9"/>
+  </allContextModels>
+  <allRules id="1" description="Every task has predefined offset" content="self.cause.pattern.phase->size()>0" formalExpression="forAll t : Task|PropertyExist(t,Offset);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="2" description="Every task has predefined execution time" content="self.worstCET&lt;>null" formalExpression="forAll t : Task|PropertyExist(t,ExecutionTime);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="3" description="Every task has predefined deadline" content="(sam::EndToEndFlow).allInstances().endToEndScenario->includesAll(gqam::ExecutionStep.allInstances()) and (sam::EndToEndFlow).allInstances().endToEndStimuli->includesAll(gqam::ExecutionStep.allInstances().cause)" formalExpression="forAll t : Task|PropertyExist(t,Deadline);" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="4" description="Every task has predefined period" content="self.cause.pattern.oclIsKindOf(gqam::PeriodicPattern) and self.cause.pattern.oclAsType(gqam::PeriodicPattern).period->size()>0" formalExpression="forAll t : Task|PropertyExist(t,Period);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="5" description="Every task has predefined priority" content="self.schedParams->exists(p|p.name.toLowerCase()='fixedpriority')" formalExpression="forAll t : Task|PropertyExist(t,Priority);" appliedClass="org.polarsys.time4sys.marte.grm.SchedulableResource"/>
+  <allRules id="6" description="Monoprocessor architecture" content="self.resourcePackage.ownedElement->select(oclIsKindOf(hrm::HardwareComputingResource))->size()=1" formalExpression="processors := {p:Processor};&#xD;&#xA;Cardinal(processors)=1;" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="7" description="Scheduling policy of all schedulers is Earliest Deadline First (EDF) policy" content="self.policy.policy=grm::SchedPolicyKind::EarliestDeadlineFirst" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = EarliestDeadlineFirst;" appliedClass="org.polarsys.time4sys.marte.grm.Scheduler"/>
+  <allRules id="8" description="Scheduling policy of all schedulers is Least Laxity First (LLF) policy" content="self.policy.policy=grm::SchedPolicyKind::LeastLaxityFirst" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = LeastLaxityFirst;" appliedClass="org.polarsys.time4sys.marte.grm.Scheduler"/>
+  <allRules id="9" description="Scheduling policy of all schedulers is Round Robin (RR) policy" content="self.policy.policy=grm::SchedPolicyKind::RoundRobin" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = RoundRobin;" appliedClass="org.polarsys.time4sys.marte.grm.Scheduler"/>
+  <allRules id="10" description="Scheduling policy of all schedulers is Fixed Priority (FP) Policy" content="self.policy.policy=grm::SchedPolicyKind::FixedPriority" formalExpression="forAll sched : Scheduler|GetProperty(sched,SchedulingPolicy) = FixedPriority;" appliedClass="org.polarsys.time4sys.marte.grm.Scheduler"/>
+  <allRules id="11" description="Exist at least a task, which has offset" content="self.cause.pattern.phase->size()>0" formalExpression="exist t : Task| PropertyExist(t,Offset);" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="12" description="Exist at least a task, which has execution time" content="self.worstCET&lt;>null" formalExpression="exist t : Task| PropertyExist(t,ExecutionTime);" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="13" description="Exist at least a task, which has deadline" content="self.endToEndScenario.cause=self.endToEndStimuli" formalExpression="exist t : Task| PropertyExist(t,Deadline); avant c'était (sam::EndToEndFlow).allInstances().endToEndScenario->intersection(gqam::ExecutionStep.allInstances())->notEmpty() and (sam::EndToEndFlow).allInstances().endToEndStimuli->intersection(gqam::ExecutionStep.allInstances().cause)->notEmpty()" appliedClass="org.polarsys.time4sys.marte.sam.EndToEndFlow" oneOrAll="ExistOne"/>
+  <allRules id="14" description="Exist at least a task, which has period" content="self.cause.pattern.oclIsKindOf(gqam::PeriodicPattern) and self.cause.pattern.oclAsType(gqam::PeriodicPattern).period->size()>0" formalExpression="exist t : Task| PropertyExist(t,Period);" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="15" description="Exist at least a task, which has priority" content="self.schedParams->exists(p|p.name.toLowerCase()='fixedpriority')" formalExpression="exist t : Task| PropertyExist(t,Priority);" appliedClass="org.polarsys.time4sys.marte.grm.SchedulableResource" oneOrAll="ExistOne"/>
+  <allRules id="16" description="Every task releases simultaneously" content="self.cause.pattern->forAll(s|s.phase.oclAsType(nfp::Duration).value.toString().toReal()=0)" formalExpression="forAll t : Task|GetProperty(t,Offset)=0;" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="17" description="Exist at least a task which has differed offset" content="self.cause.pattern->exists(event|event.oclIsTypeOf(gqam::PeriodicPattern) and event.oclAsType(gqam::PeriodicPattern).phase.oclAsType(nfp::Duration).value.toString().toReal()&lt;>0)" formalExpression="exist t : Task|GetProperty(t,Offset)&lt;>0;" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="18" description="EndToEndFlow deadlines equals task period (implicit deadline)" content="self.endToEndDeadline=self.endToEndStimuli->first().pattern.oclAsType(gqam::PeriodicPattern).period" formalExpression="forAll t: Task | GetProperty(t,Period)=GetProperty(t,Deadline);" appliedClass="org.polarsys.time4sys.marte.sam.EndToEndFlow"/>
+  <allRules id="19" description="Every task has arbitrary deadline" content="sam::EndToEndFlow.allInstances().endToEndScenario->includesAll(gqam::ExecutionStep.allInstances()) and &#xD;&#xA;sam::EndToEndFlow.allInstances().endToEndStimuli->includesAll(gqam::ExecutionStep.allInstances().cause)" formalExpression="forAll t : Task| PropertyExist(t,Deadline);" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="20" description="ETEF deadlines are inferior or equal to period (constrained deadline)" content="self.endToEndDeadline.oclAsType(nfp::Duration).value&lt;=(self.endToEndStimuli->first().pattern.oclAsType(gqam::PeriodicPattern).period.oclAsType(nfp::Duration).value)" formalExpression="forAll t: Task | GetProperty(t,Period)>=GetProperty(t,Deadline);" appliedClass="org.polarsys.time4sys.marte.sam.EndToEndFlow"/>
+  <allRules id="21" description="Every task is independent" content="srm::SoftwareMutualExclusionResource.allInstances()->size()=0 and gqam::OutputPin.allInstances().successors->isEmpty()" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)=0;" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="22" description="Every task is periodic" content="self.cause.pattern->select(s|s.oclIsTypeOf(gqam::PeriodicPattern))->size()>0" formalExpression="forAll t : Task | GetProperty(t,Periodicity)=Periodic;" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="23" description="Exist at least a task which is sporadic" content="self.cause.pattern->select(s|s.oclIsTypeOf(gqam::SporadicPattern))->size()>0" formalExpression="exist t : Task | GetProperty(t,Periodicity) = Sporadic;" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="24" description="Exist at least a task whose arrival pattern is burst pattern" content="self.cause.pattern->select(s|s.oclIsTypeOf(gqam::BurstPattern))->size()>0" formalExpression="" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="25" description="Exist at least a task whose arrival pattern is closed pattern" content="self.cause.pattern->select(s|s.oclIsTypeOf(gqam::BurstPattern))->size()>0" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="26" description="Every task has predefined jitter" content="self.cause.pattern->exists(p|p.jitter&lt;>null)" formalExpression="forAll t: Task|PropertyExist(t,Jitter);" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="27" description="System has shared resources managed by Priority Inheritance Protocol (PIP)" content="self.concurrentAccessProtocol=srm::ConcurrentAccesProtocolKind::PIP" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist res in commResources|GetProperty(res,ProtectProtocol)=PIPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
+  <allRules id="28" description="System has shared resources managed by Priority Ceiling Protocol (PCP)" content="self.concurrentAccessProtocol=srm::ConcurrentAccesProtocolKind::PCP" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist res in commResources|GetProperty(res,ProtectProtocol)=PCPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
+  <allRules id="29" description="System has shared resources managed by Immediate Priority Ceiling Protocol (IPCP)" content="self.concurrentAccessProtocol.name='IPCP'" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;exist r in commResources|GetProperty(r,ProtectProtocol)=IPCPProtectProtocol;" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
+  <allRules id="30" description="System has shared resources managed by  Stack-Resource Policy " content="self.protocol=grm::ProtectProtocolKind::StackBased" appliedClass="org.polarsys.time4sys.marte.grm.MutualExclusionProtocol" oneOrAll="ExistOne"/>
+  <allRules id="31" description="System has shared resources managed by Minimal Stack-Resource Policy " content="self.concurrentAccessProtocol.name='Minimal Stack-Resource'" appliedClass="org.polarsys.time4sys.marte.srm.SoftwareMutualExclusionResource"/>
+  <allRules id="32" description="System has shared resources" content="self.resourcePackage.ownedElement->select(oclIsKindOf(srm::SoftwareMutualExclusionResource))->size()&lt;>0" formalExpression="commResources := {res:MutualExclusionResource};&#xD;&#xA;Cardinal(commResources)>0;" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="33" description="Tasks have precedence constraints" content="self.successors->notEmpty()" appliedClass="org.polarsys.time4sys.marte.gqam.OutputPin"/>
+  <allRules id="34" description="Distributed system" content="self.resourcePackage.ownedElement->select(oclIsKindOf(hrm::HardwareComputingResource))->size()>1" appliedClass="org.polarsys.time4sys.design.DesignModel"/>
+  <allRules id="35" description="Every task are preemptible" content="not(self.isAtomic)" formalExpression="forAll t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allRules id="36" description="Exist at least a task which is preemptible" content="not(self.isAtomic)" formalExpression="exist t : Task|GetProperty(t,PreemptibilityType)=PreemptibleType;" appliedClass="org.polarsys.time4sys.marte.gqam.Step" oneOrAll="ExistOne"/>
+  <allRules id="37" description="Only periodic events" content="self.oclIsKindOf(gqam::PeriodicPattern)" formalExpression="" appliedClass="org.polarsys.time4sys.marte.gqam.ArrivalPattern"/>
+  <allRules id="38" description="Protection protocol is not Priority Ceiling, Priority Inheritance or Stacked Based." content="not(self.protocol=grm::ProtectProtocolKind::PriorityInheritance or self.protocol=grm::ProtectProtocolKind::StackBased or self.protocol=grm::ProtectProtocolKind::PriorityCeiling)" appliedClass="org.polarsys.time4sys.marte.grm.MutualExclusionProtocol"/>
+  <allRules id="39" description="Tasks are allocated in a resource." content="self.concurRes&lt;>null" formalExpression="" appliedClass="org.polarsys.time4sys.marte.gqam.Step"/>
+  <allTests id="1" name="RTA 1" description="Response Time Analysis for independent tasks, constrained deadline ">
+    <references>Joseph, Mathai, and Paritosh Pandya. &quot;Finding response times in a real-time system.&quot; The Computer Journal 29.5 (1986): 390-395.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" referencedContexts="//@allContextModels.0"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.7"/>
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="mast_analysis default" toolName="">
+      <transformation contextModel="//@allContextModels.0" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="transformations\mast_transfo.jar"/>
+    </implementations>
+  </allTests>
+  <allTests id="2" name="RTA 2" description="Response Time Analysis with presence of shared resource">
+    <references>Kaiser, C. (1982). Exclusion mutuelle et ordonnancement par priorité. Technique et science informatiques, 1(1), 59-68.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" comment="" referencedContexts="//@allContextModels.0 //@allContextModels.1 //@allContextModels.7 //@allContextModels.8"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.7 //@allContextModels.8"/>
+    <implementations id="1" name="RTA_2_Impl" description="Implementation of RTA for independent tasks with constrained deadline and presence of shared resources" analysisExecPath="mast_analysis default">
+      <transformation contextModel="//@allContextModels.1" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline and presence of shared resources" transfoExecPath="transformations\mast_transfo.jar"/>
+    </implementations>
+  </allTests>
+  <allTests id="3" name="RTA 3" description="Response Time Analysis for Transactions">
+    <references>Palencia, J. C., &amp; Harbour, M. G. (1998, December). Schedulability analysis for tasks with static and dynamic offsets. In Real-Time Systems Symposium, 1998. Proceedings. The 19th IEEE (pp. 26-37). IEEE.</references>
+    <references>Tindell, K. (1994). Adding time-offsets to schedulability analysis. University of York, Department of Computer Science.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" comment="" referencedContexts="//@allContextModels.0 //@allContextModels.2 //@allContextModels.7 //@allContextModels.9"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.7 //@allContextModels.9"/>
+    <implementations id="1" name="RTA_3_Impl" description="Implementation of RTA for transactions" analysisExecPath="transformations/mast_transfo.jar" toolName="default">
+      <transformation contextModel="//@allContextModels.2" id="1" description="Transformation from Time4sys to MAST in case: periodic tasks with precedencies, constrained deadline and presence of shared resources" transfoExecPath="C:/SCM/time4sysGithub/Time4Sys/plugins/org.polarsys.time4sys.marte.analysisrepositoryinstance/transformations/mast_transfo.jar"/>
+    </implementations>
+  </allTests>
+  <allTests id="4" name="RTA 4" description="Extended Response Time Analysis technique for arbitrary deadline tasks set">
+    <references>Lehoczky, J. P. (1990, December). Fixed priority scheduling of periodic task sets with arbitrary deadlines. In Real-Time Systems Symposium, 1990. Proceedings., 11th (pp. 201-209). IEEE.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" referencedContexts="//@allContextModels.3 //@allContextModels.0 //@allContextModels.7"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.7"/>
+    <implementations id="1" name="RTA_4_Impl" description="Implementation of RTA for independent tasks with arbitrary deadline" analysisExecPath="testImpls\mast_analysis.bat">
+      <transformation contextModel="//@allContextModels.3" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline and presence of shared resources" transfoExecPath="transformations\mast_transfo.jar"/>
+    </implementations>
+  </allTests>
+  <allTests id="5" name="OPA" description="Optimal Priorities Assignment">
+    <references>Audsley, N. C. (1991). Optimal priority assignment and feasibility of static priority tasks with arbitrary start times. University of York, Department of Computer Science.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" referencedContexts="//@allContextModels.4"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" referencedContexts="//@allContextModels.4"/>
+    <implementations id="1" name="OPA_Impl" description="Implementation of Optimal Priorities Assignment for independent tasks set">
+      <transformation contextModel="//@allContextModels.4" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath=""/>
+    </implementations>
+  </allTests>
+  <allTests id="6" name="DBF 1" description="Demand Bound Function test for independent periodic task set">
+    <references>Jeffay, K., &amp; Stone, D. (1993, December). Accounting for interrupt handling costs in dynamic priority task systems. In Real-Time Systems Symposium, 1993., Proceedings. (pp. 212-221). IEEE.</references>
+    <references>Baruah, S. K., Rosier, L. E., &amp; Howell, R. R. (1990). Algorithms and complexity concerning the preemptive scheduling of periodic, real-time tasks on one processor. Real-time systems, 2(4), 301-324.</references>
+    <characteristics xsi:type="tysco:SufficientCondition" comment="" referencedContexts="//@allContextModels.5"/>
+    <characteristics xsi:type="tysco:NecessaryCondition" comment="" referencedContexts="//@allContextModels.5"/>
+    <implementations id="1" name="DBF_Impl" description="Implementation of DBF test for independent periodic task set">
+      <transformation contextModel="//@allContextModels.5" id="1"/>
+    </implementations>
+  </allTests>
+  <allTests id="7" name="Romeo CTS Analysis" description="Launch romeo CTS analysis">
+    <implementations name="" description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\runtime-org.polarsys.time4sys.product_2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" toolName="" testedFile="romeo\\transformedmodel.cts" testResult="romeo_result\\RomeoCTS_result.txt">
+      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.RomeoCTSSerialization"/>
+    </implementations>
+  </allTests>
+  <allTests id="8" name="Romeo Petri Analysis" description="Launch romeo Petri analysis">
+    <implementations description="" analysisExecPath="C:\Users\didier\Downloads\capella_studio-1.2Neon\workspace2\org.polarsys.time4sys.marte.transformation.time4sys2romeo\analysis\romeo-cli.exe" testedFile="romeo\\transformedmodel.xml" testResult="romeo_result\\RomeoXML_result.txt">
+      <transformation contextModel="//@allContextModels.9" id="1" description="Transformation from Time4sys model to input format of OPA analysis tool" transfoExecPath="time4sys2petrinet.Time4Sys2PetriNet"/>
+    </implementations>
+  </allTests>
+  <allTests id="9" name="Mast edf monoprocessor" description="Launch mast EDF analysis">
+    <implementations id="1" name="RTA_1_Impl" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\default.bat default" toolName="EDF Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\edf_result.xml" resultParserClass="org.polarsys.time4sys.mast.parser.result.MastResultParser">
+      <transformation contextModel="//@allContextModels.10" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2EDFMastGenerator"/>
+    </implementations>
+  </allTests>
+  <allTests id="10" name="Mast XML Default Analysis" description="Launch mast default analysis">
+    <implementations id="1" name="Mast_Analysis" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\mast_analysis.bat default" toolName="Mast analysis" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\analysis_result.xml" resultParserClass="org.polarsys.time4sys.mast.parser.MastResultParser">
+      <transformation contextModel="//@allContextModels.12" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+    </implementations>
+  </allTests>
+  <allTests id="11" name="JSimMast SimulationAnalysis" description="Launch JSimMast simulation">
+    <implementations id="1" name="Mast_Simulation" description="Implementation of RTA for independent tasks with constrained deadline" analysisExecPath="C:\Users\didier\Desktop\script_mast\mast_simu.bat" consoleOutput="false" toolName="Mast simulation" testedFile="mast\\transformedmodel.txt" testResult="mast_result\\simulation_trace.xml" resultParserClass="org.polarsys.time4sys.mast.parser.JSimMastResultParser">
+      <transformation contextModel="//@allContextModels.12" id="1" description="Transformation from Time4sys to MAST in case: independent periodic tasks with constrained deadline" transfoExecPath="fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator"/>
+    </implementations>
+  </allTests>
+  <allInnerTransfos id="1" turnTrue="//@allRules.14 //@allRules.1" turnFalse="//@allRules.0 //@allRules.3" name="Propagate event activation" description="Propagate Event" classPath="org.polarsys.time4sys.simulation.commands.PropagateActivationsCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Inverse Priority" description="Convert priority values to urgency values as expected by Time4Sys" classPath="org.polarsys.time4sys.simulation.commands.InversePriorityCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Add Partition" description="Add partition" classPath="org.polarsys.time4sys.arinc653.editor.handlers.AddPartitionHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Add Platform" description="Add platform" classPath="org.polarsys.time4sys.arinc653.editor.handlers.AddPlatformHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Init Null Duration" description="Init null duration to 0 ms duration" classPath="org.polarsys.time4sys.simulation.commands.InitNullDurationCommandHandler"/>
+  <allInnerTransfos turnTrue="//@allRules.18" turnFalse="//@allRules.1" name="Split Task" description="Split Task for them to be in normal form" classPath="org.polarsys.time4sys.simulation.commands.SplitTaskCommandHandler"/>
+</tysco:AnalysisRepository>

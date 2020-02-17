@@ -59,6 +59,15 @@ public interface Time4sysFactory extends EFactory {
 	Simulation createSimulation();
 
 	/**
+	 * Returns a new object of class '<em>Analysis Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Analysis Result</em>'.
+	 * @generated
+	 */
+	AnalysisResult createAnalysisResult();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

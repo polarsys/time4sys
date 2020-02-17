@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="results" nsURI="http://www.polarsys.org/time4sys/results/1.0"
+    nsPrefix="results">
+  <eClassifiers xsi:type="ecore:EClass" name="ResultSetContainer" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultSet" upperBound="-1"
+        eType="#//AbstractResultSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="designModel" lowerBound="1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/design.ecore#//DesignModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisResultSet" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement #//AbstractResultSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbOfIterations" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasConverged" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskChainResult" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement #//TaskResult">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resource" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/grm.ecore#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slice" eType="ecore:EClass ../../org.polarsys.time4sys.trace/model/trace.ecore#//Slice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedulingTrace" upperBound="-1"
+        eType="ecore:EClass ../../org.polarsys.time4sys.schedulingtrace.model/model/schedulingtrace.ecore#//SchedulingTrace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulationResult" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement #//AbstractResultSet"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResultReference" abstract="true"
+      eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement #//AbstractResult"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainedResult" eSuperTypes="#//AbstractResultReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferencedResult" eSuperTypes="#//AbstractResultReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskResult" eSuperTypes="#//AtomicResult">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slack" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbOfSuspension" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deadline" eType="ecore:EDataType ../../org.polarsys.time4sys.marte/model/nfp.ecore#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="BCET" eType="ecore:EDataType ../../org.polarsys.time4sys.marte/model/nfp.ecore#//NFP_Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WCET" eType="ecore:EDataType ../../org.polarsys.time4sys.marte/model/nfp.ecore#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDist" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offset" eType="#//Offset"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimplePeriodicEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType ../../org.polarsys.time4sys.marte/model/nfp.ecore#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleSporadicEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dMin" eType="ecore:EDataType ../../org.polarsys.time4sys.marte/model/nfp.ecore#//NFP_Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnceEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SlidingWindowEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbEvents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TindellEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="burstSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="innerPeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outerPeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Offset">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass ../../org.polarsys.time4sys.marte/model/gqam.ecore#//Reference"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicResult" abstract="true" eSuperTypes="#//AbstractResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="load" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResultSet" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="results" upperBound="-1"
+        eType="#//AbstractResult" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" eType="ecore:EClass ../../org.polarsys.time4sys.mapping/model/mapping.ecore#//Mapping"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomTaskResult" eSuperTypes="#//TaskResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="busyWindowLength" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputingResourceResult" eSuperTypes="#//AtomicResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SharedResourceResult" eSuperTypes="#//AtomicResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="utilization" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractResult" abstract="true" eSuperTypes="../../org.polarsys.time4sys.marte/model/core_elements.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subResults" upperBound="-1"
+        eType="#//AbstractResult" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

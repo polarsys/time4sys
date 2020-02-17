@@ -15,14 +15,10 @@ package org.polarsys.time4sys.marte.nfp.coreelements.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
 import org.polarsys.time4sys.marte.nfp.coreelements.DirectedRelationship;
 

@@ -13,7 +13,6 @@
 package org.polarsys.time4sys.marte.grm;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.TimeInterval;
 

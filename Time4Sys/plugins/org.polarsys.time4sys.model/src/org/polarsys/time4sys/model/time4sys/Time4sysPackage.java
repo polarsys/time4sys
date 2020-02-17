@@ -142,13 +142,22 @@ public interface Time4sysPackage extends EPackage {
 	int PROJECT__SIMULATIONS = 6;
 
 	/**
+	 * The feature id for the '<em><b>Results</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__RESULTS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_FEATURE_COUNT = 7;
+	int PROJECT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Project</em>' class.
@@ -326,6 +335,89 @@ public interface Time4sysPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.model.time4sys.impl.AnalysisResultImpl <em>Analysis Result</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.model.time4sys.impl.AnalysisResultImpl
+	 * @see org.polarsys.time4sys.model.time4sys.impl.Time4sysPackageImpl#getAnalysisResult()
+	 * @generated
+	 */
+	int ANALYSIS_RESULT = 3;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT__EANNOTATIONS = CoreElementsPackage.MODEL_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT__MAPPING = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Analysis</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT__ANALYSIS = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT__NAME = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Analysis Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT_FEATURE_COUNT = CoreElementsPackage.MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT___GET_EANNOTATION__STRING = CoreElementsPackage.MODEL_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Design Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT___GET_DESIGN_MODEL = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Analysis Result</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANALYSIS_RESULT_OPERATION_COUNT = CoreElementsPackage.MODEL_ELEMENT_OPERATION_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.model.time4sys.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -411,6 +503,17 @@ public interface Time4sysPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProject_Simulations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.time4sys.model.time4sys.Project#getResults <em>Results</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Results</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.Project#getResults()
+	 * @see #getProject()
+	 * @generated
+	 */
+	EReference getProject_Results();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.model.time4sys.Transformation <em>Transformation</em>}'.
@@ -520,6 +623,59 @@ public interface Time4sysPackage extends EPackage {
 	EOperation getSimulation__GetDesignModel();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.time4sys.model.time4sys.AnalysisResult <em>Analysis Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Analysis Result</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.AnalysisResult
+	 * @generated
+	 */
+	EClass getAnalysisResult();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.model.time4sys.AnalysisResult#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Mapping</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.AnalysisResult#getMapping()
+	 * @see #getAnalysisResult()
+	 * @generated
+	 */
+	EReference getAnalysisResult_Mapping();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.time4sys.model.time4sys.AnalysisResult#getAnalysis <em>Analysis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Analysis</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.AnalysisResult#getAnalysis()
+	 * @see #getAnalysisResult()
+	 * @generated
+	 */
+	EReference getAnalysisResult_Analysis();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.model.time4sys.AnalysisResult#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.polarsys.time4sys.model.time4sys.AnalysisResult#getName()
+	 * @see #getAnalysisResult()
+	 * @generated
+	 */
+	EAttribute getAnalysisResult_Name();
+
+	/**
+	 * Returns the meta object for the '{@link org.polarsys.time4sys.model.time4sys.AnalysisResult#getDesignModel() <em>Get Design Model</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Design Model</em>' operation.
+	 * @see org.polarsys.time4sys.model.time4sys.AnalysisResult#getDesignModel()
+	 * @generated
+	 */
+	EOperation getAnalysisResult__GetDesignModel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -609,6 +765,14 @@ public interface Time4sysPackage extends EPackage {
 		EReference PROJECT__SIMULATIONS = eINSTANCE.getProject_Simulations();
 
 		/**
+		 * The meta object literal for the '<em><b>Results</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROJECT__RESULTS = eINSTANCE.getProject_Results();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.model.time4sys.impl.TransformationImpl <em>Transformation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -691,6 +855,48 @@ public interface Time4sysPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation SIMULATION___GET_DESIGN_MODEL = eINSTANCE.getSimulation__GetDesignModel();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.model.time4sys.impl.AnalysisResultImpl <em>Analysis Result</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.model.time4sys.impl.AnalysisResultImpl
+		 * @see org.polarsys.time4sys.model.time4sys.impl.Time4sysPackageImpl#getAnalysisResult()
+		 * @generated
+		 */
+		EClass ANALYSIS_RESULT = eINSTANCE.getAnalysisResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_RESULT__MAPPING = eINSTANCE.getAnalysisResult_Mapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Analysis</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ANALYSIS_RESULT__ANALYSIS = eINSTANCE.getAnalysisResult_Analysis();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANALYSIS_RESULT__NAME = eINSTANCE.getAnalysisResult_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Design Model</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ANALYSIS_RESULT___GET_DESIGN_MODEL = eINSTANCE.getAnalysisResult__GetDesignModel();
 
 	}
 

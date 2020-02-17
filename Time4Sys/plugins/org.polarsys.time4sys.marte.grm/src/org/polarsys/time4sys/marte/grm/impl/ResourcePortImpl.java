@@ -13,6 +13,7 @@
 package org.polarsys.time4sys.marte.grm.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;

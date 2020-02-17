@@ -14,8 +14,8 @@
 package org.polarsys.time4sys.builder.design.arinc653;
 
 import org.eclipse.emf.ecore.EAnnotation;
-import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.builder.design.Annotations;
+import org.polarsys.time4sys.builder.design.TaskBuilder;
 import org.polarsys.time4sys.marte.gqam.Step;
 import org.polarsys.time4sys.marte.srm.SoftwareSchedulableResource;
 

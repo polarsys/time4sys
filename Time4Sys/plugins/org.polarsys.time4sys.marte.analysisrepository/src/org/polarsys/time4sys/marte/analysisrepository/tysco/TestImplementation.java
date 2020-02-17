@@ -29,9 +29,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTransformation <em>Transformation</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getAnalysisExecPath <em>Analysis Exec Path</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput <em>Console Output</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getToolName <em>Tool Name</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestedFile <em>Tested File</em>}</li>
  *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getTestResult <em>Test Result</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass <em>Result Parser Class</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation()
@@ -173,6 +175,33 @@ public interface TestImplementation extends EObject {
 	void setAnalysisExecPath(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Console Output</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Console Output</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Console Output</em>' attribute.
+	 * @see #setConsoleOutput(boolean)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation_ConsoleOutput()
+	 * @model default="true"
+	 * @generated
+	 */
+	boolean isConsoleOutput();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#isConsoleOutput <em>Console Output</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Console Output</em>' attribute.
+	 * @see #isConsoleOutput()
+	 * @generated
+	 */
+	void setConsoleOutput(boolean value);
+
+	/**
 	 * Returns the value of the '<em><b>Tool Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -249,5 +278,31 @@ public interface TestImplementation extends EObject {
 	 * @generated
 	 */
 	void setTestResult(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Result Parser Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Result Parser Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Result Parser Class</em>' attribute.
+	 * @see #setResultParserClass(String)
+	 * @see org.polarsys.time4sys.marte.analysisrepository.tysco.TyscoPackage#getTestImplementation_ResultParserClass()
+	 * @model
+	 * @generated
+	 */
+	String getResultParserClass();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.analysisrepository.tysco.TestImplementation#getResultParserClass <em>Result Parser Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Result Parser Class</em>' attribute.
+	 * @see #getResultParserClass()
+	 * @generated
+	 */
+	void setResultParserClass(String value);
 
 } // TestImplementation

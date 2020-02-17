@@ -104,6 +104,29 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 		grid.horizontalSpan = 1;
 		tabFolder.setLayoutData(grid);
 		tabFolder.setLayout(new GridLayout(1, true));
+		
+		ScrolledComposite scroll=null;
+		
+		/***************** Tab 4 : Schedulability tests *****************/
+		tab4 = new TabItem(tabFolder, SWT.NONE);
+		tab4.setText("Available Analysis Tests");
+		
+		scroll = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
+		scroll.setExpandHorizontal(true);
+		scroll.setExpandVertical(true);
+		
+		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
+		scroll.setLayoutData(grid);
+		
+		compoTab4 = new Composite(scroll, SWT.NONE);
+		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
+		compoTab4.setLayoutData(grid);
+		compoTab4.setLayout(new GridLayout());
+		ctrl.fillTestsGroup();
+		
+		scroll.setMinSize(compoTab4.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		scroll.setContent(compoTab4);
+		tab4.setControl(scroll);
 
 		/*****************
 		 * Tab 1 : Identification Rules Evaluation
@@ -166,7 +189,7 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 
 		// ScrolledComposite scroll = new
 		// ScrolledComposite(tabFolder,SWT.V_SCROLL|SWT.H_SCROLL|SWT.BORDER);
-		ScrolledComposite scroll = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
+		scroll = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
 		scroll.setExpandHorizontal(true);
 		scroll.setExpandVertical(true);
 		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
@@ -204,26 +227,6 @@ public class AnalysisRepositoryResultUI extends TitleAreaDialog {
 		scroll1.setContent(compoTab3);
 		tab3.setControl(scroll1);
 
-		/***************** Tab 4 : Schedulability tests *****************/
-		tab4 = new TabItem(tabFolder, SWT.NONE);
-		tab4.setText("Available Analysis Tests");
-
-		scroll = new ScrolledComposite(tabFolder, SWT.V_SCROLL | SWT.H_SCROLL);
-		scroll.setExpandHorizontal(true);
-		scroll.setExpandVertical(true);
-
-		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
-		scroll.setLayoutData(grid);
-
-		compoTab4 = new Composite(scroll, SWT.NONE);
-		grid = new GridData(SWT.FILL, SWT.FILL, false, true);
-		compoTab4.setLayoutData(grid);
-		compoTab4.setLayout(new GridLayout());
-		ctrl.fillTestsGroup();
-
-		scroll.setMinSize(compoTab4.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		scroll.setContent(compoTab4);
-		tab4.setControl(scroll);
 
 		/***************** Tab 5 : Inner transfo tests *****************/
 		tab5 = new TabItem(tabFolder, SWT.None);

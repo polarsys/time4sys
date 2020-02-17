@@ -22,11 +22,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.polarsys.time4sys.design.DesignPackage;
 import org.polarsys.time4sys.mapping.MappingPackage;
 import org.polarsys.time4sys.marte.nfp.coreelements.CoreElementsPackage;
+import org.polarsys.time4sys.model.time4sys.AnalysisResult;
 import org.polarsys.time4sys.model.time4sys.Project;
 import org.polarsys.time4sys.model.time4sys.Simulation;
 import org.polarsys.time4sys.model.time4sys.Time4sysFactory;
 import org.polarsys.time4sys.model.time4sys.Time4sysPackage;
 import org.polarsys.time4sys.model.time4sys.Transformation;
+import org.polarsys.time4sys.results.results.ResultsPackage;
 import org.polarsys.time4sys.trace.TracePackage;
 
 /**
@@ -55,6 +57,13 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * @generated
 	 */
 	private EClass simulationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass analysisResultEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -103,9 +112,8 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		DesignPackage.eINSTANCE.eClass();
 		MappingPackage.eINSTANCE.eClass();
-		TracePackage.eINSTANCE.eClass();
+		ResultsPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTime4sysPackage.createPackageContents();
@@ -192,6 +200,15 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 */
 	public EReference getProject_Simulations() {
 		return (EReference)projectEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProject_Results() {
+		return (EReference)projectEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -289,6 +306,51 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAnalysisResult() {
+		return analysisResultEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAnalysisResult_Mapping() {
+		return (EReference)analysisResultEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAnalysisResult_Analysis() {
+		return (EReference)analysisResultEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAnalysisResult_Name() {
+		return (EAttribute)analysisResultEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAnalysisResult__GetDesignModel() {
+		return analysisResultEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Time4sysFactory getTime4sysFactory() {
 		return (Time4sysFactory)getEFactoryInstance();
 	}
@@ -320,6 +382,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		createEReference(projectEClass, PROJECT__DERIVATIONS);
 		createEReference(projectEClass, PROJECT__TRANSFORMATIONS);
 		createEReference(projectEClass, PROJECT__SIMULATIONS);
+		createEReference(projectEClass, PROJECT__RESULTS);
 
 		transformationEClass = createEClass(TRANSFORMATION);
 		createEReference(transformationEClass, TRANSFORMATION__RESULT);
@@ -332,6 +395,12 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		createEReference(simulationEClass, SIMULATION__TRACE);
 		createEAttribute(simulationEClass, SIMULATION__SEED);
 		createEOperation(simulationEClass, SIMULATION___GET_DESIGN_MODEL);
+
+		analysisResultEClass = createEClass(ANALYSIS_RESULT);
+		createEReference(analysisResultEClass, ANALYSIS_RESULT__MAPPING);
+		createEReference(analysisResultEClass, ANALYSIS_RESULT__ANALYSIS);
+		createEAttribute(analysisResultEClass, ANALYSIS_RESULT__NAME);
+		createEOperation(analysisResultEClass, ANALYSIS_RESULT___GET_DESIGN_MODEL);
 	}
 
 	/**
@@ -361,6 +430,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		DesignPackage theDesignPackage = (DesignPackage)EPackage.Registry.INSTANCE.getEPackage(DesignPackage.eNS_URI);
 		MappingPackage theMappingPackage = (MappingPackage)EPackage.Registry.INSTANCE.getEPackage(MappingPackage.eNS_URI);
 		TracePackage theTracePackage = (TracePackage)EPackage.Registry.INSTANCE.getEPackage(TracePackage.eNS_URI);
+		ResultsPackage theResultsPackage = (ResultsPackage)EPackage.Registry.INSTANCE.getEPackage(ResultsPackage.eNS_URI);
 		CoreElementsPackage theCoreElementsPackage = (CoreElementsPackage)EPackage.Registry.INSTANCE.getEPackage(CoreElementsPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
@@ -371,6 +441,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		// Add supertypes to classes
 		transformationEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 		simulationEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
+		analysisResultEClass.getESuperTypes().add(theCoreElementsPackage.getModelElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -381,6 +452,7 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		initEReference(getProject_Derivations(), theDesignPackage.getDesignModel(), null, "derivations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Transformations(), this.getTransformation(), null, "transformations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProject_Simulations(), this.getSimulation(), null, "simulations", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProject_Results(), theResultsPackage.getResultSetContainer(), null, "results", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transformationEClass, Transformation.class, "Transformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransformation_Result(), theEcorePackage.getEObject(), null, "result", null, 1, 1, Transformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -394,6 +466,13 @@ public class Time4sysPackageImpl extends EPackageImpl implements Time4sysPackage
 		initEAttribute(getSimulation_Seed(), ecorePackage.getEBigInteger(), "seed", null, 0, 1, Simulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getSimulation__GetDesignModel(), theDesignPackage.getDesignModel(), "getDesignModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(analysisResultEClass, AnalysisResult.class, "AnalysisResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnalysisResult_Mapping(), theMappingPackage.getMapping(), null, "mapping", null, 1, 1, AnalysisResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnalysisResult_Analysis(), theResultsPackage.getResultSetContainer(), null, "analysis", null, 1, 1, AnalysisResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnalysisResult_Name(), theEcorePackage.getEString(), "name", null, 0, 1, AnalysisResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getAnalysisResult__GetDesignModel(), theDesignPackage.getDesignModel(), "getDesignModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated schedulingtrace -->
+      <package
+            uri="http://www.polarsys.org/time4sys/schedulingtrace/1.0"
+            class="org.polarsys.time4sys.schedulingtrace.SchedulingtracePackage"
+            genModel="model/schedulingtrace.genmodel"/>
+   </extension>
+
+</plugin>

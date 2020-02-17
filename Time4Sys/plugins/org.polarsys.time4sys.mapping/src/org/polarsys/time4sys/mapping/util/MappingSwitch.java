@@ -15,7 +15,6 @@ package org.polarsys.time4sys.mapping.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.time4sys.mapping.*;
 import org.polarsys.time4sys.mapping.Context;
 import org.polarsys.time4sys.mapping.Link;
 import org.polarsys.time4sys.mapping.MappableArtefact;

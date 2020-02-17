@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
-import org.polarsys.time4sys.library.*;
 import org.polarsys.time4sys.library.DeadlineMonotonicSchedulingPolicy;
 import org.polarsys.time4sys.library.HardwareCANBus;
 import org.polarsys.time4sys.library.LibraryPackage;
