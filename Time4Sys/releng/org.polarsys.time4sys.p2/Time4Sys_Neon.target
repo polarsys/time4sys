@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="175">
+<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="194">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
@@ -10,64 +10,85 @@
 <repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="fr.rtaw.pegaseplusplus.feature.feature.group" version="1.0.0.201811291043"/>
-<repository location="http://eclipse.realtimeatwork.com"/>
+<unit id="org.eclipse.acceleo.query.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.query.source.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.eef.ext.widgets.reference.feature.feature.group" version="2.1.2.201903071543"/>
+<unit id="org.eclipse.eef.ext.widgets.reference.feature.source.feature.group" version="2.1.2.201903071543"/>
+<unit id="org.eclipse.eef.sdk.feature.feature.group" version="2.1.2.201903071543"/>
+<unit id="org.eclipse.eef.sdk.feature.source.feature.group" version="2.1.2.201903071543"/>
+<unit id="org.eclipse.elk.algorithms.feature.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.elk.algorithms.feature.source.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.elk.feature.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.elk.feature.source.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.elk.graphviz.feature.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.elk.graphviz.feature.source.feature.group" version="0.4.1"/>
+<unit id="org.eclipse.sirius.aql.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.diagram.elk.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.doc.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.properties.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.properties.feature.source.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.aql.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.runtime.ocl.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.samples.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.samples.properties.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.samples.properties.feature.source.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.server.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.server.product.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.server.ui.autostart.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.specifier.properties.feature.source.feature.group" version="6.1.4.202001201359"/>
+<unit id="org.eclipse.sirius.workflow.feature.feature.group" version="6.1.4.202001201359"/>
+<repository location="http://download.eclipse.org/sirius/updates/stable/6.1.4-S20200120-085637/oxygen/"/>
+</location>
+<location path="C:\Users\didier\Downloads\tempo_plugins\plugins" type="Directory"/>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.acceleo.doc.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.equinox.launcher.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.examples.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.query.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.query.source.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.query.ui.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.query.ui.source.feature.group" version="6.0.7.201812041426"/>
+<unit id="org.eclipse.acceleo.runtime.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.runtime.source.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.sdk.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.source.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.capabilities.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.completeocl.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.ocl.feature.group" version="3.7.7.201812041426"/>
+<unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="3.7.7.201812041426"/>
+<repository location="http://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.9.0.201710271456"/>
-<unit id="org.eclipse.emf.diffmerge.sirius.feature.feature.group" version="0.9.0.201710271456"/>
 <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.9.0.201710271456"/>
 <unit id="org.eclipse.emf.diffmerge.gmf.feature.feature.group" version="0.9.0.201710271456"/>
-<unit id="org.eclipse.emf.diffmerge.svn.feature.feature.group" version="0.9.0.201710271456"/>
 <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.9.0.201710271456"/>
+<unit id="org.eclipse.emf.diffmerge.sirius.feature.feature.group" version="0.9.0.201710271456"/>
+<unit id="org.eclipse.emf.diffmerge.svn.feature.feature.group" version="0.9.0.201710271456"/>
 <repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site/"/>
 </location>
 <location path="C:\SCM\time4sysGithub\Time4Sys\releng\org.polarsys.time4sys.librairies\target" type="Directory"/>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.sirius.runtime.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.eef.ext.widgets.reference.feature.feature.group" version="2.0.1.201801311257"/>
-<unit id="org.eclipse.acceleo.query.feature.group" version="6.0.2.201708211328"/>
-<unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.properties.feature.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.eef.sdk.feature.feature.group" version="2.0.1.201801311257"/>
-<unit id="org.eclipse.eef.ext.widgets.reference.feature.feature.group" version="2.0.1.201801311257"/>
-<unit id="org.eclipse.sirius.runtime.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.eef.sdk.feature.feature.group" version="2.0.1.201801311257"/>
-<unit id="org.eclipse.sirius.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.sirius.aql.feature.group" version="5.1.1.201801311428"/>
-<unit id="org.eclipse.acceleo.query.feature.group" version="6.0.2.201708211328"/>
-<repository location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/"/>
-</location>
 <location path="${eclipse_home}" type="Profile"/>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.acceleo.query.source.feature.group" version="6.0.7.201812041426"/>
-<unit id="org.eclipse.acceleo.query.feature.group" version="6.0.7.201812041426"/>
-<unit id="org.eclipse.acceleo.ui.interpreter.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.ui.capabilities.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.runtime.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.ui.interpreter.completeocl.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.source.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.runtime.source.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.sdk.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.examples.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.doc.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.ui.interpreter.ocl.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.query.ui.feature.group" version="6.0.7.201812041426"/>
-<unit id="org.eclipse.acceleo.query.ui.source.feature.group" version="6.0.7.201812041426"/>
-<unit id="org.eclipse.acceleo.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="3.7.7.201812041426"/>
-<unit id="org.eclipse.acceleo.equinox.launcher.feature.group" version="3.7.7.201812041426"/>
-<repository location="http://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426/"/>
-</location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
 <repository location="http://download.eclipse.org/releases/neon/201703141400"/>
 </location>
-<location path="C:\Users\didier\Downloads\tempo_plugins\plugins" type="Directory"/>
+<location path="C:\Users\didier\Downloads\Transfo Tempo_Corrected" type="Directory"/>
 </locations>
 </target>

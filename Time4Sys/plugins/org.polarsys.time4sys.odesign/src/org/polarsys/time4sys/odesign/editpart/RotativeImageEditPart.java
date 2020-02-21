@@ -171,7 +171,7 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
    */
   @Override
   protected NodeFigure createNodePlate() {
-    DefaultSizeNodeFigure result = new AirStyleDefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
+	  AirStyleDefaultSizeNodeFigure result = new AirStyleDefaultSizeNodeFigure(getMapMode().DPtoLP(40), getMapMode().DPtoLP(40));
     return result;
   }
 
