@@ -13,7 +13,7 @@
  </parent>
  
 <modules>
-<module>org.polarsys.time4sys.trace.ctf.importer</module>
-<module>org.polarsys.time4sys.trace.ctf.importer.ui</module>
+<module>org.polarsys.time4sys.trace.CTF.importer</module>
+<module>org.polarsys.time4sys.trace.CTF.importer.ui</module>
 </modules>
 </project>
