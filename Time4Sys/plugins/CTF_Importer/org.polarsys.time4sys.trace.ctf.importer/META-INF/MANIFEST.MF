@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CTF Importer
+Bundle-SymbolicName: org.polarsys.time4sys.trace.ctf.importer;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.polarsys.time4sys.trace,
+ org.polarsys.time4sys.schedulingtrace
+Require-Bundle: org.polarsys.time4sys.marte.nfp,
+ org.polarsys.time4sys.schedulingtrace.model,
+ org.polarsys.time4sys.model
+Export-Package: 
+ org.polarsys.time4sys.trace.ctf.importer.ST
