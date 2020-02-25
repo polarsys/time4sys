@@ -20,8 +20,8 @@
                 <module>org.polarsys.time4sys.marte.hrm.tests</module>
                 <module>org.polarsys.time4sys.marte.nfp.tests</module>
                 <module>org.polarsys.time4sys.marte.srm.tests</module>
-                <module>org.polarsys.time4sys.marte.model.tests</module>
+                <module>org.polarsys.time4sys.model.tests</module>
                 <module>org.polarsys.time4sys.tests</module>
-                <module>org.polarsys.time4sys.rcptt.tests</module>
+                <!--module>org.polarsys.time4sys.rcptt.tests</module-->
  </modules>
 </project>
