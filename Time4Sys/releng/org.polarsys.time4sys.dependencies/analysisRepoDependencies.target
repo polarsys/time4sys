@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="analysisRepoDependencies" sequenceNumber="1">
+<locations>
+<location path="C:\SCM\time4sysGithub\Time4Sys\releng\Libs" type="Directory"/>
+<location path="C:\SCM\time4sysGithub\Time4Sys\releng\Libs\commons-io-2.6" type="Directory"/>
+</locations>
+</target>
