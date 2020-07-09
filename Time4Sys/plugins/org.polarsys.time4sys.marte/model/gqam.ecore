@@ -129,6 +129,7 @@
         <details key="documentation" value="In UML 2.5, this would be an ActivityEdge."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//LogicalKind"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LatencyObserver" eSuperTypes="#//TimedObserver">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latency" eType="#//NFP_Duration"/>
@@ -300,5 +301,9 @@
         eOpposite="#//BehaviorScenario/cause"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//ArrivalPattern"
         containment="true" eOpposite="#//ArrivalPattern/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicalKind">
+    <eLiterals name="and"/>
+    <eLiterals name="or" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

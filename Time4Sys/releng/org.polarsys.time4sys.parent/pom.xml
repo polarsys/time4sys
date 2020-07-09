@@ -26,9 +26,9 @@
  
  <!-- configure p2 repository to resolve against -->
   <repository> 
-   <id>SiriusNeon</id>
+   <id>SiriusPhoton</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/sirius/updates/stable/6.1.4-S20200120-085637/oxygen/</url>
+   <url>http://download.eclipse.org/sirius/updates/stable/6.3.1-S20200602-082939/photon/</url>
  </repository>
  <repository>
    <id>amalgam</id>

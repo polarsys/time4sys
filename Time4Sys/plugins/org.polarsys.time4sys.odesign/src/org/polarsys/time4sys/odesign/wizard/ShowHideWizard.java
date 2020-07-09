@@ -25,7 +25,7 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
-import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.ui.provider.DiagramUIPlugin;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
@@ -214,16 +214,16 @@ public class ShowHideWizard extends Wizard implements IExternalJavaAction {
 			DiagramElementMapping mapping = DiagramServices.getDiagramServices().getMappingByName(diag.getDescription(),
 					elementToCreateMapping);
 
-			if (mapping instanceof AbstractNodeMapping) {
-				DiagramServices.getDiagramServices().createNode((AbstractNodeMapping) mapping, eObject, diag, diag);
+			if (mapping instanceof NodeMapping) {
+				DiagramServices.getDiagramServices().createNode((NodeMapping) mapping, eObject, diag, diag);
 			}
 		}
 		if (context instanceof DDiagramElement) {
 			DNodeContainer node = (DNodeContainer) context;
 			DiagramElementMapping mapping = DiagramServices.getDiagramServices()
 					.getMappingByName(node.getParentDiagram().getDescription(), elementToCreateMapping);
-			if (mapping instanceof AbstractNodeMapping) {
-				DiagramServices.getDiagramServices().createNode((AbstractNodeMapping) mapping, eObject, node,
+			if (mapping instanceof NodeMapping) {
+				DiagramServices.getDiagramServices().createNode((NodeMapping) mapping, eObject, node,
 						node.getParentDiagram());
 			}
 		}

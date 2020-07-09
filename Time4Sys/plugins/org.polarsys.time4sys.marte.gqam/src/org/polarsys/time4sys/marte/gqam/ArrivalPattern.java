@@ -144,6 +144,7 @@ public interface ArrivalPattern extends ModelElement {
 
 	/**
 	 * Returns the value of the '<em><b>Is Control</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Control</em>' attribute isn't clear,
@@ -153,7 +154,7 @@ public interface ArrivalPattern extends ModelElement {
 	 * @return the value of the '<em>Is Control</em>' attribute.
 	 * @see #setIsControl(boolean)
 	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getArrivalPattern_IsControl()
-	 * @model
+	 * @model default="true"
 	 * @generated
 	 */
 	boolean isIsControl();

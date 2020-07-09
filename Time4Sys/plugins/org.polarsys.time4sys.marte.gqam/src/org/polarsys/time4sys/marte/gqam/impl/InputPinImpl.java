@@ -14,14 +14,17 @@ package org.polarsys.time4sys.marte.gqam.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.InputPin;
+import org.polarsys.time4sys.marte.gqam.LogicalKind;
 import org.polarsys.time4sys.marte.gqam.OutputPin;
 
 /**
@@ -33,6 +36,7 @@ import org.polarsys.time4sys.marte.gqam.OutputPin;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl#getPredecessors <em>Predecessors</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.impl.InputPinImpl#getKind <em>Kind</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +51,25 @@ public class InputPinImpl extends PinImpl implements InputPin {
 	 * @ordered
 	 */
 	protected EList<OutputPin> predecessors;
+
+	/**
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LogicalKind KIND_EDEFAULT = LogicalKind.AND;
+	/**
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
+	protected LogicalKind kind = KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,6 +100,27 @@ public class InputPinImpl extends PinImpl implements InputPin {
 			predecessors = new EObjectWithInverseResolvingEList.ManyInverse<OutputPin>(OutputPin.class, this, GqamPackage.INPUT_PIN__PREDECESSORS, GqamPackage.OUTPUT_PIN__SUCCESSORS);
 		}
 		return predecessors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalKind getKind() {
+		return kind;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKind(LogicalKind newKind) {
+		LogicalKind oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GqamPackage.INPUT_PIN__KIND, oldKind, kind));
 	}
 
 	/**
@@ -118,6 +162,8 @@ public class InputPinImpl extends PinImpl implements InputPin {
 		switch (featureID) {
 			case GqamPackage.INPUT_PIN__PREDECESSORS:
 				return getPredecessors();
+			case GqamPackage.INPUT_PIN__KIND:
+				return getKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -135,6 +181,9 @@ public class InputPinImpl extends PinImpl implements InputPin {
 				getPredecessors().clear();
 				getPredecessors().addAll((Collection<? extends OutputPin>)newValue);
 				return;
+			case GqamPackage.INPUT_PIN__KIND:
+				setKind((LogicalKind)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -150,6 +199,9 @@ public class InputPinImpl extends PinImpl implements InputPin {
 			case GqamPackage.INPUT_PIN__PREDECESSORS:
 				getPredecessors().clear();
 				return;
+			case GqamPackage.INPUT_PIN__KIND:
+				setKind(KIND_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -164,8 +216,26 @@ public class InputPinImpl extends PinImpl implements InputPin {
 		switch (featureID) {
 			case GqamPackage.INPUT_PIN__PREDECESSORS:
 				return predecessors != null && !predecessors.isEmpty();
+			case GqamPackage.INPUT_PIN__KIND:
+				return kind != KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (kind: ");
+		result.append(kind);
+		result.append(')');
+		return result.toString();
 	}
 
 } //InputPinImpl

@@ -15,6 +15,7 @@
                 <module>org.polarsys.time4sys.launcher</module>
                 <module>org.polarsys.time4sys.parent</module>
                 <module>org.polarsys.time4sys.update.site</module>
+                <module>org.polarsys.time4sys.studio.update.site</module>
                 <module>org.polarsys.time4sys.marte.transformation.updatesite</module>
                 <module>org.polarsys.time4sys.marte.update.site</module>
                 <module>org.polarsys.time4sys.p2</module>

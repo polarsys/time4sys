@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreValidator;
+import org.polarsys.time4sys.marte.gqam.*;
 import org.polarsys.time4sys.marte.gqam.AcquireStep;
 import org.polarsys.time4sys.marte.gqam.ArrivalPattern;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
@@ -201,6 +202,8 @@ public class GqamValidator extends EObjectValidator {
 				return validateLaxityKind((LaxityKind)value, diagnostics, context);
 			case GqamPackage.OBJECT_NODE_ORDERING_KIND:
 				return validateObjectNodeOrderingKind((ObjectNodeOrderingKind)value, diagnostics, context);
+			case GqamPackage.LOGICAL_KIND:
+				return validateLogicalKind((LogicalKind)value, diagnostics, context);
 			case GqamPackage.NFP_DATA_SIZE:
 				return validateNFP_DataSize((DataSize)value, diagnostics, context);
 			case GqamPackage.NFP_DURATION:
@@ -704,6 +707,15 @@ public class GqamValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateObjectNodeOrderingKind(ObjectNodeOrderingKind objectNodeOrderingKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogicalKind(LogicalKind logicalKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

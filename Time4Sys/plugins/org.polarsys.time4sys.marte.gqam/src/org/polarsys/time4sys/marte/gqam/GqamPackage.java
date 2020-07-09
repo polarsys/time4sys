@@ -2148,13 +2148,22 @@ public interface GqamPackage extends EPackage {
 	int INPUT_PIN__PREDECESSORS = GqamPackage.PIN_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_PIN__KIND = GqamPackage.PIN_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Input Pin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_PIN_FEATURE_COUNT = GqamPackage.PIN_FEATURE_COUNT + 1;
+	int INPUT_PIN_FEATURE_COUNT = GqamPackage.PIN_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -4374,6 +4383,16 @@ public interface GqamPackage extends EPackage {
 	int OBJECT_NODE_ORDERING_KIND = 31;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.time4sys.marte.gqam.LogicalKind <em>Logical Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.time4sys.marte.gqam.LogicalKind
+	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLogicalKind()
+	 * @generated
+	 */
+	int LOGICAL_KIND = 32;
+
+	/**
 	 * The meta object id for the '<em>NFP Data Size</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4381,7 +4400,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_DataSize()
 	 * @generated
 	 */
-	int NFP_DATA_SIZE = 32;
+	int NFP_DATA_SIZE = 33;
 
 	/**
 	 * The meta object id for the '<em>NFP Duration</em>' data type.
@@ -4391,7 +4410,7 @@ public interface GqamPackage extends EPackage {
 	 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getNFP_Duration()
 	 * @generated
 	 */
-	int NFP_DURATION = 33;
+	int NFP_DURATION = 34;
 
 
 	/**
@@ -5030,6 +5049,17 @@ public interface GqamPackage extends EPackage {
 	EReference getInputPin_Predecessors();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.time4sys.marte.gqam.InputPin#getKind <em>Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.InputPin#getKind()
+	 * @see #getInputPin()
+	 * @generated
+	 */
+	EAttribute getInputPin_Kind();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.time4sys.marte.gqam.LatencyObserver <em>Latency Observer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5503,6 +5533,16 @@ public interface GqamPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getObjectNodeOrderingKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.time4sys.marte.gqam.LogicalKind <em>Logical Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Logical Kind</em>'.
+	 * @see org.polarsys.time4sys.marte.gqam.LogicalKind
+	 * @generated
+	 */
+	EEnum getLogicalKind();
 
 	/**
 	 * Returns the meta object for data type '{@link org.polarsys.time4sys.marte.nfp.DataSize <em>NFP Data Size</em>}'.
@@ -6046,6 +6086,14 @@ public interface GqamPackage extends EPackage {
 		EReference INPUT_PIN__PREDECESSORS = eINSTANCE.getInputPin_Predecessors();
 
 		/**
+		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INPUT_PIN__KIND = eINSTANCE.getInputPin_Kind();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.impl.LatencyObserverImpl <em>Latency Observer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6444,6 +6492,16 @@ public interface GqamPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum OBJECT_NODE_ORDERING_KIND = eINSTANCE.getObjectNodeOrderingKind();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.time4sys.marte.gqam.LogicalKind <em>Logical Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.time4sys.marte.gqam.LogicalKind
+		 * @see org.polarsys.time4sys.marte.gqam.impl.GqamPackageImpl#getLogicalKind()
+		 * @generated
+		 */
+		EEnum LOGICAL_KIND = eINSTANCE.getLogicalKind();
 
 		/**
 		 * The meta object literal for the '<em>NFP Data Size</em>' data type.

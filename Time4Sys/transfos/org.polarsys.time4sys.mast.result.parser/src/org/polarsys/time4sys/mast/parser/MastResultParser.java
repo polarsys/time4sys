@@ -16,6 +16,8 @@ import javax.xml.bind.Unmarshaller;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -32,7 +34,6 @@ import org.polarsys.time4sys.marte.analysisrepository.tysco.ui.contextfinding.ut
 import org.polarsys.time4sys.marte.analysisrepository.tysco.util.AbstractResultParser;
 import org.polarsys.time4sys.marte.nfp.Duration;
 import org.polarsys.time4sys.marte.nfp.NfpFactory;
-import org.polarsys.time4sys.marte.nfp.TimeInterval;
 import org.polarsys.time4sys.mast.parser.result.ProcessingResourceResults;
 import org.polarsys.time4sys.mast.parser.result.REALTIMESITUATION;
 import org.polarsys.time4sys.mast.parser.result.SchedulingServerResults;
@@ -84,9 +85,8 @@ public class MastResultParser implements AbstractResultParser {
 				mapp = Time4Sys2EDFMastGenerator.getMapp();
 			}
 			xmlRes = (XMLResource) proj.eResource();
-			TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(proj);
 			REALTIMESITUATION mast_rts = (REALTIMESITUATION) unmarshaller.unmarshal(inputBR);
-
+			TransactionalEditingDomain domain = initDomain(designModel);
 			domain.getCommandStack().execute(new RecordingCommand(domain) {
 				@Override
 				protected void doExecute() {
@@ -105,6 +105,16 @@ public class MastResultParser implements AbstractResultParser {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private TransactionalEditingDomain initDomain(DesignModel designModel) {
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(designModel);
+		if (domain == null) {
+			Resource res = designModel.eResource();
+			ResourceSet rs = res.getResourceSet();
+			domain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rs);
+		}
+		return domain;
 	}
 
 	private void addSubResult(Object mast_container, Object mast_obj) {
@@ -163,9 +173,9 @@ public class MastResultParser implements AbstractResultParser {
 		if (mast_transaction instanceof TransactionResults) {
 			if (mast_timing instanceof TimingResult) {
 				TimingResult mast_timingRes = (TimingResult) mast_timing;
-				TaskResult taskRes=ResultsFactory.eINSTANCE.createTaskResult();
-				addResult(tr,taskRes);
-				String eventName = ((TimingResult)mast_timing).getEventName();
+				TaskResult taskRes = ResultsFactory.eINSTANCE.createTaskResult();
+				addResult(tr, taskRes);
+				String eventName = ((TimingResult) mast_timing).getEventName();
 				if (mapp.containsKey(eventName)) {
 					Link link = MappingFactory.eINSTANCE.createLink(context, "source",
 							xmlRes.getEObject(mapp.get(eventName)), "target", taskRes);
@@ -184,13 +194,13 @@ public class MastResultParser implements AbstractResultParser {
 				Duration maxD = NfpFactory.eINSTANCE.createDurationFromString(String.valueOf(max));
 
 				taskRes.setName(eventName);
-				taskRes.setBCET(minD); 
+				taskRes.setBCET(minD);
 				taskRes.setWCET(maxD);
 
 				mast_timingRes.getJitters();
 				SimplePeriodicEvent spe = ResultsFactory.eINSTANCE.createSimplePeriodicEvent();
 				taskRes.setEvent(spe);
-				
+
 				// TODO:Add the good kind of event
 				taskRes.setNbOfSuspension(mast_timingRes.getNumOfSuspensions().intValue());
 				mast_timingRes.getWorstBlockingTime();
@@ -202,9 +212,9 @@ public class MastResultParser implements AbstractResultParser {
 		if (container instanceof AbstractResultSet) {
 			((AbstractResultSet) container).getResults().add(csrr);
 		} else if (container instanceof AtomicResult) {
-			AbstractResultSet ars = (AbstractResultSet) ((EObject)container).eContainer();
+			AbstractResultSet ars = (AbstractResultSet) ((EObject) container).eContainer();
 			ars.getResults().add(csrr);
-//			((AtomicResult) container).getSubResults().add(csrr);
+			// ((AtomicResult) container).getSubResults().add(csrr);
 		}
 	}
 

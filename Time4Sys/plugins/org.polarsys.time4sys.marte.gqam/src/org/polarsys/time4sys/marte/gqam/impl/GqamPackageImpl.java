@@ -38,6 +38,7 @@ import org.polarsys.time4sys.marte.gqam.GqamPackage;
 import org.polarsys.time4sys.marte.gqam.InputPin;
 import org.polarsys.time4sys.marte.gqam.LatencyObserver;
 import org.polarsys.time4sys.marte.gqam.LaxityKind;
+import org.polarsys.time4sys.marte.gqam.LogicalKind;
 import org.polarsys.time4sys.marte.gqam.MultiplicityElement;
 import org.polarsys.time4sys.marte.gqam.ObjectNode;
 import org.polarsys.time4sys.marte.gqam.ObjectNodeOrderingKind;
@@ -300,6 +301,13 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum logicalKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType nfP_DataSizeEDataType = null;
 
 	/**
@@ -359,6 +367,8 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		GrmPackage.eINSTANCE.eClass();
 		NfpPackage.eINSTANCE.eClass();
 		AnnotationPackage.eINSTANCE.eClass();
+		EcorePackage.eINSTANCE.eClass();
+		CoreElementsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		GqamPackageImpl theGqamPackage_1 = (GqamPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI) instanceof GqamPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GqamPackage.eNS_URI) : GqamPackage.eINSTANCE);
@@ -925,6 +935,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInputPin_Kind() {
+		return (EAttribute)inputPinEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLatencyObserver() {
 		return latencyObserverEClass;
 	}
@@ -1330,6 +1349,15 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getLogicalKind() {
+		return logicalKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getNFP_DataSize() {
 		return nfP_DataSizeEDataType;
 	}
@@ -1420,6 +1448,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		inputPinEClass = createEClass(INPUT_PIN);
 		createEReference(inputPinEClass, INPUT_PIN__PREDECESSORS);
+		createEAttribute(inputPinEClass, INPUT_PIN__KIND);
 
 		latencyObserverEClass = createEClass(LATENCY_OBSERVER);
 		createEAttribute(latencyObserverEClass, LATENCY_OBSERVER__LATENCY);
@@ -1505,6 +1534,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		connectorKindEEnum = createEEnum(CONNECTOR_KIND);
 		laxityKindEEnum = createEEnum(LAXITY_KIND);
 		objectNodeOrderingKindEEnum = createEEnum(OBJECT_NODE_ORDERING_KIND);
+		logicalKindEEnum = createEEnum(LOGICAL_KIND);
 
 		// Create data types
 		nfP_DataSizeEDataType = createEDataType(NFP_DATA_SIZE);
@@ -1588,7 +1618,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		initEAttribute(getArrivalPattern_Jitter(), theGqamPackage_1.getNFP_Duration(), "jitter", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArrivalPattern_Phase(), theGqamPackage_1.getNFP_Duration(), "phase", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrivalPattern_Reference(), theGqamPackage_1.getReference(), null, "reference", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArrivalPattern_IsControl(), ecorePackage.getEBoolean(), "isControl", null, 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArrivalPattern_IsControl(), ecorePackage.getEBoolean(), "isControl", "true", 0, 1, ArrivalPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviorScenarioEClass, BehaviorScenario.class, "BehaviorScenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorScenario_Steps(), theGqamPackage_1.getStep(), theGqamPackage_1.getStep_Scenario(), "steps", null, 0, -1, BehaviorScenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1632,6 +1662,7 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 
 		initEClass(inputPinEClass, InputPin.class, "InputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInputPin_Predecessors(), theGqamPackage_1.getOutputPin(), theGqamPackage_1.getOutputPin_Successors(), "predecessors", null, 0, -1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInputPin_Kind(), theGqamPackage_1.getLogicalKind(), "kind", null, 0, 1, InputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(latencyObserverEClass, LatencyObserver.class, "LatencyObserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLatencyObserver_Latency(), theGqamPackage_1.getNFP_Duration(), "latency", null, 0, 1, LatencyObserver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1732,6 +1763,10 @@ public class GqamPackageImpl extends EPackageImpl implements GqamPackage {
 		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.LIFO);
 		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.FIFO);
 		addEEnumLiteral(objectNodeOrderingKindEEnum, ObjectNodeOrderingKind.ORDERED);
+
+		initEEnum(logicalKindEEnum, LogicalKind.class, "LogicalKind");
+		addEEnumLiteral(logicalKindEEnum, LogicalKind.AND);
+		addEEnumLiteral(logicalKindEEnum, LogicalKind.OR);
 
 		// Initialize data types
 		initEDataType(nfP_DataSizeEDataType, DataSize.class, "NFP_DataSize", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

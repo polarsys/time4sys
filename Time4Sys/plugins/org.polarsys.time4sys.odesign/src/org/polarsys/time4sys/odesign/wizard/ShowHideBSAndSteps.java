@@ -17,8 +17,9 @@ import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
-import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
+import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.viewpoint.ViewpointPackage;
 import org.polarsys.time4sys.marte.gqam.BehaviorScenario;
 import org.polarsys.time4sys.marte.gqam.CommunicationStep;
@@ -60,8 +61,8 @@ public class ShowHideBSAndSteps extends ShowHideWizard {
 				DDiagram diag = (DDiagram) context;
 				DiagramElementMapping mapping = DiagramServices.getDiagramServices()
 						.getMappingByName(diag.getDescription(), elementToCreateMapping);
-				if (mapping instanceof AbstractNodeMapping) {
-					DiagramServices.getDiagramServices().createNode((AbstractNodeMapping) mapping, eObject, diag, diag);
+				if (mapping instanceof NodeMapping) {
+					DiagramServices.getDiagramServices().createNode((NodeMapping) mapping, eObject, diag, diag);
 
 					for (EObject step : ((BehaviorScenario) eObject).getSteps()) {
 						if (step instanceof ExecutionStep) {
@@ -73,7 +74,7 @@ public class ShowHideBSAndSteps extends ShowHideWizard {
 										&& ((DNodeContainer) representation).getParentDiagram().equals(context)) {
 									DiagramElementMapping stepMapping = DiagramServices.getDiagramServices()
 											.getMappingByName(diag.getDescription(), "ExecutionStep");
-									DiagramServices.getDiagramServices().createNode((AbstractNodeMapping) stepMapping,
+									DiagramServices.getDiagramServices().createNode((NodeMapping) stepMapping,
 											step, (DNodeContainer) representation, diag);
 								}
 							}
@@ -86,7 +87,7 @@ public class ShowHideBSAndSteps extends ShowHideWizard {
 										&& ((DNodeContainer) representation).getParentDiagram().equals(context)) {
 									DiagramElementMapping stepMapping = DiagramServices.getDiagramServices()
 											.getMappingByName(diag.getDescription(), "ComStep");
-									DiagramServices.getDiagramServices().createNode((AbstractNodeMapping) stepMapping,
+									DiagramServices.getDiagramServices().createNode((NodeMapping) stepMapping,
 											step, (DNodeContainer) representation, diag);
 								}
 							}

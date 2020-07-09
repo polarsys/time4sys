@@ -36,13 +36,14 @@ import org.eclipse.sirius.diagram.DragAndDropTarget;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManager;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManagerRegistry;
-import org.eclipse.sirius.diagram.business.internal.experimental.sync.AbstractDNodeCandidate;
-import org.eclipse.sirius.diagram.business.internal.experimental.sync.DDiagramElementSynchronizer;
-import org.eclipse.sirius.diagram.business.internal.experimental.sync.DDiagramSynchronizer;
-import org.eclipse.sirius.diagram.business.internal.experimental.sync.DEdgeCandidate;
+import org.eclipse.sirius.diagram.business.internal.sync.DNodeCandidate;
+import org.eclipse.sirius.diagram.business.internal.sync.DDiagramElementSynchronizer;
+import org.eclipse.sirius.diagram.business.internal.sync.DDiagramSynchronizer;
+import org.eclipse.sirius.diagram.business.internal.sync.DEdgeCandidate;
 import org.eclipse.sirius.diagram.business.internal.helper.decoration.DecorationHelperInternal;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
-import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
+import org.eclipse.sirius.diagram.business.internal.metamodel.operations.DDiagramSpecOperations;
+import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
@@ -79,7 +80,7 @@ public class DiagramServices {
 	 */
 	public DEdge findDEdgeElement(DDiagram pDiagram, EdgeTarget sourceNode, EdgeTarget targetNode,
 			EObject semanticObject, EdgeMapping mapping) {
-		for (DEdge anEdge : pDiagram.getEdgesFromMapping(mapping)) {
+		for (DEdge anEdge : DDiagramSpecOperations.getEdgesFromMapping(pDiagram, mapping)) {
 			if ((anEdge.getTarget() != null) && anEdge.getTarget().equals(semanticObject)
 					&& anEdge.getSourceNode().equals(sourceNode) && anEdge.getTargetNode().equals(targetNode)) {
 				return anEdge;
@@ -298,7 +299,7 @@ public class DiagramServices {
 		}
 	}
 
-	public AbstractDNode createNode(AbstractNodeMapping mapping, EObject modelElement, DragAndDropTarget container,
+	public AbstractDNode createNode(NodeMapping mapping, EObject modelElement, DragAndDropTarget container,
 			DDiagram diagram) {
 		final DDiagram diag = diagram;
 
@@ -309,7 +310,7 @@ public class DiagramServices {
 		final DDiagramElementSynchronizer elementSync = diagramSync.getElementSynchronizer();
 		RefreshIdsHolder rId = RefreshIdsHolder.getOrCreateHolder(diagram);
 
-		AbstractDNodeCandidate nodeCandidate = new AbstractDNodeCandidate(mapping, modelElement, container, rId);
+		DNodeCandidate nodeCandidate = new DNodeCandidate(mapping, modelElement, container, rId);
 		return (AbstractDNode) elementSync.createNewNode(getMappingManager((DSemanticDiagram) diag), nodeCandidate,
 				false);
 	}
@@ -336,25 +337,25 @@ public class DiagramServices {
 		return mapping;
 	}
 
-	public AbstractNodeMapping getAbstractNodeMapping(final DiagramDescription description, String mappingName) {
+	public NodeMapping getAbstractNodeMapping(final DiagramDescription description, String mappingName) {
 
-		for (NodeMapping nodeMapping : description.getAllNodeMappings()) {
+		for (NodeMapping nodeMapping : description.getNodeMappings()) {
 			if (nodeMapping.getName().equals(mappingName)) {
 				return nodeMapping;
 			}
-			for (NodeMapping borderedMapping : nodeMapping.getAllBorderedNodeMappings()) {
+			for (NodeMapping borderedMapping : nodeMapping.getBorderedNodeMappings()) {
 				if (borderedMapping.getName().equals(mappingName)) {
 					return borderedMapping;
 				}
 			}
 		}
-		for (ContainerMapping nodeMapping : description.getAllContainerMappings()) {
+		for (ContainerMapping nodeMapping : description.getContainerMappings()) {
 			if (nodeMapping.getName().equals(mappingName)) {
-				return nodeMapping;
+				return (NodeMapping) nodeMapping;
 			}
 			// recursively
 			List<ContainerMapping> visited = new ArrayList<ContainerMapping>();
-			AbstractNodeMapping anm = getAbstractNodeInSubMapping(mappingName, nodeMapping, visited);
+			NodeMapping anm = getAbstractNodeInSubMapping(mappingName, nodeMapping, visited);
 			if (anm!=null){
 				return anm;
 			}
@@ -362,23 +363,23 @@ public class DiagramServices {
 		return null;
 	}
 
-	private AbstractNodeMapping getAbstractNodeInSubMapping(String mappingName, ContainerMapping nodeMapping,
+	private NodeMapping getAbstractNodeInSubMapping(String mappingName, ContainerMapping nodeMapping,
 			List<ContainerMapping> visited) {
 		visited.add(nodeMapping);
-		for (DiagramElementMapping mapping : nodeMapping.getAllMappings()) {
-			if ((mapping instanceof AbstractNodeMapping)) {
+		for (DiagramElementMapping mapping : nodeMapping.getSubNodeMappings()) {
+			if ((mapping instanceof NodeMapping)) {
 
 				if (mapping.getName().equals(mappingName)) {
-					return (AbstractNodeMapping) mapping;
+					return (NodeMapping) mapping;
 				}
-				for (NodeMapping borderedMapping : ((AbstractNodeMapping) mapping).getAllBorderedNodeMappings()) {
+				for (NodeMapping borderedMapping : ((NodeMapping) mapping).getBorderedNodeMappings()) {
 					if (borderedMapping.getName().equals(mappingName)) {
 						return borderedMapping;
 					}
 				}
 				if (nodeMapping instanceof ContainerMapping && mapping instanceof ContainerMapping
 						&& !visited.contains(mapping)) {
-					AbstractNodeMapping result = getAbstractNodeInSubMapping(mappingName, (ContainerMapping) mapping,
+					NodeMapping result = getAbstractNodeInSubMapping(mappingName, (ContainerMapping) mapping,
 							visited);
 					if (result != null) {
 						return result;
@@ -391,7 +392,7 @@ public class DiagramServices {
 
 	public ContainerMapping getContainerMapping(final DDiagram diagram, String mappingName) {
 		final DiagramDescription description = diagram.getDescription();
-		for (ContainerMapping aContainerMapping : description.getAllContainerMappings()) {
+		for (ContainerMapping aContainerMapping : description.getContainerMappings()) {
 			for (ContainerMapping aSubContainerMapping : getAllContainerMappings(aContainerMapping)) {
 				if (aSubContainerMapping.getName().equals(mappingName)) {
 					return aSubContainerMapping;

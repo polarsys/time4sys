@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.time4sys.marte.gqam.InputPin#getPredecessors <em>Predecessors</em>}</li>
+ *   <li>{@link org.polarsys.time4sys.marte.gqam.InputPin#getKind <em>Kind</em>}</li>
  * </ul>
  *
  * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getInputPin()
@@ -55,5 +56,34 @@ public interface InputPin extends Pin {
 	 * @generated
 	 */
 	EList<OutputPin> getPredecessors();
+
+	/**
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.polarsys.time4sys.marte.gqam.LogicalKind}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see org.polarsys.time4sys.marte.gqam.LogicalKind
+	 * @see #setKind(LogicalKind)
+	 * @see org.polarsys.time4sys.marte.gqam.GqamPackage#getInputPin_Kind()
+	 * @model
+	 * @generated
+	 */
+	LogicalKind getKind();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.time4sys.marte.gqam.InputPin#getKind <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * @see org.polarsys.time4sys.marte.gqam.LogicalKind
+	 * @see #getKind()
+	 * @generated
+	 */
+	void setKind(LogicalKind value);
 
 } // InputPin
