@@ -3,6 +3,8 @@ package org.polarsys.time4sys.graphics.partition;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.polarsys.time4sys.marte.nfp.Duration;
+
 public class Partition {
 
 	private String name;
@@ -12,7 +14,7 @@ public class Partition {
 		this.name= value;		
 	}
 
-	public void addSlot(String start, String end) {
+	public void addSlot(Duration start, Duration end) {
 		slots.add(new Slot(start,end));
 		
 	}
