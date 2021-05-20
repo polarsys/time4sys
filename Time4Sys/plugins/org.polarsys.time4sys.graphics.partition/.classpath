@@ -15,6 +15,5 @@
 	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/com.ibm.icu_56.1.0.v201601250100.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/com.ibm.icu.source_56.1.0.v201601250100.jar"/>
 	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.forms_3.7.1.v20161220-1635.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.forms.source_3.7.1.v20161220-1635.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="swing2swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

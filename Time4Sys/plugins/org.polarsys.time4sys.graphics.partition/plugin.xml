@@ -23,14 +23,14 @@
          point="org.eclipse.ui.views">
       <category
             id="org.polarsys.time4sys.graphics.partition"
-            name="Partition">
+            name="Time4Sys">
       </category>
       <view
             category="org.polarsys.time4sys.graphics.partition"
             class="org.polarsys.time4sys.graphics.partition.ui.PartitionViewPart"
             icon="icons/partition.gif"
             id="org.polarsys.time4sys.graphics.partition.PartitionView"
-            name="Slot Editor">
+            name="Partition">
       </view>
    </extension>
    <extension
