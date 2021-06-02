@@ -290,10 +290,10 @@ public class PartitionViewPart extends ViewPart {
 
 			@Override
 			public void mouseMove(MouseEvent e) {
-				for(Region r: regionTooltip.keySet()){
+				for(Region r: canvasPaintListener.regionTooltip.keySet()){
 					if(r.contains(e.x, e.y)){
-						String tooltip = regionTooltip.get(r);
-						if(canvas.getToolTipText()!=null && !canvas.getToolTipText().equals(tooltip)){
+						String tooltip = canvasPaintListener.regionTooltip.get(r);
+						if(canvas.getToolTipText()==null || !canvas.getToolTipText().equals(tooltip)){
 							canvas.setToolTipText(tooltip);
 						}
 						return;
