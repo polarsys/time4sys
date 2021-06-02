@@ -361,17 +361,16 @@ public class PartitionViewPart extends ViewPart {
 									switch (e.type) {
 									case SWT.FocusOut:
 										item.setText(column, text.getText());
+										updateSlot(item);
 										text.dispose();
 										break;
 									case SWT.Traverse:
 										switch (e.detail) {
 										case SWT.TRAVERSE_RETURN:
 											item.setText(column, text.getText());
-											Slot slot = (Slot) item.getData();
-											slot.setStart(NfpFactory.eINSTANCE.createDurationFromString(item.getText(0)));
-											slot.setEnd(NfpFactory.eINSTANCE.createDurationFromString(item.getText(1)));
-											updateSlotMaxEnd();
+											updateSlot(item);
 											canvas.redraw();
+											text.dispose();
 											//FALL THROUGH
 										case SWT.TRAVERSE_ESCAPE:
 											text.dispose();
@@ -379,6 +378,13 @@ public class PartitionViewPart extends ViewPart {
 										}
 										break;
 									}
+								}
+
+								private void updateSlot(TableItem item) {
+									Slot slot = (Slot) item.getData();
+									slot.setStart(NfpFactory.eINSTANCE.createDurationFromString(item.getText(0)));
+									slot.setEnd(NfpFactory.eINSTANCE.createDurationFromString(item.getText(1)));
+									updateSlotMaxEnd();
 								}
 							};
 							text.addListener(SWT.FocusOut, textListener);
