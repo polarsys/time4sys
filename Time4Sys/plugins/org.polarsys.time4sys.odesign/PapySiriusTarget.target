@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+<target name="Running Platform">
+	<locations>
+		<location path="${eclipse_home}" type="Profile"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/tools/gef/classic/releases/latest/"/>
+			<unit id="org.eclipse.zest.feature.group" version="3.15.0.202211301913"/>
+			<unit id="org.eclipse.zest.examples" version="3.14.100.202211301913"/>
+			<unit id="org.eclipse.zest.examples.source" version="3.14.100.202211301913"/>
+		</location>
+	</locations>
+	<environment>
+		<arch>x86_64</arch>
+		<os>win32</os>
+		<ws>win32</ws>
+		<nl>fr_FR</nl>
+	</environment>
+</target>

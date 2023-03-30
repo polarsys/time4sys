@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Parser
-Bundle-SymbolicName: org.polarsys.time4sys.mast.result.parser
+Bundle-SymbolicName: org.polarsys.time4sys.mast.result.parser;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.polarsys.time4sys.mast.parser.Activator
 Require-Bundle: org.eclipse.core.runtime,
@@ -11,8 +11,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.results,
  org.eclipse.osgi.services,
  org.polarsys.time4sys.model,
- fr.ensma.lias.transformation.time4sys2mast
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ fr.ensma.lias.transformation.time4sys2mast,
+ org.eclipse.persistence.moxy,
+ jakarta.xml.bind-api
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Service-Component: OSGI-INF/org.polarsys.time4sys.mast.result.parser.MastResultParser.xml,
  OSGI-INF/org.polarsys.time4sys.mast.result.parser.JSimMastResultParser.xml,

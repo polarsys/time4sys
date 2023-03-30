@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="ASCII"?>
+<taskmodel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n="http://org.polarsys.time4sys.marte.transformation.petrinet" xmlns:taskmodel="http://org.polarsys.time4sys.marte.transformation.petrinet.taskmodel">
+  <ownedTasks>
+    <stimulus>
+      <offset>
+        <ownedTransition outputRel="//@ownedTasks.0/@stimulus/@offset/@connections.1" inputRel="//@ownedTasks.0/@stimulus/@offset/@connections.0" name="T1" id="T1" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@offset/@ownedPlace" target="//@ownedTasks.0/@stimulus/@offset/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@offset/@ownedTransition" target="//@ownedTasks.0/@stimulus/@firstRelease/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@stimulus/@offset/@connections.0" name="P1" id="P1" initCount="1"/>
+      </offset>
+      <firstRelease>
+        <ownedTransition outputRel="//@ownedTasks.0/@stimulus/@firstRelease/@connections.1 //@ownedTasks.0/@stimulus/@firstRelease/@connections.2" inputRel="//@ownedTasks.0/@stimulus/@firstRelease/@connections.0" name="T2" id="T2" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@firstRelease/@ownedPlace" target="//@ownedTasks.0/@stimulus/@firstRelease/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.0/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.0/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@stimulus/@firstRelease/@connections.0" inputRel="//@ownedTasks.0/@stimulus/@offset/@connections.1" name="P2" id="P2"/>
+      </firstRelease>
+      <period>
+        <ownedTransition outputRel="//@ownedTasks.0/@stimulus/@period/@connections.1 //@ownedTasks.0/@stimulus/@period/@connections.2" inputRel="//@ownedTasks.0/@stimulus/@period/@connections.0" name="T3" id="T3" upperBound="5" lowerBound="5"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@period/@ownedPlace" target="//@ownedTasks.0/@stimulus/@period/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@period/@ownedTransition" target="//@ownedTasks.0/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@period/@ownedTransition" target="//@ownedTasks.0/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@stimulus/@period/@connections.0" inputRel="//@ownedTasks.0/@stimulus/@period/@connections.1 //@ownedTasks.0/@stimulus/@firstRelease/@connections.1" name="P3" id="P3"/>
+      </period>
+      <jitter>
+        <ownedTransition outputRel="//@ownedTasks.0/@fragments.0/@connections.1" inputRel="//@ownedTasks.0/@stimulus/@jitter/@connections.0" name="T4" id="T4" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@jitter/@ownedPlace" target="//@ownedTasks.0/@stimulus/@jitter/@ownedTransition"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@stimulus/@jitter/@connections.0" inputRel="//@ownedTasks.0/@stimulus/@period/@connections.2 //@ownedTasks.0/@stimulus/@firstRelease/@connections.2" name="P4" id="P4"/>
+      </jitter>
+    </stimulus>
+    <fragments priority="1">
+      <ownedTransition outputRel="//@ownedTasks.0/@fragments.0/@connections.2" inputRel="//@ownedTasks.0/@fragments.0/@connections.0 //@ownedTasks.1/@fragments.0/@connections.3 //@ownedTasks.2/@fragments.0/@connections.3 //@ownedTasks.3/@fragments.0/@connections.1 //@ownedTasks.0/@sharingResourceFragments.0/@connections.4 //@ownedTasks.1/@sharingResourceFragments.0/@connections.4 //@ownedTasks.1/@sharingResourceFragments.0/@connections.7 //@ownedTasks.1/@sharingResourceFragments.1/@connections.4 //@ownedTasks.1/@sharingResourceFragments.1/@connections.7 //@ownedTasks.2/@sharingResourceFragments.0/@connections.4 //@ownedTasks.2/@sharingResourceFragments.0/@connections.5 //@ownedTasks.3/@sharingResourceFragments.0/@connections.4 //@ownedTasks.3/@sharingResourceFragments.0/@connections.6 //@ownedTasks.3/@sharingResourceFragments.1/@connections.4 //@ownedTasks.3/@sharingResourceFragments.1/@connections.6 //@ownedTasks.3/@sharingResourceFragments.2/@connections.4 //@ownedTasks.3/@sharingResourceFragments.2/@connections.6" name="Lire_Niveau_Eau_1_transition" id="T5" upperBound="18" lowerBound="18"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@stimulus/@jitter/@ownedTransition" target="//@ownedTasks.0/@fragments.0/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@fragments.0/@ownedTransition" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <ownedPlace outputRel="//@ownedTasks.0/@fragments.0/@connections.0" inputRel="//@ownedTasks.0/@fragments.0/@connections.1" name="Lire_Niveau_Eau_1_place" id="P5"/>
+    </fragments>
+    <sharingResourceFragments>
+      <firstFragment priority="1">
+        <ownedTransition outputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.1" inputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.0 //@ownedMutualExclusionResources.0/@connections.1 //@ownedTasks.1/@fragments.0/@connections.6 //@ownedTasks.2/@fragments.0/@connections.4 //@ownedTasks.3/@fragments.0/@connections.3" name="Lire_Niveau_Eau_2_first_transition" id="T6" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.0" inputRel="//@ownedTasks.0/@fragments.0/@connections.2" name="Lire_Niveau_Eau_2_first_place" id="P6"/>
+      </firstFragment>
+      <secondFragment priority="3">
+        <ownedTransition outputRel="//@ownedMutualExclusionResources.0/@connections.0 //@ownedTasks.0/@sharingResourceFragments.0/@connections.3" inputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.2 //@ownedTasks.1/@fragments.0/@connections.7" name="Lire_Niveau_Eau_2_second_transition" id="T7" upperBound="2" lowerBound="2"/>
+        <ownedPlace outputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.2 //@ownedTasks.0/@sharingResourceFragments.0/@connections.4 //@ownedTasks.0/@sharingResourceFragments.0/@connections.5" inputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.1" name="Lire_Niveau_Eau_2_second_place" id="P7"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition" target="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+  </ownedTasks>
+  <ownedTasks>
+    <stimulus>
+      <offset>
+        <ownedTransition outputRel="//@ownedTasks.1/@stimulus/@offset/@connections.1" inputRel="//@ownedTasks.1/@stimulus/@offset/@connections.0" name="T8" id="T8" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@offset/@ownedPlace" target="//@ownedTasks.1/@stimulus/@offset/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@offset/@ownedTransition" target="//@ownedTasks.1/@stimulus/@firstRelease/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@stimulus/@offset/@connections.0" name="P8" id="P8" initCount="1"/>
+      </offset>
+      <firstRelease>
+        <ownedTransition outputRel="//@ownedTasks.1/@stimulus/@firstRelease/@connections.1 //@ownedTasks.1/@stimulus/@firstRelease/@connections.2" inputRel="//@ownedTasks.1/@stimulus/@firstRelease/@connections.0" name="T9" id="T9" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@firstRelease/@ownedPlace" target="//@ownedTasks.1/@stimulus/@firstRelease/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.1/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.1/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@stimulus/@firstRelease/@connections.0" inputRel="//@ownedTasks.1/@stimulus/@offset/@connections.1" name="P9" id="P9"/>
+      </firstRelease>
+      <period>
+        <ownedTransition outputRel="//@ownedTasks.1/@stimulus/@period/@connections.1 //@ownedTasks.1/@stimulus/@period/@connections.2" inputRel="//@ownedTasks.1/@stimulus/@period/@connections.0" name="T10" id="T10" upperBound="490" lowerBound="490"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@period/@ownedPlace" target="//@ownedTasks.1/@stimulus/@period/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@period/@ownedTransition" target="//@ownedTasks.1/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@period/@ownedTransition" target="//@ownedTasks.1/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@stimulus/@period/@connections.0" inputRel="//@ownedTasks.1/@stimulus/@period/@connections.1 //@ownedTasks.1/@stimulus/@firstRelease/@connections.1" name="P10" id="P10"/>
+      </period>
+      <jitter>
+        <ownedTransition outputRel="//@ownedTasks.1/@fragments.0/@connections.1" inputRel="//@ownedTasks.1/@stimulus/@jitter/@connections.0" name="T11" id="T11" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@jitter/@ownedPlace" target="//@ownedTasks.1/@stimulus/@jitter/@ownedTransition"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@stimulus/@jitter/@connections.0" inputRel="//@ownedTasks.1/@stimulus/@period/@connections.2 //@ownedTasks.1/@stimulus/@firstRelease/@connections.2" name="P11" id="P11"/>
+      </jitter>
+    </stimulus>
+    <fragments priority="4">
+      <ownedTransition outputRel="//@ownedTasks.1/@fragments.0/@connections.2" inputRel="//@ownedTasks.1/@fragments.0/@connections.0" name="Gerer_Methane_1_transition" id="T12" upperBound="47" lowerBound="47"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.1/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@stimulus/@jitter/@ownedTransition" target="//@ownedTasks.1/@fragments.0/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@fragments.0/@ownedTransition" target="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedTransition"/>
+      <ownedPlace outputRel="//@ownedTasks.1/@fragments.0/@connections.0 //@ownedTasks.1/@fragments.0/@connections.3 //@ownedTasks.1/@fragments.0/@connections.4 //@ownedTasks.1/@fragments.0/@connections.5 //@ownedTasks.1/@fragments.0/@connections.6 //@ownedTasks.1/@fragments.0/@connections.7 //@ownedTasks.1/@fragments.0/@connections.8 //@ownedTasks.1/@fragments.0/@connections.9 //@ownedTasks.1/@fragments.0/@connections.10 //@ownedTasks.1/@fragments.0/@connections.11 //@ownedTasks.1/@fragments.0/@connections.12" inputRel="//@ownedTasks.1/@fragments.0/@connections.1" name="Gerer_Methane_1_place" id="P12"/>
+    </fragments>
+    <sharingResourceFragments>
+      <firstFragment priority="4">
+        <ownedTransition outputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.1" inputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.0 //@ownedMutualExclusionResources.2/@connections.1" name="Gerer_Methane_2_first_transition" id="T13" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.0 //@ownedTasks.1/@sharingResourceFragments.0/@connections.4 //@ownedTasks.1/@sharingResourceFragments.0/@connections.5 //@ownedTasks.1/@sharingResourceFragments.0/@connections.6" inputRel="//@ownedTasks.1/@fragments.0/@connections.2" name="Gerer_Methane_2_first_place" id="P13"/>
+      </firstFragment>
+      <secondFragment priority="4">
+        <ownedTransition outputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.3 //@ownedMutualExclusionResources.2/@connections.0" inputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.2" name="Gerer_Methane_2_second_transition" id="T14" upperBound="1" lowerBound="1"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.2 //@ownedTasks.1/@sharingResourceFragments.0/@connections.7 //@ownedTasks.1/@sharingResourceFragments.0/@connections.8 //@ownedTasks.1/@sharingResourceFragments.0/@connections.9" inputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.1" name="Gerer_Methane_2_second_place" id="P14"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedTransition" target="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+    <sharingResourceFragments>
+      <firstFragment priority="4">
+        <ownedTransition outputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.1" inputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.0 //@ownedMutualExclusionResources.1/@connections.1" name="Gerer_Methane_3_first_transition" id="T15" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.0 //@ownedTasks.1/@sharingResourceFragments.1/@connections.4 //@ownedTasks.1/@sharingResourceFragments.1/@connections.5 //@ownedTasks.1/@sharingResourceFragments.1/@connections.6" inputRel="//@ownedTasks.1/@sharingResourceFragments.0/@connections.3" name="Gerer_Methane_3_first_place" id="P15"/>
+      </firstFragment>
+      <secondFragment priority="4">
+        <ownedTransition outputRel="//@ownedMutualExclusionResources.1/@connections.0 //@ownedTasks.1/@sharingResourceFragments.1/@connections.3" inputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.2" name="Gerer_Methane_3_second_transition" id="T16" upperBound="2" lowerBound="2"/>
+        <ownedPlace outputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.2 //@ownedTasks.1/@sharingResourceFragments.1/@connections.7 //@ownedTasks.1/@sharingResourceFragments.1/@connections.8 //@ownedTasks.1/@sharingResourceFragments.1/@connections.9" inputRel="//@ownedTasks.1/@sharingResourceFragments.1/@connections.1" name="Gerer_Methane_3_second_place" id="P16"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedTransition" target="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+  </ownedTasks>
+  <ownedTasks>
+    <stimulus>
+      <offset>
+        <ownedTransition outputRel="//@ownedTasks.2/@stimulus/@offset/@connections.1" inputRel="//@ownedTasks.2/@stimulus/@offset/@connections.0" name="T17" id="T17" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@offset/@ownedPlace" target="//@ownedTasks.2/@stimulus/@offset/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@offset/@ownedTransition" target="//@ownedTasks.2/@stimulus/@firstRelease/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@stimulus/@offset/@connections.0" name="P17" id="P17" initCount="1"/>
+      </offset>
+      <firstRelease>
+        <ownedTransition outputRel="//@ownedTasks.2/@stimulus/@firstRelease/@connections.1 //@ownedTasks.2/@stimulus/@firstRelease/@connections.2" inputRel="//@ownedTasks.2/@stimulus/@firstRelease/@connections.0" name="T18" id="T18" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@firstRelease/@ownedPlace" target="//@ownedTasks.2/@stimulus/@firstRelease/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.2/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@firstRelease/@ownedTransition" target="//@ownedTasks.2/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@stimulus/@firstRelease/@connections.0" inputRel="//@ownedTasks.2/@stimulus/@offset/@connections.1" name="P18" id="P18"/>
+      </firstRelease>
+      <period>
+        <ownedTransition outputRel="//@ownedTasks.2/@stimulus/@period/@connections.1 //@ownedTasks.2/@stimulus/@period/@connections.2" inputRel="//@ownedTasks.2/@stimulus/@period/@connections.0" name="T19" id="T19" upperBound="600" lowerBound="600"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@period/@ownedPlace" target="//@ownedTasks.2/@stimulus/@period/@ownedTransition"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@period/@ownedTransition" target="//@ownedTasks.2/@stimulus/@period/@ownedPlace"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@period/@ownedTransition" target="//@ownedTasks.2/@stimulus/@jitter/@ownedPlace"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@stimulus/@period/@connections.0" inputRel="//@ownedTasks.2/@stimulus/@period/@connections.1 //@ownedTasks.2/@stimulus/@firstRelease/@connections.1" name="P19" id="P19"/>
+      </period>
+      <jitter>
+        <ownedTransition outputRel="//@ownedTasks.2/@fragments.0/@connections.1" inputRel="//@ownedTasks.2/@stimulus/@jitter/@connections.0" name="T20" id="T20" upperBound="0" lowerBound="0"/>
+        <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@jitter/@ownedPlace" target="//@ownedTasks.2/@stimulus/@jitter/@ownedTransition"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@stimulus/@jitter/@connections.0" inputRel="//@ownedTasks.2/@stimulus/@period/@connections.2 //@ownedTasks.2/@stimulus/@firstRelease/@connections.2" name="P20" id="P20"/>
+      </jitter>
+    </stimulus>
+    <fragments priority="2">
+      <ownedTransition outputRel="//@ownedTasks.2/@fragments.0/@connections.2" inputRel="//@ownedTasks.2/@fragments.0/@connections.0 //@ownedTasks.1/@fragments.0/@connections.4 //@ownedTasks.3/@fragments.0/@connections.2 //@ownedTasks.0/@sharingResourceFragments.0/@connections.5 //@ownedTasks.1/@sharingResourceFragments.0/@connections.5 //@ownedTasks.1/@sharingResourceFragments.0/@connections.8 //@ownedTasks.1/@sharingResourceFragments.1/@connections.5 //@ownedTasks.1/@sharingResourceFragments.1/@connections.8 //@ownedTasks.2/@sharingResourceFragments.0/@connections.6 //@ownedTasks.3/@sharingResourceFragments.0/@connections.5 //@ownedTasks.3/@sharingResourceFragments.0/@connections.7 //@ownedTasks.3/@sharingResourceFragments.1/@connections.5 //@ownedTasks.3/@sharingResourceFragments.1/@connections.7 //@ownedTasks.3/@sharingResourceFragments.2/@connections.5 //@ownedTasks.3/@sharingResourceFragments.2/@connections.7" name="WatchDog_1_transition" id="T21" upperBound="8" lowerBound="8"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@fragments.0/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@stimulus/@jitter/@ownedTransition" target="//@ownedTasks.2/@fragments.0/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@fragments.0/@ownedTransition" target="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <ownedPlace outputRel="//@ownedTasks.2/@fragments.0/@connections.0 //@ownedTasks.2/@fragments.0/@connections.3 //@ownedTasks.2/@fragments.0/@connections.4" inputRel="//@ownedTasks.2/@fragments.0/@connections.1" name="WatchDog_1_place" id="P21"/>
+    </fragments>
+    <sharingResourceFragments>
+      <firstFragment priority="2">
+        <ownedTransition outputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.1" inputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.0 //@ownedMutualExclusionResources.1/@connections.5 //@ownedTasks.1/@fragments.0/@connections.8 //@ownedTasks.3/@fragments.0/@connections.4" name="WatchDog_2_first_transition" id="T22" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.0 //@ownedTasks.2/@sharingResourceFragments.0/@connections.4" inputRel="//@ownedTasks.2/@fragments.0/@connections.2" name="WatchDog_2_first_place" id="P22"/>
+      </firstFragment>
+      <secondFragment priority="4">
+        <ownedTransition outputRel="//@ownedMutualExclusionResources.1/@connections.4 //@ownedTasks.2/@sharingResourceFragments.0/@connections.3" inputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.2" name="WatchDog_2_second_transition" id="T23" upperBound="2" lowerBound="2"/>
+        <ownedPlace outputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.2 //@ownedTasks.2/@sharingResourceFragments.0/@connections.5 //@ownedTasks.2/@sharingResourceFragments.0/@connections.6 //@ownedTasks.2/@sharingResourceFragments.0/@connections.7" inputRel="//@ownedTasks.2/@sharingResourceFragments.0/@connections.1" name="WatchDog_2_second_place" id="P23"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedTransition" target="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+  </ownedTasks>
+  <ownedTasks>
+    <fragments priority="3">
+      <ownedTransition inputRel="//@ownedTasks.3/@fragments.0/@connections.0 //@ownedTasks.1/@fragments.0/@connections.5 //@ownedTasks.1/@sharingResourceFragments.0/@connections.6 //@ownedTasks.1/@sharingResourceFragments.0/@connections.9 //@ownedTasks.1/@sharingResourceFragments.1/@connections.6 //@ownedTasks.1/@sharingResourceFragments.1/@connections.9 //@ownedTasks.2/@sharingResourceFragments.0/@connections.7 //@ownedTasks.3/@sharingResourceFragments.1/@connections.8 //@ownedTasks.3/@sharingResourceFragments.2/@connections.8" name="Agir_4_transition" id="T24" upperBound="45" lowerBound="45"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@fragments.0/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@fragments.0/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@fragments.0/@ownedPlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@fragments.0/@ownedPlace" target="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <ownedPlace outputRel="//@ownedTasks.3/@fragments.0/@connections.0 //@ownedTasks.3/@fragments.0/@connections.1 //@ownedTasks.3/@fragments.0/@connections.2 //@ownedTasks.3/@fragments.0/@connections.3 //@ownedTasks.3/@fragments.0/@connections.4" inputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.3" name="Agir_4_place" id="P24"/>
+    </fragments>
+    <sharingResourceFragments>
+      <firstFragment priority="3">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.1" inputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.0 //@ownedMutualExclusionResources.0/@connections.3 //@ownedTasks.1/@fragments.0/@connections.9" name="Agir_1_first_transition" id="T25" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.0 //@ownedTasks.3/@sharingResourceFragments.0/@connections.4 //@ownedTasks.3/@sharingResourceFragments.0/@connections.5" inputRel="//@ownedTasks.0/@sharingResourceFragments.0/@connections.3 //@ownedTasks.1/@sharingResourceFragments.1/@connections.3 //@ownedTasks.2/@sharingResourceFragments.0/@connections.3" name="Agir_1_first_place" id="P25"/>
+      </firstFragment>
+      <secondFragment priority="3">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.3 //@ownedMutualExclusionResources.0/@connections.2" inputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.2 //@ownedTasks.1/@fragments.0/@connections.10" name="Agir_1_second_transition" id="T26" upperBound="2" lowerBound="2"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.2 //@ownedTasks.3/@sharingResourceFragments.0/@connections.6 //@ownedTasks.3/@sharingResourceFragments.0/@connections.7" inputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.1" name="Agir_1_second_place" id="P26"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+    <sharingResourceFragments>
+      <firstFragment priority="3">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.1" inputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.0 //@ownedMutualExclusionResources.1/@connections.3 //@ownedTasks.1/@fragments.0/@connections.11" name="Agir_2_first_transition" id="T27" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.0 //@ownedTasks.3/@sharingResourceFragments.1/@connections.4 //@ownedTasks.3/@sharingResourceFragments.1/@connections.5" inputRel="//@ownedTasks.3/@sharingResourceFragments.0/@connections.3" name="Agir_2_first_place" id="P27"/>
+      </firstFragment>
+      <secondFragment priority="4">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.3 //@ownedMutualExclusionResources.1/@connections.2" inputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.2" name="Agir_2_second_transition" id="T28" upperBound="2" lowerBound="2"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.2 //@ownedTasks.3/@sharingResourceFragments.1/@connections.6 //@ownedTasks.3/@sharingResourceFragments.1/@connections.7 //@ownedTasks.3/@sharingResourceFragments.1/@connections.8" inputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.1" name="Agir_2_second_place" id="P28"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+    <sharingResourceFragments>
+      <firstFragment priority="3">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.1" inputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.0 //@ownedMutualExclusionResources.2/@connections.3 //@ownedTasks.1/@fragments.0/@connections.12" name="Agir_3_first_transition" id="T29" upperBound="0" lowerBound="0"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.0 //@ownedTasks.3/@sharingResourceFragments.2/@connections.4 //@ownedTasks.3/@sharingResourceFragments.2/@connections.5" inputRel="//@ownedTasks.3/@sharingResourceFragments.1/@connections.3" name="Agir_3_first_place" id="P29"/>
+      </firstFragment>
+      <secondFragment priority="4">
+        <ownedTransition outputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.3 //@ownedMutualExclusionResources.2/@connections.2" inputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.2" name="Agir_3_second_transition" id="T30" upperBound="1" lowerBound="1"/>
+        <ownedPlace outputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.2 //@ownedTasks.3/@sharingResourceFragments.2/@connections.6 //@ownedTasks.3/@sharingResourceFragments.2/@connections.7 //@ownedTasks.3/@sharingResourceFragments.2/@connections.8" inputRel="//@ownedTasks.3/@sharingResourceFragments.2/@connections.1" name="Agir_3_second_place" id="P30"/>
+      </secondFragment>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedTransition" target="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedPlace"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedTransition"/>
+      <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedTransition" target="//@ownedTasks.3/@fragments.0/@ownedPlace"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedPlace" target="//@ownedTasks.0/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedPlace" target="//@ownedTasks.2/@fragments.0/@ownedTransition"/>
+      <connections xsi:type="n:TimedInhibitorArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedPlace" target="//@ownedTasks.3/@fragments.0/@ownedTransition"/>
+    </sharingResourceFragments>
+  </ownedTasks>
+  <ownedMutualExclusionResources>
+    <mutualExclusionResourcePlace outputRel="//@ownedMutualExclusionResources.0/@connections.1 //@ownedMutualExclusionResources.0/@connections.3" inputRel="//@ownedMutualExclusionResources.0/@connections.0 //@ownedMutualExclusionResources.0/@connections.2" name="Mutual_Exclusion_1_place" id="P31" initCount="1"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.0/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.0/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.0/@mutualExclusionResourcePlace" target="//@ownedTasks.0/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.0/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.0/@mutualExclusionResourcePlace" target="//@ownedTasks.3/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+  </ownedMutualExclusionResources>
+  <ownedMutualExclusionResources>
+    <mutualExclusionResourcePlace outputRel="//@ownedMutualExclusionResources.1/@connections.1 //@ownedMutualExclusionResources.1/@connections.3 //@ownedMutualExclusionResources.1/@connections.5" inputRel="//@ownedMutualExclusionResources.1/@connections.0 //@ownedMutualExclusionResources.1/@connections.2 //@ownedMutualExclusionResources.1/@connections.4" name="Mutual_Exclusion_2_place" id="P32" initCount="1"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.1/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace" target="//@ownedTasks.1/@sharingResourceFragments.1/@firstFragment/@ownedTransition"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.1/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace" target="//@ownedTasks.3/@sharingResourceFragments.1/@firstFragment/@ownedTransition"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.2/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.1/@mutualExclusionResourcePlace" target="//@ownedTasks.2/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+  </ownedMutualExclusionResources>
+  <ownedMutualExclusionResources>
+    <mutualExclusionResourcePlace outputRel="//@ownedMutualExclusionResources.2/@connections.1 //@ownedMutualExclusionResources.2/@connections.3" inputRel="//@ownedMutualExclusionResources.2/@connections.0 //@ownedMutualExclusionResources.2/@connections.2" name="Mutual_Exclusion_3_place" id="P33" initCount="1"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.1/@sharingResourceFragments.0/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.2/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.2/@mutualExclusionResourcePlace" target="//@ownedTasks.1/@sharingResourceFragments.0/@firstFragment/@ownedTransition"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedTasks.3/@sharingResourceFragments.2/@secondFragment/@ownedTransition" target="//@ownedMutualExclusionResources.2/@mutualExclusionResourcePlace"/>
+    <connections xsi:type="n:NormalArc" source="//@ownedMutualExclusionResources.2/@mutualExclusionResourcePlace" target="//@ownedTasks.3/@sharingResourceFragments.2/@firstFragment/@ownedTransition"/>
+  </ownedMutualExclusionResources>
+</taskmodel:System>

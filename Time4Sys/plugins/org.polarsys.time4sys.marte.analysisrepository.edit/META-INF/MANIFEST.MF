@@ -28,8 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model,
  org.eclipse.ui.views,
  org.eclipse.ui,
- org.eclipse.zest.core,
- org.eclipse.zest.layouts,
  org.eclipse.gef
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.core.resources

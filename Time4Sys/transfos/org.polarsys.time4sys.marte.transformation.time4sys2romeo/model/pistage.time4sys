@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ASCII"?>
+<time4sys:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:analysis="http://www.polarsys.org/time4sys/analysis/1.0" xmlns:gqam="http://www.polarsys.org/time4sys/marte/gqam/1.0" xmlns:hrm="http://www.polarsys.org/time4sys/marte/hrm/1.0" xmlns:srm="http://www.polarsys.org/time4sys/marte/srm/1.0" xmlns:time4sys="http://www.polarsys.org/time4sys/1.0">
+  <analysis>
+    <schedulableElements xsi:type="analysis:Task" name="Acquire - Acquire" scheduledBy="//@analysis/@schedulers.0" CET="[16ms,16ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="500ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="1"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Date - Date" scheduledBy="//@analysis/@schedulers.0" CET="[2ms,2ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="500ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="2"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Sort - Sort" scheduledBy="//@analysis/@schedulers.0" CET="[19ms,19ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="100ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="3"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Libm1 - Libm1" scheduledBy="//@analysis/@schedulers.0" CET="[3ms,3ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="500ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="4"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Threat - Threat" scheduledBy="//@analysis/@schedulers.0" CET="[2ms,2ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="400ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="5"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Manage - Manage" scheduledBy="//@analysis/@schedulers.0" CET="[36ms,36ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="500ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="6"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="Display - Display" scheduledBy="//@analysis/@schedulers.0" CET="[1ms,15ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="100ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="7"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="STIMU - stimu1" scheduledBy="//@analysis/@schedulers.0" CET="[20ms,20ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="500ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="11"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulableElements xsi:type="analysis:Task" name="STIMU - stimu2" scheduledBy="//@analysis/@schedulers.0" CET="[5ms,7ms]" mappedTo="//@analysis/@resources.0">
+      <eventModel period="100ms"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.1" value="11"/>
+      <schedulingParameters type="//@analysis/@schedulers.0/@requiredParameters.0"/>
+    </schedulableElements>
+    <schedulers policyKind="FixedPriority" scheduledElements="//@analysis/@schedulableElements.0 //@analysis/@schedulableElements.1 //@analysis/@schedulableElements.2 //@analysis/@schedulableElements.3 //@analysis/@schedulableElements.4 //@analysis/@schedulableElements.5 //@analysis/@schedulableElements.6 //@analysis/@schedulableElements.7 //@analysis/@schedulableElements.8" usedBy="//@analysis/@resources.0">
+      <requiredParameters name="Deadline"/>
+      <requiredParameters name="FixedPriority"/>
+    </schedulers>
+    <resources xsi:type="analysis:ComputingResource" name="CPU" scheduler="//@analysis/@schedulers.0" tasksAffectedOn="//@analysis/@schedulableElements.0 //@analysis/@schedulableElements.1 //@analysis/@schedulableElements.2 //@analysis/@schedulableElements.3 //@analysis/@schedulableElements.4 //@analysis/@schedulableElements.5 //@analysis/@schedulableElements.6 //@analysis/@schedulableElements.7 //@analysis/@schedulableElements.8"/>
+  </analysis>
+  <design name="Pistage">
+    <workloadBehavior>
+      <behavior name="main"/>
+      <behavior name="BS1" root="//@design/@workloadBehavior/@behavior.1/@steps.0/@steps.0">
+        <steps xsi:type="gqam:ExecutionStep" name="stimu1" cause="//@design/@workloadBehavior/@demand.0" bestCET="20ms" worstCET="20ms" priority="1" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0">
+          <steps/>
+        </steps>
+      </behavior>
+      <behavior name="BS2" root="//@design/@workloadBehavior/@behavior.2/@steps.0/@steps.0">
+        <steps xsi:type="gqam:ExecutionStep" name="stimu2" cause="//@design/@workloadBehavior/@demand.1" bestCET="5ms" worstCET="7ms" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0">
+          <steps/>
+        </steps>
+      </behavior>
+      <demand effect="//@design/@workloadBehavior/@behavior.1/@steps.0">
+        <pattern xsi:type="gqam:PeriodicPattern" period="500ms"/>
+      </demand>
+      <demand effect="//@design/@workloadBehavior/@behavior.2/@steps.0">
+        <pattern xsi:type="gqam:PeriodicPattern" period="100ms"/>
+      </demand>
+      <references referenceName="ref1"/>
+    </workloadBehavior>
+    <resourcePackage>
+      <ownedElement xsi:type="hrm:HardwareProcessor" name="CPU" mainScheduler="//@design/@resourcePackage/@ownedElement.0/@ownedResource.1">
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" name="STIMU" host="//@design/@resourcePackage/@ownedElement.0/@ownedResource.1">
+          <schedParams name="FixedPriority" value="11"/>
+          <schedParams name="Deadline"/>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareScheduler" processingUnits="//@design/@resourcePackage/@ownedElement.0" schedulableResource="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0">
+          <policy name="FixedPriority" policy="FixedPriority"/>
+        </ownedResource>
+      </ownedElement>
+    </resourcePackage>
+  </design>
+</time4sys:Project>

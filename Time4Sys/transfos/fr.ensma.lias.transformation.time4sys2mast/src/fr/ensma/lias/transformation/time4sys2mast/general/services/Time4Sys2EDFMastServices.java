@@ -173,7 +173,7 @@ public class Time4Sys2EDFMastServices {
 				return etef;
 			}
 		}
-		return null;
+		return design.getEndToEndFlows().get(0);
 	}
 
 	/**

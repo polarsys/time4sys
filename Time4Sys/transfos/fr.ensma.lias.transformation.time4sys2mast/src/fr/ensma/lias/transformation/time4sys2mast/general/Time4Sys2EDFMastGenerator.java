@@ -170,6 +170,7 @@ public class Time4Sys2EDFMastGenerator implements AbstractExogenousTransformatio
 		mastWriter.write("	Type						=> " + type + ",\n");
 		mastWriter.write("	Name						=> " + name + ",\n");
 		mastWriter.write("	Worst_Case_Execution_Time	=> " + wcet + ",\n");
+		mastWriter.write("	Avg_Case_Execution_Time	=> " + wcet + ",\n");
 		mastWriter.write("	Best_Case_Execution_Time	=> " + bcet);
 		generateSharedResourceContribution(mastWriter, associatedMutexResources);
 		mastWriter.write("\n);\n");
@@ -245,6 +246,9 @@ public class Time4Sys2EDFMastGenerator implements AbstractExogenousTransformatio
 
 	private void generateSchedulingServer(FileWriter mastWriter, Step step) throws IOException {
 		Scheduler scheduler = step.getConcurRes().getHost();
+		if (scheduler==null) {
+//			step.getConcurRes().
+		}
 
 		mastWriter.write("Scheduling_Server (\n");
 		// if (scheduler.getPolicy().getPolicy() ==

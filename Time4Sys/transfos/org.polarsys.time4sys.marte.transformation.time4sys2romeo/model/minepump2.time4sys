@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<time4sys:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gqam="http://www.polarsys.org/time4sys/marte/gqam/1.0" xmlns:hrm="http://www.polarsys.org/time4sys/marte/hrm/1.0" xmlns:srm="http://www.polarsys.org/time4sys/marte/srm/1.0" xmlns:time4sys="http://www.polarsys.org/time4sys/1.0" name="MinePump2">
+  <design>
+    <workloadBehavior>
+      <behavior name="Behavior Scenario">
+        <steps xsi:type="gqam:ExecutionStep" name="Lire_Niveau_Eau_1" cause="//@design/@workloadBehavior/@demand.0" bestCET="18ms" worstCET="18ms" priority="1" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.0" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Lire_Niveau_Eau_2" bestCET="2ms" worstCET="2ms" priority="1" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.0" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.7" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Gerer_Methane_1" cause="//@design/@workloadBehavior/@demand.1" bestCET="47ms" worstCET="47ms" priority="4" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.1" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.1"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Gerer_Methane_2" bestCET="1ms" worstCET="1ms" priority="4" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.1" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.2" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.1"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Gerer_Methane_3" bestCET="2ms" worstCET="2ms" priority="4" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.2" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.7" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.1"/>
+        <steps xsi:type="gqam:ExecutionStep" name="WatchDog_1" cause="//@design/@workloadBehavior/@demand.2" bestCET="8ms" worstCET="8ms" priority="2" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.3" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.2"/>
+        <steps xsi:type="gqam:ExecutionStep" name="WatchDog_2" bestCET="2ms" worstCET="2ms" priority="2" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.3" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.7" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.2"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Agir_1" bestCET="2ms" worstCET="2ms" priority="3" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.7" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.4" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.3"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Agir_2" bestCET="2ms" worstCET="2ms" priority="3" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.4" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.5" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.3"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Agir_3" bestCET="1ms" worstCET="1ms" priority="3" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.5" outputRel="//@design/@workloadBehavior/@behavior.0/@connectors.6" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.3"/>
+        <steps xsi:type="gqam:ExecutionStep" name="Agir_4" bestCET="45ms" worstCET="45ms" priority="3" inputRel="//@design/@workloadBehavior/@behavior.0/@connectors.6" concurRes="//@design/@resourcePackage/@ownedElement.0/@ownedResource.3"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.0" succes="//@design/@workloadBehavior/@behavior.0/@steps.1"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.2" succes="//@design/@workloadBehavior/@behavior.0/@steps.3"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.3" succes="//@design/@workloadBehavior/@behavior.0/@steps.4"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.5" succes="//@design/@workloadBehavior/@behavior.0/@steps.6"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.7" succes="//@design/@workloadBehavior/@behavior.0/@steps.8"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.8" succes="//@design/@workloadBehavior/@behavior.0/@steps.9"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.9" succes="//@design/@workloadBehavior/@behavior.0/@steps.10"/>
+        <connectors predec="//@design/@workloadBehavior/@behavior.0/@steps.1 //@design/@workloadBehavior/@behavior.0/@steps.4 //@design/@workloadBehavior/@behavior.0/@steps.6" succes="//@design/@workloadBehavior/@behavior.0/@steps.7" connectorKind="Merge"/>
+      </behavior>
+      <demand effect="//@design/@workloadBehavior/@behavior.0/@steps.0">
+        <pattern xsi:type="gqam:PeriodicPattern" period="5s" jitter="0ms" phase="0ms" reference="//@design/@workloadBehavior/@references.0"/>
+      </demand>
+      <demand effect="//@design/@workloadBehavior/@behavior.0/@steps.2">
+        <pattern xsi:type="gqam:PeriodicPattern" period="490ms" jitter="0ms" phase="0ms" reference="//@design/@workloadBehavior/@references.1"/>
+      </demand>
+      <demand effect="//@design/@workloadBehavior/@behavior.0/@steps.5">
+        <pattern xsi:type="gqam:PeriodicPattern" period="600ms" jitter="0ms" phase="0ms" reference="//@design/@workloadBehavior/@references.2"/>
+      </demand>
+      <references referenceName="ref1"/>
+      <references referenceName="ref2"/>
+      <references referenceName="ref3"/>
+    </workloadBehavior>
+    <resourcePackage>
+      <ownedElement xsi:type="hrm:HardwareProcessor" name="CPU" mainScheduler="//@design/@resourcePackage/@ownedElement.0/@ownedResource.4">
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" name="T2" host="//@design/@resourcePackage/@ownedElement.0/@ownedResource.4">
+          <schedParams name="FixedPriority" value="'0'"/>
+          <priorityElements>1</priorityElements>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" name="T1" host="//@design/@resourcePackage/@ownedElement.0/@ownedResource.4">
+          <schedParams name="FixedPriority" value="'0'"/>
+          <priorityElements>4</priorityElements>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" name="T4" host="//@design/@resourcePackage/@ownedElement.0/@ownedResource.4">
+          <schedParams name="FixedPriority" value="'0'"/>
+          <priorityElements>2</priorityElements>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" name="T3" host="//@design/@resourcePackage/@ownedElement.0/@ownedResource.4">
+          <schedParams name="FixedPriority" value="'0'"/>
+          <priorityElements>3</priorityElements>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareScheduler" host="//@design/@resourcePackage/@ownedElement.0" schedulableResource="//@design/@resourcePackage/@ownedElement.0/@ownedResource.0 //@design/@resourcePackage/@ownedElement.0/@ownedResource.1 //@design/@resourcePackage/@ownedElement.0/@ownedResource.2 //@design/@resourcePackage/@ownedElement.0/@ownedResource.3">
+          <policy name="Undef" policy="FixedPriority"/>
+        </ownedResource>
+      </ownedElement>
+      <ownedElement xsi:type="srm:SoftwareMutualExclusionResource" name="Mutual_Exclusion_1" accessTokenElements="//@design/@workloadBehavior/@behavior.0/@steps.1 //@design/@workloadBehavior/@behavior.0/@steps.7">
+        <protocol protocol="PriorityCeiling"/>
+        <protectParams name="Protection Parameter"/>
+      </ownedElement>
+      <ownedElement xsi:type="srm:SoftwareMutualExclusionResource" name="Mutual_Exclusion_2" accessTokenElements="//@design/@workloadBehavior/@behavior.0/@steps.4 //@design/@workloadBehavior/@behavior.0/@steps.8 //@design/@workloadBehavior/@behavior.0/@steps.6">
+        <protocol protocol="PriorityCeiling"/>
+        <protectParams name="Protection Parameter"/>
+      </ownedElement>
+      <ownedElement xsi:type="srm:SoftwareMutualExclusionResource" name="Mutual_Exclusion_3" accessTokenElements="//@design/@workloadBehavior/@behavior.0/@steps.3 //@design/@workloadBehavior/@behavior.0/@steps.9">
+        <protocol protocol="PriorityCeiling"/>
+        <protectParams name="Protection Parameter"/>
+      </ownedElement>
+    </resourcePackage>
+  </design>
+</time4sys:Project>

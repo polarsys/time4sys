@@ -164,13 +164,17 @@ public class Time4Sys2MastGenerator implements AbstractExogenousTransformation {
 			throws IOException {
 		String type = "Simple";
 		String name = getName(step, "Operation_");
-		String wcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getWorstCET(), minUnit));
-		String bcet = String.valueOf(Time4Sys2MastServices.getNestedValue(step.getBestCET(), minUnit));
+		double dwcet = Time4Sys2MastServices.getNestedValue(step.getWorstCET(), minUnit);
+		String wcet = String.valueOf(dwcet);
+		double dbest = Time4Sys2MastServices.getNestedValue(step.getBestCET(), minUnit);
+		String bcet = String.valueOf(dbest);
+		String acet = String.valueOf((dbest+dwcet)/2);
 		List<SoftwareMutualExclusionResource> associatedMutexResources = getAssociatedMutexResources(step, mutex);
 		mastWriter.write("Operation (\n");
 		mastWriter.write("	Type						=> " + type + ",\n");
 		mastWriter.write("	Name						=> " + name + ",\n");
 		mastWriter.write("	Worst_Case_Execution_Time	=> " + wcet + ",\n");
+		mastWriter.write("	Avg_Case_Execution_Time  	=> " + acet + ",\n");
 		mastWriter.write("	Best_Case_Execution_Time	=> " + bcet);
 		generateSharedResourceContribution(mastWriter, associatedMutexResources);
 		mastWriter.write("\n);\n");

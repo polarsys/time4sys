@@ -9,9 +9,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import org.eclipse.persistence.jaxb.JAXBContext;
+import org.eclipse.persistence.jaxb.JAXBContextFactory;
+import org.eclipse.persistence.jaxb.JAXBUnmarshaller;
 
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.persistence.internal.oxm.Marshaller;
 import org.osgi.service.component.annotations.Component;
 import org.polarsys.time4sys.design.DesignModel;
 import org.polarsys.time4sys.mapping.Context;
@@ -69,8 +70,13 @@ public class MastResultParser implements AbstractResultParser {
 	public void parseResult(TestImplementation test) {
 
 		try {
-			JAXBContext jc = JAXBContext.newInstance("org.polarsys.time4sys.mast.parser.result");
-			Unmarshaller unmarshaller = jc.createUnmarshaller();
+			JAXBContext jaxbContext = (JAXBContext) JAXBContextFactory
+	                    .createContext("org.polarsys.time4sys.mast.parser.result", this.getClass().getClassLoader());
+
+			JAXBUnmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+//			  org.eclipse.persistence.jaxb.JAXBContext jc = (org.eclipse.persistence.jaxb.JAXBContext) org.eclipse.persistence.jaxb.JAXBContext.newInstance("org.polarsys.time4sys.mast.parser.result");
+//			  Unmarshaller unmarshaller = jc.createUnmarshaller();
 			File file = getResultFile(test);
 			FileInputStream inputStream = new FileInputStream(file);
 			BufferedReader inputBR = new BufferedReader(new InputStreamReader(inputStream));
@@ -101,7 +107,7 @@ public class MastResultParser implements AbstractResultParser {
 				}
 			});
 
-		} catch (JAXBException | IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

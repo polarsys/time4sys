@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<time4sys:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gqam="http://www.polarsys.org/time4sys/marte/gqam/1.0" xmlns:hrm="http://www.polarsys.org/time4sys/marte/hrm/1.0" xmlns:srm="http://www.polarsys.org/time4sys/marte/srm/1.0" xmlns:time4sys="http://www.polarsys.org/time4sys/1.0" xmi:id="__Qr8oPSKEeiSs80S23oJ6g">
+  <design xmi:id="__Qr8ofSKEeiSs80S23oJ6g">
+    <workloadBehavior xmi:id="__Qr8ovSKEeiSs80S23oJ6g">
+      <behavior xmi:id="_pmd2cPSLEeiSs80S23oJ6g" name="Behavior Scenario">
+        <steps xsi:type="gqam:ExecutionStep" xmi:id="_pmd2cfSLEeiSs80S23oJ6g" name="Step 1" cause="_2hUjUPSLEeiSs80S23oJ6g" bestCET="26ms" worstCET="26ms" priority="2" concurRes="_o9VZ4PSLEeiSs80S23oJ6g">
+          <outputPin xmi:id="_5OlkEPhrEein568jN4q2hg"/>
+        </steps>
+        <steps xsi:type="gqam:ExecutionStep" xmi:id="_yqDW0PSLEeiSs80S23oJ6g" name="Step 2" cause="_3Npd0PSLEeiSs80S23oJ6g" bestCET="62ms" worstCET="62ms" priority="1" concurRes="_yO5E0PSLEeiSs80S23oJ6g">
+          <outputPin xmi:id="_6fhngPhrEein568jN4q2hg"/>
+        </steps>
+      </behavior>
+      <demand xmi:id="_2hUjUPSLEeiSs80S23oJ6g" effect="_pmd2cfSLEeiSs80S23oJ6g">
+        <pattern xsi:type="gqam:PeriodicPattern" xmi:id="_2hVKYPSLEeiSs80S23oJ6g" period="70ms"/>
+      </demand>
+      <demand xmi:id="_3Npd0PSLEeiSs80S23oJ6g" effect="_yqDW0PSLEeiSs80S23oJ6g">
+        <pattern xsi:type="gqam:PeriodicPattern" xmi:id="_3Npd0fSLEeiSs80S23oJ6g" period="100ms"/>
+      </demand>
+      <references xmi:id="_HCspoPhrEein568jN4q2hg" referenceName="Reference 1"/>
+    </workloadBehavior>
+    <resourcePackage xmi:id="__Qr8o_SKEeiSs80S23oJ6g">
+      <ownedElement xsi:type="hrm:HardwareComputingResource" xmi:id="_nJW60PSLEeiSs80S23oJ6g" name="CPU" mainScheduler="_nJYI8PSLEeiSs80S23oJ6g">
+        <ownedResource xsi:type="srm:SoftwareScheduler" xmi:id="_nJYI8PSLEeiSs80S23oJ6g" host="_nJW60PSLEeiSs80S23oJ6g" schedulableResource="_o9VZ4PSLEeiSs80S23oJ6g _yO5E0PSLEeiSs80S23oJ6g">
+          <policy xmi:id="_nJYI8fSLEeiSs80S23oJ6g" name="Undef" policy="FixedPriority"/>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" xmi:id="_o9VZ4PSLEeiSs80S23oJ6g" name="SoftwareResource1" host="_nJYI8PSLEeiSs80S23oJ6g">
+          <schedParams xmi:id="_o9XPEPSLEeiSs80S23oJ6g" name="FixedPriority" value="0"/>
+        </ownedResource>
+        <ownedResource xsi:type="srm:SoftwareSchedulableResource" xmi:id="_yO5E0PSLEeiSs80S23oJ6g" name="SoftwareResource2" host="_nJYI8PSLEeiSs80S23oJ6g">
+          <schedParams xmi:id="_yO5r4PSLEeiSs80S23oJ6g" name="FixedPriority" value="0"/>
+        </ownedResource>
+      </ownedElement>
+    </resourcePackage>
+  </design>
+</time4sys:Project>
