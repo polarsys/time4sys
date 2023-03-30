@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.osgi_3.11.3.v20170209-1843.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.osgi.source_3.11.3.v20170209-1843.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.core.commands_3.8.1.v20161221-1651.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.core.commands.source_3.8.1.v20161221-1651.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.equinox.common.source_3.8.0.v20160509-1230.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.equinox.registry.source_3.6.100.v20160223-2218.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.core.runtime.source_3.12.0.v20160606-1342.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.text_3.6.0.v20160503-1849.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.text.source_3.6.0.v20160503-1849.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.swt.win32.win32.x86_64_3.105.3.v20170228-0512.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.105.3.v20170228-0512.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.jface_3.12.2.v20170113-2113.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.jface.source_3.12.2.v20170113-2113.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.jface.text_3.11.2.v20170220-1911.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.jface.text.source_3.11.2.v20170220-1911.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.workbench_3.108.3.v20170216-1539.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.workbench.source_3.108.3.v20170216-1539.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/com.ibm.icu_56.1.0.v201601250100.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/com.ibm.icu.source_56.1.0.v201601250100.jar"/>
+	<classpathentry kind="lib" path="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.forms_3.7.1.v20161220-1635.jar" sourcepath="D:/tools/capella_studio-1.2.0/plugins/org.eclipse.ui.forms.source_3.7.1.v20161220-1635.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
