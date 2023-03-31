@@ -15,20 +15,20 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
  
-  <properties>
-    <tycho-version>1.2.0</tycho-version>
-    <platform-version-name>neon</platform-version-name>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<tycho-version>2.7.5</tycho-version>
+		<platform-version-name>neon</platform-version-name>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
   
  <repositories>
  
  <!-- configure p2 repository to resolve against -->
   <repository> 
-   <id>SiriusPhoton</id>
+   <id>Sirius</id>
    <layout>p2</layout>
-   <url>http://download.eclipse.org/sirius/updates/stable/6.3.1-S20200602-082939/photon/</url>
+   <url>http://download.eclipse.org/sirius/updates/stable/7.1.0-S20230111-043509/2021-06/</url>
  </repository>
  <repository>
    <id>amalgam</id>
@@ -111,17 +111,7 @@
 						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
 							<arch>x86_64</arch>
-						</environment>
-						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
-							<arch>x86</arch>
 						</environment>
 						<environment>
 							<os>win32</os>

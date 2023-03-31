@@ -74,6 +74,6 @@
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/releases/neon/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/sirius/updates/releases/5.1.1/neon/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
 </site>

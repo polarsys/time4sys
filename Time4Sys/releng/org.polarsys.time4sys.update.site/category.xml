@@ -39,7 +39,7 @@
    <feature id="org.eclipse.acceleo.ui.interpreter">
       <category name="T4S Dependencies"/>
    </feature>
-   <feature url="features/org.eclipse.zest_1.7.0.201606061308.jar" id="org.eclipse.zest" version="1.7.0.201606061308">
+   <feature id="org.eclipse.zest">
       <category name="T4S Dependencies"/>
    </feature>
    <feature id="org.polarsys.time4sys.marte.transformation.feature">
@@ -120,7 +120,6 @@
    <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
-   
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
          Install Time4Sys plugins.
@@ -136,8 +135,8 @@
          Install CTF Importer plugins (LTTng format import).
       </description>
    </category-def>
-   <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/sirius/updates/stable/6.1.4-S20200120-085637/oxygen/" enabled="true" />
    <category-def name="T4S Transformation" label="T4S Transformation"/>
+   <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
 </site>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Time4Sys-Neon" sequenceNumber="200">
+<?pde version="3.8"?>
+<target name="Time4Sys-Neon" sequenceNumber="200">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.junit" version="4.12.0.v201504281640"/>
@@ -9,7 +10,6 @@
 <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.9.0.201710271504"/>
 <repository location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/"/>
 </location>
-<location path="C:\Users\didier\Downloads\tempo_plugins\plugins" type="Directory"/>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.acceleo.doc.feature.group" version="3.7.7.201812041426"/>
 <unit id="org.eclipse.acceleo.equinox.launcher.feature.group" version="3.7.7.201812041426"/>
@@ -45,7 +45,6 @@
 <unit id="org.eclipse.zest.sdk.feature.group" version="1.7.0.201606061308"/>
 <repository location="http://download.eclipse.org/releases/neon/201703141400"/>
 </location>
-<location path="C:\Users\didier\Downloads\Transfo Tempo_Corrected" type="Directory"/>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.sirius.aql.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.diagram.elk.feature.feature.group" version="6.3.1.202006021231"/>
@@ -70,7 +69,7 @@
 <unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.workflow.feature.feature.group" version="6.3.1.202006021231"/>
-<repository location="http://download.eclipse.org/sirius/updates/stable/6.3.1-S20200602-082939/photon/"/>
+<repository location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/"/>
 </location>
 </locations>
 </target>
