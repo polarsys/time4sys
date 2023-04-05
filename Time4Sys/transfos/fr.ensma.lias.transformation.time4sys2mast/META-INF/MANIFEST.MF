@@ -22,14 +22,13 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.nfp.edit;bundle-version="0.1.0",
  org.polarsys.time4sys.marte.nfp.editor;bundle-version="0.1.0",
  org.polarsys.time4sys.marte.analysisrepository,
- org.polarsys.time4sys.marte.analysisrepository.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.polarsys.time4sys.marte.analysisrepository.ui,
+ org.eclipse.osgi.services
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: 
  fr.ensma.lias.transformation.time4sys2mast.general,
  fr.ensma.lias.transformation.time4sys2mast.general.services
-Import-Package: org.osgi.service.component.annotations
 Service-Component: OSGI-INF/fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2MastGenerator.xml,
  OSGI-INF/fr.ensma.lias.transformation.time4sys2mast.general.Time4Sys2EDFMastGenerator.xml
 

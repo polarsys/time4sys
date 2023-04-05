@@ -48,9 +48,6 @@
    <feature id="org.polarsys.time4sys.trace.ctf.importer.feature">
       <category name="CTF Importer"/>
    </feature>
-   <feature id="org.eclipse.sdk">
-      <category name="Eclipse SDK"/>
-   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
@@ -133,7 +130,6 @@
       </description>
    </category-def>
    <category-def name="T4S Transformation" label="T4S Transformation"/>
-   <category-def name="Eclipse SDK" label="Eclipse SDK"/>
    <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
    <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />

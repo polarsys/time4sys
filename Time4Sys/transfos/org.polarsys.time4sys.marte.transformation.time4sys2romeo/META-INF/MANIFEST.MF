@@ -6,7 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: petrinet,
  petrinet.impl,
  petrinet.util,
@@ -15,7 +14,7 @@ Export-Package: petrinet,
  taskmodel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.zest.core;bundle-version="1.5.300",
+ org.eclipse.zest.core,
  org.polarsys.time4sys.design,
  org.polarsys.time4sys.library,
  org.polarsys.time4sys.mapping,

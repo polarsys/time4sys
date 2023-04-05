@@ -3,11 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.time4sys.model.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.time4sys.model.time4sys.provider.Time4sysEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.model.time4sys.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.model;visibility:=reexport,

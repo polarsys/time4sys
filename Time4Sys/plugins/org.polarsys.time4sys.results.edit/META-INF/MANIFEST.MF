@@ -3,11 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.time4sys.results.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.time4sys.results.results.provider.ResultsEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.time4sys.results.results.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.results;visibility:=reexport,

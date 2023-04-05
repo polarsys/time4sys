@@ -4,9 +4,20 @@ Bundle-Name: GQAM Contextual Explorer contribution
 Bundle-Vendor: Time4Sys Project
 Bundle-SymbolicName: org.polarsys.time4sys.gqam.contextual.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.gqam.edit,
  org.polarsys.time4sys.marte.gqam,
  org.polarsys.time4sys.marte.sam
+Export-Package: org.polarsys.time4sys.gqam.contextual.explorer.queries.acquirestep,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.behaviorscenario,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.communicationstep,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.endtoendflow,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.periodicpattern,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.precedencerelation,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.reference,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.releasestep,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.sporadicpattern,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.step,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.workloadbehavior,
+ org.polarsys.time4sys.gqam.contextual.explorer.queries.workloadevent

@@ -15,11 +15,11 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
  
-	<properties>
-		<tycho-version>2.7.5</tycho-version>
-		<platform-version-name>neon</platform-version-name>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+  <properties>
+    <tycho-version>2.7.5</tycho-version>
+    <platform-version-name>neon</platform-version-name>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
   
  <repositories>
@@ -35,6 +35,16 @@
    <layout>p2</layout>
    <url>http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella/</url>
  </repository>
+ <repository>
+   <id>Persistence</id>
+   <layout>p2</layout>
+   <url>https://download.eclipse.org/rt/eclipselink/milestone-updates/</url>
+ </repository> 
+ <repository>
+   <id>Zest</id>
+   <layout>p2</layout>
+   <url>https://download.eclipse.org/tools/gef/classic/releases/latest/</url>
+ </repository> 
  <repository>
   <id>Oxygen</id>
    <layout>p2</layout>
@@ -66,7 +76,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.9</version>
+				<version>0.8.9</version>
 				 <executions>
 					<execution>
             <id>pre-unit-test</id>

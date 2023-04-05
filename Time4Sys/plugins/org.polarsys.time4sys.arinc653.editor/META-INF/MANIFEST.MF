@@ -15,5 +15,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.sirius.ui,
  org.polarsys.time4sys.marte.hrm
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.time4sys.arinc653.editor,
+ org.polarsys.time4sys.arinc653.editor.handlers,
+ org.polarsys.time4sys.arinc653.editor.properties.filters,
+ org.polarsys.time4sys.arinc653.editor.properties.parts.forms,
+ org.polarsys.time4sys.arinc653.editor.properties.sources

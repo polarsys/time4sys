@@ -11,7 +11,7 @@
  -->
 <feature
       id="org.polarsys.time4sys.result.parser.feature"
-      label="Results Parser Feature"
+      label="Mast Results Parser Feature"
       version="1.0.0.qualifier"
       provider-name="Time4Sys Project">
 
@@ -33,4 +33,12 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="javax.xml.bind"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

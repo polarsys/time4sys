@@ -3,10 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.time4sys.marte.coreelements.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.marte.nfp.coreelements.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.time4sys.marte.coreelements;visibility:=reexport,

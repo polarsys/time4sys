@@ -35,7 +35,6 @@ org.polarsys.time4sys.ui.perspective
       startupMessageRect="7,252,445,20"
       startupForegroundColor="000000" />
    <launcher name="Time4Sys">
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -43,7 +42,7 @@ org.polarsys.time4sys.ui.perspective
 
 
    <vm>
-      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7</windows>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</windows>
    </vm>
 
    <license>
@@ -334,10 +333,9 @@ version(s), and exceptions or additional permissions here}.&quot;
 
    <features>
       <feature id="org.eclipse.platform"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature"/>
       <feature id="org.eclipse.gmf.runtime.thirdparty"/>
       <feature id="org.eclipse.help"/>
-      <feature id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature"/>
+      <feature id="org.eclipse.ecf.filetransfer.ssl.feature"/>
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.equinox.p2.core.feature"/>
       <feature id="org.eclipse.gmf"/>
@@ -365,7 +363,6 @@ version(s), and exceptions or additional permissions here}.&quot;
       <feature id="org.eclipse.sirius.runtime"/>
       <feature id="org.eclipse.sirius.runtime.acceleo"/>
       <feature id="org.eclipse.sirius.runtime.aql"/>
-      <feature id="org.eclipse.sirius.runtime.ide.eef"/>
       <feature id="org.eclipse.sirius.runtime.ide.ui"/>
       <feature id="org.eclipse.sirius.runtime.ide.ui.acceleo"/>
       <feature id="org.eclipse.amalgam.explorer.activity"/>

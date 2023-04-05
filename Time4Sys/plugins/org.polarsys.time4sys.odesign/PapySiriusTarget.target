@@ -8,6 +8,8 @@
 			<unit id="org.eclipse.zest.feature.group" version="3.15.0.202211301913"/>
 			<unit id="org.eclipse.zest.examples" version="3.14.100.202211301913"/>
 			<unit id="org.eclipse.zest.examples.source" version="3.14.100.202211301913"/>
+			<unit id="org.eclipse.zest.sdk.feature.group" version="3.15.0.202211301913"/>
+			<unit id="org.eclipse.zest.source.feature.group" version="3.15.0.202211301913"/>
 		</location>
 	</locations>
 	<environment>

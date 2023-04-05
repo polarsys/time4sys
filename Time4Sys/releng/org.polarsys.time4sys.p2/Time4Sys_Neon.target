@@ -54,7 +54,6 @@
 <unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.runtime.feature.group" version="6.3.1.202006021231"/>
-<unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="6.3.1.202006021231"/>
 <unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="6.3.1.202006021231"/>

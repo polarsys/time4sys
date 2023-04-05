@@ -3,9 +3,29 @@ Bundle-ManifestVersion: 2
 Bundle-Name: SRM Contextual Explorer contribution
 Bundle-SymbolicName: org.polarsys.time4sys.srm.contextual.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.srm.edit,
  org.polarsys.time4sys.marte.srm
 Bundle-Vendor: Time4Sys Project
+Export-Package: org.polarsys.time4sys.srm.contextual.explorer.queries.alarm,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.devicebroker,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.interruptresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.memorybroker,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.memorypartition,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.messagecomresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.notificationresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.shareddatacomresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareaccessservice,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwarearchitecture,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareconnector,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareinterface,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareinterfacepackage,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwaremutualexclusionresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareport,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareresourcepackage,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareschedulableresource,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwarescheduler,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwareservice,
+ org.polarsys.time4sys.srm.contextual.explorer.queries.softwaretimerresource

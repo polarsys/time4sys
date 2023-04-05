@@ -75,6 +75,12 @@ public class SubSlicesIterator implements Iterator<Slice>, Iterable<Slice> {
 	public Slice next() {
 		return nextSlice;
 	}
+	
+	@Override
+	public void remove() {
+        throw new UnsupportedOperationException();
+	}
+
 
 	@Override
 	public Iterator<Slice> iterator() {

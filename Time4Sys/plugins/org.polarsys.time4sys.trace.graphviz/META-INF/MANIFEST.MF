@@ -11,9 +11,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.time4sys.marte.nfp,
  org.eclipse.core.filesystem,
  org.eclipse.ui.ide,
- javax.xml;bundle-version="1.3.4",
- org.polarsys.time4sys.model
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+ org.polarsys.time4sys.model,
+ javax.xml
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Time4Sys Project
 Export-Package: org.polarsys.time4sys.trace.graphviz,

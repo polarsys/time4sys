@@ -3,9 +3,21 @@ Bundle-ManifestVersion: 2
 Bundle-Name: HRM Contextual Explorer contribution
 Bundle-SymbolicName: org.polarsys.time4sys.hrm.contextual.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.time4sys.marte.hrm.edit,
  org.polarsys.time4sys.marte.hrm
 Bundle-Vendor: Time4Sys Project
+Export-Package: org.polarsys.time4sys.hrm.contextual.explorer.queries.firmwarearchitecture,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarearbiter,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarebridge,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarebus,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaredma,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaremedia,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaremmu,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarepld,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwareport,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwareprocessor,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarestoragemanager,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwaretimer,
+ org.polarsys.time4sys.hrm.contextual.explorer.queries.hardwarewire

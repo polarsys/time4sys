@@ -3,7 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.time4sys.odesign;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.time4sys.odesign.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -33,7 +32,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.jdt.core
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.time4sys.odesign,
  org.polarsys.time4sys.odesign.impl,
  org.polarsys.time4sys.odesign.util

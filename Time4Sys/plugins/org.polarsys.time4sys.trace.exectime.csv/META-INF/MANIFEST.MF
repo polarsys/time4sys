@@ -4,9 +4,9 @@ Bundle-Name: Execution Time CSV Exporter
 Bundle-SymbolicName: org.polarsys.time4sys.trace.exectime.csv;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Time4Sys Project
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.polarsys.time4sys.trace,
  org.eclipse.ui,
  org.eclipse.core.resources,
  org.polarsys.time4sys.marte.nfp,
  org.eclipse.core.runtime
+Export-Package: org.polarsys.time4sys.trace.exectime.commands

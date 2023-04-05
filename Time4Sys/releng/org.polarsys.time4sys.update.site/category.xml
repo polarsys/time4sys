@@ -27,9 +27,6 @@
    <feature id="org.eclipse.sirius.runtime.aql">
       <category name="T4S Dependencies"/>
    </feature>
-   <feature id="org.eclipse.sirius.runtime.ide.eef">
-      <category name="T4S Dependencies"/>
-   </feature>
    <feature id="org.eclipse.eef.sdk.feature">
       <category name="T4S Dependencies"/>
    </feature>
@@ -46,15 +43,12 @@
       <category name="T4S Transformation"/>
    </feature>
    <feature id="org.polarsys.time4sys.result.parser.feature">
-      <category name="Time4Sys"/>
+      <category name="T4S Transformation"/>
    </feature>
    <feature id="org.polarsys.time4sys.trace.ctf.importer.feature">
       <category name="CTF Importer"/>
    </feature>
    <bundle id="org.eclipse.sirius.editor">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.emf.eef.runtime">
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.draw2d">

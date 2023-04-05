@@ -16,4 +16,3 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.pde.runtime,
  org.eclipse.sirius.ui,
  org.eclipse.emf.common.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7

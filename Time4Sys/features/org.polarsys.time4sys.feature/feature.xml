@@ -434,13 +434,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.launcher"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.time4sys.analysis.tools"
          download-size="0"
          install-size="0"
@@ -490,13 +483,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.polarsys.time4sys.example.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.time4sys.librairies"
          download-size="0"
          install-size="0"
@@ -540,6 +526,13 @@
 
    <plugin
          id="org.polarsys.time4sys.results.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.time4sys.graphics.partition"
          download-size="0"
          install-size="0"
          version="0.0.0"
