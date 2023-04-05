@@ -10,7 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.aql,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.sirius.diagram,
  org.polarsys.time4sys.marte,
  org.polarsys.time4sys.marte.gqam,
  org.polarsys.time4sys.marte.grm,
@@ -30,7 +29,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.ecore.extender,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.polarsys.time4sys.design
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.time4sys.odesign,
  org.polarsys.time4sys.odesign.impl,
@@ -42,6 +42,6 @@ Import-Package: com.google.common.collect;version="11.0.0",
  org.eclipse.emf.workspace.util,
  org.eclipse.sirius.common.ui.tools.api.plugin;version="2.0.4",
  org.eclipse.sirius.diagram.business.internal.metamodel.helper;version="3.0.0",
- org.polarsys.time4sys.design
+ org.eclipse.sirius.diagram.business.internal.sync;resolution:=optional
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
