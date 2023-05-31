@@ -50,6 +50,12 @@
    <layout>p2</layout>
    <url>http://download.eclipse.org/releases/oxygen/</url>
  </repository>
+ <repository>
+  <id>oRBIT</id>
+   <layout>p2</layout>
+   <url>https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository</url>
+ </repository>
+
  </repositories>
 	<build>
 		<plugins>
@@ -117,7 +123,7 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<environments>
+					<environments>					
 						<environment>
 							<os>linux</os>
 							<ws>gtk</ws>

@@ -51,6 +51,9 @@
    <feature id="org.eclipse.sdk">
       <category name="Eclipse SDK"/>
    </feature>
+   <feature id="org.eclipse.ocl">
+      <category name="T4S Dependencies"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>

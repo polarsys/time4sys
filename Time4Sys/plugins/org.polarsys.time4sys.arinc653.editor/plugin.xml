@@ -134,7 +134,7 @@
       <propertySections
             contributorId="org.eclipse.sirius.diagram">
          <propertySection
-               class="org.polarsys.time4sys.arinc653.editor.properties.parts.forms.HWProcessorPropertiesEditionPartForm"
+               class="org.polarsys.time4sys.arinc653.editor.properties.parts.forms.Arinc653PropertiesEditionPartForm"
                filter="org.polarsys.time4sys.arinc653.editor.properties.filters.HardwareProcessorFilter"
                id="org.polarsys.time4sys.arinc653.editor.design.properties.hwprocessor"
                tab="Base">

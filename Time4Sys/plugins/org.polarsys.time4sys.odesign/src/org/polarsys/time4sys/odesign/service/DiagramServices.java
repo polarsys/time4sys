@@ -36,14 +36,13 @@ import org.eclipse.sirius.diagram.DragAndDropTarget;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManager;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManagerRegistry;
-import org.eclipse.sirius.diagram.business.internal.sync.DNodeCandidate;
-import org.eclipse.sirius.diagram.business.internal.sync.DDiagramElementSynchronizer;
-import org.eclipse.sirius.diagram.business.internal.sync.DDiagramSynchronizer;
-import org.eclipse.sirius.diagram.business.internal.sync.DEdgeCandidate;
 import org.eclipse.sirius.diagram.business.internal.helper.decoration.DecorationHelperInternal;
 import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
 import org.eclipse.sirius.diagram.business.internal.metamodel.operations.DDiagramSpecOperations;
-import org.eclipse.sirius.diagram.description.NodeMapping;
+//import org.eclipse.sirius.diagram.business.internal.sync.DDiagramElementSynchronizer;
+//import org.eclipse.sirius.diagram.business.internal.sync.DDiagramSynchronizer;
+//import org.eclipse.sirius.diagram.business.internal.sync.DEdgeCandidate;
+//import org.eclipse.sirius.diagram.business.internal.sync.DNodeCandidate;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
@@ -59,6 +58,7 @@ import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
 
+@SuppressWarnings("restriction")
 public class DiagramServices {
 
 	private static DiagramServices singleton = null;
@@ -103,12 +103,13 @@ public class DiagramServices {
 
 		final DDiagram diagram = DiagramHelper.getService().getDiagramContainer(sourceView);
 		RefreshIdsHolder rId = RefreshIdsHolder.getOrCreateHolder(diagram);
-		DEdgeCandidate edgeCandidate = new DEdgeCandidate(mapping, semanticObject, sourceView, targetView, rId);
+		//TODO: Urgent -> find a another way!
+//DEdgeCandidate edgeCandidate = new DEdgeCandidate(mapping, semanticObject, sourceView, targetView, rId);
 
-		final DDiagramSynchronizer diagramSync = new DDiagramSynchronizer(interpreter, diagram.getDescription(),
-				accessor);
-		diagramSync.setDiagram((DSemanticDiagram) diagram);
-		final DDiagramElementSynchronizer elementSync = diagramSync.getElementSynchronizer();
+//		final DDiagramSynchronizer diagramSync = new DDiagramSynchronizer(interpreter, diagram.getDescription(),
+//				accessor);
+//		diagramSync.setDiagram((DSemanticDiagram) diagram);
+//		final DDiagramElementSynchronizer elementSync = diagramSync.getElementSynchronizer();
 		/* maps for decorations */
 		final Map<EdgeMapping, Collection<MappingBasedDecoration>> edgeToMappingBasedDecoration = new HashMap<EdgeMapping, Collection<MappingBasedDecoration>>();
 		final Map<String, Collection<SemanticBasedDecoration>> edgeToSemanticBasedDecoration = new HashMap<String, Collection<SemanticBasedDecoration>>();
@@ -147,8 +148,10 @@ public class DiagramServices {
 		final DecorationHelperInternal decorationHelper = new DecorationHelperInternal(diagram, interpreter, accessor);
 		decorationHelper.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration,
 				edgeToMappingBasedDecoration);
-		return elementSync.createNewEdge(getMappingManager((DSemanticDiagram) diagram), edgeCandidate,
-				mappingsToEdgeTargets, edgeToMappingBasedDecoration, edgeToSemanticBasedDecoration);
+		//TODO: Urgent -> find a another way!
+//		return elementSync.createNewEdge(getMappingManager((DSemanticDiagram) diagram), edgeCandidate,
+//				mappingsToEdgeTargets, edgeToMappingBasedDecoration, edgeToSemanticBasedDecoration);
+		return null;
 	}
 
 	private DiagramMappingsManager getMappingManager(final DSemanticDiagram diagram) {
@@ -305,14 +308,17 @@ public class DiagramServices {
 
 		ModelAccessor accessor = SiriusPlugin.getDefault().getModelAccessorRegistry().getModelAccessor(modelElement);
 		IInterpreter interpreter = SiriusPlugin.getDefault().getInterpreterRegistry().getInterpreter(modelElement);
-		final DDiagramSynchronizer diagramSync = new DDiagramSynchronizer(interpreter, diag.getDescription(), accessor);
-		diagramSync.setDiagram((DSemanticDiagram) diagram);
-		final DDiagramElementSynchronizer elementSync = diagramSync.getElementSynchronizer();
-		RefreshIdsHolder rId = RefreshIdsHolder.getOrCreateHolder(diagram);
+		//TODO: Urgent -> find a another way!
+//		final DDiagramSynchronizer diagramSync = new DDiagramSynchronizer(interpreter, diag.getDescription(), accessor);
+//		diagramSync.setDiagram((DSemanticDiagram) diagram);
+//		final DDiagramElementSynchronizer elementSync = diagramSync.getElementSynchronizer();
+//		RefreshIdsHolder rId = RefreshIdsHolder.getOrCreateHolder(diagram);
 
-		DNodeCandidate nodeCandidate = new DNodeCandidate(mapping, modelElement, container, rId);
-		return (AbstractDNode) elementSync.createNewNode(getMappingManager((DSemanticDiagram) diag), nodeCandidate,
-				false);
+//		DNodeCandidate nodeCandidate = new DNodeCandidate(mapping, modelElement, container, rId);
+//		return (AbstractDNode) elementSync.createNewNode(getMappingManager((DSemanticDiagram) diag), nodeCandidate,
+//				false);
+		return null;//TODO: Urgent -> find a another way!
+
 	}
 
 	/**

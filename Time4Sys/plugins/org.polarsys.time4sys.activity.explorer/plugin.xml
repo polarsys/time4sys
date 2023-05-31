@@ -90,7 +90,7 @@ Describe the sequence of steps of one the selected scenario and represents steps
         index="2"
         name="Simulation">
      <Description>
-		<p>Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.</p>
+		Transform your design model into an Analysis model ready to be analysed or simulated by simulation tools.
      </Description>
      <Activity
            class="org.polarsys.time4sys.activity.explorer.activity.CheckProjectWithAnalysisRepository"
@@ -165,24 +165,5 @@ Describes the link between them in one or several scenarios.
           class="org.polarsys.time4sys.activity.explorer.predicate.Time4SysActivityExplorerPredicate">
     </Predicate>
  </Page>
-</extension>
-<extension
-      point="org.eclipse.ui.navigator.navigatorContent">
-   <actionProvider
-         class="org.polarsys.time4sys.activity.explorer.ActivityExplorerActionProvider"
-         id="time4sys.project.explorer.actions.activity.explorer">
-      <enablement>
-         <and>
-            <instanceof
-                  value="org.eclipse.core.resources.IFile">
-            </instanceof>
-            <test
-                  forcePluginActivation="true"
-                  property="org.eclipse.core.resources.extension"
-                  value="aird">
-            </test>
-         </and>
-      </enablement>
-   </actionProvider>
 </extension>
 </plugin>

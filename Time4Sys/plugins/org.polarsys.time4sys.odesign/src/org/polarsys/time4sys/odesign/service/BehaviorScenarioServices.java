@@ -31,14 +31,14 @@ import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.EdgeStyle;
 import org.eclipse.sirius.diagram.EdgeTarget;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingWithInterpreterHelper;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeContainerSpec;
+//import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+//import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingWithInterpreterHelper;
+import org.eclipse.sirius.diagram.DNodeContainer;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.style.BorderedStyleDescription;
 import org.eclipse.sirius.diagram.description.style.EdgeStyleDescription;
-import org.eclipse.sirius.diagram.tools.api.command.view.RefreshSiriusElement;
+//import org.eclipse.sirius.diagram.tools.api.command.view.RefreshSiriusElement;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.sirius.viewpoint.RGBValues;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
@@ -151,29 +151,30 @@ public class BehaviorScenarioServices {
 	 * @param aEdge
 	 */
 	public void resetOutputPinStyle(DEdge aEdge) {
-		DiagramElementMapping mapping = DiagramServices.getDiagramServices().getEdgeMapping(aEdge);
-		if (mapping != null) {
-			// get default style size of an edge
-			EdgeStyleDescription desc = (EdgeStyleDescription) getMappingHelper(aEdge).getBestStyleDescription(mapping,
-					aEdge.getTarget(), aEdge, aEdge.eContainer(),
-					DiagramHelper.getService().getDiagramContainer(aEdge));
-			String defaultStyleSize = desc.getSizeComputationExpression();
-			// get current style size of an edge
-			EdgeStyle edgeStyle = aEdge.getOwnedStyle();
-			Integer currentSize = edgeStyle.getSize();
-
-			if ((null != currentSize) && (null != defaultStyleSize)) {
-				// apply style & color : if currentSize is equal to default size
-				// + if current size is equal to default size of Functional
-				// Chain
-				if (currentSize.equals(THICK_BORDER_SIZE) || currentSize.equals(defaultStyleSize)) {
-					if (ShapeUtil.resetEdgeThickStyle(aEdge, Integer.valueOf(defaultStyleSize))) {
-						ShapeUtil.resetEdgeColorStyle(aEdge,
-								ShapeUtil.getDefaultColor(aEdge, desc, desc.getStrokeColor()));
-					}
-				}
-			}
-		}
+		//TODO: Urgent -> find a another way!
+//		DiagramElementMapping mapping = DiagramServices.getDiagramServices().getEdgeMapping(aEdge);
+//		if (mapping != null) {
+//			// get default style size of an edge
+//			EdgeStyleDescription desc = (EdgeStyleDescription) getMappingHelper(aEdge).getBestStyleDescription(mapping,
+//					aEdge.getTarget(), aEdge, aEdge.eContainer(),
+//					DiagramHelper.getService().getDiagramContainer(aEdge));
+//			String defaultStyleSize = desc.getSizeComputationExpression();
+//			// get current style size of an edge
+//			EdgeStyle edgeStyle = aEdge.getOwnedStyle();
+//			Integer currentSize = edgeStyle.getSize();
+//
+//			if ((null != currentSize) && (null != defaultStyleSize)) {
+//				// apply style & color : if currentSize is equal to default size
+//				// + if current size is equal to default size of Functional
+//				// Chain
+//				if (currentSize.equals(THICK_BORDER_SIZE) || currentSize.equals(defaultStyleSize)) {
+//					if (ShapeUtil.resetEdgeThickStyle(aEdge, Integer.valueOf(defaultStyleSize))) {
+//						ShapeUtil.resetEdgeColorStyle(aEdge,
+//								ShapeUtil.getDefaultColor(aEdge, desc, desc.getStrokeColor()));
+//					}
+//				}
+//			}
+//		}
 	}
 
 	public void customizePrecedenceRelationEdgeStyle(DEdge edge, RGBValues color) {
@@ -184,17 +185,19 @@ public class BehaviorScenarioServices {
 		// get default style size of an edge
 		DiagramElementMapping mapping = DiagramServices.getDiagramServices().getEdgeMapping(edge);
 		if (mapping != null) {
-			EdgeStyleDescription desc = (EdgeStyleDescription) getMappingHelper(edge).getBestStyleDescription(mapping,
-					edge.getTarget(), edge, edge.eContainer(), DiagramHelper.getService().getDiagramContainer(edge));
-			if (null != desc) {
-				// assuming it is an integer value
-				String defaultSize = desc.getSizeComputationExpression();
-				if ((null != defaultSize) && (null != currentSize) && (currentSize.equals(Integer.valueOf(defaultSize))
-						|| (currentSize.equals(THICK_BORDER_SIZE)))) {
-					// apply change
-					customizeEdgeStyle(edge, color);
-				}
-			}
+			//TODO: Urgent -> find a another way!
+
+//			EdgeStyleDescription desc = (EdgeStyleDescription) getMappingHelper(edge).getBestStyleDescription(mapping,
+//					edge.getTarget(), edge, edge.eContainer(), DiagramHelper.getService().getDiagramContainer(edge));
+//			if (null != desc) {
+//				// assuming it is an integer value
+//				String defaultSize = desc.getSizeComputationExpression();
+//				if ((null != defaultSize) && (null != currentSize) && (currentSize.equals(Integer.valueOf(defaultSize))
+//						|| (currentSize.equals(THICK_BORDER_SIZE)))) {
+//					// apply change
+//					customizeEdgeStyle(edge, color);
+//				}
+//			}
 		}
 	}
 
@@ -255,43 +258,46 @@ public class BehaviorScenarioServices {
 
 		if (functionNode instanceof AbstractDNode) {
 			AbstractDNode node = (AbstractDNode) functionNode;
-			BorderedStyleDescription desc = (BorderedStyleDescription) getMappingHelper(functionNode)
-					.getBestStyleDescription(functionNode.getDiagramElementMapping(), functionNode.getTarget(),
-							functionNode, functionNode.eContainer(),
-							DiagramHelper.getService().getDiagramContainer(functionNode));
+			//TODO: Urgent -> find a another way!
 
-			if (desc != null) {
-				defaultStyleSize = desc.getBorderSizeComputationExpression();
-				style = (BorderedStyle) ShapeUtil.getCurrentStyle(node);
-				if (style != null) {
-					currentSize = style.getBorderSize();
-				}
+//			BorderedStyleDescription desc = (BorderedStyleDescription) getMappingHelper(functionNode)
+//					.getBestStyleDescription(functionNode.getDiagramElementMapping(), functionNode.getTarget(),
+//							functionNode, functionNode.eContainer(),
+//							DiagramHelper.getService().getDiagramContainer(functionNode));
 
-				if ((null != currentSize) && (null != defaultStyleSize)) {
-					// apply style & color : if currentSize is equal to default
-					// size + if current size is equal to default size of
-					// Functional Chain
-					if (currentSize.equals(THICK_BORDER_SIZE) || currentSize.equals(THICK_BORDER_SIZE)
-							|| currentSize.equals(defaultStyleSize)) {
-						if (ShapeUtil.resetBorderStyle(node,
-								Integer.valueOf(desc.getBorderSizeComputationExpression()))) {
-							if (ShapeUtil.resetBorderColorStyle(node,
-									ShapeUtil.getDefaultColor(node, desc, desc.getBorderColor()))) {
-								result = true;
-							}
-						}
-					}
-				}
-			}
+//			if (desc != null) {
+//				defaultStyleSize = desc.getBorderSizeComputationExpression();
+//				style = (BorderedStyle) ShapeUtil.getCurrentStyle(node);
+//				if (style != null) {
+//					currentSize = style.getBorderSize();
+//				}
+//
+//				if ((null != currentSize) && (null != defaultStyleSize)) {
+//					// apply style & color : if currentSize is equal to default
+//					// size + if current size is equal to default size of
+//					// Functional Chain
+//					if (currentSize.equals(THICK_BORDER_SIZE) || currentSize.equals(THICK_BORDER_SIZE)
+//							|| currentSize.equals(defaultStyleSize)) {
+//						if (ShapeUtil.resetBorderStyle(node,
+//								Integer.valueOf(desc.getBorderSizeComputationExpression()))) {
+//							if (ShapeUtil.resetBorderColorStyle(node,
+//									ShapeUtil.getDefaultColor(node, desc, desc.getBorderColor()))) {
+//								result = true;
+//							}
+//						}
+//					}
+//				}
+//			}
 		}
 
 		return result;
 	}
 
-	public MappingWithInterpreterHelper getMappingHelper(DSemanticDecorator semanticDecorator) {
-		return new MappingWithInterpreterHelper(
-				SiriusPlugin.getDefault().getInterpreterRegistry().getInterpreter(semanticDecorator.getTarget()));
-	}
+	//TODO: Urgent -> find a another way!
+//	public MappingWithInterpreterHelper getMappingHelper(DSemanticDecorator semanticDecorator) {
+//		return new MappingWithInterpreterHelper(
+//				SiriusPlugin.getDefault().getInterpreterRegistry().getInterpreter(semanticDecorator.getTarget()));
+//	}
 
 	// getFlatBehaviorScenarioLastFunctions
 	// resetPrecedenceRelationStyle
@@ -675,7 +681,7 @@ public class BehaviorScenarioServices {
 						}
 					}
 				}
-				RefreshSiriusElement.refresh(me.getValue());
+				//TODO:Urgent, find another way!				RefreshSiriusElement.refresh(me.getValue());
 			}
 		}
 
@@ -899,7 +905,7 @@ public class BehaviorScenarioServices {
 						incompleteBS.add(me.getKey());
 					}
 				}
-				RefreshSiriusElement.refresh(me.getValue());
+				//TODO:Urgent, find another way!				RefreshSiriusElement.refresh(me.getValue());
 			}
 		}
 
@@ -964,8 +970,8 @@ public class BehaviorScenarioServices {
 		if (obj instanceof DNode) {
 			obj = ((DNode)obj).getTarget();
 		} 
-		if (obj instanceof DNodeContainerSpec) {
-			obj = ((DNodeContainerSpec)obj).getTarget();
+		if (obj instanceof DNodeContainer) {
+			obj = ((DNodeContainer)obj).getTarget();
 		}
 		if (obj == null) {
 			return null;

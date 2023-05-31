@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="org.polarsys.time4sys.asciidocgen">
     <property name="ECLIPSE_HOME" value="../../../../../../Users/didier/Downloads/CS_5.1.0"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Downloads/CS_5.1.0/workspaceT4S"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../Users/didier/Downloads/CS_5.1.0/workspace2"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.polarsys.time4sys.asciidocgen.libraryclasspath">
@@ -9,7 +9,6 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.18.0.v20200506-2143.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.15.300.v20200520-1959.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.1.800.v20200511-1223.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.persistence.sun-misc_1.0.5.201910160628.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.12.0.v20200504-1602.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.10.800.v20200421-0950.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.8.800.v20200406-0956.jar"/>

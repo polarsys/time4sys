@@ -48,6 +48,9 @@
    <feature id="org.polarsys.time4sys.trace.ctf.importer.feature">
       <category name="CTF Importer"/>
    </feature>
+   <feature id="org.eclipse.ocl">
+      <category name="T4S Dependencies"/>
+   </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
    </bundle>
@@ -112,6 +115,9 @@
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="jakarta.xml.bind-api">
       <category name="T4S Dependencies"/>
    </bundle>
    <category-def name="Time4Sys" label="Time4Sys">

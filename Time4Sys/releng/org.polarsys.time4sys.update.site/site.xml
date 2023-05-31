@@ -43,10 +43,13 @@
       <category name="T4S Transformation"/>
    </feature>
    <feature id="org.polarsys.time4sys.result.parser.feature">
-      <category name="Time4Sys"/>
+      <category name="T4S Transformation"/>
    </feature>
    <feature id="org.polarsys.time4sys.trace.ctf.importer.feature">
       <category name="CTF Importer"/>
+   </feature>
+   <feature id="org.eclipse.ocl">
+      <category name="T4S Dependencies"/>
    </feature>
    <bundle id="org.eclipse.sirius.editor">
       <category name="T4S Dependencies"/>
@@ -114,6 +117,9 @@
    <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
+   <bundle id="jakarta.xml.bind-api">
+      <category name="T4S Dependencies"/>
+   </bundle>
    <category-def name="Time4Sys" label="Time4Sys">
       <description>
          Install Time4Sys plugins.
@@ -131,6 +137,7 @@
    </category-def>
    <category-def name="T4S Transformation" label="T4S Transformation"/>
    <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository/" enabled="true" />
    <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/" enabled="true" />
    <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
 </site>
