@@ -4,16 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.impl.NodeImpl;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DNodeContainer;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeContainerSpec;
-import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeContainer2EditPart;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNodeContainerEditPart;
-import org.eclipse.sirius.table.business.internal.metamodel.spec.DLineSpec;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
@@ -58,8 +54,8 @@ public class CRSelectionListener implements ISelectionListener{
 			Object model = dNode.getPrimaryChildEditPart().getModel();
 			if(model instanceof NodeImpl) {
 				EObject element = ((NodeImpl) model).getElement();
-				if(element instanceof DNodeContainerSpec) {
-					EObject target = ((DNodeContainerSpec) element).getTarget();
+				if(element instanceof DNodeContainer) {
+					EObject target = ((DNodeContainer) element).getTarget();
 					if(target instanceof HardwareComputingResource) {
 						HardwareComputingResource hcr = (HardwareComputingResource)target;	
 						//NetworkViewsSynchronizer.changeEdgeColorAccordingToPath(path,lineSpec.eResource(),"Network Architecture");
@@ -128,8 +124,8 @@ public class CRSelectionListener implements ISelectionListener{
 		if (obj instanceof DNode) {
 			obj = ((DNode)obj).getTarget();
 		} 
-		if (obj instanceof DNodeContainerSpec) {
-			obj = ((DNodeContainerSpec)obj).getTarget();
+		if (obj instanceof DNodeContainer) {
+			obj = ((DNodeContainer)obj).getTarget();
 		}
 		if (obj == null) {
 			return null;

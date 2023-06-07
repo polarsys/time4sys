@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature id="org.polarsys.time4sys.feature">
-      <category name="Time4Sys"/>
-   </feature>
    <feature id="org.eclipse.amalgam.explorer.activity">
       <category name="T4S Dependencies"/>
    </feature>
@@ -15,25 +12,10 @@
    <feature id="org.eclipse.amalgam.explorer.contextual.sirius">
       <category name="T4S Dependencies"/>
    </feature>
-   <feature id="org.eclipse.sirius.interpreter.feature">
-      <category name="T4S Dependencies"/>
-   </feature>
-   <feature id="org.eclipse.sirius.runtime">
-      <category name="T4S Dependencies"/>
-   </feature>
-   <feature id="org.eclipse.sirius.runtime.acceleo">
-      <category name="T4S Dependencies"/>
-   </feature>
-   <feature id="org.eclipse.sirius.runtime.aql">
-      <category name="T4S Dependencies"/>
-   </feature>
    <feature id="org.eclipse.eef.sdk.feature">
       <category name="T4S Dependencies"/>
    </feature>
    <feature id="org.eclipse.eef.ext.widgets.reference.feature">
-      <category name="T4S Dependencies"/>
-   </feature>
-   <feature id="org.eclipse.acceleo.ui.interpreter">
       <category name="T4S Dependencies"/>
    </feature>
    <feature id="org.eclipse.zest">
@@ -51,16 +33,34 @@
    <feature id="org.eclipse.ocl">
       <category name="T4S Dependencies"/>
    </feature>
-   <bundle id="org.eclipse.sirius.editor">
+   <feature id="org.eclipse.sirius.interpreter.feature">
       <category name="T4S Dependencies"/>
-   </bundle>
+   </feature>
+   <feature id="org.eclipse.sirius.properties.feature">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.runtime.aql">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.sirius.aql">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.polarsys.time4sys.feature">
+      <category name="Time4Sys"/>
+   </feature>
+   <feature id="org.eclipse.draw2d">
+      <category name="T4S Dependencies"/>
+   </feature>
+   <feature id="org.eclipse.persistence.moxy">
+      <category name="T4S Dependencies"/>
+   </feature>
    <bundle id="org.eclipse.draw2d">
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.emf">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.editor.properties">
       <category name="T4S Dependencies"/>
    </bundle>
    <bundle id="org.eclipse.emf.ecore">
@@ -90,34 +90,10 @@
    <bundle id="org.eclipse.sirius.editor.properties.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
-   <bundle id="org.eclipse.sirius.interpreter">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties.core">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties.defaultrules">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties.edit">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.properties.ext.widgets.reference.edit">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.ui.properties">
-      <category name="T4S Dependencies"/>
-   </bundle>
-   <bundle id="org.eclipse.sirius.ui.properties.ext.widgets.reference">
-      <category name="T4S Dependencies"/>
-   </bundle>
    <bundle id="jakarta.xml.bind-api">
+      <category name="T4S Dependencies"/>
+   </bundle>
+   <bundle id="org.eclipse.eef.core.ext.widgets.reference">
       <category name="T4S Dependencies"/>
    </bundle>
    <category-def name="Time4Sys" label="Time4Sys">
@@ -136,8 +112,8 @@
       </description>
    </category-def>
    <category-def name="T4S Transformation" label="T4S Transformation"/>
-   <repository-reference location="http://download.eclipse.org/releases/oxygen/" enabled="true" />
-   <repository-reference location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/releases/2023-06/202304141000/" enabled="true" />
+   <repository-reference location="https://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" enabled="true" />
    <repository-reference location="https://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06/" enabled="true" />
-   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/nightly/2.0.0-N20170923-021236/oxygen/" enabled="true" />
+   <repository-reference location="http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella/" enabled="true" />
 </site>
