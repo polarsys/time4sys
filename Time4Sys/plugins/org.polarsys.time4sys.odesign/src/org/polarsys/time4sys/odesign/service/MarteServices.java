@@ -22,7 +22,6 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.diagram.DNode;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
 import org.eclipse.sirius.tools.api.interpreter.InterpreterUtil;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.polarsys.time4sys.design.DesignModel;
@@ -145,9 +144,9 @@ public class MarteServices {
 	}
 
 	public String formatStepLabel(EObject context, EObject view) {
-		if (view instanceof DNodeSpec) {
-			if (((DNodeSpec) view).getTarget() instanceof Step) {
-				Step step = (Step) ((DNodeSpec) view).getTarget();
+		if (view instanceof DNode) {
+			if (((DNode) view).getTarget() instanceof Step) {
+				Step step = (Step) ((DNode) view).getTarget();
 
 				String result = "";
 				if (step.getName() != null) {

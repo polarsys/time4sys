@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DNodeContainer;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DNodeSpec;
+import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
@@ -47,7 +47,7 @@ public class ShowHideBSAndSteps extends ShowHideWizard {
 					Collection<EObject> representations = new EObjectQuery(step)
 							.getInverseReferences(ViewpointPackage.Literals.DSEMANTIC_DECORATOR__TARGET);
 					for (EObject representation : representations) {
-						if (((DNodeSpec) representation).getParentDiagram().equals(context)) {
+						if (((DNode) representation).getParentDiagram().equals(context)) {
 							DiagramServices.getDiagramServices().removeContainerView(representation);
 						}
 					}

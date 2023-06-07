@@ -36,9 +36,9 @@ import org.eclipse.sirius.diagram.DragAndDropTarget;
 import org.eclipse.sirius.diagram.EdgeTarget;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManager;
 import org.eclipse.sirius.diagram.business.api.componentization.DiagramMappingsManagerRegistry;
-import org.eclipse.sirius.diagram.business.internal.helper.decoration.DecorationHelperInternal;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
-import org.eclipse.sirius.diagram.business.internal.metamodel.operations.DDiagramSpecOperations;
+//import org.eclipse.sirius.diagram.business.internal.helper.decoration.DecorationHelperInternal;
+//import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+//import org.eclipse.sirius.diagram.business.internal.metamodel.operations.DDiagramSpecOperations;
 //import org.eclipse.sirius.diagram.business.internal.sync.DDiagramElementSynchronizer;
 //import org.eclipse.sirius.diagram.business.internal.sync.DDiagramSynchronizer;
 //import org.eclipse.sirius.diagram.business.internal.sync.DEdgeCandidate;
@@ -53,7 +53,7 @@ import org.eclipse.sirius.diagram.description.MappingBasedDecoration;
 import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.filter.FilterDescription;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
-import org.eclipse.sirius.viewpoint.SiriusPlugin;
+import org.eclipse.sirius.tools.api.SiriusPlugin;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
 import org.polarsys.time4sys.odesign.helper.DiagramHelper;
@@ -80,12 +80,13 @@ public class DiagramServices {
 	 */
 	public DEdge findDEdgeElement(DDiagram pDiagram, EdgeTarget sourceNode, EdgeTarget targetNode,
 			EObject semanticObject, EdgeMapping mapping) {
-		for (DEdge anEdge : DDiagramSpecOperations.getEdgesFromMapping(pDiagram, mapping)) {
-			if ((anEdge.getTarget() != null) && anEdge.getTarget().equals(semanticObject)
-					&& anEdge.getSourceNode().equals(sourceNode) && anEdge.getTargetNode().equals(targetNode)) {
-				return anEdge;
-			}
-		}
+//TODO: Urgent -> to fix
+//		for (DEdge anEdge : DDiagramSpecOperations.getEdgesFromMapping(pDiagram, mapping)) {
+//			if ((anEdge.getTarget() != null) && anEdge.getTarget().equals(semanticObject)
+//					&& anEdge.getSourceNode().equals(sourceNode) && anEdge.getTargetNode().equals(targetNode)) {
+//				return anEdge;
+//			}
+//		}
 		return null;
 	}
 
@@ -145,10 +146,10 @@ public class DiagramServices {
 		if ((targetMapping != null) && !sourceView.equals(targetView)) {
 			mappingsToEdgeTargets.get(targetMapping).add(targetView);
 		}
-		final DecorationHelperInternal decorationHelper = new DecorationHelperInternal(diagram, interpreter, accessor);
-		decorationHelper.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration,
-				edgeToMappingBasedDecoration);
 		//TODO: Urgent -> find a another way!
+//		final DecorationHelperInternal decorationHelper = new DecorationHelperInternal(diagram, interpreter, accessor);
+//		decorationHelper.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration,
+//				edgeToMappingBasedDecoration);
 //		return elementSync.createNewEdge(getMappingManager((DSemanticDiagram) diagram), edgeCandidate,
 //				mappingsToEdgeTargets, edgeToMappingBasedDecoration, edgeToSemanticBasedDecoration);
 		return null;
@@ -168,7 +169,7 @@ public class DiagramServices {
 	}
 
 	public EdgeMapping getEdgeMapping(final DiagramDescription description, String mappingName) {
-		for (final EdgeMapping edgeMapping : description.getAllEdgeMappings()) {
+		for (final EdgeMapping edgeMapping : description.getEdgeMappings()) {
 			if (edgeMapping.getName().equals(mappingName)) {
 				return edgeMapping;
 			}
@@ -191,7 +192,8 @@ public class DiagramServices {
 		if ((aEdge != null) && (aEdge.getActualMapping() != null)) {
 			IEdgeMapping mapping = aEdge.getActualMapping();
 			if ((mapping != null) && (mapping instanceof EdgeMappingImport)) {
-				mapping = MappingHelper.getEdgeMapping((EdgeMappingImport) mapping);
+				//TODO: Urgent -> find a another way!
+//				mapping = MappingHelper.getEdgeMapping((EdgeMappingImport) mapping);
 			}
 
 			if ((mapping != null) && (mapping instanceof DiagramElementMapping)) {

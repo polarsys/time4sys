@@ -21,8 +21,7 @@ Require-Bundle: org.eclipse.ui.workbench,
  org.polarsys.time4sys.ui,
  org.eclipse.sirius.common.ui,
  org.eclipse.sirius.common,
- org.polarsys.time4sys.marte.analysisrepository.ui,
- jakarta.persistence;bundle-version="2.2.3"
+ org.polarsys.time4sys.marte.analysisrepository.ui
 Import-Package: org.eclipse.sirius.diagram.ui.provider,
  org.eclipse.sirius.ui.tools.internal.actions.session,
  org.eclipse.sirius.ui.tools.internal.views.common.action
